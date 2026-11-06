@@ -1,0 +1,19 @@
+{
+  "name": "historias",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio",
+    "render": "remotion render Teste out/teste.mp4",
+    "still": "remotion still Teste out/teste.png --frame=45"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.541",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.541"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "typescript": "^5.6.0"
+  }
+}
