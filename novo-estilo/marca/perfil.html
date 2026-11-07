@@ -1,0 +1,22 @@
+<!doctype html><html><head><meta charset="utf-8"><style>body{margin:0;width:1080px;height:1080px;overflow:hidden}</style></head><body>
+<svg id="s" viewBox="0 0 1080 1080" width="1080" height="1080"></svg>
+<script src="../personagens/rose.js"></script><script>
+// Foto de perfil: Rose dos ombros pra cima, luz atrás da cabeça, borda ipê. ?v=noite | tinta
+const v = new URLSearchParams(location.search).get('v') || 'noite';
+const fundo = v === 'noite'
+  ? `<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#13294B"/><stop offset=".62" stop-color="#3A3550"/><stop offset="1" stop-color="#C98B3A"/></linearGradient>`
+  : `<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B2420"/><stop offset="1" stop-color="#1C1714"/></linearGradient>`;
+let s = `<defs>${fundo}
+<radialGradient id="luz"><stop offset="0" stop-color="#FFE9A8" stop-opacity=".95"/><stop offset=".45" stop-color="#F2C14E" stop-opacity=".55"/><stop offset="1" stop-color="#F2C14E" stop-opacity="0"/></radialGradient>
+</defs>
+<g><rect width="1080" height="1080" fill="url(#bg)"/>`;
+// raios finos e partículas paradas no ar (o mundo parado)
+for (let i = 0; i < 16; i++) s += `<path d="M540,430 L${540 + Math.cos(i * Math.PI / 8) * 900},${430 + Math.sin(i * Math.PI / 8) * 900}" stroke="#F2C14E" stroke-width="${i % 2 ? 6 : 14}" opacity=".07"/>`;
+for (let i = 0; i < 40; i++) s += `<circle cx="${(i * 197) % 1080}" cy="${(i * 331) % 760}" r="${2 + (i % 3)}" fill="#FFF8EC" opacity=".35"/>`;
+s += `<circle cx="540" cy="400" r="440" fill="url(#luz)"/>`;
+s += `<circle cx="540" cy="400" r="290" fill="none" stroke="#F2C14E" stroke-width="5" opacity=".45"/><circle cx="540" cy="400" r="340" fill="none" stroke="#F2C14E" stroke-width="2" opacity=".3" stroke-dasharray="6 14"/>`;
+// Rose (ombros pra cima): cabeça ~ y 30..620, ombros saindo pela base
+s += `<g transform="translate(540,0) scale(1.75) translate(-200,40)">${rose({expr: 'desconfiada'})}</g>`;
+s += `</g><circle cx="540" cy="540" r="522" fill="none" stroke="#F2C14E" stroke-width="36"/><circle cx="540" cy="540" r="503" fill="none" stroke="#2B2420" stroke-width="5"/>`;
+document.getElementById('s').innerHTML = s;
+</script></body></html>
