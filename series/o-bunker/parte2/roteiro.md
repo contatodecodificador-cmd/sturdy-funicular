@@ -1,6 +1,6 @@
 # O Bunker (parte 2): roteiro
 
-Status: aprovado; frase 1 versão A (escolhida pelo editor-chefe, o dono pode trocar). Caminho SAI (o público votou em 07/11/2026). 109 palavras com a frase 1 versão A (107 com a B).
+Status: aprovado (frase 1 versão A); virada trocada pela opção 1 do dono em 07/11/2026. 107 palavras.
 
 | # | Trabalho | Frase |
 |---|---|---|
@@ -13,8 +13,9 @@ Status: aprovado; frase 1 versão A (escolhida pelo editor-chefe, o dono pode tr
 | 7 | Aproximação | Ele chegou perto, devagar, e leu a data na tela. |
 | 8 | Revelação | Era aquela terça. A TV nunca tinha desligado. |
 | | (pausa) | |
-| 9 | Virada | No alto do bairro, a luz da torre de rádio piscava... no ritmo do aviso. |
-| 10 | Pergunta e próxima | Ele vai até a torre ou volta? Comenta TORRE ou VOLTA. Segue pra ver a parte 3. |
+| 9 | Virada | Aí, na frente dele, o aviso mudou pela primeira vez: "Otávio, volta pro bunker." |
+| 10 | Pergunta e próxima | Ele obedece ou desliga a TV? Comenta VOLTA ou DESLIGA. Segue pra ver a parte 3. |
 
 Detalhe escondido desta parte: a sala inteira coberta de poeira, menos o controle remoto da TV, em cima do sofá (alguém esteve ali).
+Segundo detalhe: pela janela, a luz da torre de rádio pisca no ritmo do aviso (sem narração).
 A parte 3 junta os dois caminhos na torre de rádio (TORRE 7).

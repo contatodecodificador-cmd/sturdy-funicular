@@ -40,21 +40,25 @@ Quem assistir de novo vai notar duas coisas:
 1. A luz FORA do medidor de ar está **verde** desde a parte 1. Lá fora, o ar está limpo.
 2. O aviso do rádio começa sempre com "Terça-feira, sete horas". Cinco anos depois, ainda é terça.
 
-Ninguém precisa reparar na primeira vez. As duas pistas apontam para a verdade da parte 4: o aviso é
-uma gravação que ficou tocando sozinha.
+3. Na parte 2, a sala inteira está coberta de poeira, menos o controle remoto da TV: alguém esteve ali.
+
+Ninguém precisa reparar na primeira vez. As pistas apontam para a verdade da parte 4: o aviso não está
+tocando sozinho, tem alguém mantendo ele no ar e vigiando o bairro.
 
 ## As partes
 
 1. **O filtro.** Cinco anos depois, no bunker. Volta à manhã do café, da TV vermelha, da névoa e da
    corrida até o bunker. Hoje o filtro começou a falhar, e o sinal verde nunca veio. Escolha: SAI ou FICA.
-2. **A escotilha** (caminho SAI) ou **O rádio** (caminho FICA). SAI: de máscara velha, ele abre a
-   escotilha e encontra o quintal tomado de mato e a caneca de café ainda na mesa. FICA: ele tenta
-   consertar o filtro e ouve, no meio do aviso, um chiado que parece uma voz dizendo outra coisa.
-3. **A torre.** Os dois caminhos levam ao mesmo lugar: a torre de rádio do bairro, de onde sai o aviso.
-   Lá ele descobre que o aviso é uma gravação, repetindo sozinha há cinco anos.
-4. **O sinal verde** (final). Ele desliga a gravação e manda pelo rádio o sinal verde que nunca veio.
-   Pela rua, as escotilhas de outros quintais começam a abrir. Na última cena, a luz FORA do medidor
-   pisca vermelha uma vez.
+2. **A casa** (caminho SAI, votado em 07/11/2026). Ele sai de máscara: não tem névoa nenhuma, o quintal
+   virou mato, a caneca de café está na mesa e a TV nunca desligou. Na frente dele, pela primeira vez em
+   cinco anos, o aviso muda e chama ele pelo nome: "Otávio, volta pro bunker." Escolha: VOLTA ou DESLIGA.
+3. **A torre.** Os dois caminhos levam à torre de rádio do bairro (TORRE 7), de onde sai o aviso. Lá ele
+   acha a sala de transmissão: monitores mostrando os quintais do bairro e o microfone ainda morno.
+   Alguém está vigiando quem ficou embaixo da terra, e mandou a mensagem.
+4. **O sinal verde** (final). Ele descobre quem mantém o aviso no ar e por quê, desliga a gravação e
+   manda pelo rádio o sinal verde que nunca veio. Pela rua, as escotilhas de outros quintais começam a
+   abrir. Na última cena, a luz FORA do medidor pisca vermelha uma vez.
+   (Quem está por trás do aviso fica em aberto e pode ser escolhido com o público.)
 
 ## Nunca
 
