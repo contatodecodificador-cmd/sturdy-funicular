@@ -70,6 +70,34 @@ const Pernas: React.FC<{ fase: number }> = ({ fase }) => {
   );
 };
 
+/** a máscara de gás velha */
+export const MASCARA = { borracha: '#5E6658', sombra: '#4A5146', filtro: '#3E423B', aro: '#2C2F2A', alca: '#1E1F1C' };
+
+const Mascara: React.FC = () => {
+  const M = MASCARA;
+  return (
+    <g>
+      {/* as alças até as orelhas */}
+      <path d="M140,206 L122,184 M260,206 L278,184" stroke={M.alca} strokeWidth={10} strokeLinecap="round" />
+      {/* o corpo de borracha, do nariz ao queixo */}
+      <path d="M138,198 C150,186 250,186 262,198 C270,240 252,292 200,306 C148,292 130,240 138,198 Z" fill={M.borracha} />
+      <path d="M200,196 C236,198 252,232 246,262 C240,286 222,298 200,304" fill="none" stroke={M.sombra} strokeWidth={8} opacity={0.6} />
+      {/* os dois filtros redondos e a válvula da frente */}
+      {[148, 252].map((cx) => (
+        <g key={cx}>
+          <circle cx={cx} cy={266} r={31} fill={M.aro} />
+          <circle cx={cx} cy={266} r={24} fill={M.filtro} />
+          {[-12, -4, 4, 12].map((d) => (
+            <line key={d} x1={cx - 16} y1={266 + d} x2={cx + 16} y2={266 + d} stroke={M.aro} strokeWidth={3} />
+          ))}
+        </g>
+      ))}
+      <circle cx={200} cy={268} r={20} fill={M.aro} />
+      <circle cx={200} cy={268} r={12} fill={M.filtro} />
+    </g>
+  );
+};
+
 export const Otavio: React.FC<{
   x: number;
   y: number;
@@ -84,7 +112,9 @@ export const Otavio: React.FC<{
   respira?: boolean;
   passo?: number | null;
   sentado?: boolean;
-}> = ({ x, y, escala = 0.9, epoca = 'hoje', vista = 'frente', expressao = 'neutra', pose = 'parado', olhar = 0, cima = 0, pisca = true, respira = true, passo = null, sentado = false }) => {
+  /** a máscara de gás velha (parte 2 em diante): cobre nariz e boca; o medo fica nos olhos */
+  mascara?: boolean;
+}> = ({ x, y, escala = 0.9, epoca = 'hoje', vista = 'frente', expressao = 'neutra', pose = 'parado', olhar = 0, cima = 0, pisca = true, respira = true, passo = null, sentado = false, mascara = false }) => {
   const f = useCurrentFrame();
   const id = useIdSvg();
   const C = OTAVIO;
@@ -217,8 +247,12 @@ export const Otavio: React.FC<{
               {/* bigode */}
               <path d="M174,226 Q200,214 226,226" fill="none" stroke={hoje ? C.barbaGrisalha : C.barbaEscura} strokeWidth={hoje ? 10 : 7} strokeLinecap="round" opacity={hoje ? 1 : 0.8} />
               {hoje ? <path d="M182,222 Q192,218 198,220 M204,220 Q212,218 220,222" fill="none" stroke={C.fioBranco} strokeWidth={2.5} strokeLinecap="round" opacity={0.85} /> : null}
+              {mascara ? <Mascara /> : null}
             </>
           )}
+          {mascara && costas ? (
+            <path d="M126,196 Q200,226 274,196 M128,150 Q200,170 272,150" fill="none" stroke={MASCARA.alca} strokeWidth={12} strokeLinecap="round" />
+          ) : null}
           {hoje ? (
             <>
               {/* o gorro de lã mostarda: a marca que se vê de longe */}

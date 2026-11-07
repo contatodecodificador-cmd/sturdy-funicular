@@ -23,7 +23,18 @@ export const AMARELO = '#F2B33D';
 export const VISOR = '#E8B04A';
 
 /** a TV pequena de cozinha (desenho 420 x 330) */
-export const TVAviso: React.FC<{ x: number; y: number; escala?: number; aceso?: number; palavras?: number }> = ({ x, y, escala = 1, aceso = 1, palavras = AVISO.length }) => {
+/** o aviso novo da parte 2, que chama o Otávio pelo nome */
+export const AVISO_NOVO = [['OTÁVIO,'], ['VOLTA', 'PRO', 'BUNKER.']];
+
+export const TVAviso: React.FC<{ x: number; y: number; escala?: number; aceso?: number; palavras?: number; linhas?: string[][]; data?: string }> = ({
+  x,
+  y,
+  escala = 1,
+  aceso = 1,
+  palavras = 99,
+  linhas = [AVISO.slice(0, 3), AVISO.slice(3)],
+  data,
+}) => {
   const tela = `rgb(${Math.round(40 + (224 - 40) * aceso)},${Math.round(44 + (24 - 44) * aceso)},${Math.round(48 + (45 - 48) * aceso)})`;
   return (
     <svg width={420 * escala} height={330 * escala} viewBox="0 0 420 330" style={{ position: 'absolute', left: x, top: y, overflow: 'visible' }}>
@@ -37,10 +48,7 @@ export const TVAviso: React.FC<{ x: number; y: number; escala?: number; aceso?: 
           <text x={210} y={42} textAnchor="middle" fontFamily={FONTEM.mono} fontWeight={700} fontSize={18} letterSpacing="0.2em" fill={COR.janelaAcesa}>
             ALERTA
           </text>
-          {[
-            { linha: AVISO.slice(0, 3), y: 112, i0: 0 },
-            { linha: AVISO.slice(3), y: 168, i0: 3 },
-          ].map(({ linha, y: ly, i0 }) => (
+          {linhas.map((linha, li) => ({ linha, y: 112 + li * 56, i0: linhas.slice(0, li).reduce((a, l) => a + l.length, 0) })).map(({ linha, y: ly, i0 }) => (
             <text key={ly} x={210} y={ly} textAnchor="middle" fontFamily={FONTEM.titulo} fontWeight={900} fontSize={27} letterSpacing="-0.01em" fill={COR.janelaAcesa}>
               {linha.map((p, k) => (
                 <tspan key={k} opacity={i0 + k < palavras ? 1 : 0}>
@@ -50,6 +58,11 @@ export const TVAviso: React.FC<{ x: number; y: number; escala?: number; aceso?: 
             </text>
           ))}
           <rect x={60} y={196} width={300} height={8} rx={4} fill={COR.janelaAcesa} opacity={0.5} />
+          {data ? (
+            <text x={34} y={228} fontFamily={FONTEM.mono} fontWeight={700} fontSize={14} fill={COR.janelaAcesa} opacity={0.85}>
+              {data}
+            </text>
+          ) : null}
         </>
       ) : null}
       <circle cx={392} cy={254} r={5} fill={aceso > 0.5 ? COR.acento : '#4A3F40'} />
@@ -176,11 +189,58 @@ export const Riscos: React.FC<{ x: number; y: number; escala?: number; n?: numbe
 );
 
 /** a caneca (desenho 120 x 120) */
-export const Caneca: React.FC<{ x: number; y: number; escala?: number }> = ({ x, y, escala = 1 }) => (
+/** a caneca; seca = cinco anos depois (sem vapor, a marca seca do café escorrida e poeira em cima) */
+export const Caneca: React.FC<{ x: number; y: number; escala?: number; seca?: boolean }> = ({ x, y, escala = 1, seca = false }) => (
   <svg width={120 * escala} height={120 * escala} viewBox="0 0 120 120" style={{ position: 'absolute', left: x, top: y, overflow: 'visible' }}>
-    <path d="M86,38 C116,38 116,86 86,86" fill="none" stroke="#E8E0D6" strokeWidth={12} />
-    <rect x={10} y={20} width={80} height={96} rx={12} fill="#E8E0D6" />
-    <ellipse cx={50} cy={22} rx={40} ry={10} fill="#5A3B28" />
-    <path d="M38,8 Q30,-8 40,-22 M58,8 Q50,-10 60,-26" fill="none" stroke="#E8E0D6" strokeWidth={4} strokeLinecap="round" opacity={0.6} />
+    <path d="M86,38 C116,38 116,86 86,86" fill="none" stroke={seca ? '#CFC6BA' : '#E8E0D6'} strokeWidth={12} />
+    <rect x={10} y={20} width={80} height={96} rx={12} fill={seca ? '#CFC6BA' : '#E8E0D6'} />
+    {seca ? (
+      <>
+        <ellipse cx={50} cy={22} rx={40} ry={10} fill="#3A2A20" />
+        <ellipse cx={50} cy={22} rx={30} ry={6} fill="#2A1D16" />
+        <path d="M24,26 C26,40 22,52 26,60 M70,26 C72,36 70,44 73,50" fill="none" stroke="#6E4A34" strokeWidth={5} strokeLinecap="round" opacity={0.7} />
+        <rect x={10} y={20} width={80} height={10} fill="#B8AFA2" opacity={0.6} />
+      </>
+    ) : (
+      <>
+        <ellipse cx={50} cy={22} rx={40} ry={10} fill="#5A3B28" />
+        <path d="M38,8 Q30,-8 40,-22 M58,8 Q50,-10 60,-26" fill="none" stroke="#E8E0D6" strokeWidth={4} strokeLinecap="round" opacity={0.6} />
+      </>
+    )}
+  </svg>
+);
+
+/** o controle remoto da TV (desenho 70 x 200); limpo = sem poeira (a pista da parte 2) */
+export const Controle: React.FC<{ x: number; y: number; escala?: number; limpo?: boolean }> = ({ x, y, escala = 1, limpo = true }) => (
+  <svg width={70 * escala} height={200 * escala} viewBox="0 0 70 200" style={{ position: 'absolute', left: x, top: y, overflow: 'visible' }}>
+    <rect x={0} y={0} width={70} height={200} rx={18} fill="#1E1A1B" />
+    <circle cx={35} cy={30} r={10} fill={COR.acento} />
+    {Array.from({ length: 9 }, (_, i) => (
+      <rect key={i} x={12 + (i % 3) * 17} y={60 + Math.floor(i / 3) * 26} width={12} height={12} rx={4} fill="#4A4244" />
+    ))}
+    <rect x={14} y={150} width={42} height={30} rx={8} fill="#4A4244" />
+    {limpo ? <path d="M10,12 L22,4" stroke="#FFFFFF" strokeWidth={4} strokeLinecap="round" opacity={0.35} /> : <rect x={0} y={0} width={70} height={200} rx={18} fill="#B8AFA2" opacity={0.55} />}
+  </svg>
+);
+
+/** a torre de rádio do bairro (desenho 360 x 820): treliça, plataforma, antena e a luz vermelha no topo */
+export const Torre: React.FC<{ x: number; y: number; escala?: number; luz?: number; cor?: string }> = ({ x, y, escala = 1, luz = 1, cor = '#2A2024' }) => (
+  <svg width={360 * escala} height={820 * escala} viewBox="0 0 360 820" style={{ position: 'absolute', left: x, top: y, overflow: 'visible' }}>
+    <path d="M60,820 L150,120 M300,820 L210,120" stroke={cor} strokeWidth={14} />
+    {Array.from({ length: 9 }, (_, i) => {
+      const y1 = 800 - i * 76;
+      const y2 = y1 - 76;
+      const w1 = 120 - (i * 60) / 9;
+      const w2 = 120 - ((i + 1) * 60) / 9;
+      return <path key={i} d={`M${180 - w1},${y1} L${180 + w2},${y2} M${180 + w1},${y1} L${180 - w2},${y2} M${180 - w2},${y2} L${180 + w2},${y2}`} stroke={cor} strokeWidth={7} />;
+    })}
+    <rect x={130} y={104} width={100} height={18} fill={cor} />
+    <path d="M180,104 L180,10" stroke={cor} strokeWidth={8} />
+    <rect x={150} y={600} width={60} height={30} rx={4} fill="#C9C2B8" opacity={0.85} />
+    <text x={180} y={621} textAnchor="middle" fontFamily={FONTEM.mono} fontWeight={700} fontSize={14} fill="#2A2024">
+      TORRE 7
+    </text>
+    <circle cx={180} cy={10} r={16} fill={`rgba(224,24,45,${0.25 + 0.75 * luz})`} />
+    {luz > 0.5 ? <circle cx={180} cy={10} r={44} fill="rgba(224,24,45,0.25)" /> : null}
   </svg>
 );
