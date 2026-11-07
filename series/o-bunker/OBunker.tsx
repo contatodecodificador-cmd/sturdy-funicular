@@ -71,7 +71,7 @@ const C2: React.FC = () => {
       <Anda zoom={[1, 1.1]} origem={[520, 1260]}>
         <CenaQuintal />
       </Anda>
-      <Som q={6} nome="passarinho" vol={0.52} />
+      <Som q={6} nome="passarinho" vol={1.2} />
       <Legenda palavras={fala} cortes={[3, 6, 8]} destaque={['EXAGERO']} enfase={['TERÇA', 'VIZINHOS', 'BUNKER']} />
     </AbsoluteFill>
   );
@@ -86,8 +86,8 @@ const C3: React.FC = () => {
       <Anda zoom={[1, 1.08]} origem={[540, 900]}>
         <CenaCozinha tv={tv} expressao={tv > 0.5 ? 'preocupada' : 'neutra'} />
       </Anda>
-      <Som q={2} nome="cafe" vol={0.48} />
-      <Som q={q(11) - 2} nome="clique" vol={0.79} />
+      <Som q={2} nome="cafe" vol={1.1} />
+      <Som q={q(11) - 2} nome="clique" vol={1.82} />
       <Legenda palavras={fala} cortes={[4, 7, 10]} destaque={['VERMELHA']} enfase={['SETE', 'CAFÉ', 'TV']} />
     </AbsoluteFill>
   );
@@ -104,7 +104,7 @@ const C4: React.FC = () => {
       <Anda zoom={[1, 1.06]} origem={[540, 600]}>
         <CenaTV palavras={palavras} expressao={f >= q(12) - 2 ? 'assustada' : 'preocupada'} />
       </Anda>
-      <Som q={q(1)} nome="sirene" vol={0.79} />
+      <Som q={q(1)} nome="sirene" vol={1.82} />
       <Legenda palavras={fala} cortes={[2, 4, 6, 9, 11]} destaque={['NÉVOA']} enfase={['SIRENE', 'CASA']} />
     </AbsoluteFill>
   );
@@ -147,9 +147,9 @@ const C6: React.FC = () => {
       </AbsoluteFill>
       {f >= fecha ? <AbsoluteFill style={{ background: COR.breu }} /> : null}
       {passos.map((k) => (
-        <Som key={k} q={k} nome="passo" vol={0.18} />
+        <Som key={k} q={k} nome="passo" vol={0.41} />
       ))}
-      <Som q={fecha} nome="tampa" vol={0.85} />
+      <Som q={fecha} nome="tampa" vol={1.95} />
       <Legenda palavras={fala} cortes={[4, 7]} destaque={['TRANCOU']} enfase={['CAFÉ', 'QUINTAL']} />
     </AbsoluteFill>
   );
@@ -166,7 +166,7 @@ const C7: React.FC = () => {
           <CenaBunker giro={f * 9} otavio={{ expressao: 'cansada', olhar: 1 }} />
         </Anda>
       </AbsoluteFill>
-      <Som q={0} nome="chiado" vol={0.94} />
+      <Som q={0} nome="chiado" vol={2.16} />
       <Legenda palavras={fala} cortes={[2, 4, 7]} destaque={['MESMO', 'AVISO']} enfase={['NOITE', 'RÁDIO']} />
     </AbsoluteFill>
   );
@@ -195,7 +195,7 @@ const C8: React.FC = () => {
       <Anda zoom={[1.6, 1.85]} origem={[BUNKER.filtro.x + 90, BUNKER.filtro.y + 200]}>
         <CenaBunker giro={giroDoFiltro(f, engasga, para)} dentro={pisca} luz={luz} otavio={null} />
       </Anda>
-      <Som q={engasga} nome="ventilador" vol={0.35} />
+      <Som q={engasga} nome="ventilador" vol={0.8} />
       <Legenda palavras={fala} cortes={[1, 5]} destaque={['FILTRO']} enfase={['HOJE', 'FALHAR']} />
     </AbsoluteFill>
   );
@@ -213,7 +213,7 @@ const C9: React.FC = () => {
           <CenaBunker giro={0} dentro={Math.floor(f / 8) % 2 === 0} otavio={{ expressao: 'preocupada', cima: 1, olhar: 0.3 }} />
         </Anda>
       </AbsoluteFill>
-      <Som q={q(6) - 6} nome="respira" vol={0.9} />
+      <Som q={q(6) - 6} nome="respira" vol={2.07} />
       <Legenda palavras={fala} cortes={[3, 6, 8, 10]} destaque={['NUNCA']} enfase={['TRÊS', 'DIAS', 'SINAL', 'VERDE']} />
     </AbsoluteFill>
   );
