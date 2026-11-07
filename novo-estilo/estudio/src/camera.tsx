@@ -19,6 +19,8 @@ export function posCamera(chaves: Chave[], t: number) {
 }
 
 export type Limites = {x0: number; y0: number; x1: number; y1: number};
+/** zoom atual da câmera (pras etiquetas presas no cenário manterem o mesmo tamanho na tela) */
+export const ZoomCtx = React.createContext(1);
 export const Camera: React.FC<{chaves: Chave[]; socos?: number[]; tremor?: number; children: React.ReactNode; W: number; H: number; lim?: Limites}> = ({chaves, socos = [], tremor = 0, children, W, H, lim}) => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
@@ -40,7 +42,7 @@ export const Camera: React.FC<{chaves: Chave[]; socos?: number[]; tremor?: numbe
     <AbsoluteFill style={{overflow: 'hidden'}}>
       <div style={{position: 'absolute', left: 0, top: 0, width: W, height: H, transformOrigin: '0 0',
         transform: `translate(${540 + tx}px, ${960 + ty}px) rotate(${c.r || 0}deg) scale(${z}) translate(${-c.x}px, ${-c.y}px)`}}>
-        {children}
+        <ZoomCtx.Provider value={z}>{children}</ZoomCtx.Provider>
       </div>
     </AbsoluteFill>
   );
@@ -62,7 +64,7 @@ export function blocos(pal: Palavra[]) {
 }
 
 /** Legenda palavra por palavra. `t` = tempo absoluto do vídeo. */
-export const Legenda: React.FC<{pal: Palavra[]; destaques: Set<string>; y: (t: number) => number}> = ({pal, destaques, y}) => {
+export const Legenda: React.FC<{pal: Palavra[]; destaques: Set<string>; y: (t: number) => number; lado?: (t: number) => 'esq' | 'centro' | 'dir'}> = ({pal, destaques, y, lado}) => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
   const t = f / fps;
@@ -75,7 +77,7 @@ export const Legenda: React.FC<{pal: Palavra[]; destaques: Set<string>; y: (t: n
   }
   if (!atual) return null;
   return (
-    <div style={{position: 'absolute', left: 40, right: 180, top: y(t), transform: 'translateY(-50%)', textAlign: 'center', lineHeight: 1.0}}>
+    <div style={{position: 'absolute', ...({esq: {left: 30, width: 500}, centro: {left: 40, right: 180}, dir: {left: 420, width: 520}} as any)[lado ? lado(t) : 'centro'], top: y(t), transform: 'translateY(-50%)', textAlign: 'center', lineHeight: 1.0}}>
       {atual.map((p, i) => {
         const k = interpolate(t, [p.s - 0.03, p.s + 0.09], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
         const hi = destaques.has(norm(p.w));
@@ -88,4 +90,10 @@ export const Legenda: React.FC<{pal: Palavra[]; destaques: Set<string>; y: (t: n
       })}
     </div>
   );
+};
+
+/** Etiqueta presa num ponto do cenário (x,y do mundo): anda junto com a câmera e mantém o tamanho na tela. */
+export const Marca: React.FC<{x: number; y: number; children: React.ReactNode}> = ({x, y, children}) => {
+  const z = React.useContext(ZoomCtx);
+  return <div style={{position: 'absolute', left: x, top: y, width: 0, height: 0, transform: `scale(${1 / z})`, transformOrigin: '0 0'}}>{children}</div>;
 };

@@ -80,7 +80,7 @@ const poeira = (() => { let s = ''; for (let i = 0; i < 90; i++) s += `<circle c
 
 export type EstadoRua = {
   congelado: number; roseX: number; roseExpr?: string; rosePiscar?: boolean; roseFlip?: boolean; roseSentada?: boolean; roseVisivel?: boolean;
-  joaoX: number; onibusX?: number; cafeSuspenso?: boolean; bolso?: number; pombo?: boolean;
+  joaoX: number; onibusX?: number; cafeSuspenso?: boolean; bolso?: number; pombo?: boolean; camada?: 'base' | 'rose';
 };
 
 export const Rua: React.FC<EstadoRua> = (e) => {
@@ -100,8 +100,9 @@ export const Rua: React.FC<EstadoRua> = (e) => {
   const html = fundo + cen.onibus(820 + (e.onibusX || 0), 1320, 0.64) + frente + joao + pri + bolso
     + (e.pombo !== false ? cen.pomboVoando(1700, 640, 1.0, -8) + `<path d="M1660,700 C1650,720 1662,736 1676,740" stroke="#B4BCC6" stroke-width="5" fill="none"/>` : '')
     + (e.congelado > 0 ? poeira.replace(/opacity=".7"/g, `opacity="${0.7 * e.congelado}"`) + `<rect x="-50" y="-1400" width="${W + 100}" height="${H + 3000}" fill="#9FB8D0" opacity="${0.2 * e.congelado}"/>` : '')
-    + roseG;
-  return <Svg W={W} H={H} html={html} />;
+    ;
+  if (e.camada === 'rose') return <Svg W={W} H={H} html={roseG} />;
+  return <Svg W={W} H={H} html={e.camada === 'base' ? html : html + roseG} />;
 };
 
 // ---------------------------------------------------------------- MUNDO (globo com luzes apagando)
