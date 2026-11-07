@@ -4,7 +4,7 @@
 > Tudo aqui é original da linha nova. Nada vem do kit "Histórias que Prendem" nem das contas de referência.
 
 ## 1. Clima
-Dia claro numa cidade brasileira: colorido, alegre e quente. Comédia do dia a dia com mistério leve. **Nunca noite** (é o oposto do Contos do Vigia).
+Dia claro numa cidade brasileira, até o fim da tarde: colorido, alegre e quente. Comédia do dia a dia com mistério leve. **Nunca noite** (é o oposto do Contos do Vigia).
 
 ## 2. Cores
 | Nome | Código | Uso |
@@ -35,12 +35,12 @@ Dia claro numa cidade brasileira: colorido, alegre e quente. Comédia do dia a d
 Casario colorido, calçada de pedra portuguesa, padaria, ponto de ônibus e prédios do centro. Lugares inventados com cara de Brasil real. Nenhuma marca real.
 
 ## 6. Luz
-Sol alto, sombras curtas e duras e céu limpo. No mundo parado a luz fica igual, só com a película fria por cima.
+Sol alto, sombras curtas e duras e céu limpo. Na série "O Tempo Parou" a hora é fixa em **16:47**: sol mais baixo e dourado (céu `#8FCBE6` → `#FCE3B0` no horizonte), sombras compridas pra direita. No mundo parado a luz fica igual, só com a película fria por cima.
 
 ## 7. Tela cheia de informação (HUD)
 Toda cena tem **pelo menos um dado mexendo**:
-- **Etiqueta de lugar e hora** no topo: pílula branca, Barlow 800 (ex.: `CENTRO · SEG · 07:14`).
-- **Dois relógios** (marca da série): RELÓGIO DO MUNDO preso em 07:14 e RELÓGIO DA ROSE andando (DIA 3 · 15:40).
+- **Etiqueta de lugar e hora** no topo: pílula branca, Barlow 800 (ex.: `CENTRO · SEG · 16:47`).
+- **Dois relógios** (marca da série): RELÓGIO DO MUNDO preso em 16:47 e RELÓGIO DA ROSE andando (DIA 3 · 15:40).
 - **Contadores**: cartão branco arredondado, número grande em Anton, seta ▲ verde ou ▼ terracota.
 - **Fichas**: cartão "papel" levemente girado (−3°), com carimbo terracota.
 - **Cartão de bloco numerado** (TESTE 1, 2, 3): cartão grande no centro, número em ipê.

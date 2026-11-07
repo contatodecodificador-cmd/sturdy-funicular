@@ -3,15 +3,15 @@
 > Status: **rascunho 1**, aguardando aprovação do dono.
 
 ## Premissa em uma frase
-Às 7h14 de uma segunda-feira, o mundo inteiro congela. Só a Rose, uma faxineira de 33 anos saindo do turno da noite, continua se mexendo. **Quem decide o que ela faz é o público.**
+Às 16h47 de uma segunda-feira, o mundo inteiro congela. Só a Rose, uma faxineira de 33 anos que acabou de sair do serviço, continua se mexendo. **Quem decide o que ela faz é o público.**
 
 ## O gancho que é só nosso
-1. **Dois relógios.** O relógio do mundo fica preso em 07:14. O relógio de pulso da Rose continua andando (Dia 1, Dia 3, Dia 7…). Os dois aparecem na tela o tempo todo.
+1. **Dois relógios.** O relógio do mundo fica preso em 16:47. O relógio de pulso da Rose continua andando (Dia 1, Dia 3, Dia 7…). Os dois aparecem na tela o tempo todo.
 2. **Tudo o que ela muda fica.** Quando o tempo voltar, cada coisa que ela mexeu continua mexida. Por isso cada voto pesa.
 3. **O povo vai mudando ela.** Rose é gente comum, sem glamour. A cada episódio o público escolhe o que ela faz, onde vai, o que veste e quem ajuda, e ela vai se transformando: por fora (roupa, cabelo, casa) e por dentro (coragem, confiança).
 
 ## Protagonista
-**Rose (Rosângela), 33 anos.** Faxineira terceirizada que faz o turno da noite num prédio comercial do centro. Mora de aluguel num bairro de periferia, pega dois ônibus. É engraçada, desconfiada, honesta, conta cada centavo e nunca teve um dia de folga de verdade. Folha de design: `../personagens/folha-rose.png`.
+**Rose (Rosângela), 33 anos.** Faxineira terceirizada num prédio comercial do centro, das 7h às 16h45. Mora de aluguel num bairro de periferia, pega dois ônibus. É engraçada, desconfiada, honesta, conta cada centavo e nunca teve um dia de folga de verdade. Folha de design: `../personagens/folha-rose.png`.
 
 ## Regras do tempo parado (fixas, a série nunca quebra)
 1. Tudo e todos ficam congelados, menos a Rose.

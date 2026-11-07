@@ -4,9 +4,9 @@
 <style>body{margin:0;width:1080px;height:1920px;overflow:hidden}</style></head><body>
 <svg id="s" viewBox="0 0 1080 1920" width="1080" height="1920"></svg>
 <script src="../personagens/rose.js"></script><script>
-// Quadro-conceito do Ep. 1: o mundo parado às 07:14, só a Rose em cor cheia.
-const T='#2B2420';let s=`<defs><linearGradient id="c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ED8EE"/><stop offset="1" stop-color="#DDF1F7"/></linearGradient></defs>
-<rect width="1080" height="1920" fill="url(#c)"/><circle cx="880" cy="300" r="70" fill="#FFF4C2"/>`;
+// Quadro-conceito do Ep. 1: o mundo parado às 16:47, só a Rose em cor cheia.
+const T='#2B2420';let s=`<defs><linearGradient id="c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8FCBE6"/><stop offset=".75" stop-color="#F6E7C4"/><stop offset="1" stop-color="#FCE3B0"/></linearGradient></defs>
+<rect width="1080" height="1920" fill="url(#c)"/><circle cx="900" cy="640" r="80" fill="#FFE9A8"/>`;
 const H=['#D96C4A','#F2C14E','#2F6FA3','#F4EDE1','#5FA36A','#E89A7A'];
 [-20,170,330,500,680,860].forEach((x,i)=>{const t=760+(i%2)*70;s+=`<rect x="${x}" y="${t}" width="180" height="${1260-t}" fill="${H[i]}" stroke="#9C4A32" stroke-width="3"/><path d="M${x-10},${t} L${x+90},${t-70} L${x+190},${t}Z" fill="#9C4A32"/>`;
 for(let r=0;r<3;r++)for(let c=0;c<2;c++)s+=`<rect x="${x+30+c*70}" y="${t+40+r*120}" width="44" height="74" rx="4" fill="#fff" opacity=".75" stroke="#9C4A32" stroke-width="3"/>`;});
@@ -21,15 +21,16 @@ s+=P(110,1330,.9,'#D96C4A')+P(470,1300,.7,'#5FA36A')+P(980,1500,.95,'#7A5C9E');
 // pombo no ar + café suspenso + poeira parada
 s+=`<g transform="translate(250,560)"><ellipse rx="40" ry="22" fill="#8C939C" stroke="${T}" stroke-width="3"/><path d="M-10,-10 L-60,-70 L10,-20Z M10,-10 L70,-80 L30,-15Z" fill="#A7AEB7" stroke="${T}" stroke-width="3"/><circle cx="38" cy="-8" r="12" fill="#8C939C" stroke="${T}" stroke-width="3"/></g>`;
 for(let i=0;i<40;i++)s+=`<circle cx="${(i*137)%1000+20}" cy="${600+(i*251)%800}" r="${2+(i%3)}" fill="#fff" opacity=".7"/>`;
+s+=`<path d="M300,1590 L700,1640 L700,1660 L300,1600Z" fill="#000" opacity=".12"/>`;
 // película fria do mundo parado
 s+=`<rect width="1080" height="1920" fill="#9FB8D0" opacity=".18"/>`;
 // Rose em cor cheia
 s+=`<g transform="translate(250,690) scale(.53)">${rose({expr:'surpresa'})}</g>`;
 // HUD
 const F='Barlow Condensed';
-s+=`<rect x="60" y="80" width="470" height="64" rx="32" fill="#fff"/><text x="92" y="125" font-family="${F}" font-weight="800" font-size="36" fill="${T}">CENTRO · SEG · 07:14</text>
-<rect x="60" y="170" width="400" height="150" rx="24" fill="#fff"/><text x="86" y="214" font-family="${F}" font-weight="800" font-size="25" fill="${T}" opacity=".7">RELÓGIO DO MUNDO</text><text x="86" y="292" font-family="Anton" font-size="68" fill="#7F93A8">07:14:00</text><text x="400" y="290" font-family="${F}" font-weight="800" font-size="38" fill="#7F93A8">❚❚</text>
-<rect x="480" y="170" width="440" height="150" rx="24" fill="#fff"/><text x="506" y="214" font-family="${F}" font-weight="800" font-size="25" fill="${T}" opacity=".7">RELÓGIO DA ROSE</text><text x="506" y="292" font-family="Anton" font-size="68" fill="${T}">07:14:32</text><text x="850" y="290" font-family="${F}" font-weight="800" font-size="38" fill="#5FA36A">▶</text>
+s+=`<rect x="60" y="80" width="470" height="64" rx="32" fill="#fff"/><text x="92" y="125" font-family="${F}" font-weight="800" font-size="36" fill="${T}">CENTRO · SEG · 16:47</text>
+<rect x="60" y="170" width="400" height="150" rx="24" fill="#fff"/><text x="86" y="214" font-family="${F}" font-weight="800" font-size="25" fill="${T}" opacity=".7">RELÓGIO DO MUNDO</text><text x="86" y="292" font-family="Anton" font-size="68" fill="#7F93A8">16:47:00</text><text x="400" y="290" font-family="${F}" font-weight="800" font-size="38" fill="#7F93A8">❚❚</text>
+<rect x="480" y="170" width="440" height="150" rx="24" fill="#fff"/><text x="506" y="214" font-family="${F}" font-weight="800" font-size="25" fill="${T}" opacity=".7">RELÓGIO DA ROSE</text><text x="506" y="292" font-family="Anton" font-size="68" fill="${T}">16:47:32</text><text x="850" y="290" font-family="${F}" font-weight="800" font-size="38" fill="#5FA36A">▶</text>
 <rect x="60" y="345" width="520" height="140" rx="24" fill="#fff"/><text x="86" y="390" font-family="${F}" font-weight="800" font-size="25" fill="${T}" opacity=".7">PESSOAS SE MEXENDO</text><text x="86" y="466" font-family="Anton" font-size="66" fill="#F2C14E" stroke="${T}" stroke-width="2">1</text><text x="150" y="462" font-family="${F}" font-weight="800" font-size="34" fill="#D96C4A">▼ 8.119.999.999</text>`;
 s+=`<text x="470" y="1235" text-anchor="middle" font-family="Anton" font-size="128" fill="#fff" stroke="${T}" stroke-width="18" paint-order="stroke" stroke-linejoin="round">MENOS</text>
 <text x="470" y="1375" text-anchor="middle" font-family="Anton" font-size="150" fill="#F2C14E" stroke="${T}" stroke-width="18" paint-order="stroke" stroke-linejoin="round">UMA.</text>`;
