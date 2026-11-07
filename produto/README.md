@@ -1,14 +1,15 @@
-# Oficina do Vigia
+# Estúdio do Nogueira
 
-O produto próprio do canal **Contos do Vigia**: um método para a pessoa criar o próprio canal de
-séries de mistério em partes, com vídeos animados por IA, a própria voz e o público votando no
-caminho da história.
+O produto do **Estúdio do Nogueira**: um método para a pessoa criar o próprio canal de séries
+animadas com IA, em partes, em qualquer nicho, com o público votando no caminho da história.
+Os canais do dono (o **Contos do Vigia** e um segundo canal, em produção) entram como modelos,
+criações nossas feitas com o mesmo processo. O nome não fica preso a nenhum canal.
 
 ## Decisões do dono (07/11/2026)
 
 | Item | Decisão |
 |---|---|
-| Nome | **Oficina do Vigia** |
+| Nome | **Estúdio do Nogueira** (antes: Oficina do Vigia; trocado para não ficar preso a um canal só) |
 | O que vai dentro | **Guia**, **skill pro Claude Code** e **personagem-base editável**, vendidos juntos ou separados |
 | Preço | só o guia R$ 27, só a skill R$ 47, completo R$ 67 (sugestões) + ofertas extras no checkout |
 | Onde vende | **Cakto** |
@@ -22,7 +23,7 @@ caminho da história.
 - `pagina/index.html`: a página de venda, pronta para subir no Netlify quando o dono quiser.
 - `pagina/img/`: a capa real da parte 1 de O Bunker.
 - `entrega/COMECE-AQUI.md`: o primeiro passo do comprador (contas, GitHub, Claude Code na nuvem, `/comecar`).
-- `entrega/oficina/`: os arquivos que o comprador coloca no GitHub (skill, memória do Claude, projeto de vídeo).
+- `entrega/estudio/`: os arquivos que o comprador coloca no GitHub (skill, memória do Claude, projeto de vídeo).
 - `entrega/extra-ideias/`: o produto extra do checkout, o Caça-Ideias (comando `/ideias`).
 
 ## Regras que valem para tudo aqui

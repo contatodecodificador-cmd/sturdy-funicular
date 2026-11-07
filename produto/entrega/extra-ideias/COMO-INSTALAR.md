@@ -1,10 +1,10 @@
 # Caça-Ideias: como instalar
 
-O Caça-Ideias é um comando novo para a sua oficina: `/ideias`. Com ele, o Claude pesquisa o que o público
+O Caça-Ideias é um comando novo para o seu estúdio: `/ideias`. Com ele, o Claude pesquisa o que o público
 do seu nicho está procurando, traz 10 ideias de série prontas para usar e te ajuda a escolher e lapidar
 a melhor.
 
-> Antes, faça o passo a passo do **COMECE-AQUI** (a sua oficina precisa estar no GitHub).
+> Antes, faça o passo a passo do **COMECE-AQUI** (o seu estúdio precisa estar no GitHub).
 
 ## Instalar (uma vez só, 2 minutos)
 

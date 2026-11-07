@@ -1,6 +1,6 @@
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 
-// Vídeo de teste de 3 segundos: se ele aparecer, a oficina está funcionando.
+// Vídeo de teste de 3 segundos: se ele aparecer, o estúdio está funcionando.
 export const Teste: React.FC = () => {
   const quadro = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -42,9 +42,9 @@ export const Teste: React.FC = () => {
           opacity: entrada,
         }}
       >
-        Oficina
+        Estúdio
         <br />
-        <span style={{ color: "#F0A93B" }}>pronta</span>
+        <span style={{ color: "#F0A93B" }}>pronto</span>
       </div>
       <div style={{ fontSize: 40, marginTop: 50, opacity: entrada * 0.7 }}>
         Teste de 3 segundos

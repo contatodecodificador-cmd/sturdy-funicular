@@ -1,4 +1,4 @@
-# Oficina do Vigia: plano do produto
+# Estúdio do Nogueira: plano do produto
 
 Versão 2 (07/11/2026), com os ajustes do dono.
 
@@ -26,7 +26,7 @@ escolher** e o público votando no caminho da história.
 |---|---|---|
 | **Só o guia** | R$ 27 | guia, modelos para preencher, diário de O Bunker |
 | **Só a skill** | R$ 47 | skill para o Claude Code, personagem-base editável |
-| **Oficina completa** | R$ 67 | tudo acima |
+| **Estúdio completo** | R$ 67 | tudo acima |
 
 Os preços são sugestões, e cada um troca em um lugar só na página. Os links de checkout entram em
 `LINKS_CAKTO` (guia, skill, completo) no fim de `pagina/index.html`. Enquanto estiverem vazios, os
@@ -78,16 +78,16 @@ Texto curto para os termos de uso, a escrever:
 
 ## A ordem de início (definida em 07/11/2026)
 
-O comprador recebe `entrega/COMECE-AQUI.md` e a pasta `entrega/oficina/`. A ordem é:
+O comprador recebe `entrega/COMECE-AQUI.md` e a pasta `entrega/estudio/`. A ordem é:
 
 1. **As contas**, nesta ordem:
    1. **Claude Pro**: é o mais importante. Sem ele, nada funciona.
    2. **GitHub**: grátis. É onde o projeto fica guardado e de onde o Claude Code abre na nuvem.
    3. **Voz**: conta grátis no ElevenLabs só para testar. Paga só quando for postar.
-2. **Colocar a Oficina no GitHub**: criar um repositório privado e arrastar os arquivos da pasta `oficina`.
+2. **Colocar o Estúdio no GitHub**: criar um repositório privado e arrastar os arquivos da pasta `estudio`.
 3. **Abrir o Claude Code na nuvem** (claude.ai/code, e não o chat normal), conectar o GitHub e escolher o
    repositório.
-4. **Digitar `/comecar`**: o Claude confere a oficina, instala o projeto de vídeo, faz um vídeo de teste
+4. **Digitar `/comecar`**: o Claude confere o estúdio, instala o projeto de vídeo, faz um vídeo de teste
    de 3 segundos, pede a chave da voz num cartão seguro, guarda a preparação para as próximas sessões e
    conversa com a pessoa sobre o canal (nicho, público, clima, limites, narrador, voz, redes). No fim,
    preenche `canal/CANAL.md`.
@@ -102,8 +102,8 @@ perguntas e aprova. Instalar, configurar, gerar a voz, montar, conferir e salvar
 | Fase | Passo | O que acontece | Comando | Quem faz |
 |---|---|---|---|---|
 | **A. Preparar** (uma vez) | 1 | Criar as contas: Claude Pro, GitHub, voz | (nenhum) | a pessoa |
-| | 2 | Colocar a Oficina no GitHub | (nenhum) | a pessoa (arrastar arquivos) |
-| | 3 | Abrir o Claude Code na nuvem e montar a oficina | `/comecar` | o Claude |
+| | 2 | Colocar o Estúdio no GitHub | (nenhum) | a pessoa (arrastar arquivos) |
+| | 3 | Abrir o Claude Code na nuvem e montar o estúdio | `/comecar` | o Claude |
 | **B. Criar a série** (uma vez por série) | 4 | A ideia e o mundo da série, com o caminho das partes e o mistério | `/serie` (ou `/ideias` antes, se comprou o extra) | o Claude, com a pessoa aprovando |
 | | 5 | Personagens (a partir do personagem-base) e cenários | `/visual` | o Claude, com a pessoa escolhendo |
 | **C. Fazer cada parte** (repete toda parte) | 6 | O roteiro da parte e os dois caminhos da votação | `/roteiro` | o Claude, com a pessoa aprovando |
@@ -118,12 +118,12 @@ passo certo. Quem não quiser decorar comando usa só `/seguir`.
 **Total:** 9 comandos (`comecar`, `serie`, `visual`, `roteiro`, `voz`, `montar`, `postar`, `proxima`,
 `seguir`) + o extra `ideias` vendido no checkout.
 
-### Como entregar: a "Área da Oficina"
+### Como entregar: a "Área do Estúdio"
 
 - Um site simples, com **uma página por passo** (1 a 10) e uma página inicial com a linha dos passos.
 - Cada página tem: o que é o passo, o comando, o que esperar, o que fazer se der problema e um
   **botão de baixar**.
-- **Todos os comandos já vêm na pasta da oficina** (o download do passo 2). Assim a pessoa sobe os
+- **Todos os comandos já vêm na pasta do estúdio** (o download do passo 2). Assim a pessoa sobe os
   arquivos uma vez só e não erra a instalação. O botão de cada passo serve para baixar só aquele
   comando de novo, quando sair uma versão nova.
 - Músicas e áudio: o Claude faz os sons do zero. A página do passo 8 explica como colocar uma música

@@ -1,4 +1,4 @@
-# Oficina do Vigia
+# Estúdio do Nogueira
 
 Este repositório é o canal de séries animadas de uma pessoa que **não é programadora**. Você é o parceiro
 de produção dela: escreve, desenha, monta e confere os vídeos.

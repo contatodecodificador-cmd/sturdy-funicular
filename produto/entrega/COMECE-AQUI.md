@@ -1,12 +1,12 @@
 # Comece aqui
 
-Bem-vindo à Oficina do Vigia. Antes de criar a primeira série, você vai deixar a sua oficina pronta.
+Bem-vindo à Estúdio do Nogueira. Antes de criar a primeira série, você vai deixar o seu estúdio pronto.
 Isso é feito **uma vez só** e leva cerca de 30 minutos. Siga na ordem: cada passo depende do anterior.
 
 | Passo | O que é | Quanto custa |
 |---|---|---|
 | 1 | Criar as contas | Claude Pro (pago), GitHub (grátis), ferramenta de voz (grátis para testar) |
-| 2 | Colocar a Oficina no GitHub | grátis |
+| 2 | Colocar o Estúdio no GitHub | grátis |
 | 3 | Abrir o Claude Code na nuvem, no lugar certo | já incluso no Claude Pro |
 | 4 | Digitar `/comecar` | o Claude faz o resto com você |
 
@@ -31,7 +31,7 @@ nuvem, e é por isso que você não precisa de computador potente.
 
 ### 1.3 A voz: pode começar no grátis
 
-A Oficina vem pronta para o **ElevenLabs**, mas a voz é escolha sua.
+O Estúdio vem pronto para o **ElevenLabs**, mas a voz é escolha sua.
 
 1. Crie uma conta grátis em **elevenlabs.io** para ouvir as vozes e testar.
 2. **Ainda não precisa pagar.** Assine um plano pago só quando for postar o primeiro vídeo: é o plano pago
@@ -44,15 +44,15 @@ A Oficina vem pronta para o **ElevenLabs**, mas a voz é escolha sua.
 
 ---
 
-## Passo 2: colocar a Oficina no GitHub
+## Passo 2: colocar o Estúdio no GitHub
 
-1. Baixe a pasta **oficina** que veio na sua compra e descompacte no computador.
+1. Baixe a pasta **estudio** que veio na sua compra e descompacte no computador.
 2. No GitHub, clique em **+** (canto de cima) e depois em **New repository**.
 3. Em **Repository name**, escreva o nome do seu canal, sem espaços (exemplo: `meu-canal`).
 4. Marque **Private**, para só você ver.
 5. Clique em **Create repository**.
 6. Na página que abrir, clique em **uploading an existing file**.
-7. Arraste **tudo o que está dentro** da pasta `oficina` para a página (não arraste a pasta em si).
+7. Arraste **tudo o que está dentro** da pasta `estudio` para a página (não arraste a pasta em si).
 8. Clique em **Commit changes**.
 
 **Pronto quando:** você abre o seu repositório no GitHub e vê o arquivo `CLAUDE.md` na lista.
@@ -65,7 +65,7 @@ A Oficina vem pronta para o **ElevenLabs**, mas a voz é escolha sua.
 
 ## Passo 3: abrir o Claude Code na nuvem, no lugar certo
 
-Atenção: o chat normal do Claude **não** serve. A Oficina roda no **Claude Code**, que tem um endereço
+Atenção: o chat normal do Claude **não** serve. O Estúdio roda no **Claude Code**, que tem um endereço
 próprio.
 
 1. Entre em **claude.ai/code** (no computador ou no celular).
@@ -89,12 +89,12 @@ Na conversa do Claude Code, digite:
 
 A partir daqui, o Claude conduz. Ele vai:
 
-1. conferir se a oficina está funcionando (e montar o que faltar);
+1. conferir se o estúdio está funcionando (e montar o que faltar);
 2. pedir a sua chave do ElevenLabs num cartão seguro, se você quiser deixar a voz pronta agora;
 3. fazer um vídeo de teste de 3 segundos, para você ver que está tudo certo;
 4. conversar com você sobre o seu canal: nicho, público, narrador e voz.
 
-No fim, ele anota tudo no arquivo de memória do canal. Depois disso, a sua oficina está pronta e o
+No fim, ele anota tudo no arquivo de memória do canal. Depois disso, o seu estúdio está pronta e o
 próximo passo é criar a primeira série.
 
 ---

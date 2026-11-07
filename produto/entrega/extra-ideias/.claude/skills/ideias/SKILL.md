@@ -1,6 +1,6 @@
 ---
 name: ideias
-description: Caça-Ideias da Oficina do Vigia. Pesquisa o que o público do nicho da pessoa está procurando e entrega ideias de séries prontas para usar, e depois ajuda a escolher e lapidar a melhor até virar a série do canal. Use quando a pessoa digitar /ideias, disser que está sem ideia ou pedir sugestões de série.
+description: Caça-Ideias do Estúdio do Nogueira. Pesquisa o que o público do nicho da pessoa está procurando e entrega ideias de séries prontas para usar, e depois ajuda a escolher e lapidar a melhor até virar a série do canal. Use quando a pessoa digitar /ideias, disser que está sem ideia ou pedir sugestões de série.
 ---
 
 # /ideias: o Caça-Ideias

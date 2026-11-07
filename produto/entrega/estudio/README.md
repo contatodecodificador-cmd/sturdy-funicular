@@ -1,4 +1,4 @@
-# Oficina do Vigia
+# Estúdio do Nogueira
 
 Este é o seu canal. Para começar, abra este repositório no **Claude Code** (claude.ai/code) e digite:
 
