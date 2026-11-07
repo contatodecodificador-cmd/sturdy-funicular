@@ -13,7 +13,7 @@ caminho da história.
 | Preço | entre R$ 47 e R$ 97 (sugestão na página: **R$ 67**, troca fácil) |
 | Onde vende | **Cakto** |
 | Lançamento | **só preparar, sem publicar**. O dono decide a data depois |
-| Visual | **Caderno do Vigia** (veja `identidade.md`) |
+| Visual | **Vigia Noturno**: escuro, âmbar de lanterna e verde de medidor (veja `identidade.md`) |
 
 ## O que tem nesta pasta
 

@@ -1,35 +1,37 @@
-# Identidade visual: Caderno do Vigia
+# Identidade visual: Vigia Noturno
 
-A ideia: o produto parece o **caderno de anotações do vigia**. Papel envelhecido, tinta azul-noite,
-fichas de personagem, carimbos e anotações à mão. É claro e acolhedor, bem diferente do vermelho e
-preto do canal e de qualquer outro produto do nicho.
+Versão 2 (07/11/2026). A primeira versão (Caderno do Vigia, fundo cor de papel) foi recusada pelo
+dono: ele quer **mais escuro, mais suspense**, com letras na mesma pegada do canal.
+
+A ideia: a página é a **noite do vigia**. Fundo quase preto azulado, uma luz de lanterna âmbar
+iluminando o que importa e um verde de "luz de medidor" para as correções e detalhes. Tem granulado
+e bordas escurecidas, como um vídeo à noite. Não usa o vermelho com preto.
 
 ## Cores
 
 | Nome | Código | Onde usar |
 |---|---|---|
-| Papel envelhecido | `#EFE6D2` | fundo de tudo |
-| Papel mais escuro | `#E3D7BD` | fichas, caixas, linhas do caderno |
-| Tinta azul-noite | `#1B2340` | textos e títulos |
-| Verde-musgo | `#5E7D4F` | destaques, botões, palavra-chave |
-| Ferrugem | `#C2722E` | carimbos, avisos, detalhes (pouco) |
+| Noite | `#0B0F14` | fundo |
+| Noite 2 e 3 | `#121820` / `#19212B` | caixas e fichas |
+| Texto | `#E9E4DA` | títulos e texto principal |
+| Texto apagado | `#9AA3AD` | textos de apoio |
+| Lanterna (âmbar) | `#F0A93B` | destaque, botões, preço, rótulos |
+| Luz do medidor (verde) | `#6FD39A` | correções, números do roteiro |
 
-No modo escuro (celular com tema escuro), o caderno vira "à luz da lanterna": fundo `#171C30`,
-texto `#EFE6D2`, verde `#8DB07C`, ferrugem `#E09A5C`.
+## Letras (Google Fonts, todas grátis)
 
-## Letras
-
-- **Títulos:** Special Elite (letra de máquina de escrever), do Google Fonts.
-- **Texto:** Source Serif 4 (serifa fácil de ler), do Google Fonts.
+- **Títulos:** Archivo Black/900, em maiúsculas e bem juntas, com a pegada pesada dos títulos do canal.
+- **Rótulos e detalhes:** IBM Plex Mono (letra de "painel" e de rádio).
+- **Texto:** Inter.
 
 ## Elementos
 
-- **Fichas** com canto dobrado e numeração ("Ficha 03").
-- **Carimbos** em ferrugem, girados de leve ("TESTADO NA PRÁTICA", "EM BREVE").
-- **Anotações de erro**: caixas com borda tracejada, como notas coladas no caderno.
-- Linhas de caderno bem suaves no fundo das fichas.
+- Bolinha âmbar que pisca de leve antes de cada rótulo (como uma luz de vigia).
+- Brilho de lanterna atrás da capa e do preço.
+- Notas de erro com borda tracejada âmbar e a correção em verde.
+- Granulado e bordas escuras na tela inteira.
 
 ## O que evitar
 
-- Vermelho com preto, fundo preto, letras de terror "sangrando".
+- Vermelho com preto, letras "sangrando", caveiras, sangue.
 - Fotos de banco de imagem e gente real.
