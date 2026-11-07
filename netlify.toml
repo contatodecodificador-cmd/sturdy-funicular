@@ -1,0 +1,22 @@
+# Configuração do Netlify para o site do Estúdio do Nogueira.
+#
+# Por enquanto, publica SÓ a página de venda (produto/pagina).
+# A Área do Estúdio (produto/area) fica de fora até o login estar pronto,
+# para os comandos e os downloads não ficarem abertos para qualquer pessoa.
+
+[build]
+  publish = "produto/pagina"
+  command = ""
+
+# Segurança básica e cache das imagens.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
