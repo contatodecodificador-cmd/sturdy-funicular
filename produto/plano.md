@@ -76,6 +76,26 @@ Texto curto para os termos de uso, a escrever:
 4. **Modelos para preencher**: mundo da série, personagens, roteiro, caminhos, postagem.
 5. **O diário de produção de O Bunker, parte 1**, com os 4 erros reais e as correções.
 
+## Os modelos: os dois canais do dono
+
+O produto mostra dois canais do dono como exemplos do mesmo processo, criações do Estúdio:
+
+| | Modelo 1 | Modelo 2 |
+|---|---|---|
+| Canal / série | **Contos do Vigia**, série *O Bunker* | **O Tempo Parou** (nome provisório), protagonista a Rose |
+| Onde estão os arquivos | `series/` e `entregas/` (branch `claude/eager-knuth-1ktt65`) | `novo-estilo/` (branch `claude/novo-estilo`) |
+| Clima | terror leve e mistério, **noite** | comédia do dia a dia com mistério leve, **dia** (estilo "Praça ao Sol") |
+| Ritmo | 10 frases, cena a cena, calmo | frenético: cena nova a cada 2,5 a 3 s, tela cheia de informação |
+| Votação | SAI ou FICA no fim de cada parte | Ep. 1 com pergunta aberta; do Ep. 2 em diante, "vocês escolheram" (%) e A/B com relógio |
+| Pode entrar no produto | ideias, roteiros, personagens e lições, refeitos em código próprio (o código usa peças do kit) | ideias, roteiros, personagens e lições; o código foi escrito do zero, mas conferir arquivo por arquivo antes de reaproveitar |
+
+Lições do Modelo 2 que alimentam o guia e os comandos:
+- etiqueta que aponta para uma coisa fica presa no cenário, nunca solta na tela;
+- a legenda nunca cobre o rosto e respeita as zonas proibidas da tela (embaixo e na direita);
+- conferir uma folha com quadros das cenas antes de montar o vídeo final;
+- homófonos na voz ("cem" × "sem");
+- grave contínuo vira chiado: nos efeitos, grave só em batida curta.
+
 ## A ordem de início (definida em 07/11/2026)
 
 O comprador recebe `entrega/COMECE-AQUI.md` e a pasta `entrega/estudio/`. A ordem é:

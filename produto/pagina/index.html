@@ -125,7 +125,18 @@
 
   /* Canais do Estúdio */
   .canais { margin: 28px 0 56px; }
+  .canal { display: grid; grid-template-columns: 120px 1fr; gap: 22px; align-items: center; }
+  .canal img { width: 120px; aspect-ratio: 9/16; height: auto; object-fit: cover; border-radius: 10px; box-shadow: 0 10px 24px rgba(0,0,0,.45); }
   .canal h3 { font-size: 1.6rem; }
+
+  /* Duas capas na abertura */
+  .capas { position: relative; max-width: 460px; gap: 6px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; padding-top: 10px; }
+  .capas::before { content: ""; position: absolute; inset: -25% -30%; z-index: -1; pointer-events: none; background: radial-gradient(closest-side, rgba(240,169,59,.24), transparent); }
+  .capa-item img { width: 100%; aspect-ratio: 9/16; height: auto; object-fit: cover; border-radius: 14px; box-shadow: var(--sombra), 0 0 0 1px var(--linha); }
+  .capa-item figcaption { font-family: "IBM Plex Mono", monospace; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; text-align: center; margin-top: 12px; color: var(--texto-suave); }
+  .capa-item.c1 { transform: rotate(-4deg) translate(3%, 18px); z-index: 1; }
+  .capa-item.c2 { transform: rotate(4deg) translate(-3%, -8px); z-index: 2; }
+  .capas .carimbo { top: 6px; left: -10px; }
   .sub-diario { font-size: 1.4rem; margin-top: 8px; }
 
   /* Diário */
@@ -336,6 +347,11 @@
     .abertura { padding-top: 48px; }
     .abertura .grade, .grade-2, .grade-3, .cadernos, .planos { grid-template-columns: 1fr; }
     .capa { max-width: 230px; }
+    .capas { max-width: 340px; }
+    .capas::before { inset: -10% -6%; }
+    .capa-item figcaption { font-size: .62rem; letter-spacing: .06em; }
+    .canal { grid-template-columns: 90px 1fr; gap: 16px; }
+    .canal img { width: 90px; }
     .capa::before { inset: -25% -20%; }
     .ferr li { grid-template-columns: 1fr; gap: 4px; }
     body { font-size: 16px; }
@@ -380,10 +396,16 @@
         <a href="#diario" class="maq">Ver o que já foi feito ↓</a>
       </div>
     </div>
-    <figure class="capa">
+    <figure class="capas">
       <span class="carimbo">Feito de verdade</span>
-      <img src="img/o-bunker-parte-1-capa.jpg" alt="Capa da parte 1 da série O Bunker, do canal Contos do Vigia" width="1080" height="1920">
-      <figcaption>O Bunker · parte 1</figcaption>
+      <div class="capa-item c1">
+        <img src="img/o-bunker-parte-1-capa.jpg" alt="Capa da parte 1 da série O Bunker, do canal Contos do Vigia" width="1080" height="1920">
+        <figcaption>Contos do Vigia · noite</figcaption>
+      </div>
+      <div class="capa-item c2">
+        <img src="img/o-tempo-parou-ep01-capa.jpg" alt="Capa do episódio 1 da série O Tempo Parou" width="1080" height="1920">
+        <figcaption>O Tempo Parou · dia</figcaption>
+      </div>
     </figure>
   </div>
 </section>
@@ -555,17 +577,23 @@
   <div class="wrap">
     <span class="rotulo">Ficha 05 · Feito no Estúdio</span>
     <h2>Canais nossos, criados com <em>este mesmo processo.</em></h2>
-    <p>Os canais abaixo são criações do Estúdio do Nogueira e servem de modelo dentro do produto. Nichos e visuais diferentes, o mesmo passo a passo.</p>
+    <p>Os dois modelos abaixo são criações do Estúdio do Nogueira e aparecem como exemplo dentro do produto. Um é noite, o outro é dia. Nichos, visuais e ritmos diferentes, o mesmo passo a passo.</p>
     <div class="grade-2 canais">
       <div class="ficha canal">
-        <span class="num">Canal 1 · no ar</span>
-        <h3>Contos do Vigia</h3>
-        <p>Terror leve e mistério em partes, com visual noturno. Primeira série: <b>O Bunker</b>.</p>
+        <img src="img/o-bunker-parte-1-capa.jpg" alt="" width="1080" height="1920" loading="lazy">
+        <div>
+          <span class="num">Modelo 1 · noite</span>
+          <h3>Contos do Vigia</h3>
+          <p>Terror leve e mistério em partes, no escuro, com luz de lanterna. Série: <b>O Bunker</b>, um homem trancado há cinco anos num bunker e um filtro de ar que começa a falhar.</p>
+        </div>
       </div>
       <div class="ficha canal">
-        <span class="num">Canal 2 · em produção</span>
-        <h3>Segundo canal</h3>
-        <p>Outro nicho, outro visual, o mesmo processo. Entra aqui como modelo assim que a primeira série estiver pronta.</p>
+        <img src="img/o-tempo-parou-ep01-capa.jpg" alt="" width="1080" height="1920" loading="lazy">
+        <div>
+          <span class="num">Modelo 2 · dia</span>
+          <h3>O Tempo Parou</h3>
+          <p>Comédia do dia a dia com mistério leve, colorida e cheia de movimento. Às 16:47 o mundo congela e só a <b>Rose</b> se mexe. O público decide o que ela faz.</p>
+        </div>
       </div>
     </div>
 
@@ -768,7 +796,7 @@
 
 <footer>
   <div class="wrap">
-    <p class="maq">Estúdio do Nogueira · criador do Contos do Vigia</p>
+    <p class="maq">Estúdio do Nogueira · criador do Contos do Vigia e de O Tempo Parou</p>
     <p>As histórias, personagens e imagens mostradas são dos canais do Estúdio do Nogueira, feitas com IA. Esta página não mostra resultados de alcance ou de vendas porque os canais estão começando.</p>
   </div>
 </footer>

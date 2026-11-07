@@ -2,7 +2,7 @@
 
 O produto do **Estúdio do Nogueira**: um método para a pessoa criar o próprio canal de séries
 animadas com IA, em partes, em qualquer nicho, com o público votando no caminho da história.
-Os canais do dono (o **Contos do Vigia** e um segundo canal, em produção) entram como modelos,
+Os canais do dono (o **Contos do Vigia**, de noite, e o **O Tempo Parou**, de dia) entram como modelos,
 criações nossas feitas com o mesmo processo. O nome não fica preso a nenhum canal.
 
 ## Decisões do dono (07/11/2026)
@@ -21,7 +21,7 @@ criações nossas feitas com o mesmo processo. O nome não fica preso a nenhum c
 - `identidade.md`: cores, letras e jeito do visual.
 - `plano.md`: o sumário do guia, o que a skill faz, os entregáveis e as regras.
 - `pagina/index.html`: a página de venda, pronta para subir no Netlify quando o dono quiser.
-- `pagina/img/`: a capa real da parte 1 de O Bunker.
+- `pagina/img/`: as capas reais de O Bunker (parte 1) e de O Tempo Parou (ep. 1).
 - `entrega/COMECE-AQUI.md`: o primeiro passo do comprador (contas, GitHub, Claude Code na nuvem, `/comecar`).
 - `entrega/estudio/`: os arquivos que o comprador coloca no GitHub (skill, memória do Claude, projeto de vídeo).
 - `entrega/extra-ideias/`: o produto extra do checkout, o Caça-Ideias (comando `/ideias`).
