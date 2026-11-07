@@ -332,7 +332,12 @@ ACESSO = {
 }
 
 # Links de checkout da Cakto, para o botão "Liberar". Preencha quando os produtos existirem.
-CHECKOUT = {"guia": "", "skill": "", "completo": "", "ideias": ""}
+CHECKOUT = {
+    "guia": "https://pay.cakto.com.br/sc7ng7g",
+    "skill": "https://pay.cakto.com.br/5j8pjnu",
+    "completo": "https://pay.cakto.com.br/34jdugf",
+    "ideias": "https://pay.cakto.com.br/tjji4nr",
+}
 
 JS_ACESSO = """
 <script>

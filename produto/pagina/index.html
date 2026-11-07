@@ -804,11 +804,13 @@
 <script>
   // Cole aqui os links de checkout da Cakto quando os produtos estiverem criados.
   // Enquanto um link estiver vazio, o botão daquele plano mostra "Em breve".
-  var LINKS_CAKTO = {
-    guia: "",
-    skill: "",
-    completo: ""
-  };
+  // No dia do lançamento, troque VENDAS_ABERTAS para true e republique a página.
+  var VENDAS_ABERTAS = false;
+  var LINKS_CAKTO = VENDAS_ABERTAS ? {
+    guia: "https://pay.cakto.com.br/sc7ng7g",
+    skill: "https://pay.cakto.com.br/5j8pjnu",
+    completo: "https://pay.cakto.com.br/34jdugf"
+  } : { guia: "", skill: "", completo: "" };
 
   document.querySelectorAll(".js-comprar").forEach(function (b) {
     var plano = b.getAttribute("data-plano");

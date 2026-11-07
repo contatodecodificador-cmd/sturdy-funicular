@@ -22,7 +22,7 @@ Atualizado em 07/11/2026. ✅ feito · 🟡 feito, falta testar ou decidir · �
 - ✅ Ferramentas assinadas por fora e "não precisa de computador potente"
 - ✅ Preços em 3 opções, sem prazo de reembolso na página
 - ✅ Sem números, depoimentos ou promessa de ganho
-- ⬜ Colar os links de checkout da Cakto (`LINKS_CAKTO` no fim do arquivo)
+- ✅ Links de checkout na página, desligados até o lançamento (`VENDAS_ABERTAS = false`)
 - ⬜ Trocar "O Tempo Parou" pelo nome final do canal, se mudar
 - ✅ Pacote pronto para arrastar no Netlify: `publicar/pagina-de-venda.zip` (veja `publicar/COMO-PUBLICAR.md`)
 - ✅ No ar em https://estudiodonogueira.netlify.app (fora do Google até o lançamento). Republicar: `bash produto/publicar/publicar.sh`
@@ -59,7 +59,7 @@ Atualizado em 07/11/2026. ✅ feito · 🟡 feito, falta testar ou decidir · �
 - ✅ Gerador do site: início, uma página por passo, guia, extra e os downloads
 - ✅ Três partes separadas por produto, com cadeado e botão "Liberar"
 - ✅ Funciona no computador e no celular
-- ⬜ Colar os links de checkout no botão "Liberar" (`CHECKOUT` no `gerar.py`)
+- ✅ Links de checkout no botão "Liberar" da Área
 
 ## 7. O login e a liberação por produto
 
@@ -75,6 +75,6 @@ Atualizado em 07/11/2026. ✅ feito · 🟡 feito, falta testar ou decidir · �
 
 ## 8. Cakto
 
-- ⬜ Criar os 4 produtos (guia, skill, completo, Caça-Ideias)
-- ⬜ Colocar o Caça-Ideias como oferta extra (order bump) nos 3 checkouts
+- ✅ Os 4 produtos criados e ativos (veja `cakto.md`)
+- ✅ Caça-Ideias como extra (order bump) nos 3 checkouts
 - ⬜ Configurar o webhook de compra aprovada (e de reembolso)
