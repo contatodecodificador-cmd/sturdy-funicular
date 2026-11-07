@@ -134,7 +134,7 @@ const C: Cena[] = [
   /* 23 */ {W: 1080, H: 1920, topo: 'CENTRO · DIA 3', fundo: () => <Pulso hora="DIA 3 15:40" />,
     cam: (d) => [{t: 0, x: 540, y: 1160, z: 1.0}, {t: d, x: 540, y: 1200, z: 1.25}], socos: [0.3],
     hud: () => <><Cartao titulo="DIA 3" em={0.05} y={260} /><Relogios rose="DIA 3 · 15:40" em={0.6} y={540} /></>},
-  /* 24 */ {W: PADARIA.W, H: PADARIA.H, marcas: () => [{x: 430, y: 170, texto: 'PÃO FRANCÊS', em: W(23, 'pão', 0.6)}], topo: 'PADARIA PÃO DE OURO · DIA 3', fundo: (t) => <Padaria roseX={420} roseExpr="feliz" dinheiro={t > W(23, 'dinheiro', 1.2) ? 1 : 0} />,
+  /* 24 */ {W: PADARIA.W, H: PADARIA.H, marcas: () => [{x: 230, y: 1325, texto: 'PÃO FRANCÊS', em: W(23, 'pão', 0.6)}], topo: 'PADARIA PÃO DE OURO · DIA 3', fundo: (t) => <Padaria roseX={420} roseExpr="feliz" dinheiro={t > W(23, 'dinheiro', 1.2) ? 1 : 0} />,
     cam: (d) => [{t: 0, x: 690, y: 1250, z: 1.0}, {t: W(23, 'dinheiro', 1.2) - 0.1, x: 720, y: 1250, z: 1.05}, {t: W(23, 'dinheiro', 1.2) + 0.4, x: 1300, y: 1100, z: 1.4}, {t: d, x: 1310, y: 1100, z: 1.5}], lado: 'dir',
     hud: () => <><Ficha x={60} y={180} nome="DONA DUNHA, 61" linha2="BALCONISTA" retrato={RET.dunha} em={0.25} /><Medidor x={60} y={420} rotulo="DINHEIRO DEIXADO" de={0} para={12.5} prefixo="R$ " casas={2} em={W(23, 'dinheiro', 1.2)} corNum={COR.praca} /></>},
   /* 25 */ {W: LOJA.W, H: LOJA.H, topo: 'MÓVEIS DA PRAÇA · DIA 3', fundo: () => <Loja piscar />,
