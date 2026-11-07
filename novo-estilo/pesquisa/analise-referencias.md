@@ -29,3 +29,23 @@ Medições: quadros a cada 3 s, cortes de cena (ffmpeg scene > 0,3), fala transc
 
 ## Regra
 Pegamos princípios (estrutura, ritmo, tipo de informação na tela), nunca peças: nada de personagem, nome, logo, etiqueta ou layout igual ao dessas contas.
+
+# Rodada 2: Resta Um, Parte 1 × Parte 2
+
+| | Parte 1 (5,5 mi) | Parte 2 (6,7 mi) |
+|---|---|---|
+| Duração | 119 s · 293 palavras · 46 cortes (~2,6 s) | 96 s · 226 palavras · 29 cortes (~3,3 s) |
+| Abertura | momento banal ("Imagina apagar no sofá…") | resumo da Parte 1 em 14 s + "Você votou" (70% × 30%) |
+| Meio | evento gigante com contador caindo até 1 → "e esse um é você" → lista numerada (3 regras) → passagem de tempo (Dia 3, Dia 7) | a escolha vira ação, nova virada |
+| Final | virada com esperança + ameaça → "O que você faria?" (pergunta aberta, sem A/B) | A/B + relógio de 10 s + "comenta A ou B" |
+
+Truques: pergunta aberta no Ep. 1 (comentários viram as opções da Parte 2); um dado/número mexendo em toda cena; lista numerada no meio; etiqueta LOCAL·DIA·HORA andando.
+
+## Molde pro nosso Ep. 1
+1. 0–5 s momento banal + "Imagina…"
+2. 5–17 s evento gigante, contador caindo até 1 → "e essa uma é você"
+3. 17–21 s a pergunta que o mundo/cidade faz
+4. 21–75 s 3 blocos numerados (com nome nosso, não "regras")
+5. 75–100 s o tempo passa (cartões de dia)
+6. 100–112 s virada com esperança + ameaça
+7. Ep. 1 fecha com pergunta aberta; Ep. 2+ abre com "você votou" e fecha com A/B + relógio
