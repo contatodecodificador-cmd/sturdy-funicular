@@ -123,7 +123,9 @@ export const CenaBunker: React.FC<{
           { x: r.rosto.x + 40, y: r.rosto.y + 60, r: 420, forca: 0.35 },
           { x: r.rosto.x + 20, y: r.rosto.y + 470, rx: 330, ry: 260, r: 330, forca: 0.42 },
           { x: r.filtro.x + 90, y: r.filtro.y + 150, r: 260, forca: 0.3 },
-          { x: r.radio.x + 140, y: r.radio.y + 60, r: 200, forca: 0.25 },
+          { x: r.radio.x + 140, y: r.radio.y + 60, r: 420, forca: 0.55 },
+          /* o chão e a frente da mesinha, pra o pé da tela não virar uma mancha preta */
+          { x: 640, y: 1380, rx: 620, ry: 360, r: 620, forca: 0.45 },
         ]}
       />
       {/* o que emite luz, por cima do escuro */}
