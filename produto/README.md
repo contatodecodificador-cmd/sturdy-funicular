@@ -21,6 +21,8 @@ caminho da história.
 - `plano.md`: o sumário do guia, o que a skill faz, os entregáveis e as regras.
 - `pagina/index.html`: a página de venda, pronta para subir no Netlify quando o dono quiser.
 - `pagina/img/`: a capa real da parte 1 de O Bunker.
+- `entrega/COMECE-AQUI.md`: o primeiro passo do comprador (contas, GitHub, Claude Code na nuvem, `/comecar`).
+- `entrega/oficina/`: os arquivos que o comprador coloca no GitHub (skill, memória do Claude, projeto de vídeo).
 
 ## Regras que valem para tudo aqui
 

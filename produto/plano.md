@@ -65,6 +65,24 @@ Texto curto para os termos de uso, a escrever:
 4. **Modelos para preencher**: mundo da série, personagens, roteiro, caminhos, postagem.
 5. **O diário de produção de O Bunker, parte 1**, com os 4 erros reais e as correções.
 
+## A ordem de início (definida em 07/11/2026)
+
+O comprador recebe `entrega/COMECE-AQUI.md` e a pasta `entrega/oficina/`. A ordem é:
+
+1. **As contas**, nesta ordem:
+   1. **Claude Pro**: é o mais importante. Sem ele, nada funciona.
+   2. **GitHub**: grátis. É onde o projeto fica guardado e de onde o Claude Code abre na nuvem.
+   3. **Voz**: conta grátis no ElevenLabs só para testar. Paga só quando for postar.
+2. **Colocar a Oficina no GitHub**: criar um repositório privado e arrastar os arquivos da pasta `oficina`.
+3. **Abrir o Claude Code na nuvem** (claude.ai/code, e não o chat normal), conectar o GitHub e escolher o
+   repositório.
+4. **Digitar `/comecar`**: o Claude confere a oficina, instala o projeto de vídeo, faz um vídeo de teste
+   de 3 segundos, pede a chave da voz num cartão seguro, guarda a preparação para as próximas sessões e
+   conversa com a pessoa sobre o canal (nicho, público, clima, limites, narrador, voz, redes). No fim,
+   preenche `canal/CANAL.md`.
+
+Testado em 07/11/2026: `npm install` e `npm run teste` funcionam na nuvem e geram `saida/teste.mp4`.
+
 ## Sumário do guia
 
 > Estrutura própria. Os nomes internos do nosso método (para as etapas, o roteiro e a série) ainda vão
@@ -106,9 +124,12 @@ Cada etapa termina com o Claude mostrando o resultado e pedindo aprovação.
 
 ## Próximos passos
 
-1. Escolher com o dono os nomes próprios das etapas do método.
-2. Escrever o guia, um caderno de cada vez.
-3. Escrever a skill e o personagem-base do zero e testar numa série nova, de outro nicho.
-4. Decidir o produtinho extra do checkout.
-5. Criar os 3 produtos na Cakto e colar os links.
-6. Publicar a página quando o dono decidir.
+1. ~~Definir o primeiro passo e o comando `/comecar`~~ (feito).
+2. Testar o COMECE-AQUI do zero, com uma conta nova, seguindo só o texto.
+3. Escolher com o dono os nomes próprios das etapas do método.
+4. Escrever os próximos comandos da skill (criar série, roteiro, personagens, voz, montagem, postagem)
+   e o personagem-base, do zero, e testar numa série nova, de outro nicho.
+5. Escrever o guia, um caderno de cada vez.
+6. Decidir o produtinho extra do checkout.
+7. Criar os 3 produtos na Cakto e colar os links.
+8. Publicar a página quando o dono decidir.
