@@ -9,8 +9,8 @@ caminho da história.
 | Item | Decisão |
 |---|---|
 | Nome | **Oficina do Vigia** |
-| O que vai dentro | **Guia** (o método) + **skill pro Claude Code** (sem estúdio pronto) |
-| Preço | entre R$ 47 e R$ 97 (sugestão na página: **R$ 67**, troca fácil) |
+| O que vai dentro | **Guia**, **skill pro Claude Code** e **personagem-base editável**, vendidos juntos ou separados |
+| Preço | só o guia R$ 27, só a skill R$ 47, completo R$ 67 (sugestões) + ofertas extras no checkout |
 | Onde vende | **Cakto** |
 | Lançamento | **só preparar, sem publicar**. O dono decide a data depois |
 | Visual | **Vigia Noturno**: escuro, âmbar de lanterna e verde de medidor (veja `identidade.md`) |
@@ -29,5 +29,6 @@ caminho da história.
    e **não** pode ser copiado para cá. O que é do dono (ideias, roteiros, personagens) é refeito do zero.
 2. **Sem resultado inventado.** Nada de números, depoimentos, prints ou promessa de ganho até existirem
    resultados reais do canal.
-3. **Terror leve:** sem sangue, gore, morte mostrada, pessoa real, criança em perigo ou susto com grito.
+3. **Nicho livre:** o terror leve é regra do canal Contos do Vigia, não do produto. A pessoa escolhe o nicho dela.
 4. A página sempre avisa que o comprador assina as ferramentas por fora.
+5. A página não entrega o método (nada de "10 frases", tags, sincronia, legenda em duas cores).

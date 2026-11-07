@@ -1,103 +1,114 @@
 # Oficina do Vigia: plano do produto
 
+Versão 2 (07/11/2026), com os ajustes do dono.
+
 ## Em uma frase
 
-Um guia e uma skill para o Claude Code que ensinam a criar um canal de **séries de mistério em
-partes**, com vídeos verticais animados por IA, narrados pela **sua própria voz clonada**, em que o
-**público vota** no caminho da próxima parte.
+Um **modelo completo** (guia + skill para o Claude Code + personagem-base editável) para a pessoa criar
+o próprio canal de **séries animadas com IA em partes**, em **qualquer nicho**, com **a voz que ela
+escolher** e o público votando no caminho da história.
+
+## Princípios
+
+- **A ideia é da pessoa.** Ela traz a ideia e o nicho, e o Claude adapta o processo. O terror leve é só o
+  nicho do Contos do Vigia, não uma regra do produto.
+- **Tudo é editável.** Roteiro, visual, personagens, voz e ritmo.
+- **Sem regras escondidas.** O que a pessoa cria é dela.
+- **A página não entrega o método.** Ela diz o que a pessoa recebe e o que dá para fazer, mas não como a
+  gente faz (nada de "10 frases", tags de emoção, sincronia, legenda em duas cores, regra dos 15 dB).
+- **A voz fica em aberto.** Pode ser a voz clonada da pessoa, uma voz pronta de um banco de vozes ou uma
+  voz criada com IA. Única regra: não usar a voz de uma pessoa real sem autorização.
+- **Não precisa de computador potente.** Tudo pode ser feito com o Claude Code na nuvem, pelo navegador.
+
+## As ofertas (Cakto)
+
+| Produto | Preço sugerido | O que leva |
+|---|---|---|
+| **Só o guia** | R$ 27 | guia, modelos para preencher, diário de O Bunker |
+| **Só a skill** | R$ 47 | skill para o Claude Code, personagem-base editável |
+| **Oficina completa** | R$ 67 | tudo acima |
+
+Os preços são sugestões, e cada um troca em um lugar só na página. Os links de checkout entram em
+`LINKS_CAKTO` (guia, skill, completo) no fim de `pagina/index.html`. Enquanto estiverem vazios, os
+botões mostram "Em breve".
+
+### Ofertas no checkout (order bump)
+
+Na Cakto, cada checkout pode oferecer um item extra com um clique, sem aparecer na página:
+- no checkout do **guia**: "Adicione a skill" (por um valor menor que comprar separado);
+- no checkout da **skill**: "Adicione o guia";
+- em todos: um **produtinho extra** (ideias para decidir com o dono, por exemplo: pacote de personagens
+  prontos para editar, pacote de ideias de séries por nicho, pacote de capas e Stories de votação).
+
+## Garantia e reembolso
+
+O dono não quer destacar os 7 dias na página, para evitar quem compra, usa e pede o dinheiro de volta.
+A página **não fala em prazo de reembolso**. Atenção: o direito de arrependimento de 7 dias nas compras
+pela internet é lei (art. 49 do Código de Defesa do Consumidor) e a Cakto aplica esse prazo de qualquer
+jeito. Não dá para escrever "sem reembolso" nem negar o pedido dentro dos 7 dias. Só não fazemos
+propaganda disso.
+
+## Licença (fica DENTRO do produto, não na página)
+
+Texto curto para os termos de uso, a escrever:
+- pode usar, editar e adaptar para qualquer nicho e quantos canais quiser;
+- o que a pessoa criar com o modelo é dela;
+- não pode revender, repassar ou publicar o guia, a skill ou o personagem-base, inteiros ou em partes;
+- quem quiser divulgar pode pedir para virar **afiliado**.
 
 ## O que a pessoa recebe
 
-1. **O Guia da Oficina** (PDF ou página on-line), em 6 cadernos e um diário de produção.
-2. **A skill "oficina-do-vigia" para o Claude Code**: um pacote de instruções que o Claude segue
-   para fazer o processo de ponta a ponta com a pessoa, etapa por etapa, pedindo aprovação em cada uma.
-3. **Modelos para preencher** (bíblia da série, ficha de personagem, roteiro, caminhos, checklist de
-   postagem), escritos do zero.
-4. **O caso real de O Bunker (parte 1)**: bíblia, roteiro, caminhos e o diário de erros, como exemplo.
-
-Não tem estúdio pronto. A skill orienta o Claude a escrever o projeto Remotion **no computador da
-pessoa**, do zero, para a série dela.
+1. **O guia passo a passo**, em 6 cadernos.
+2. **A skill para o Claude Code**, que pergunta logo no começo o nicho e o público e adapta o resto.
+3. **O personagem-base editável**: só rosto, olhos e boca, em código próprio (escrito do zero). Cabelo,
+   roupa, acessórios, cores e expressões são escolhidos pela pessoa junto com o Claude.
+4. **Modelos para preencher**: mundo da série, personagens, roteiro, caminhos, postagem.
+5. **O diário de produção de O Bunker, parte 1**, com os 4 erros reais e as correções.
 
 ## Sumário do guia
 
-> Estrutura própria. Não seguir a ordem nem os nomes de capítulos de nenhum outro produto.
+> Estrutura própria. Os nomes internos do nosso método (para as etapas, o roteiro e a série) ainda vão
+> ser escolhidos com o dono, sem usar "bíblia" nem "roteiro de 10 frases".
 
-**Caderno 1: O vigia e o canal**
-1. Quem conta a história: criar o seu narrador (nome, jeito de falar, o que ele sabe).
-2. As regras do canal: terror leve, o que nunca entra e por quê.
-3. A votação como motor: por que a série em partes faz o público voltar.
+1. **O seu canal**: escolher o nicho e o público; o narrador e o jeito do canal; a votação como motor.
+2. **A série**: o mundo da história; os personagens a partir do personagem-base; os caminhos.
+3. **O roteiro**: como prender do começo ao fim; o gancho; a pergunta do final.
+4. **A voz**: escolher ou criar a voz; dar emoção; encaixar a voz nas cenas.
+5. **Imagem e som**: personagens e cenários; cenas que funcionam no celular (luz em cena escura);
+   legenda; som que não atrapalha a voz.
+6. **Postar e continuar**: capa, Stories e legenda; ler a votação; rótulo de IA e cuidados.
+- **Diário de produção: O Bunker, parte 1**, com os 4 erros:
+  1. Zumbido grave que virou chiado no celular e machucou o ouvido.
+  2. Efeitos altos cobrindo a voz (regra: medir com todas as frequências e deixar cada efeito uns
+     15 dB abaixo da voz).
+  3. Voz estrangeira com sotaque, trocada pela voz clonada do dono.
+  4. Cena escura com mancha preta, resolvida com luz no chão.
 
-**Caderno 2: A série no papel**
-4. A bíblia em uma página: a ideia em uma frase, elenco, regras do mundo, o detalhe escondido.
-5. Fichas de personagem: a marca de longe (ex.: o gorro mostarda do Otávio), cores e expressões.
-6. O mapa dos caminhos: escrever as duas continuações **antes** de postar e onde elas se juntam.
-
-**Caderno 3: O roteiro curto**
-7. Uma parte, dez frases: o trabalho de cada frase até a pergunta final.
-   *(A explicação e os nomes das etapas serão escritos do zero, com exemplos de O Bunker.)*
-8. O gancho que abre pelo fim e a pausa antes da virada.
-9. A pergunta do fim: duas palavras curtas que viram comentário (SAI ou FICA).
-
-**Caderno 4: A sua voz**
-10. Clonar a própria voz no ElevenLabs (plano pago, com uso comercial) e por que não usar voz pronta.
-11. Tags de emoção do Eleven v4: sussurro, pausa, tensão.
-12. Sincronia palavra por palavra pela transcrição do ElevenLabs: o Claude encaixa cada cena na fala.
-
-**Caderno 5: Imagem e som**
-13. O briefing visual e as folhas de design (personagens e cenários).
-14. Luz e cena: como evitar a "mancha preta" em cena escura (a luz no chão).
-15. Legenda em duas cores: a palavra-chave na cor da marca e as palavras importantes em destaque.
-16. Sons sintetizados do zero: ambiente, efeitos e a regra dos 15 dB abaixo da voz.
-
-**Caderno 6: Postar e continuar**
-17. Capa, Stories da votação e legenda do post.
-18. Ler a votação e fazer a próxima parte.
-19. Rótulo de IA, direitos e cuidados.
-
-**Diário de produção: O Bunker, parte 1**
-- O passo a passo real, do zero ao post.
-- Os 4 erros e como foram corrigidos:
-  1. Um zumbido grave que, no celular, virou chiado e machucou o ouvido.
-  2. Efeitos altos cobrindo a voz. Regra que ficou: medir com todas as frequências e deixar cada
-     efeito uns 15 dB abaixo da voz.
-  3. Voz estrangeira com sotaque. Trocada pela voz clonada do dono.
-  4. Cena escura com mancha preta. Resolvida com luz no chão.
-
-## O que a skill faz (etapas)
+## O que a skill faz (o fluxo de montagem é o mesmo de O Bunker)
 
 Cada etapa termina com o Claude mostrando o resultado e pedindo aprovação.
 
-1. **Canal**: cria o narrador e as regras do canal (uma vez só).
-2. **Bíblia**: a série em uma página.
-3. **Roteiro**: a parte em dez frases, com duas opções para o gancho.
-4. **Caminhos**: as duas continuações da votação.
-5. **Briefing e fichas**: cores, personagens, cenários.
-6. **Voz**: o texto com tags de emoção para a pessoa gerar no ElevenLabs; depois lê a transcrição e
-   monta a tabela de tempos.
-7. **Vídeo**: escreve as cenas em Remotion do zero, com a legenda em duas cores.
-8. **Som**: sintetiza ambiente e efeitos e confere o volume contra a voz.
+1. **Canal**: nicho, público, narrador e regras que a própria pessoa escolher.
+2. **Mundo da série**.
+3. **Roteiro** da parte, com opções de gancho.
+4. **Caminhos** da votação.
+5. **Personagens e cenários**, partindo do personagem-base.
+6. **Voz**: prepara o texto para a ferramenta de voz que a pessoa usar e encaixa a narração nas cenas.
+7. **Vídeo**: escreve as cenas em Remotion do zero, com legenda.
+8. **Som**: ambiente e efeitos, conferindo o volume contra a voz.
 9. **Postagem**: capa, Stories da votação e legenda.
-
-Checagens automáticas da skill: nada de sangue, gore, morte mostrada, pessoa real ou criança em
-perigo; volume dos efeitos abaixo da voz; nenhuma frequência grave contínua e alta.
 
 ## O que a pessoa precisa assinar por fora
 
-- **Claude Pro ou superior**, com o Claude Code.
-- **ElevenLabs**, a partir do plano pago (é o que permite uso comercial e clonar a própria voz).
-- **Remotion**: grátis para pessoa física e para empresa de até 3 pessoas. Acima disso, licença paga.
-
-## Preço e venda
-
-- Faixa escolhida: R$ 47 a R$ 97. Sugestão de lançamento: **R$ 67**.
-- Plataforma: **Cakto**. O link do checkout entra em um lugar só da página (`LINK_CAKTO`).
-- Garantia: 7 dias (direito de arrependimento do Código de Defesa do Consumidor).
+- **Claude Pro ou superior**, com o Claude Code (pode ser na nuvem, pelo navegador).
+- **Uma ferramenta de voz com IA.** A gente usa o ElevenLabs, que exige plano pago para uso comercial.
+- **Remotion**: grátis para pessoa física e para empresa de até 3 pessoas.
 
 ## Próximos passos
 
-1. Escrever o Guia, caderno por caderno, com aprovação do dono.
-2. Escrever a skill do zero e testar numa série nova, com um personagem novo.
-3. Criar o produto na Cakto e colar o link na página.
-4. Depois de algumas semanas de canal: trocar os avisos de "ainda sem resultados" por números reais,
-   se o dono quiser.
-5. Publicar a página (Netlify) só quando o dono decidir.
+1. Escolher com o dono os nomes próprios das etapas do método.
+2. Escrever o guia, um caderno de cada vez.
+3. Escrever a skill e o personagem-base do zero e testar numa série nova, de outro nicho.
+4. Decidir o produtinho extra do checkout.
+5. Criar os 3 produtos na Cakto e colar os links.
+6. Publicar a página quando o dono decidir.
