@@ -10,6 +10,12 @@ Fale em português do Brasil, simples. "Etapa X de 3". Você prepara; quem posta
 
 ## Etapa 1 de 3: as imagens
 
+Use as peças prontas de `src/comum/Postagem.tsx`: `Capa` (título, destaque, série e parte, por cima do
+cenário com os personagens), `StoriesEnquete` (pergunta, espaço tracejado para o adesivo e as duas
+opções) e `FaixaChamada` ("parte nova no ar", por cima de um trecho do vídeo). Crie
+`src/series/<serie>/postagem-NN.tsx` com as três e registre em `src/Raiz.tsx`. Para o trecho do vídeo,
+use `<Sequence from={-inicio}>` com a composição da parte.
+
 Gere com o Remotion e mostre:
 1. **Capa** (1080 x 1920, imagem parada): o personagem principal, o título curto da parte e o número
    da parte. O título e o rosto ficam no miolo da imagem, porque a grade do perfil corta as bordas.
