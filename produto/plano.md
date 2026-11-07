@@ -34,11 +34,22 @@ botões mostram "Em breve".
 
 ### Ofertas no checkout (order bump)
 
-Na Cakto, cada checkout pode oferecer um item extra com um clique, sem aparecer na página:
-- no checkout do **guia**: "Adicione a skill" (por um valor menor que comprar separado);
-- no checkout da **skill**: "Adicione o guia";
-- em todos: um **produtinho extra** (ideias para decidir com o dono, por exemplo: pacote de personagens
-  prontos para editar, pacote de ideias de séries por nicho, pacote de capas e Stories de votação).
+Na Cakto, cada checkout pode oferecer um item extra com um clique, sem aparecer na página.
+
+**Extra 1: Caça-Ideias** (`entrega/extra-ideias/`), oferecido nos 3 checkouts.
+- O que é: o comando `/ideias`. O Claude pesquisa na internet o que o público do nicho da pessoa está
+  procurando, entrega 10 ideias de série prontas (nome, ideia, primeira frase, escolha da parte 1,
+  personagem, por que pode prender, tamanho, facilidade), ajuda a escolher e lapidar a melhor e guarda
+  tudo em `canal/ideias/`. Pode ser usado quantas vezes quiser, sem repetir ideias.
+- Preço sugerido: **R$ 17**.
+- Testado em 07/11/2026: a busca na internet funciona dentro do Claude Code na nuvem.
+- Texto para o checkout (curto, como a Cakto pede):
+  - **Título:** Sem ideia? Leve o Caça-Ideias
+  - **Descrição:** O Claude pesquisa o que o seu público procura e te entrega 10 ideias de série prontas para
+    usar, e ainda te ajuda a escolher a melhor. Ideal para quem trava na página em branco.
+
+**Outros extras possíveis** (a decidir): no checkout do guia, "Adicione a skill" por um valor menor que
+comprar separado; no da skill, "Adicione o guia".
 
 ## Garantia e reembolso
 
