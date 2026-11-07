@@ -279,6 +279,49 @@ def mensagem(seed=20):
     return s
 
 
+@ef('sino')  # sino de porta de loja
+def sino():
+    d = 2.2
+    tt = t(d)
+    s = np.zeros(len(tt))
+    for f, a, tau in [(1480, 1.0, 0.9), (2210, 0.6, 0.6), (3360, 0.35, 0.35), (4120, 0.2, 0.2), (740, 0.3, 1.1)]:
+        s += a * np.sin(2 * np.pi * f * tt) * np.exp(-tt / tau)
+    for k in (0.12, 0.27):  # o sino balança e bate de novo
+        j = int(SR * k)
+        s[j:] += 0.5 * s[:len(s) - j] * 0.6
+    return filtro(s * (0.85 + 0.15 * np.sin(2 * np.pi * 5 * tt)), 'hp', 300)
+
+
+@ef('relogio_bolso')  # relógio de bolso andando (tic-tac seco e agudo)
+def relogio_bolso():
+    d = 4.0
+    s = np.zeros(int(SR * d))
+    for i in range(16):
+        e = tic(60 + i, 4200 if i % 2 == 0 else 3300) * (1.0 if i % 2 == 0 else 0.8)
+        k = int(SR * 0.25 * i)
+        s[k:k + len(e)] += e
+    return s
+
+
+@ef('rangido')  # porta de madeira rangendo
+def rangido(seed=21):
+    d = 1.1
+    g = np.random.default_rng(seed)
+    f = 160 + 140 * np.sin(np.linspace(0, 3.2, int(SR * d))) + g.normal(0, 8, int(SR * d))
+    x = signal.sawtooth(2 * np.pi * np.cumsum(f) / SR) * (0.6 + 0.4 * (g.random(int(SR * d)) > 0.3))
+    return filtro(filtro(x, 'bp', (300, 2400)) * env_sino(d, 0.3, 1.2), 'hp', 150)
+
+
+@ef('foto')  # foto deslizando + estalo de papel grosso
+def foto(seed=22):
+    d = 0.4
+    n = filtro(ruido(d, seed), 'bp', (1200, 6000)) * env_sino(d, 0.4, 1.6) * 0.6
+    st = filtro(ruido(0.03, seed + 1), 'bp', (1500, 5000)) * env_exp(0.03, 0.004)
+    k = int(SR * 0.33)
+    n[k:k + len(st)] += st * 1.6
+    return n
+
+
 if __name__ == '__main__':
     for nome, fn in EF.items():
         salva(os.path.join(OUT, nome + '.wav'), fn(), -3.0)

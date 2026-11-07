@@ -138,6 +138,7 @@ function bracos(o, st) {
   if (p === 'andando') { esq = ['M118,470 L96,660 L150,800', [156, 812]]; dir = ['M282,470 L316,660 L330,840', [330, 864]]; }
   else if (p === 'cafe') { esq = ['M118,470 L96,680 L92,850', [92, 872]]; dir = ['M282,470 L320,620 L250,380', [244, 360]]; }
   else if (p === 'celular') { esq = ['M118,470 L100,640 L176,700', [184, 704]]; dir = ['M282,470 L300,640 L226,700', [218, 704]]; }
+  else if (p === 'entregando') { esq = ['M118,470 L96,680 L92,850', [92, 872]]; dir = ['M282,470 L380,600 L470,610', [490, 612]]; }
   else if (p === 'acenando') { esq = ['M118,470 L96,680 L92,850', [92, 872]]; dir = ['M282,470 L340,330 L330,180', [330, 160]]; }
   else { esq = ['M118,470 L96,680 L92,850', [92, 872]]; dir = ['M282,470 L304,680 L308,850', [308, 872]]; }
   let s = braco(esq[0], esq[1]) + braco(dir[0], dir[1]);
@@ -190,6 +191,7 @@ function pessoa(o = {}) {
   let s = cabeloAtras(o.cabelo, o.corCabelo, st);
   s += `<g transform="translate(200,0) scale(${largCorpo},1) translate(-200,0)">`;
   s += pernas(o, st) + roupaTronco(o, st) + acessorio(o, st);
+  if (o.avental) s += `<path d="M140,500 L260,500 L280,1080 L120,1080Z" fill="${o.avental}" ${st}/><path d="M150,500 C150,450 250,450 250,500" stroke="${escurece(o.avental, .7)}" stroke-width="6" fill="none"/><rect x="170" y="700" width="60" height="50" rx="6" fill="${escurece(o.avental, .85)}" ${st}/>`;
   s += `</g>`;
   // pescoço
   s += `<path d="M172,318 L172,420 L200,446 L228,420 L228,318Z" fill="${o.pele}" ${st}/><path d="M172,330 C185,372 215,372 228,330 L228,320 L172,320Z" fill="${escurece(o.pele, .8)}"/>`;
@@ -197,6 +199,7 @@ function pessoa(o = {}) {
   s += rosto(o, st);
   s += cabeloFrente(o.cabelo, o.corCabelo, st);
   if (o.bone) s += `<path d="M134,190 C134,110 266,110 266,190Z" fill="${o.bone}" ${st}/><path d="M134,186 L282,186 C300,190 300,202 282,204 L134,200Z" fill="${escurece(o.bone, .8)}" ${st}/>`;
+  if (o.lupa) s += `<circle cx="222" cy="228" r="22" fill="#CFE6F2" fill-opacity=".5" stroke="#2B2B2B" stroke-width="8"/><path d="M244,222 L268,214" stroke="#2B2B2B" stroke-width="6"/>`;
   if (o.oculos) s += `<rect x="154" y="212" width="44" height="32" rx="10" fill="#fff" fill-opacity=".15" stroke="${o.oculos}" stroke-width="5"/><rect x="202" y="212" width="44" height="32" rx="10" fill="#fff" fill-opacity=".15" stroke="${o.oculos}" stroke-width="5"/><path d="M198,226 L202,226" stroke="${o.oculos}" stroke-width="5"/>`;
   return s;
 }

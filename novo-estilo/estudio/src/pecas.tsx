@@ -178,3 +178,29 @@ export const Pergunta: React.FC<{em?: number}> = ({em = 0}) => {
     </div>
   );
 };
+
+/** Cartão A/B com contagem regressiva (relógio de 10 s) */
+export const CartaoAB: React.FC<{a: string; b: string; emA?: number; emB?: number; y?: number; contagem?: {em: number; dur: number}}> = ({a, b, emA = 0, emB = 0.6, y = 520, contagem}) => {
+  const pa = useEntrada(emA, 260, 12), pb = useEntrada(emB, 260, 12);
+  const t = useT();
+  const resta = contagem ? Math.max(0, Math.ceil(10 - ((t - contagem.em) / contagem.dur) * 10)) : null;
+  const frac = contagem ? Math.min(1, Math.max(0, (t - contagem.em) / contagem.dur)) : 0;
+  const bt = (letra: string, txt: string, p: number, cor: string) => (
+    <div style={{width: 400, transform: `scale(${p}) rotate(${(1 - p) * 10}deg)`, opacity: p, background: '#fff', border: `5px solid ${COR.tinta}`, borderRadius: 28, padding: '18px 16px', textAlign: 'center', boxShadow: '0 18px 40px rgba(0,0,0,.35)'}}>
+      <div style={{width: 90, height: 90, margin: '0 auto 8px', borderRadius: 45, background: cor, border: `5px solid ${COR.tinta}`, fontFamily: ANTON, fontSize: 64, lineHeight: '84px', color: COR.tinta}}>{letra}</div>
+      <div style={{fontFamily: ANTON, fontSize: 50, color: COR.tinta, lineHeight: 1.05}}>{txt}</div>
+    </div>
+  );
+  return (
+    <div style={{position: 'absolute', left: 0, right: 0, top: y, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 22}}>
+      {resta !== null && t >= contagem!.em && (
+        <svg width={150} height={150} viewBox="0 0 150 150">
+          <circle cx="75" cy="75" r="62" fill="#fff" stroke={COR.tinta} strokeWidth="5" />
+          <circle cx="75" cy="75" r="54" fill="none" stroke={COR.terracota} strokeWidth="12" strokeDasharray={`${2 * Math.PI * 54}`} strokeDashoffset={`${2 * Math.PI * 54 * frac}`} transform="rotate(-90 75 75)" />
+          <text x="75" y="98" textAnchor="middle" fontFamily="Anton, sans-serif" fontSize="64" fill={COR.tinta}>{resta}</text>
+        </svg>
+      )}
+      <div style={{display: 'flex', gap: 24, marginRight: 100}}>{bt('A', a, pa, COR.ipe)}{bt('B', b, pb, COR.ceu)}</div>
+    </div>
+  );
+};
