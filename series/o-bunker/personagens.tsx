@@ -32,9 +32,11 @@ export const OTAVIO = {
   calcaSombra: '#3A3129',
   botina: '#2A211B',
   /* hoje */
-  cabeloGrisalho: '#8E8A84',
-  barbaGrisalha: '#A39E97',
-  barbaGrisalhaSombra: '#7E7972',
+  /* grisalho: o escuro de antes com fios brancos misturados (só passaram cinco anos) */
+  cabeloGrisalho: '#4E4741',
+  barbaGrisalha: '#4E4741',
+  barbaGrisalhaSombra: '#2E2925',
+  fioBranco: '#B8B2AA',
   gorro: '#C9962B',
   gorroSombra: '#A07420',
   /* na lembrança */
@@ -169,7 +171,7 @@ export const Otavio: React.FC<{
                   {/* o rabo de cavalo curto, preso com elástico escuro */}
                   <path d="M184,236 C178,262 182,292 200,306 C218,292 222,262 216,236 Z" fill={C.cabeloGrisalho} />
                   <rect x={184} y={232} width={32} height={12} rx={5} fill="#3A3634" />
-                  <path d="M150,110 Q164,190 182,236 M250,110 Q236,190 218,236 M200,70 L200,232" fill="none" stroke={C.barbaGrisalhaSombra} strokeWidth={3} opacity={0.6} />
+                  <path d="M150,110 Q164,190 182,236 M250,110 Q236,190 218,236 M200,70 L200,232 M174,100 Q182,170 192,234 M226,100 Q218,170 208,234 M136,150 Q146,200 164,244 M264,150 Q254,200 236,244 M194,250 L196,296 M206,250 L204,296" fill="none" stroke={C.fioBranco} strokeWidth={3} strokeLinecap="round" opacity={0.8} />
                 </>
               ) : null}
             </>
@@ -182,8 +184,11 @@ export const Otavio: React.FC<{
                   {/* barba grisalha comprida, até o peito */}
                   <path d="M128,186 C128,262 150,330 200,352 C250,330 272,262 272,186 C266,226 254,248 236,256 Q200,266 164,256 C146,248 134,226 128,186 Z" fill={C.barbaGrisalha} />
                   <path d="M172,284 Q180,318 196,340 M228,284 Q220,318 204,340 M200,290 L200,346" fill="none" stroke={C.barbaGrisalhaSombra} strokeWidth={3} strokeLinecap="round" />
+                  {/* os fios brancos misturados na barba */}
+                  <path d="M150,236 Q160,280 182,322 M186,270 Q190,306 198,338 M214,270 Q210,306 202,338 M250,236 Q240,280 218,322 M140,206 Q144,240 160,268 M260,206 Q256,240 240,268 M164,296 Q172,316 186,334 M236,296 Q228,316 214,334" fill="none" stroke={C.fioBranco} strokeWidth={3.5} strokeLinecap="round" opacity={0.85} />
                   {/* o cabelo grisalho dos lados, preso atrás */}
                   <path d="M124,186 C120,150 124,128 134,116 L140,184 Z M276,186 C280,150 276,128 266,116 L260,184 Z" fill={C.cabeloGrisalho} />
+                  <path d="M128,180 L130,132 M134,182 L136,128 M272,180 L270,132 M266,182 L264,128" stroke={C.fioBranco} strokeWidth={3} strokeLinecap="round" opacity={0.85} />
                 </>
               ) : (
                 <>
@@ -195,6 +200,7 @@ export const Otavio: React.FC<{
               <Rosto cx={200} ey={172} my={hoje ? 238 : 234} e={expressao} fechado={fechado} olhar={olhar} pele={C.pele} peleSombra={C.peleSombra} iris={C.iris} labio={C.labio} sobrancelha={sobrancelha} grossura={9} />
               {/* bigode */}
               <path d="M174,226 Q200,214 226,226" fill="none" stroke={hoje ? C.barbaGrisalha : C.barbaEscura} strokeWidth={hoje ? 10 : 7} strokeLinecap="round" opacity={hoje ? 1 : 0.8} />
+              {hoje ? <path d="M182,222 Q192,218 198,220 M204,220 Q212,218 220,222" fill="none" stroke={C.fioBranco} strokeWidth={2.5} strokeLinecap="round" opacity={0.85} /> : null}
             </>
           )}
           {hoje ? (

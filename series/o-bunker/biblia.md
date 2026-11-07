@@ -13,7 +13,8 @@ bunker, cinco anos depois, e volta à manhã do alerta.
 
 - **Otávio**, 47 anos (42 no dia do alerta): marceneiro, mora sozinho numa casa térrea com quintal
   comprido. Calado e metódico, construiu o bunker "por precaução" e todo mundo da rua achava exagero.
-  - Visual hoje (no bunker): barba grisalha comprida e cabelo preso atrás, camisa xadrez desbotada
+  - Visual hoje (no bunker): barba comprida e cabelo preso atrás, grisalhos (o escuro de antes, `#4E4741`,
+    com fios brancos `#B8B2AA` misturados: só passaram cinco anos), camisa xadrez desbotada
     (`#5B6B5A` e `#3A443A`), calça de trabalho (`#4A3F35`), pele morena (`#A8754F`).
   - Visual no dia do alerta (a lembrança): barba curta escura (`#2B2420`), a mesma camisa xadrez,
     ainda nova, e a caneca de café na mão.

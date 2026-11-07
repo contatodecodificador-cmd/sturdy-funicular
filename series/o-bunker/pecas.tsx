@@ -41,7 +41,7 @@ export const TVAviso: React.FC<{ x: number; y: number; escala?: number; aceso?: 
             { linha: AVISO.slice(0, 3), y: 112, i0: 0 },
             { linha: AVISO.slice(3), y: 168, i0: 3 },
           ].map(({ linha, y: ly, i0 }) => (
-            <text key={ly} x={210} y={ly} textAnchor="middle" fontFamily={FONTEM.titulo} fontWeight={900} fontSize={31} letterSpacing="-0.01em" fill={COR.janelaAcesa}>
+            <text key={ly} x={210} y={ly} textAnchor="middle" fontFamily={FONTEM.titulo} fontWeight={900} fontSize={27} letterSpacing="-0.01em" fill={COR.janelaAcesa}>
               {linha.map((p, k) => (
                 <tspan key={k} opacity={i0 + k < palavras ? 1 : 0}>
                   {p}{' '}
@@ -70,8 +70,8 @@ export const Radio: React.FC<{ x: number; y: number; escala?: number; texto?: st
       Array.from({ length: 6 }, (_, c) => <circle key={`${l}-${c}`} cx={44 + c * 22} cy={88 + l * 26} r={6} fill="#25201D" />),
     )}
     {/* o visor */}
-    <rect x={190} y={72} width={140} height={64} rx={10} fill="#1A1512" />
-    <text x={260} y={116} textAnchor="middle" fontFamily={FONTEM.mono} fontWeight={700} fontSize={30} fill={VISOR}>
+    <rect x={180} y={72} width={156} height={64} rx={10} fill="#1A1512" />
+    <text x={258} y={113} textAnchor="middle" fontFamily={FONTEM.mono} fontWeight={700} fontSize={23} fill={VISOR}>
       {texto}
     </text>
     <circle cx={222} cy={186} r={20} fill={METAL.medio} />
