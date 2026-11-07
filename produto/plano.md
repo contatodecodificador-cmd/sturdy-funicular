@@ -159,6 +159,12 @@ passo certo. Quem não quiser decorar comando usa só `/seguir`.
   (`estudio.zip` com tudo, um zip por comando, `personagem-base.zip` e `caca-ideias.zip`).
 - Para atualizar: mudar os arquivos em `entrega/` ou os textos em `gerar.py` e rodar o gerador.
 - A Cakto fica só com o checkout. A Área fica num site nosso (Netlify).
+- **Cada produto libera uma parte da Área** (mapa `ACESSO` no `gerar.py`, salvo também em
+  `site/acesso.json`): `guia/` para guia e completo; `passos/` (com os downloads dos comandos) para skill e
+  completo; `extra/` para o Caça-Ideias. A página inicial mostra com cadeado e botão "Liberar" o que a
+  pessoa não comprou. Pré-visualizar: `index.html?como=guia` (ou `skill`, `completo,ideias`).
+- A Cakto tem webhook de "Compra aprovada" (Integrações › Webhooks), escolhido por produto, com um
+  campo `secret` para conferir que o aviso veio dela. Fonte: docs.cakto.com.br/conceitos/webhooks.
 
 ### O login (a fazer)
 

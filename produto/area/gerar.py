@@ -4,8 +4,11 @@ Como usar (o Claude roda isso):
     python3 produto/area/gerar.py
 
 Saída: produto/area/site/  (pronto para publicar; a pasta site/ não vai para o GitHub)
+
+Partes da Área e quem pode ver (veja ACESSO): guia/ (guia, completo), passos/ (skill, completo), extra/ (ideias).
 """
 import html
+import json
 import shutil
 import zipfile
 from pathlib import Path
@@ -29,15 +32,6 @@ def zipar(origem: Path, destino: Path, raiz_no_zip: str, so: list[str] | None = 
             if so and not any(str(rel).startswith(s) for s in so):
                 continue
             z.write(f, f"{raiz_no_zip}/{rel}")
-
-
-def gerar_downloads():
-    d = SITE / "baixar"
-    zipar(ESTUDIO, d / "estudio.zip", "estudio")
-    for skill in sorted((ESTUDIO / ".claude" / "skills").iterdir()):
-        zipar(ESTUDIO, d / f"comando-{skill.name}.zip", f"comando-{skill.name}", [f".claude/skills/{skill.name}"])
-    zipar(ESTUDIO, d / "personagem-base.zip", "personagem-base", ["src/personagem"])
-    zipar(EXTRA, d / "caca-ideias.zip", "extra-ideias")
 
 
 # ---------------------------------------------------------------- conteúdo
@@ -315,7 +309,56 @@ JS = """
 """
 
 
-def pagina(titulo: str, onde: str, corpo: str) -> str:
+CSS += """
+.secao { margin-top: 40px; position: relative; }
+.secao .topo-secao { display:flex; justify-content:space-between; align-items:flex-end; gap:12px; flex-wrap:wrap; }
+.etiqueta-produto { font-family:"IBM Plex Mono",monospace; font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; color:var(--suave); border:1px solid var(--linha); padding:4px 10px; border-radius:999px; }
+.secao.travada .conteudo { opacity:.35; pointer-events:none; filter: grayscale(.6); }
+.cadeado { display:none; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; margin: 12px 0 16px; padding:16px 18px; border-radius:12px;
+  border:1.5px dashed rgba(240,169,59,.55); background: rgba(240,169,59,.05); }
+.secao.travada .cadeado { display:flex; }
+.cadeado a { font-family:"Archivo",sans-serif; font-weight:900; text-transform:uppercase; font-size:.85rem; text-decoration:none; background:var(--lanterna); color:#1A1206; border-radius:6px; padding:10px 14px; }
+.aviso-previa { font-family:"IBM Plex Mono",monospace; font-size:.75rem; color:var(--suave); margin-top:28px; }
+.lista-cadernos { display:grid; gap:12px; }
+.caderno { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:16px 18px; border-radius:12px; border:1px solid var(--linha); background: rgba(255,255,255,.02); }
+.status { font-family:"IBM Plex Mono",monospace; font-size:.75rem; color: var(--lanterna); white-space: nowrap; }
+"""
+
+# Quais produtos liberam cada parte da Área. O mesmo mapa é usado pelo porteiro do site (login).
+ACESSO = {
+    "guia": ["guia", "completo"],
+    "passos": ["skill", "completo"],
+    "extra": ["ideias"],
+}
+
+# Links de checkout da Cakto, para o botão "Liberar". Preencha quando os produtos existirem.
+CHECKOUT = {"guia": "", "skill": "", "completo": "", "ideias": ""}
+
+JS_ACESSO = """
+<script>
+  // Mostra com cadeado as partes que a pessoa não comprou.
+  // No site no ar, quem decide é o porteiro (o login): ele responde em /api/acesso o que a pessoa comprou.
+  // Para pré-visualizar sem login, use ?como=guia ou ?como=skill ou ?como=completo,ideias no endereço.
+  (function () {
+    var param = new URLSearchParams(location.search).get('como');
+    function aplicar(produtos) {
+      document.querySelectorAll('.secao[data-libera]').forEach(function (s) {
+        var precisa = s.getAttribute('data-libera').split(',');
+        var ok = precisa.some(function (p) { return produtos.indexOf(p) >= 0; });
+        s.classList.toggle('travada', !ok);
+      });
+    }
+    if (param) { aplicar(param.split(',')); return; }
+    fetch('/api/acesso', { credentials: 'same-origin' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) { if (d && d.produtos) aplicar(d.produtos); })
+      .catch(function () {});
+  })();
+</script>
+"""
+
+
+def pagina(titulo: str, onde: str, corpo: str, raiz: str = "", extra_js: str = "") -> str:
     return f"""<!doctype html>
 <html lang="pt-BR">
 <head>
@@ -327,12 +370,13 @@ def pagina(titulo: str, onde: str, corpo: str) -> str:
 <style>{CSS}</style>
 </head>
 <body>
-<header><div class="wrap"><a class="marca" href="index.html">Estúdio do <span>Nogueira</span></a><span class="onde">{onde}</span></div></header>
+<header><div class="wrap"><a class="marca" href="{raiz}index.html">Estúdio do <span>Nogueira</span></a><span class="onde">{onde}</span></div></header>
 <main><div class="wrap">
 {corpo}
 </div></main>
-<footer><div class="wrap">Área do Estúdio · conteúdo exclusivo para quem comprou. Por favor, não compartilhe este link.</div></footer>
+<footer><div class="wrap">Área do Estúdio · conteúdo exclusivo para quem comprou. O acesso é pessoal: por favor, não compartilhe.</div></footer>
 {JS}
+{extra_js}
 </body>
 </html>
 """
@@ -371,27 +415,79 @@ def pagina_passo(n: int) -> str:
         if n > 2:
             partes.append('<p class="suave">Este comando já veio no <b>estudio.zip</b> do passo 2. Baixe aqui só quando avisarmos que saiu uma versão nova: suba a pasta <code>.claude</code> do zip no seu repositório (Add file › Upload files) e ela substitui a antiga.</p>')
     partes.append(f'<label class="marcar"><input type="checkbox" id="marcar" data-n="{n}"> Marcar este passo como feito</label>')
-    ant = f'<a href="passo-{n-1:02d}.html">← Passo {n-1}</a>' if n > 1 else '<a href="index.html">← Início</a>'
+    ant = f'<a href="passo-{n-1:02d}.html">← Passo {n-1}</a>' if n > 1 else '<a href="../index.html">← Início</a>'
     prox = f'<a class="proximo" href="passo-{n+1:02d}.html">Passo {n+1} →</a>' if n < 10 else '<a class="proximo" href="passo-06.html">Próxima parte: passo 6 →</a>'
     partes.append(f'<div class="navega">{ant}{prox}</div>')
-    return pagina(p["titulo"], f"Passo {n} de 10", "\n".join(partes))
+    return pagina(p["titulo"], f"Passo {n} de 10", "\n".join(partes), raiz="../")
+
+
+# O guia (só para quem comprou o guia ou o completo). Os cadernos ainda estão sendo escritos.
+CADERNOS = [
+    ("1", "O seu canal", "nicho, público, narrador e a votação como motor"),
+    ("2", "A série", "o mundo da história, os personagens e os caminhos"),
+    ("3", "O roteiro", "como prender do começo ao fim, o gancho e a pergunta do final"),
+    ("4", "A voz", "escolher ou criar a voz, dar emoção e encaixar nas cenas"),
+    ("5", "Imagem e som", "personagens, cenários, cenas que funcionam no celular, legenda e som"),
+    ("6", "Postar e continuar", "capa, Stories, legenda, ler a votação e os cuidados"),
+    ("+", "Diário de produção", "O Bunker e O Tempo Parou, com os erros reais e as correções"),
+    ("+", "Modelos para preencher", "mundo da série, personagens, roteiro, caminhos e postagem"),
+]
+
+
+def pagina_guia() -> str:
+    corpo = ['<span class="rotulo">Guia do Estúdio</span>',
+             "<h1>O guia <em>passo a passo.</em></h1>",
+             "<p>O método inteiro explicado em cadernos curtos, com exemplos reais dos nossos dois canais.</p>",
+             '<div class="lista-cadernos">']
+    for n, nome, desc in CADERNOS:
+        corpo.append(f'<div class="caderno"><span><b>{"Caderno " + n if n != "+" else "Extra"} · {nome}</b><br><span class="suave">{desc}</span></span><span class="status">em escrita</span></div>')
+    corpo.append("</div>")
+    corpo.append('<div class="navega"><a href="../index.html">← Área do Estúdio</a><span></span></div>')
+    return pagina("Guia", "Guia", "\n".join(corpo), raiz="../")
+
+
+def cadeado(produto_liberar: str, texto: str) -> str:
+    link = CHECKOUT.get(produto_liberar) or "#"
+    return f'<div class="cadeado"><span>🔒 {texto}</span><a href="{link}">Liberar</a></div>'
 
 
 def pagina_inicio() -> str:
     partes = ['<span class="rotulo">Área do Estúdio</span>',
               "<h1>Bem-vindo ao <em>seu estúdio.</em></h1>",
-              "<p>São 10 passos. Os 3 primeiros você faz uma vez só. Depois, cada série passa pelos passos 4 e 5, e cada vídeo passa do 6 ao 10.</p>",
-              '<div class="cartao"><b>Regra de ouro:</b> o que o Claude consegue fazer, ele faz. Você digita o comando, responde e aprova. '
-              'Esqueceu onde parou? Digite <code>/seguir</code>.</div>']
+              "<p>Aqui fica tudo o que você comprou. O que estiver com cadeado faz parte de outro produto e pode ser liberado quando quiser.</p>"]
+
+    # Guia
+    partes.append(f'<div class="secao" data-libera="{",".join(ACESSO["guia"])}">'
+                  '<div class="topo-secao"><h2 style="margin:0">O guia</h2><span class="etiqueta-produto">Guia · Completo</span></div>'
+                  + cadeado("guia", "O guia faz parte do produto Guia (ou do Completo).")
+                  + '<div class="conteudo"><a class="passo" href="guia/index.html"><span class="n">📖</span>'
+                  '<span><b>Os cadernos do guia</b><span class="suave">O método explicado, com os exemplos reais dos nossos canais.</span></span></a></div></div>')
+
+    # Passo a passo
+    partes.append(f'<div class="secao" data-libera="{",".join(ACESSO["passos"])}">'
+                  '<div class="topo-secao"><h2 style="margin:0">O passo a passo com os comandos</h2><span class="etiqueta-produto">Skill · Completo</span></div>'
+                  + cadeado("skill", "Os comandos fazem parte do produto Skill (ou do Completo).")
+                  + '<div class="conteudo"><div class="cartao" style="margin:12px 0"><b>Regra de ouro:</b> o que o Claude consegue fazer, ele faz. '
+                  'Você digita o comando, responde e aprova. Esqueceu onde parou? Digite <code>/seguir</code>.</div>')
     for letra, nome, quando, ns in FASES:
-        partes.append(f'<div class="fase"><span class="rotulo">Fase {letra} · {quando}</span><h2 style="margin-top:0">{nome}</h2><div class="passos">')
+        partes.append(f'<div class="fase"><span class="rotulo">Fase {letra} · {quando}</span><h3>{nome}</h3><div class="passos">')
         for n in ns:
             p = PASSOS[n]
             cmd = f"<code>{p['comando']}</code>" if p["comando"] else ""
-            partes.append(f'<a class="passo" data-n="{n}" href="passo-{n:02d}.html"><span class="n">{n:02d}</span>'
+            partes.append(f'<a class="passo" data-n="{n}" href="passos/passo-{n:02d}.html"><span class="n">{n:02d}</span>'
                           f'<span><b>{p["titulo"]} <span class="feito">✓ feito</span></b><span class="suave">{p["resumo"]}</span></span>{cmd}</a>')
         partes.append("</div></div>")
-    return pagina("Início", "Os 10 passos", "\n".join(partes))
+    partes.append("</div></div>")
+
+    # Extra
+    partes.append(f'<div class="secao" data-libera="{",".join(ACESSO["extra"])}">'
+                  '<div class="topo-secao"><h2 style="margin:0">Extra: Caça-Ideias</h2><span class="etiqueta-produto">Extra</span></div>'
+                  + cadeado("ideias", "O Caça-Ideias é um extra. Ele pesquisa e te entrega 10 ideias de série prontas.")
+                  + '<div class="conteudo"><a class="passo" href="extra/index.html"><span class="n">💡</span>'
+                  '<span><b>O comando /ideias</b><span class="suave">Sem ideia? O Claude pesquisa o seu nicho e traz ideias prontas.</span></span><code>/ideias</code></a></div></div>')
+
+    partes.append('<p class="aviso-previa">Pré-visualização: acrescente ?como=guia, ?como=skill ou ?como=completo,ideias no endereço para ver como cada comprador enxerga esta página.</p>')
+    return pagina("Início", "Área do Estúdio", "\n".join(partes), extra_js=JS_ACESSO)
 
 
 def pagina_extra() -> str:
@@ -399,7 +495,7 @@ def pagina_extra() -> str:
              "<h1>Sem ideia? <em>O Claude pesquisa.</em></h1>",
              "<p>O comando <code>/ideias</code> pesquisa o que o público do seu nicho está procurando, traz 10 ideias de série prontas e te ajuda a escolher e lapidar a melhor.</p>",
              "<h2>Instalar (uma vez só)</h2>",
-             '<ol class="fazer"><li>Faça antes os passos 1 a 3 da Área do Estúdio.</li>'
+             '<ol class="fazer"><li>Tenha o seu estúdio no GitHub e aberto no Claude Code (passos 1 a 3).</li>'
              "<li>Baixe o <b>caca-ideias.zip</b> e descompacte.</li>"
              "<li>No seu repositório do GitHub, clique em <b>Add file</b> › <b>Upload files</b>.</li>"
              "<li>Arraste a pasta <code>.claude</code> que está dentro de <code>extra-ideias</code> e clique em <b>Commit changes</b>.</li></ol>",
@@ -409,21 +505,33 @@ def pagina_extra() -> str:
              '<div class="esperar">10 ideias com nome, primeira frase, a escolha da parte 1, personagem, por que pode prender e se é fácil de fazer. Depois, o Claude lapida a escolhida com você e guarda tudo. Pode usar quantas vezes quiser: ele não repete ideias.</div>',
              "<h2>Baixar</h2>",
              '<div class="cartao"><div class="baixar"><span><b>caca-ideias.zip</b><br><span class="suave">O comando /ideias.</span></span><a href="baixar/caca-ideias.zip" download>Baixar</a></div></div>',
-             '<div class="navega"><a href="index.html">← Área do Estúdio</a><span></span></div>']
-    return pagina("Caça-Ideias", "Extra", "\n".join(corpo))
+             '<div class="navega"><a href="../index.html">← Área do Estúdio</a><span></span></div>']
+    return pagina("Caça-Ideias", "Extra", "\n".join(corpo), raiz="../")
+
+
+def gerar_downloads():
+    d = SITE / "passos" / "baixar"
+    zipar(ESTUDIO, d / "estudio.zip", "estudio")
+    for skill in sorted((ESTUDIO / ".claude" / "skills").iterdir()):
+        zipar(ESTUDIO, d / f"comando-{skill.name}.zip", f"comando-{skill.name}", [f".claude/skills/{skill.name}"])
+    zipar(ESTUDIO, d / "personagem-base.zip", "personagem-base", ["src/personagem"])
+    zipar(EXTRA, SITE / "extra" / "baixar" / "caca-ideias.zip", "extra-ideias")
 
 
 def main():
     if SITE.exists():
         shutil.rmtree(SITE)
-    (SITE / "img").mkdir(parents=True)
+    for pasta in ["passos/img", "guia", "extra"]:
+        (SITE / pasta).mkdir(parents=True, exist_ok=True)
     for f in IMG.glob("*"):
-        shutil.copy(f, SITE / "img" / f.name)
+        shutil.copy(f, SITE / "passos" / "img" / f.name)
     gerar_downloads()
     (SITE / "index.html").write_text(pagina_inicio(), encoding="utf-8")
     for n in PASSOS:
-        (SITE / f"passo-{n:02d}.html").write_text(pagina_passo(n), encoding="utf-8")
-    (SITE / "extra-ideias.html").write_text(pagina_extra(), encoding="utf-8")
+        (SITE / "passos" / f"passo-{n:02d}.html").write_text(pagina_passo(n), encoding="utf-8")
+    (SITE / "guia" / "index.html").write_text(pagina_guia(), encoding="utf-8")
+    (SITE / "extra" / "index.html").write_text(pagina_extra(), encoding="utf-8")
+    (SITE / "acesso.json").write_text(json.dumps(ACESSO, ensure_ascii=False, indent=2), encoding="utf-8")
     print("Pronto:", SITE)
     for f in sorted(SITE.rglob("*")):
         if f.is_file():

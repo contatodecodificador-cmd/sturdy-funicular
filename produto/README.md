@@ -18,6 +18,8 @@ criações nossas feitas com o mesmo processo. O nome não fica preso a nenhum c
 
 ## O que tem nesta pasta
 
+- `CHECKLIST.md`: tudo o que foi feito e o que falta.
+
 - `identidade.md`: cores, letras e jeito do visual.
 - `plano.md`: o sumário do guia, o que a skill faz, os entregáveis e as regras.
 - `pagina/index.html`: a página de venda, pronta para subir no Netlify quando o dono quiser.
