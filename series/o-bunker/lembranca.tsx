@@ -16,7 +16,7 @@ import { Caixa, Comodo, JanelaFundo, type Sala3D } from '../../kit/casa';
 import { Brilho, Escuro } from '../../kit/luz';
 import { COR, H, W } from '../../kit/pecas';
 import { BUNKER, CenaBunker, SB } from './cenarios';
-import { Escotilha, METAL, TVAviso } from './pecas';
+import { Caneca, Escotilha, METAL, TVAviso } from './pecas';
 import { type Expressao, Otavio } from './personagens';
 
 const VERMELHO = '224,24,45';
@@ -97,7 +97,8 @@ export const SC: Sala3D = { x1: 110, y1: 360, x2: 970, y2: 1140, vx: 540, vy: 76
 const CORES_COZINHA = { fundo: '#E3D8C6', lado: '#D3C7B3', teto: '#EEE7DB', piso: '#BBA98F', linhaPiso: '#A69479', rodape: '#A69479' };
 export const TV_COZINHA = { x: 728, y: 836, escala: 0.52 };
 
-export const CenaCozinha: React.FC<{ tv?: number; expressao?: Expressao }> = ({ tv = 0, expressao = 'neutra' }) => (
+/** otavio = false: a cozinha vazia; seca = cinco anos depois (poeira, teia, a caneca seca na mesa, a luz torta do fim de tarde) */
+export const CenaCozinha: React.FC<{ tv?: number; expressao?: Expressao; otavio?: boolean; seca?: boolean }> = ({ tv = 0, expressao = 'neutra', otavio = true, seca = false }) => (
   <AbsoluteFill style={{ background: COR.papel }}>
     <Comodo S={SC} cores={CORES_COZINHA} piso="taco" />
     <JanelaFundo bx1={180} bx2={480} by1={420} by2={700} vidro="#C9D9E2" moldura="#F2ECE2">
@@ -109,9 +110,22 @@ export const CenaCozinha: React.FC<{ tv?: number; expressao?: Expressao }> = ({ 
     <Caixa S={SC} bx1={640} bx2={970} by1={960} by2={1140} z1={0} z2={220} frente="#B9A587" topo="#E9E1D3" lado="#A69276" />
     <TVAviso x={TV_COZINHA.x} y={TV_COZINHA.y} escala={TV_COZINHA.escala} aceso={tv} palavras={0} />
     {/* o Otávio à mesa, olhando pra TV */}
-    <Otavio x={380} y={1530} escala={0.95} epoca="lembranca" pose="caneca" expressao={expressao} olhar={1} />
+    {otavio ? <Otavio x={380} y={1530} escala={0.95} epoca="lembranca" pose="caneca" expressao={expressao} olhar={1} /> : null}
     {/* a mesa na frente dele */}
     <Caixa S={SC} bx1={180} bx2={620} by1={1050} by2={1140} z1={120} z2={420} frente="#8E6A4C" topo="#A57E5C" lado="#7A5A40" />
+    {seca ? (
+      <>
+        <Caneca x={330} y={1010} escala={1.15} seca />
+        {/* a luz torta do fim de tarde, entrando pela janela */}
+        <Svg>
+          <path d="M180,420 L480,420 L760,1300 L300,1360 Z" fill="rgba(255,176,96,0.16)" />
+          {/* a teia no canto do teto */}
+          <path d="M110,360 L260,380 M110,360 L230,440 M110,360 L150,500 M150,370 Q170,420 130,450 M200,375 Q215,420 175,470" fill="none" stroke="#EDE6DA" strokeWidth={3} opacity={0.6} />
+        </Svg>
+        <AbsoluteFill style={{ background: 'rgba(120,104,84,0.35)', mixBlendMode: 'multiply' }} />
+        <AbsoluteFill style={{ background: 'radial-gradient(circle at 400px 1080px, rgba(0,0,0,0) 0%, rgba(10,6,7,0.55) 75%)' }} />
+      </>
+    ) : null}
     {tv > 0 ? <Brilho x={TV_COZINHA.x + 110} y={TV_COZINHA.y + 70} r={900} cor={VERMELHO} forca={0.45 * tv} /> : null}
     {tv > 0 ? <AbsoluteFill style={{ background: `rgba(${VERMELHO},${0.12 * tv})`, mixBlendMode: 'multiply' }} /> : null}
   </AbsoluteFill>
@@ -173,14 +187,14 @@ export const CenaRua: React.FC<{ nevoa: number }> = ({ nevoa }) => {
 
 /* ------------------------------------------------------------------ 10. os dois lados da escolha */
 /** SAI: a escotilha aberta no teto do bunker, a luz de fora entrando */
-export const CenaSai: React.FC = () => (
+export const CenaSai: React.FC<{ tom?: string; children?: React.ReactNode }> = ({ tom = '246,240,226', children }) => (
   <AbsoluteFill style={{ background: '#2A2624' }}>
     <Svg>
       <rect x={0} y={0} width={W} height={H} fill="#3A3633" />
       {/* o feixe de luz descendo */}
-      <path d="M380,520 L700,520 L980,1500 L100,1500 Z" fill="#F4EEDF" opacity={0.18} />
+      <path d="M380,520 L700,520 L980,1500 L100,1500 Z" fill={`rgb(${tom})`} opacity={0.18} />
       <ellipse cx={540} cy={520} rx={200} ry={60} fill={METAL.breu} />
-      <ellipse cx={540} cy={510} rx={170} ry={46} fill="#F6F0E2" />
+      <ellipse cx={540} cy={510} rx={170} ry={46} fill={`rgb(${tom})`} />
       {/* a tampa aberta, de lado */}
       <path d="M370,500 L330,260 L420,240 L470,480 Z" fill={METAL.medio} stroke={METAL.escuro} strokeWidth={8} />
       {/* a escada */}
@@ -189,7 +203,8 @@ export const CenaSai: React.FC = () => (
         <line key={i} x1={476} y1={600 + i * 72} x2={604} y2={600 + i * 72} stroke={METAL.medio} strokeWidth={10} />
       ))}
     </Svg>
-    <Brilho x={540} y={540} r={520} cor="246,240,226" forca={0.6} />
+    {children}
+    <Brilho x={540} y={540} r={520} cor={tom} forca={0.6} />
   </AbsoluteFill>
 );
 
