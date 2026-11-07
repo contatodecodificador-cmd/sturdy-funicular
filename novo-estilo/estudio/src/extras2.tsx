@@ -129,3 +129,27 @@ export const StoriesEp02: React.FC = () => {
     </AbsoluteFill>
   );
 };
+
+/** Stories fixo (imagem) pra enquete A/B do Ep. 2. Área livre pro adesivo: x 80–720, y 930–1300. */
+export const EnqueteEp02: React.FC = () => {
+  const bt = (l: string, txt: string, cor: string) => (
+    <div style={{width: 430, background: '#fff', border: `5px solid ${COR.tinta}`, borderRadius: 26, padding: '14px 12px', textAlign: 'center', boxShadow: '0 14px 30px rgba(0,0,0,.35)'}}>
+      <div style={{width: 84, height: 84, margin: '0 auto 6px', borderRadius: 42, background: cor, border: `5px solid ${COR.tinta}`, fontFamily: ANTON, fontSize: 58, lineHeight: '78px', color: COR.tinta}}>{l}</div>
+      <div style={{fontFamily: ANTON, fontSize: 46, color: COR.tinta, lineHeight: 1.05}}>{txt}</div>
+    </div>
+  );
+  return (
+    <AbsoluteFill style={{background: '#000'}}>
+      <Camera chaves={[{t: 0, x: 1300 - 300 / 0.8, y: 975, z: 0.8}]} {...L2}>
+        <Relojoaria t={1.3} ponteiro={8} roseX={1300} roseExpr="desconfiada" fotoTirada portaAbre={0.6} sombra={1} />
+      </Camera>
+      <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(20,22,27,.82) 0%, rgba(20,22,27,.55) 45%, rgba(20,22,27,.15) 75%, rgba(20,22,27,.35) 100%)'}} />
+      <div style={{position: 'absolute', left: 0, right: 0, top: 250, textAlign: 'center'}}>
+        <span style={{background: COR.ipe, border: `5px solid ${COR.tinta}`, borderRadius: 40, padding: '8px 34px', fontFamily: BARLOW, fontWeight: 800, fontSize: 44, color: COR.tinta, letterSpacing: 3}}>EP. 2 · VOCÊ DECIDE</span>
+        <div style={{fontFamily: ANTON, fontSize: 132, color: '#fff', WebkitTextStroke: `14px ${COR.tinta}`, paintOrder: 'stroke fill', lineHeight: 1.02, marginTop: 34}}>O QUE A ROSE<br /><span style={{color: COR.ipe}}>FAZ AGORA?</span></div>
+      </div>
+      <div style={{position: 'absolute', left: 0, right: 0, top: 640, display: 'flex', gap: 22, justifyContent: 'center'}}>{bt('A', 'SE ESCONDER E ESPERAR', COR.ipe)}{bt('B', 'PEGAR O RELÓGIO E FUGIR', COR.ceu)}</div>
+      <div style={{position: 'absolute', left: 0, right: 0, top: 1560, textAlign: 'center', fontFamily: BARLOW, fontWeight: 800, fontSize: 40, color: '#fff', letterSpacing: 2, textShadow: '0 3px 8px rgba(0,0,0,.6)'}}>O MAIS VOTADO VIRA O EP. 3</div>
+    </AbsoluteFill>
+  );
+};

@@ -3,7 +3,7 @@ import {Composition, Still} from 'remotion';
 import {Ep01, DURACAO, FPS} from './ep01';
 import {CapaEp01, StoriesEp01, STORIES_DUR} from './extras';
 import {Ep02, DURACAO02} from './ep02';
-import {CapaEp02, StoriesEp02, STORIES2_DUR} from './extras2';
+import {CapaEp02, StoriesEp02, STORIES2_DUR, EnqueteEp02} from './extras2';
 
 export const Root: React.FC = () => (
   <>
@@ -11,6 +11,7 @@ export const Root: React.FC = () => (
     <Composition id="Ep02" component={Ep02} durationInFrames={Math.ceil(DURACAO02 * FPS)} fps={FPS} width={1080} height={1920} />
     <Composition id="StoriesEp01" component={StoriesEp01} durationInFrames={STORIES_DUR * FPS} fps={FPS} width={1080} height={1920} />
     <Composition id="StoriesEp02" component={StoriesEp02} durationInFrames={Math.round(STORIES2_DUR * FPS)} fps={FPS} width={1080} height={1920} />
+    <Still id="EnqueteEp02" component={EnqueteEp02} width={1080} height={1920} />
     <Still id="CapaEp02" component={CapaEp02} width={1080} height={1920} />
     <Still id="CapaEp01" component={CapaEp01} width={1080} height={1920} />
   </>
