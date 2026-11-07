@@ -66,11 +66,14 @@ const RESULTADOS: [string, React.ReactNode][] = [
 ];
 
 /** n = 0 SAI, 1 FICA (sem n, o quadro escolhe) */
-export const ResultadoBunker: React.FC<{ n?: number }> = ({ n }) => {
+export const ResultadoBunker: React.FC<{ n?: number; quando?: string }> = ({ n, quando = 'PARTE 2 HOJE, 21H30' }) => {
   const f = useCurrentFrame();
   const [vencedor, fundo] = RESULTADOS[Math.min(n ?? f, RESULTADOS.length - 1)];
-  return <StoryResultado vencedor={vencedor} quando="PARTE 2 HOJE, 21H30" fundo={fundo} />;
+  return <StoryResultado vencedor={vencedor} quando={quando} fundo={fundo} />;
 };
+
+/** o resultado da parte 1 com o horário da parte 2 (16h45) */
+const SaiAs1645: React.FC = () => <ResultadoBunker n={0} quando="PARTE 2 HOJE, 16H45" />;
 
 /* ------------------------------------------------------------------ parte 2 */
 export const NoArBunker2: React.FC = () => (
@@ -131,6 +134,7 @@ const ComposicoesVideo = composicoesEmVideo([
   { id: 'StoryVideo-Bunker-1-NoAr', C: NoArBunker, dur: DUR_STORY.noar },
   { id: 'StoryVideo-Bunker-1-Vota', C: VotaBunker, dur: DUR_STORY.enquete },
   { id: 'StoryVideo-Bunker-1-Sai', C: () => <ResultadoBunker n={0} />, dur: DUR_STORY.resultado },
+  { id: 'StoryVideo-Bunker-1-Sai-1645', C: SaiAs1645, dur: DUR_STORY.resultado },
   { id: 'StoryVideo-Bunker-1-Fica', C: () => <ResultadoBunker n={1} />, dur: DUR_STORY.resultado },
 ]);
 
@@ -141,6 +145,7 @@ export const ComposicoesStoriesBunker: React.FC = () => (
     <Composition id="OBunker-Story-Vota" component={comFontes(VotaBunker)} durationInFrames={1} {...QUADRO} />
     <Composition id="OBunker-Story-Resultado" component={comFontes(ResultadoBunker)} durationInFrames={RESULTADOS.length} {...QUADRO} />
     <ComposicoesVideo />
+    <Composition id="OBunker-Story-Sai-1645" component={comFontes(SaiAs1645)} durationInFrames={1} {...QUADRO} />
     <Composition id="OBunker2-Story-NoAr" component={comFontes(NoArBunker2)} durationInFrames={1} {...QUADRO} />
     <Composition id="OBunker2-Story-Vota" component={comFontes(VotaBunker2)} durationInFrames={1} {...QUADRO} />
     <Composition id="OBunker2-Story-Resultado" component={comFontes(ResultadoBunker2)} durationInFrames={RESULTADOS2.length} {...QUADRO} />
