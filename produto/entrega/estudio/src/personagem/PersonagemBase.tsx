@@ -3,6 +3,8 @@ import { useCurrentFrame } from "remotion";
 // Personagem-base do Estúdio do Nogueira.
 // Um rosto, olhos, boca e corpo. Cabelo, roupa, acessório, cores e expressão são escolhidos por você.
 // Desenho em SVG: 320 de largura por 336 de altura. Para mudar o tamanho, use a propriedade "altura".
+// Referências úteis para peças novas: centro do rosto (160, 148), raio 74; olhos em y 146 (x 134 e 186);
+// boca em y 188; pescoço de y 214 a 248; ombros a partir de y 244.
 
 export type Cabelo = "nenhum" | "curto" | "longo" | "coque" | "cacheado";
 export type Roupa = "nenhuma" | "camiseta" | "xadrez" | "gola-v";
@@ -21,6 +23,10 @@ export type PersonagemProps = {
   expressao?: Expressao;
   falando?: boolean;
   piscar?: boolean;
+  // Peças extras que o base não tem (fone, cachecol, barba, avental…), desenhadas no mesmo espaço
+  // de 320 x 336: "frente" fica por cima do personagem; "atras" fica por trás dele.
+  frente?: React.ReactNode;
+  atras?: React.ReactNode;
 };
 
 const escurecer = (hex: string, quanto = 0.22) => {
@@ -201,6 +207,8 @@ export const PersonagemBase: React.FC<PersonagemProps> = ({
   expressao = "neutro",
   falando = false,
   piscar = true,
+  frente,
+  atras,
 }) => {
   const quadro = useCurrentFrame();
   // Pisca a cada 4 segundos (3 quadros de olho fechado). Cada personagem pode ter um ritmo diferente
@@ -211,6 +219,7 @@ export const PersonagemBase: React.FC<PersonagemProps> = ({
 
   return (
     <svg viewBox="0 0 320 336" height={altura} width={(altura * 320) / 336} style={{ overflow: "visible" }}>
+      {atras}
       <CabeloAtras tipo={cabelo} cor={corCabelo} />
       <Corpo roupa={roupa} cor={corRoupa} pele={pele} />
       <circle cx={160} cy={148} r={74} fill={pele} stroke={escurecer(pele, 0.15)} strokeWidth={2} />
@@ -221,6 +230,7 @@ export const PersonagemBase: React.FC<PersonagemProps> = ({
       <circle cx={202} cy={172} r={9} fill="#E58E73" opacity={0.3} />
       <Boca expressao={expressao} aberta={aberta} />
       <AcessorioPeca tipo={acessorio} cor={corAcessorio} />
+      {frente}
     </svg>
   );
 };

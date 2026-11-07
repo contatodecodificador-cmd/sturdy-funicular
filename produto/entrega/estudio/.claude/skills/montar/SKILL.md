@@ -17,6 +17,8 @@ Se ainda não existirem em `src/series/<serie>/` (ou em `src/comum/` para servir
 escreva do zero:
 - **Câmera**: envolve a cena e faz zoom lento contínuo (nenhuma cena fica parada) e um "soco" rápido de
   zoom nos momentos fortes. Nunca deixa aparecer a borda do cenário.
+- **Letra**: use a fonte instalada no `/visual` (pacote `@fontsource`). Se ela não aparecer na folha
+  de quadros, instale e importe antes de seguir.
 - **Legenda**: palavra por palavra, de 2 a 3 palavras na tela por vez, cada uma entrando no instante em
   que é falada (vem do `tempos.json`). A palavra importante de cada frase ganha a cor de destaque do
   `ESTILO.md`. Letra grande, com contorno para ler em qualquer fundo.
