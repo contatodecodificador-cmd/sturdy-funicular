@@ -70,11 +70,13 @@ assuma o nicho: ele é da pessoa.
 Depois:
 1. Escreva um resumo curto e peça aprovação.
 2. Com a aprovação, preencha `canal/CANAL.md` seguindo o modelo que já está lá.
-3. Faça um commit com a mensagem "Perfil do canal" e envie para o GitHub.
+3. Atualize `canal/ESTADO.md`: último passo `/comecar`, próximo passo `/serie`.
+4. Faça um commit com a mensagem "Perfil do canal" e envie para o GitHub.
 
 ## Para fechar
 
 Diga, em poucas linhas:
 - o que ficou pronto (vídeo de teste, voz, perfil do canal);
 - o que ficou pendente e como resolver;
-- o próximo passo: criar a primeira série.
+- o próximo passo: criar a primeira série com `/serie`. Se a pessoa estiver sem ideia e tiver o comando
+  `/ideias`, sugira ele antes. E lembre que, a qualquer momento, `/seguir` descobre o próximo passo.

@@ -25,6 +25,7 @@ criações nossas feitas com o mesmo processo. O nome não fica preso a nenhum c
 - `entrega/COMECE-AQUI.md`: o primeiro passo do comprador (contas, GitHub, Claude Code na nuvem, `/comecar`).
 - `entrega/estudio/`: os arquivos que o comprador coloca no GitHub (skill, memória do Claude, projeto de vídeo).
 - `entrega/extra-ideias/`: o produto extra do checkout, o Caça-Ideias (comando `/ideias`).
+- `area/`: o gerador da Área do Estúdio (uma página por passo, com os downloads). Rode `python3 produto/area/gerar.py`.
 
 ## Regras que valem para tudo aqui
 

@@ -151,6 +151,30 @@ passo certo. Quem não quiser decorar comando usa só `/seguir`.
 - Onde hospedar (a decidir): a área de membros da própria Cakto, se ela atender, ou uma página
   protegida. O link nunca fica aberto na internet.
 
+## A Área do Estúdio (feita em 07/11/2026)
+
+- Gerador: `area/gerar.py` cria `area/site/` com a página inicial (os 10 passos em 3 fases), uma página
+  por passo (comando com botão de copiar, o que fazer, o que esperar, "deu problema?", baixar, marcar
+  como feito, anterior e próximo), a página do extra `extra-ideias.html` e os arquivos para baixar
+  (`estudio.zip` com tudo, um zip por comando, `personagem-base.zip` e `caca-ideias.zip`).
+- Para atualizar: mudar os arquivos em `entrega/` ou os textos em `gerar.py` e rodar o gerador.
+- A Cakto fica só com o checkout. A Área fica num site nosso (Netlify).
+
+### O login (a fazer)
+
+Modelo: a pessoa entra com o **e-mail da compra** e recebe um **código de uso único** nesse e-mail. Sem
+senha. Tela e textos próprios, feitos do zero.
+
+1. **A Cakto avisa a compra** (webhook de compra aprovada) → o site guarda o e-mail e o que a pessoa
+   comprou (completo, só o guia, só a skill, Caça-Ideias). Reembolso tira o acesso.
+2. **Tela de entrar** na própria página (`/area/`): e-mail → código de 6 números, válido por 10 minutos.
+3. **Envio do código** por um serviço de e-mail (por exemplo, Resend), com um domínio próprio.
+4. **Acesso**: a Área e os downloads só abrem com o login. Cada pessoa vê só o que comprou.
+
+O que o dono precisa providenciar: conta no Netlify (grátis), um domínio (exemplo:
+estudiodonogueira.com.br), conta no serviço de e-mail e conferir na Cakto onde fica o webhook de compra
+aprovada.
+
 ## Sumário do guia
 
 > Estrutura própria. Os nomes internos do nosso método (para as etapas, o roteiro e a série) ainda vão

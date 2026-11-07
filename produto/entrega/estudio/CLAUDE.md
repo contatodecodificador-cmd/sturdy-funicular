@@ -30,6 +30,29 @@ de produção dela: escreve, desenha, monta e confere os vídeos.
 - Lembre a pessoa de ligar o rótulo de conteúdo feito com IA nas redes.
 - Siga as regras das redes onde o canal posta.
 
+## Os passos e os comandos
+
+| Passo | Comando | O que faz |
+|---|---|---|
+| 3 | `/comecar` | monta o estúdio e o perfil do canal |
+| 4 | `/serie` | o mundo da série |
+| 5 | `/visual` | estilo, personagens e cenários |
+| 6 | `/roteiro` | o roteiro da parte e os dois caminhos |
+| 7 | `/voz` | a narração e o tempo de cada palavra |
+| 8 | `/montar` | o vídeo |
+| 9 | `/postar` | capa, Stories e textos do post |
+| 10 | `/proxima` | o resultado da votação |
+| qualquer | `/seguir` | descobre onde parou e segue |
+
+No fim de cada passo, atualize `canal/ESTADO.md`.
+
+## Onde fica cada coisa
+
+- `canal/`: o perfil do canal (`CANAL.md`), onde paramos (`ESTADO.md`) e as ideias (`ideias/`).
+- `series/<serie>/`: `MUNDO.md`, `ESTILO.md`, `PERSONAGENS.md`, `folhas/` e `partes/parte-NN/`
+  (roteiro, voz, tempos, resultado, post).
+- `src/personagem/`: o personagem-base. `src/series/<serie>/`: o código de cada série.
+
 ## O projeto de vídeo
 
 - Os vídeos são feitos com o Remotion, em `src/`. O teste fica em `src/Teste.tsx`.

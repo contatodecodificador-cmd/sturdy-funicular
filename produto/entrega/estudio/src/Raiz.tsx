@@ -1,5 +1,6 @@
-import { Composition } from "remotion";
+import { Composition, Still } from "remotion";
 import { Teste } from "./Teste";
+import { FolhaBase } from "./personagem/FolhaBase";
 
 // Cada vídeo do canal é registrado aqui.
 export const Raiz: React.FC = () => {
@@ -13,6 +14,7 @@ export const Raiz: React.FC = () => {
         width={1080}
         height={1920}
       />
+      <Still id="FolhaBase" component={FolhaBase} width={1080} height={1920} />
     </>
   );
 };
