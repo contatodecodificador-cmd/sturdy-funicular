@@ -3,36 +3,43 @@
 <link rel="stylesheet" href="node_modules/@fontsource/barlow-condensed/800.css">
 <style>body{margin:0;width:1080px;height:1920px;overflow:hidden}</style></head><body>
 <svg id="s" viewBox="0 0 1080 1920" width="1080" height="1920"></svg>
-<script src="../personagens/rose.js"></script><script>
+<script src="../personagens/rose.js"></script><script src="../personagens/gente.js"></script><script src="../cenarios/cenario.js"></script><script>
 // Quadro-conceito do Ep. 1: o mundo parado às 16:47, só a Rose em cor cheia.
-const T='#2B2420';let s=`<defs><linearGradient id="c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8FCBE6"/><stop offset=".75" stop-color="#F6E7C4"/><stop offset="1" stop-color="#FCE3B0"/></linearGradient></defs>
-<rect width="1080" height="1920" fill="url(#c)"/><circle cx="900" cy="640" r="80" fill="#FFE9A8"/>`;
-const H=['#D96C4A','#F2C14E','#2F6FA3','#F4EDE1','#5FA36A','#E89A7A'];
-[-20,170,330,500,680,860].forEach((x,i)=>{const t=760+(i%2)*70;s+=`<rect x="${x}" y="${t}" width="180" height="${1260-t}" fill="${H[i]}" stroke="#9C4A32" stroke-width="3"/><path d="M${x-10},${t} L${x+90},${t-70} L${x+190},${t}Z" fill="#9C4A32"/>`;
-for(let r=0;r<3;r++)for(let c=0;c<2;c++)s+=`<rect x="${x+30+c*70}" y="${t+40+r*120}" width="44" height="74" rx="4" fill="#fff" opacity=".75" stroke="#9C4A32" stroke-width="3"/>`;});
-s+=`<rect y="1250" width="1080" height="670" fill="#E9DCC6"/><rect y="1330" width="1080" height="220" fill="#B9B2A6"/>`;
-for(let i=0;i<9;i++)s+=`<rect x="${i*140}" y="1432" width="80" height="12" fill="#fff" opacity=".8"/>`;
-// ônibus parado
-s+=`<rect x="560" y="1100" width="520" height="330" rx="26" fill="#F2C14E" stroke="${T}" stroke-width="3"/>`;for(let i=0;i<4;i++)s+=`<rect x="${590+i*120}" y="1130" width="96" height="110" rx="8" fill="#CFE6F2" stroke="${T}" stroke-width="3"/>`;
-s+=`<circle cx="660" cy="1430" r="44" fill="${T}"/><circle cx="960" cy="1430" r="44" fill="${T}"/>`;
-// pessoas congeladas (no meio do passo)
-const P=(x,y,k,c)=>`<g transform="translate(${x},${y}) scale(${k})"><circle cx="0" cy="-260" r="38" fill="#C99674" stroke="${T}" stroke-width="3"/><rect x="-46" y="-218" width="92" height="170" rx="30" fill="${c}" stroke="${T}" stroke-width="3"/><path d="M-30,-50 L-60,90 M30,-50 L70,80" stroke="#3A4A63" stroke-width="30" stroke-linecap="round"/><path d="M-46,-190 L-90,-90 M46,-190 L100,-120" stroke="#C99674" stroke-width="20" stroke-linecap="round"/></g>`;
-s+=P(110,1330,.9,'#D96C4A')+P(470,1300,.7,'#5FA36A')+P(980,1500,.95,'#7A5C9E');
-// pombo no ar + café suspenso + poeira parada
-s+=`<g transform="translate(250,560)"><ellipse rx="40" ry="22" fill="#8C939C" stroke="${T}" stroke-width="3"/><path d="M-10,-10 L-60,-70 L10,-20Z M10,-10 L70,-80 L30,-15Z" fill="#A7AEB7" stroke="${T}" stroke-width="3"/><circle cx="38" cy="-8" r="12" fill="#8C939C" stroke="${T}" stroke-width="3"/></g>`;
-for(let i=0;i<40;i++)s+=`<circle cx="${(i*137)%1000+20}" cy="${600+(i*251)%800}" r="${2+(i%3)}" fill="#fff" opacity=".7"/>`;
-s+=`<path d="M300,1590 L700,1640 L700,1660 L300,1600Z" fill="#000" opacity=".12"/>`;
+const F=FIGURANTES, P=(f,cx,pe,k,extra={})=>`<g transform="translate(${cx-200*k},${pe-1700*k}) scale(${k})">${pessoa(Object.assign({},f,extra))}</g>`;
+let s=`<defs><linearGradient id="c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8FCBE6"/><stop offset=".6" stop-color="#F6E7C4"/><stop offset="1" stop-color="#FCE3B0"/></linearGradient></defs>
+<rect width="1080" height="1920" fill="url(#c)"/><circle cx="890" cy="610" r="80" fill="#FFE9A8"/>`;
+// prédios do centro ao fundo
+[[0,470,150],[170,400,120],[300,520,110],[430,360,140],[600,450,130],[760,380,160],[940,500,150]].forEach(([x,y,w])=>{s+=`<rect x="${x}" y="${y}" width="${w}" height="${900-y}" fill="#C9D6DE"/>`;for(let yy=y+20;yy<880;yy+=34)for(let xx=x+14;xx<x+w-20;xx+=28)s+=`<rect x="${xx}" y="${yy}" width="16" height="20" fill="#E3ECF1"/>`;});
+// sobrados com lojas
+s+=sobrado(-40,760,300,530,{cor:'#F2C14E',loja:'PADARIA PÃO DE OURO',vitrine:'paes',sacada:0,veneziana:'#2F6FA3',numero:'214',toldo:['#D96C4A','#FFF8EC']});
+s+=sobrado(270,700,280,590,{cor:'#E89A7A',loja:'SALÃO DA DEISE',vitrine:'salao',veneziana:'#5FA36A',arCond:1,numero:'220',toldo:['#B9A7DB','#FFF8EC']});
+s+=sobrado(560,740,290,550,{cor:'#7FB98A',loja:'LANCHES DO ZÉ',veneziana:'#F4EDE1',sacada:1,toldo:['#2F6FA3','#FFF8EC'],corPlaca:'#F2C14E'});
+s+=sobrado(860,690,290,600,{cor:'#4E86B8',loja:'MERCADINHO',porta:'enrolar',veneziana:'#F2C14E',arCond:0,corPlaca:'#D96C4A',corLetra:'#fff'});
+s+=poste(480,1300,640)+fios(-200,660,1300,660,3);
+s+=arvore(130,1305,.72);
+s+=`<rect y="1290" width="1080" height="70" fill="#E4DCCD"/>`;
+// figurantes ao fundo, na calçada de lá
+s+=P(F.seuJoao,60,1352,.2)+P(F.kaique,200,1356,.2)+P(F.tais,330,1350,.2)+P(F.priscila,450,1354,.2);
+s+=pomboChao(300,1335,.5);
+s+=rua(1360,220);
+s+=onibus(540,1320,.64);
+s+=calcada(1580,340);
+// primeiro plano
+s+=P(F.dunha,40,1890,.42)+P(F.marcos,960,1900,.44);
+s+=pomboVoando(300,560,.9);
+for(let i=0;i<46;i++)s+=`<circle cx="${(i*137)%1040+20}" cy="${560+(i*251)%1000}" r="${2+(i%3)}" fill="#fff" opacity=".7"/>`;
 // película fria do mundo parado
-s+=`<rect width="1080" height="1920" fill="#9FB8D0" opacity=".18"/>`;
-// Rose em cor cheia
-s+=`<g transform="translate(250,690) scale(.53)">${rose({expr:'surpresa'})}</g>`;
+s+=`<rect width="1080" height="1920" fill="#9FB8D0" opacity=".2"/>`;
+// Rose (cor cheia) + sombra comprida
+s+=`<path d="M410,1700 L760,1760 L770,1780 L420,1716Z" fill="#000" opacity=".14"/>`;
+s+=`<g transform="translate(370,851) scale(.5)">${rose({expr:'surpresa'})}</g>`;
 // HUD
-const F='Barlow Condensed';
-s+=`<rect x="60" y="80" width="470" height="64" rx="32" fill="#fff"/><text x="92" y="125" font-family="${F}" font-weight="800" font-size="36" fill="${T}">CENTRO · SEG · 16:47</text>
-<rect x="60" y="170" width="400" height="150" rx="24" fill="#fff"/><text x="86" y="214" font-family="${F}" font-weight="800" font-size="25" fill="${T}" opacity=".7">RELÓGIO DO MUNDO</text><text x="86" y="292" font-family="Anton" font-size="68" fill="#7F93A8">16:47:00</text><text x="400" y="290" font-family="${F}" font-weight="800" font-size="38" fill="#7F93A8">❚❚</text>
-<rect x="480" y="170" width="440" height="150" rx="24" fill="#fff"/><text x="506" y="214" font-family="${F}" font-weight="800" font-size="25" fill="${T}" opacity=".7">RELÓGIO DA ROSE</text><text x="506" y="292" font-family="Anton" font-size="68" fill="${T}">16:47:32</text><text x="850" y="290" font-family="${F}" font-weight="800" font-size="38" fill="#5FA36A">▶</text>
-<rect x="60" y="345" width="520" height="140" rx="24" fill="#fff"/><text x="86" y="390" font-family="${F}" font-weight="800" font-size="25" fill="${T}" opacity=".7">PESSOAS SE MEXENDO</text><text x="86" y="466" font-family="Anton" font-size="66" fill="#F2C14E" stroke="${T}" stroke-width="2">1</text><text x="150" y="462" font-family="${F}" font-weight="800" font-size="34" fill="#D96C4A">▼ 8.119.999.999</text>`;
-s+=`<text x="470" y="1235" text-anchor="middle" font-family="Anton" font-size="128" fill="#fff" stroke="${T}" stroke-width="18" paint-order="stroke" stroke-linejoin="round">MENOS</text>
-<text x="470" y="1375" text-anchor="middle" font-family="Anton" font-size="150" fill="#F2C14E" stroke="${T}" stroke-width="18" paint-order="stroke" stroke-linejoin="round">UMA.</text>`;
+const B='Barlow Condensed',K='#2B2420';
+s+=`<rect x="60" y="80" width="470" height="64" rx="32" fill="#fff"/><text x="92" y="125" font-family="${B}" font-weight="800" font-size="36" fill="${K}">CENTRO · SEG · 16:47</text>
+<rect x="60" y="170" width="400" height="150" rx="24" fill="#fff"/><text x="86" y="214" font-family="${B}" font-weight="800" font-size="25" fill="${K}" opacity=".7">RELÓGIO DO MUNDO</text><text x="86" y="292" font-family="Anton" font-size="68" fill="#7F93A8">16:47:00</text><text x="400" y="290" font-family="${B}" font-weight="800" font-size="38" fill="#7F93A8">❚❚</text>
+<rect x="480" y="170" width="440" height="150" rx="24" fill="#fff"/><text x="506" y="214" font-family="${B}" font-weight="800" font-size="25" fill="${K}" opacity=".7">RELÓGIO DA ROSE</text><text x="506" y="292" font-family="Anton" font-size="68" fill="${K}">16:47:32</text><text x="850" y="290" font-family="${B}" font-weight="800" font-size="38" fill="#5FA36A">▶</text>
+<rect x="60" y="345" width="520" height="140" rx="24" fill="#fff"/><text x="86" y="390" font-family="${B}" font-weight="800" font-size="25" fill="${K}" opacity=".7">PESSOAS SE MEXENDO</text><text x="86" y="466" font-family="Anton" font-size="66" fill="#F2C14E" stroke="${K}" stroke-width="2">1</text><text x="150" y="462" font-family="${B}" font-weight="800" font-size="34" fill="#D96C4A">▼ 8.119.999.999</text>`;
+s+=`<text x="470" y="1190" text-anchor="middle" font-family="Anton" font-size="128" fill="#fff" stroke="${K}" stroke-width="18" paint-order="stroke" stroke-linejoin="round">MENOS</text>
+<text x="470" y="1330" text-anchor="middle" font-family="Anton" font-size="150" fill="#F2C14E" stroke="${K}" stroke-width="18" paint-order="stroke" stroke-linejoin="round">UMA.</text>`;
 document.getElementById('s').innerHTML=s;
 </script></body></html>
