@@ -49,7 +49,7 @@ def pad(acorde, d):
     return x * e
 
 
-def gera_trilha(duracao, pontos):
+def gera_trilha(duracao, pontos, camadas=('pad', 'tique', 'dedilhado', 'pulso', 'cordas')):
     n = int(SR * duracao)
     nivel, clima = curva(pontos, n)
     L = np.zeros((2, n))
@@ -70,6 +70,7 @@ def gera_trilha(duracao, pontos):
         lv, cl = nivel[k], clima[k]
         if lv <= 0.01 and (k + int(bloco * SR) >= n or nivel[min(n - 1, k + int(bloco * SR) - 1)] <= 0.01):
             continue
+        if 'pad' not in camadas: continue
         ac = ACORDES['calmo' if cl > 0.5 else 'tenso'][b % 4]
         p = pad(ac, bloco + 1.0)
         env = nivel[k:k + len(p)]
@@ -86,23 +87,23 @@ def gera_trilha(duracao, pontos):
         f = 2600 if i % 2 == 0 else 1800
         tk = (filtro(ruido(0.04, i), 'bp', (f * 0.7, f * 1.4)) * env_exp(0.04, 0.004)
               + seno(f, 0.04) * env_exp(0.04, 0.006) * 0.5)
-        soma(0.25 if i % 2 else -0.25, tk, k, 0.10 * min(lv, 1.5))
+        if 'tique' in camadas: soma(0.25 if i % 2 else -0.25, tk, k, 0.10 * min(lv, 1.5))
         # 2) ostinato dedilhado em colcheias (nível 1.5+)
-        if lv >= 1.4:
+        if lv >= 1.4 and 'dedilhado' in camadas:
             padrao = [0, 2, 1, 2]
             for c in range(2):
                 nota = ac[padrao[(i * 2 + c) % 4]] + 24
                 if nota not in cache: cache[nota] = pluck(NOTA(nota), 0.5, 0.4, seed=nota)
                 soma(-0.35 if c else 0.35, cache[nota], k + int(c * BEAT / 2 * SR), 0.16 * min(1, lv - 1.2))
         # 3) pulso curto (nível 2+) nas batidas 1 e 3
-        if lv >= 1.9 and i % 2 == 0 and cl < 0.5:
+        if lv >= 1.9 and i % 2 == 0 and cl < 0.5 and 'pulso' in camadas:
             d = 0.22
             pulso = filtro(seno(np.linspace(120, 62, int(SR * d)), d) * env_exp(d, 0.06), 'hp', 45)
             soma(0.0, pulso, k, 0.28 * min(1, lv - 1.7))
     # 4) cordas tremulando (nível 2.5+)
     tt = np.arange(n) / SR
     alto = np.clip(nivel - 2.3, 0, 0.7) / 0.7
-    if alto.max() > 0:
+    if alto.max() > 0 and 'cordas' in camadas:
         f = NOTA(74) * (1 + 0.003 * np.sin(2 * np.pi * 5 * tt))
         corda = (np.sin(2 * np.pi * np.cumsum(f) / SR) + 0.5 * np.sin(2 * np.pi * np.cumsum(f * 1.5) / SR))
         corda *= (0.55 + 0.45 * np.sin(2 * np.pi * 13 * tt)) * alto * 0.10

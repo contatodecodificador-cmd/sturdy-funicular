@@ -58,7 +58,7 @@ function roseRosto(expr, c) {
   return s;
 }
 
-function rose({ expr = 'feliz', corpo = true } = {}) {
+function rose({ expr = 'feliz', corpo = true, piscar = false } = {}) {
   const c = ROSE;
   const st = `stroke="${c.tinta}" stroke-width="3" stroke-linejoin="round"`;
   let s = '';
@@ -113,6 +113,8 @@ function rose({ expr = 'feliz', corpo = true } = {}) {
         <path d="M140,150 C160,108 240,108 260,150 L254,128 C236,92 164,92 146,128Z" fill="${c.faixa}" ${st}/>
         <path d="M252,120 C270,108 284,112 290,96 C278,116 266,126 256,130Z" fill="${c.faixa}" ${st}/>`;
   s += roseRosto(expr, c);
+  if (piscar) s += `<path d="M158,214 C170,212 186,212 196,216 L196,236 L158,236Z M204,216 C214,212 230,212 242,214 L242,236 L204,236Z" fill="${c.pele}"/>
+    <path d="M160,230 C170,236 186,236 196,230 M204,230 C214,236 230,236 240,230" stroke="${c.tinta}" stroke-width="3.6" fill="none" stroke-linecap="round"/>`;
   return s;
 }
 

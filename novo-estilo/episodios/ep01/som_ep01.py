@@ -107,7 +107,7 @@ def monta(ini, dur, fim=None):
     pontos.append((ini[38] + 1.5, 0, 'tenso', True))  # silêncio seco depois de "única acordada"
     pontos.append((ini[-1] + 2.2, 0, 'tenso', True))  # corte seco no final
     pontos.sort(key=lambda p: p[0])
-    mus = gera_trilha(dur, pontos)
+    mus = gera_trilha(dur, pontos, camadas=('tique',))  # dono pediu: só o tique-taque, sem música (2026-11-07)
     return fx, mus
 
 
@@ -140,7 +140,7 @@ def final_com_voz():
     voz *= 10 ** ((-16 - lufs(voz)) / 20)                       # voz em -16 LUFS
     rv = rms_ativo_db(voz)
     fx *= 10 ** ((rv - 15 - rms_ativo_db(fx)) / 20)             # efeitos 15 dB abaixo (todas as frequências)
-    mus *= 10 ** ((rv - 19 - rms_ativo_db(mus)) / 20)           # trilha ~19 dB abaixo da voz
+    mus *= 10 ** ((rv - 26 - rms_ativo_db(mus)) / 20)           # tique-taque bem baixinho, ~26 dB abaixo da voz
     mix = voz + fx + mus
     bruto = os.path.join(AQUI, 'mix-bruto.wav')
     wavfile.write(bruto, SR, (np.clip(mix / max(1, np.abs(mix).max()), -1, 1).T * 32767).astype(np.int16))

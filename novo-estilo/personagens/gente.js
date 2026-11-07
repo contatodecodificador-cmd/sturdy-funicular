@@ -142,7 +142,7 @@ function bracos(o, st) {
   else { esq = ['M118,470 L96,680 L92,850', [92, 872]]; dir = ['M282,470 L304,680 L308,850', [308, 872]]; }
   let s = braco(esq[0], esq[1]) + braco(dir[0], dir[1]);
   if (p === 'cafe') s += `<path d="M222,330 L268,330 L262,392 L228,392Z" fill="#fff" ${st}/><rect x="222" y="322" width="46" height="12" rx="4" fill="#7A4A2E"/>` +
-    `<ellipse cx="236" cy="296" rx="10" ry="14" fill="#7A4A2E" opacity=".85"/><circle cx="252" cy="280" r="5" fill="#7A4A2E" opacity=".8"/><circle cx="224" cy="276" r="4" fill="#7A4A2E" opacity=".7"/>`;
+    (o.cafeSuspenso === false ? '' : `<ellipse cx="236" cy="296" rx="10" ry="14" fill="#7A4A2E" opacity=".85"/><circle cx="252" cy="280" r="5" fill="#7A4A2E" opacity=".8"/><circle cx="224" cy="276" r="4" fill="#7A4A2E" opacity=".7"/>`);
   if (p === 'celular') s += `<rect x="176" y="640" width="48" height="84" rx="8" fill="#22262E" ${st}/><rect x="182" y="648" width="36" height="66" rx="4" fill="#6FB7E8"/>`;
   return s;
 }
