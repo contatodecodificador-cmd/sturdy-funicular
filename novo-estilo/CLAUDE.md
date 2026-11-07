@@ -25,9 +25,10 @@ Fale com o dono em português do Brasil, simples, e mostre as coisas como imagem
 | `amostras/` | pranchas das 3 direções, quadro-conceito |
 | `personagens/` | `rose.js` (Rose, 5 expressões, piscar), `gente.js` (gerador de figurantes + elenco fixo), folhas de design |
 | `cenarios/cenario.js` | ônibus, pombos, sobrados com loja, poste/fios, árvore, calçada de pedra portuguesa, rua |
-| `som/` | `sintese.py`, `efeitos.py` (25 efeitos → `sfx/`), `trilha.py` (camadas; hoje só "tique") |
+| `som/` | `sintese.py`, `efeitos.py` (29 efeitos → `sfx/`), `trilha.py` (camadas; hoje só "tique") |
 | `serie/` | bíblia da série, roteiros + briefing |
-| `episodios/epNN/` | voz, transcrição, `som_epNN.py` (mapa de som + mix), áudio final |
+| `episodios/epNN/` | voz, transcrição, `som_epNN.py` (mapa de som + mix), áudio final, capa, Stories, Stories de enquete, `post-epNN.md` (legendas prontas) |
+| `marca/` | foto de perfil (`perfil-tinta.png` é a escolhida, sem borda) |
 | `estudio/` | projeto Remotion (1080x1920, 30 fps) |
 
 ## Passo a passo de um episódio
@@ -36,17 +37,32 @@ Fale com o dono em português do Brasil, simples, e mostre as coisas como imagem
 7. `python3 som_epNN.py` → alinha cenas por palavra (`alinha.py`), prende efeitos em palavras (`'@palavra'`), mixa: voz -16 LUFS, efeitos 15 dB abaixo (RMS em todas as frequências), final **-11 LUFS**, pico < -1 dB → `audio-final-epNN.*` e `tempos-reais.json`.
 8. Copiar `tempos-reais.json` → `estudio/src/tempos-epNN.json` e o MP3 → `estudio/public/epNN/audio.mp3`.
 9. Cenas em `estudio/src/epNN.tsx` (cada cena: cenário, chaves de câmera, socos, HUD, posição da legenda).
-10. **Folha de quadros antes do render:** `node folha.mjs` (ou `node folha.mjs 3,7,12` pra algumas cenas) → `out/quadros/`.
+10. **Folha de quadros antes do render:** `EP=Ep02 node folha.mjs` (ou `EP=Ep02 node folha.mjs 3,7,12` pra algumas cenas) → `out/quadros-ep02/`.
 11. Render: `npx remotion render src/index.ts EpNN out/epNN.mp4 --codec h264 --crf 20`.
-12. Capa, legenda do post e Stories.
+12. Capa (`CapaEpNN`, Still), Stories de apresentação (`StoriesEpNN`, ~15 s com trechos da voz; depois normalizar pra -11 LUFS com ffmpeg), Stories fixo de enquete A/B (`EnqueteEpNN`, Still, área livre pro adesivo) e `post-epNN.md` com legenda de Instagram, TikTok e ordem de postagem.
+
+## Episódios feitos
+| Ep. | Título | Arquivos |
+|---|---|---|
+| 1 | "16:47" | `serie/ep01-roteiro.md`, `estudio/src/ep01.tsx`, `extras.tsx` (capa/Stories), `episodios/ep01/` |
+| 2 | "O rastro na poeira" (termina no 1º A/B: A se esconder e esperar · B pegar o relógio e fugir) | `serie/ep02-roteiro.md`, `estudio/src/ep02.tsx`, `cenarios2.tsx`, `extras2.tsx`, `episodios/ep02/` |
+- Linha do tempo da série: pro mundo é sempre **segunda, 16:47**; pra Rose o tempo anda (Ep. 2 = dia 7). Todo relógio/celular marca 16:47. Foto da Rose tirada **seg 16:46** (alguém vigiava antes).
+- Ep. 3 abre com resumo + "vocês escolheram" (% do A/B) — esperar o placar do dono.
 
 ## Estúdio (estudio/src)
 - `camera.tsx`: `Camera` (chaves t/x/y/z/r, `socos`, `tremor`, limites: nunca mostra fora do cenário), `Legenda` (blocos de até 3 palavras, palavra entra na hora em que é falada, destaque em ipê).
-- `pecas.tsx`: `Etiqueta`, `Ficha`, `Medidor`, `Cartao`, `Carimbo`, `Topo`, `Relogios`, `Checklist`, `Flash`, `Pergunta`.
+- `pecas.tsx`: `Etiqueta`, `Ficha`, `Medidor`, `Cartao`, `Carimbo`, `Topo`, `Relogios`, `Checklist`, `Flash`, `Pergunta`, `CartaoAB` (A/B com relógio de 10 s).
+- `episodio.tsx`: base comum do Ep. 2 em diante (`tempos()`, `W(cena, palavra)`, `Episodio`, `Cena` com `marcas` presas no cenário, `render` livre pra montagens, `lado` da legenda).
+- `camera.tsx` também tem `Marca`: etiqueta presa num ponto do mundo (anda com a câmera, fica atrás da Rose).
+- `arte.ts`: `roseVivo(t, {andando, falando, expr})` — a Rose respira, pisca, mexe a cabeça, olha em volta, balança os braços, anda e fala.
 - `cenarios.tsx`: `Rua` (mundo 2400x1920 + céu/calçada extra), `Mundo`, `Escada`, `Terraco`, `RelogioRua`, `Pulso`, `Padaria`, `Loja`, `MapaBairro`, `Celular`.
 - Chromium: usa o já instalado (`remotion.config.ts`), não baixar outro.
 
 ## Lições
+- Etiqueta que aponta pra coisa é `Marca` (presa no cenário), nunca solta na tela.
+- Nada cobre a Rose: câmera põe ela de um lado (`ladoRose`) e a legenda vai pro outro (`lado`).
+- Cuidado com homófonos na voz ("cem" × "sem") e com a lógica do tempo parado (todo relógio marca 16:47).
+- Imagem parada (Still) com animação de entrada: usar `em` negativo, senão sai vazia.
 - Legenda nunca em cima do rosto; nada importante nos 380 px de baixo nem nos 140 px da direita.
 - Câmera com zoom abaixo do mínimo mostra preto: os limites (`lim`) resolvem.
 - Coisa desenhada atrás de prédio some (o sol da cena 21): conferir na folha de quadros.
