@@ -1,6 +1,6 @@
 // Cenários do Ep. 1. Cada cenário é um "mundo" SVG (W x H) que a Câmera enquadra.
 import React from 'react';
-import {rose, pessoa, FIG, EXTRAS, cen, poe} from './arte';
+import {rose, roseVivo, pessoa, FIG, EXTRAS, cen, poe} from './arte';
 
 const T = '#2B2420';
 const ST = `stroke="${T}" stroke-width="3" stroke-linejoin="round"`;
@@ -81,6 +81,7 @@ const poeira = (() => { let s = ''; for (let i = 0; i < 90; i++) s += `<circle c
 export type EstadoRua = {
   congelado: number; roseX: number; roseExpr?: string; rosePiscar?: boolean; roseFlip?: boolean; roseSentada?: boolean; roseVisivel?: boolean;
   joaoX: number; onibusX?: number; cafeSuspenso?: boolean; bolso?: number; pombo?: boolean; camada?: 'base' | 'rose';
+  roseT?: number; roseAndando?: boolean; roseFalando?: boolean;
 };
 
 export const Rua: React.FC<EstadoRua> = (e) => {
@@ -88,7 +89,7 @@ export const Rua: React.FC<EstadoRua> = (e) => {
   const frente = React.useMemo(ruaFrente, []);
   const {W, H} = RUA;
   const k = POS.k;
-  const roseSvg = rose({expr: e.roseExpr || 'surpresa', piscar: !!e.rosePiscar});
+  const roseSvg = roseVivo(e.roseT || 0, {expr: e.roseExpr || 'surpresa', andando: e.roseAndando, falando: e.roseFalando, piscar: e.rosePiscar || undefined});
   const joao = poe(pessoa(FIG.seuJoao), e.joaoX, POS.pe, k);
   const pri = poe(pessoa({...FIG.priscila, cafeSuspenso: e.cafeSuspenso !== false}), POS.priscila, POS.pe, k);
   const bolso = e.bolso ? `<rect x="${e.joaoX + (226 - 200) * k}" y="${POS.pe - 1700 * k + 520 * k}" width="${50 * k}" height="${70 * k}" rx="4" fill="#BFE6FF" opacity="${e.bolso}"/><circle cx="${e.joaoX + 50 * k}" cy="${POS.pe - 1700 * k + 555 * k}" r="${60 * k}" fill="#BFE6FF" opacity="${0.35 * e.bolso}"/>` : '';
@@ -132,7 +133,7 @@ export const Mundo: React.FC<{acesas: number; t: number}> = ({acesas, t}) => {
 
 // ---------------------------------------------------------------- ESCADA (prédio, 22 andares)
 export const ESCADA = {W: 1080, H: 4200};
-export const Escada: React.FC<{subida: number}> = ({subida}) => {
+export const Escada: React.FC<{subida: number; t?: number}> = ({subida, t = 0}) => {
   const html = React.useMemo(() => {
     let s = `<rect width="1080" height="4200" fill="#D9D2C4"/>`;
     for (let i = 0; i < 12; i++) {
@@ -145,15 +146,15 @@ export const Escada: React.FC<{subida: number}> = ({subida}) => {
     s += `<rect width="1080" height="4200" fill="#9FB8D0" opacity=".15"/>`;
     return s;
   }, []);
-  const y = 4000 - subida * 3740;
+  const y = 3900 - subida * 2700;
   const fr = (subida * 11) % 2;
   const x = 160 + (fr < 1 ? fr : 2 - fr) * 700;
-  return <Svg W={1080} H={4200} html={html + poe(rose({expr: 'brava'}), x, y - (x - 160) * 0.357, 0.42)} />;
+  return <Svg W={1080} H={4200} html={html + poe(roseVivo(t, {expr: 'brava', andando: true, passosPorSeg: 2.4}), x, y - (x - 160) * 0.357, 0.42, fr >= 1)} />;
 };
 
 // ---------------------------------------------------------------- TERRAÇO (cidade toda parada)
 export const TERRACO = {W: 2000, H: 1920, lim: {x0: 0, y0: -900, x1: 2000, y1: 2700}};
-export const Terraco: React.FC<{}> = () => {
+export const Terraco: React.FC<{t?: number}> = ({t = 0}) => {
   const html = React.useMemo(() => {
     let s = `<defs><linearGradient id="ceuT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FBCDD"/><stop offset=".7" stop-color="#F8DDA8"/><stop offset="1" stop-color="#F7C98B"/></linearGradient></defs>`;
     s += `<rect x="-50" y="-1000" width="2100" height="1100" fill="#7FBCDD"/><rect width="2000" height="1920" fill="url(#ceuT)"/><circle cx="1500" cy="520" r="110" fill="#FFE29A"/><circle cx="1500" cy="520" r="180" fill="#FFE29A" opacity=".3"/>`;
@@ -176,7 +177,7 @@ export const Terraco: React.FC<{}> = () => {
     s += `<rect x="1300" y="1420" width="160" height="140" fill="#9AA5AE" ${ST}/><text x="1380" y="1505" text-anchor="middle" font-family="Anton, sans-serif" font-size="40" fill="#fff">22º</text>`;
     return s;
   }, []);
-  return <Svg W={2000} H={1920} html={html + poe(rose({expr: 'surpresa'}), 700, 1890, 0.5)} />;
+  return <Svg W={2000} H={1920} html={html + poe(roseVivo(t, {expr: 'surpresa'}), 700, 1890, 0.5)} />;
 };
 
 // ---------------------------------------------------------------- RELÓGIO DE RUA (4:47)
@@ -209,7 +210,7 @@ export const Pulso: React.FC<{hora: string}> = ({hora}) => {
 
 // ---------------------------------------------------------------- PADARIA (por dentro)
 export const PADARIA = {W: 1600, H: 1920};
-export const Padaria: React.FC<{roseX: number; roseExpr: string; dinheiro: number}> = ({roseX, roseExpr, dinheiro}) => {
+export const Padaria: React.FC<{roseX: number; roseExpr: string; dinheiro: number; t?: number; falando?: boolean}> = ({roseX, roseExpr, dinheiro, t = 0, falando}) => {
   const fundo = React.useMemo(() => {
     let s = `<rect width="1600" height="1920" fill="#F4EDE1"/>`;
     for (let y = 0; y < 1100; y += 60) for (let x = 0; x < 1600; x += 60) s += `<rect x="${x + 2}" y="${y + 2}" width="56" height="56" fill="${(x / 60 + y / 60) % 2 ? '#FFFFFF' : '#EAF2EE'}"/>`;
@@ -229,12 +230,12 @@ export const Padaria: React.FC<{roseX: number; roseExpr: string; dinheiro: numbe
   }, []);
   let din = '';
   if (dinheiro > 0) din = `<g opacity="${dinheiro}"><rect x="1230" y="1090" width="120" height="60" rx="6" fill="#8FD18F" ${ST} transform="rotate(-8 1290 1120)"/><circle cx="1380" cy="1130" r="20" fill="#E8C35A" ${ST}/><circle cx="1410" cy="1124" r="20" fill="#E8C35A" ${ST}/></g>`;
-  return <Svg W={1600} H={1920} html={fundo + din + poe(rose({expr: roseExpr}), roseX, 1900, 0.62)} />;
+  return <Svg W={1600} H={1920} html={fundo + din + poe(roseVivo(t, {expr: roseExpr, falando}), roseX, 1900, 0.62)} />;
 };
 
 // ---------------------------------------------------------------- LOJA DE MÓVEIS (sofá de R$ 8.900)
 export const LOJA = {W: 1400, H: 1920};
-export const Loja: React.FC<{piscar: boolean}> = ({piscar}) => {
+export const Loja: React.FC<{piscar: boolean; t?: number}> = ({piscar, t = 0}) => {
   const fundo = React.useMemo(() => {
     let s = `<rect width="1400" height="1920" fill="#EFE6F7"/><rect y="1300" width="1400" height="620" fill="#C9B79C"/>`;
     for (let x = 0; x < 1400; x += 140) s += `<path d="M${x},1300 L${x - 200},1920" stroke="#B7A487" stroke-width="4"/>`;
@@ -248,7 +249,7 @@ export const Loja: React.FC<{piscar: boolean}> = ({piscar}) => {
     s += `<rect width="1400" height="1920" fill="#9FB8D0" opacity=".18"/>`;
     return s;
   }, []);
-  const deitada = `<g transform="translate(1200,1080) rotate(90) scale(0.5)">${rose({expr: 'feliz', piscar})}</g>`;
+  const deitada = `<g transform="translate(1200,1080) rotate(90) scale(0.5)">${roseVivo(t, {expr: 'feliz', piscar})}</g>`;
   return <Svg W={1400} H={1920} html={fundo + deitada} />;
 };
 

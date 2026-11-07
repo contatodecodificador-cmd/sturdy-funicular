@@ -20,6 +20,27 @@ export const cen = C as {
   rua: (y: number, h: number, w?: number) => string;
 };
 
+/** Rose viva: respira, pisca, mexe a cabeça, olha em volta, balança os braços; anda e fala quando pedido.
+ *  t = tempo em segundos (pode ser o da cena). Só a Rose se mexe: o resto do mundo está parado. */
+export function roseVivo(t: number, o: {expr?: string; andando?: boolean; falando?: boolean; piscar?: boolean; passosPorSeg?: number; corpo?: boolean} = {}) {
+  const TAU = Math.PI * 2;
+  const resp = (Math.sin(TAU * t / 3.4) + 1) / 2;
+  const pisca = ((t + 0.7) % 3.3) > 3.17 || ((t + 2.1) % 7.9) > 7.78;
+  const anim: any = {
+    resp, cab: 2.4 * Math.sin(TAU * t / 5.3) + 1.2 * Math.sin(TAU * t / 2.1), cabY: 2 * Math.sin(TAU * t / 4.1),
+    bE: 3 * Math.sin(TAU * t / 3.4 + 0.5), bD: -3 * Math.sin(TAU * t / 3.4 + 1.1), olhar: 0.8 * Math.sin(TAU * t / 6.7),
+  };
+  if (o.andando) {
+    const f = TAU * t * (o.passosPorSeg || 1.6) / 2;
+    anim.pE = 16 * Math.sin(f); anim.pD = -anim.pE;
+    anim.bE = -12 * Math.sin(f); anim.bD = -anim.bE;
+    anim.pulo = 9 * Math.abs(Math.sin(f));
+    anim.cab = 1.5 * Math.sin(f * 2);
+  }
+  if (o.falando) anim.falar = ((Math.sin(t * 15) + 1) / 2) * (0.55 + 0.45 * Math.sin(t * 3.3));
+  return rose({expr: o.expr || 'surpresa', piscar: o.piscar ?? pisca, anim, corpo: o.corpo !== false});
+}
+
 /** Coloca uma pessoa com os pés em (cx, pe), escala k (1 = 1700 px de altura). */
 export const poe = (svg: string, cx: number, pe: number, k: number, flip = false) =>
   `<g transform="translate(${cx - 200 * k * (flip ? -1 : 1)},${pe - 1700 * k}) scale(${k * (flip ? -1 : 1)},${k})">${svg}</g>`;
