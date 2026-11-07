@@ -94,6 +94,43 @@ O comprador recebe `entrega/COMECE-AQUI.md` e a pasta `entrega/oficina/`. A orde
 
 Testado em 07/11/2026: `npm install` e `npm run teste` funcionam na nuvem e geram `saida/teste.mp4`.
 
+## A linha do produto: 10 passos em 3 fases (proposta de 07/11/2026)
+
+Regra de ouro: **o que o Claude consegue fazer, ele faz**. A pessoa só digita o comando, responde
+perguntas e aprova. Instalar, configurar, gerar a voz, montar, conferir e salvar ficam com o Claude.
+
+| Fase | Passo | O que acontece | Comando | Quem faz |
+|---|---|---|---|---|
+| **A. Preparar** (uma vez) | 1 | Criar as contas: Claude Pro, GitHub, voz | (nenhum) | a pessoa |
+| | 2 | Colocar a Oficina no GitHub | (nenhum) | a pessoa (arrastar arquivos) |
+| | 3 | Abrir o Claude Code na nuvem e montar a oficina | `/comecar` | o Claude |
+| **B. Criar a série** (uma vez por série) | 4 | A ideia e o mundo da série, com o caminho das partes e o mistério | `/serie` (ou `/ideias` antes, se comprou o extra) | o Claude, com a pessoa aprovando |
+| | 5 | Personagens (a partir do personagem-base) e cenários | `/visual` | o Claude, com a pessoa escolhendo |
+| **C. Fazer cada parte** (repete toda parte) | 6 | O roteiro da parte e os dois caminhos da votação | `/roteiro` | o Claude, com a pessoa aprovando |
+| | 7 | A narração: o Claude gera a voz (ou recebe o áudio) e encaixa nas cenas | `/voz` | o Claude |
+| | 8 | Montar o vídeo: cenas, legenda, som, conferência e o arquivo final | `/montar` | o Claude |
+| | 9 | Postar: capa, Stories da votação, legenda do post, horário | `/postar` | o Claude prepara, a pessoa posta |
+| | 10 | Ler a votação e preparar a próxima parte (volta ao passo 6) | `/proxima` | o Claude, com a pessoa contando o resultado |
+
+**Comando coringa:** `/seguir`. Ele lê os arquivos do canal, descobre onde a pessoa parou e chama o
+passo certo. Quem não quiser decorar comando usa só `/seguir`.
+
+**Total:** 9 comandos (`comecar`, `serie`, `visual`, `roteiro`, `voz`, `montar`, `postar`, `proxima`,
+`seguir`) + o extra `ideias` vendido no checkout.
+
+### Como entregar: a "Área da Oficina"
+
+- Um site simples, com **uma página por passo** (1 a 10) e uma página inicial com a linha dos passos.
+- Cada página tem: o que é o passo, o comando, o que esperar, o que fazer se der problema e um
+  **botão de baixar**.
+- **Todos os comandos já vêm na pasta da oficina** (o download do passo 2). Assim a pessoa sobe os
+  arquivos uma vez só e não erra a instalação. O botão de cada passo serve para baixar só aquele
+  comando de novo, quando sair uma versão nova.
+- Músicas e áudio: o Claude faz os sons do zero. A página do passo 8 explica como colocar uma música
+  própria ou de um banco de músicas livres, e o que conferir na licença.
+- Onde hospedar (a decidir): a área de membros da própria Cakto, se ela atender, ou uma página
+  protegida. O link nunca fica aberto na internet.
+
 ## Sumário do guia
 
 > Estrutura própria. Os nomes internos do nosso método (para as etapas, o roteiro e a série) ainda vão
