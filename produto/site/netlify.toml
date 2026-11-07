@@ -1,0 +1,12 @@
+# Site completo do Estúdio do Nogueira: página de venda + Área do Estúdio com login.
+# Montado e publicado por produto/site/publicar-tudo.sh (o Claude roda).
+
+[build]
+  publish = "dist"
+  functions = "netlify/functions"
+  edge_functions = "netlify/edge-functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# O porteiro (netlify/edge-functions/porteiro.mjs) declara o próprio caminho: /area/*, menos a tela de entrar.

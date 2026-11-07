@@ -353,6 +353,11 @@ JS_ACESSO = """
         s.classList.toggle('travada', !ok);
       });
     }
+    if (new URLSearchParams(location.search).get('bloqueado')) {
+      var aviso = document.createElement('div'); aviso.className = 'cadeado'; aviso.style.display = 'flex';
+      aviso.innerHTML = '<span>🔒 Essa parte faz parte de outro produto. Veja abaixo como liberar.</span>';
+      var h1 = document.querySelector('h1'); if (h1) h1.parentNode.insertBefore(aviso, h1.nextSibling);
+    }
     if (param) { aplicar(param.split(',')); return; }
     fetch('/api/acesso', { credentials: 'same-origin' })
       .then(function (r) { return r.ok ? r.json() : null; })
@@ -375,7 +380,7 @@ def pagina(titulo: str, onde: str, corpo: str, raiz: str = "", extra_js: str = "
 <style>{CSS}</style>
 </head>
 <body>
-<header><div class="wrap"><a class="marca" href="{raiz}index.html">Estúdio do <span>Nogueira</span></a><span class="onde">{onde}</span></div></header>
+<header><div class="wrap"><a class="marca" href="{raiz}index.html">Estúdio do <span>Nogueira</span></a><span class="onde">{onde} · <a href="/api/sair" style="color:inherit">sair</a></span></div></header>
 <main><div class="wrap">
 {corpo}
 </div></main>

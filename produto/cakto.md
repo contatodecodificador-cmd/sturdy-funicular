@@ -16,6 +16,11 @@ Criado pelo Claude em 07/11/2026, pelo CaktoMCP oficial, com a aprovação do do
   "Sem ideia? Leve o Caça-Ideias" · botão "Sim, quero o Caça-Ideias".
 - A página de venda já tem os links, mas com `VENDAS_ABERTAS = false` até o lançamento.
 
+- Webhook 82321 "Estúdio do Nogueira: acesso à Área" → https://estudiodonogueira.netlify.app/api/cakto
+  (compra aprovada, reembolso, chargeback; os 4 produtos). A senha dele está só no Netlify
+  (variável CAKTO_WEBHOOK_SECRET).
+
 ## Falta
-- Webhook de compra aprovada e de reembolso → endereço do login (quando o login existir).
+- O site precisa estar público no Netlify (Visitor access › Production visibility: Public) para a
+  Cakto conseguir entregar os avisos. Teste de 07/11 voltou 401 por causa disso.
 - Imagem de capa de cada produto (opcional).

@@ -65,13 +65,15 @@ Atualizado em 07/11/2026. ✅ feito · 🟡 feito, falta testar ou decidir · �
 
 - ✅ Pesquisado: a Cakto tem webhook de "Compra aprovada" (Integrações › Webhooks), por produto
 - ✅ Conta no Netlify criada e token salvo no ambiente (o Claude publica daqui)
-- ⬜ Dono: comprar um domínio (exemplo: estudiodonogueira.com.br)
-- ⬜ Dono: criar conta num serviço de envio de e-mail (exemplo: Resend)
-- ⬜ Construir: receber o aviso da Cakto e guardar o e-mail e o produto comprado
-- ⬜ Construir: tela de entrar (e-mail → código no e-mail → entra)
-- ⬜ Construir: o porteiro do site, que só libera cada parte para quem comprou
-- ⬜ Reembolso tira o acesso
-- ⬜ Configurar o webhook na Cakto com o endereço do site
+- ✅ Sem domínio: o login usa e-mail + número do pedido da Cakto (jeito B)
+- ✅ Sem serviço de e-mail (jeito B)
+- ✅ Recebedor do aviso da Cakto (`site/netlify/functions/cakto.mjs`), no ar
+- ✅ Tela de entrar: e-mail + número do pedido (`site/entrar.html`), no ar
+- ✅ Porteiro da Área (`site/netlify/edge-functions/porteiro.mjs`), no ar
+- ✅ Reembolso e chargeback tiram o acesso
+- ✅ Webhook criado na Cakto (82321)
+- ⬜ Dono: deixar o site público no Netlify (Visitor access) e repetir o teste do webhook
+- ⬜ Compra de teste de verdade, do pagamento ao download
 
 ## 8. Cakto
 
