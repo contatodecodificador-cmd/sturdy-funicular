@@ -1,84 +1,57 @@
 # Checklist do Estúdio do Nogueira
 
-Atualizado em 07/11/2026. ✅ feito · 🟡 feito, falta testar ou decidir · ⬜ falta fazer
+Atualizado em 07/11/2026. ✅ pronto · ⏳ esperando o dono / o lançamento
 
-## 1. Os produtos
+**Situação:** tudo pronto e no ar em https://estudiodonogueira.netlify.app, com as **vendas desligadas**
+e a página **fora do Google**, esperando os resultados reais dos canais (5 a 10 dias). O passo a passo do
+lançamento está em `LANCAMENTO.md`.
 
-| Produto | Preço sugerido | Onde aparece | O que a pessoa recebe | Situação |
-|---|---|---|---|---|
-| Só o guia | R$ 27 | página de venda | a parte **Guia** da Área | ⬜ os cadernos do guia ainda não foram escritos |
-| Só a skill | R$ 47 | página de venda | a parte **Passo a passo com os comandos** da Área | 🟡 pronto, falta testar os comandos |
-| Estúdio completo | R$ 67 | página de venda (destaque) | Guia + Passo a passo | 🟡 depende dos dois acima |
-| Caça-Ideias (extra) | R$ 17 | **só no checkout** | a parte **Extra** da Área | 🟡 pronto, testado até a etapa 3 de 5 |
+## Os produtos (Cakto) · `cakto.md`
 
-## 2. Página de venda (`pagina/index.html`)
+- ✅ Completo R$ 67 · https://pay.cakto.com.br/34jdugf
+- ✅ Só o guia R$ 27 · https://pay.cakto.com.br/sc7ng7g
+- ✅ Só a skill R$ 47 · https://pay.cakto.com.br/5j8pjnu
+- ✅ Caça-Ideias R$ 17 · extra (order bump) nos 3 checkouts
+- ✅ Webhook de compra aprovada, reembolso e chargeback → site (testado: 200)
 
-- ✅ Visual escuro "Vigia Noturno", fundo com névoa, silhueta do bairro e torre
-- ✅ Nome Estúdio do Nogueira
-- ✅ Os dois canais como modelo: Contos do Vigia (noite) e O Tempo Parou (dia), com as capas reais
-- ✅ Seção "A ideia é sua" (qualquer nicho, tudo editável)
-- ✅ Personagem-base que se monta sozinho
-- ✅ Diário de O Bunker com os 4 erros (sem entregar o método)
-- ✅ Ferramentas assinadas por fora e "não precisa de computador potente"
-- ✅ Preços em 3 opções, sem prazo de reembolso na página
+## Página de venda · `pagina/index.html`
+
+- ✅ Visual escuro, névoa, bairro com a torre, personagem que se monta
+- ✅ Nome Estúdio do Nogueira; os dois canais como modelo (Contos do Vigia e O Tempo Parou)
+- ✅ Nicho livre, voz livre, roda na nuvem, preços em 3 opções, sem prazo de reembolso na página
 - ✅ Sem números, depoimentos ou promessa de ganho
-- ✅ Links de checkout na página, desligados até o lançamento (`VENDAS_ABERTAS = false`)
-- ⬜ Trocar "O Tempo Parou" pelo nome final do canal, se mudar
-- ✅ Pacote pronto para arrastar no Netlify: `publicar/pagina-de-venda.zip` (veja `publicar/COMO-PUBLICAR.md`)
-- ✅ No ar em https://estudiodonogueira.netlify.app (fora do Google até o lançamento). Republicar: `bash produto/publicar/publicar.sh`
+- ✅ Links de checkout no código, desligados (`VENDAS_ABERTAS = false`)
+- ✅ Seção de resultados pronta e escondida (`RESULTADOS = null`)
+- ⏳ Preencher os resultados reais e ligar as vendas no lançamento
 
-## 3. A skill (os comandos, em `entrega/estudio/`)
+## A skill · `entrega/estudio/`
 
-- ✅ `/comecar`: monta o estúdio, vídeo de teste, chave da voz, perfil do canal (**testado** o projeto de vídeo)
-- 🟡 `/serie`, `/visual`, `/roteiro`, `/voz`, `/montar`, `/postar`, `/proxima`, `/seguir`: escritos, **falta testar** com uma série de exemplo do começo ao fim
-- ✅ Personagem-base em código (cabelos, roupas, acessórios, expressões, piscar, boca falando) e a folha de exemplo (**testado**)
-- ✅ Memória do Claude (`CLAUDE.md`) e o arquivo "onde paramos" (`canal/ESTADO.md`)
-- ✅ Passo a passo do comprador (`entrega/COMECE-AQUI.md`)
-- ⬜ Testar o caminho inteiro com uma conta nova do GitHub, seguindo só a Área
+- ✅ 9 comandos: `/comecar`, `/serie`, `/visual`, `/roteiro`, `/voz`, `/montar`, `/postar`, `/proxima`, `/seguir`
+- ✅ Todos testados com a série "O Elevador das Seis" (romance), do perfil do canal ao resultado da votação
+- ✅ Personagem-base com peças extras; câmera, legenda, etiqueta, cartão da escolha, capa e Stories prontos
+- ✅ Ferramentas: tempos da voz, efeitos do zero, mixagem com as regras de volume, folha de quadros
 
-## 4. O Caça-Ideias (`entrega/extra-ideias/`)
+## O extra Caça-Ideias · `entrega/extra-ideias/`
 
-- ✅ Comando `/ideias` e instruções de instalação
-- 🟡 Testado: pesquisa e as 10 ideias. Falta testar a lapidação e o salvamento (etapas 4 e 5)
-- ⬜ Texto do checkout na Cakto (título e descrição já estão no `plano.md`)
+- ✅ Comando `/ideias` (pesquisa testada na nuvem, 10 ideias no formato certo)
 
-## 5. O guia (para "só o guia" e o completo)
+## O guia · `guia/`
 
-- ✅ Sumário dos 6 cadernos + diário + modelos (no `plano.md` e na Área)
-- ⬜ Escrever o Caderno 1 · O seu canal
-- ⬜ Escrever o Caderno 2 · A série
-- ⬜ Escrever o Caderno 3 · O roteiro
-- ⬜ Escrever o Caderno 4 · A voz
-- ⬜ Escrever o Caderno 5 · Imagem e som
-- ⬜ Escrever o Caderno 6 · Postar e continuar
-- ⬜ Diário de produção (O Bunker e O Tempo Parou)
-- ⬜ Modelos para preencher (versão para quem não tem a skill)
+- ✅ Caderno 0 (antes de começar) e Cadernos 1 a 6, com pedidos prontos para colar no Claude
+- ✅ Diário de produção (O Bunker, O Tempo Parou, O Elevador das Seis)
+- ✅ Modelos para preencher
 
-## 6. A Área do Estúdio (`area/`)
+## A Área do Estúdio e o login · `area/` e `site/`
 
-- ✅ Gerador do site: início, uma página por passo, guia, extra e os downloads
-- ✅ Três partes separadas por produto, com cadeado e botão "Liberar"
-- ✅ Funciona no computador e no celular
-- ✅ Links de checkout no botão "Liberar" da Área
+- ✅ Início, guia, passo a passo (10 passos) e extra, separados por produto, com cadeado e "Liberar"
+- ✅ Login com e-mail + número do pedido da Cakto (sem domínio e sem serviço de e-mail)
+- ✅ Porteiro: sem login não abre nada; cada produto abre só a sua parte
+- ✅ Testado de ponta a ponta: skill, guia, extra, aviso repetido, reembolso e sair
+- ✅ Trava de segurança: se a Área abrir sem login, ela sai do ar sozinha na hora de publicar
 
-## 7. O login e a liberação por produto
+## No dia do lançamento · `LANCAMENTO.md`
 
-- ✅ Pesquisado: a Cakto tem webhook de "Compra aprovada" (Integrações › Webhooks), por produto
-- ✅ Conta no Netlify criada e token salvo no ambiente (o Claude publica daqui)
-- ✅ Sem domínio: o login usa e-mail + número do pedido da Cakto (jeito B)
-- ✅ Sem serviço de e-mail (jeito B)
-- ✅ Recebedor do aviso da Cakto (`site/netlify/functions/cakto.mjs`), no ar
-- ✅ Tela de entrar: e-mail + número do pedido (`site/entrar.html`), no ar
-- ✅ Porteiro da Área (`site/netlify/edge-functions/porteiro.mjs`), no ar
-- ✅ Reembolso e chargeback tiram o acesso
-- ✅ Webhook criado na Cakto (82321)
-- ✅ Site público no Netlify; teste do webhook da Cakto voltou 200
-- ✅ Teste completo do login (07/11): sem login bloqueia, login certo entra, cada produto abre só a sua parte, aviso repetido não duplica, reembolso tira o acesso, sair funciona
-- ✅ Trava de segurança no `publicar-tudo.sh`: se a Área abrir sem login, ela sai do ar sozinha
-- ⬜ Compra de teste de verdade, do pagamento ao download
-
-## 8. Cakto
-
-- ✅ Os 4 produtos criados e ativos (veja `cakto.md`)
-- ✅ Caça-Ideias como extra (order bump) nos 3 checkouts
-- ⬜ Configurar o webhook de compra aprovada (e de reembolso)
+- ⏳ Resultados reais na página
+- ⏳ Ligar as vendas e tirar a página do "fora do Google"
+- ⏳ Publicar com `bash produto/site/publicar-tudo.sh`
+- ⏳ Compra de teste de verdade (guia, R$ 27) e reembolso
