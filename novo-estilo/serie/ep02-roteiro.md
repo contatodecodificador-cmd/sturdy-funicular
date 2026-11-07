@@ -1,4 +1,4 @@
-# Ep. 2 · "O RASTRO NA POEIRA" · roteiro + briefing (rascunho 1)
+# Ep. 2 · "O RASTRO NA POEIRA" · roteiro + briefing (rascunho 2)
 
 > ~100 s · ~270 palavras · **38 cenas** (~2,6 s cada) · tom: mistério sombrio em plena luz do dia.
 > Não depende de voto (continua o Ep. 1). **Termina com o primeiro A/B**, que decide o Ep. 3.
@@ -18,9 +18,9 @@
 | 5 | E esse alguém sabe o nome dela. | Close na Rose | FICHA ROSE + CARIMBO `CONHECIDA` | SOCO | nome | carimbo |
 | **PISTA 1 · A MENSAGEM** |||||||
 | 6 | Pista número um: a mensagem. | — | CARTÃO `PISTA 1 · A MENSAGEM` | SOCO | um | whoosh |
-| 7 | Enviada às quatro e quarenta e sete e zero segundo. | Detalhe da mensagem | ETIQUETA `ENVIADA 16:47:00` | aproxima | zero | beep |
-| 8 | O segundo exato em que tudo parou. | Relógio de rua 16:47 | CARIMBO `MESMO SEGUNDO` | SOCO | exato | carimbo |
-| 9 | Quem mandou já sabia o que ia acontecer. | Rose desconfiada, olhando pro celular | MEDIDOR `BPM 118 ▲` | close lento | sabia | coração |
+| 7 | No celular, o horário da mensagem: quatro e quarenta e sete. | Detalhe da mensagem com o horário | ETIQUETA `ENVIADA 16:47` | aproxima | horário | beep |
+| 8 | Mas desde que o tempo parou, todo relógio do mundo marca quatro e quarenta e sete. | Relógio de rua 16:47, relógio do celular 16:47 | CARIMBO `TUDO 16:47` | SOCO | todo | carimbo |
+| 9 | Ou seja: quem mandou tava acordado. Aqui dentro. Com ela. | Rose desconfiada, olhando em volta | MEDIDOR `BPM 118 ▲` | close lento | acordado | coração |
 | **PISTA 2 · A POEIRA** |||||||
 | 10 | Pista número dois: a poeira. | — | CARTÃO `PISTA 2 · A POEIRA` | SOCO | dois | whoosh |
 | 11 | A poeira da rua tá parada no ar desde o primeiro dia. | Pontinhos de poeira parados na luz | ETIQUETA `POEIRA PARADA · DIA 1` | atravessa a poeira | parada | ar abafado |
@@ -35,7 +35,7 @@
 | 19 | O rastro termina numa porta. | Fachada antiga, porta de madeira | ETIQUETA `FIM DO RASTRO` | aproxima | porta | rangido curto |
 | 20 | Uma relojoaria. | Letreiro "RELOJOARIA DO SEU AURÉLIO" | ETIQUETA `DESDE 1971` | sobe até o letreiro | relojoaria | sino abafado |
 | **DENTRO** |||||||
-| 21 | Lá dentro, cem relógios na parede. | Parede cheia de relógios | CONTADOR `RELÓGIOS 0 → 100` | panorâmica | cem | tics travados |
+| 21 | Lá dentro, a parede inteira coberta de relógios. | Parede cheia de relógios | CONTADOR `RELÓGIOS 0 → 112` | panorâmica | parede | tics travados |
 | 22 | Todos marcando quatro e quarenta e sete. | Close em vários relógios | ETIQUETAS `16:47` em 3 relógios | cortes rápidos | todos | tic |
 | 23 | Menos um. | Um relógio diferente brilhando | — | SOCO | um | **tic-tac andando** |
 | 24 | Um relógio de bolso, em cima do balcão. Andando. | Relógio de bolso dourado, ponteiro se mexendo | MEDIDOR `PONTEIRO ▶ 16:47:01, :02, :03` | aproxima no relógio | andando | tic-tac |
@@ -45,33 +45,34 @@
 | **VIRADA** |||||||
 | 28 | Embaixo do relógio, uma foto. | Canto de foto aparecendo | ETIQUETA `FOTO` | aproxima | foto | papel |
 | 29 | Uma foto da Rose. | A foto: Rose saindo do prédio, vista de longe | — | SOCO | Rose | batida |
-| 30 | Tirada hoje. Às quatro e quarenta e seis. | Data na foto | CARIMBO `16:46` | aproxima no carimbo | quarenta e seis | carimbo |
-| 31 | Um minuto antes de tudo parar. | Rose segurando a foto, mão tremendo | MEDIDOR `BPM 147 ▲` | treme | antes | coração alto |
+| 30 | Tirada na segunda-feira. Às quatro e quarenta e seis. | Data na foto | CARIMBO `SEG · 16:46` | aproxima no carimbo | quarenta e seis | carimbo |
+| 31 | Um minuto ANTES do mundo parar. Alguém já tava vigiando a Rose. | Rose segurando a foto, mão tremendo | MEDIDOR `BPM 147 ▲` | treme | antes | coração alto |
 | 32 | E no verso, uma frase escrita à mão. | Rose virando a foto | — | gira | verso | papel |
 | 33 | "Volto pra buscar o relógio." | Letra à mão no verso | — | aproxima na letra | volto | corte de som |
 | 34 | E nesse exato segundo… o sino da porta toca. | Sino da porta balançando | ETIQUETA `PORTA` | SOCO | sino | **sino** + silêncio |
 | **FINAL A/B** |||||||
 | 35 | Alguém tá entrando. | Porta abrindo, sombra comprida no chão (sem rosto ainda) | CONTADOR `PESSOAS SE MEXENDO 2` | afasta devagar | entrando | passos |
 | 36 | A Rose tem dez segundos. | Rose olhando pros dois lados | RELÓGIO `10` contando | treme | dez | tic-tac rápido |
-| 37 | Ela se esconde e espera pra ver quem é… ou pega o relógio e foge pelos fundos? | Rose entre o balcão (esconderijo) e a porta dos fundos | Cartão A/B: **A · SE ESCONDER** · **B · FUGIR COM O RELÓGIO** | alterna entre os dois lados | esconde / foge | tic-tac |
+| 37 | Letra A: ela se esconde e espera pra ver quem é. Letra B: pega o relógio e foge pelos fundos. | Rose entre o balcão (esconderijo) e a porta dos fundos | Cartão A/B: **A · SE ESCONDER E ESPERAR** · **B · PEGAR O RELÓGIO E FUGIR** | alterna entre os dois lados | A / B | tic-tac |
 | 38 | Comenta A ou B. | Rose olhando pra câmera | `COMENTA A OU B` + relógio | aproxima no rosto | A ou B | corte seco |
 
 ## Texto pra voz (Eleven v4 · voz "DIZ QUE É MINHA VOZ")
 ```
 [sério, ritmo de resumo] Às quatro e quarenta e sete, o mundo parou. Só a Rose se mexe. [baixo] E uma mensagem disse: [sussurrando] você não é a única acordada.
 [tenso] Agora ela sabe: tem alguém andando por aí. [pausa curta] [sussurrando] E esse alguém sabe o nome dela.
-[firme] Pista número um: a mensagem. Enviada às quatro e quarenta e sete e zero segundo. [pausa curta] O segundo exato em que tudo parou. [baixo, desconfiado] Quem mandou já sabia o que ia acontecer.
+[firme] Pista número um: a mensagem. No celular, o horário da mensagem: quatro e quarenta e sete. [pausa curta] Mas desde que o tempo parou, todo relógio do mundo marca quatro e quarenta e sete. [baixo, desconfiado] Ou seja: quem mandou tava acordado. [sussurrando] Aqui dentro. Com ela.
 [firme] Pista número dois: a poeira. A poeira da rua tá parada no ar desde o primeiro dia. [tenso] Mas na frente da padaria tem um buraco nela. [pausa] Do tamanho de uma pessoa. [sussurrando] Alguém passou por aqui. Depois que o tempo parou.
 [firme] Pista número três: o caminho. Rose segue os buracos na poeira. Praça. Ponte. Rua de trás. Dois quilômetros e meio. [mais lento] O rastro termina numa porta. [pausa] Uma relojoaria.
-[narrando, baixo] Lá dentro, cem relógios na parede. Todos marcando quatro e quarenta e sete. [pausa] [impactante] Menos um. Um relógio de bolso, em cima do balcão. Andando. [sussurrando] Tic. Tac.
+[narrando, baixo] Lá dentro, a parede inteira coberta de relógios. Todos marcando quatro e quarenta e sete. [pausa] [impactante] Menos um. Um relógio de bolso, em cima do balcão. Andando. [sussurrando] Tic. Tac.
 [tenso] Atrás do balcão, o Seu Aurélio. Congelado. Com a mão estendida. Como se tivesse acabado de entregar alguma coisa.
-[lento] Embaixo do relógio, uma foto. [pausa] [impactante] Uma foto da Rose. Tirada hoje. Às quatro e quarenta e seis. [sussurrando] Um minuto antes de tudo parar.
+[lento] Embaixo do relógio, uma foto. [pausa] [impactante] Uma foto da Rose. Tirada na segunda-feira. Às quatro e quarenta e seis. [pausa] Um minuto ANTES do mundo parar. [sussurrando] Alguém já tava vigiando a Rose.
 [tenso] E no verso, uma frase escrita à mão. [lendo, frio] "Volto pra buscar o relógio."
 [pausa longa] [sussurrando] E nesse exato segundo… [impactante] o sino da porta toca.
-[rápido, tenso] Alguém tá entrando. A Rose tem dez segundos. Ela se esconde e espera pra ver quem é… ou pega o relógio e foge pelos fundos? [direto pra quem assiste] Comenta A ou B.
+[rápido, tenso] Alguém tá entrando. A Rose tem dez segundos. [pausa curta] [firme] Letra A: ela se esconde e espera pra ver quem é. [pausa curta] Letra B: pega o relógio e foge pelos fundos. [direto pra quem assiste] Comenta A ou B.
 ```
 
 ## Notas
+- **Linha do tempo (pra não confundir):** pro mundo é sempre segunda-feira, 16:47. Pra Rose já se passaram 7 dias (o relógio dela anda). Todo relógio e celular do mundo marca 16:47, então uma mensagem "às 16:47" só pode ter sido mandada por alguém acordado dentro do tempo parado. A foto é de **16:46, um minuto ANTES**, ou seja, alguém vigiava a Rose antes de tudo parar e sabia que ia acontecer.
 - **Lista do meio** = "Pista 1, 2, 3" (no Ep. 1 foi "Teste"). **Virada** = foto + sino. Nenhum elemento copiado da referência.
 - **Novos sons:** sino de porta, relógio de bolso andando (tic-tac seco), rangido curto de porta, foto/papel fotográfico.
 - **A sombra na porta** fica sem rosto de propósito (é o mistério do Ep. 3). Quando a pessoa aparecer, ganha rosto e ficha.
