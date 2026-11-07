@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="node_modules/@fontsource/anton/index.css">
+<link rel="stylesheet" href="node_modules/@fontsource/barlow-condensed/600.css">
+<link rel="stylesheet" href="node_modules/@fontsource/barlow-condensed/800.css">
+<link rel="stylesheet" href="node_modules/@fontsource/archivo-black/index.css">
+<link rel="stylesheet" href="node_modules/@fontsource/ibm-plex-mono/600.css">
+<link rel="stylesheet" href="node_modules/@fontsource/baloo-2/800.css">
+<link rel="stylesheet" href="node_modules/@fontsource/nunito/700.css">
+<link rel="stylesheet" href="node_modules/@fontsource/nunito/900.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0;width:1080px;height:1920px;overflow:hidden;font-family:Nunito,sans-serif}
+.board{width:1080px;height:1920px;padding:48px 48px 0;position:relative}
+.head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px}
+.chip{display:inline-block;padding:6px 16px;border-radius:999px;font:900 22px Nunito;letter-spacing:2px}
+.name{font-size:76px;line-height:1;margin-top:12px}
+.mood{font:700 26px Nunito;margin-top:10px;opacity:.85;max-width:980px}
+.row{display:flex;gap:36px}
+.frame{width:540px;height:960px;border-radius:26px;overflow:hidden;position:relative;flex:none;box-shadow:0 18px 50px rgba(0,0,0,.25)}
+.frame svg{display:block}
+.col{flex:1;display:flex;flex-direction:column;gap:22px}
+.card{border-radius:22px;padding:18px 20px}
+.lbl{font:900 18px Nunito;letter-spacing:2px;opacity:.7;margin-bottom:10px;text-transform:uppercase}
+.sw{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.sw div{height:74px;border-radius:12px;display:flex;align-items:flex-end;padding:6px 8px;font:700 15px Nunito}
+.sw span{background:rgba(255,255,255,.85);color:#222;border-radius:6px;padding:1px 6px}
+.bul{display:grid;grid-template-columns:1fr 1fr;gap:16px 34px;margin-top:30px}
+.bul div{font:700 22px/1.35 Nunito}
+.bul b{display:block;font:900 17px Nunito;letter-spacing:2px;text-transform:uppercase;margin-bottom:2px}
+</style></head><body>
+<div class="board" id="board"></div>
+<script>
+const D = {
+1:{nome:'Praça ao Sol',chip:'DIREÇÃO 1',mood:'Domingo de sol numa cidadezinha brasileira: claro, colorido, alegre. Comédia de bairro.',
+ bg:'#FFF8EC',fg:'#2B2420',chipBg:'#F2C14E',cardBg:'#fff',
+ pal:[['Céu','#7EC8E3'],['Terracota','#D96C4A'],['Ipê','#F2C14E'],['Praça','#5FA36A'],['Azul colonial','#2F6FA3'],['Tinta','#2B2420']],
+ sky:['#9ED8EE','#DDF1F7'],ground:'#E9DCC6',walk:'#CDBBA0',houses:['#D96C4A','#F2C14E','#2F6FA3','#F4EDE1','#5FA36A','#E89A7A'],roof:'#9C4A32',tree:'#5FA36A',treeD:'#3F7D4B',
+ skin:'#C98E6B',skinS:'#A9704F',hair:'#2E1E17',hairS:'#4A3226',shirt:'#2F6FA3',shirtS:'#24578A',line:'#2B2420',lw:3,mode:'cel',lips:'#9E4B3C',iris:'#4A2C1A',badge:'#F2C14E',
+ capFont:'Anton',capColor:'#fff',capHi:'#F2C14E',capStroke:'#2B2420',capSize:118,infoFont:'Barlow Condensed',
+ hud:{pill:'#fff',pillTx:'#2B2420',acc:'#F2C14E',card:'#fff',cardTx:'#2B2420',stamp:'#D96C4A'},
+ tipos:[['Anton','LEGENDA · SEGUNDA PROIBIDA',40],['Barlow Condensed','Placar e fichas · Aprovação 61% · Lei nº 7',30]],
+ b:[['Personagem','Proporção de gente de verdade, contorno fino marrom e sombra de 1 tom (luz de meio-dia).'],['Cenário','Casario colonial colorido, prefeitura com relógio, calçada de pedra portuguesa.'],['Luz','Sol alto, sombras curtas e duras, céu limpo. Nada de noite.'],['Legenda','Anton caixa alta, branca com contorno, palavra-chave em amarelo-ipê.'],['Câmera','Zoom lento o tempo todo, panorâmica pela praça e um "soco" de zoom quando a lei é aprovada.'],['Ritmo','Corte a cada ~3s, legenda de 2–3 palavras e placar sempre subindo ou descendo.']]},
+2:{nome:'Plantão Votânia',chip:'DIREÇÃO 2',mood:'A cidade contada como um telejornal local: urgente, engraçado, "ao vivo da praça".',
+ bg:'#0E1D36',fg:'#F7F7F2',chipBg:'#E63946',cardBg:'#16294A',
+ pal:[['Azul plantão','#13294B'],['Urgente','#E63946'],['Branco','#F7F7F2'],['Faixa','#FFD23F'],['Estúdio','#8D99AE'],['Céu nublado','#CFE0EA']],
+ sky:['#B9CFDC','#E4EEF3'],ground:'#C9CCD1',walk:'#AEB3BA',houses:['#E9E4DA','#8D99AE','#C7B9A6','#13294B','#D9D2C5','#9FB4C7'],roof:'#5B6573',tree:'#6E9A7C',treeD:'#4E7A5E',
+ skin:'#B97E5C',skinS:'#8E5A3E',hair:'#1B1412',hairS:'#3A2B26',shirt:'#F7F7F2',shirtS:'#C9CDD6',line:'none',lw:0,mode:'grad',lips:'#8C4636',iris:'#3A2418',badge:'#E63946',
+ capFont:'Archivo Black',capColor:'#fff',capHi:'#FFD23F',capStroke:'none',capSize:92,capBox:'#E63946',infoFont:'IBM Plex Mono',
+ hud:{pill:'#E63946',pillTx:'#fff',acc:'#FFD23F',card:'#13294B',cardTx:'#F7F7F2',stamp:'#FFD23F'},
+ tipos:[['Archivo Black','MANCHETE · URGENTE',40],['IBM Plex Mono','PLACAR 61% ▲ 12.480',28]],
+ b:[['Personagem','Vetor realista sem contorno, sombra em degradê suave, como ilustração de reportagem.'],['Cenário','A mesma praça vista como "link ao vivo": câmera na altura dos olhos, céu nublado claro.'],['Luz','Luz neutra e fria de externa de TV, com contraste médio.'],['Legenda','Archivo Black em tarja vermelha, palavra-chave amarela. Parece manchete.'],['Câmera','Cortes secos de TV, zoom de repórter, tela dividida "estúdio x praça".'],['Ritmo','Corte a cada ~2,5s, letreiro de "URGENTE" e placar ao vivo correndo.']]},
+3:{nome:'Fim de Tarde',chip:'DIREÇÃO 3',mood:'Hora dourada, cores pastel, sombras lilases. Aconchegante, bom pra família toda.',
+ bg:'#FFF3DD',fg:'#3D2C4E',chipBg:'#B9A7DB',cardBg:'#fff',
+ pal:[['Pêssego','#F7B59B'],['Lilás','#B9A7DB'],['Menta','#9ED8C5'],['Creme','#FFF3DD'],['Céu dourado','#FFD59E'],['Ameixa','#3D2C4E']],
+ sky:['#F9C4A6','#FFE3B3'],ground:'#F2DCC0',walk:'#E3C3A6',houses:['#F7B59B','#B9A7DB','#9ED8C5','#FFF3DD','#F4D58D','#E8A5B3'],roof:'#A9718A',tree:'#8CC7A8',treeD:'#6AA48C',
+ skin:'#D9A07E',skinS:'#B98468',hair:'#5B3A3A',hairS:'#7A5050',shirt:'#9ED8C5',shirtS:'#7DBBA7',line:'#3D2C4E',lw:5,mode:'soft',lips:'#C0626B',iris:'#5B3A2A',badge:'#B9A7DB',
+ capFont:'Baloo 2',capColor:'#fff',capHi:'#FFD59E',capStroke:'#3D2C4E',capSize:110,infoFont:'Nunito',
+ hud:{pill:'#FFF3DD',pillTx:'#3D2C4E',acc:'#F7B59B',card:'#FFF3DD',cardTx:'#3D2C4E',stamp:'#B9A7DB'},
+ tipos:[['Baloo 2','Legenda · Segunda proibida',40],['Nunito','Fichas e placar · Aprovação 61%',28]],
+ b:[['Personagem','Proporção real, contorno grosso cor de ameixa, sombras em lilás. Rosto simpático e expressivo.'],['Cenário','Casario pastel, luz dourada batendo nas fachadas e sombras longas.'],['Luz','Hora dourada fixa da série, céu pêssego. Pra virada: céu lilás.'],['Legenda','Baloo 2 arredondada, branca com contorno ameixa, palavra-chave dourada.'],['Câmera','Travelling suave com camadas em parallax e um "pulo" elástico na virada.'],['Ritmo','Corte a cada ~3s, transições macias e placar com animação de mola.']]}
+};
+const d = D[new URLSearchParams(location.search).get('d')||1];
+
+function shadeDefs(id){
+  if(d.mode!=='grad') return '';
+  return `<linearGradient id="sk${id}" x1="0" x2="1"><stop offset="0" stop-color="${d.skin}"/><stop offset=".55" stop-color="${d.skin}"/><stop offset="1" stop-color="${d.skinS}"/></linearGradient>
+  <linearGradient id="sh${id}" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="${d.shirt}"/><stop offset="1" stop-color="${d.shirtS}"/></linearGradient>
+  <linearGradient id="hr${id}" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="${d.hairS}"/><stop offset="1" stop-color="${d.hair}"/></linearGradient>`;
+}
+// Personagem de teste: Cida, secretária da prefeitura (original)
+function pessoa(id){
+  const g = d.mode==='grad';
+  const sk = g?`url(#sk${id})`:d.skin, sh = g?`url(#sh${id})`:d.shirt, hr = g?`url(#hr${id})`:d.hair;
+  const st = d.lw?`stroke="${d.line}" stroke-width="${d.lw}" stroke-linejoin="round"`:'';
+  const shadeOn = d.mode!=='grad';
+  const shadeC = d.mode==='soft'?'#8E7BB8':d.skinS, shadeO = d.mode==='soft'?.45:1;
+  return `<defs>${shadeDefs(id)}</defs>
+  <path d="M112,300 C92,170 140,80 205,83 C274,86 312,160 290,300 C288,330 276,338 262,332 L262,200 C240,172 190,162 140,190 L138,332 C122,338 112,326 112,300Z" fill="${hr}" ${st}/>
+  <path d="M40,600 C45,480 90,425 150,410 L200,462 L250,410 C310,425 355,480 360,600Z" fill="${sh}" ${st}/>
+  ${shadeOn?`<path d="M300,440 C335,470 352,530 356,600 L300,600 C300,550 290,490 270,450Z" fill="${d.shirtS}"/>`:''}
+  <path d="M172,320 L172,402 L200,462 L228,402 L228,320Z" fill="${sk}" ${st}/>
+  <path d="M170,330 C185,372 215,372 230,330 L230,322 L170,322Z" fill="${shadeOn?shadeC:d.skinS}" opacity="${shadeOn?shadeO:.6}"/>
+  <path d="M182,416 L252,556 M220,410 L286,556" stroke="${d.badge}" stroke-width="7" fill="none"/>
+  <rect x="236" y="548" width="74" height="52" rx="6" fill="#fff" ${st}/><rect x="236" y="548" width="74" height="15" rx="4" fill="${d.badge}"/>
+  <rect x="246" y="572" width="34" height="5" rx="2" fill="#999"/><rect x="246" y="583" width="50" height="5" rx="2" fill="#bbb"/>
+  <ellipse cx="137" cy="246" rx="14" ry="24" fill="${sk}" ${st}/><ellipse cx="263" cy="246" rx="14" ry="24" fill="${g?d.skinS:sk}" ${st}/>
+  <circle cx="135" cy="276" r="5" fill="${d.badge}"/><circle cx="265" cy="276" r="5" fill="${d.badge}"/>
+  <path d="M138,215 C136,140 170,108 200,108 C230,108 264,140 262,215 L260,262 C256,305 232,338 200,342 C168,338 144,305 140,262Z" fill="${sk}" ${st}/>
+  ${shadeOn?`<path d="M262,215 L260,262 C256,305 232,338 200,342 C222,328 240,300 244,262 L247,215 C247,192 242,174 234,162 C252,172 262,192 262,215Z" fill="${shadeC}" opacity="${shadeO}"/>`:''}
+  <ellipse cx="166" cy="276" rx="15" ry="9" fill="#E07A6F" opacity=".22"/><ellipse cx="236" cy="276" rx="15" ry="9" fill="#E07A6F" opacity=".22"/>
+  <path d="M136,206 C138,140 180,106 216,110 C252,116 270,152 263,208 C250,172 220,150 188,163 C166,172 150,188 136,206Z" fill="${hr}" ${st}/>
+  <path d="M190,128 C215,122 240,132 252,150" stroke="${d.hairS}" stroke-width="5" fill="none" stroke-linecap="round" opacity=".8"/>
+  <path d="M158,206 C170,197 185,197 193,202" stroke="${d.hair}" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <path d="M207,202 C215,197 230,197 242,206" stroke="${d.hair}" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <path d="M162,229 C170,218 186,218 194,229 C186,236 170,236 162,229Z" fill="#fff"/>
+  <path d="M206,229 C214,218 230,218 238,229 C230,236 214,236 206,229Z" fill="#fff"/>
+  <circle cx="178" cy="228" r="7.5" fill="${d.iris}"/><circle cx="222" cy="228" r="7.5" fill="${d.iris}"/>
+  <circle cx="178" cy="228" r="3.5" fill="#111"/><circle cx="222" cy="228" r="3.5" fill="#111"/>
+  <circle cx="180.5" cy="225.5" r="2" fill="#fff"/><circle cx="224.5" cy="225.5" r="2" fill="#fff"/>
+  <path d="M160,229 C170,216 186,216 196,228 M204,228 C214,216 230,216 240,229" stroke="${d.line==='none'?'#2a1a14':d.line}" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M201,238 C199,255 192,266 194,274 C198,279 205,279 209,275" stroke="${d.line==='none'?d.skinS:d.line}" stroke-width="2.6" fill="none" stroke-linecap="round" opacity=".8"/>
+  <path d="M178,298 C192,308 210,308 224,298 C212,318 190,318 178,298Z" fill="${d.lips}"/>
+  <path d="M184,301 C195,307 208,307 218,301 L216,305 C206,310 196,310 186,305Z" fill="#fff"/>`;
+}
+function cena(){
+  const h=d.houses; let s='';
+  s+=`<defs><linearGradient id="ceu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${d.sky[0]}"/><stop offset="1" stop-color="${d.sky[1]}"/></linearGradient>
+  <linearGradient id="vin" x1="0" y1="0" x2="0" y2="1"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></linearGradient></defs>
+  <rect width="1080" height="1920" fill="url(#ceu)"/>`;
+  if(d.mode==='soft') s+=`<circle cx="820" cy="560" r="120" fill="#FFF1C9" opacity=".9"/>`;
+  else if(d.mode==='cel') s+=`<circle cx="860" cy="330" r="70" fill="#FFF4C2"/>`;
+  // casario de fundo
+  const xs=[-20,170,330,640,800,960];
+  xs.forEach((x,i)=>{const w=i==5?200:180, top=820+(i%2)*60;
+    s+=`<rect x="${x}" y="${top}" width="${w}" height="${1300-top}" fill="${h[i]}"/>
+    <path d="M${x-10},${top} L${x+w/2},${top-70} L${x+w+10},${top}Z" fill="${d.roof}"/>`;
+    for(let r=0;r<3;r++)for(let c=0;c<2;c++)s+=`<rect x="${x+30+c*70}" y="${top+40+r*120}" width="44" height="74" rx="${d.mode==='soft'?20:4}" fill="#fff" opacity=".75"/><rect x="${x+30+c*70}" y="${top+40+r*120}" width="44" height="74" rx="${d.mode==='soft'?20:4}" fill="none" stroke="${d.roof}" stroke-width="4" opacity=".5"/>`;
+  });
+  // prefeitura
+  s+=`<rect x="420" y="700" width="240" height="600" fill="${h[3]}" stroke="${d.roof}" stroke-width="4"/>
+  <rect x="490" y="560" width="100" height="150" fill="${h[3]}" stroke="${d.roof}" stroke-width="4"/>
+  <path d="M480,560 L540,490 L600,560Z" fill="${d.roof}"/><circle cx="540" cy="625" r="34" fill="#fff" stroke="${d.roof}" stroke-width="5"/>
+  <path d="M540,625 L540,602 M540,625 L556,632" stroke="${d.roof}" stroke-width="5" stroke-linecap="round"/>
+  <line x1="540" y1="490" x2="540" y2="420" stroke="${d.roof}" stroke-width="5"/><rect x="540" y="420" width="60" height="38" fill="${d.pal[1][1]}"/>
+  <rect x="505" y="1130" width="70" height="170" rx="35" fill="${d.roof}"/>`;
+  // chão e árvore
+  s+=`<rect y="1290" width="1080" height="630" fill="${d.ground}"/>`;
+  for(let i=0;i<9;i++) s+=`<path d="M${i*130-40},1340 q40,-30 80,0 t80,0" stroke="${d.walk}" stroke-width="10" fill="none"/><path d="M${i*130-80},1440 q40,-30 80,0 t80,0" stroke="${d.walk}" stroke-width="10" fill="none"/>`;
+  s+=`<rect x="70" y="1000" width="34" height="320" fill="${d.roof}"/><circle cx="87" cy="960" r="130" fill="${d.tree}"/><circle cx="20" cy="1030" r="90" fill="${d.treeD}"/><circle cx="160" cy="1020" r="95" fill="${d.treeD}"/>`;
+  if(d.mode==='soft') s+=`<rect width="1080" height="1920" fill="#B9A7DB" opacity=".12"/>`;
+  // personagem
+  s+=`<g transform="translate(150,723) scale(1.6)">${pessoa('f')}</g>`;
+  if(d.mode==='grad') s+=`<rect width="1080" height="1920" fill="url(#vin)"/>`;
+  return s;
+}
+function hud(){
+  const H=d.hud, F=d.infoFont, w=d.mode==='grad'?'600':'800';
+  let s='';
+  // etiqueta de lugar/dia/hora
+  if(d.mode==='grad'){
+    s+=`<rect x="60" y="80" width="196" height="56" rx="6" fill="#E63946"/><circle cx="90" cy="108" r="9" fill="#fff"/><text x="108" y="120" font-family="Archivo Black" font-size="30" fill="#fff">AO VIVO</text>
+    <rect x="266" y="80" width="470" height="56" rx="6" fill="#13294B"/><text x="286" y="119" font-family="${F}" font-weight="600" font-size="30" fill="#fff">VOTÂNIA · DIA 3 · 08:15</text>`;
+  } else {
+    s+=`<rect x="60" y="80" width="560" height="64" rx="32" fill="${H.pill}" opacity=".95"/><text x="92" y="125" font-family="${F}" font-weight="${w}" font-size="36" fill="${H.pillTx}">VOTÂNIA · DIA 3 · 08:15</text>`;
+  }
+  // placar de aprovação
+  s+=`<rect x="60" y="170" width="520" height="150" rx="${d.mode==='grad'?8:24}" fill="${H.card}" opacity=".96"/>
+  <text x="86" y="216" font-family="${F}" font-weight="${w}" font-size="26" fill="${H.cardTx}" opacity=".75">APROVAÇÃO DA CIDADE</text>
+  <text x="86" y="292" font-family="${d.mode==='grad'?'IBM Plex Mono':d.capFont}" font-weight="${w}" font-size="70" fill="${H.cardTx}">61%</text>
+  <text x="${d.mode==='grad'?250:230}" y="290" font-family="${F}" font-weight="${w}" font-size="40" fill="${d.mode==='grad'?'#FFD23F':'#3F9A5A'}">▲ 7</text>
+  <rect x="350" y="258" width="200" height="22" rx="11" fill="${H.cardTx}" opacity=".15"/><rect x="350" y="258" width="122" height="22" rx="11" fill="${H.acc}"/>`;
+  // ficha da lei
+  const rx=d.mode==='grad'?6:22;
+  s+=`<g transform="translate(-40,0) rotate(${d.mode==='grad'?0:-3} 760 420)"><rect x="560" y="360" width="400" height="230" rx="${rx}" fill="${H.card}" stroke="${d.mode==='grad'?'#FFD23F':H.cardTx}" stroke-width="${d.mode==='grad'?4:3}"/>
+  <text x="590" y="410" font-family="${F}" font-weight="${w}" font-size="28" fill="${H.cardTx}" opacity=".7">LEI Nº 7</text>
+  <text x="590" y="462" font-family="${d.capFont}" font-weight="800" font-size="40" fill="${H.cardTx}">SEGUNDA-FEIRA</text>
+  <text x="590" y="510" font-family="${d.capFont}" font-weight="800" font-size="40" fill="${H.cardTx}">PROIBIDA</text>
+  <g transform="rotate(-12 850 545)"><rect x="770" y="515" width="170" height="58" rx="8" fill="none" stroke="${H.stamp}" stroke-width="5"/><text x="855" y="556" text-anchor="middle" font-family="${F}" font-weight="${w}" font-size="30" fill="${H.stamp}">68% SIM</text></g></g>`;
+  // legenda palavra por palavra (abaixo do rosto, acima da zona dos botões)
+  const y=1395;
+  if(d.capBox){
+    s+=`<rect x="80" y="${y-96}" width="420" height="118" fill="#13294B"/><text x="100" y="${y}" font-family="${d.capFont}" font-size="${d.capSize}" fill="#fff">ESTÁ</text>
+    <rect x="80" y="${y+40}" width="690" height="128" fill="${d.capBox}"/><text x="100" y="${y+140}" font-family="${d.capFont}" font-size="${d.capSize}" fill="${d.capHi}">PROIBIDA</text>`;
+  } else {
+    const sw=d.mode==='soft'?22:18;
+    s+=`<text x="470" y="${y}" text-anchor="middle" font-family="${d.capFont}" font-weight="800" font-size="${d.capSize}" fill="${d.capColor}" stroke="${d.capStroke}" stroke-width="${sw}" paint-order="stroke" stroke-linejoin="round">ESTÁ</text>
+    <text x="470" y="${y+d.capSize+10}" text-anchor="middle" font-family="${d.capFont}" font-weight="800" font-size="${d.capSize*1.12}" fill="${d.capHi}" stroke="${d.capStroke}" stroke-width="${sw}" paint-order="stroke" stroke-linejoin="round">PROIBIDA</text>`;
+  }
+  // zonas proibidas (só na amostra)
+  s+=`<rect x="0" y="1540" width="1080" height="380" fill="#000" opacity=".18"/><rect x="940" y="0" width="140" height="1540" fill="#000" opacity=".10"/>
+  <text x="540" y="1740" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="30" fill="#fff" opacity=".8">zona dos botões · nada importante aqui</text>`;
+  return s;
+}
+const B=document.getElementById('board');
+document.body.style.background=d.bg; B.style.color=d.fg;
+B.innerHTML=`<div class="head"><div><span class="chip" style="background:${d.chipBg};color:${d.mode==='grad'?'#fff':d.fg}">${d.chip} · A CIDADE QUE VOCÊ GOVERNA</span>
+<div class="name" style="font-family:'${d.capFont}';font-weight:800">${d.nome}</div><div class="mood">${d.mood}</div></div></div>
+<div class="row"><div class="frame"><svg viewBox="0 0 1080 1920" width="540" height="960">${cena()}${hud()}</svg></div>
+<div class="col">
+ <div class="card" style="background:${d.cardBg};padding:0;overflow:hidden;height:420px"><svg viewBox="40 70 320 420" width="100%" height="420" style="background:${d.pal[3][1]}">${pessoa('c')}</svg></div>
+ <div class="card" style="background:${d.cardBg}"><div class="lbl">Personagem de teste</div><div style="font:900 26px Nunito">Cida, secretária da prefeitura</div><div style="font:700 19px Nunito;opacity:.75;margin-top:4px">É a guia que apresenta cada lei votada.</div></div>
+ <div class="card" style="background:${d.cardBg}"><div class="lbl">Cores</div><div class="sw">${d.pal.map(p=>`<div style="background:${p[1]}"><span>${p[0]} ${p[1]}</span></div>`).join('')}</div></div>
+ <div class="card" style="background:${d.cardBg}"><div class="lbl">Letras</div>${d.tipos.map(t=>`<div style="font-family:'${t[0]}';font-weight:800;font-size:${t[2]}px;line-height:1.2;margin-bottom:6px">${t[1]}</div><div style="font:700 15px Nunito;opacity:.6;margin-bottom:10px">${t[0]}</div>`).join('')}</div>
+</div></div>
+<div class="bul">${d.b.map(x=>`<div><b style="color:${d.mode==='grad'?'#FFD23F':d.pal[1][1]}">${x[0]}</b>${x[1]}</div>`).join('')}</div>`;
+</script></body></html>
