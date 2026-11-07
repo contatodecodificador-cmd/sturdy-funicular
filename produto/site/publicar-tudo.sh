@@ -32,3 +32,13 @@ npm install --no-audit --no-fund --silent
 # O ambiente troca este valor pelo token de verdade nos pedidos ao Netlify.
 NETLIFY_AUTH_TOKEN="proxy-injected" npx --yes netlify-cli@27.13.0 deploy --prod --no-build \
   --site estudiodonogueira --dir dist --functions netlify/functions --message "Estúdio do Nogueira: página + Área + login"
+
+# Trava de segurança: a Área NUNCA pode abrir sem login.
+sleep 5
+codigo=$(curl -sS -o /dev/null -w "%{http_code}" "https://estudiodonogueira.netlify.app/area/passos/passo-01.html" || echo erro)
+if [ "$codigo" != "302" ]; then
+  echo "ATENÇÃO: a Área abriu sem login (resposta $codigo). Tirando a Área do ar e publicando só a página de venda."
+  bash "$PRODUTO/publicar/publicar.sh"
+  exit 1
+fi
+echo "Trava de segurança: a Área está protegida (sem login → tela de entrar)."

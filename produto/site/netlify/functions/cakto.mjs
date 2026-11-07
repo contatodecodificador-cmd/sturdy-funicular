@@ -20,8 +20,8 @@ export default async (req) => {
 
   const evento = corpo.event;
   const pedidos = Array.isArray(corpo.data) ? corpo.data : [corpo.data];
-  const loja = getStore("compradores");
-  const vistos = getStore("eventos");
+  const loja = getStore({ name: "compradores", consistency: "strong" });
+  const vistos = getStore({ name: "eventos", consistency: "strong" });
 
   for (const d of pedidos) {
     if (!d || !d.customer) continue;

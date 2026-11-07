@@ -10,7 +10,7 @@ export default async (req) => {
   const segredo = process.env.SESSAO_SEGREDO;
   const sessao = await lerCracha(segredo, lerCookie(req));
   if (!sessao) return new Response(JSON.stringify({ logado: false }), { status: 401, headers: { "content-type": "application/json" } });
-  const ficha = await getStore("compradores").get(sessao.email, { type: "json" });
+  const ficha = await getStore({ name: "compradores", consistency: "strong" }).get(sessao.email, { type: "json" });
   const produtos = produtosAtivos(ficha);
   const cabecalhos = { "content-type": "application/json", "cache-control": "no-store" };
   // Atualiza o crachá se os produtos mudaram (compra nova ou reembolso).

@@ -27,13 +27,13 @@ export default async (req) => {
   if (!email || !pedido) return resposta({ erro: "Preencha o e-mail e o número do pedido." }, 400);
 
   // Trava contra tentativa e erro: no máximo 8 tentativas erradas por e-mail a cada hora.
-  const tentativas = getStore("tentativas");
+  const tentativas = getStore({ name: "tentativas", consistency: "strong" });
   const hora = new Date().toISOString().slice(0, 13);
   const chaveT = `${email}:${hora}`;
   const erradas = Number((await tentativas.get(chaveT)) || 0);
   if (erradas >= 8) return resposta({ erro: "Muitas tentativas. Espere uma hora e tente de novo." }, 429);
 
-  const ficha = await getStore("compradores").get(email, { type: "json" });
+  const ficha = await getStore({ name: "compradores", consistency: "strong" }).get(email, { type: "json" });
   const confere = ficha && Object.keys(ficha.pedidos || {}).some((ref) => ref === pedido);
   const produtos = produtosAtivos(ficha);
   if (!confere || !produtos.length) {

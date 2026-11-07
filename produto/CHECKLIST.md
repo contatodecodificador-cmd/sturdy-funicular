@@ -72,7 +72,9 @@ Atualizado em 07/11/2026. ✅ feito · 🟡 feito, falta testar ou decidir · �
 - ✅ Porteiro da Área (`site/netlify/edge-functions/porteiro.mjs`), no ar
 - ✅ Reembolso e chargeback tiram o acesso
 - ✅ Webhook criado na Cakto (82321)
-- ⬜ Dono: deixar o site público no Netlify (Visitor access) e repetir o teste do webhook
+- ✅ Site público no Netlify; teste do webhook da Cakto voltou 200
+- ✅ Teste completo do login (07/11): sem login bloqueia, login certo entra, cada produto abre só a sua parte, aviso repetido não duplica, reembolso tira o acesso, sair funciona
+- ✅ Trava de segurança no `publicar-tudo.sh`: se a Área abrir sem login, ela sai do ar sozinha
 - ⬜ Compra de teste de verdade, do pagamento ao download
 
 ## 8. Cakto

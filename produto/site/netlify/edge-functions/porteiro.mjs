@@ -19,7 +19,4 @@ export default async (req, context) => {
   return resposta;
 };
 
-export const config = {
-  path: "/area/*",
-  excludedPath: ["/area/entrar.html", "/area/estilo-entrar.css"],
-};
+// O caminho em que o porteiro age fica no netlify.toml (/area/*, menos /area/entrar.html).

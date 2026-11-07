@@ -9,4 +9,8 @@
 [functions]
   node_bundler = "esbuild"
 
-# O porteiro (netlify/edge-functions/porteiro.mjs) declara o próprio caminho: /area/*, menos a tela de entrar.
+# O porteiro da Área: roda antes de qualquer página ou arquivo em /area/, menos a tela de entrar.
+[[edge_functions]]
+  function = "porteiro"
+  path = "/area/*"
+  excludedPath = ["/area/entrar.html"]
