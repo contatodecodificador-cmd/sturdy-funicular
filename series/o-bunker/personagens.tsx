@@ -4,6 +4,7 @@
         x, y = ponto entre os pés na tela; escala = px por unidade (o desenho tem 400 x 1000)
         epoca 'hoje' (barba grisalha comprida, gorro mostarda) | 'lembranca' (barba curta escura, sem gorro)
         vista 'frente' | 'costas'
+        sentado = true: as coxas vêm pra frente e as canelas descem (o quadril fica na altura y 600 do desenho)
         pose 'parado' | 'caneca' (segura a caneca com as duas mãos, no peito) |
              'chave' (a mão direita dele levantada com a chave de fenda)
         cima = 0 a 1: inclina a cabeça pra olhar pra cima (a escotilha no teto)
@@ -82,7 +83,8 @@ export const Otavio: React.FC<{
   pisca?: boolean;
   respira?: boolean;
   passo?: number | null;
-}> = ({ x, y, escala = 0.9, epoca = 'hoje', vista = 'frente', expressao = 'neutra', pose = 'parado', olhar = 0, cima = 0, pisca = true, respira = true, passo = null }) => {
+  sentado?: boolean;
+}> = ({ x, y, escala = 0.9, epoca = 'hoje', vista = 'frente', expressao = 'neutra', pose = 'parado', olhar = 0, cima = 0, pisca = true, respira = true, passo = null, sentado = false }) => {
   const f = useCurrentFrame();
   const id = useIdSvg();
   const C = OTAVIO;
@@ -108,7 +110,21 @@ export const Otavio: React.FC<{
         </pattern>
       </defs>
       <g transform={`translate(0 ${bob})`}>
-        <Pernas fase={fase} />
+        {sentado ? (
+          <g>
+            {/* sentado: as coxas vindo pra frente (curtas, em perspectiva), os joelhos e as canelas */}
+            <path d="M108,592 L292,592 L300,700 C300,716 286,724 270,724 L130,724 C114,724 100,716 100,700 Z" fill={C.calca} />
+            <path d="M200,610 L200,712" stroke={C.calcaSombra} strokeWidth={5} />
+            {[150, 250].map((cx) => (
+              <g key={cx}>
+                <path d={`M${cx - 38},700 L${cx + 38},700 L${cx + 32},900 L${cx - 32},900 Z`} fill={C.calca} />
+                <path d={`M${cx - 44},912 C${cx - 44},892 ${cx + 30},886 ${cx + 44},900 L${cx + 48},930 L${cx - 44},930 Z`} fill={C.botina} />
+              </g>
+            ))}
+          </g>
+        ) : (
+          <Pernas fase={fase} />
+        )}
         {/* pescoço */}
         <rect x={174} y={236} width={52} height={72} fill={C.pele} />
         {/* camisa xadrez de manga comprida (os braços vêm dentro dela) */}
