@@ -51,7 +51,8 @@ No fim de cada passo, atualize `canal/ESTADO.md`.
 - `canal/`: o perfil do canal (`CANAL.md`), onde paramos (`ESTADO.md`) e as ideias (`ideias/`).
 - `series/<serie>/`: `MUNDO.md`, `ESTILO.md`, `PERSONAGENS.md`, `folhas/` e `partes/parte-NN/`
   (roteiro, voz, tempos, resultado, post).
-- `src/personagem/`: o personagem-base. `src/series/<serie>/`: o código de cada série.
+- `src/personagem/`: o personagem-base e as peças extras. `src/series/<serie>/`: o código de cada série.
+- `ferramentas/`: programas prontos (por exemplo, `tempos.py`, que marca o tempo de cada palavra da voz).
 
 ## O projeto de vídeo
 

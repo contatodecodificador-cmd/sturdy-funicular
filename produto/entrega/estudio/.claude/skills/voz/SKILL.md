@@ -15,7 +15,9 @@ etapa 3 do `/comecar` para salvar a chave.
 
 ## Etapa 1 de 4: o texto para falar
 
-1. Monte o texto da narração a partir do roteiro, uma frase por linha.
+1. Monte o texto da narração a partir do roteiro, **uma frase (cena) por linha**, e salve em
+   `partes/parte-NN/VOZ.md` (título na primeira linha, depois o texto). A ferramenta de tempos usa
+   cada linha como uma cena.
 2. Marque a emoção onde ela muda, com as marcações que a ferramenta de voz aceita (no ElevenLabs, os
    modelos novos aceitam marcações entre colchetes, como `[sussurrando]`, `[animado]`, `[pausa]`).
    Use pouco: só onde muda o clima. Uma pausa antes da virada ajuda muito.
@@ -29,8 +31,10 @@ Pergunte como a pessoa quer fazer:
 - **O Claude gera pelo ElevenLabs** (precisa da chave salva):
   1. Liste as vozes da conta (`GET /v1/voices`) e mostre os nomes. A pessoa escolhe (a voz do canal já
      pode estar anotada no `CANAL.md`).
-  2. Liste os modelos (`GET /v1/models`) e use o mais novo que aceita as marcações de emoção, a menos que
-     a pessoa prefira outro.
+  2. Liste os modelos (`GET /v1/models`) e use o mais novo que aceita as marcações de emoção
+     (em novembro de 2026, o `eleven_v4`), a menos que a pessoa prefira outro. Voz clonada costuma
+     soar melhor no modelo em que foi testada: se a pessoa não gostar, gere só a primeira frase em
+     2 ou 3 modelos para ela comparar (gasta pouco crédito).
   3. Avise que gerar a voz gasta créditos da conta dela e pergunte se pode.
   4. Gere com `POST /v1/text-to-speech/<voice_id>` e salve em `partes/parte-NN/voz.mp3`.
   5. Mande o áudio para a pessoa ouvir. Se algo soar errado (palavra trocada, emoção estranha), ajuste o
@@ -48,10 +52,15 @@ Para encaixar cenas e legenda na fala, você precisa saber quando cada palavra �
 - **Sem a chave:** instale o `faster-whisper` (`pip install faster-whisper`) e transcreva com marcação
   por palavra.
 
-Depois, confira a transcrição contra o roteiro e corrija palavras que vieram erradas (o texto certo é o
-do roteiro; da transcrição você só usa os tempos). Gere `partes/parte-NN/tempos.json` com: cada palavra,
-começo e fim em segundos, e o número da cena (frase) a que ela pertence. Cada cena começa na primeira
-palavra da sua frase.
+Depois, rode a ferramenta pronta:
+
+```
+python3 ferramentas/tempos.py series/<serie>/partes/parte-NN
+```
+
+Ela junta o texto certo (o do `VOZ.md`) com os tempos da transcrição e gera `tempos.json`: a duração,
+o começo e o fim de cada cena e de cada palavra. Se ela avisar que alguma palavra não apareceu na
+transcrição, ouça aquele trecho: pode ser palavra engolida ou trocada pela voz.
 
 ## Etapa 4 de 4: guardar
 
