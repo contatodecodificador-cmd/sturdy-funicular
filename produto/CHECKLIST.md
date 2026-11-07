@@ -24,7 +24,8 @@ Atualizado em 07/11/2026. ✅ feito · 🟡 feito, falta testar ou decidir · �
 - ✅ Sem números, depoimentos ou promessa de ganho
 - ⬜ Colar os links de checkout da Cakto (`LINKS_CAKTO` no fim do arquivo)
 - ⬜ Trocar "O Tempo Parou" pelo nome final do canal, se mudar
-- ⬜ Publicar (Netlify), quando o dono decidir
+- ✅ Pacote pronto para arrastar no Netlify: `publicar/pagina-de-venda.zip` (veja `publicar/COMO-PUBLICAR.md`)
+- ⬜ Subir no Netlify (o dono arrasta o zip) e mandar o endereço para conferir
 
 ## 3. A skill (os comandos, em `entrega/estudio/`)
 

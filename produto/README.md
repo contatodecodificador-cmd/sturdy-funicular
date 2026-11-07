@@ -19,6 +19,7 @@ criações nossas feitas com o mesmo processo. O nome não fica preso a nenhum c
 ## O que tem nesta pasta
 
 - `CHECKLIST.md`: tudo o que foi feito e o que falta.
+- `publicar/`: o pacote pronto da página de venda para arrastar no Netlify e o passo a passo.
 
 - `identidade.md`: cores, letras e jeito do visual.
 - `plano.md`: o sumário do guia, o que a skill faz, os entregáveis e as regras.
