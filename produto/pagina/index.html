@@ -643,6 +643,17 @@
   </div>
 </section>
 
+<!-- RESULTADOS (escondida até existir número real; preencha RESULTADOS no fim do arquivo) -->
+<section class="faixa" id="resultados" hidden>
+  <div class="wrap">
+    <span class="rotulo">Resultados reais</span>
+    <h2>O que os nossos canais <em>já fizeram.</em></h2>
+    <p class="suave" id="resultados-data"></p>
+    <div class="grade-3" id="resultados-lista" style="margin-top:24px"></div>
+    <p class="suave" style="margin-top:18px; font-size:.9rem">Números dos nossos próprios canais, feitos com este processo. Não são promessa de resultado: o seu depende da sua história, da sua constância e do seu público.</p>
+  </div>
+</section>
+
 <!-- O QUE VOCÊ RECEBE -->
 <section class="faixa" id="conteudo">
   <div class="wrap">
@@ -804,6 +815,23 @@
 <script>
   // Cole aqui os links de checkout da Cakto quando os produtos estiverem criados.
   // Enquanto um link estiver vazio, o botão daquele plano mostra "Em breve".
+  // RESULTADOS: só números REAIS dos canais, com a data. Enquanto for null, a seção fica escondida.
+  // Exemplo: { data: "até 20/11/2026", itens: [ { numero: "15 mil", texto: "visualizações na parte 1 de O Bunker" } ] }
+  var RESULTADOS = null;
+  (function () {
+    if (!RESULTADOS || !RESULTADOS.itens || !RESULTADOS.itens.length) return;
+    var s = document.getElementById('resultados'), l = document.getElementById('resultados-lista');
+    document.getElementById('resultados-data').textContent = RESULTADOS.data ? 'Dados ' + RESULTADOS.data + '.' : '';
+    RESULTADOS.itens.forEach(function (r) {
+      var d = document.createElement('div'); d.className = 'ficha';
+      var n = document.createElement('div'); n.textContent = r.numero;
+      n.style.cssText = 'font-family:Archivo,sans-serif;font-weight:900;font-size:2.6rem;line-height:1;color:var(--lanterna);margin-bottom:10px';
+      var p = document.createElement('p'); p.textContent = r.texto;
+      d.appendChild(n); d.appendChild(p); l.appendChild(d);
+    });
+    s.hidden = false;
+  })();
+
   // No dia do lançamento, troque VENDAS_ABERTAS para true e republique a página.
   var VENDAS_ABERTAS = false;
   var LINKS_CAKTO = VENDAS_ABERTAS ? {

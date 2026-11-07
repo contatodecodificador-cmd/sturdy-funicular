@@ -2,8 +2,11 @@
 
 **Site:** https://estudiodonogueira.netlify.app (criado em 07/11/2026, conta Anderson Nogueira's team).
 
-**O jeito mais fácil:** peça ao Claude "publica a página". Ele roda `bash produto/publicar/publicar.sh`,
-que monta o zip e publica direto pelo token do Netlify salvo no ambiente.
+**Desde que a Área entrou no ar, o jeito certo é:** peça ao Claude "publica o site". Ele roda
+`bash produto/site/publicar-tudo.sh`, que publica a página, a Área e o login juntos e confere que a Área
+continua protegida.
+
+**Atenção:** `publicar.sh` (abaixo) publica **só a página** e tira a Área do ar. Use só em emergência.
 
 Se o token não estiver disponível, use o jeito manual abaixo.
 

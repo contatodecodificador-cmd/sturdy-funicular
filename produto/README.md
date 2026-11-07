@@ -19,6 +19,10 @@ criações nossas feitas com o mesmo processo. O nome não fica preso a nenhum c
 ## O que tem nesta pasta
 
 - `CHECKLIST.md`: tudo o que foi feito e o que falta.
+- `guia/`: os cadernos do guia (0 a 6), o diário de produção e os modelos (viram páginas na Área).
+- `site/`: o login, o porteiro da Área e o `publicar-tudo.sh` (publica página + Área + login).
+- `cakto.md`: os produtos, os links de checkout, o order bump e o webhook.
+- `LANCAMENTO.md`: o passo a passo do dia de lançar.
 - `publicar/`: o pacote pronto da página de venda para arrastar no Netlify e o passo a passo.
 
 - `identidade.md`: cores, letras e jeito do visual.

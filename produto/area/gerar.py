@@ -431,26 +431,71 @@ def pagina_passo(n: int) -> str:
     return pagina(p["titulo"], f"Passo {n} de 10", "\n".join(partes), raiz="../")
 
 
-# O guia (só para quem comprou o guia ou o completo). Os cadernos ainda estão sendo escritos.
-CADERNOS = [
-    ("1", "O seu canal", "nicho, público, narrador e a votação como motor"),
-    ("2", "A série", "o mundo da história, os personagens e os caminhos"),
-    ("3", "O roteiro", "como prender do começo ao fim, o gancho e a pergunta do final"),
-    ("4", "A voz", "escolher ou criar a voz, dar emoção e encaixar nas cenas"),
-    ("5", "Imagem e som", "personagens, cenários, cenas que funcionam no celular, legenda e som"),
-    ("6", "Postar e continuar", "capa, Stories, legenda, ler a votação e os cuidados"),
-    ("+", "Diário de produção", "O Bunker e O Tempo Parou, com os erros reais e as correções"),
-    ("+", "Modelos para preencher", "mundo da série, personagens, roteiro, caminhos e postagem"),
-]
+# O guia (só para quem comprou o guia ou o completo): os cadernos vêm de produto/guia/*.md.
+GUIA = PRODUTO / "guia"
+
+CSS += """
+.leitura h1 { margin-bottom: .3em; }
+.leitura h2 { margin-top: 1.8em; font-size: 1.35rem; }
+.leitura blockquote { margin: 20px 0; padding: 14px 18px; border-left: 3px solid var(--lanterna); background: rgba(240,169,59,.06); border-radius: 0 10px 10px 0; color: var(--texto); }
+.leitura blockquote p { margin: .3em 0; }
+.leitura table { margin: 16px 0; font-size: .95rem; }
+.leitura th { text-align: left; padding: 10px 8px; border-bottom: 2px solid var(--linha); color: var(--lanterna); font-family: "IBM Plex Mono", monospace; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; }
+.leitura td:first-child { width: auto; }
+.leitura pre { position: relative; background: #070A0E; border: 1px solid var(--linha); border-radius: 10px; padding: 16px; overflow-x: auto; white-space: pre-wrap; }
+.leitura pre code { background: none; padding: 0; font-size: .88rem; line-height: 1.55; }
+.leitura pre button.copiar { position: absolute; top: 8px; right: 8px; padding: 6px 10px; font-size: .7rem; }
+.leitura li { margin: 4px 0; }
+.leitura ul li:has(> input), .leitura li.tarefa { list-style: none; }
+.caderno a { text-decoration: none; }
+.caderno:hover { border-color: rgba(240,169,59,.45); }
+.imprimir { font-family: "IBM Plex Mono", monospace; font-size: .8rem; color: var(--suave); }
+@media print { header, footer, .navega, .imprimir, button { display: none !important; } body { background: #fff; color: #111; } .leitura * { color: #111 !important; } }
+"""
+
+
+def cadernos():
+    lista = []
+    for f in sorted(GUIA.glob("*.md")):
+        texto = f.read_text(encoding="utf-8")
+        titulo = texto.splitlines()[0].lstrip("# ").strip()
+        resumo = next((l.lstrip("> ").strip() for l in texto.splitlines() if l.startswith(">")), "")
+        lista.append((f.stem, titulo, resumo.replace("Neste caderno: ", ""), texto))
+    return lista
+
+
+def pagina_caderno(i: int, lista) -> str:
+    import markdown
+    slug, titulo, _, texto = lista[i]
+    corpo_html = markdown.markdown(texto, extensions=["tables", "fenced_code"])
+    corpo_html = corpo_html.replace("<li>[ ] ", '<li class="tarefa">☐ ').replace("<li>[x] ", '<li class="tarefa">☑ ')
+    # botão de copiar em cada pedido pronto
+    partes = corpo_html.split("<pre><code>")
+    for k in range(1, len(partes)):
+        partes[k] = '<pre><button class="copiar copiar-bloco">Copiar</button><code>' + partes[k]
+    corpo_html = "".join(partes)
+    ant = f'<a href="{lista[i-1][0]}.html">← {lista[i-1][1]}</a>' if i > 0 else '<a href="index.html">← Guia</a>'
+    prox = f'<a class="proximo" href="{lista[i+1][0]}.html">{lista[i+1][1]} →</a>' if i + 1 < len(lista) else '<a class="proximo" href="index.html">Voltar ao guia →</a>'
+    js = """<script>
+  document.querySelectorAll('button.copiar-bloco').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = b.parentNode.querySelector('code').innerText;
+      try { navigator.clipboard.writeText(t); b.textContent = 'Copiado!'; setTimeout(function(){ b.textContent = 'Copiar'; }, 1500); } catch (e) {}
+    });
+  });
+</script>"""
+    corpo = f'<span class="rotulo">Guia do Estúdio</span><div class="leitura">{corpo_html}</div>' \
+            f'<p class="imprimir">Quer guardar? Use "Imprimir › Salvar como PDF" no navegador.</p><div class="navega">{ant}{prox}</div>'
+    return pagina(titulo, "Guia", corpo, raiz="../", extra_js=js)
 
 
 def pagina_guia() -> str:
     corpo = ['<span class="rotulo">Guia do Estúdio</span>',
              "<h1>O guia <em>passo a passo.</em></h1>",
-             "<p>O método inteiro explicado em cadernos curtos, com exemplos reais dos nossos dois canais.</p>",
+             "<p>O método inteiro explicado em cadernos curtos, com exemplos reais dos nossos canais e pedidos prontos para colar no Claude.</p>",
              '<div class="lista-cadernos">']
-    for n, nome, desc in CADERNOS:
-        corpo.append(f'<div class="caderno"><span><b>{"Caderno " + n if n != "+" else "Extra"} · {nome}</b><br><span class="suave">{desc}</span></span><span class="status">em escrita</span></div>')
+    for slug, titulo, resumo, _ in cadernos():
+        corpo.append(f'<a class="caderno" href="{slug}.html"><span><b>{titulo}</b><br><span class="suave">{resumo}</span></span><span class="status">ler →</span></a>')
     corpo.append("</div>")
     corpo.append('<div class="navega"><a href="../index.html">← Área do Estúdio</a><span></span></div>')
     return pagina("Guia", "Guia", "\n".join(corpo), raiz="../")
@@ -540,6 +585,9 @@ def main():
     for n in PASSOS:
         (SITE / "passos" / f"passo-{n:02d}.html").write_text(pagina_passo(n), encoding="utf-8")
     (SITE / "guia" / "index.html").write_text(pagina_guia(), encoding="utf-8")
+    lista = cadernos()
+    for i in range(len(lista)):
+        (SITE / "guia" / f"{lista[i][0]}.html").write_text(pagina_caderno(i, lista), encoding="utf-8")
     (SITE / "extra" / "index.html").write_text(pagina_extra(), encoding="utf-8")
     (SITE / "acesso.json").write_text(json.dumps(ACESSO, ensure_ascii=False, indent=2), encoding="utf-8")
     print("Pronto:", SITE)
