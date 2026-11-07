@@ -15,6 +15,8 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Frame-Options = "SAMEORIGIN"
+    # Enquanto não for lançar: a página não aparece no Google. No lançamento, apague a linha abaixo.
+    X-Robots-Tag = "noindex, nofollow"
 
 [[headers]]
   for = "/img/*"
