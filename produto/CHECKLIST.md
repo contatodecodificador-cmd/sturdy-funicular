@@ -25,7 +25,7 @@ Atualizado em 07/11/2026. ✅ feito · 🟡 feito, falta testar ou decidir · �
 - ⬜ Colar os links de checkout da Cakto (`LINKS_CAKTO` no fim do arquivo)
 - ⬜ Trocar "O Tempo Parou" pelo nome final do canal, se mudar
 - ✅ Pacote pronto para arrastar no Netlify: `publicar/pagina-de-venda.zip` (veja `publicar/COMO-PUBLICAR.md`)
-- ⬜ Subir no Netlify (o dono arrasta o zip) e mandar o endereço para conferir
+- ✅ No ar em https://estudiodonogueira.netlify.app (fora do Google até o lançamento). Republicar: `bash produto/publicar/publicar.sh`
 
 ## 3. A skill (os comandos, em `entrega/estudio/`)
 
@@ -64,7 +64,7 @@ Atualizado em 07/11/2026. ✅ feito · 🟡 feito, falta testar ou decidir · �
 ## 7. O login e a liberação por produto
 
 - ✅ Pesquisado: a Cakto tem webhook de "Compra aprovada" (Integrações › Webhooks), por produto
-- ⬜ Dono: criar conta no Netlify (grátis)
+- ✅ Conta no Netlify criada e token salvo no ambiente (o Claude publica daqui)
 - ⬜ Dono: comprar um domínio (exemplo: estudiodonogueira.com.br)
 - ⬜ Dono: criar conta num serviço de envio de e-mail (exemplo: Resend)
 - ⬜ Construir: receber o aviso da Cakto e guardar o e-mail e o produto comprado

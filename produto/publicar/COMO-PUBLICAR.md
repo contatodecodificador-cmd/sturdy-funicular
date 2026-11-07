@@ -1,5 +1,12 @@
 # Como publicar a página de venda no Netlify
 
+**Site:** https://estudiodonogueira.netlify.app (criado em 07/11/2026, conta Anderson Nogueira's team).
+
+**O jeito mais fácil:** peça ao Claude "publica a página". Ele roda `bash produto/publicar/publicar.sh`,
+que monta o zip e publica direto pelo token do Netlify salvo no ambiente.
+
+Se o token não estiver disponível, use o jeito manual abaixo.
+
 O arquivo **`pagina-de-venda.zip`** desta pasta já está pronto para subir.
 
 ## 1. Baixar o pacote do GitHub
