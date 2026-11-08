@@ -3,3 +3,4 @@ build/
 *.mp3
 *.mp4
 sheet_*.jpg
+*.log
