@@ -5,7 +5,7 @@ Status: aprovada pelo dono em 06/11/2026. Nome da série: O Bunker.
 **A ideia em uma frase:** um homem se tranca no bunker do quintal quando a TV manda não respirar a
 névoa vermelha, espera cinco anos pelo sinal verde que nunca vem, e agora o filtro de ar está falhando.
 
-**Quantas partes e como termina:** 4 partes, com final fechado. Se o público pedir, a série ganha
+**Quantas partes e como termina:** 5 partes (eram 4; o público pediu mais), com final fechado. Se o público pedir, a série ganha
 mais partes (como aconteceu em "Abre o portão"). A história abre pelo fim: a parte 1 começa no
 bunker, cinco anos depois, e volta à manhã do alerta.
 
@@ -52,13 +52,16 @@ tocando sozinho, tem alguém mantendo ele no ar e vigiando o bairro.
 2. **A casa** (caminho SAI, votado em 07/11/2026). Ele sai de máscara: não tem névoa nenhuma, o quintal
    virou mato, a caneca de café está na mesa e a TV nunca desligou. Na frente dele, pela primeira vez em
    cinco anos, o aviso muda e chama ele pelo nome: "Otávio, volta pro bunker." Escolha: VOLTA ou DESLIGA.
-3. **A torre.** Os dois caminhos levam à torre de rádio do bairro (TORRE 7), de onde sai o aviso. Lá ele
-   acha a sala de transmissão: monitores mostrando os quintais do bairro e o microfone ainda morno.
-   Alguém está vigiando quem ficou embaixo da terra, e mandou a mensagem.
-4. **O sinal verde** (final). Ele descobre quem mantém o aviso no ar e por quê, desliga a gravação e
-   manda pelo rádio o sinal verde que nunca veio. Pela rua, as escotilhas de outros quintais começam a
-   abrir. Na última cena, a luz FORA do medidor pisca vermelha uma vez.
-   (Quem está por trás do aviso fica em aberto e pode ser escolhido com o público.)
+3. **A caneca** (caminho VOLTA, votado em 08/11/2026). De volta ao bunker, alguém esteve lá nos
+   poucos minutos em que ele saiu: a caneca da cozinha está na mesinha, cheia e quente, e na parede tem
+   um risco novo com "falta pouco" escrito embaixo. Escolha: PROCURA ou FOGE.
+4. **A torre.** Os dois caminhos levam à TORRE 7, de onde sai o aviso. Lá ele acha a sala de
+   transmissão: monitores mostrando os quintais do bairro e o microfone ainda morno. Alguém está
+   vigiando quem ficou embaixo da terra.
+5. **O sinal verde** (final). Ele descobre quem mantém o aviso no ar, por quê e o que "falta pouco"
+   quer dizer; desliga a gravação e manda o sinal verde que nunca veio. Pela rua, as escotilhas de
+   outros quintais começam a abrir. Na última cena, a luz FORA do medidor pisca vermelha uma vez.
+   (Quem está por trás do aviso pode ser escolhido com o público.)
 
 ## Nunca
 
