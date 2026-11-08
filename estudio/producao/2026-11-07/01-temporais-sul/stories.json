@@ -23,13 +23,14 @@
     "rodape": "Dados: Defesa Civil de SC e RS · 05/11"
   },
   "manchete": [
-    "Quarta, 04/11:",
-    "a rajada em Chapecó"
+    "Tornado",
+    "em Chapecó"
   ],
   "numero": {
     "numero": 126,
     "unidade": " km/h",
-    "texto": "rajada em Chapecó"
+    "texto": "rajada em Chapecó",
+    "de": 75
   },
   "cena": 2,
   "chamada": "NOVO VÍDEO NO PERFIL",
