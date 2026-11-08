@@ -7,11 +7,12 @@
                                  luz vermelha de emergência
    ===================================================================================== */
 import React from 'react';
-import { AbsoluteFill } from 'remotion';
+import { AbsoluteFill, useCurrentFrame } from 'remotion';
 import { Caixa, Comodo, proj, type Sala3D } from '../../kit/casa';
-import { Brilho, Escuro } from '../../kit/luz';
+import { Brilho, type Cone, Escuro } from '../../kit/luz';
 import { COR, H, W } from '../../kit/pecas';
-import { AMARELO, Filtro, Medidor, METAL, Radio, Riscos, VERDE, VISOR } from './pecas';
+import { FONTEM } from '../../tema';
+import { AMARELO, Caneca, Filtro, Medidor, METAL, Radio, Riscos, VERDE, VISOR } from './pecas';
 import { type Expressao, Otavio } from './personagens';
 
 const VERMELHO = '224,24,45';
@@ -78,7 +79,14 @@ export const CenaBunker: React.FC<{
   /** força da luz de emergência (0 a 1: falha um pouco quando o filtro para) */
   luz?: number;
   otavio?: { expressao?: Expressao; cima?: number; olhar?: number } | null;
-}> = ({ giro = 0, dentro = true, luz = 1, otavio = { expressao: 'cansada' } }) => {
+  /** o Otávio em pé (parte 3), em vez de sentado na cama */
+  emPe?: { x: number; y: number; escala: number; vista?: 'frente' | 'costas'; passo?: number | null; mascara?: boolean; expressao?: Expressao; olhar?: number } | null;
+  /** a parte 3: a caneca quente na mesinha, o risco novo, a escrita "falta pouco" (0 a 1) e as pegadas */
+  p3?: { caneca?: boolean; riscoNovo?: number; escrita?: number; pegadas?: boolean };
+  /** a lanterna (cones de luz) */
+  cones?: Cone[];
+}> = ({ giro = 0, dentro = true, luz = 1, otavio = { expressao: 'cansada' }, emPe = null, p3, cones = [] }) => {
+  const f = useCurrentFrame();
   const r = BUNKER;
   // a cama de campanha, encostada na parede da esquerda
   const cama = { bx1: SB.x1, bx2: 430, by1: 1030, by2: SB.y2, z1: 120, z2: 440 };
@@ -90,12 +98,49 @@ export const CenaBunker: React.FC<{
         <path d="M640,420 C650,520 630,600 646,700 M250,1000 C300,1040 360,1030 420,1060" fill="none" stroke="#6E6A63" strokeWidth={6} opacity={0.5} />
       </Svg>
       <Riscos x={r.riscos.x} y={r.riscos.y} escala={r.riscos.escala} n={r.riscos.n} colunas={r.riscos.colunas} cor="#3A3632" />
+      {p3 ? (
+        <Svg>
+          <defs>
+            <clipPath id="escrita-p3">
+              <rect x={200} y={790} width={260 * (p3.escrita ?? 0)} height={48} />
+            </clipPath>
+          </defs>
+          {/* o risco novo, claro, de quem riscou agora */}
+          <line x1={482} y1={756} x2={478} y2={784} stroke="#EDE6DA" strokeWidth={5} strokeLinecap="round" opacity={p3.riscoNovo ?? 0} />
+          {/* "falta pouco", riscado na parede */}
+          <text x={204} y={826} fontFamily={FONTEM.pincel} fontSize={32} fill="#EDE6DA" clipPath="url(#escrita-p3)">
+            falta pouco
+          </text>
+          {/* as pegadas de terra molhada, da escada até atrás da prateleira */}
+          {p3.pegadas
+            ? Array.from({ length: 7 }, (_, i) => {
+                const t = i / 6;
+                const px = 540 - 230 * t + (i % 2 ? 18 : -18);
+                const py = 1430 - 230 * t;
+                const k = 1 - 0.45 * t;
+                return <ellipse key={i} cx={px} cy={py} rx={16 * k} ry={30 * k} fill="#3A2E22" opacity={0.6} transform={`rotate(${-35} ${px} ${py})`} />;
+              })
+            : null}
+          {p3.pegadas ? <path d="M318,1196 l10,-26 l6,24" fill="none" stroke="#5E6F3C" strokeWidth={4} /> : null}
+        </Svg>
+      ) : null}
       <Filtro x={r.filtro.x} y={r.filtro.y} escala={r.filtro.escala} giro={giro} />
       <Medidor x={r.medidor.x} y={r.medidor.y} escala={r.medidor.escala} dentroLigado={dentro} />
       <Escada />
       {/* a mesinha do rádio, à direita */}
       <Caixa S={SB} bx1={640} bx2={860} by1={1010} by2={SB.y2} z1={60} z2={300} frente="#5A4A3C" topo="#6E5B4A" lado="#4A3D32" />
       <Radio x={r.radio.x} y={r.radio.y} escala={r.radio.escala} />
+      {p3?.caneca ? (
+        <>
+          <Caneca x={636} y={1046} escala={0.55} />
+          <Svg>
+            {[0, 1, 2].map((i) => {
+              const sobe = ((f * 1.2 + i * 18) % 54) / 54;
+              return <path key={i} d={`M${652 + i * 9},${1050 - sobe * 70} q-8,-14 0,-28 q8,-14 0,-28`} fill="none" stroke="#F5EFEA" strokeWidth={3} opacity={0.6 * (1 - sobe)} />;
+            })}
+          </Svg>
+        </>
+      ) : null}
       {/* prateleira de latas, na parede do fundo, embaixo dos risquinhos */}
       <Svg>
         <rect x={196} y={880} width={260} height={10} fill="#5A4A3C" />
@@ -116,9 +161,14 @@ export const CenaBunker: React.FC<{
       {otavio ? (
         <Otavio x={r.rosto.x} y={r.rosto.y + 830 * 0.92} escala={0.92} sentado expressao={otavio.expressao ?? 'cansada'} cima={otavio.cima ?? 0} olhar={otavio.olhar ?? 0.6} />
       ) : null}
+      {emPe ? <Otavio x={emPe.x} y={emPe.y} escala={emPe.escala} vista={emPe.vista ?? 'frente'} passo={emPe.passo ?? null} mascara={emPe.mascara ?? false} expressao={emPe.expressao ?? 'preocupada'} olhar={emPe.olhar ?? 0} /> : null}
       <Escuro
-        opacidade={0.9}
-        luzes={[
+        opacidade={cones.length ? 0.95 : 0.9}
+        cones={cones}
+        luzes={cones.length ? [
+          { x: r.lampada.x, y: r.lampada.y + 30, r: 500, forca: 0.35 * luz },
+          { x: 540, y: 1500, rx: 500, ry: 300, r: 500, forca: 0.18 },
+        ] : [
           { x: r.lampada.x, y: r.lampada.y + 30, r: 820 * (0.6 + 0.4 * luz), forca: 0.72 * luz },
           { x: r.rosto.x + 40, y: r.rosto.y + 60, r: 420, forca: 0.35 },
           { x: r.rosto.x + 20, y: r.rosto.y + 470, rx: 330, ry: 260, r: 330, forca: 0.42 },

@@ -116,17 +116,78 @@ const RESULTADOS2: [string, React.ReactNode][] = [
 ];
 
 /** n = 0 VOLTA, 1 DESLIGA */
-export const ResultadoBunker2: React.FC<{ n?: number }> = ({ n }) => {
+export const ResultadoBunker2: React.FC<{ n?: number; quando?: string }> = ({ n, quando = 'PARTE 3 HOJE, 21H30' }) => {
   const f = useCurrentFrame();
   const [vencedor, fundo] = RESULTADOS2[Math.min(n ?? f, RESULTADOS2.length - 1)];
-  return <StoryResultado vencedor={vencedor} quando="PARTE 3 HOJE, 21H30" fundo={fundo} />;
+  return <StoryResultado vencedor={vencedor} quando={quando} fundo={fundo} />;
 };
+
+/** o resultado da parte 2 com o horário da parte 3 (10h) */
+const VoltaAs10: React.FC = () => <ResultadoBunker2 n={0} quando="PARTE 3 HOJE, 10H" />;
 
 const ComposicoesVideo2 = composicoesEmVideo([
   { id: 'StoryVideo-Bunker-2-NoAr', C: NoArBunker2, dur: DUR_STORY.noar },
   { id: 'StoryVideo-Bunker-2-Vota', C: VotaBunker2, dur: DUR_STORY.enquete },
   { id: 'StoryVideo-Bunker-2-Volta', C: () => <ResultadoBunker2 n={0} />, dur: DUR_STORY.resultado },
+  { id: 'StoryVideo-Bunker-2-Volta-10h', C: VoltaAs10, dur: DUR_STORY.resultado },
   { id: 'StoryVideo-Bunker-2-Desliga', C: () => <ResultadoBunker2 n={1} />, dur: DUR_STORY.resultado },
+]);
+
+/* ------------------------------------------------------------------ parte 3 */
+const P3S = { caneca: true, riscoNovo: 1, escrita: 1, pegadas: true };
+const cone3 = (x: number, y: number) => ({ x: 560, y: 1240, angulo: (Math.atan2(y - 1240, x - 560) * 180) / Math.PI, abertura: 30, alcance: 1100, forca: 0.95 });
+
+export const NoArBunker3: React.FC = () => (
+  <StoryNoAr
+    parte="PARTE 3"
+    chamada="Corre e deixa seu voto!"
+    fundo={
+      <Fundo borrado={10} escuro={0.35} zoom={2.4} foco={[653, 1050]}>
+        <CenaBunker otavio={null} luz={0.25} p3={P3S} cones={[cone3(653, 1065)]} />
+      </Fundo>
+    }
+  />
+);
+
+export const VotaBunker3: React.FC = () => (
+  <StoryVota
+    pergunta={['ELE PROCURA', 'OU FOGE?']}
+    rodape="O mais votado vira a parte 4"
+    fundo={
+      <Fundo borrado={6} escuro={0.25} zoom={2.6} foco={[335, 800]}>
+        <CenaBunker otavio={null} luz={0.25} p3={P3S} cones={[cone3(340, 800)]} />
+      </Fundo>
+    }
+  />
+);
+
+const RESULTADOS3: [string, React.ReactNode][] = [
+  [
+    'PROCURA!',
+    <Fundo key="p" borrado={10} escuro={0.4} zoom={1.3} foco={[400, 1150]}>
+      <CenaBunker otavio={null} luz={0.25} p3={P3S} cones={[cone3(330, 1000)]} />
+    </Fundo>,
+  ],
+  [
+    'FOGE!',
+    <Fundo key="f" borrado={10} escuro={0.4} zoom={1.2} foco={[540, 1200]}>
+      <CenaQuintalTarde fundo="casa" anoitecer={1} />
+    </Fundo>,
+  ],
+];
+
+/** n = 0 PROCURA, 1 FOGE */
+export const ResultadoBunker3: React.FC<{ n?: number }> = ({ n }) => {
+  const f = useCurrentFrame();
+  const [vencedor, fundo] = RESULTADOS3[Math.min(n ?? f, RESULTADOS3.length - 1)];
+  return <StoryResultado vencedor={vencedor} quando="PARTE 4 HOJE, 21H30" fundo={fundo} />;
+};
+
+const ComposicoesVideo3 = composicoesEmVideo([
+  { id: 'StoryVideo-Bunker-3-NoAr', C: NoArBunker3, dur: DUR_STORY.noar },
+  { id: 'StoryVideo-Bunker-3-Vota', C: VotaBunker3, dur: DUR_STORY.enquete },
+  { id: 'StoryVideo-Bunker-3-Procura', C: () => <ResultadoBunker3 n={0} />, dur: DUR_STORY.resultado },
+  { id: 'StoryVideo-Bunker-3-Foge', C: () => <ResultadoBunker3 n={1} />, dur: DUR_STORY.resultado },
 ]);
 
 const ComposicoesVideo = composicoesEmVideo([
@@ -150,5 +211,10 @@ export const ComposicoesStoriesBunker: React.FC = () => (
     <Composition id="OBunker2-Story-Vota" component={comFontes(VotaBunker2)} durationInFrames={1} {...QUADRO} />
     <Composition id="OBunker2-Story-Resultado" component={comFontes(ResultadoBunker2)} durationInFrames={RESULTADOS2.length} {...QUADRO} />
     <ComposicoesVideo2 />
+    <Composition id="OBunker2-Story-Volta-10h" component={comFontes(VoltaAs10)} durationInFrames={1} {...QUADRO} />
+    <Composition id="OBunker3-Story-NoAr" component={comFontes(NoArBunker3)} durationInFrames={1} {...QUADRO} />
+    <Composition id="OBunker3-Story-Vota" component={comFontes(VotaBunker3)} durationInFrames={1} {...QUADRO} />
+    <Composition id="OBunker3-Story-Resultado" component={comFontes(ResultadoBunker3)} durationInFrames={RESULTADOS3.length} {...QUADRO} />
+    <ComposicoesVideo3 />
   </>
 );
