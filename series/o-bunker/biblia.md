@@ -55,9 +55,11 @@ tocando sozinho, tem alguém mantendo ele no ar e vigiando o bairro.
 3. **A caneca** (caminho VOLTA, votado em 08/11/2026). De volta ao bunker, alguém esteve lá nos
    poucos minutos em que ele saiu: a caneca da cozinha está na mesinha, cheia e quente, e na parede tem
    um risco novo com "falta pouco" escrito embaixo. Escolha: PROCURA ou FOGE.
-4. **A torre.** Os dois caminhos levam à TORRE 7, de onde sai o aviso. Lá ele acha a sala de
-   transmissão: monitores mostrando os quintais do bairro e o microfone ainda morno. Alguém está
-   vigiando quem ficou embaixo da terra.
+4. **O túnel** (caminho PROCURA, decidido em 08/11/2026; parte longa, mais de 1 minuto). Atrás da
+   prateleira, uma passagem que ele nunca construiu; o túnel tem risquinhos de outras pessoas e termina
+   na sala de baixo da TORRE 7: telas mostrando todos os bunkers do bairro, cada um com alguém
+   esperando. Na tela sete, alguém de gorro mostarda sentado na cama dele olha pra câmera; atrás do
+   Otávio, uma voz sussurra "Falta pouco." Escolha: SOBE ou VOLTA.
 5. **O sinal verde** (final). Ele descobre quem mantém o aviso no ar, por quê e o que "falta pouco"
    quer dizer; desliga a gravação e manda o sinal verde que nunca veio. Pela rua, as escotilhas de
    outros quintais começam a abrir. Na última cena, a luz FORA do medidor pisca vermelha uma vez.
