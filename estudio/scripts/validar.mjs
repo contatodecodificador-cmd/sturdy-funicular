@@ -21,6 +21,11 @@ roteiro.cenas?.forEach((c, i) => {
   if (c.visual && !VIS.includes(c.visual)) erros.push(`${n}: visual "${c.visual}" inválido (${VIS.join('/')})`);
   if (!c.capitulo && !c.continua) avisos.push(`${n}: sem "capitulo"`);
   if (c.visual === 'lista' && !(c.itens?.length)) erros.push(`${n}: lista sem itens`);
+  const TIPOS_ILUS = ['tornado', 'temporal', 'chuva', 'vento', 'raio', 'enchente', 'casas_destelhadas', 'apagao', 'aeroporto', 'icones_seguranca'];
+  if (c.ilustracao) {
+    if (!TIPOS_ILUS.includes(c.ilustracao.tipo)) erros.push(`${n}: ilustracao.tipo "${c.ilustracao.tipo}" inválido (${TIPOS_ILUS.join('/')})`);
+    if (!c.ilustracao.local) erros.push(`${n}: ilustracao sem "local" (Município/UF)`);
+  }
   const ex = (r) => r && fs.existsSync(path.resolve(pasta, r));
   if (c.noticia) {
     if (!c.noticia.manchete) erros.push(`${n}: noticia sem "manchete"`);

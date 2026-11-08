@@ -6,7 +6,7 @@ O editor (`scripts/render.mjs`) transforma este arquivo em vídeo automaticament
 ```jsonc
 {
   "id": "2026-11-08-01-tornados-sul",
-  "tema": "escuro",                 // "escuro" (padrão: navy + amarelo-ouro), "claro" (creme + navy + amarelo) ou "satelite" (imagem de satélite NASA sob o mapa)
+  "tema": "jornal",                 // "jornal" (padrão; "escuro" e a ausência de tema também viram jornal: papel creme, tinta preta, marca-texto amarelo), "satelite" (imagem NASA sob o mapa) ou "grafite" (variante escura neutra, sem azul)
   "fontes": "Defesa Civil SC · Inmet · MetSul · 07/11",   // rodapé fixo do vídeo
   "cenas": [ /* 8 a 14 cenas */ ]
 }
@@ -24,6 +24,7 @@ Cada cena tem **uma frase ou duas** de fala. Uma cena nova = movimento de câmer
 | `ufs` | ["PR","SC"] | Estados enquadrados quando não há destaque/zoom. |
 | `zoom` | ["Cidade/UF"] | Aproxima a câmera nesses municípios. |
 | `destaques` | lista | Municípios que "saltam" em 3D com rótulo: `{"local":"Chapecó/SC","rotulo":"Chapecó · SC","detalhe":"Tornado 10h30","cor":"vermelho","gatilho":"Chapecó"}`. Aparecem quando a palavra `gatilho` é falada (padrão: o nome da cidade). |
+| `ilustracao` | objeto | Ilustração 3D de maquete sobre um município: `{"tipo":"tornado","local":"Chapecó/SC","escala":1.2,"gatilho":"tornado","cenario":false}`. Entra na fala do `gatilho` (padrão: início da cena) e fica até o fim do grupo de cenas `continua`. A câmera enquadra o município e deixa espaço em cima. `escala` (padrão 1) e `cenario:false` (sem casinhas/árvores/prédios ao redor) são opcionais. Tipos: `tornado` (funil listrado girando, nuvens em cima, detritos, bairro em miniatura), `temporal` (nuvens, chuva e raios sobre prédios), `chuva`, `vento` (setas amarelas), `raio`, `enchente` (água subindo), `casas_destelhadas` (telhas voando), `apagao` (cena escurece, janelas apagam, postes com faíscas), `aeroporto` (pista, torre, avião e blocos voando), `icones_seguranca` (árvore, poste, tomada e celular 199 com X vermelho). Use no máximo 1 por cena; `icones_seguranca` pede `escala` ~1.6. |
 | `rota` | bool | Liga os destaques com uma linha amarela, na ordem. |
 | `preencher` | objeto | Pinta uma área progressivamente: `{"locais":["SC"] ou ["Cidade/UF",...],"cor":"vermelho","gatilho":"trezentas"}`. |
 | `titulo` | objeto ou `"manter"` | Com número: `{"numero":126,"unidade":" km/h","texto":"rajada em Chapecó","sub":"Inmet · 04/11"}` (anima um contador; `de` define o valor inicial; `prefixo` como "ATÉ "). Sem número: `{"texto":"Isso ainda não acabou","sub":"...","circular":true}`. |
@@ -41,7 +42,7 @@ Aparecem no começo da cena (ou na palavra `gatilho`, opcional) e saem no fim de
 | `video` | `{"arquivo":"midia/clip1.mp4","credito":"Reprodução / @autor","inicio":0,"miniatura":"midia/mini1.png"}` | Polaroid de ~300px no canto inferior direito com o vídeo rodando sem som durante a cena (quadros pré-extraídos com ffmpeg: render determinístico; faz loop se o clipe for curto). Sem o arquivo, usa `miniatura` com ícone de play e zoom lento; sem os dois, pula o card. |
 | `foto` | `{"arquivo":"midia/x.jpg","credito":"..."}` | Polaroid no canto inferior esquerdo com a foto e o crédito. |
 
-Cores (preenchimentos/destaques do mapa; o vermelho é a cor semântica de perigo, o resto da marca é navy + amarelo-ouro): `vermelho` (perigo), `laranja` (alerta), `amarelo` (outro tipo de evento), `verde` (alívio / sem vítimas), `azul` (frio/chuva).
+Cores (preenchimentos/destaques do mapa; o vermelho é a cor semântica de perigo, o resto da marca é papel creme + tinta preta + amarelo marca-texto #ffd400; nunca azul-marinho): `vermelho` (perigo), `laranja` (alerta), `amarelo` (outro tipo de evento), `verde` (alívio / sem vítimas), `azul` (frio/chuva).
 
 **Locais:** sempre `"Município/UF"` com o nome oficial do IBGE (acentos importam pouco, mas a grafia sim) ou só `"UF"` para o estado inteiro.
 
@@ -68,3 +69,6 @@ Mapa 3D inclinado com câmera orbitando, deriva constante, transições de câme
 
 ## Satélite
 `dados/satelite/brasil.jpg` (+ `brasil.json` com o bbox lon/lat) é recorte da NASA Blue Marble (domínio público) e é reprojetado para a Mercator do mapa. A capa sempre usa esse fundo; nos vídeos use `"tema": "satelite"`.
+
+## Visual (motor)
+Mapa em jornal claro (papel creme com grão, municípios cinza-claro, estados com contorno grafite) inclinado em 3D. Os destaques e os preenchimentos viram blocos 3D extrudados (Three.js, `templates/cena3d.js`, render determinístico por tempo, câmera idêntica à do mapa). Rótulos e pins são projetados do 3D para a tela. Folha de estilo para aprovação do dono: `node scripts/folha-estilo.mjs` gera `marca/folha-estilo.png`.

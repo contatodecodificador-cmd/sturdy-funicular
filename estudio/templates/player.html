@@ -50,6 +50,7 @@ body.sat #vinheta{background:radial-gradient(ellipse at 50% 50%,transparent 45%,
 #titulo .box{background:#fffdf7;padding:10px 24px 12px;text-align:center;box-shadow:5px 5px 0 var(--ink);border:2px solid var(--ink);max-width:650px;position:relative}
 #titulo .l1{display:inline-block;font:84px/1.04 Titulo;color:var(--ink);letter-spacing:.01em;background:var(--hl);padding:0 14px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 #titulo .l1 small{font-size:42px;margin-left:4px}
+#titulo .l1.longo{font-size:58px}
 #titulo .l1.txt{font-size:60px;line-height:1.12;text-transform:uppercase}
 #titulo .l2{font:32px/1.1 Titulo;color:var(--ink);margin-top:6px;text-transform:uppercase;letter-spacing:.02em}
 #titulo .sub{margin-top:10px;background:var(--hl);color:var(--ink);font:800 12px Mono;letter-spacing:.06em;padding:4px 10px;border:1.5px solid var(--ink);text-transform:uppercase;box-shadow:2px 2px 0 var(--ink)}
@@ -118,16 +119,17 @@ body.sat #vinheta{background:radial-gradient(ellipse at 50% 50%,transparent 45%,
 #flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
 
 /* capa: satélite realista + card de papel */
-#capa{display:none;position:absolute;left:46px;right:46px;bottom:150px;background:#f6f1e4;padding:26px 28px 22px;box-shadow:8px 8px 0 var(--ink),0 22px 50px #000c;border:3px solid var(--ink)}
-#capa .t1{font:104px/1.0 Titulo;color:var(--ink);letter-spacing:.01em;text-transform:uppercase}
-#capa .t2{font:104px/1.0 Titulo;color:var(--ink);letter-spacing:.01em;text-transform:uppercase}
-#capa .t2 span{background:var(--hl);padding:0 12px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-#capa .ln{display:inline-block;margin-top:18px;background:var(--ink);color:var(--hl);font:800 15px Mono;padding:5px 10px;text-transform:uppercase}
-#capa .rd{font:500 15px Mono;color:#4a4a4a;margin-top:12px}
-#capaTag{display:none;left:40px;top:190px;background:var(--hl);color:var(--ink);font:800 16px Mono;padding:7px 13px;border:2px solid var(--ink);text-transform:uppercase;box-shadow:4px 4px 0 var(--ink)}
+#capa{display:none;position:absolute;left:46px;right:46px;top:222px}
+#capa .t1,#capa .t2{white-space:nowrap;font:104px/1.16 Titulo;letter-spacing:.01em;text-transform:uppercase}
+#capa .t1{color:#fff;text-shadow:0 3px 0 #141414,0 0 14px #000c,2px 2px 0 #141414,-2px 2px 0 #141414}
+#capa .t2{color:var(--ink);margin-top:2px}
+#capa .t2 span{background:var(--hl);padding:0 12px;box-shadow:0 4px 14px #0008;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+#capa .ln{display:inline-block;margin-top:16px;background:var(--ink);color:var(--hl);font:800 15px Mono;padding:5px 10px;text-transform:uppercase;box-shadow:0 3px 10px #0008}
+#capa .rd{font:800 15px Mono;color:#fff;margin-top:10px;text-shadow:0 2px 0 #141414,0 0 10px #000}
+#capaTag{display:none;left:46px;top:172px;background:var(--hl);color:var(--ink);font:800 16px Mono;padding:7px 13px;border:2px solid var(--ink);text-transform:uppercase;box-shadow:4px 4px 0 var(--ink)}
 #capaLogo{display:none;right:34px;top:34px;width:88px;height:88px;border-radius:50%;border:3px solid var(--hl);background:#fff center/cover;box-shadow:0 6px 18px #0009}
 body.capa #notas,body.capa #midia,body.capa #tag,body.capa #titulo,body.capa #leg,body.capa #ticker{display:none!important}
-body.capa #vinheta{background:radial-gradient(ellipse at 50% 42%,transparent 40%,#000000a0 100%),linear-gradient(to bottom,#00000099 0%,transparent 22%,transparent 55%,#00000099 100%)}
+body.capa #vinheta{background:radial-gradient(ellipse at 50% 55%,transparent 45%,#00000080 100%),linear-gradient(to bottom,#000000b0 0%,#00000060 30%,transparent 48%,transparent 80%,#00000080 100%)}
 
 /* stories (1080x1920 = 720x1280 @1.5x). Área segura: topo 167 / base 200 (unidades de 720) */
 #st{display:none;position:absolute;inset:0}
@@ -163,6 +165,7 @@ body.story #tag,body.story #titulo,body.story #leg,body.story #ticker,body.story
     <svg id="mapa" width="1800" height="2600"><g id="cam"><g id="gSat"></g><g id="gEst"></g><g id="gMun"></g><g id="gEstL"></g><g id="gDest"></g><path id="rota"/><g id="gAnc"></g></g></svg>
   </div></div>
   <div id="horizonte"></div>
+  <canvas id="c3d" width="720" height="1280" style="position:absolute;left:0;top:0;width:720px;height:1280px;pointer-events:none"></canvas>
   <div id="grao"></div>
   <div id="vinheta"></div>
   <div id="rotulos" class="ov" style="inset:0"></div>
@@ -192,7 +195,7 @@ const nrm=(s)=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/
 const esc=(s)=>String(s).replace(/[&<>"]/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const SVGNS='http://www.w3.org/2000/svg';
 let D,R,T,G,W=720,H=1280,CY=600,CAMY=1750,LMIN=200,LMAX=860;
-let munEls=[],grupos=[],gini=[],gfim=[],linhas=[],eventos=[],dests=[],notas=[],itens=[],titulos=[],fills=[],cards=[],punches=[],ultimosFill=new Set(),pendentes=[];
+let ilusList=[],munEls=[],grupos=[],gini=[],gfim=[],linhas=[],eventos=[],dests=[],notas=[],itens=[],titulos=[],fills=[],cards=[],punches=[],ultimosFill=new Set(),pendentes=[];
 
 function quando(cena,gatilho,padrao){
   if(gatilho){const g=nrm(gatilho.split(/\s+/)[0]);const w=T.palavras.find(p=>p.cena===cena&&nrm(p.txt).startsWith(g));if(w)return w.ini;}
@@ -202,7 +205,7 @@ function punch(t){ // tranco de câmera + som (sem repetir em < 0,18 s)
   if(punches.some(p=>Math.abs(p-t)<.18))return;
   punches.push(t);eventos.push({t,tipo:'punch'});
 }
-function setCY(v){CY=v;$('#plano').style.transformOrigin=`360px ${CY}px`;$('#mundo').style.perspectiveOrigin=`360px ${CY}px`;
+function setCY(v){CY=v;if(window.C3D&&C3D.ok)C3D.setCY(v);$('#plano').style.transformOrigin=`360px ${CY}px`;$('#mundo').style.perspectiveOrigin=`360px ${CY}px`;
   $('#mapa').style.top=(CY-CAMY)+'px';$('#grade').style.top=(CY-CAMY)+'px';}
 function carregaImg(src){return new Promise(r=>{const im=new Image();im.onload=()=>r(im);im.onerror=()=>r(null);im.src=src;});}
 
@@ -219,7 +222,7 @@ async function constroiSat(){
     const sy=cl((S.latN-lat)/(S.latN-S.latS)*im.height-.5,0,im.height-1);
     cx.drawImage(im,0,sy,w,1,0,r,w,1);
   }
-  cx.fillStyle='rgba(0,0,0,.10)';cx.fillRect(0,0,w,h);
+  cx.globalCompositeOperation='screen';cx.fillStyle='rgb(52,52,46)';cx.fillRect(0,0,w,h);
   const el=document.createElementNS(SVGNS,'image');
   el.setAttribute('x',S.x0);el.setAttribute('y',S.y0);el.setAttribute('width',S.x1-S.x0);el.setAttribute('height',S.y1-S.y0);
   el.setAttribute('preserveAspectRatio','none');el.setAttribute('href',cv.toDataURL('image/jpeg',.9));
@@ -234,6 +237,7 @@ window.init=async function(dados){
   for(const e of G.estados){if(!e.d)continue;const p=document.createElementNS(SVGNS,'path');p.setAttribute('d',e.d);p.setAttribute('class','est'+(e.ativo?'':' fora'));(e.ativo?gl:ge).appendChild(p);}
   for(const m of G.muns){const p=document.createElementNS(SVGNS,'path');if(m.d)p.setAttribute('d',m.d);p.setAttribute('class','mun');gm.appendChild(p);munEls.push(p);}
   await constroiSat();
+  if(window.C3D)C3D.init(CY);const T3D=window.C3D&&C3D.ok;
   $('#ticker .bd img').src=D.cfg.canal.avatar||'';$('#ticker .bd span').textContent=D.cfg.canal.handle;
   const fon=Array.isArray(R.fontes)?R.fontes.join(' · '):(R.fontes||'');
   const un=`<span><b>FONTES:</b> ${esc(fon)}</span><span class="sp">&#9670;</span>`;
@@ -270,14 +274,22 @@ window.init=async function(dados){
       const pin=document.createElement('div');pin.className='pin';
       const rot=document.createElement('div');rot.className='rot';rot.innerHTML=`<b>${esc(d.rotulo||m.nome)}</b>${d.detalhe?`<span>${esc(d.detalhe)}</span>`:''}`;
       $('#rotulos').append(pin,rot);
-      dests.push({g,p,anc,pin,rot,m,t0,fim:fg,cena:i,rota:!!c.rota});eventos.push({t:t0,tipo:'pop'});punch(t0);
+      const h3=T3D?C3D.dest(m,CORES[d.cor||'vermelho']||d.cor):null;
+      dests.push({g,p,anc,pin,rot,m,h3,t0,fim:fg,cena:i,rota:!!c.rota});eventos.push({t:t0,tipo:'pop'});punch(t0);
     });
     // preencher
     if(gc.preencher){
       const t0=quando(i,c.preencher.gatilho,tc.ini+.35),t1=t0+Math.max(1.2,Math.min(dur-.6,3.4));
       const ord=[...gc.preencher.idx].sort((a,b)=>G.muns[a].cx-G.muns[b].cx);
-      fills.push({ord,t0,t1,fim:fg,cena:i,cor:CORES[c.preencher.cor||'vermelho']||c.preencher.cor});
+      const fcor=CORES[c.preencher.cor||'vermelho']||c.preencher.cor;
+      fills.push({ord,t0,t1,fim:fg,cena:i,cor:fcor,meshes:T3D?ord.map(k=>C3D.fillBloco(G.muns[k],fcor)):null});
       eventos.push({t:t0,tipo:'varrer',dur:t1-t0});punch(t0);
+    }
+    // ilustração 3D (tornado, temporal, ...)
+    if(gc.ilustracao&&T3D){
+      const il=gc.ilustracao,h=C3D.ilus(il.tipo,G.muns[il.idx],il.cenario===false);
+      if(h){const t0=quando(i,il.gatilho,tc.ini+.3);ilusList.push({h,t0,fim:fg,esc:il.escala||1});eventos.push({t:t0,tipo:'whoosh'},{t:t0+.25,tipo:'impacto'});punch(t0+.1);
+        if(il.tipo==='temporal'||il.tipo==='raio'){for(let k=0;k<6;k++)eventos.push({t:t0+.4+k*1.1,tipo:'trovao'});}}
     }
     // notas
     (c.notas||[]).forEach((n,k)=>{
@@ -344,6 +356,7 @@ function medeTicker(){
 
 // ---------------- câmera ----------------
 function camera(t){
+  if(window.__capaCam){const b=G.cenas[__capaCam.i];return {cx:b.cx,cy:b.cy,s:b.s*(__capaCam.k||.92),i:__capaCam.i};}
   const cs=T.cenas;let i=cs.findIndex(c=>t<c.fim);if(i<0)i=cs.length-1;
   const b=G.cenas[i],gp=ease((t-gini[i])/(gfim[i]-gini[i]));
   const PUSH=.08;
@@ -365,6 +378,7 @@ function zpunch(t){ // zoom +6% em ~0,25 s e micro-shake
 }
 function aplicaCamera(t,c,zp){
   const rz=3+4*Math.sin(t*.42),rx=42+3*Math.sin(t*.31+1);
+  if(window.C3D&&C3D.ok)C3D.quadro(c,zp,rx,rz);
   $('#plano').style.transform=`translate(${zp.dx.toFixed(2)}px,${zp.dy.toFixed(2)}px) scale(${1+zp.z}) rotateX(${rx}deg) rotateZ(${rz}deg)`;
   $('#cam').setAttribute('transform',`translate(900,${CAMY}) scale(${c.s}) translate(${-c.cx},${-c.cy})`);
   $('#grade').style.backgroundPosition=`${(-c.cx*c.s).toFixed(1)}px ${(-c.cy*c.s).toFixed(1)}px`;
@@ -377,6 +391,8 @@ function aplicaFills(t,lista){
   for(const k of ultimosFill)if(!ativos.has(k)){munEls[k].style.fill='';munEls[k].style.fillOpacity='';}
   for(const [k,cor] of ativos){munEls[k].style.fill=cor;munEls[k].style.fillOpacity=.88;}
   ultimosFill=new Set(ativos.keys());
+  for(const f of lista){if(!f.meshes)continue;const n=f.ord.length,on=t>=f.t0-.01&&t<f.fim,prog=cl((t-f.t0)/(f.t1-f.t0)),sai=cl((f.fim-t)/.3);
+    for(let k=0;k<n;k++)f.meshes[k].set(on?16*outBack((prog*n-k)/5,1.3)*sai:0);}
 }
 
 // destaques + rótulos (posicionados pelo retângulo de um círculo-âncora dentro do SVG inclinado) + rota
@@ -384,14 +400,16 @@ function desenhaDests(t,c,iCena){
   const rotaPts=[],ocupado=[];
   for(const d of dests){
     const vis=t>=d.t0&&t<d.fim;
-    d.g.style.display=vis?'':'none';d.pin.style.display=d.rot.style.display=vis?'':'none';
+    d.g.style.display=(vis&&!d.h3)?'':'none';if(d.h3&&!vis)d.h3.set(0);d.pin.style.display=d.rot.style.display=vis?'':'none';
     if(!vis)continue;
     const a=t-d.t0,k=back(a/.4),sai=cl((d.fim-t)/.3);
-    const lift=10*cl(a/.4);
+    let lift=10*cl(a/.4);
     d.g.setAttribute('transform',`translate(${d.m.cx},${d.m.cy-lift/c.s}) scale(${.4+.6*k}) translate(${-d.m.cx},${-d.m.cy})`);
     d.g.style.filter=`drop-shadow(0 ${8/c.s}px 0 var(--sombraDest)) drop-shadow(0 ${18/c.s}px ${10/c.s}px #0009)`;
     d.g.style.opacity=sai;
-    const r=d.anc.getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height/2;
+    let x,y;
+    if(d.h3){const h=36*outBack(a/.5,1.6)*sai;d.h3.set(h);[x,y]=C3D.projeta(d.m.cx,d.m.cy,h);lift=0;}
+    else{const r=d.anc.getBoundingClientRect();x=r.left+r.width/2;y=r.top+r.height/2;}
     if(x<-60||x>W+60||y<-60||y>H+60){d.pin.style.display=d.rot.style.display='none';}
     d.pin.style.left=x+'px';d.pin.style.top=(y-lift)+'px';d.pin.style.opacity=sai;
     const ring=(a*1.3)%1;d.pin.style.boxShadow=`0 2px 6px #0008,0 0 0 ${(ring*16).toFixed(1)}px rgba(255,212,0,${(.55*(1-ring)).toFixed(2)})`;
@@ -412,6 +430,7 @@ function desenhaDests(t,c,iCena){
   $('#rota').setAttribute('d',dd);
 }
 
+function desenhaIlus(t,c){for(const x of ilusList)x.h.set(t-x.t0,t,c.s,cl((x.fim-t)/.35),x.esc);if(window.C3D&&C3D.ok)C3D.render();}
 function htmlNumero(tt,t,cIni,cFim){
   const de=tt.de??(tt.numero>10?0:tt.numero),p=outExpo((t-cIni)/(cFim-cIni));const v=de+(tt.numero-de)*p;
   const dec=String(tt.numero).includes('.')?1:0;
@@ -429,6 +448,7 @@ window.renderAt=function(t,modo){
   $('#tag').innerHTML=`<i></i>${esc(cap)}`;
   aplicaFills(t,fills);
   desenhaDests(t,c,i);
+  desenhaIlus(t,c);
   // notas: entram girando de fora da tela
   for(const n of notas){const vis=t>=n.t0&&t<n.fim;n.el.style.display=vis?'':'none';if(!vis)continue;
     const k=outBack((t-n.t0)/.5,1.4),inv=1-k,fl=Math.sin(t*2+n.t0*5)*2;
@@ -453,7 +473,7 @@ window.renderAt=function(t,modo){
     const tt=ti.c,a=t-ti.ini,kk=cl(a/.28);
     let l1;
     if(tt.numero!==undefined){
-      l1=`<div class="l1">${htmlNumero(tt,t,ti.cIni,ti.cFim)}</div>${tt.texto?`<div class="l2">${esc(tt.texto)}</div>`:''}`;
+      l1=`<div class="l1${((tt.prefixo||'').length+String(tt.numero).length+(tt.unidade||'').length)>10?' longo':''}">${htmlNumero(tt,t,ti.cIni,ti.cFim)}</div>${tt.texto?`<div class="l2">${esc(tt.texto)}</div>`:''}`;
     }else l1=`<div class="l1 txt">${esc(tt.texto||'')}</div>${tt.linha2?`<div class="l2">${esc(tt.linha2)}</div>`:''}`;
     const circ=tt.circular?`<svg class="circ" viewBox="0 0 100 100" preserveAspectRatio="none"><path pathLength="1" stroke-dasharray="1" stroke-dashoffset="${1-ease((t-ti.ini-.4)/.5)}" vector-effect="non-scaling-stroke" d="M8 30 C 10 2, 92 0, 96 40 C 99 80, 40 104, 10 86 C -4 74, 2 40, 22 22"/></svg>`:'';
     tbox.innerHTML=`<div class="box">${l1}${circ}</div>${tt.sub?`<div class="sub">${esc(tt.sub)}</div>`:''}`;
@@ -508,13 +528,20 @@ window.eventos=()=>eventos.sort((a,b)=>a.t-b.t);
 window.capa=async function(cp){
   document.body.classList.add('sat','capa');
   const i=cp.cena??0;const t=Math.max(T.cenas[i].ini,T.cenas[i].fim-.45);
-  renderAt(t,'capa');
+  // layout da capa: título só em texto no terço superior; região da notícia no centro-inferior (dentro do corte 3:4 do Instagram: y 160..1120)
+  setCY(cp.cy??870);LMIN=590;LMAX=1090;window.__capaCam={i,k:cp.zoom??1.3};
   const c=$('#capa');c.style.display='block';
   c.querySelector('.t1').textContent=cp.titulo[0]||'';c.querySelector('.t2').innerHTML='<span></span>';c.querySelector('.t2 span').textContent=cp.titulo[1]||'';
   c.querySelector('.ln').textContent=cp.linha||'';c.querySelector('.rd').textContent=cp.rodape||'';
+  await document.fonts.ready;
+  for(const el of [c.querySelector('.t1'),c.querySelector('.t2')]){let f=104;while(f>56&&el.scrollWidth>628){f-=4;el.style.fontSize=f+'px';}}
   if(cp.tag){const g=$('#capaTag');g.style.display='block';g.textContent='● '+cp.tag;}
   const lg=$('#capaLogo');lg.style.display='block';lg.style.backgroundImage=`url(${D.cfg.canal.avatar})`;
-  await document.fonts.ready;
+  renderAt(t,'capa');
+  const ocup=c.getBoundingClientRect().bottom;
+  // verifica sobreposição entre o texto e os rótulos/pins da região
+  let topo=1e9;for(const d of dests){if(d.pin.style.display==='none')continue;topo=Math.min(topo,d.pin.getBoundingClientRect().top,d.rot.getBoundingClientRect().top);}
+  window.__capaInfo={textoFim:Math.round(ocup),regiaoTopo:Math.round(topo)};
 };
 
 /* ===================== STORIES ===================== */
@@ -575,7 +602,7 @@ window.renderStory=function(t){
   const c={cx,cy,s,i:idx};
   aplicaCamera(anim?t:14,c,anim?zpunch(t):{z:0,dx:0,dy:0});
   const tt=anim?t:99;
-  aplicaFills(tt,fills);desenhaDests(tt,c,idx);
+  aplicaFills(tt,fills);desenhaDests(tt,c,idx);desenhaIlus(tt,c);
   const q=(sel)=>$('#st '+sel);
   const slam=(el,t0,x=1.4)=>{if(!el)return;const a=tt-t0,k=cl(a/.28);el.style.opacity=cl(a/.08);el.style.transform=`scale(${1+(x-1)*(1-outCubic(k))})`;el.style.filter=k<1?`blur(${(8*(1-k)).toFixed(1)}px)`:'';};
   if(anim){

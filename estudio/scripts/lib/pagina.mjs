@@ -40,10 +40,11 @@ export function extraiVideos(midia, tempos, fps, build) {
   });
 }
 
-export function carrega(pasta) {
+export function carrega(pasta, mod) {
   const ler = (f) => JSON.parse(fs.readFileSync(path.join(pasta, f), 'utf8'));
   const cfg = JSON.parse(fs.readFileSync(path.join(RAIZ, 'config.json'), 'utf8'));
   const roteiro = ler('roteiro.json');
+  if (mod) mod(roteiro);
   const tempos = fs.existsSync(path.join(pasta, 'tempos.json')) ? ler('tempos.json') : null;
   const geo = preparaGeo(roteiro, cfg.video.largura, cfg.video.altura);
   const satF = path.join(RAIZ, 'dados/satelite/brasil.jpg');
@@ -55,6 +56,9 @@ export async function abrePagina(dados, escala = 1) {
   const { chromium } = require('playwright');
   const browser = await chromium.launch();
   const page = await browser.newPage({ viewport: { width: 720, height: 1280 }, deviceScaleFactor: escala });
+  const tcjs = fs.readFileSync(path.join(RAIZ, 'node_modules/three/build/three.cjs'), 'utf8');
+  await page.addInitScript({ content: `(function(){const exports={};\n${tcjs}\n;window.THREE=exports;})();` });
+  await page.addInitScript({ content: fs.readFileSync(path.join(RAIZ, 'templates/cena3d.js'), 'utf8') });
   page.on('pageerror', (e) => console.error('erro na página:', e.message));
   page.on('console', (m) => { if (m.type() === 'error') console.error('console:', m.text()); });
   await page.goto('file://' + path.join(RAIZ, 'templates/player.html'));
