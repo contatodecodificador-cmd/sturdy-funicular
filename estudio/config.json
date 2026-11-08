@@ -1,8 +1,8 @@
 {
   "canal": {
-    "nome": "Seu Canal",
-    "handle": "@seucanal",
-    "avatar": ""
+    "nome": "Radar Público News",
+    "handle": "@RadarPublicoNews",
+    "avatar": "../marca/logo.png"
   },
   "voz": {
     "voice_id": "Fdgwf9BlysjGBjQ4nVPh",
@@ -12,11 +12,11 @@
       "Will - Grave Suspense": "h96v1HCJtcisNNeagp0R",
       "Eliel - Contador de histórias": "y3X5crcIDtFawPx7bcNq"
     },
-    "model_id": "eleven_multilingual_v2",
-    "velocidade": 1.08,
-    "stability": 0.45,
+    "model_id": "eleven_v4",
+    "velocidade": 1.0,
+    "stability": 0.5,
     "similarity_boost": 0.8,
-    "style": 0.25
+    "style": 0.15
   },
   "video": {
     "largura": 720,

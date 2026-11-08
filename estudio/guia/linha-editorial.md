@@ -1,11 +1,15 @@
 # Linha editorial
 
-## Nicho
-Alertas e acontecimentos **recentes (últimas 24–48h)** que afetam a vida das pessoas em cidades brasileiras:
-clima extremo (tornado, temporal, granizo, enchente, calor, frio, seca, queimadas), alertas oficiais,
-apagões, rodovias bloqueadas, e grandes acontecimentos do dia com impacto local.
+## Canal
+**Radar Público News** (@RadarPublicoNews). Logo: globo/radar em azul-marinho e amarelo.
 
-O carro-chefe é clima e alertas, porque juntam **urgência + utilidade**, e isso gera compartilhamento.
+## Nicho
+As notícias **mais fortes do Brasil nas últimas 24–48h**, explicadas com mapa e números: política
+(governo, Congresso, STF, eleições), economia no bolso (preços, impostos, benefícios), segurança, clima extremo
+e alertas oficiais, tragédias e decisões que afetam cidades e estados.
+
+Prioridade para fatos que **cabem no mapa** (atingem cidades ou estados nomeáveis) e têm **número forte**.
+Clima e alertas continuam fortes porque juntam urgência e utilidade. Política entra com **dados e fatos, nunca opinião**.
 
 ## O que viraliza (aprendido com o canal de referência)
 1. **Local e específico.** Pauta com nome de cidade no título fez 6x mais views que o equivalente genérico

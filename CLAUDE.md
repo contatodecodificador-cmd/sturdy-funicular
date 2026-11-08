@@ -11,7 +11,10 @@ pesado de vídeo com scripts (custo zero de tokens).
 | Pesquisador | `.claude/agents/pesquisador.md` | **haiku** | muita leitura de páginas: precisa ser barato e rápido |
 | Roteirista | `.claude/agents/roteirista.md` | **sonnet** | a qualidade do texto em português decide a retenção |
 | Revisor / checador | `.claude/agents/revisor.md` | **sonnet** | erro de fato derruba o canal, então vale o modelo mais forte |
+| Produtor de mídia | `.claude/agents/midia.md` | **haiku** | encaixa cards de notícia, prints, fotos e trechos de vídeo com crédito |
+| Social media | `.claude/agents/social.md` | **haiku** | descrição completa com fontes, hashtags e texto dos 2 stories |
 | Designer de capa | `.claude/agents/designer-capa.md` | **haiku** | preenche um template e confere uma imagem |
+| Engenheiro de vídeo | general-purpose | **sonnet** | só quando o motor de edição precisa de melhoria (não roda todo dia) |
 | Locutor | `estudio/scripts/voz.mjs` | ElevenLabs (sem LLM) | voz + tempos de cada letra para sincronizar a legenda |
 | Montagem / edição | `estudio/scripts/render.mjs` | código (sem LLM) | anima mapa, contadores, notas e legendas e mixa trilha + efeitos |
 
@@ -25,13 +28,16 @@ pesado de vídeo com scripts (custo zero de tokens).
    (SendMessage) e revise de novo. **Máximo 2 voltas**; depois disso o vídeo é descartado.
 5. **Direção:** o Diretor lê o roteiro aprovado e confere se o gancho prende, se o re-gancho está no lugar e se as cenas estão bem distribuídas.
    Ajustes pequenos ele faz direto no roteiro.json e roda `node scripts/validar.mjs`.
+5b. **Mídia + social (em paralelo):** chame o `midia` (cards/prints/vídeos no roteiro; links que não baixaram vão
+   para `midia_pendente.md`, que o Diretor repassa ao dono) e o `social` (descricao.md + stories.json).
 6. **Locução:** `node scripts/voz.mjs <pasta>`. Só depois da aprovação, porque gasta créditos do ElevenLabs.
 7. **Capa:** chame o `designer-capa`.
 8. **Edição:** `node scripts/render.mjs <pasta>` (~5–8 min por vídeo de 80s).
 9. **Controle de qualidade:** gere uma folha de contato (1 quadro/s) e olhe: nada de tela vazia por mais de 2s,
    legenda e rótulos legíveis, contadores corretos.
    `ffmpeg -i video.mp4 -vf "fps=1,scale=240:-1,tile=7x3" -frames:v 4 qc_%d.jpg`
-10. **Entrega:** envie `video.mp4`, `capa.png` e `legenda.md` ao usuário (SendUserFile). Faça commit **só** dos
+9b. **Stories:** `node scripts/stories.mjs <pasta>` → `story_animado.mp4` + `story_imagem.png`.
+10. **Entrega:** envie `video.mp4`, `capa.png`, `story_animado.mp4`, `story_imagem.png` e `descricao.md` ao usuário (SendUserFile). Faça commit **só** dos
     arquivos de texto (pautas, roteiro, fontes, revisão, legenda, capa.json) e push no branch de trabalho.
 
 ## Como chamar os agentes
@@ -42,6 +48,7 @@ pesado de vídeo com scripts (custo zero de tokens).
 - O container não acessa sites de notícia diretamente; o Pesquisador usa WebSearch (funciona) e WebFetch quando der.
 
 ## Economia de tokens
+- O Diretor não lê páginas da web nem escreve código ou texto longo: delega. Ele decide, aprova e confere a qualidade.
 - O Diretor não lê páginas da web; quem lê é o Pesquisador (haiku).
 - Agentes respondem em até 5 linhas; o conteúdo vai para os arquivos.
 - Para testar o visual sem gastar voz: `node scripts/produzir.mjs <pasta> --teste --rascunho`.
