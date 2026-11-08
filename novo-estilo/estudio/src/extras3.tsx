@@ -180,3 +180,26 @@ export const EnqueteEp03: React.FC = () => {
     </AbsoluteFill>
   );
 };
+
+/** Resultado da votação do Ep. 3: A venceu (confiar e ir com ela). */
+export const ResultadoEp03: React.FC = () => (
+  <AbsoluteFill style={{background: '#000'}}>
+    <Camera chaves={[{t: 0, x: 1065 - 300 / 0.8, y: 740, z: 0.8}]} {...L2}>
+      <Relojoaria t={2.4} ponteiro={60} roseX={950} roseExpr="feliz" fotoTirada portaAbre={0.65} sombra={0.3} velhaX={1180} velhaExpr="feliz" velhaBraco={-30} relogioPego />
+    </Camera>
+    <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(20,22,27,.85) 0%, rgba(20,22,27,.6) 50%, rgba(20,22,27,.15) 80%, rgba(20,22,27,.4) 100%)'}} />
+    <div style={{position: 'absolute', left: 0, right: 0, top: 260, textAlign: 'center'}}>
+      <div style={{fontFamily: BARLOW, fontWeight: 800, fontSize: 52, color: COR.ipe, letterSpacing: 6}}>RESULTADO DO EP. 3</div>
+      <div style={{fontFamily: ANTON, fontSize: 130, color: '#fff', ...contorno(14), lineHeight: 1.02, marginTop: 10}}>VOCÊS<br />ESCOLHERAM</div>
+    </div>
+    <div style={{position: 'absolute', left: 0, right: 0, top: 600, display: 'flex', justifyContent: 'center'}}>
+      <div style={{position: 'relative', width: 720, background: '#fff', border: `6px solid ${COR.tinta}`, borderRadius: 34, padding: '24px 20px', textAlign: 'center', boxShadow: '0 20px 50px rgba(0,0,0,.45)', transform: 'rotate(-2deg)'}}>
+        <div style={{width: 150, height: 150, margin: '0 auto 10px', borderRadius: 75, background: COR.ipe, border: `6px solid ${COR.tinta}`, fontFamily: ANTON, fontSize: 110, lineHeight: '140px', color: COR.tinta}}>A</div>
+        <div style={{fontFamily: ANTON, fontSize: 72, color: COR.tinta, lineHeight: 1.05}}>CONFIAR E<br />IR COM ELA</div>
+        <div style={{position: 'absolute', right: -40, top: -36, transform: 'rotate(12deg)', fontFamily: ANTON, fontSize: 64, color: COR.praca, border: `7px solid ${COR.praca}`, borderRadius: 12, padding: '0 20px', background: 'rgba(255,248,236,.95)', letterSpacing: 3}}>VENCEU</div>
+      </div>
+    </div>
+    <div style={{position: 'absolute', left: 60, width: 560, top: 1250, textAlign: 'left', fontFamily: ANTON, fontSize: 74, color: '#fff', ...contorno(10), lineHeight: 1.05}}>AS DUAS ROSES <span style={{color: COR.ipe}}>JUNTAS…</span></div>
+    <div style={{position: 'absolute', left: 60, width: 560, top: 1440, textAlign: 'left', fontFamily: BARLOW, fontWeight: 800, fontSize: 44, color: '#fff', letterSpacing: 2, textShadow: '0 3px 8px rgba(0,0,0,.7)'}}>E O QUE ACONTECE ÀS 16:48?</div>
+  </AbsoluteFill>
+);

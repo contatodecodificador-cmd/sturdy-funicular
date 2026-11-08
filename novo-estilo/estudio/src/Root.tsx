@@ -4,7 +4,7 @@ import {Ep01, DURACAO, FPS} from './ep01';
 import {CapaEp01, StoriesEp01, STORIES_DUR} from './extras';
 import {Ep02, DURACAO02} from './ep02';
 import {CapaEp02, StoriesEp02, STORIES2_DUR, EnqueteEp02} from './extras2';
-import {ResultadoEp02, AvisoEp03, CapaEp03, StoriesEp03, STORIES3_DUR, EnqueteEp03} from './extras3';
+import {ResultadoEp02, AvisoEp03, CapaEp03, StoriesEp03, STORIES3_DUR, EnqueteEp03, ResultadoEp03} from './extras3';
 import {Ep03, DURACAO03} from './ep03';
 
 export const Root: React.FC = () => (
@@ -17,6 +17,7 @@ export const Root: React.FC = () => (
     <Composition id="StoriesEp03" component={StoriesEp03} durationInFrames={Math.round(STORIES3_DUR * FPS)} fps={FPS} width={1080} height={1920} />
     <Still id="CapaEp03" component={CapaEp03} width={1080} height={1920} />
     <Still id="EnqueteEp03" component={EnqueteEp03} width={1080} height={1920} />
+    <Still id="ResultadoEp03" component={ResultadoEp03} width={1080} height={1920} />
     <Still id="ResultadoEp02" component={ResultadoEp02} width={1080} height={1920} />
     <Still id="AvisoEp03" component={AvisoEp03} width={1080} height={1920} />
     <Still id="EnqueteEp02" component={EnqueteEp02} width={1080} height={1920} />
