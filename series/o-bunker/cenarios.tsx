@@ -78,14 +78,16 @@ export const CenaBunker: React.FC<{
   dentro?: boolean;
   /** força da luz de emergência (0 a 1: falha um pouco quando o filtro para) */
   luz?: number;
-  otavio?: { expressao?: Expressao; cima?: number; olhar?: number } | null;
+  otavio?: { expressao?: Expressao; cima?: number; olhar?: number; costas?: boolean; sombra?: boolean } | null;
   /** o Otávio em pé (parte 3), em vez de sentado na cama */
   emPe?: { x: number; y: number; escala: number; vista?: 'frente' | 'costas'; passo?: number | null; mascara?: boolean; expressao?: Expressao; olhar?: number } | null;
   /** a parte 3: a caneca quente na mesinha, o risco novo, a escrita "falta pouco" (0 a 1) e as pegadas */
-  p3?: { caneca?: boolean; riscoNovo?: number; escrita?: number; pegadas?: boolean };
+  p3?: { caneca?: boolean; riscoNovo?: number; escrita?: number; pegadas?: boolean | 'fortes' };
+  /** a parte 4: a estante de latas que esconde a passagem (abre = 0 a 1) e a câmera no teto */
+  p4?: { abre?: number; camera?: boolean };
   /** a lanterna (cones de luz) */
   cones?: Cone[];
-}> = ({ giro = 0, dentro = true, luz = 1, otavio = { expressao: 'cansada' }, emPe = null, p3, cones = [] }) => {
+}> = ({ giro = 0, dentro = true, luz = 1, otavio = { expressao: 'cansada' }, emPe = null, p3, p4, cones = [] }) => {
   const f = useCurrentFrame();
   const r = BUNKER;
   // a cama de campanha, encostada na parede da esquerda
@@ -118,7 +120,20 @@ export const CenaBunker: React.FC<{
                 const px = 540 - 230 * t + (i % 2 ? 18 : -18);
                 const py = 1430 - 230 * t;
                 const k = 1 - 0.45 * t;
-                return <ellipse key={i} cx={px} cy={py} rx={16 * k} ry={30 * k} fill="#3A2E22" opacity={0.6} transform={`rotate(${-35} ${px} ${py})`} />;
+                const forte = p3.pegadas === 'fortes';
+                return (
+                  <g key={i} transform={`rotate(${-35} ${px} ${py})`}>
+                    {/* a sola: a frente larga e o salto separado */}
+                    <ellipse cx={px} cy={py - 10 * k} rx={15 * k} ry={22 * k} fill={forte ? '#4A3624' : '#3A2E22'} opacity={forte ? 0.95 : 0.6} />
+                    <ellipse cx={px} cy={py + 24 * k} rx={11 * k} ry={10 * k} fill={forte ? '#4A3624' : '#3A2E22'} opacity={forte ? 0.95 : 0.6} />
+                    {forte ? (
+                      <>
+                        <path d={`M${px - 9 * k},${py - 22 * k} l18,0 M${px - 11 * k},${py - 12 * k} l22,0 M${px - 10 * k},${py - 2 * k} l20,0`} stroke="#2A1E14" strokeWidth={2.5 * k} opacity={0.8} />
+                        <ellipse cx={px - 5 * k} cy={py - 16 * k} rx={5 * k} ry={8 * k} fill="#C8B89E" opacity={0.55} />
+                      </>
+                    ) : null}
+                  </g>
+                );
               })
             : null}
           {p3.pegadas ? <path d="M318,1196 l10,-26 l6,24" fill="none" stroke="#5E6F3C" strokeWidth={4} /> : null}
@@ -142,12 +157,47 @@ export const CenaBunker: React.FC<{
         </>
       ) : null}
       {/* prateleira de latas, na parede do fundo, embaixo dos risquinhos */}
-      <Svg>
-        <rect x={196} y={880} width={260} height={10} fill="#5A4A3C" />
-        {[0, 1, 2, 3, 4, 5].map((i) => (
-          <rect key={i} x={204 + i * 41} y={832} width={32} height={48} rx={4} fill={i % 2 ? '#A69C8E' : '#8E8576'} />
-        ))}
-      </Svg>
+      {p4 ? (
+        <Svg>
+          {/* a passagem que ele nunca construiu, atrás da estante */}
+          <rect x={214} y={880} width={222} height={300} fill="#0A0607" />
+          <rect x={232} y={900} width={186} height={280} fill="url(#fundo-passagem)" />
+          <defs>
+            <radialGradient id="fundo-passagem" cx="0.5" cy="0.35" r="0.6">
+              <stop offset="0" stopColor="#5A0E18" />
+              <stop offset="1" stopColor="#0A0607" />
+            </radialGradient>
+          </defs>
+          {/* a estante de latas, que desliza pra direita */}
+          <g transform={`translate(${(p4.abre ?? 0) * 236} 0)`}>
+            <rect x={200} y={850} width={250} height={330} fill="#5A4A3C" />
+            <rect x={210} y={860} width={230} height={310} fill="#3E3228" />
+            {[0, 1, 2].map((r) => (
+              <g key={r}>
+                <rect x={210} y={950 + r * 100} width={230} height={10} fill="#6E5B4A" />
+                {[0, 1, 2, 3, 4].map((i) => (
+                  <rect key={i} x={220 + i * 44} y={902 + r * 100} width={32} height={48} rx={4} fill={(i + r) % 2 ? '#A69C8E' : '#8E8576'} />
+                ))}
+              </g>
+            ))}
+          </g>
+        </Svg>
+      ) : (
+        <Svg>
+          <rect x={196} y={880} width={260} height={10} fill="#5A4A3C" />
+          {[0, 1, 2, 3, 4, 5].map((i) => (
+            <rect key={i} x={204 + i * 41} y={832} width={32} height={48} rx={4} fill={i % 2 ? '#A69C8E' : '#8E8576'} />
+          ))}
+        </Svg>
+      )}
+      {p4?.camera ? (
+        <Svg>
+          {/* a câmera escondida no canto do teto, que ele nunca tinha notado */}
+          <rect x={176} y={430} width={46} height={26} rx={5} fill="#2A2624" />
+          <circle cx={190} cy={443} r={8} fill="#121010" />
+          <circle cx={212} cy={438} r={4} fill="#E0182D" />
+        </Svg>
+      ) : null}
       {/* a cama de campanha e o Otávio sentado na beirada */}
       <Caixa S={SB} {...cama} frente="#565234" topo="#6B6640" lado="#4A462C" />
       {/* a beirada da lona, clara, pra ler o assento */}
@@ -159,7 +209,15 @@ export const CenaBunker: React.FC<{
         })()}
       </Svg>
       {otavio ? (
-        <Otavio x={r.rosto.x} y={r.rosto.y + 830 * 0.92} escala={0.92} sentado expressao={otavio.expressao ?? 'cansada'} cima={otavio.cima ?? 0} olhar={otavio.olhar ?? 0.6} />
+        <Otavio x={r.rosto.x} y={r.rosto.y + 830 * 0.92} escala={0.92} sentado vista={otavio.costas ? 'costas' : 'frente'} expressao={otavio.expressao ?? 'cansada'} cima={otavio.cima ?? 0} olhar={otavio.olhar ?? 0.6} />
+      ) : null}
+      {otavio?.sombra && !otavio.costas ? (
+        <Svg>
+          {/* o rosto na sombra: só o brilho dos olhos */}
+          <ellipse cx={r.rosto.x} cy={r.rosto.y + 10} rx={92} ry={110} fill="#050304" />
+          <circle cx={r.rosto.x - 30} cy={r.rosto.y - 4} r={6} fill="#F5EFEA" />
+          <circle cx={r.rosto.x + 30} cy={r.rosto.y - 4} r={6} fill="#F5EFEA" />
+        </Svg>
       ) : null}
       {emPe ? <Otavio x={emPe.x} y={emPe.y} escala={emPe.escala} vista={emPe.vista ?? 'frente'} passo={emPe.passo ?? null} mascara={emPe.mascara ?? false} expressao={emPe.expressao ?? 'preocupada'} olhar={emPe.olhar ?? 0} /> : null}
       <Escuro
