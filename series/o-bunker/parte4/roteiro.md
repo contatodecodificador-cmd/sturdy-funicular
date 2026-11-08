@@ -1,9 +1,11 @@
 # O Bunker (parte 4): roteiro
 
-Status: rascunho 1, esperando aprovação do dono. Caminho PROCURA (decidido em 08/11/2026). Parte longa (pedido do dono: mais de 1 minuto, mais mistério e reviravolta): 16 frases, 157 palavras, uns 65 s com a voz.
+Status: rascunho 1, esperando aprovação do dono. Caminho PROCURA (decidido em 08/11/2026). Parte longa (pedido do dono: mais de 1 minuto, mais mistério e reviravolta): 2 frases de resumo + 16 frases, 179 palavras, uns 72 s com a voz.
 
 | # | Trabalho | Frase |
 |---|---|---|
+| R1 | Resumo (selo "NO EPISÓDIO ANTERIOR") | Antes: alguém entrou no bunker do Otávio enquanto ele estava fora. |
+| R2 | Resumo | Deixou a caneca quente, um risco novo e um recado: "falta pouco". |
 | 1 | Gancho | O Otávio empurrou a prateleira de latas. |
 | 2 | Contradição | Atrás dela, tinha uma passagem que ele nunca construiu. |
 | 3 | Prova | No chão, pegadas de terra molhada. Não eram dele. E entravam ali. |
