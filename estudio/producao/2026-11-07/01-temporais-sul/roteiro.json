@@ -207,9 +207,34 @@
       }
     },
     {
-      "continua": true,
       "fala": "A Defesa Civil de SC já previa nova frente fria pro fim de semana. E o Inmet manteve avisos até este *sábado*.",
-      "titulo": "manter"
+      "titulo": {
+        "texto": "Nova frente fria",
+        "sub": "Previsão Defesa Civil SC · fim de semana"
+      },
+      "capitulo": "E agora? · sábado, 07/11",
+      "ufs": [
+        "SC"
+      ],
+      "preencher": {
+        "locais": [
+          "SC"
+        ],
+        "cor": "azul",
+        "gatilho": "frente"
+      },
+      "notas": [
+        {
+          "topo": "Defesa Civil SC",
+          "texto": "Frente fria no fim de semana",
+          "gatilho": "frente"
+        },
+        {
+          "topo": "Inmet",
+          "texto": "Avisos até sábado",
+          "gatilho": "Inmet"
+        }
+      ]
     },
     {
       "capitulo": "Se o temporal voltar",
@@ -222,7 +247,7 @@
       "itens": [
         {
           "texto": "Defesa Civil: 199",
-          "gatilho": "cento"
+          "gatilho": "Defesa"
         },
         {
           "texto": "Bombeiros: 193",
