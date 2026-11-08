@@ -1,0 +1,63 @@
+{
+  "data": "2026-11-07",
+  "gerado_em": "2026-11-07T00:00-03:00",
+  "observacao": "Rodada de teste com 7 buscas e 1 WebFetch (falhou: www.acessa.com nao resolve no ambiente). Nenhum dado de hoje foi confirmado com hora de publicacao; as datas de publicacao exatas dos fatos abaixo nao foram verificadas e precisam ser checadas antes de virar roteiro. Divergencia registrada: Band fala em 32 cidades em emergencia; outra cobertura fala em 23 municipios em emergencia (5/11). Nao usar numeros sem a fonte oficial atualizada (Defesa Civil SC). Excluidos por falta de URL: 106/109 municipios afetados, 5.358/5.500+ casas danificadas, previsao de novos temporais para 6/11 e fim de semana, ventos de 126 e 131 km/h atribuidos sem fonte clara.",
+  "pautas": [
+    {
+      "id": "tornados-oeste-sc",
+      "manchete": "Tornado atinge Chapecó (SC); Defesa Civil confirma tornados também em Xanxerê",
+      "regiao": ["SC"],
+      "cidades": ["Chapecó/SC", "Xanxerê/SC"],
+      "quando": "manhã de 04/11",
+      "fatos": [
+        {"dado": "tornado confirmado pela Defesa Civil em Chapecó, com danos e trânsito de veículos afetado",
+         "valor": "1 tornado confirmado em Chapecó",
+         "cidade": "Chapecó/SC",
+         "fonte": "Band (Defesa Civil de SC)",
+         "url": "https://www.band.com.br/nacional/sc/tornado-em-chapeco-santa-catarina-e-confirmado-pela-defesa-civil-veja-imagens",
+         "publicado": "2026-11-04 (dia confirmado; hora não verificada)"},
+        {"dado": "confirmação de dois tornados, em Chapecó e Xanxerê",
+         "valor": "2 tornados confirmados",
+         "cidade": "Chapecó/SC; Xanxerê/SC",
+         "fonte": "Band (Defesa Civil de SC)",
+         "url": "https://www.band.com.br/nacional/sc/defesa-civil-confirma-dois-tornados-em-chapeco-e-xanxere-em-sc",
+         "publicado": "não verificado"},
+        {"dado": "mortes nos temporais em Santa Catarina",
+         "valor": "2",
+         "cidade": "Santa Catarina",
+         "fonte": "Band",
+         "url": "https://www.band.com.br/nacional/sc/temporais-deixam-dois-mortos-e-32-cidades-em-emergencia-em-santa-catarina",
+         "publicado": "não verificado"},
+        {"dado": "cidades em situação de emergência (Band)",
+         "valor": "32",
+         "cidade": "Santa Catarina",
+         "fonte": "Band",
+         "url": "https://www.band.com.br/nacional/sc/temporais-deixam-dois-mortos-e-32-cidades-em-emergencia-em-santa-catarina",
+         "publicado": "não verificado; divergente de 23 municípios (Rio Times, 05/11)"}
+      ],
+      "o_que_vem": "Pendente: confirmar com Defesa Civil SC se há novos alertas para os próximos dias",
+      "utilidade": "Acompanhar boletim oficial da Defesa Civil de SC",
+      "nota": {"local": 3, "numero": 2, "urgencia": 1, "utilidade": 2, "total": 8},
+      "por_que": "cidades nomeadas e tornado confirmado; faltam horário de publicação e número atualizado"
+    },
+    {
+      "id": "alerta-tempestades-parana-finados",
+      "manchete": "Paraná entra em alerta para tempestades no feriado de Finados",
+      "regiao": ["PR"],
+      "cidades": [],
+      "quando": "segunda-feira, 02/11",
+      "fatos": [
+        {"dado": "alerta de tempestades no Paraná no feriado de Finados, com risco de chuva intensa, granizo, queda de árvores e alagamentos",
+         "valor": "sem número",
+         "cidade": "Paraná",
+         "fonte": "Band (Simepar e Defesa Civil)",
+         "url": "https://www.band.com.br/nacional/pr/parana-entra-em-alerta-para-tempestades-no-feriado-de-finados",
+         "publicado": "2026-11-02 (data do feriado; hora não verificada)"}
+      ],
+      "o_que_vem": "Simepar aponta condições para supercélulas em 04 e 05/11 (fonte sem URL verificável; não usar até confirmar)",
+      "utilidade": "Acompanhar alertas do Simepar e da Defesa Civil do PR",
+      "nota": {"local": 1, "numero": 0, "urgencia": 0, "utilidade": 2, "total": 3},
+      "por_que": "fato antigo (2/11) e sem números; pauta fraca, mantida só como contexto"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "exemplo-tornados-sul",
+  "tema": "escuro",
+  "fontes": "Defesa Civil PR, SC e RS · Simepar · Inmet (exemplo de teste)",
+  "cenas": [
+    {"capitulo": "Alerta climático · sábado 07/11", "fala": "Seis tornados em seis dias.", "ufs": ["PR","SC","RS"],
+     "titulo": {"numero": 6, "unidade": " TORNADOS", "texto": "registrados em 6 dias", "sub": "Sul do Brasil · 02 a 07/11"}},
+    {"continua": true, "titulo": "manter", "fala": "Chapecó, Xanxerê, Rio Negrinho, Erval Grande, e agora *Santo Augusto*, no Rio Grande do Sul.",
+     "rota": true, "destaques": [
+       {"local": "Chapecó/SC", "detalhe": "Tornado 04/11"},
+       {"local": "Xanxerê/SC", "detalhe": "Tornado 04/11"},
+       {"local": "Rio Negrinho/SC", "detalhe": "Tornado 05/11"},
+       {"local": "Erval Grande/RS", "detalhe": "Tornado 05/11"},
+       {"local": "Santo Augusto/RS", "detalhe": "Tornado 07/11"}]},
+    {"capitulo": "Sul e São Paulo na rota", "fala": "Se você mora em São Paulo, isso *ainda não acabou*.", "ufs": ["PR","SC","RS","SP"],
+     "titulo": {"texto": "Isso ainda não acabou", "sub": "Sul e São Paulo na rota", "circular": true}},
+    {"capitulo": "Novo tornado hoje · Santo Augusto/RS", "fala": "Hoje, enquanto a cidade dormia, mais um tornado atingiu Santo Augusto.", "zoom": ["Santo Augusto/RS"],
+     "destaques": [{"local": "Santo Augusto/RS", "rotulo": "Santo Augusto · RS", "detalhe": "Tornado hoje (07/11)"}]},
+    {"continua": true, "fala": "Destelhou até *cem casas* e arrancou o teto de uma igreja.",
+     "titulo": {"numero": 100, "prefixo": "ATÉ ", "unidade": " CASAS", "texto": "destelhadas em Santo Augusto"},
+     "notas": [{"topo": "Santo Augusto", "texto": "Até 100 casas", "gatilho": "cem"}, {"topo": "Estruturas", "texto": "Teto de igreja", "gatilho": "igreja"}]},
+    {"capitulo": "Onde a frente fria avança agora", "fala": "Mas a parte que você precisa *ouvir agora*:", "ufs": ["PR","SC","RS"], "flash": true,
+     "titulo": {"texto": "A parte que você precisa ouvir agora", "sub": "Atualização deste sábado", "circular": true}},
+    {"continua": true, "fala": "são trezentas e vinte e cinco cidades em *alerta vermelho* do Inmet, o nível máximo de perigo.",
+     "preencher": {"locais": ["SC"], "cor": "vermelho", "gatilho": "trezentas"},
+     "titulo": {"numero": 325, "de": 280, "unidade": " CIDADES", "sub": "Alerta vermelho · Inmet · grande perigo"}},
+    {"capitulo": "Kit de emergência · 72 horas", "visual": "lista", "fala": "A Defesa Civil recomenda: água, lanterna, carregador cheio e *documentos* no plástico.",
+     "titulo": {"numero": 72, "unidade": " HORAS", "sub": "Kit de emergência · Defesa Civil"},
+     "itens": [{"texto": "água potável 6L por pessoa", "gatilho": "água"}, {"texto": "lanterna e power bank", "gatilho": "lanterna"}, {"texto": "carregador cheio", "gatilho": "carregador"}, {"texto": "documentos no plástico", "gatilho": "documentos"}]},
+    {"capitulo": "Comenta e compartilha", "visual": "cta", "fala": "Comenta aqui como está o céu na sua cidade, e manda pra quem está na rota da tempestade.",
+     "pergunta": "Como está o céu na sua cidade?", "apoio": "comenta aqui e manda pra quem está na rota."}
+  ]
+}

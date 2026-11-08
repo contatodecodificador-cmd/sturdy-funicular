@@ -1,0 +1,27 @@
+{
+  "canal": {
+    "nome": "Seu Canal",
+    "handle": "@seucanal",
+    "avatar": ""
+  },
+  "voz": {
+    "voice_id": "Fdgwf9BlysjGBjQ4nVPh",
+    "voice_nome": "DIZ QUE É MINHA VOZ (clone)",
+    "alternativas": {
+      "Danilo Tenfen - Documentary": "rVRk0uJAtO8T38Gm03mf",
+      "Will - Grave Suspense": "h96v1HCJtcisNNeagp0R",
+      "Eliel - Contador de histórias": "y3X5crcIDtFawPx7bcNq"
+    },
+    "model_id": "eleven_multilingual_v2",
+    "velocidade": 1.08,
+    "stability": 0.45,
+    "similarity_boost": 0.8,
+    "style": 0.25
+  },
+  "video": {
+    "largura": 720,
+    "altura": 1280,
+    "fps": 30,
+    "lufs": -14
+  }
+}
