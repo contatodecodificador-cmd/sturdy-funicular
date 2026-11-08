@@ -6,17 +6,23 @@ import {Ep02, DURACAO02} from './ep02';
 import {CapaEp02, StoriesEp02, STORIES2_DUR, EnqueteEp02} from './extras2';
 import {ResultadoEp02, AvisoEp03, CapaEp03, StoriesEp03, STORIES3_DUR, EnqueteEp03, ResultadoEp03} from './extras3';
 import {Ep03, DURACAO03} from './ep03';
+import {Ep04, DURACAO04} from './ep04';
+import {CapaEp04, StoriesEp04, STORIES4_DUR, EnqueteEp04} from './extras4';
 
 export const Root: React.FC = () => (
   <>
     <Composition id="Ep01" component={Ep01} durationInFrames={Math.ceil(DURACAO * FPS)} fps={FPS} width={1080} height={1920} />
     <Composition id="Ep02" component={Ep02} durationInFrames={Math.ceil(DURACAO02 * FPS)} fps={FPS} width={1080} height={1920} />
     <Composition id="Ep03" component={Ep03} durationInFrames={Math.ceil(DURACAO03 * FPS)} fps={FPS} width={1080} height={1920} />
+    <Composition id="Ep04" component={Ep04} durationInFrames={Math.ceil(DURACAO04 * FPS)} fps={FPS} width={1080} height={1920} />
     <Composition id="StoriesEp01" component={StoriesEp01} durationInFrames={STORIES_DUR * FPS} fps={FPS} width={1080} height={1920} />
     <Composition id="StoriesEp02" component={StoriesEp02} durationInFrames={Math.round(STORIES2_DUR * FPS)} fps={FPS} width={1080} height={1920} />
     <Composition id="StoriesEp03" component={StoriesEp03} durationInFrames={Math.round(STORIES3_DUR * FPS)} fps={FPS} width={1080} height={1920} />
     <Still id="CapaEp03" component={CapaEp03} width={1080} height={1920} />
     <Still id="EnqueteEp03" component={EnqueteEp03} width={1080} height={1920} />
+    <Composition id="StoriesEp04" component={StoriesEp04} durationInFrames={Math.round(STORIES4_DUR * FPS)} fps={FPS} width={1080} height={1920} />
+    <Still id="CapaEp04" component={CapaEp04} width={1080} height={1920} />
+    <Still id="EnqueteEp04" component={EnqueteEp04} width={1080} height={1920} />
     <Still id="ResultadoEp03" component={ResultadoEp03} width={1080} height={1920} />
     <Still id="ResultadoEp02" component={ResultadoEp02} width={1080} height={1920} />
     <Still id="AvisoEp03" component={AvisoEp03} width={1080} height={1920} />

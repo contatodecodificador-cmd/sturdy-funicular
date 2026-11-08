@@ -83,6 +83,7 @@ function rosto(o, st) {
   // olhos
   const olho = (cx) => {
     if (o.expr === 'rindo') return `<path d="M${cx - 14},230 C${cx - 8},222 ${cx + 8},222 ${cx + 14},230" ${L} stroke-width="3.6"/>`;
+    if (o.expr === 'dormindo') return `<path d="M${cx - 14},228 C${cx - 8},234 ${cx + 8},234 ${cx + 14},228" ${L} stroke-width="3.6"/>`;
     const baixo = o.olhar === 'baixo' ? 4 : 0;
     return `<path d="M${cx - 16},229 C${cx - 8},218 ${cx + 8},218 ${cx + 16},229 C${cx + 8},236 ${cx - 8},236 ${cx - 16},229Z" fill="#fff"/>
       <circle cx="${cx}" cy="${228 + baixo}" r="7" fill="${o.corOlho || '#4A2C1A'}"/><circle cx="${cx}" cy="${228 + baixo}" r="3.2" fill="#111"/>
@@ -101,6 +102,7 @@ function rosto(o, st) {
   const lab = escurece(pele, 0.72);
   if (o.expr === 'rindo' || o.boca === 'aberta') s += `<path d="M178,296 C192,302 208,302 222,296 C218,324 182,324 178,296Z" fill="#5E2A22"/><path d="M180,297 C192,302 208,302 220,297 L218,303 C206,306 194,306 182,303Z" fill="#fff"/>`;
   else if (o.expr === 'surpresa') s += `<ellipse cx="200" cy="304" rx="11" ry="14" fill="#5E2A22"/>`;
+  else if (o.expr === 'dormindo') s += `<path d="M190,304 C196,308 204,308 210,304" ${L} stroke-width="3"/>`;
   else if (o.expr === 'bravo' || o.boca === 'reta') s += `<path d="M182,304 C192,300 208,300 218,304" ${L} stroke-width="3.6"/>`;
   else s += `<path d="M180,298 C192,307 208,307 220,298 C210,314 190,314 180,298Z" fill="${lab}"/>`;
   s += `</g>`;

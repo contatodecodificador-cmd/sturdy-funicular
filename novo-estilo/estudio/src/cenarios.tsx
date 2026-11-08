@@ -81,7 +81,7 @@ const poeira = (() => { let s = ''; for (let i = 0; i < 90; i++) s += `<circle c
 export type EstadoRua = {
   congelado: number; roseX: number; roseExpr?: string; rosePiscar?: boolean; roseFlip?: boolean; roseSentada?: boolean; roseVisivel?: boolean;
   joaoX: number; onibusX?: number; cafeSuspenso?: boolean; bolso?: number; pombo?: boolean; camada?: 'base' | 'rose';
-  roseT?: number; roseAndando?: boolean; roseFalando?: boolean;
+  roseT?: number; roseAndando?: boolean; roseFalando?: boolean; velhaX?: number; velhaAndando?: boolean; velhaFalando?: boolean;
 };
 
 export const Rua: React.FC<EstadoRua> = (e) => {
@@ -102,6 +102,7 @@ export const Rua: React.FC<EstadoRua> = (e) => {
     + (e.pombo !== false ? cen.pomboVoando(1700, 640, 1.0, -8) + `<path d="M1660,700 C1650,720 1662,736 1676,740" stroke="#B4BCC6" stroke-width="5" fill="none"/>` : '')
     + (e.congelado > 0 ? poeira.replace(/opacity=".7"/g, `opacity="${0.7 * e.congelado}"`) + `<rect x="-50" y="-1400" width="${W + 100}" height="${H + 3000}" fill="#9FB8D0" opacity="${0.2 * e.congelado}"/>` : '')
     ;
+  if (e.velhaX !== undefined) roseG += poe(roseVivo((e.roseT || 0) + 1.3, {expr: 'feliz', velha: true, andando: e.velhaAndando, falando: e.velhaFalando}), e.velhaX, POS.pe, k);
   if (e.camada === 'rose') return <Svg W={W} H={H} html={roseG} />;
   return <Svg W={W} H={H} html={e.camada === 'base' ? html : html + roseG} />;
 };
