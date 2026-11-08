@@ -5,7 +5,7 @@
   "cenas": [
     {
       "capitulo": "Balanço da semana · Sul · 01 a 05/11",
-      "fala": "Ao menos dois tornados atingiram SC nesta semana.",
+      "fala": "Ao menos dois tornados atingiram Santa Catarina nesta semana.",
       "ufs": [
         "PR",
         "SC",
@@ -241,7 +241,7 @@
       }
     },
     {
-      "fala": "A Defesa Civil de SC já previa nova frente fria pro fim de semana. E o Inmet manteve avisos até este *sábado*.",
+      "fala": "A Defesa Civil de Santa Catarina já previa nova frente fria pro fim de semana. E o Inmet manteve avisos até este *sábado*.",
       "titulo": {
         "texto": "Nova frente fria",
         "sub": "Previsão Defesa Civil SC · fim de semana"
@@ -279,7 +279,7 @@
     {
       "capitulo": "Se o temporal voltar",
       "visual": "lista",
-      "fala": "Se o temporal voltar: Defesa Civil, *cento e noventa e nove*. Bombeiros, cento e noventa e três. Fique longe de árvores e postes, e deixe o carregador cheio.",
+      "fala": "Se o temporal voltar: Defesa Civil, *cento e noventa e nove*. Bombeiros, cento e noventa e três. Fique longe de árvores e postes, e evite sair de casa durante a tempestade.",
       "titulo": {
         "texto": "Se o temporal voltar",
         "sub": "Defesa Civil 199 · Bombeiros 193"
@@ -298,8 +298,8 @@
           "gatilho": "árvores"
         },
         {
-          "texto": "carregador cheio",
-          "gatilho": "carregador"
+          "texto": "evite sair na tempestade",
+          "gatilho": "evite"
         }
       ]
     },
