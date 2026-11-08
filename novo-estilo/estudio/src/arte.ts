@@ -22,7 +22,7 @@ export const cen = C as {
 
 /** Rose viva: respira, pisca, mexe a cabeça, olha em volta, balança os braços; anda e fala quando pedido.
  *  t = tempo em segundos (pode ser o da cena). Só a Rose se mexe: o resto do mundo está parado. */
-export function roseVivo(t: number, o: {expr?: string; andando?: boolean; falando?: boolean; piscar?: boolean; passosPorSeg?: number; corpo?: boolean} = {}) {
+export function roseVivo(t: number, o: {expr?: string; andando?: boolean; falando?: boolean; piscar?: boolean; passosPorSeg?: number; corpo?: boolean; velha?: boolean; bD?: number; bE?: number} = {}) {
   const TAU = Math.PI * 2;
   const resp = (Math.sin(TAU * t / 3.4) + 1) / 2;
   const pisca = ((t + 0.7) % 3.3) > 3.17 || ((t + 2.1) % 7.9) > 7.78;
@@ -38,7 +38,9 @@ export function roseVivo(t: number, o: {expr?: string; andando?: boolean; faland
     anim.cab = 1.5 * Math.sin(f * 2);
   }
   if (o.falando) anim.falar = ((Math.sin(t * 15) + 1) / 2) * (0.55 + 0.45 * Math.sin(t * 3.3));
-  return rose({expr: o.expr || 'surpresa', piscar: o.piscar ?? pisca, anim, corpo: o.corpo !== false});
+  if (o.bD) anim.bD += o.bD;
+  if (o.bE) anim.bE += o.bE;
+  return rose({expr: o.expr || 'surpresa', piscar: o.piscar ?? pisca, anim, corpo: o.corpo !== false, velha: !!o.velha});
 }
 
 /** Coloca uma pessoa com os pés em (cx, pe), escala k (1 = 1700 px de altura). */

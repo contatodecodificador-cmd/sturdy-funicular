@@ -66,8 +66,9 @@ function roseRosto(expr, c, olhar = 0) {
  *    bE/bD (braço esquerdo/direito, ° a partir do ombro), pE/pD (perna esquerda/direita, ° a partir do quadril),
  *    pulo (corpo sobe no passo, px), olhar (-1..1, íris pra esquerda/direita), falar 0..1 (boca abrindo)
  */
-function rose({ expr = 'feliz', corpo = true, piscar = false, anim = {} } = {}) {
-  const c = ROSE;
+function rose({ expr = 'feliz', corpo = true, piscar = false, anim = {}, velha = false } = {}) {
+  // velha: a Rose 30 anos mais velha (cabelo branco, rugas, casaco comprido, faixa desbotada)
+  const c = velha ? Object.assign({}, ROSE, { cabelo: '#ECE8E1', cabeloSombra: '#C9C3B8', faixa: '#E3C77A', polo: '#7A5236', poloSombra: '#5E3E28', gola: '#E3C77A', pele: '#AF7A58', peleSombra: '#8C5B3E', cracha: '#7A5236' }) : ROSE;
   const a = Object.assign({ resp: 0, cab: 0, cabY: 0, bE: 0, bD: 0, pE: 0, pD: 0, pulo: 0, olhar: 0, falar: 0 }, anim);
   const st = `stroke="${c.tinta}" stroke-width="3" stroke-linejoin="round"`;
   const sobe = -a.pulo;                        // corpo inteiro sobe no passo
@@ -88,7 +89,7 @@ function rose({ expr = 'feliz', corpo = true, piscar = false, anim = {} } = {}) 
     // pernas (cada uma gira no quadril) + tênis
     const perna = (lado) => lado < 0
       ? `<path d="M100,940 L202,940 L196,1000 L184,1640 L112,1640Z" fill="${c.calca}" ${st}/>
-         <path d="M108,1636 L188,1636 L192,1676 C192,1692 182,1698 170,1698 L84,1698 C70,1698 64,1686 74,1674Z" fill="${c.tenis}" ${st}/><path d="M70,1688 L192,1688" stroke="${c.tenisSola}" stroke-width="8"/>`
+         <path d="M108,1636 L188,1636 L192,1676 C192,1692 182,1698 170,1698 L84,1698 C70,1698 64,1686 74,1674Z" fill="${c.tenis}" ${st}/><path d="M70,1688 L192,1688" stroke="${c.tenisSola}" stroke-width="8"/><path d="M80,1676 C88,1664 104,1666 110,1674 C108,1684 92,1688 84,1684Z" fill="#E9DFC4" opacity=".95"/><circle cx="118" cy="1680" r="4" fill="#E9DFC4"/>`
       : `<path d="M198,940 L300,940 L288,1640 L216,1640 L204,1000Z" fill="${c.calca}" ${st}/><path d="M250,1000 L262,1640 L288,1640 L298,980Z" fill="${c.calcaSombra}"/>
          <path d="M212,1636 L292,1636 L326,1674 C336,1686 330,1698 316,1698 L230,1698 C218,1698 208,1692 208,1676Z" fill="${c.tenis}" ${st}/><path d="M208,1688 L330,1688" stroke="${c.tenisSola}" stroke-width="8"/>`;
     // a perna que vai pra trás é desenhada primeiro
@@ -107,7 +108,10 @@ function rose({ expr = 'feliz', corpo = true, piscar = false, anim = {} } = {}) 
           <path d="M98,880 L302,880" stroke="${c.faixa}" stroke-width="12"/>
           <path d="M152,414 L180,462 L200,456Z M248,414 L220,462 L200,456Z" fill="${c.gola}" ${st}/>
           <rect x="190" y="470" width="20" height="60" rx="4" fill="${c.poloSombra}"/>`;
-    s += `<path d="M180,440 L232,620 M220,436 L262,620" stroke="${c.cracha}" stroke-width="6" fill="none"/>
+    if (velha) s += `<path d="M98,600 L84,1250 L196,1250 L200,700Z M302,600 L316,1250 L204,1250 L200,700Z" fill="${c.polo}" ${st}/>
+      <path d="M152,414 L200,520 L248,414 L262,430 L210,560 L200,540 L190,560 L138,430Z" fill="${c.poloSombra}" ${st}/>
+      <path d="M262,940 L300,940 L298,1010 L262,1010Z" fill="${c.poloSombra}" ${st}/><path d="M270,930 L292,936 L290,1000 L272,996Z" fill="${c.luva}"/>`;
+    if (!velha) s += `<path d="M180,440 L232,620 M220,436 L262,620" stroke="${c.cracha}" stroke-width="6" fill="none"/>
           <rect x="216" y="612" width="70" height="92" rx="8" fill="#fff" ${st}/><rect x="216" y="612" width="70" height="20" rx="6" fill="${c.cracha}"/>
           <circle cx="251" cy="656" r="14" fill="${c.pele}"/><rect x="228" y="678" width="46" height="6" rx="3" fill="#999"/><rect x="232" y="690" width="38" height="5" rx="2" fill="#bbb"/>`;
     s += `</g>`;
@@ -130,6 +134,9 @@ function rose({ expr = 'feliz', corpo = true, piscar = false, anim = {} } = {}) 
         <path d="M140,150 C160,108 240,108 260,150 L254,128 C236,92 164,92 146,128Z" fill="${c.faixa}" ${st}/>
         <path d="M252,120 C270,108 284,112 290,96 C278,116 266,126 256,130Z" fill="${c.faixa}" ${st}/>`;
   s += roseRosto(expr, c, a.olhar);
+  if (velha) s += `<path d="M166,170 C185,164 215,164 234,170 M170,182 C188,177 212,177 230,182" stroke="${c.tinta}" stroke-width="2" fill="none" opacity=".45"/>
+    <path d="M158,244 C166,250 180,252 192,246 M208,246 C220,252 234,250 242,244 M150,226 L140,222 M250,226 L260,222" stroke="${c.tinta}" stroke-width="2.2" fill="none" opacity=".45"/>
+    <path d="M176,284 C170,296 172,306 180,312 M224,284 C230,296 228,306 220,312" stroke="${c.tinta}" stroke-width="2.6" fill="none" opacity=".45"/>`;
   if (a.falar > 0.05) {
     const ab = 4 + 14 * a.falar;
     s += `<ellipse cx="200" cy="302" rx="28" ry="17" fill="${c.pele}"/><ellipse cx="200" cy="303" rx="${14 + 4 * a.falar}" ry="${ab}" fill="#5E2A22"/>

@@ -156,8 +156,9 @@ export const Fachada: React.FC<{t: number; rangido?: number}> = ({t, rangido = 0
 export const LOJA2 = {W: 2000, H: 1920, lim: {x0: 0, y0: -200, x1: 2000, y1: 2300}};
 /** posições úteis (mundo) */
 export const REL = {bolso: {x: 1000, y: 1150}, foto: {x: 1080, y: 1172}, aurelio: 1230, porta: 260, fundos: 1800, sino: {x: 260, y: 640}, rose: 700};
-export const Relojoaria: React.FC<{t: number; ponteiro: number; roseX?: number; roseExpr?: string; roseAndando?: boolean; olhar?: number; sombra?: number; portaAbre?: number; fotoTirada?: boolean; sinoBalanca?: number}> = (
-  {t, ponteiro, roseX = REL.rose, roseExpr = 'desconfiada', roseAndando, sombra = 0, portaAbre = 0, fotoTirada, sinoBalanca = 0}) => {
+export const Relojoaria: React.FC<{t: number; ponteiro: number; roseX?: number; roseExpr?: string; roseAndando?: boolean; olhar?: number; sombra?: number; portaAbre?: number; fotoTirada?: boolean; sinoBalanca?: number;
+  roseVisivel?: boolean; velhaX?: number; velhaExpr?: string; velhaBraco?: number; velhaAndando?: boolean; relogioPego?: boolean; roseAgachada?: number; velhaSil?: number; velhaFalando?: boolean}> = (
+  {t, ponteiro, roseX = REL.rose, roseExpr = 'desconfiada', roseAndando, sombra = 0, portaAbre = 0, fotoTirada, sinoBalanca = 0, roseVisivel = true, velhaX, velhaExpr = 'feliz', velhaBraco = 0, velhaAndando, relogioPego, roseAgachada = 0, velhaSil = 0, velhaFalando}) => {
   const fundo = React.useMemo(() => {
     let s = `<rect x="-100" y="-300" width="2200" height="1500" fill="#E9DCC2"/><rect y="1180" width="2000" height="1100" fill="#8A6A40"/>`;
     for (let x = 0; x < 2000; x += 120) s += `<path d="M${x},1180 L${x - 200},2300" stroke="#7A5C36" stroke-width="4"/>`;
@@ -193,7 +194,7 @@ export const Relojoaria: React.FC<{t: number; ponteiro: number; roseX?: number; 
   // relógio de bolso (ponteiro andando)
   const b = REL.bolso;
   const ang = ponteiro * 6;
-  const bolso = `<g transform="translate(${b.x},${b.y})"><path d="M20,-36 C60,-60 90,-30 110,-6" stroke="#C9A04A" stroke-width="5" fill="none"/><circle r="40" fill="#E2B85C" ${ST}/><circle r="32" fill="#FFF8EC" stroke="#8A6A40" stroke-width="3"/><rect x="-6" y="-50" width="12" height="12" rx="3" fill="#E2B85C" ${ST}/>
+  const bolso = relogioPego ? '' : `<g transform="translate(${b.x},${b.y})"><path d="M20,-36 C60,-60 90,-30 110,-6" stroke="#C9A04A" stroke-width="5" fill="none"/><circle r="40" fill="#E2B85C" ${ST}/><circle r="32" fill="#FFF8EC" stroke="#8A6A40" stroke-width="3"/><rect x="-6" y="-50" width="12" height="12" rx="3" fill="#E2B85C" ${ST}/>
     ${[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((i) => `<rect x="-1.5" y="-30" width="3" height="${i % 3 ? 4 : 7}" fill="${T}" transform="rotate(${i * 30})"/>`).join('')}
     <path d="M0,0 L${Math.sin((4.78 / 12) * 2 * Math.PI) * 15},${-Math.cos((4.78 / 12) * 2 * Math.PI) * 15}" stroke="${T}" stroke-width="3"/><path d="M0,0 L${Math.sin((47 / 60) * 2 * Math.PI) * 24},${-Math.cos((47 / 60) * 2 * Math.PI) * 24}" stroke="${T}" stroke-width="2.5"/>
     <path d="M0,0 L0,-27" stroke="#D9483B" stroke-width="1.6" transform="rotate(${ang})"/><circle r="3" fill="#D9483B"/></g>`;
@@ -202,8 +203,12 @@ export const Relojoaria: React.FC<{t: number; ponteiro: number; roseX?: number; 
   const porta = `<g transform="translate(120,560) scale(${1 - 0.8 * portaAbre},1)"><rect width="290" height="640" fill="#6E4E36" ${ST}/><rect x="40" y="60" width="210" height="260" fill="#A9CADB" ${ST}/><circle cx="260" cy="350" r="12" fill="#F2C14E" ${ST}/></g>`;
   const somb = sombra > 0 ? `<path d="M300,1220 C380,1300 ${380 + 600 * sombra},${1500 + 300 * sombra} ${420 + 700 * sombra},${1600 + 300 * sombra} L${330 + 700 * sombra},${1640 + 300 * sombra} C${300 + 500 * sombra},${1500 + 250 * sombra} 260,1320 240,1230Z" fill="#1B1410" opacity="${0.6 * sombra}"/>` : '';
   const sino = `<g transform="translate(${REL.sino.x},${REL.sino.y - 80}) rotate(${sinoBalanca})"><path d="M0,0 L0,40" stroke="#5A3A28" stroke-width="5"/><path d="M-30,80 C-30,40 30,40 30,80 L38,92 L-38,92Z" fill="#E2B85C" ${ST}/><circle cx="0" cy="98" r="8" fill="#C9A04A" ${ST}/></g>`;
-  const rose = poe(roseVivo(t, {expr: roseExpr, andando: roseAndando}), roseX, 1900, 0.55);
-  return <Svg W={2000} H={1920} html={fundo + luz + porta + sino + somb + foto + bolso + rose} />;
+  // Rose atrás do balcão (agachada = desce e fica escondida pelo balcão, que é redesenhado por cima)
+  const roseCorpo = roseVisivel ? poe(roseVivo(t, {expr: roseExpr, andando: roseAndando}), roseX, 1900 + 520 * roseAgachada, 0.55) : '';
+  const rose = roseAgachada > 0 ? `<defs><clipPath id="atrasBalcao"><rect x="-200" y="-600" width="2400" height="${1180 + 600}"/></clipPath></defs><g clip-path="url(#atrasBalcao)">${roseCorpo}</g>` : roseCorpo;
+  const balcaoFrente = roseAgachada > 0 ? `<rect x="760" y="1180" width="820" height="400" fill="#7A5C36" ${ST}/><rect x="740" y="1150" width="860" height="40" fill="#5A3A28" ${ST}/><rect x="790" y="1230" width="760" height="300" fill="#7A5C36" ${ST}/>` + [0, 1, 2, 3].map((i) => `<path d="M${800 + i * 190},1240 L${800 + i * 190},1520" stroke="#5A3A28" stroke-width="5"/>`).join('') : '';
+  const velha = velhaX !== undefined ? `<g style="filter: brightness(${1 - 0.82 * velhaSil})">` + poe(roseVivo(t + 1.7, {expr: velhaExpr, andando: velhaAndando, velha: true, bD: velhaBraco, falando: velhaFalando}), velhaX, 1900, 0.55) + '</g>' : '';
+  return <Svg W={2000} H={1920} html={fundo + luz + porta + sino + somb + foto + bolso + rose + balcaoFrente + velha} />;
 };
 
 // ------------------------------------------------------------ FOTO (frente e verso, em close)
