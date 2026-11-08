@@ -3,39 +3,235 @@
   "tema": "escuro",
   "fontes": "Defesa Civil SC, RS e PR · Inmet · Band · Brasil de Fato · balanços de 04 e 05/11",
   "cenas": [
-    {"capitulo": "Balanço da semana · Sul · 01 a 05/11", "fala": "Dois tornados confirmados em SC nesta semana.", "ufs": ["PR","SC","RS"],
-     "titulo": {"numero": 2, "unidade": " TORNADOS", "texto": "confirmados em SC", "sub": "Defesa Civil de SC · 04/11"}},
-    {"continua": true, "titulo": "manter", "fala": "*Chapecó* e *Xanxerê*, na quarta, quatro de novembro.", "rota": true,
-     "destaques": [
-       {"local": "Chapecó/SC", "rotulo": "Chapecó · SC", "detalhe": "Tornado 04/11", "cor": "vermelho", "gatilho": "Chapecó"},
-       {"local": "Xanxerê/SC", "rotulo": "Xanxerê · SC", "detalhe": "Tornado 04/11", "cor": "vermelho", "gatilho": "Xanxerê"}]},
-    {"capitulo": "Chapecó/SC · quarta, 04/11", "fala": "Em Chapecó, a rajada chegou a *cento e vinte e seis* por hora.", "zoom": ["Chapecó/SC"],
-     "destaques": [{"local": "Chapecó/SC", "rotulo": "Chapecó · SC", "detalhe": "Rajada em 04/11", "cor": "vermelho", "gatilho": "Chapecó"}],
-     "titulo": {"numero": 126, "unidade": " km/h", "texto": "rajada em Chapecó", "sub": "Defesa Civil de SC · 04/11"}},
-    {"capitulo": "Santa Catarina · balanço de quinta, 05/11", "fala": "Em Santa Catarina, pelo menos *cento e seis* cidades foram atingidas.", "ufs": ["SC"],
-     "preencher": {"locais": ["SC"], "cor": "vermelho", "gatilho": "cento"},
-     "titulo": {"numero": 106, "prefixo": "PELO MENOS ", "unidade": " CIDADES", "texto": "atingidas em SC", "sub": "Band · balanço de 05/11"}},
-    {"continua": true, "fala": "Mais de *cinco mil* casas atingidas, e pelo menos vinte e três cidades em emergência.",
-     "titulo": {"numero": 5358, "unidade": " CASAS", "texto": "atingidas em SC", "sub": "Defesa Civil de SC · 05/11"},
-     "notas": [{"topo": "Casas", "texto": "Mais de 5 mil atingidas", "gatilho": "cinco"}, {"topo": "Emergência", "texto": "Pelo menos 23 cidades", "gatilho": "emergência"}]},
-    {"capitulo": "Custo humano · SC e RS", "fala": "Duas mortes em *Santa Catarina*. No Rio Grande do Sul, vinte e cinco feridos.", "ufs": ["SC","RS"],
-     "titulo": {"numero": 2, "unidade": " MORTES", "texto": "em Santa Catarina", "sub": "Band · 05/11"},
-     "notas": [{"topo": "Santa Catarina", "texto": "2 mortes", "gatilho": "mortes"}, {"topo": "Rio Grande do Sul", "texto": "25 feridos", "gatilho": "vinte"}]},
-    {"capitulo": "Rio Grande do Sul · balanço de quinta, 05/11", "fala": "E quase *cinquenta mil* gaúchos foram afetados.", "ufs": ["RS"],
-     "preencher": {"locais": ["RS"], "cor": "laranja", "gatilho": "cinquenta"},
-     "titulo": {"numero": 50000, "prefixo": "QUASE ", "unidade": " PESSOAS", "texto": "afetadas no RS", "sub": "Defesa Civil do RS · 05/11"}},
-    {"capitulo": "Paraná · temporais desde 01/11", "fala": "No Paraná, mais de *treze mil* pessoas, em quarenta e sete cidades.", "ufs": ["PR"],
-     "preencher": {"locais": ["PR"], "cor": "laranja", "gatilho": "treze"},
-     "titulo": {"numero": 13596, "unidade": " PESSOAS", "texto": "afetadas em 47 cidades do PR", "sub": "Defesa Civil do PR"},
-     "notas": [{"topo": "Casas no PR", "texto": "Cerca de 2,7 mil danificadas", "gatilho": "casas"}]},
-    {"capitulo": "E agora? · sábado, 07/11", "fala": "Mas a parte que você precisa *ouvir agora*: isso pode não ter acabado.", "ufs": ["PR","SC","RS"], "flash": true,
-     "titulo": {"texto": "Isso pode não ter acabado", "sub": "Atualização deste sábado, 07/11", "circular": true}},
-    {"continua": true, "fala": "A Defesa Civil de SC previa nova frente fria desde a noite de sexta, seis de novembro. E o Inmet manteve avisos até este *sábado*.",
-     "titulo": "manter"},
-    {"capitulo": "Se o temporal voltar", "visual": "lista", "fala": "Se o temporal voltar: Defesa Civil, *cento e noventa e nove*. Bombeiros, cento e noventa e três. Fique longe de árvores e postes, e deixe o carregador cheio.",
-     "titulo": {"texto": "Se o temporal voltar", "sub": "Defesa Civil 199 · Bombeiros 193"},
-     "itens": [{"texto": "Defesa Civil: 199", "gatilho": "cento"}, {"texto": "Bombeiros: 193", "gatilho": "Bombeiros"}, {"texto": "longe de árvores e postes", "gatilho": "árvores"}, {"texto": "carregador cheio", "gatilho": "carregador"}]},
-    {"capitulo": "Comenta e compartilha", "visual": "cta", "fala": "Comenta aqui como está o tempo na sua cidade, e manda pra quem mora no Sul. Segue pra saber primeiro.",
-     "pergunta": "Como está o tempo na sua cidade?", "apoio": "comenta aqui e manda pra quem mora no Sul."}
+    {
+      "capitulo": "Balanço da semana · Sul · 01 a 05/11",
+      "fala": "Ao menos dois tornados atingiram SC nesta semana.",
+      "ufs": [
+        "PR",
+        "SC",
+        "RS"
+      ],
+      "titulo": {
+        "numero": 2,
+        "unidade": " TORNADOS",
+        "texto": "confirmados em SC",
+        "sub": "Defesa Civil de SC · 04/11"
+      }
+    },
+    {
+      "continua": true,
+      "titulo": "manter",
+      "fala": "*Chapecó* e *Xanxerê*, na quarta, quatro de novembro.",
+      "rota": true,
+      "destaques": [
+        {
+          "local": "Chapecó/SC",
+          "rotulo": "Chapecó · SC",
+          "detalhe": "Tornado 04/11",
+          "cor": "vermelho",
+          "gatilho": "Chapecó"
+        },
+        {
+          "local": "Xanxerê/SC",
+          "rotulo": "Xanxerê · SC",
+          "detalhe": "Tornado 04/11",
+          "cor": "vermelho",
+          "gatilho": "Xanxerê"
+        }
+      ]
+    },
+    {
+      "capitulo": "Chapecó/SC · quarta, 04/11",
+      "fala": "Em Chapecó, a rajada chegou a *cento e vinte e seis* por hora.",
+      "zoom": [
+        "Chapecó/SC"
+      ],
+      "destaques": [
+        {
+          "local": "Chapecó/SC",
+          "rotulo": "Chapecó · SC",
+          "detalhe": "Rajada em 04/11",
+          "cor": "vermelho",
+          "gatilho": "Chapecó"
+        }
+      ],
+      "titulo": {
+        "numero": 126,
+        "unidade": " km/h",
+        "texto": "rajada em Chapecó",
+        "sub": "Defesa Civil de SC · 04/11"
+      }
+    },
+    {
+      "capitulo": "Santa Catarina · balanço de quinta, 05/11",
+      "fala": "Em Santa Catarina, pelo menos *cento e seis* cidades foram atingidas.",
+      "ufs": [
+        "SC"
+      ],
+      "preencher": {
+        "locais": [
+          "SC"
+        ],
+        "cor": "vermelho",
+        "gatilho": "cento"
+      },
+      "titulo": {
+        "numero": 106,
+        "prefixo": "PELO MENOS ",
+        "unidade": " CIDADES",
+        "texto": "atingidas em SC",
+        "sub": "Band · balanço de 05/11"
+      }
+    },
+    {
+      "continua": true,
+      "fala": "Mais de *cinco mil* casas atingidas, e pelo menos vinte e três cidades em emergência.",
+      "titulo": {
+        "numero": 5358,
+        "unidade": " CASAS",
+        "texto": "atingidas em SC",
+        "sub": "Defesa Civil de SC · 05/11"
+      },
+      "notas": [
+        {
+          "topo": "Casas",
+          "texto": "Mais de 5 mil atingidas",
+          "gatilho": "cinco"
+        },
+        {
+          "topo": "Emergência",
+          "texto": "Pelo menos 23 cidades",
+          "gatilho": "emergência"
+        }
+      ]
+    },
+    {
+      "capitulo": "Custo humano · SC e RS",
+      "fala": "Duas mortes em *Santa Catarina*. No Rio Grande do Sul, vinte e cinco feridos.",
+      "ufs": [
+        "SC",
+        "RS"
+      ],
+      "titulo": {
+        "numero": 2,
+        "unidade": " MORTES",
+        "texto": "em Santa Catarina",
+        "sub": "Band · 05/11"
+      },
+      "notas": [
+        {
+          "topo": "Santa Catarina",
+          "texto": "2 mortes",
+          "gatilho": "mortes"
+        },
+        {
+          "topo": "Rio Grande do Sul",
+          "texto": "25 feridos",
+          "gatilho": "vinte"
+        }
+      ]
+    },
+    {
+      "capitulo": "Rio Grande do Sul · balanço de quinta, 05/11",
+      "fala": "E quase *cinquenta mil* gaúchos foram afetados.",
+      "ufs": [
+        "RS"
+      ],
+      "preencher": {
+        "locais": [
+          "RS"
+        ],
+        "cor": "laranja",
+        "gatilho": "cinquenta"
+      },
+      "titulo": {
+        "numero": 50000,
+        "prefixo": "QUASE ",
+        "unidade": " PESSOAS",
+        "texto": "afetadas no RS",
+        "sub": "Defesa Civil do RS · 05/11"
+      }
+    },
+    {
+      "capitulo": "Paraná · temporais desde 01/11",
+      "fala": "No Paraná, mais de *treze mil* pessoas, em quarenta e sete cidades.",
+      "ufs": [
+        "PR"
+      ],
+      "preencher": {
+        "locais": [
+          "PR"
+        ],
+        "cor": "laranja",
+        "gatilho": "treze"
+      },
+      "titulo": {
+        "numero": 13596,
+        "unidade": " PESSOAS",
+        "texto": "afetadas em 47 cidades do PR",
+        "sub": "Defesa Civil do PR"
+      },
+      "notas": [
+        {
+          "topo": "Casas no PR",
+          "texto": "Cerca de 2,7 mil danificadas",
+          "gatilho": "casas"
+        }
+      ]
+    },
+    {
+      "capitulo": "E agora? · sábado, 07/11",
+      "fala": "Mas a parte que você precisa *ouvir agora*: isso pode não ter acabado.",
+      "ufs": [
+        "PR",
+        "SC",
+        "RS"
+      ],
+      "flash": true,
+      "titulo": {
+        "texto": "Isso pode não ter acabado",
+        "sub": "Atualização deste sábado, 07/11",
+        "circular": true
+      }
+    },
+    {
+      "continua": true,
+      "fala": "A Defesa Civil de SC já previa nova frente fria pro fim de semana. E o Inmet manteve avisos até este *sábado*.",
+      "titulo": "manter"
+    },
+    {
+      "capitulo": "Se o temporal voltar",
+      "visual": "lista",
+      "fala": "Se o temporal voltar: Defesa Civil, *cento e noventa e nove*. Bombeiros, cento e noventa e três. Fique longe de árvores e postes, e deixe o carregador cheio.",
+      "titulo": {
+        "texto": "Se o temporal voltar",
+        "sub": "Defesa Civil 199 · Bombeiros 193"
+      },
+      "itens": [
+        {
+          "texto": "Defesa Civil: 199",
+          "gatilho": "cento"
+        },
+        {
+          "texto": "Bombeiros: 193",
+          "gatilho": "Bombeiros"
+        },
+        {
+          "texto": "longe de árvores e postes",
+          "gatilho": "árvores"
+        },
+        {
+          "texto": "carregador cheio",
+          "gatilho": "carregador"
+        }
+      ]
+    },
+    {
+      "capitulo": "Comenta e compartilha",
+      "visual": "cta",
+      "fala": "Comenta aqui como está o tempo na sua cidade, e manda pra quem mora no Sul. Segue pra saber primeiro.",
+      "pergunta": "Como está o tempo na sua cidade?",
+      "apoio": "comenta aqui e manda pra quem mora no Sul."
+    }
   ]
 }
