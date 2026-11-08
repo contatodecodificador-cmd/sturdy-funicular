@@ -4,9 +4,12 @@
      Vídeos:  StoryVideo-Bunker-1-Hoje, -NoAr, -Vota, -Sai, -Fica
    Nenhum texto em cima de rosto. Sem música no arquivo: ela entra pela figurinha do app.
    ===================================================================================== */
-import React from 'react';
-import { Composition, useCurrentFrame } from 'remotion';
-import { comFontes, Fundo, StoryHoje, StoryNoAr, StoryResultado, StoryVota } from '../stories/Stories';
+import React, { useContext } from 'react';
+
+import { AbsoluteFill, Composition, useCurrentFrame } from 'remotion';
+import { FaixaTexto, Letreiro, Riscos, Sublinhado } from '../../kit/story';
+import { FONTEM } from '../../tema';
+import { comFontes, Fundo, RitmoStory, StoryHoje, StoryNoAr, StoryResultado, StoryVota } from '../stories/Stories';
 import { composicoesEmVideo, DUR_STORY } from '../stories/StoriesVideo';
 import { BUNKER, CenaBunker } from './cenarios';
 import { CenaFica, CenaSai, CenaTV } from './lembranca';
@@ -122,8 +125,47 @@ export const ResultadoBunker2: React.FC<{ n?: number; quando?: string }> = ({ n,
   return <StoryResultado vencedor={vencedor} quando={quando} fundo={fundo} />;
 };
 
-/** o resultado da parte 2 com o horário da parte 3 (10h) */
-const VoltaAs10: React.FC = () => <ResultadoBunker2 n={0} quando="PARTE 3 HOJE, 10H" />;
+/** o Story da decisão em frase de narração: "Vocês decidiram: / o Otávio / VAI VOLTAR / pro bunker." */
+export const StoryDecisao: React.FC<{ antes: string; faixa: string; depois: string; quando: string; fundo: React.ReactNode }> = ({ antes, faixa, depois, quando, fundo }) => {
+  const { t0 } = useContext(RitmoStory);
+  const e = (d: number) => (t0 === undefined ? undefined : t0 + d);
+  return (
+    <AbsoluteFill>
+      {fundo}
+      <Letreiro x={540} y={520} tam={100} fonte={FONTEM.pincel} giro={-4} semente="dec-voces" entra={e(0)}>
+        Vocês decidiram:
+      </Letreiro>
+      <Letreiro x={540} y={720} tam={150} giro={-5} espaco="0.02em" entra={e(12)}>
+        {antes}
+      </Letreiro>
+      <FaixaTexto x={540} y={905} texto={faixa} tam={165} giro={-5} entra={e(20)} />
+      <Riscos x={110} y={925} lado="esq" tam={80} giro={-5} entra={e(28)} />
+      <Riscos x={970} y={870} lado="dir" tam={80} giro={-5} entra={e(30)} />
+      <Letreiro x={540} y={1110} tam={130} giro={-5} espaco="0.02em" entra={e(36)}>
+        {depois}
+      </Letreiro>
+      <Letreiro x={540} y={1330} tam={95} giro={-5} espaco="0.02em" entra={e(46)}>
+        {quando}
+      </Letreiro>
+      <Sublinhado x1={270} y1={1372} x2={820} y2={1330} grossura={16} semente="dec-sub" entra={e(54)} />
+    </AbsoluteFill>
+  );
+};
+
+/** o resultado da parte 2 com o horário da parte 3 (10h), em frase */
+const VoltaAs10: React.FC = () => (
+  <StoryDecisao
+    antes="O OTÁVIO"
+    faixa="VAI VOLTAR"
+    depois="PRO BUNKER."
+    quando="PARTE 3 HOJE, 10H"
+    fundo={
+      <Fundo borrado={10} escuro={0.45} zoom={1.2} foco={[540, 1200]}>
+        <CenaQuintalTarde fundo="casa" anoitecer={1} />
+      </Fundo>
+    }
+  />
+);
 
 const ComposicoesVideo2 = composicoesEmVideo([
   { id: 'StoryVideo-Bunker-2-NoAr', C: NoArBunker2, dur: DUR_STORY.noar },

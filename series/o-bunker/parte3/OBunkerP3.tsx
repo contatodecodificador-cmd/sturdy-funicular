@@ -222,9 +222,9 @@ export const CapaOBunkerP3: React.FC = () => (
     destaque={1}
     parte={3}
     fundo={
-      <Mov chaves={[[0, 470, 900, 1.25]]} tremor={0}>
+      <AbsoluteFill style={{ transformOrigin: '0 0', transform: `translate(${540 - 470 * 1.25}px, ${960 - 900 * 1.25}px) scale(1.25)` }}>
         <CenaBunker otavio={null} luz={0.3} p3={{ ...P3, escrita: 1 }} cones={[cone(mira(340, 800))]} emPe={{ x: 640, y: 1640, escala: 0.9, vista: 'costas', mascara: true }} />
-      </Mov>
+      </AbsoluteFill>
     }
   />
 );
