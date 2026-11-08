@@ -15,6 +15,8 @@ export const SFX = {
   clique: "aevalsrc='0.5*sin(2*PI*2400*t)*exp(-t*90)':d=0.05",
   // tranco curto de câmera: baque grave + estalo
   punch: "aevalsrc='0.9*sin(2*PI*(150-90*t*4)*t)*exp(-t*26)+0.25*sin(2*PI*900*t)*exp(-t*90)':d=0.22",
+  // vento forte (tornado): ruído grave com ondulação
+  vento: "anoisesrc=d=3:c=brown:a=0.9,highpass=f=120,lowpass=f=1400,tremolo=f=1.3:d=0.5,afade=t=in:d=0.6,afade=t=out:st=2.2:d=0.8,volume=1.4",
   // tique de contador
   tick: "aevalsrc='0.4*sin(2*PI*2100*t)*exp(-t*160)+0.15*sin(2*PI*3100*t)*exp(-t*200)':d=0.04",
 };
@@ -48,7 +50,7 @@ export function mixa({ build, dur, eventos, voz, lufs }) {
   eventos.forEach((e, k) => {
     ins.push('-i', path.join(build, `sfx_${e.tipo === 'varrer' ? 'swish' : e.tipo}.wav`));
     const ms = Math.max(0, Math.round(e.t * 1000));
-    const vol = { trovao: 0.9, punch: 0.5, tick: 0.35 }[e.tipo] ?? 0.55;
+    const vol = { trovao: 0.9, punch: 0.5, tick: 0.35, vento: 0.5 }[e.tipo] ?? 0.55;
     filtros.push(`[${n}:a]adelay=${ms}|${ms},volume=${vol}[e${k}]`);
     etiquetas.push(`[e${k}]`); n++;
   });

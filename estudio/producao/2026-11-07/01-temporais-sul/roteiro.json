@@ -16,6 +16,12 @@
         "unidade": " TORNADOS",
         "texto": "confirmados em SC",
         "sub": "Defesa Civil de SC · 04/11"
+      },
+      "ilustracao": {
+        "tipo": "tornado",
+        "local": "Chapecó/SC",
+        "mapa": true,
+        "escala": 1.0
       }
     },
     {
@@ -65,7 +71,14 @@
         "numero": 126,
         "unidade": " km/h",
         "texto": "rajada em Chapecó",
-        "sub": "Defesa Civil de SC · 04/11"
+        "sub": "Defesa Civil de SC · 04/11",
+        "de": 75
+      },
+      "ilustracao": {
+        "tipo": "tornado",
+        "local": "Chapecó/SC",
+        "escala": 1.1,
+        "gatilho": "rajada"
       }
     },
     {
@@ -86,7 +99,8 @@
         "prefixo": "PELO MENOS ",
         "unidade": " CIDADES",
         "texto": "atingidas em SC",
-        "sub": "Band · balanço de 05/11"
+        "sub": "Band · balanço de 05/11",
+        "de": 63
       }
     },
     {
@@ -96,7 +110,8 @@
         "numero": 5358,
         "unidade": " CASAS",
         "texto": "atingidas em SC",
-        "sub": "Defesa Civil de SC · 05/11"
+        "sub": "Defesa Civil de SC · 05/11",
+        "de": 3214
       },
       "notas": [
         {
@@ -115,6 +130,12 @@
         "manchete": "Temporais em Santa Catarina deixam dois mortos e atingem 106 municípios",
         "data": "05/11/2026",
         "url": "band.com.br/nacional/sc/temporais-em-santa-catarina-deixam-dois-mortos-e-atingem-106-municipios"
+      },
+      "ilustracao": {
+        "tipo": "casas_destelhadas",
+        "local": "Lages/SC",
+        "mapa": true,
+        "escala": 1.1
       }
     },
     {
@@ -161,7 +182,14 @@
         "prefixo": "QUASE ",
         "unidade": " PESSOAS",
         "texto": "afetadas no RS",
-        "sub": "Defesa Civil do RS · 05/11"
+        "sub": "Defesa Civil do RS · 05/11",
+        "de": 30000
+      },
+      "ilustracao": {
+        "tipo": "chuva",
+        "local": "Porto Alegre/RS",
+        "mapa": true,
+        "escala": 1.0
       }
     },
     {
@@ -181,7 +209,8 @@
         "numero": 13596,
         "unidade": " PESSOAS",
         "texto": "afetadas em 47 cidades do PR",
-        "sub": "Defesa Civil do PR"
+        "sub": "Defesa Civil do PR",
+        "de": 8157
       },
       "notas": [
         {
@@ -204,6 +233,11 @@
         "texto": "Isso pode não ter acabado",
         "sub": "Atualização deste sábado, 07/11",
         "circular": true
+      },
+      "ilustracao": {
+        "tipo": "temporal",
+        "local": "Porto Alegre/RS",
+        "escala": 1.2
       }
     },
     {
@@ -234,7 +268,13 @@
           "texto": "Avisos até sábado",
           "gatilho": "Inmet"
         }
-      ]
+      ],
+      "ilustracao": {
+        "tipo": "vento",
+        "local": "Lages/SC",
+        "mapa": true,
+        "escala": 1.2
+      }
     },
     {
       "capitulo": "Se o temporal voltar",

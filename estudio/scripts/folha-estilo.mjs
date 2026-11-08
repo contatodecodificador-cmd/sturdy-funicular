@@ -12,6 +12,7 @@ const require = createRequire(import.meta.url);
 
 // ilustrações 3D injetadas só para a folha (não altera o roteiro em disco)
 const mod = (r) => {
+  if (r.cenas.some((c) => c.ilustracao)) return;
   r.cenas[2].ilustracao = { tipo: 'tornado', local: 'Chapecó/SC', escala: 1.1 };
   r.cenas[8].ilustracao = { tipo: 'temporal', local: 'Chapecó/SC', escala: 1.0 };
 };
@@ -20,10 +21,10 @@ dados.fps = 15;
 const T = dados.tempos;
 const ini = (i) => T.cenas[i].ini;
 const quadros = [
-  ['1', 'Abertura: título batendo sobre o mapa 3D', 'f', ini(0) + 0.45],
+  ['1', 'Abertura: close na maquete 3D e título batendo', 'f', ini(0) + 0.45],
   ['2', 'Município extrudado + tornado 3D sobre a cidade em miniatura', 'f', ini(2) + 3.4],
   ['3', 'Estado preenchido em 3D com contador', 'f', ini(3) + 3.9],
-  ['4', 'Temporal: nuvens, chuva e raios', 'f', Math.floor((ini(8) + 1.4) * 1.1) / 1.1 + 0.012],
+  ['4', 'Temporal: nuvens, chuva e raios', 'f', Math.ceil((ini(8) + 1) * 0.42) / 0.42 + 0.03],
   ['5', 'Card de notícia + post-its', 'f', ini(1) + 2.6],
   ['6', 'Lista de utilidade', 'f', ini(10) + 8.8],
   ['7', 'CTA de seguir', 'f', T.duracao - 1.3],

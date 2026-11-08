@@ -4,13 +4,13 @@
 (function(){
 const T3=window.THREE;
 if(!T3){window.C3D={ok:false};return;}
-const C={ink:0x141414,hl:0xffd400,gray:0x8e8e8e,dark:0x474747,mid:0x6c6c6c,light:0xddd8ca,white:0xfbf8ef,red:0xe0343f,water:0x9db2b4,leaf:0xa3ae93,wall:0xf3eee0,roofDk:0x55555a};
+const C={ink:0x141414,hl:0xffd400,gray:0x8e8e8e,dark:0x474747,mid:0x6c6c6c,light:0xddd8ca,white:0xfbf8ef,red:0xe0343f,water:0x9db2b4,leaf:0xa3ae93,wall:0xf3eee0,roofDk:0x4a4a4e};
 const mat=(c,o={})=>new T3.MeshStandardMaterial({color:c,roughness:1,metalness:0,flatShading:true,...o});
 const basic=(c,o={})=>new T3.MeshBasicMaterial({color:c,...o});
 const rnd=(n)=>{const x=Math.sin(n*127.1+311.7)*43758.5453;return x-Math.floor(x);}; // pseudo-aleatório determinístico
 const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
 const outBack=(x,c=1.4)=>{x=cl(x);return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2);};
-let R,scene,tilt,world,cam,CYv=600,hemi,sun,dim=0;
+let R,scene,tilt,world,cam,CYv=600,hemi,sun,dim=0,fl=0;
 const geoCache=new Map();
 
 function anelDe(d){
@@ -54,7 +54,7 @@ function setCY(v){CYv=v;if(cam){cam.setViewOffset(720,1280,0,640-v,720,1280);cam
 
 // posiciona o mundo conforme a câmera do mapa (cx,cy em coords da cena, s zoom) e o tilt/orbit
 function quadro(c,zp,rx,rz){
-  dim=0;
+  dim=0;fl=0;
   const d=Math.PI/180;
   tilt.position.set(zp.dx,-zp.dy,0);tilt.scale.set(1+zp.z,1+zp.z,1+zp.z);
   tilt.rotation.order='XYZ';tilt.rotation.set(-rx*d,0,-rz*d);
@@ -93,24 +93,31 @@ function nuvem(r,cor,seed,suave=true){
 function casa(w,d,h,cor,telhado=true,seed=1){
   const g=new T3.Group();
   const b=new T3.Mesh(new T3.BoxGeometry(w,d,h),mat(cor));b.position.z=h/2;b.castShadow=b.receiveShadow=true;g.add(b);
-  const jan=new T3.Mesh(new T3.BoxGeometry(w*.18,.6,h*.28),mat(C.ink));jan.position.set(-w*.2,-d/2-.2,h*.55);g.add(jan);
-  const jan2=jan.clone();jan2.position.x=w*.2;g.add(jan2);
+  const jm=basic(C.hl),jw=Math.max(2.4,w*.2),jh=Math.max(3,h*.32);
+  [-.22,.22].forEach(k=>{const j=new T3.Mesh(new T3.BoxGeometry(jw,.8,jh),jm);j.position.set(w*k,-d/2-.3,h*.52);g.add(j);});
+  const j2=new T3.Mesh(new T3.BoxGeometry(.8,jw,jh),jm);j2.position.set(w/2+.3,0,h*.52);g.add(j2);
   let roof=null;
   if(telhado){
-    roof=new T3.Mesh(new T3.ConeGeometry(Math.hypot(w,d)*.55,h*.38,4),mat(C.roofDk));roof.rotation.x=Math.PI/2;roof.rotation.y=Math.PI/4;roof.scale.set(1,1,1);
-    roof.position.z=h+h*.19;roof.castShadow=true;g.add(roof);
+    roof=new T3.Mesh(new T3.ConeGeometry(Math.hypot(w,d)*.56,h*.42,4),mat(C.roofDk));roof.rotation.x=Math.PI/2;roof.rotation.y=Math.PI/4;
+    roof.position.z=h+h*.21;roof.castShadow=true;g.add(roof);
   }
   return {g,roof};
 }
 function arvore(h,seed){
   const g=new T3.Group();
-  const t=new T3.Mesh(new T3.CylinderGeometry(1.6,2.2,h*.4,6),mat(0x6b6558));t.rotation.x=Math.PI/2;t.position.z=h*.2;g.add(t);
-  for(let i=0;i<2;i++){const c=new T3.Mesh(new T3.ConeGeometry(h*.3-i*3,h*.55,7),mat(C.leaf));c.rotation.x=Math.PI/2;c.position.z=h*.5+i*h*.22;c.castShadow=true;g.add(c);}
+  const t=new T3.Mesh(new T3.CylinderGeometry(1.4,2,h*.45,6),mat(0x7a6a55));t.rotation.x=Math.PI/2;t.position.z=h*.22;g.add(t);
+  const lm=mat(0x7fa467,{flatShading:false});
+  [[0,0,.62,.36],[h*.12,h*.05,.5,.22],[-h*.1,-h*.04,.46,.2]].forEach(c=>{const s=new T3.Mesh(new T3.IcosahedronGeometry(h*c[3],2),lm);s.position.set(c[0],c[1],h*c[2]);s.castShadow=true;g.add(s);});
   return g;
 }
 function predio(w,d,h,cor){
   const g=new T3.Group();const b=new T3.Mesh(new T3.BoxGeometry(w,d,h),mat(cor));b.position.z=h/2;b.castShadow=true;g.add(b);
-  const wm=mat(C.ink);for(let k=0;k<Math.floor(h/12);k++)for(let j=-1;j<=1;j+=2){const f=new T3.Mesh(new T3.BoxGeometry(w*.22,.6,4),wm);f.position.set(j*w*.22,-d/2-.2,8+k*12);g.add(f);}
+  const wm=basic(C.hl);
+  for(let k=0;k<Math.floor((h-8)/10);k++){
+    const f=new T3.Mesh(new T3.BoxGeometry(w*.78,.8,4),wm);f.position.set(0,-d/2-.3,10+k*10);g.add(f);
+    const f2=new T3.Mesh(new T3.BoxGeometry(.8,d*.78,4),wm);f2.position.set(w/2+.3,0,10+k*10);g.add(f2);
+  }
+  const t=new T3.Mesh(new T3.BoxGeometry(w*1.04,d*1.04,2),mat(C.roofDk));t.position.z=h+1;g.add(t);
   return g;
 }
 function seg(mesh,a,b){ // caixa fina entre dois pontos
@@ -118,6 +125,7 @@ function seg(mesh,a,b){ // caixa fina entre dois pontos
   mesh.position.set((a.x+b.x)/2,(a.y+b.y)/2,(a.z+b.z)/2);mesh.scale.set(1,1,L);
   mesh.lookAt(b.x,b.y,b.z);
 }
+const BOLT=.42;const boltPh=(t)=>(t*BOLT)%1;
 function raio(g,alt,x,seed){
   const segs=[],pts=[];let x0=x,y0=0;
   for(let i=0;i<=8;i++){pts.push(new T3.Vector3(x0,y0,alt*(1-i/8)));x0+=(rnd(seed+i)-.5)*34;y0+=(rnd(seed+i*2)-.5)*14;}
@@ -171,12 +179,12 @@ const FAB={
     const ch=chuvaLinhas(300,300,250,0x3a3a3e);g.add(ch);
     const bolts=[raio(g,240,-40,3),raio(g,240,70,11)];
     const upd=(a,t)=>{
-      nu.forEach((n,k)=>{n.position.x+=0;n.rotation.z=Math.sin(t*.6+k)*.18;n.position.y=Math.sin(t*.8+k*2)*14;});
+      nu.forEach((n,k)=>{n.rotation.z=Math.sin(t*.6+k)*.18;n.position.y=Math.sin(t*.8+k*2)*14;});
       ch.upd(t);
-      bolts.forEach((bs,bi)=>{const ph=(t*1.1+bi*.5)%1,on=ph<.13&&(Math.floor(t*1.1+bi*.5)%2===bi%2||bi===0);
-        if(ph<.02&&false){};bs.forEach(b=>b.visible=on&&(Math.floor(ph*40)%3!==1));});
+      const ph=boltPh(t),on=ph<.09,bi=Math.floor(t*BOLT)%2;
+      bolts.forEach((bs,k)=>bs.forEach(b=>b.visible=on&&k===bi&&(Math.floor(ph*60)%3!==1)));
     };
-    return {g,upd,cenario:'cidade'};
+    return {g,upd,cenario:'cidade',dim:()=>.25,flash:(t)=>{const ph=boltPh(t);return ph<.2?Math.max(0,1-ph/.2)*(Math.floor(ph*60)%3!==1?1:.5):0;}};
   },
   chuva(){
     const g=new T3.Group();const nu=[];
@@ -208,10 +216,10 @@ const FAB={
     const g=new T3.Group();const n=nuvem(90,0x3a3a3a,4);n.position.z=250;g.add(n);
     const bolts=[raio(g,250,0,21),raio(g,250,20,34),raio(g,250,-20,47)];
     const anel=new T3.Mesh(new T3.RingGeometry(8,12,32),new T3.MeshBasicMaterial({color:C.hl,transparent:true,side:T3.DoubleSide}));anel.position.z=1.5;g.add(anel);
-    const upd=(a,t)=>{const ph=(t*.9)%1,on=ph<.18;
-      bolts.forEach((bs,i)=>bs.forEach(b=>b.visible=on&&(i===Math.floor(t*.9)%3)));
-      anel.visible=on;anel.scale.setScalar(1+ph*18);anel.material.opacity=1-ph/.18;n.rotation.z=Math.sin(t*.8)*.1;};
-    return {g,upd,cenario:'campo'};
+    const upd=(a,t)=>{const ph=boltPh(t),on=ph<.12;
+      bolts.forEach((bs,i)=>bs.forEach(b=>b.visible=on&&(i===Math.floor(t*BOLT)%3)));
+      anel.visible=on;anel.scale.setScalar(1+ph*14);anel.material.opacity=1-ph/.12;n.rotation.z=Math.sin(t*.8)*.1;};
+    return {g,upd,cenario:'campo',dim:()=>.3,flash:(t)=>{const ph=boltPh(t);return ph<.2?Math.max(0,1-ph/.2):0;}};
   },
   enchente(){
     const g=new T3.Group();
@@ -303,12 +311,22 @@ function cenario(tipo,seed){
       if(Math.hypot(x,y)<44||rnd(gx*13+gy*17)<.18)continue;
       const w=13+rnd(gx+gy*9)*5;const h=casa(w,w*.85,13+rnd(gx*3+gy)*6,C.white,true,gx+gy);
       h.g.position.set(x,y,0);h.g.rotation.z=Math.floor(rnd(gx*11+gy)*4)*Math.PI/2;g.add(h.g);
-      if(rnd(gx*19+gy*23)<.12){const a=arvore(26,gx);a.position.set(x+11,y+9,0);g.add(a);}
+      if(rnd(gx*19+gy*23)<.22){const a=arvore(26,gx);a.position.set(x+11,y+9,0);g.add(a);}
     }
   }
   if(tipo==='campo'){[[-130,-40],[120,50],[-100,90],[140,-70],[-150,40]].forEach((p,k)=>{const a=arvore(40+rnd(seed+k)*18,k);a.position.set(p[0],p[1],0);g.add(a);});
     [[-120,-90],[110,-100]].forEach((p,k)=>{const h=casa(30,26,22,C.wall,true,k);h.g.position.set(p[0],p[1],0);g.add(h.g);});}
-  if(tipo==='cidade'){[[-120,-60,30,28,70],[0,-80,26,26,48],[120,-50,32,30,86],[-60,80,28,26,56],[80,76,28,28,64]].forEach((p,k)=>{const b=predio(p[2],p[3],p[4],k%2?0xe9e2cf:C.light);b.position.set(p[0],p[1],0);g.add(b);});}
+  if(tipo==='cidade'){
+    for(let gx=-6;gx<=6;gx++)for(let gy=-5;gy<=5;gy++){
+      const x=gx*26+(rnd(gx*7+gy)-.5)*5,y=gy*26+(rnd(gy*5+gx*3)-.5)*5;
+      if(rnd(gx*13+gy*17)<.12)continue;
+      const central=Math.abs(gx)<=2&&Math.abs(gy)<=1;
+      if(central){const w=15+rnd(gx+gy*9)*6,hh=46+rnd(gx*3+gy*11)*52;const p=predio(w,w*.9,hh,rnd(gx+gy)<.5?C.white:C.light);p.position.set(x,y,0);g.add(p);}
+      else{const w=14+rnd(gx+gy*9)*5;const h=casa(w,w*.85,13+rnd(gx*3+gy)*6,C.white,true,gx+gy);h.g.position.set(x,y,0);h.g.rotation.z=Math.floor(rnd(gx*11+gy)*4)*Math.PI/2;g.add(h.g);
+        if(rnd(gx*19+gy*23)<.14){const a=arvore(26,gx);a.position.set(x+11,y+9,0);g.add(a);}}
+    }
+  }
+  if(tipo==='cidade_antiga'){[[-120,-60,30,28,70],[0,-80,26,26,48],[120,-50,32,30,86],[-60,80,28,26,56],[80,76,28,28,64]].forEach((p,k)=>{const b=predio(p[2],p[3],p[4],k%2?0xe9e2cf:C.light);b.position.set(p[0],p[1],0);g.add(b);});}
   if(tipo==='casas_baixas'){[[-100,-60],[10,-80],[100,-40],[-80,60],[70,70]].forEach((p,k)=>{const h=casa(32,28,24,C.wall,true,k);h.g.position.set(p[0],p[1],0);g.add(h.g);});}
   return g;
 }
@@ -325,11 +343,11 @@ const ilus=(tipo,m,semCenario)=>{
       const vis=a>=0&&sai>.01;anchor.visible=vis;if(!vis)return;
       const k=outBack(a/.7,1.5)*sai;anchor.scale.set(esc/s,esc/s,esc);
       inner.scale.set(1,1,1);o.g.scale.set(k,k,k);if(cen)cen.scale.set(cl(a/.5),cl(a/.5),cl(a/.5));
-      o.upd(a,t);if(o.dim)dim=Math.max(dim,o.dim(a));
+      o.upd(a,t);if(o.dim)dim=Math.max(dim,o.dim(a));if(o.flash)fl=Math.max(fl,o.flash(t));
     }
   };
 };
 
-function render(){hemi.intensity=1.05*(1-.62*dim);sun.intensity=1.9*(1-.75*dim);R.render(scene,cam);}
-window.C3D={ok:false,init,setCY,quadro,projeta,dest,fillBloco,ilus,render,tipos:Object.keys(FAB)};
+function render(){hemi.intensity=1.05*(1-.62*dim)+.9*fl;sun.intensity=1.9*(1-.75*dim)+1.2*fl;R.render(scene,cam);}
+window.C3D={ok:false,BOLT,flashAmt:()=>fl,init,setCY,quadro,projeta,dest,fillBloco,ilus,render,tipos:Object.keys(FAB)};
 })();

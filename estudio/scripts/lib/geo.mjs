@@ -94,9 +94,10 @@ export function preparaGeo(roteiro, W, H) {
   roteiro.cenas.forEach((c, ci) => {
     const destaques = (c.destaques || []).map((d) => ({ ...d, idx: resolve(d.local)[0] }));
     const ilustracao = c.ilustracao?.local ? { ...c.ilustracao, idx: resolve(c.ilustracao.local)[0] } : null;
+    const ilCam = ilustracao && !ilustracao.mapa; // mapa:true = a ilustração não muda o enquadramento da câmera
     const preencher = c.preencher ? { ...c.preencher, idx: c.preencher.locais.flatMap(resolve) } : null;
     // cena "continua" sem alvo próprio herda a câmera anterior (plano contínuo)
-    if (ci > 0 && c.continua && !c.zoom?.length && !destaques.length && !ilustracao && !preencher && !c.ufs?.length) {
+    if (ci > 0 && c.continua && !c.zoom?.length && !destaques.length && !ilCam && !preencher && !c.ufs?.length) {
       cenas.push({ ...cenas[ci - 1], destaques, preencher, ilustracao });
       return;
     }
@@ -104,7 +105,7 @@ export function preparaGeo(roteiro, W, H) {
     let extra = [];
     if (c.zoom?.length) alvo = c.zoom.flatMap(resolve);
     else if (destaques.length) alvo = destaques.map((d) => d.idx);
-    else if (ilustracao) alvo = [ilustracao.idx];
+    else if (ilCam) alvo = [ilustracao.idx];
     else if (preencher) alvo = preencher.idx;
     else if (c.ufs?.length) extra = estados.filter((e) => c.ufs.map((u) => u.toUpperCase()).includes(e.uf)).map((e) => e.b);
     else extra = estados.filter((e) => e.ativo).map((e) => e.b);
@@ -112,9 +113,9 @@ export function preparaGeo(roteiro, W, H) {
     const bw = Math.max(b[2] - b[0], 8), bh = Math.max(b[3] - b[1], 8);
     let s = Math.min((W * 0.78) / bw, (H * 0.42) / bh);
     s = Math.max(0.9, Math.min(s, c.zoom?.length === 1 ? 6 : 7));
-    if (ilustracao && !c.zoom?.length && !destaques.length) s = Math.min(s, 3.2);
+    if (ilCam && !c.zoom?.length && !destaques.length) s = Math.min(s, 3.2);
     // com ilustração 3D: a cena fica mais baixa na tela (espaço do título em cima e da altura do tornado)
-    const dy = ilustracao && !c.zoom?.length ? -95 / s : 0;
+    const dy = ilCam && !c.zoom?.length ? -95 / s : 0;
     cenas.push({ cx: (b[0] + b[2]) / 2, cy: (b[1] + b[3]) / 2 + dy, s, destaques, preencher, ilustracao });
   });
 
