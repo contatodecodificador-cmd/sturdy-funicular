@@ -43,18 +43,21 @@ export function mixa({ build, dur, eventos, voz, lufs }) {
   let n = 0;
   if (voz) {
     ins.push('-i', voz);
-    filtros.push(`[${n}:a]aresample=44100,pan=mono|c0=c0,acompressor=threshold=-20dB:ratio=3:attack=5:release=80,equalizer=f=3000:t=q:w=1:g=2[v]`);
+    filtros.push(`[${n}:a]aresample=44100,pan=mono|c0=c0,acompressor=threshold=-20dB:ratio=3:attack=5:release=80,equalizer=f=3000:t=q:w=1:g=2,loudnorm=I=${lufs}:LRA=5:TP=-1.5[v]`);
     etiquetas.push('[v]'); n++;
   }
-  ins.push('-i', path.join(build, 'trilha.wav')); etiquetas.push(`[${n}:a]`); n++;
+  // Com voz: a voz manda; trilha e efeitos ficam bem abaixo dela (efeitos fortes no início eram altos demais).
+  const fx = voz ? 0.35 : 1;
+  ins.push('-i', path.join(build, 'trilha.wav'));
+  filtros.push(`[${n}:a]volume=${voz ? 0.5 : 1}[tr]`); etiquetas.push('[tr]'); n++;
   eventos.forEach((e, k) => {
     ins.push('-i', path.join(build, `sfx_${e.tipo === 'varrer' ? 'swish' : e.tipo}.wav`));
     const ms = Math.max(0, Math.round(e.t * 1000));
-    const vol = { trovao: 0.9, punch: 0.5, tick: 0.35, vento: 0.5 }[e.tipo] ?? 0.55;
+    const vol = fx * ({ trovao: 0.6, punch: 0.4, tick: 0.3, vento: 0.3, impacto: 0.35 }[e.tipo] ?? 0.5) * (voz && e.t < 2 ? 0.6 : 1);
     filtros.push(`[${n}:a]adelay=${ms}|${ms},volume=${vol}[e${k}]`);
     etiquetas.push(`[e${k}]`); n++;
   });
-  filtros.push(`${etiquetas.join('')}amix=inputs=${etiquetas.length}:normalize=0:duration=longest,atrim=0:${dur},loudnorm=I=${lufs}:LRA=4:TP=-1[a]`);
+  filtros.push(`${etiquetas.join('')}amix=inputs=${etiquetas.length}:normalize=0:duration=longest,atrim=0:${dur}${voz ? ',alimiter=limit=0.89:level=false' : `,loudnorm=I=${lufs}:LRA=4:TP=-1`}[a]`);
   const audio = path.join(build, 'mix.wav');
   ff([...ins, '-filter_complex', filtros.join(';'), '-map', '[a]', '-ar', '44100', '-ac', '2', audio]);
   // 2ª passada: mede e corrige o ganho até a meta
