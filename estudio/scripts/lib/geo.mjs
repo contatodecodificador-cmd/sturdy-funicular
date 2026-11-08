@@ -112,5 +112,15 @@ export function preparaGeo(roteiro, W, H) {
     cenas.push({ cx: (b[0] + b[2]) / 2, cy: (b[1] + b[3]) / 2, s, destaques, preencher });
   });
 
-  return { ufs, muns: muns.map(({ b, ...m }) => m), estados: estados.map(({ b, ...e }) => e), cenas };
+  // Fundo de satélite: cantos da imagem (lon/lat) projetados na mesma Mercator do mapa
+  let sat = null;
+  const satJson = path.join(RAIZ, 'dados/satelite/brasil.json');
+  if (fs.existsSync(satJson)) {
+    const b = JSON.parse(fs.readFileSync(satJson, 'utf8'));
+    const [x0, y0] = proj([b.lonW, b.latN]);
+    const [x1, y1] = proj([b.lonE, b.latS]);
+    sat = { x0, y0, x1, y1, latN: b.latN, latS: b.latS };
+  }
+
+  return { ufs, muns: muns.map(({ b, ...m }) => m), estados: estados.map(({ b, ...e }) => e), cenas, sat };
 }

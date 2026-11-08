@@ -6,7 +6,7 @@ O editor (`scripts/render.mjs`) transforma este arquivo em vídeo automaticament
 ```jsonc
 {
   "id": "2026-11-08-01-tornados-sul",
-  "tema": "escuro",                 // "escuro" (padrão, alerta) ou "claro" (papel/maquete)
+  "tema": "escuro",                 // "escuro" (padrão: navy + amarelo-ouro), "claro" (creme + navy + amarelo) ou "satelite" (imagem de satélite NASA sob o mapa)
   "fontes": "Defesa Civil SC · Inmet · MetSul · 07/11",   // rodapé fixo do vídeo
   "cenas": [ /* 8 a 14 cenas */ ]
 }
@@ -17,14 +17,14 @@ Cada cena tem **uma frase ou duas** de fala. Uma cena nova = movimento de câmer
 
 | Campo | Tipo | Uso |
 |---|---|---|
-| `fala` | texto | O que a voz diz. Marque 1 palavra-chave por cena com `*asteriscos*` (fica sublinhada em vermelho). |
+| `fala` | texto | O que a voz diz. Marque 1 palavra-chave por cena com `*asteriscos*` (fica sublinhada em amarelo). |
 | `capitulo` | texto | Etiqueta do topo ("Novo tornado hoje · Santo Augusto/RS"). Curta, com data quando couber. |
 | `continua` | bool | `true` = continuação da cena anterior: mantém câmera, destaques, notas e (com `"titulo":"manter"`) o título. |
 | `visual` | `mapa` \| `lista` \| `cta` | Padrão `mapa`. `lista` = post-its numerados com check. `cta` = card de pergunta + botão seguir (sempre a última). |
 | `ufs` | ["PR","SC"] | Estados enquadrados quando não há destaque/zoom. |
 | `zoom` | ["Cidade/UF"] | Aproxima a câmera nesses municípios. |
 | `destaques` | lista | Municípios que "saltam" em 3D com rótulo: `{"local":"Chapecó/SC","rotulo":"Chapecó · SC","detalhe":"Tornado 10h30","cor":"vermelho","gatilho":"Chapecó"}`. Aparecem quando a palavra `gatilho` é falada (padrão: o nome da cidade). |
-| `rota` | bool | Liga os destaques com uma linha vermelha, na ordem. |
+| `rota` | bool | Liga os destaques com uma linha amarela, na ordem. |
 | `preencher` | objeto | Pinta uma área progressivamente: `{"locais":["SC"] ou ["Cidade/UF",...],"cor":"vermelho","gatilho":"trezentas"}`. |
 | `titulo` | objeto ou `"manter"` | Com número: `{"numero":126,"unidade":" km/h","texto":"rajada em Chapecó","sub":"Inmet · 04/11"}` (anima um contador; `de` define o valor inicial; `prefixo` como "ATÉ "). Sem número: `{"texto":"Isso ainda não acabou","sub":"...","circular":true}`. |
 | `notas` | lista (máx. 4) | Post-its: `{"topo":"Santo Augusto","texto":"Até 100 casas","gatilho":"cem"}`. |
@@ -32,7 +32,16 @@ Cada cena tem **uma frase ou duas** de fala. Uma cena nova = movimento de câmer
 | `pergunta`, `apoio` | texto | Só em `cta`: "Como está o céu na sua cidade?" / "comenta aqui e manda pra quem está na rota." |
 | `flash` | bool | Clarão de relâmpago + trovão no início da cena (use 1–2 vezes no máximo, em viradas). |
 
-Cores: `vermelho` (perigo), `laranja` (alerta), `amarelo` (outro tipo de evento), `verde` (alívio / sem vítimas), `azul` (frio/chuva).
+### Cartões de mídia (caminhos relativos à pasta do vídeo)
+Aparecem no começo da cena (ou na palavra `gatilho`, opcional) e saem no fim dela, entrando girando de fora da tela. Use no máximo 1 por cena e evite combinar com 3-4 notas. Arquivo inexistente: `validar.mjs` só avisa e o render pula o card (em `noticia`, só a imagem é pulada).
+
+| Campo | Exemplo | Resultado |
+|---|---|---|
+| `noticia` | `{"veiculo":"g1","manchete":"...","data":"07/11/2026","url":"g1.globo.com/...","imagem":"midia/print1.png"}` | Card "print de site": barra de navegador com o domínio, nome do veículo, manchete grande, data; inclinado, com sombra. `imagem` (screenshot real em PNG, opcional) aparece dentro do card. |
+| `video` | `{"arquivo":"midia/clip1.mp4","credito":"Reprodução / @autor","inicio":0,"miniatura":"midia/mini1.png"}` | Polaroid de ~300px no canto inferior direito com o vídeo rodando sem som durante a cena (quadros pré-extraídos com ffmpeg: render determinístico; faz loop se o clipe for curto). Sem o arquivo, usa `miniatura` com ícone de play e zoom lento; sem os dois, pula o card. |
+| `foto` | `{"arquivo":"midia/x.jpg","credito":"..."}` | Polaroid no canto inferior esquerdo com a foto e o crédito. |
+
+Cores (preenchimentos/destaques do mapa; o vermelho é a cor semântica de perigo, o resto da marca é navy + amarelo-ouro): `vermelho` (perigo), `laranja` (alerta), `amarelo` (outro tipo de evento), `verde` (alívio / sem vítimas), `azul` (frio/chuva).
 
 **Locais:** sempre `"Município/UF"` com o nome oficial do IBGE (acentos importam pouco, mas a grafia sim) ou só `"UF"` para o estado inteiro.
 
@@ -40,3 +49,22 @@ Cores: `vermelho` (perigo), `laranja` (alerta), `amarelo` (outro tipo de evento)
 
 ## Exemplo completo
 Veja `exemplos/tornados-sul/roteiro.json`.
+
+
+## Movimento (automático, não precisa de campo)
+Mapa 3D inclinado com câmera orbitando, deriva constante, transições de câmera de ~0,55s, "punch-in" (+6% de zoom e micro-shake) a cada título, destaque, nota, mídia ou item de lista, contadores em easeOutExpo, letreiro de fontes rolando no rodapé (`fontes` pode ser texto ou lista) e efeitos sonoros de punch/tick sincronizados.
+
+## `stories.json` (opcional, gera `story_animado.mp4` e `story_imagem.png` em 1080x1920)
+```jsonc
+{
+  "manchete": ["6 tornados", "em 6 dias"],                       // 2 linhas (branca + amarela)
+  "numero": {"numero": 6, "unidade": " TORNADOS", "texto": "no Sul · 02 a 07/11"},   // mesmo formato de titulo.numero
+  "cena": 1,                                                      // índice (0 = primeira) da cena do roteiro cujo mapa/destaques aparecem
+  "chamada": "Sul do Brasil em alerta",
+  "enquete": {"pergunta": "Você já viu um tornado de perto?", "opcoes": ["SIM", "NÃO"]}   // opcional
+}
+```
+`story_animado.mp4`: ~12s, sem narração, com trilha e efeitos (-14 LUFS): manchete batendo, contador, mapa com destaques entrando e "NOVO VÍDEO NO PERFIL / Toque para assistir". `story_imagem.png`: enquete (pergunta + 2 caixas, para o sticker de enquete do Instagram por cima) se houver `enquete`; senão, card de notícia com manchete e número. Topo (250px) e base (300px) ficam livres de texto importante. Geração: `node scripts/stories.mjs <pasta>` (o `produzir.mjs` chama sozinho).
+
+## Satélite
+`dados/satelite/brasil.jpg` (+ `brasil.json` com o bbox lon/lat) é recorte da NASA Blue Marble (domínio público) e é reprojetado para a Mercator do mapa. A capa sempre usa esse fundo; nos vídeos use `"tema": "satelite"`.

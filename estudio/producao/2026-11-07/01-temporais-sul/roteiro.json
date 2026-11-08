@@ -38,7 +38,13 @@
           "cor": "vermelho",
           "gatilho": "Xanxerê"
         }
-      ]
+      ],
+      "noticia": {
+        "veiculo": "Band",
+        "manchete": "Defesa Civil confirma dois tornados em Chapecó e Xanxerê em SC",
+        "data": "04/11/2026",
+        "url": "band.com.br/nacional/sc/defesa-civil-confirma-dois-tornados-em-chapeco-e-xanxere-em-sc"
+      }
     },
     {
       "capitulo": "Chapecó/SC · quarta, 04/11",
@@ -103,7 +109,13 @@
           "texto": "Pelo menos 23 cidades",
           "gatilho": "emergência"
         }
-      ]
+      ],
+      "noticia": {
+        "veiculo": "Band",
+        "manchete": "Temporais em Santa Catarina deixam dois mortos e atingem 106 municípios",
+        "data": "05/11/2026",
+        "url": "band.com.br/nacional/sc/temporais-em-santa-catarina-deixam-dois-mortos-e-atingem-106-municipios"
+      }
     },
     {
       "capitulo": "Custo humano · SC e RS",

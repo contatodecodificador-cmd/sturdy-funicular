@@ -1,4 +1,4 @@
-// Roda a linha de produção de um vídeo já roteirizado e aprovado: voz -> vídeo -> capa.
+// Roda a linha de produção de um vídeo já roteirizado e aprovado: voz -> vídeo -> capa -> stories.
 // Uso: node scripts/produzir.mjs <pasta-do-video> [--teste] [--rascunho] [--sem-voz (reaproveita voz.mp3/tempos.json)]
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
@@ -16,3 +16,4 @@ run('validar.mjs');
 if (!flags.includes('--sem-voz')) run('voz.mjs', flags.filter((f) => f === '--teste'));
 run('render.mjs', flags.filter((f) => f === '--rascunho'));
 run('capa.mjs');
+run('stories.mjs');

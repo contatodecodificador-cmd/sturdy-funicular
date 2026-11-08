@@ -1,0 +1,7 @@
+{
+  "manchete": ["6 tornados", "em 6 dias"],
+  "numero": {"numero": 6, "unidade": " TORNADOS", "texto": "no Sul · 02 a 07/11"},
+  "cena": 1,
+  "chamada": "Sul do Brasil em alerta",
+  "enquete": {"pergunta": "Você já viu um tornado de perto?", "opcoes": ["SIM", "NÃO"]}
+}

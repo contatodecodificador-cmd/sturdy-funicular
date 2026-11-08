@@ -13,7 +13,7 @@ A capa decide o clique na grade do perfil e no Explorar. O padrão vem do canal 
 }
 ```
 - `cena`: índice (começa em 0) da cena cujo mapa fica no fundo. Escolha a que tem **mais coisa visível** (destaques + rota ou preenchimento).
-- `titulo`: **2 linhas, de 2 a 4 palavras cada**. A 1ª fica em preto e a 2ª em vermelho. A 1ª traz o número ou o fato, a 2ª o lugar ou a consequência.
+- `titulo`: **2 linhas, de 2 a 4 palavras cada**. A 1ª fica em branco e a 2ª em amarelo-ouro (sobre fundo de satélite com vinheta escura, sempre). A 1ª traz o número ou o fato, a 2ª o lugar ou a consequência.
 - `tag`: categoria + data curta ("Novo tornado hoje no RS · 07/11").
 - `linha`: fonte oficial ou ordem direta ("Alerta do Inmet · perigo · sáb 07/11" / "Se a sua cidade está aqui, assiste").
 - `rodape`: 3 a 5 cidades mais populosas da área, separadas por " · ".
