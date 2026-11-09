@@ -3,3 +3,6 @@ assets/mapdata/*/
 *.part
 edicao/*/midia/commons/*.webm
 edicao/*/midia/commons/*.ogv
+edicao/*/render/
+edicao/*/midia/video/
+edicao/*/storyboard/maps/

@@ -10,7 +10,7 @@ const server = http.createServer((q, r) => {
 (async () => {
   const [id, out, ...rest] = process.argv.slice(2);
   const arg = k => { const i = rest.indexOf(k); return i >= 0 ? rest[i + 1] : null; };
-  const fps = +(arg('--fps') || 30), stills = arg('--stills');
+  const fps = +(arg('--fps') || 30), stills = arg('--stills'), from = +(arg('--from') || 0), len = arg('--len');
   const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
   const page = await browser.newPage({ viewport: { width: 1920, height: 1080 } });
   page.on('console', m => { if (m.type() === 'error') console.error('PAGE', m.text()); });
@@ -28,9 +28,9 @@ const server = http.createServer((q, r) => {
   } else {
     const ff = spawn('ffmpeg', ['-y', '-v', 'error', '-f', 'image2pipe', '-framerate', String(fps), '-c:v', 'mjpeg', '-i', '-',
       '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-pix_fmt', 'yuv420p', out], { stdio: ['pipe', 'inherit', 'inherit'] });
-    const N = Math.round(dur * fps);
+    const N = Math.round((len ? +len : dur - from) * fps);
     for (let f = 0; f < N; f++) {
-      await page.evaluate(t => window.eng.renderAt(t), f / fps);
+      await page.evaluate(t => window.eng.renderAt(t), from + f / fps);
       const buf = await page.screenshot({ type: 'jpeg', quality: 92 });
       if (!ff.stdin.write(buf)) await new Promise(r => ff.stdin.once('drain', r));
       if (f % 60 === 0) process.stderr.write(`\r${id} ${f}/${N} ${((Date.now() - t0) / 1000 / (f + 1)).toFixed(2)}s/frame`);

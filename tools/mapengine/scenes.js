@@ -84,16 +84,17 @@ export const SCENES = {
   },
   // 02:49.2–03:12.5 Sichelschnitt: Sedan -> Kanal (camera follows tip)
   m03b_sichel: {
-    dur: 23.3, unitScale: 9, refW: 220, map: { zones: [{ poly: OCC_0510, color: '#E2A797' }] },
-    cam: [{ t: 0, lon: 4.9, lat: 49.75, w: 300, tilt: 36 }, { t: 1.5, follow: 'sichel', w: 300, tilt: 36 }, { t: 11.5, follow: 'sichel', w: 280, tilt: 36 }, { t: 17, lon: 2.4, lat: 50.3, w: 420, tilt: 32 }, { t: 23.3, lon: 2.6, lat: 50.45, w: 470, tilt: 30 }],
-    arrows: [{ id: 'sichel', path: SICHEL.slice(2), t0: 0.6, t1: 11.5, width: 2.6 }],
-    units: [{ id: 'gud', model: 'tank', side: 'de', path: SICHEL.slice(2), t0: 0.6, t1: 11.5, scale: 1.2 }],
-    areas: [{ poly: [P(4.9, 49.55), P(4.9, 49.85), P(3.9, 49.85), P(3.1, 50.02), P(2.3, 50.02), P(1.6, 50.25), P(1.55, 50.0), P(2.3, 49.75), P(3.1, 49.6), P(4.0, 49.5)], color: '#E2A797', opacity: 0.85, t0: 12 }],
-    pulses: [{ p: 'noyelles', t0: 12.5, out: 17, km: 12 }],
-    labels: [{ p: 'sedan', text: 'Sedan', big: true, t0: 0 }, { p: 'stquentin', text: 'Saint-Quentin', t0: 3 }, { p: 'amiens', text: 'Amiens', t0: 6 }, { p: 'abbeville', text: 'Abbeville', t0: 9 },
-      { p: 'noyelles', text: 'Noyelles', t0: 11.5, left: true }, { p: 'paris', text: 'Paris', t0: 0 }, { p: 'lille', text: 'Lille', t0: 0 }, { p: 'arras', text: 'Arras', t0: 0 }, { kind: 'sea', text: 'ÄRMELKANAL', lon: 1.1, lat: 50.5, size: 28 }],
-    tags: [{ text: 'GUDERIAN', unit: 'gud', t0: 1, out: 11.4 }, { text: '2. PANZER-DIVISION (WIEN)', p: 'noyelles', t0: 12.6, dy: -80, dx: 120, out: 22 }],
-    cards: { title: 'Der Sichelschnitt', date: '13.–20. MAI 1940', stamps: [{ text: 'DURCHGESCHNITTEN', t0: 17.2 }] },
+    dur: 34.2, unitScale: 9, refW: 220, map: { zones: [{ poly: OCC_0510, color: '#E2A797' }] },
+    cam: [{ t: 0, lon: 4.9, lat: 49.75, w: 300, tilt: 36 }, { t: 1.5, follow: 'sichel', w: 300, tilt: 36 }, { t: 20.5, follow: 'sichel', w: 260, tilt: 38 }, { t: 26, lon: 2.6, lat: 50.3, w: 440, tilt: 32 }, { t: 34.2, lon: 2.8, lat: 50.45, w: 480, tilt: 30 }],
+    arrows: [{ id: 'sichel', path: SICHEL.slice(2), t0: 0.6, t1: 20.5, width: 2.6 }],
+    units: [{ id: 'gud', model: 'tank', side: 'de', path: SICHEL.slice(2), t0: 0.6, t1: 20.5, scale: 1.2 },
+      { id: 'tb1', model: 'soldier', side: 'al', path: [P(2.9, 50.75)], t0: 28.8 }, { id: 'tb2', model: 'soldier', side: 'be', path: [P(3.6, 50.9)], t0: 29.1 }, { id: 'tb3', model: 'tank', side: 'fr', path: [P(3.3, 50.5)], t0: 29.4 }],
+    areas: [{ poly: [P(4.9, 49.55), P(4.9, 49.85), P(3.9, 49.85), P(3.1, 50.02), P(2.3, 50.02), P(1.6, 50.25), P(1.55, 50.0), P(2.3, 49.75), P(3.1, 49.6), P(4.0, 49.5)], color: '#E2A797', opacity: 0.85, t0: 21 }],
+    pulses: [{ p: 'noyelles', t0: 20.8, out: 26, km: 12 }],
+    labels: [{ p: 'sedan', text: 'Sedan', big: true, t0: 0 }, { p: 'stquentin', text: 'Saint-Quentin', t0: 3 }, { p: 'amiens', text: 'Amiens', t0: 8 }, { p: 'abbeville', text: 'Abbeville', t0: 14 },
+      { p: 'noyelles', text: 'Noyelles', t0: 18, left: true }, { p: 'paris', text: 'Paris', t0: 0 }, { p: 'lille', text: 'Lille', t0: 0 }, { p: 'arras', text: 'Arras', t0: 0 }, { kind: 'sea', text: 'ÄRMELKANAL', lon: 1.1, lat: 50.5, size: 28 }],
+    tags: [{ text: 'GUDERIAN', unit: 'gud', t0: 1, out: 14.5 }, { text: '2. PANZER-DIVISION (WIEN)', unit: 'gud', t0: 15, out: 26, dy: -80 }, { text: 'IN DER FALLE', lon: 3.2, lat: 50.95, t0: 29.6, dy: -60 }],
+    cards: { title: 'Der Sichelschnitt', date: '13.–20. MAI 1940', stamps: [{ text: 'DURCHGESCHNITTEN', t0: 26.8 }] },
   },
   // 03:35.6–03:51.3 Arras (21. Mai)
   m04_arras: {
@@ -109,7 +110,7 @@ export const SCENES = {
   },
   // 04:03.7–04:19.8 Die dünne Panzerspitze
   m04b_korridor: {
-    dur: 16.1, unitScale: 9, refW: 300, map: { zones: [{ poly: OCC_0510, color: '#E2A797' }] },
+    dur: 16.4, unitScale: 9, refW: 300, map: { zones: [{ poly: OCC_0510, color: '#E2A797' }] },
     cam: [{ t: 0, lon: 3.3, lat: 50.1, w: 480, tilt: 30 }, { t: 16.1, lon: 3.0, lat: 50.1, w: 380, tilt: 34 }],
     areas: [{ poly: [P(4.9, 49.55), P(4.9, 49.85), P(3.9, 49.85), P(3.1, 50.05), P(2.3, 50.05), P(1.6, 50.25), P(1.55, 50.0), P(2.3, 49.75), P(3.1, 49.6), P(4.0, 49.5)], color: '#E2A797', opacity: 0.9, t0: 0 }],
     arrows: [{ id: 'n', path: [P(3.0, 50.75), P(3.05, 50.25)], t0: 9, t1: 11.5, color: '#5d7a3c' }, { id: 's', path: [P(3.1, 49.2), P(3.1, 49.65)], t0: 9.3, t1: 11.8, color: '#4a6684' }],
@@ -176,21 +177,21 @@ export const SCENES = {
   },
   // 08:25.0–08:46.0 Dynamo beginnt / Panzer rollen wieder
   m09_dynamo: {
-    dur: 21.0, unitScale: 8, refW: 140, map: { zones: [{ poly: OCC_0524, color: '#E2A797' }] },
-    cam: [{ t: 0, lon: 1.9, lat: 51.15, w: 190, tilt: 32 }, { t: 9, lon: 2.0, lat: 51.15, w: 170, tilt: 34 }, { t: 14, lon: 2.35, lat: 50.95, w: 120, tilt: 38 }, { t: 21, lon: 2.4, lat: 50.98, w: 105, tilt: 40 }],
-    arrows: [{ id: 'z', path: [P(1.35, 51.11), P(1.8, 51.06), P(2.32, 51.05)], t0: 2.5, t1: 7, color: '#2f4f6a', dash: 3 },
-      { id: 'y', path: [P(1.45, 51.30), P(2.2, 51.3), P(2.5, 51.2), P(2.38, 51.06)], t0: 3.0, t1: 8, color: '#2f4f6a', dash: 3 },
-      { id: 'pz1', path: [P(2.17, 50.9), P(2.30, 50.96)], t0: 13.5, t1: 16.5 }, { id: 'pz2', path: [P(2.45, 50.75), P(2.47, 50.93)], t0: 14, t1: 17 }],
-    units: [{ id: 's1', model: 'ship', kind: 'destroyer', path: [P(1.35, 51.11), P(1.8, 51.06), P(2.32, 51.05)], t0: 2.5, t1: 9 }, { id: 's2', model: 'ship', kind: 'boat', path: [P(1.45, 51.30), P(2.2, 51.3), P(2.5, 51.2), P(2.38, 51.06)], t0: 3, t1: 10 },
-      { id: 'p1', model: 'tank', side: 'de', path: [P(2.17, 50.9), P(2.30, 50.96)], t0: 13.5, t1: 16.5 }, { id: 'p2', model: 'tank', side: 'de', path: [P(2.45, 50.75), P(2.47, 50.93)], t0: 14, t1: 17 }],
+    dur: 25.6, unitScale: 8, refW: 140, map: { zones: [{ poly: OCC_0524, color: '#E2A797' }] },
+    cam: [{ t: 0, lon: 2.2, lat: 50.9, w: 150, tilt: 34 }, { t: 7, lon: 1.9, lat: 51.15, w: 200, tilt: 32 }, { t: 16, lon: 2.0, lat: 51.15, w: 170, tilt: 34 }, { t: 19.5, lon: 2.35, lat: 50.95, w: 120, tilt: 38 }, { t: 25.6, lon: 2.4, lat: 50.98, w: 100, tilt: 40 }],
+    arrows: [{ id: 'z', path: [P(1.35, 51.11), P(1.8, 51.06), P(2.32, 51.05)], t0: 9.5, t1: 14, color: '#2f4f6a', dash: 3 },
+      { id: 'y', path: [P(1.45, 51.30), P(2.2, 51.3), P(2.5, 51.2), P(2.38, 51.06)], t0: 10, t1: 15, color: '#2f4f6a', dash: 3 },
+      { id: 'pz1', path: [P(2.17, 50.9), P(2.30, 50.96)], t0: 19.5, t1: 22.5 }, { id: 'pz2', path: [P(2.45, 50.75), P(2.47, 50.93)], t0: 20, t1: 23 }],
+    units: [{ id: 's1', model: 'ship', kind: 'destroyer', path: [P(1.35, 51.11), P(1.8, 51.06), P(2.32, 51.05)], t0: 9.5, t1: 16 }, { id: 's2', model: 'ship', kind: 'boat', path: [P(1.45, 51.30), P(2.2, 51.3), P(2.5, 51.2), P(2.38, 51.06)], t0: 10, t1: 17 },
+      { id: 'p1', model: 'tank', side: 'de', path: [P(2.17, 50.9), P(2.30, 50.96)], t0: 19.5, t1: 22.5 }, { id: 'p2', model: 'tank', side: 'de', path: [P(2.45, 50.75), P(2.47, 50.93)], t0: 20, t1: 23 }],
     rings: [{ path: PERIMETER, closed: false, t0: 0, color: '#3f5a2a', width: 1.4 }],
     labels: [{ p: 'dover', text: 'Dover', big: true, t0: 0 }, { p: 'duenkirchen', text: 'Dünkirchen', big: true, t0: 0 }, { p: 'calais', text: 'Calais', t0: 0 }, { p: 'ramsgate', text: 'Ramsgate', t0: 0 }],
-    tags: [{ text: '26. MAI · 18:57 UHR', lon: 1.6, lat: 51.2, t0: 6.5, out: 12.5, dy: -60 }, { text: 'PANZER ROLLEN WIEDER', unit: 'p2', t0: 15, dy: 80 }],
-    cards: { title: 'Operation Dynamo', clock: { h0: 48, h1: 50, t0: 0, t1: 8, redAt: 48 }, stamps: [{ text: 'ZU SPÄT?', t0: 18 }] },
+    tags: [{ text: '26. MAI · 18:57 UHR', lon: 1.6, lat: 51.2, t0: 10.6, out: 17, dy: -60 }, { text: 'PANZER ROLLEN WIEDER', unit: 'p2', t0: 20.5, dy: 80 }],
+    cards: { title: 'Operation Dynamo', clock: { h0: 48, h1: 50, t0: 0, t1: 8, redAt: 48 }, stamps: [{ text: 'HALTEBEFEHL AUFGEHOBEN', t0: 0.6, out: 5.5, size: 46 }, { text: 'ZU SPÄT', t0: 23.6 }] },
   },
   // 09:55.1–10:05.6 Belgien kapituliert – Lücke
   m10_belgien: {
-    dur: 10.5, unitScale: 8, refW: 130, map: { zones: [{ poly: OCC_0524, color: '#E2A797' }] },
+    dur: 10.8, unitScale: 8, refW: 130, map: { zones: [{ poly: OCC_0524, color: '#E2A797' }] },
     cam: [{ t: 0, lon: 2.9, lat: 50.95, w: 170, tilt: 34 }, { t: 10.5, lon: 2.75, lat: 51.0, w: 130, tilt: 38 }],
     areas: [{ poly: [P(2.75, 51.13), P(2.92, 51.235), P(3.20, 51.34), P(3.56, 51.20), P(3.72, 51.05), P(3.45, 50.78), P(2.95, 50.80), P(2.88, 50.95)], color: '#E2A797', opacity: 0.92, t0: 1.0 }],
     arrows: [{ id: 'gap', path: [P(3.3, 51.0), P(2.95, 51.0)], t0: 3.5, t1: 6.5 }, { id: 'plug', path: [P(2.6, 50.85), P(2.80, 50.98)], t0: 7.5, t1: 9.8, color: '#5d7a3c' }],
@@ -201,7 +202,7 @@ export const SCENES = {
   },
   // 11:31.4–12:00.8 Flandern: nasses Land, Kanäle, geflutet
   m11_flandern: {
-    dur: 29.4, unitScale: 8, refW: 90, map: { zones: [{ poly: OCC_0524, color: '#E2A797' }] },
+    dur: 30.0, unitScale: 8, refW: 90, map: { zones: [{ poly: OCC_0524, color: '#E2A797' }] },
     cam: [{ t: 0, lon: 2.5, lat: 50.95, w: 120, tilt: 40 }, { t: 9, lon: 2.75, lat: 50.9, w: 150, tilt: 36 }, { t: 18, lon: 2.85, lat: 50.86, w: 90, tilt: 42 }, { t: 29.4, lon: 2.4, lat: 50.9, w: 80, tilt: 44 }],
     areas: [{ poly: [P(2.40, 50.99), P(2.62, 51.0), P(2.70, 51.06), P(2.55, 51.08), P(2.40, 51.03)], color: '#7FA3C6', opacity: 0.65, t0: 4.5 }, { poly: [P(2.72, 51.1), P(2.85, 51.06), P(2.82, 51.0), P(2.70, 51.04)], color: '#7FA3C6', opacity: 0.65, t0: 5 }],
     pulses: [{ p: 'ypern', t0: 12.5, out: 19, km: 7 }],

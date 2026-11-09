@@ -136,11 +136,14 @@ def quote(img, text, src='', frac=1.0):
     if src: d.line([W // 2 - 40, y + 4, W // 2 + 40, y + 4], fill=RED, width=4); d.text((W // 2, y + 40), src, font=f2, fill=(205, 195, 175), anchor='mm')
 
 
-def chapter(img, title, sub):
-    d = ImageDraw.Draw(img)
-    d.text((W // 2, H // 2 - 40), title, font=STARDOS(110), fill=CREAM, anchor='mm')
+def chapter(img, title, sub, ink=False):
+    lay = Image.new('RGBA', (W, H), (0, 0, 0, 0)); dl = ImageDraw.Draw(lay)
+    if not ink: dl.rectangle([W // 2 - 620, H // 2 - 150, W // 2 + 620, H // 2 + 140], fill=(14, 11, 9, 170))
+    img.paste(lay.filter(ImageFilter.GaussianBlur(30)), (0, 0), lay.filter(ImageFilter.GaussianBlur(30)))
+    d = ImageDraw.Draw(img); fg = (52, 38, 28) if ink else CREAM; fg2 = (88, 66, 46) if ink else (215, 205, 185)
+    d.text((W // 2, H // 2 - 40), title, font=STARDOS(110), fill=fg, anchor='mm')
     d.line([W // 2 - 60, H // 2 + 30, W // 2 + 60, H // 2 + 30], fill=RED, width=5)
-    d.text((W // 2, H // 2 + 80), sub, font=BARLOW(44), fill=(215, 205, 185), anchor='mm')
+    d.text((W // 2, H // 2 + 80), sub, font=BARLOW(44), fill=fg2, anchor='mm')
 
 
 def big_title(img, text):

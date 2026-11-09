@@ -27,3 +27,87 @@ ok midia/commons/F10_retreat_HU104600.jpg 328 KB
   retry 0 The_British_Army_in_the_United_Kingdom-_Evacuation_From_Dunk HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
   retry 1 The_British_Army_in_the_United_Kingdom-_Evacuation_From_Dunk HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
   retry 2 The_British_Army_in_the_United_Kingdom-_Evacuation_From_Dunk HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok midia/commons/F11_evac_H1690.jpg 507 KB
+  retry 0 British_troops_lifeboat_dunkerque.png HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok midia/commons/F12_lifeboat.png 1946 KB
+  retry 0 British_gunner_beach_dunkirk.png HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok midia/commons/F13_gunner_beach.png 1569 KB
+  retry 0 Beach_at_Dunkirk_(35483783543).png HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 1 Beach_at_Dunkirk_(35483783543).png HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 2 Beach_at_Dunkirk_(35483783543).png HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok midia/commons/F14_beach_dunkirk.png 1799 KB
+  retry 0 Bundesarchiv,_Bild_101I-126-0339-19A,_Veules-les-Roses,_Kolo HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 1 Bundesarchiv,_Bild_101I-126-0339-19A,_Veules-les-Roses,_Kolo HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 2 Bundesarchiv,_Bild_101I-126-0339-19A,_Veules-les-Roses,_Kolo HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 3 Bundesarchiv,_Bild_101I-126-0339-19A,_Veules-les-Roses,_Kolo HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok midia/commons/F15_prisoners_column.jpg 656 KB
+  retry 0 Bundesarchiv_Bild_121-0412,_Frankreich,_Panzer_Somua_S35,_Ge HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok midia/commons/F16_somua_destroyed.jpg 252 KB
+ok midia/commons/F17_panzer_wald.jpg 443 KB
+  retry 0 Bundesarchiv_Bild_146-1985-038-06,_Westfeldzug,_deutscher_Vo HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 1 Bundesarchiv_Bild_146-1985-038-06,_Westfeldzug,_deutscher_Vo HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+skip commons/F15_prisoners_column.jpg
+  retry 0 Bundesarchiv_Bild_101I-769-0229-11A,_Frankreich,_Guderian,_" HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok commons/F20_guderian_enigma.jpg 532 KB
+  retry 0 Bundesarchiv_Bild_146-1972-045-08,_Westfeldzug,_Rommel_bei_B HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 1 Bundesarchiv_Bild_146-1972-045-08,_Westfeldzug,_Rommel_bei_B HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 2 Bundesarchiv_Bild_146-1972-045-08,_Westfeldzug,_Rommel_bei_B HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 3 Bundesarchiv_Bild_146-1972-045-08,_Westfeldzug,_Rommel_bei_B HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 4 Bundesarchiv_Bild_146-1972-045-08,_Westfeldzug,_Rommel_bei_B HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 5 Bundesarchiv_Bild_146-1972-045-08,_Westfeldzug,_Rommel_bei_B HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 6 Bundesarchiv_Bild_146-1972-045-08,_Westfeldzug,_Rommel_bei_B HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok commons/F22_rommel_officers.jpg 283 KB
+  retry 0 Bundesarchiv_Bild_183-L08129,_Gerd_v._Rundstedt.jpg HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 1 Bundesarchiv_Bild_183-L08129,_Gerd_v._Rundstedt.jpg HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 2 Bundesarchiv_Bild_183-L08129,_Gerd_v._Rundstedt.jpg HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok commons/F23_rundstedt.jpg 321 KB
+  retry 0 Bundesarchiv_Bild_183-H27722,_Franz_Halder_und_Walther_v._Br HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 1 Bundesarchiv_Bild_183-H27722,_Franz_Halder_und_Walther_v._Br HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 2 Bundesarchiv_Bild_183-H27722,_Franz_Halder_und_Walther_v._Br HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 3 Bundesarchiv_Bild_183-H27722,_Franz_Halder_und_Walther_v._Br HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 4 Bundesarchiv_Bild_183-H27722,_Franz_Halder_und_Walther_v._Br HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok commons/F24_halder_brauchitsch.jpg 340 KB
+  retry 0 Bundesarchiv_Bild_146-1979-169-07,_Hermann_Göring.jpg HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok commons/F26_goering.jpg 310 KB
+  retry 0 Felsennest-Rodert-Bunker_1.jpg HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok commons/F29_felsennest_bunker.jpg 1024 KB
+  retry 0 Bundesarchiv_Bild_146-1973-023-19,_Frankreich,_Günther_v._Kl HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 1 Bundesarchiv_Bild_146-1973-023-19,_Frankreich,_Günther_v._Kl HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 2 Bundesarchiv_Bild_146-1973-023-19,_Frankreich,_Günther_v._Kl HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok commons/F30_hitler_kluge.jpg 214 KB
+  retry 0 Bundesarchiv_Bild_146-1974-082-44,_Adolf_Hitler_im_Ersten_We HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 1 Bundesarchiv_Bild_146-1974-082-44,_Adolf_Hitler_im_Ersten_We HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok commons/F31_hitler_wk1.jpg 389 KB
+  retry 0 Admiral_Sir_Bertram_Ramsay_TR2626.jpg HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 1 Admiral_Sir_Bertram_Ramsay_TR2626.jpg HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok commons/F32_ramsay.jpg 255 KB
+ok commons/F33_gort_art.jpg 352 KB
+  retry 0 Churchill_portrait_NYP_45063.jpg HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 1 Churchill_portrait_NYP_45063.jpg HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok commons/F34_churchill.jpg 705 KB
+ok commons/F43_kleist.jpg 405 KB
+ok commons/F49_normandy.jpg 579 KB
+ok commons/F_manstein.jpg 212 KB
+skip commons/F01_dunkirk_beach_queue.jpg
+skip commons/F02_dunkirk_HU1137.jpg
+skip commons/F03_dunkirk_HU2280.jpg
+skip commons/F04_dunkirk_H1628.jpg
+skip commons/F05_dunkirk_HU1135.jpg
+skip commons/F06_dover_destroyer.jpg
+skip commons/F07_dover_wounded.jpg
+skip commons/F08_addison_road_tea.jpg
+skip commons/F09_evac_HU2286.jpg
+skip commons/F10_retreat_HU104600.jpg
+skip commons/F11_evac_H1690.jpg
+skip commons/F12_lifeboat.png
+skip commons/F13_gunner_beach.png
+skip commons/F14_beach_dunkirk.png
+skip commons/F16_somua_destroyed.jpg
+skip commons/F17_panzer_wald.jpg
+  retry 0 Bundesarchiv_Bild_146-1985-038-06,_Westfeldzug,_deutscher_Vo HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 1 Bundesarchiv_Bild_146-1985-038-06,_Westfeldzug,_deutscher_Vo HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 2 Bundesarchiv_Bild_146-1985-038-06,_Westfeldzug,_deutscher_Vo HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 3 Bundesarchiv_Bild_146-1985-038-06,_Westfeldzug,_deutscher_Vo HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 4 Bundesarchiv_Bild_146-1985-038-06,_Westfeldzug,_deutscher_Vo HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 5 Bundesarchiv_Bild_146-1985-038-06,_Westfeldzug,_deutscher_Vo HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 6 Bundesarchiv_Bild_146-1985-038-06,_Westfeldzug,_deutscher_Vo HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)

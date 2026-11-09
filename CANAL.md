@@ -20,3 +20,11 @@ Canal de história em **alemão** para o público **DACH** (Alemanha, Áustria, 
 - Duas perspectivas lado a lado (Duell: dois comandantes)
 - Mistério / documento perdido (partir de uma fonte e desvendar)
 - Linha do tempo invertida (começa no fim)
+
+## Fluxo de edição (desde o vídeo 02)
+1. `edicao/<nn>/edl.py` → lista de planos sincronizada com o SRT (verificar SRT × áudio antes).
+2. `tools/mapengine` → mapas 3D (three.js + Chromium); cenas em `scenes.js`, render por plano com `render_maps.py`.
+3. `render_shots.py` → fotos/vídeos/gráficos com zoom, sépia, cartões digitados (fontes stencil do canal).
+4. `assemble.py` → concatena, gera SFX sintetizados (whoosh, digitação, carimbo, tique-taque, impacto) e mixa com a narração (-14 LUFS).
+Fontes de vídeo em domínio público: Why We Fight (Divide and Conquer, Battle of Britain), War Dept Film Bulletin 56 (archive.org).
+Evitar planos com suásticas grandes / textos em inglês (público DACH, YouTube DE).

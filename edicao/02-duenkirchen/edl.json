@@ -543,7 +543,7 @@
   "t0": 192.5,
   "t1": 203.4,
   "type": "M",
-  "src": "m03b_sichel@17",
+  "src": "m03b_sichel@23.3",
   "desc": "Karte: Korridor trennt alliierte Armeen – Stempel DURCHGESCHNITTEN",
   "txt": [],
   "sfx": [
@@ -769,7 +769,7 @@
   "t0": 308.0,
   "t1": 313.6,
   "type": "V",
-  "src": "V01_stuka_attack",
+  "src": "V01@stuka1",
   "desc": "Archivfilm: Stukas (Ju 87) im Angriff",
   "txt": [
    "quote:„Die Luftwaffe erledigt das allein.“|sinngemäß"
@@ -972,7 +972,7 @@
   "t0": 424.1,
   "t1": 432.7,
   "type": "V",
-  "src": "V03@ships",
+  "src": "V03@ships2",
   "desc": "Archivfilm: Schiffe aller Art werden gesammelt",
   "txt": [],
   "sfx": [
@@ -1172,7 +1172,7 @@
   "t0": 561.5,
   "t1": 568.6,
   "type": "V",
-  "src": "V01_stuka_attack",
+  "src": "V01@stuka2",
   "desc": "Archivfilm: Stuka-Angriff auf Schiffe",
   "txt": [],
   "sfx": [
@@ -1360,7 +1360,7 @@
   "t0": 664.0,
   "t1": 676.8,
   "type": "V",
-  "src": "V01_stuka_attack",
+  "src": "V01@stuka3",
   "desc": "Archivfilm: Luftwaffe bombardiert Schiffe",
   "txt": [],
   "sfx": [
@@ -1372,7 +1372,7 @@
   "t0": 676.8,
   "t1": 685.4,
   "type": "V",
-  "src": "V02@panzer_column",
+  "src": "V02@panzer_attack",
   "desc": "Archivfilm: Angriff mit voller Kraft",
   "txt": [],
   "sfx": [
@@ -1779,9 +1779,9 @@
   "t1": 901.5,
   "type": "P",
   "src": "F44_compiegne_waggon",
-  "desc": "Compiègne, Waffenstillstand",
+  "desc": "Hitler in Paris, Juni 1940",
   "txt": [
-   "date:22. JUNI 1940"
+   "word:FRANKREICH KAPITULIERT"
   ],
   "sfx": [
    "whoosh"
