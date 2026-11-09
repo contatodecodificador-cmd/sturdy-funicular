@@ -1,0 +1,5 @@
+node_modules/
+assets/mapdata/*/
+*.part
+edicao/*/midia/commons/*.webm
+edicao/*/midia/commons/*.ogv

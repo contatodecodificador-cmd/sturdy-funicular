@@ -1,0 +1,1920 @@
+[
+ {
+  "t0": 0.0,
+  "t1": 4.3,
+  "type": "V",
+  "src": "V02@forest_plane",
+  "desc": "Archivfilm: Wald / Flugzeug startet (Eifel-Stimmung)",
+  "txt": [
+   "date:24. MAI 1940",
+   "loc:Eifel"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 4.3,
+  "t1": 7.5,
+  "type": "C",
+  "src": "F29_felsennest_bunker",
+  "desc": "Felsennest-Bunker (heute), Karte-im-Karte",
+  "txt": [
+   "lt:Führerhauptquartier Felsennest|bei Bad Münstereifel"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "card + blur"
+ },
+ {
+  "t0": 7.5,
+  "t1": 10.5,
+  "type": "V",
+  "src": "V02@hitler",
+  "desc": "Archivfilm: Hitler (Wochenschau-Aufnahme 1940)",
+  "txt": [
+   "word:AN BORD: ADOLF HITLER"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 10.5,
+  "t1": 15.0,
+  "type": "P",
+  "src": "F28_fhq_felsennest",
+  "desc": "Hitler mit Stab im Felsennest, Mai/Juni 1940 (Bundesarchiv)",
+  "txt": [
+   "lt:Felsennest|Mai 1940"
+  ],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "Ken Burns ->"
+ },
+ {
+  "t0": 15.0,
+  "t1": 17.4,
+  "type": "P",
+  "src": "F27_hitler_lage",
+  "desc": "Hitler mit Generälen am Kartentisch",
+  "txt": [
+   "word:SEIT ZWEI WOCHEN"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "zoom-in"
+ },
+ {
+  "t0": 17.4,
+  "t1": 22.2,
+  "type": "M",
+  "src": "m00_flug",
+  "desc": "Karte: Flugzeug fliegt vom Felsennest nach Charleville",
+  "txt": [],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "Kamera folgt Flugzeug"
+ },
+ {
+  "t0": 22.2,
+  "t1": 23.5,
+  "type": "P",
+  "src": "F23_rundstedt",
+  "desc": "Rundstedt (kurzer Schnitt)",
+  "txt": [
+   "word:HEERESGRUPPE A"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "zoom-in"
+ },
+ {
+  "t0": 23.5,
+  "t1": 28.2,
+  "type": "V",
+  "src": "V02@victory_march",
+  "desc": "Archivfilm: Wehrmacht-Kolonnen, Siegesstimmung Mai 1940",
+  "txt": [
+   "word:FAST ZU GUT"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 28.2,
+  "t1": 32.9,
+  "type": "M",
+  "src": "m01_lage@0",
+  "desc": "Karte: Kessel zieht sich zu (roter Ring), Stempel 400.000 MANN",
+  "txt": [],
+  "sfx": [
+   "whoosh",
+   "stamp"
+  ],
+  "move": "Kamera zoomt auf Kessel"
+ },
+ {
+  "t0": 32.9,
+  "t1": 37.6,
+  "type": "M",
+  "src": "m01_lage@4.7",
+  "desc": "Karte: Zoom auf Dünkirchen, gestrichelter Kreis",
+  "txt": [],
+  "sfx": [],
+  "move": "Kamera fährt nach Dünkirchen"
+ },
+ {
+  "t0": 37.6,
+  "t1": 42.2,
+  "type": "M",
+  "src": "m01_lage@9.4",
+  "desc": "Karte: Panzer am Aa-Kanal, „< 20 KM“",
+  "txt": [],
+  "sfx": [
+   "type"
+  ],
+  "move": "Kamera folgt Pfeil"
+ },
+ {
+  "t0": 42.2,
+  "t1": 44.9,
+  "type": "V",
+  "src": "V02@panzer_column",
+  "desc": "Archivfilm: Panzer rollen vorwärts",
+  "txt": [],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 44.9,
+  "t1": 47.6,
+  "type": "P",
+  "src": "F18_vormarsch",
+  "desc": "Vormarsch-Foto",
+  "txt": [
+   "word:1–2 TAGE"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Push-in"
+ },
+ {
+  "t0": 47.6,
+  "t1": 51.5,
+  "type": "P",
+  "src": "F30_hitler_kluge",
+  "desc": "Hitler an der Westfront 1940",
+  "txt": [
+   "word:DER BEFEHL"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 51.5,
+  "t1": 54.0,
+  "type": "P",
+  "src": "F17_panzer_wald",
+  "desc": "Panzer stehen im Wald",
+  "txt": [
+   "stamp:STOPP"
+  ],
+  "sfx": [
+   "whoosh",
+   "stamp"
+  ],
+  "move": "langsamer Zoom"
+ },
+ {
+  "t0": 54.0,
+  "t1": 56.9,
+  "type": "G",
+  "src": "clock",
+  "desc": "STOPP-UHR startet (00:00) über abgedunkeltem Panzerfoto",
+  "txt": [
+   "word:ZWEI VOLLE TAGE",
+   "clock:0"
+  ],
+  "sfx": [
+   "tick",
+   "type"
+  ],
+  "move": "Uhr tickt"
+ },
+ {
+  "t0": 56.9,
+  "t1": 60.1,
+  "type": "V",
+  "src": "V03@bef_digging",
+  "desc": "Archivfilm: Briten heben Stellungen aus",
+  "txt": [
+   "word:VERTEIDIGUNGSLINIE"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 60.1,
+  "t1": 64.6,
+  "type": "V",
+  "src": "V03@ships",
+  "desc": "Archivfilm: Schiffe sammeln sich / Hafen Dover",
+  "txt": [
+   "word:WUNDER VON DÜNKIRCHEN"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 64.6,
+  "t1": 69.0,
+  "type": "P",
+  "src": "F01_dunkirk_beach_queue",
+  "desc": "Soldaten in Schlangen am Strand von Dünkirchen",
+  "txt": [
+   "counter:338.000"
+  ],
+  "sfx": [
+   "whoosh",
+   "tick"
+  ],
+  "move": "Ken Burns ->"
+ },
+ {
+  "t0": 69.0,
+  "t1": 71.8,
+  "type": "P",
+  "src": "F06_dover_destroyer",
+  "desc": "Zerstörer voller Soldaten erreicht Dover",
+  "txt": [],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "zoom-in"
+ },
+ {
+  "t0": 71.8,
+  "t1": 74.6,
+  "type": "C",
+  "src": "F08_addison_road_tea",
+  "desc": "Gerettete Soldaten in London (Karte über Blur)",
+  "txt": [
+   "word:OHNE ARMEE?"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "card + blur"
+ },
+ {
+  "t0": 74.6,
+  "t1": 79.6,
+  "type": "G",
+  "src": "thumb",
+  "desc": "Thumbnail-Motiv: „WARUM STOPP?“ groß, Panzer + Hitler (Bezug zur Thumbnail)",
+  "txt": [
+   "title:WARUM STOPP?"
+  ],
+  "sfx": [
+   "hit",
+   "type"
+  ],
+  "move": "Push-in"
+ },
+ {
+  "t0": 79.6,
+  "t1": 81.6,
+  "type": "C",
+  "src": "F02_dunkirk_HU1137",
+  "desc": "Briten am Strand",
+  "txt": [
+   "word:ABSICHT?"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "card + blur"
+ },
+ {
+  "t0": 81.6,
+  "t1": 83.6,
+  "type": "C",
+  "src": "F26_goering",
+  "desc": "Göring",
+  "txt": [
+   "word:GÖRING?"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "card + blur"
+ },
+ {
+  "t0": 83.6,
+  "t1": 88.3,
+  "type": "P",
+  "src": "F24_halder_brauchitsch",
+  "desc": "Halder und Brauchitsch",
+  "txt": [
+   "word:MACHTKAMPF?"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 88.3,
+  "t1": 93.0,
+  "type": "G",
+  "src": "clock_rewind",
+  "desc": "Uhr dreht rückwärts über der Karte",
+  "txt": [
+   "word:DIE UHR ZURÜCK"
+  ],
+  "sfx": [
+   "tick",
+   "type"
+  ],
+  "move": "Uhrzeiger rückwärts"
+ },
+ {
+  "t0": 93.0,
+  "t1": 98.4,
+  "type": "G",
+  "src": "stamps3",
+  "desc": "Drei Akten, Stempel: LEGENDE / TEILWEISE WAHR / BELEGT",
+  "txt": [
+   "stamp:LEGENDE",
+   "stamp:TEILWEISE WAHR",
+   "stamp:BELEGT"
+  ],
+  "sfx": [
+   "stamp",
+   "stamp",
+   "stamp"
+  ],
+  "move": "Stempel nacheinander"
+ },
+ {
+  "t0": 98.4,
+  "t1": 101.0,
+  "type": "V",
+  "src": "V02@hitler_generals",
+  "desc": "Archivfilm: Hitler mit Generälen",
+  "txt": [],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 101.0,
+  "t1": 103.8,
+  "type": "C",
+  "src": "F30_hitler_kluge",
+  "desc": "Hitler 1940 (Karte über Blur)",
+  "txt": [
+   "word:DIE FALSCHESTE?"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "card + blur"
+ },
+ {
+  "t0": 103.8,
+  "t1": 110.4,
+  "type": "G",
+  "src": "F18_vormarsch",
+  "desc": "Kapitelkarte über abgedunkeltem Foto",
+  "txt": [
+   "chapter:TEIL 1|Zehn Tage im Mai"
+  ],
+  "sfx": [
+   "hit",
+   "type"
+  ],
+  "move": "langsamer Zoom"
+ },
+ {
+  "t0": 110.4,
+  "t1": 118.6,
+  "type": "V",
+  "src": "V02@may10_attack",
+  "desc": "Archivfilm: Angriff 10. Mai – Flugzeuge, Fallschirmjäger, Kolonnen",
+  "txt": [
+   "date:10. MAI 1940"
+  ],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 118.6,
+  "t1": 139.2,
+  "type": "M",
+  "src": "m02_fallgelb",
+  "desc": "Karte: Heeresgruppe B nach NL/Belgien, Eben-Emael, Alliierte nach Norden → Stempel EINE FALLE",
+  "txt": [],
+  "sfx": [
+   "whoosh",
+   "stamp"
+  ],
+  "move": "Kamera folgt Pfeilen"
+ },
+ {
+  "t0": 139.2,
+  "t1": 150.3,
+  "type": "M",
+  "src": "m03a_ardennen",
+  "desc": "Karte: Ardennen (Wald), Panzerkolonne, Stempel UNPASSIERBAR?",
+  "txt": [],
+  "sfx": [
+   "stamp"
+  ],
+  "move": "Kamera kippt in den Wald"
+ },
+ {
+  "t0": 150.3,
+  "t1": 155.5,
+  "type": "C",
+  "src": "F_manstein",
+  "desc": "Erich von Manstein (Porträt)",
+  "txt": [
+   "lt:Erich von Manstein|Vater des Plans",
+   "word:SICHELSCHNITT"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "card + blur"
+ },
+ {
+  "t0": 155.5,
+  "t1": 160.0,
+  "type": "P",
+  "src": "F17_panzer_wald",
+  "desc": "Panzer im Wald, Mai 1940",
+  "txt": [],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "Ken Burns ->"
+ },
+ {
+  "t0": 160.0,
+  "t1": 164.1,
+  "type": "V",
+  "src": "V02@ardennes_column",
+  "desc": "Archivfilm: endlose Kolonne",
+  "txt": [],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 164.1,
+  "t1": 169.2,
+  "type": "P",
+  "src": "F21_pontoon_maas",
+  "desc": "Pontonbrücke über die Maas bei Sedan",
+  "txt": [
+   "date:13. MAI 1940",
+   "lt:Sedan|Übergang über die Maas"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 169.2,
+  "t1": 192.5,
+  "type": "M",
+  "src": "m03b_sichel",
+  "desc": "Karte: Pfeil Sedan → Kanal, Kamera folgt Pfeilspitze, Guderian-Tag, Ankunft Noyelles",
+  "txt": [],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Kamera folgt Pfeilspitze"
+ },
+ {
+  "t0": 192.5,
+  "t1": 203.4,
+  "type": "M",
+  "src": "m03b_sichel@17",
+  "desc": "Karte: Korridor trennt alliierte Armeen – Stempel DURCHGESCHNITTEN",
+  "txt": [],
+  "sfx": [
+   "stamp"
+  ],
+  "move": "Kamera zoomt raus"
+ },
+ {
+  "t0": 203.4,
+  "t1": 209.4,
+  "type": "V",
+  "src": "V02@ww1_trenches",
+  "desc": "Archivfilm/Foto: Schützengräben 1914–1918",
+  "txt": [
+   "word:4 JAHRE"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 209.4,
+  "t1": 211.6,
+  "type": "G",
+  "src": "F18_vormarsch",
+  "desc": "Gegenschnitt",
+  "txt": [
+   "word:10 TAGE"
+  ],
+  "sfx": [
+   "hit",
+   "type"
+  ],
+  "move": "Push-in"
+ },
+ {
+  "t0": 211.6,
+  "t1": 215.6,
+  "type": "G",
+  "src": "F22_rommel_officers",
+  "desc": "Kapitelkarte",
+  "txt": [
+   "chapter:TEIL 2|Die Angst vor dem eigenen Erfolg"
+  ],
+  "sfx": [
+   "hit",
+   "type"
+  ],
+  "move": "langsamer Zoom"
+ },
+ {
+  "t0": 215.6,
+  "t1": 227.3,
+  "type": "M",
+  "src": "m04_arras",
+  "desc": "Karte: britischer Gegenangriff bei Arras (Matilda), Rommel-Tag",
+  "txt": [],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "Kamera fährt auf Arras"
+ },
+ {
+  "t0": 227.3,
+  "t1": 231.4,
+  "type": "C",
+  "src": "F22_rommel_officers",
+  "desc": "Rommel mit Offizieren, 1940",
+  "txt": [
+   "lt:Erwin Rommel|7. Panzer-Division"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "card + blur"
+ },
+ {
+  "t0": 231.4,
+  "t1": 236.8,
+  "type": "P",
+  "src": "F46_matilda",
+  "desc": "Matilda-II-Panzer",
+  "txt": [
+   "word:KAUM ZU KNACKEN"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 236.8,
+  "t1": 240.1,
+  "type": "V",
+  "src": "V02@flak",
+  "desc": "Archivfilm: Flak/Artillerie feuert",
+  "txt": [],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 240.1,
+  "t1": 243.7,
+  "type": "G",
+  "src": "F22_rommel_officers",
+  "desc": "Zitatkarte",
+  "txt": [
+   "quote:„Hunderte Panzer“|Rommels Meldung"
+  ],
+  "sfx": [
+   "type"
+  ],
+  "move": "langsamer Zoom"
+ },
+ {
+  "t0": 243.7,
+  "t1": 259.9,
+  "type": "M",
+  "src": "m04b_korridor",
+  "desc": "Karte: lange, dünne Panzerspitze, Zangen von Nord und Süd (gestrichelt)",
+  "txt": [],
+  "sfx": [
+   "whoosh",
+   "stamp"
+  ],
+  "move": "Kamera gleitet entlang Korridor"
+ },
+ {
+  "t0": 259.9,
+  "t1": 273.0,
+  "type": "C",
+  "src": "F23_rundstedt",
+  "desc": "Gerd von Rundstedt",
+  "txt": [
+   "lt:Gerd von Rundstedt|Oberbefehlshaber Heeresgruppe A",
+   "word:AUS ASCHERSLEBEN · 64 JAHRE"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "card + blur"
+ },
+ {
+  "t0": 273.0,
+  "t1": 280.0,
+  "type": "P",
+  "src": "F16_somua_destroyed",
+  "desc": "Zerstörte Panzer, Mai 1940",
+  "txt": [
+   "list:Zerschossen|Liegen geblieben|Verschlissen"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 280.0,
+  "t1": 284.8,
+  "type": "V",
+  "src": "V02@broken_tanks",
+  "desc": "Archivfilm: liegengebliebene Fahrzeuge",
+  "txt": [],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 284.8,
+  "t1": 290.6,
+  "type": "C",
+  "src": "F43_kleist",
+  "desc": "Ewald von Kleist",
+  "txt": [
+   "lt:Ewald von Kleist|Panzergruppe Kleist",
+   "counter:–50 %"
+  ],
+  "sfx": [
+   "whoosh",
+   "tick"
+  ],
+  "move": "card + blur"
+ },
+ {
+  "t0": 290.6,
+  "t1": 303.0,
+  "type": "M",
+  "src": "m04c_fallrot",
+  "desc": "Karte: Somme, französische Armee im Süden, Pfeil „Fall Rot“",
+  "txt": [],
+  "sfx": [
+   "whoosh",
+   "stamp"
+  ],
+  "move": "Kamera schwenkt nach Süden"
+ },
+ {
+  "t0": 303.0,
+  "t1": 308.0,
+  "type": "C",
+  "src": "F26_goering",
+  "desc": "Hermann Göring",
+  "txt": [
+   "lt:Hermann Göring|Oberbefehlshaber der Luftwaffe",
+   "date:23. MAI 1940"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "card + blur"
+ },
+ {
+  "t0": 308.0,
+  "t1": 313.6,
+  "type": "V",
+  "src": "V01_stuka_attack",
+  "desc": "Archivfilm: Stukas (Ju 87) im Angriff",
+  "txt": [
+   "quote:„Die Luftwaffe erledigt das allein.“|sinngemäß"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 313.6,
+  "t1": 318.3,
+  "type": "P",
+  "src": "F38_ju87",
+  "desc": "Ju 87 in Formation",
+  "txt": [],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 318.3,
+  "t1": 325.0,
+  "type": "P",
+  "src": "F24_halder_brauchitsch",
+  "desc": "Heer vs. Luftwaffe (Generäle)",
+  "txt": [
+   "word:PRESTIGE"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 325.0,
+  "t1": 334.1,
+  "type": "G",
+  "src": "F23_rundstedt",
+  "desc": "Befehlskarte (Fernschreiben-Stil) über Rundstedt",
+  "txt": [
+   "quote:„Anhalten. Aufschließen. Ordnen.“|Rundstedt, 23. Mai abends"
+  ],
+  "sfx": [
+   "type"
+  ],
+  "move": "langsamer Zoom"
+ },
+ {
+  "t0": 334.1,
+  "t1": 338.9,
+  "type": "G",
+  "src": "F27_hitler_lage",
+  "desc": "Kapitelkarte",
+  "txt": [
+   "chapter:TEIL 3|Charleville, 24. Mai"
+  ],
+  "sfx": [
+   "hit",
+   "type"
+  ],
+  "move": "langsamer Zoom"
+ },
+ {
+  "t0": 338.9,
+  "t1": 347.3,
+  "type": "P",
+  "src": "F27_hitler_lage",
+  "desc": "Hitler lässt sich die Lage erklären (Kartentisch)",
+  "txt": [
+   "date:24. MAI 1940"
+  ],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "Ken Burns ->"
+ },
+ {
+  "t0": 347.3,
+  "t1": 358.4,
+  "type": "M",
+  "src": "m05_halt",
+  "desc": "Karte: HALT-Stempel, Haltelinie zeichnet sich, Städte erscheinen synchron",
+  "txt": [],
+  "sfx": [
+   "stamp",
+   "type"
+  ],
+  "move": "Kamera folgt Linie"
+ },
+ {
+  "t0": 358.4,
+  "t1": 368.4,
+  "type": "C",
+  "src": "F24_halder_brauchitsch",
+  "desc": "Franz Halder",
+  "txt": [
+   "lt:Franz Halder|Generalstabschef · aus Würzburg"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "card + blur"
+ },
+ {
+  "t0": 368.4,
+  "t1": 378.6,
+  "type": "G",
+  "src": "F24_halder_brauchitsch",
+  "desc": "Tagebuch-Zitat (sinngemäß), Zeilen tippen sich",
+  "txt": [
+   "quote:„…werden auf ausdrücklichen Befehl des Führers festgehalten.“|Halder, Tagebuch (sinngemäß)"
+  ],
+  "sfx": [
+   "type"
+  ],
+  "move": "langsamer Zoom"
+ },
+ {
+  "t0": 378.6,
+  "t1": 394.7,
+  "type": "M",
+  "src": "m06_aa",
+  "desc": "Karte: Guderians Brückenkopf, Sichtlinie zu den Türmen Dünkirchens, Stempel SPRACHLOS",
+  "txt": [],
+  "sfx": [
+   "whoosh",
+   "stamp"
+  ],
+  "move": "Kamera kippt flach"
+ },
+ {
+  "t0": 394.7,
+  "t1": 404.3,
+  "type": "C",
+  "src": "F20_guderian_enigma",
+  "desc": "Guderian im Befehlsfahrzeug, Mai 1940",
+  "txt": [
+   "lt:Heinz Guderian|XIX. Armeekorps",
+   "word:QUELLE MIT VORSICHT"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "card + blur"
+ },
+ {
+  "t0": 404.3,
+  "t1": 414.0,
+  "type": "G",
+  "src": "clock",
+  "desc": "STOPP-UHR groß in der Mitte, beginnt zu laufen",
+  "txt": [
+   "word:AB JETZT LÄUFT DIE UHR",
+   "clock:0"
+  ],
+  "sfx": [
+   "tick",
+   "type"
+  ],
+  "move": "Uhr tickt"
+ },
+ {
+  "t0": 414.0,
+  "t1": 418.8,
+  "type": "P",
+  "src": "F_dover_cliffs",
+  "desc": "Kreidefelsen von Dover",
+  "txt": [
+   "clock:0",
+   "loc:Dover"
+  ],
+  "sfx": [
+   "tick",
+   "whoosh"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 418.8,
+  "t1": 424.1,
+  "type": "C",
+  "src": "F32_ramsay",
+  "desc": "Vizeadmiral Bertram Ramsay",
+  "txt": [
+   "lt:Bertram Ramsay|Vizeadmiral, Dover"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "card + blur"
+ },
+ {
+  "t0": 424.1,
+  "t1": 432.7,
+  "type": "V",
+  "src": "V03@ships",
+  "desc": "Archivfilm: Schiffe aller Art werden gesammelt",
+  "txt": [],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 432.7,
+  "t1": 435.7,
+  "type": "G",
+  "src": "F06_dover_destroyer",
+  "desc": "Großes Wort",
+  "txt": [
+   "title:OPERATION DYNAMO"
+  ],
+  "sfx": [
+   "hit",
+   "type"
+  ],
+  "move": "Push-in"
+ },
+ {
+  "t0": 435.7,
+  "t1": 444.7,
+  "type": "P",
+  "src": "F01_dunkirk_beach_queue",
+  "desc": "Strand voller Soldaten",
+  "txt": [
+   "counter:45.000?"
+  ],
+  "sfx": [
+   "whoosh",
+   "tick"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 444.7,
+  "t1": 448.3,
+  "type": "C",
+  "src": "F33_gort_art",
+  "desc": "Lord Gort (Gemälde 1940, IWM)",
+  "txt": [
+   "lt:Lord Gort|Oberbefehlshaber BEF",
+   "clock:12"
+  ],
+  "sfx": [
+   "whoosh",
+   "tick"
+  ],
+  "move": "card + blur"
+ },
+ {
+  "t0": 448.3,
+  "t1": 463.3,
+  "type": "M",
+  "src": "m07_perimeter",
+  "desc": "Karte: Rückzug zur Küste, Verteidigungsring entlang Kanälen, Bergues",
+  "txt": [],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "Kamera fährt zur Küste"
+ },
+ {
+  "t0": 463.3,
+  "t1": 474.0,
+  "type": "M",
+  "src": "m08_ringsum",
+  "desc": "Karte: Boulogne fällt, Calais hält",
+  "txt": [
+   "clock:24"
+  ],
+  "sfx": [
+   "tick"
+  ],
+  "move": "Kamera springt zwischen Städten"
+ },
+ {
+  "t0": 474.0,
+  "t1": 478.2,
+  "type": "P",
+  "src": "F40_calais_hafen",
+  "desc": "Calais, zerstörte Fahrzeuge im Hafen",
+  "txt": [
+   "date:26. MAI 1940"
+  ],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 478.2,
+  "t1": 491.4,
+  "type": "M",
+  "src": "m08_ringsum@14",
+  "desc": "Karte: Kessel von Lille, französische 1. Armee hält bis 31. Mai",
+  "txt": [],
+  "sfx": [
+   "type"
+  ],
+  "move": "Kamera auf Lille"
+ },
+ {
+  "t0": 491.4,
+  "t1": 500.5,
+  "type": "P",
+  "src": "F15_prisoners_column",
+  "desc": "Französische Soldaten (Kolonne)",
+  "txt": [
+   "word:VERGESSENE HELDEN"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 500.5,
+  "t1": 525.9,
+  "type": "M",
+  "src": "m09_dynamo",
+  "desc": "Karte: Uhr 48 h (rot), Haltebefehl aufgehoben, Schiffsrouten Dover → Dünkirchen, Panzer rollen wieder",
+  "txt": [
+   "clock:48"
+  ],
+  "sfx": [
+   "tick",
+   "stamp"
+  ],
+  "move": "Kamera folgt Schiffen"
+ },
+ {
+  "t0": 525.9,
+  "t1": 532.2,
+  "type": "V",
+  "src": "V03@beach_lines",
+  "desc": "Archivfilm: Schlangen von Soldaten am Strand",
+  "txt": [
+   "date:27. MAI – 4. JUNI"
+  ],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 532.2,
+  "t1": 537.8,
+  "type": "P",
+  "src": "F04_dunkirk_H1628",
+  "desc": "Soldaten warten am Strand",
+  "txt": [
+   "counter:7.669"
+  ],
+  "sfx": [
+   "whoosh",
+   "tick"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 537.8,
+  "t1": 549.5,
+  "type": "P",
+  "src": "F05_dunkirk_HU1135",
+  "desc": "Die Ostmole von Dünkirchen",
+  "txt": [
+   "loc:Die Ostmole",
+   "word:HOLZ UND BETON"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Ken Burns ->"
+ },
+ {
+  "t0": 549.5,
+  "t1": 561.5,
+  "type": "V",
+  "src": "V03@little_ships",
+  "desc": "Archivfilm: kleine Boote, Soldaten waten ins Wasser",
+  "txt": [
+   "list:Fischkutter|Ausflugsdampfer|Privatjachten"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 561.5,
+  "t1": 568.6,
+  "type": "V",
+  "src": "V01_stuka_attack",
+  "desc": "Archivfilm: Stuka-Angriff auf Schiffe",
+  "txt": [],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 568.6,
+  "t1": 576.8,
+  "type": "V",
+  "src": "V02@burning_harbour",
+  "desc": "Archivfilm: brennender Hafen, Rauch",
+  "txt": [
+   "word:BOMBEN IM SAND"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 576.8,
+  "t1": 584.2,
+  "type": "P",
+  "src": "F48_spitfire_he111",
+  "desc": "Spitfire und He 111, 1940",
+  "txt": [],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 584.2,
+  "t1": 591.0,
+  "type": "C",
+  "src": "F03_dunkirk_HU2280",
+  "desc": "Soldaten am Strand blicken nach oben",
+  "txt": [
+   "quote:„Wo ist die Royal Air Force?“"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "card + blur"
+ },
+ {
+  "t0": 591.0,
+  "t1": 595.0,
+  "type": "P",
+  "src": "F47_hurricane_lille",
+  "desc": "Hurricane der RAF in Frankreich",
+  "txt": [
+   "counter:> 100 FLUGZEUGE"
+  ],
+  "sfx": [
+   "whoosh",
+   "tick"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 595.0,
+  "t1": 605.6,
+  "type": "M",
+  "src": "m10_belgien",
+  "desc": "Karte: Belgien kapituliert, Lücke 30 km, Briten stopfen sie",
+  "txt": [],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "Kamera auf Ostflanke"
+ },
+ {
+  "t0": 605.6,
+  "t1": 611.6,
+  "type": "P",
+  "src": "F09_evac_HU2286",
+  "desc": "Evakuierung auf Schiffe",
+  "txt": [
+   "date:31. MAI 1940",
+   "counter:68.014"
+  ],
+  "sfx": [
+   "whoosh",
+   "tick"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 611.6,
+  "t1": 619.6,
+  "type": "P",
+  "src": "F06_dover_destroyer",
+  "desc": "Ankunft in England",
+  "txt": [
+   "date:4. JUNI 1940",
+   "counter:338.226"
+  ],
+  "sfx": [
+   "whoosh",
+   "tick"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 619.6,
+  "t1": 627.0,
+  "type": "G",
+  "src": "bars",
+  "desc": "Grafik: Balken 45.000 erwartet vs. 338.226 gerettet",
+  "txt": [
+   "word:ERWARTET: 45.000"
+  ],
+  "sfx": [
+   "tick",
+   "type"
+  ],
+  "move": "Balken wachsen"
+ },
+ {
+  "t0": 627.0,
+  "t1": 635.2,
+  "type": "G",
+  "src": "dossiers",
+  "desc": "Fünf Akten liegen auf dem Tisch",
+  "txt": [
+   "chapter:TEIL 5|Fünf Erklärungen im Faktencheck"
+  ],
+  "sfx": [
+   "hit",
+   "type"
+  ],
+  "move": "Push-in"
+ },
+ {
+  "t0": 635.2,
+  "t1": 641.2,
+  "type": "G",
+  "src": "dossier1",
+  "desc": "Akte 1 öffnet sich",
+  "txt": [
+   "chapter:ERKLÄRUNG 1|Absichtlich entkommen lassen?"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Push-in"
+ },
+ {
+  "t0": 641.2,
+  "t1": 652.4,
+  "type": "C",
+  "src": "F30_hitler_kluge",
+  "desc": "Hitler 1940",
+  "txt": [
+   "word:FRIEDEN MIT LONDON?"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "card + blur"
+ },
+ {
+  "t0": 652.4,
+  "t1": 664.0,
+  "type": "P",
+  "src": "F27_hitler_lage",
+  "desc": "Generäle (Befragung nach 1945 als Text)",
+  "txt": [
+   "list:Generäle in britischer Gefangenschaft|Hitlers Diktate, Februar 1945"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 664.0,
+  "t1": 676.8,
+  "type": "V",
+  "src": "V01_stuka_attack",
+  "desc": "Archivfilm: Luftwaffe bombardiert Schiffe",
+  "txt": [],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 676.8,
+  "t1": 685.4,
+  "type": "V",
+  "src": "V02@panzer_column",
+  "desc": "Archivfilm: Angriff mit voller Kraft",
+  "txt": [],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 685.4,
+  "t1": 688.0,
+  "type": "G",
+  "src": "dossier1",
+  "desc": "Urteil",
+  "txt": [
+   "stamp:LEGENDE"
+  ],
+  "sfx": [
+   "stamp"
+  ],
+  "move": "Stempel"
+ },
+ {
+  "t0": 688.0,
+  "t1": 691.4,
+  "type": "G",
+  "src": "dossier2",
+  "desc": "Akte 2",
+  "txt": [
+   "chapter:ERKLÄRUNG 2|Das Gelände"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Push-in"
+ },
+ {
+  "t0": 691.4,
+  "t1": 701.0,
+  "type": "M",
+  "src": "m11_flandern@0",
+  "desc": "Karte: Flandern, geflutete Flächen, Kanäle",
+  "txt": [],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "Kamera gleitet über Flandern"
+ },
+ {
+  "t0": 701.0,
+  "t1": 706.2,
+  "type": "C",
+  "src": "F31_hitler_wk1",
+  "desc": "Hitler als Soldat im Ersten Weltkrieg",
+  "txt": [
+   "lt:Gefreiter Hitler|List-Regiment, Flandern 1914"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "card + blur"
+ },
+ {
+  "t0": 706.2,
+  "t1": 720.8,
+  "type": "M",
+  "src": "m11_flandern@15",
+  "desc": "Karte: Ypern – dann Panzer auf Dämmen",
+  "txt": [],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "Kamera folgt Panzer"
+ },
+ {
+  "t0": 720.8,
+  "t1": 723.8,
+  "type": "G",
+  "src": "dossier2",
+  "desc": "Urteil",
+  "txt": [
+   "stamp:TEILWEISE WAHR"
+  ],
+  "sfx": [
+   "stamp"
+  ],
+  "move": "Stempel"
+ },
+ {
+  "t0": 723.8,
+  "t1": 728.9,
+  "type": "G",
+  "src": "dossier3",
+  "desc": "Akte 3",
+  "txt": [
+   "chapter:ERKLÄRUNG 3|Die Panzer waren am Ende"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Push-in"
+ },
+ {
+  "t0": 728.9,
+  "t1": 738.3,
+  "type": "P",
+  "src": "F16_somua_destroyed",
+  "desc": "Beschädigte Panzer",
+  "txt": [
+   "counter:~ 50 % AUSFALL"
+  ],
+  "sfx": [
+   "whoosh",
+   "tick"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 738.3,
+  "t1": 744.1,
+  "type": "P",
+  "src": "F19_sdkfz_funk",
+  "desc": "Fahrzeuge im Vormarsch",
+  "txt": [
+   "word:ZWEI TAGE?"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 744.1,
+  "t1": 746.5,
+  "type": "G",
+  "src": "dossier3",
+  "desc": "Urteil",
+  "txt": [
+   "stamp:TEILWEISE WAHR"
+  ],
+  "sfx": [
+   "stamp"
+  ],
+  "move": "Stempel"
+ },
+ {
+  "t0": 746.5,
+  "t1": 750.4,
+  "type": "G",
+  "src": "dossier4",
+  "desc": "Akte 4",
+  "txt": [
+   "chapter:ERKLÄRUNG 4|Görings Luftwaffe"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Push-in"
+ },
+ {
+  "t0": 750.4,
+  "t1": 764.3,
+  "type": "G",
+  "src": "flow4",
+  "desc": "Diagramm: Rundstedt → Haltebefehl ← Göring (Versprechen) → Hitler",
+  "txt": [
+   "word:ERLEICHTERT – NICHT AUSGELÖST"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Elemente erscheinen"
+ },
+ {
+  "t0": 764.3,
+  "t1": 768.0,
+  "type": "G",
+  "src": "dossier4",
+  "desc": "Urteil",
+  "txt": [
+   "stamp:BELEGT – ABER NICHT DER AUSLÖSER"
+  ],
+  "sfx": [
+   "stamp"
+  ],
+  "move": "Stempel"
+ },
+ {
+  "t0": 768.0,
+  "t1": 772.0,
+  "type": "G",
+  "src": "dossier5",
+  "desc": "Akte 5",
+  "txt": [
+   "chapter:ERKLÄRUNG 5|Ein Machtkampf"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Push-in"
+ },
+ {
+  "t0": 772.0,
+  "t1": 785.4,
+  "type": "G",
+  "src": "frieser",
+  "desc": "Buchkarte: Karl-Heinz Frieser, „Blitzkrieg-Legende“ (MGFA)",
+  "txt": [
+   "lt:Karl-Heinz Frieser|Militärgeschichtliches Forschungsamt"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Push-in"
+ },
+ {
+  "t0": 785.4,
+  "t1": 808.3,
+  "type": "G",
+  "src": "org5",
+  "desc": "Organigramm: OKH (Brauchitsch/Halder) nimmt Rundstedt die Panzer → Hitler macht es rückgängig",
+  "txt": [
+   "date:23./24. MAI 1940"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Pfeile animiert"
+ },
+ {
+  "t0": 808.3,
+  "t1": 820.0,
+  "type": "P",
+  "src": "F27_hitler_lage",
+  "desc": "Hitler mit Generälen",
+  "txt": [
+   "word:WER FÜHRT DIESEN KRIEG?"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 820.0,
+  "t1": 825.2,
+  "type": "P",
+  "src": "F30_hitler_kluge",
+  "desc": "Hitler",
+  "txt": [
+   "word:ICH ENTSCHEIDE."
+  ],
+  "sfx": [
+   "hit",
+   "type"
+  ],
+  "move": "Push-in"
+ },
+ {
+  "t0": 825.2,
+  "t1": 829.0,
+  "type": "G",
+  "src": "dossier5",
+  "desc": "Urteil",
+  "txt": [
+   "stamp:BELEGT – DER KERN"
+  ],
+  "sfx": [
+   "stamp"
+  ],
+  "move": "Stempel"
+ },
+ {
+  "t0": 829.0,
+  "t1": 846.7,
+  "type": "G",
+  "src": "dossiers_all",
+  "desc": "Alle fünf Akten + Uhr",
+  "txt": [
+   "list:Man glaubte, der Kessel laufe nicht weg.|Man glaubte, man habe Zeit.",
+   "clock:48"
+  ],
+  "sfx": [
+   "type",
+   "tick"
+  ],
+  "move": "Push-in"
+ },
+ {
+  "t0": 846.7,
+  "t1": 856.0,
+  "type": "V",
+  "src": "V02@abandoned",
+  "desc": "Archivfilm: Strand voller Wracks, deutsche Soldaten",
+  "txt": [
+   "date:4. JUNI 1940"
+  ],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 856.0,
+  "t1": 866.0,
+  "type": "P",
+  "src": "F42_strand_soldaten",
+  "desc": "Deutsche Soldaten am Strand, zurückgelassenes Material",
+  "txt": [
+   "list:Lastwagen|Geschütze|Motorräder"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 866.0,
+  "t1": 872.2,
+  "type": "P",
+  "src": "F15_prisoners_column",
+  "desc": "Kolonne alliierter Kriegsgefangener",
+  "txt": [
+   "counter:40.000 GEFANGENE"
+  ],
+  "sfx": [
+   "whoosh",
+   "tick"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 872.2,
+  "t1": 876.3,
+  "type": "V",
+  "src": "V02@newsreel",
+  "desc": "Archivfilm: Wochenschau-Siegesbilder",
+  "txt": [
+   "word:WOCHENSCHAU"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 876.3,
+  "t1": 884.0,
+  "type": "C",
+  "src": "F34_churchill",
+  "desc": "Winston Churchill",
+  "txt": [
+   "lt:Winston Churchill|Premierminister",
+   "quote:„Kriege werden nicht durch Evakuierungen gewonnen.“"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "card + blur"
+ },
+ {
+  "t0": 884.0,
+  "t1": 892.6,
+  "type": "V",
+  "src": "V03@churchill",
+  "desc": "Archivfilm: Churchill / britische Truppen",
+  "txt": [
+   "quote:„Wir werden an den Stränden kämpfen.“|Churchill, 4. Juni 1940"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 892.6,
+  "t1": 896.3,
+  "type": "P",
+  "src": "F35_paris_arc",
+  "desc": "Deutsche Truppen am Arc de Triomphe",
+  "txt": [
+   "date:14. JUNI 1940"
+  ],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 896.3,
+  "t1": 901.5,
+  "type": "P",
+  "src": "F44_compiegne_waggon",
+  "desc": "Compiègne, Waffenstillstand",
+  "txt": [
+   "date:22. JUNI 1940"
+  ],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 901.5,
+  "t1": 911.5,
+  "type": "V",
+  "src": "V03@uk_rebuild",
+  "desc": "Archivfilm: britische Armee baut sich neu auf",
+  "txt": [
+   "word:GROSSBRITANNIEN GIBT NICHT AUF"
+  ],
+  "sfx": [
+   "whoosh",
+   "type"
+  ],
+  "move": "zoom-in leve"
+ },
+ {
+  "t0": 911.5,
+  "t1": 918.0,
+  "type": "P",
+  "src": "F49_normandy",
+  "desc": "Normandie, 6. Juni 1944",
+  "txt": [
+   "date:JUNI 1944"
+  ],
+  "sfx": [
+   "whoosh"
+  ],
+  "move": "Ken Burns"
+ },
+ {
+  "t0": 918.0,
+  "t1": 923.4,
+  "type": "G",
+  "src": "thumb",
+  "desc": "Thumbnail-Motiv wiederholt",
+  "txt": [
+   "title:WARUM STOPP?"
+  ],
+  "sfx": [
+   "hit"
+  ],
+  "move": "Push-in"
+ },
+ {
+  "t0": 923.4,
+  "t1": 941.7,
+  "type": "G",
+  "src": "recap",
+  "desc": "Zusammenfassung: 4 Gründe tippen sich nacheinander (Icons: Panzer, Gelände, Flugzeug, Hitler)",
+  "txt": [
+   "list:Erschöpfte Panzer|Schlechtes Gelände|Leere Versprechen der Luftwaffe|Ein Diktator, der zeigen will, wer befiehlt"
+  ],
+  "sfx": [
+   "type"
+  ],
+  "move": "Push-in"
+ },
+ {
+  "t0": 941.7,
+  "t1": 949.0,
+  "type": "M",
+  "src": "m01_lage@5",
+  "desc": "Karte: Kessel noch einmal, Uhr 48 h",
+  "txt": [
+   "clock:48"
+  ],
+  "sfx": [
+   "tick"
+  ],
+  "move": "Kamera gleitet"
+ },
+ {
+  "t0": 949.0,
+  "t1": 954.7,
+  "type": "G",
+  "src": "split",
+  "desc": "Gegenüberstellung: 10 TAGE vs. 4 JAHRE",
+  "txt": [
+   "word:10 TAGE · 4 JAHRE"
+  ],
+  "sfx": [
+   "hit",
+   "type"
+  ],
+  "move": "Split"
+ },
+ {
+  "t0": 954.7,
+  "t1": 960.6,
+  "type": "G",
+  "src": "split",
+  "desc": "Verspielt in zwei",
+  "txt": [
+   "word:VERSPIELT IN ZWEI"
+  ],
+  "sfx": [
+   "hit",
+   "type"
+  ],
+  "move": "Push-in"
+ },
+ {
+  "t0": 960.6,
+  "t1": 966.6,
+  "type": "M",
+  "src": "m12_england",
+  "desc": "Karte: England allein hinter dem Kanal",
+  "txt": [],
+  "sfx": [
+   "whoosh",
+   "stamp"
+  ],
+  "move": "Kamera über den Kanal"
+ },
+ {
+  "t0": 966.6,
+  "t1": 979.6,
+  "type": "V",
+  "src": "V03@battle_of_britain",
+  "desc": "Teaser: Luftschlacht/Seelöwe – Endkarte",
+  "txt": [
+   "chapter:NÄCHSTES VIDEO|Unternehmen Seelöwe"
+  ],
+  "sfx": [
+   "hit",
+   "type"
+  ],
+  "move": "zoom-in leve"
+ }
+]

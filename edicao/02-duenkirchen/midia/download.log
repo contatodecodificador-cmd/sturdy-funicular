@@ -1,0 +1,29 @@
+skip midia/commons/F01_dunkirk_beach_queue.jpg
+skip midia/commons/F02_dunkirk_HU1137.jpg
+  retry 0 Dunkirk_1940_HU2280.jpg HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok midia/commons/F03_dunkirk_HU2280.jpg 539 KB
+ok midia/commons/F04_dunkirk_H1628.jpg 845 KB
+ok midia/commons/F05_dunkirk_HU1135.jpg 455 KB
+ok midia/commons/F06_dover_destroyer.jpg 672 KB
+  retry 0 Wounded_British_soldiers_evacuated_from_Dunkirk_make_their_w HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 1 Wounded_British_soldiers_evacuated_from_Dunkirk_make_their_w HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 2 Wounded_British_soldiers_evacuated_from_Dunkirk_make_their_w HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 3 Wounded_British_soldiers_evacuated_from_Dunkirk_make_their_w HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+skip midia/commons/F01_dunkirk_beach_queue.jpg
+skip midia/commons/F02_dunkirk_HU1137.jpg
+skip midia/commons/F03_dunkirk_HU2280.jpg
+skip midia/commons/F04_dunkirk_H1628.jpg
+skip midia/commons/F05_dunkirk_HU1135.jpg
+skip midia/commons/F06_dover_destroyer.jpg
+ok midia/commons/F07_dover_wounded.jpg 595 KB
+  retry 0 Troops_evacuated_from_Dunkirk_enjoying_tea_and_other_refresh HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok midia/commons/F08_addison_road_tea.jpg 561 KB
+  retry 0 The_British_Evacuation_From_Dunkirk_in_1940_HU2286.jpg HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 1 The_British_Evacuation_From_Dunkirk_in_1940_HU2286.jpg HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 2 The_British_Evacuation_From_Dunkirk_in_1940_HU2286.jpg HTTP Error 429: Too many requests (f061ab2)
+  retry 3 The_British_Evacuation_From_Dunkirk_in_1940_HU2286.jpg HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok midia/commons/F09_evac_HU2286.jpg 974 KB
+ok midia/commons/F10_retreat_HU104600.jpg 328 KB
+  retry 0 The_British_Army_in_the_United_Kingdom-_Evacuation_From_Dunk HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 1 The_British_Army_in_the_United_Kingdom-_Evacuation_From_Dunk HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 2 The_British_Army_in_the_United_Kingdom-_Evacuation_From_Dunk HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)

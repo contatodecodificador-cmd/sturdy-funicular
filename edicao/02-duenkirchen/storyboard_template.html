@@ -1,0 +1,45 @@
+<title>Storyboard Dünkirchen 1940</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@700&family=Barlow+Condensed:wght@500;600&family=Barlow:wght@400;500&display=swap">
+<style>
+/* Layout: film-strip contact sheet — one row per shot, image left, cue sheet right; section slates between parts */
+:root {
+  --bg: #f1ece2; --panel: #fbf8f2; --fg: #221d18; --muted: #6d6257; --line: #d8cfc0; --accent: #a8342a; --tag: #e7dfd0;
+  --display: "Stardos Stencil", "Georgia", serif; --body: "Barlow", system-ui, sans-serif; --cond: "Barlow Condensed", "Arial Narrow", sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #171411; --panel: #211d19; --fg: #eee6d8; --muted: #a39887; --line: #3a332c; --accent: #e0675a; --tag: #2c2621; color-scheme: dark } }
+:root[data-theme="dark"] { --bg: #171411; --panel: #211d19; --fg: #eee6d8; --muted: #a39887; --line: #3a332c; --accent: #e0675a; --tag: #2c2621; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 16px/1.45 var(--body); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px }
+.wrap { max-width: 1180px; margin: 0 auto; display: grid; gap: 18px }
+header h1 { font: 700 clamp(30px, 5vw, 52px)/1.05 var(--display); margin: 0; letter-spacing: .02em; text-wrap: balance }
+header p { margin: 6px 0 0; color: var(--muted); max-width: 70ch }
+.legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px }
+.legend span { font: 600 13px var(--cond); letter-spacing: .06em; text-transform: uppercase; background: var(--tag); padding: 4px 10px; border-radius: 3px }
+.legend span::before { content: ""; display: inline-block; width: 9px; height: 9px; margin-right: 6px; border-radius: 50%; background: var(--c) }
+.sec { font: 700 26px var(--display); margin: 26px 0 4px; padding-top: 14px; border-top: 3px solid var(--fg); letter-spacing: .03em }
+.shot { display: grid; grid-template-columns: minmax(0, 560px) minmax(0, 1fr); gap: 20px; background: var(--panel); border: 1px solid var(--line); border-left: 6px solid var(--c); padding: 12px; border-radius: 4px }
+.tV { --c: #7d6a4f } .tP { --c: #b08d57 } .tC { --c: #8a6f9e } .tM { --c: #c46a5c } .tG { --c: #4f6f88 }
+.img { position: relative; min-width: 0 }
+.img img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 2px; max-width: 100% }
+.n { position: absolute; left: 8px; top: 8px; background: #000c; color: #fff; font: 600 14px var(--cond); padding: 2px 8px; letter-spacing: .05em }
+.miss { position: absolute; right: 8px; top: 8px; background: var(--accent); color: #fff; font: 600 13px var(--cond); padding: 2px 8px; text-transform: uppercase; letter-spacing: .05em }
+.meta { min-width: 0; display: grid; gap: 6px; align-content: start }
+.tc { font: 600 20px var(--cond); font-variant-numeric: tabular-nums; letter-spacing: .02em }
+.tc span { color: var(--muted); font-weight: 500; margin-left: 8px }
+.ty { font: 600 13px var(--cond); text-transform: uppercase; letter-spacing: .08em; color: var(--c) }
+.meta p { margin: 0 }
+.meta ul { margin: 0; padding-left: 18px; font-size: 15px }
+.meta ul b { font: 600 12px var(--cond); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-right: 4px }
+.mv { font-size: 14px; color: var(--muted) }
+.src { font: 500 13px var(--cond); color: var(--muted); word-break: break-all }
+@media (max-width: 760px) { .shot { grid-template-columns: 1fr } }
+</style>
+<div class="wrap">
+<header>
+  <h1>Dünkirchen 1940 · Storyboard</h1>
+  <p><!--COUNT--> planos sincronizados com a narração (16:20). Cada quadro mostra o visual planejado no meio do plano. Os planos marcados como „mídia pendente“ ainda aguardam o download do material de arquivo; os mapas já são quadros reais do motor de animação.</p>
+  <div class="legend"><span style="--c:#7d6a4f">Vídeo de arquivo</span><span style="--c:#b08d57">Foto com zoom</span><span style="--c:#8a6f9e">Cartão + desfoque</span><span style="--c:#c46a5c">Mapa 3D</span><span style="--c:#4f6f88">Gráfico / texto</span></div>
+</header>
+<!--SHOTS-->
+</div>
