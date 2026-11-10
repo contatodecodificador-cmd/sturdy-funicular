@@ -111,3 +111,25 @@ skip commons/F17_panzer_wald.jpg
   retry 4 Bundesarchiv_Bild_146-1985-038-06,_Westfeldzug,_deutscher_Vo HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
   retry 5 Bundesarchiv_Bild_146-1985-038-06,_Westfeldzug,_deutscher_Vo HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
   retry 6 Bundesarchiv_Bild_146-1985-038-06,_Westfeldzug,_deutscher_Vo HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 7 Bundesarchiv_Bild_146-1985-038-06,_Westfeldzug,_deutscher_Vo HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok commons/F18_vormarsch.jpg 173 KB
+  retry 0 Bundesarchiv_Bild_101I-769-0235-32,_Frankreich,_Schützenpanz HTTP Error 429: Too many requests (f061ab2)
+  retry 1 Bundesarchiv_Bild_101I-769-0235-32,_Frankreich,_Schützenpanz HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok commons/F19_sdkfz_funk.jpg 291 KB
+  retry 0 Bundesarchiv_Bild_146-1978-062-24,_Floing,_Pontonbrücke_über HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 1 Bundesarchiv_Bild_146-1978-062-24,_Floing,_Pontonbrücke_über HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 2 Bundesarchiv_Bild_146-1978-062-24,_Floing,_Pontonbrücke_über HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 3 Bundesarchiv_Bild_146-1978-062-24,_Floing,_Pontonbrücke_über HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 4 Bundesarchiv_Bild_146-1978-062-24,_Floing,_Pontonbrücke_über HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 5 Bundesarchiv_Bild_146-1978-062-24,_Floing,_Pontonbrücke_über HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 6 Bundesarchiv_Bild_146-1978-062-24,_Floing,_Pontonbrücke_über HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 7 Bundesarchiv_Bild_146-1978-062-24,_Floing,_Pontonbrücke_über HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok commons/F21_pontoon_maas.jpg 391 KB
+  retry 0 Bundesarchiv_Bild_183-E00780,_Walther_von_Brauchitsch.jpg HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 1 Bundesarchiv_Bild_183-E00780,_Walther_von_Brauchitsch.jpg HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+  retry 2 Bundesarchiv_Bild_183-E00780,_Walther_von_Brauchitsch.jpg HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)
+ok commons/F25_brauchitsch.jpg 368 KB
+  retry 0 Bundesarchiv_Bild_146-1971-070-61,_Hitler_mit_Generälen_bei_ HTTP Error 404: Not Found
+  retry 1 Bundesarchiv_Bild_146-1971-070-61,_Hitler_mit_Generälen_bei_ HTTP Error 404: Not Found
+  retry 2 Bundesarchiv_Bild_146-1971-070-61,_Hitler_mit_Generälen_bei_ HTTP Error 404: Not Found
+  retry 3 Bundesarchiv_Bild_146-1971-070-61,_Hitler_mit_Generälen_bei_ HTTP Error 429: Your request does not comply with our robot policy, https://w.wiki/4wJS. Please contact noc@wikimedia.org for further information (0fa5166)

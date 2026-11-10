@@ -6,3 +6,5 @@ edicao/*/midia/commons/*.ogv
 edicao/*/render/
 edicao/*/midia/video/
 edicao/*/storyboard/maps/
+*.log
+edicao/*/*.mp4
