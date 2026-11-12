@@ -1,6 +1,6 @@
 # Um Vira-Lata Caramelo Sobreviveria ao Brasil Pré-Histórico?
 
-**Formato:** vídeo longo, ~16–18 min (~2.900 palavras narradas)
+**Formato:** vídeo longo, ~14–15 min (~2.350 palavras narradas; as marcações de tempo são aproximadas)
 **Tom:** conversa com o espectador ("você", "seu caramelo"), frases curtas, humor seco, dados concretos
 **Notas visuais** entre colchetes `[VISUAL: ...]` são para a edição — não são narradas.
 
