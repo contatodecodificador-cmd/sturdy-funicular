@@ -122,9 +122,9 @@ td a{{color:var(--ink)}}
 </style>
 <div class="wrap">
 <header>
-<p class="eyebrow">Storyboard · versão 1 para aprovação</p>
+<p class="eyebrow">Storyboard · versão final (quadros do vídeo renderizado)</p>
 <h1>Um Vira-Lata Caramelo Sobreviveria ao Brasil Pré-Histórico?</h1>
-<p class="lede">Cada quadro é uma cena do vídeo, sincronizada com a narração da voz Davi Andrei. As imagens vêm do Wikimedia Commons, com licença livre; os gráficos 2D, a correção de cor e os efeitos sonoros foram criados para o canal. Os tempos são aproximados (±1 s) e serão ajustados na edição final.</p>
+<p class="lede">Cada quadro é uma cena do vídeo, sincronizada com a narração da voz Davi Andrei. As imagens vêm do Wikimedia Commons, com licença livre; os gráficos 2D, a correção de cor e os efeitos sonoros foram criados para o canal. Os tempos foram sincronizados palavra por palavra com a narração.</p>
 <div class="stats"><div><b>{len(B)}</b><span>cenas</span></div><div><b>{tc(total)}</b><span>duração</span></div><div><b>{sum(durs) / len(durs):.1f} s</b><span>plano médio</span></div>
 <div><b>{max(durs):.1f} s</b><span>plano mais longo</span></div><div><b>{ngfx}</b><span>gráficos 2D</span></div><div><b>{len(srcs)}</b><span>imagens de banco</span></div><div><b>{nmiss}</b><span>cenas sem imagem</span></div></div>
 </header>

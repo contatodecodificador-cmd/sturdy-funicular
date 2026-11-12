@@ -173,7 +173,10 @@ def tier_list(filled=None, highlight=None, title='QUANTO TEMPO O CARAMELO AGUENT
     y = 160; rh = 116
     for k, desc, col in TIER:
         hl = highlight == k
-        d.rounded_rectangle([160, y, 1760, y + rh - 14], 8, fill=(48, 42, 36) if hl else DARK)
+        d.rounded_rectangle([160, y, 1760, y + rh - 14], 8, fill=(66, 54, 40) if hl else DARK)
+        if hl:
+            d.rounded_rectangle([150, y - 8, 1770, y + rh - 6], 12, outline=CARAMEL, width=6)
+            d.polygon([(1800, y + 30), (1840, y + 51), (1800, y + 72)], fill=CARAMEL)
         d.rounded_rectangle([160, y, 620, y + rh - 14], 8, fill=col)
         kf = serif(70, 900) if k != '✕' else ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 60)
         d.text((190, y + 14 if k != '✕' else y + 20), k, font=kf, fill=BG)
@@ -242,16 +245,21 @@ def put(base, *overlays):
 
 # ---------- extras ----------
 
-def kinetic(text, pos='center', size=150, color=CREAM, box=False):
-    """Texto grande animado (entra palavra por palavra) — usado na intro."""
+def kinetic(text, pos='center', size=150, color=CREAM, box=True):
+    """Texto de impacto no centro, sempre sobre caixa escura para destacar da imagem."""
     o = Image.new('RGBA', (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(o)
     f = serif(size, 900); lines = text.split('\n')
-    lh = int(size * 1.15); y = (H - lh * len(lines)) / 2 if pos == 'center' else H - 220 - lh * len(lines)
-    for ln in lines:
-        w = d.textlength(ln, font=f); x = (W - w) / 2
-        if box: d.rectangle([x - 30, y + 10, x + w + 30, y + lh], fill=(18, 16, 14, 190))
-        d.text((x + 4, y + 4), ln, font=f, fill=(0, 0, 0, 140)); d.text((x, y), ln, font=f, fill=color)
-        y += lh
+    lh = int(size * 1.18); tot = lh * len(lines)
+    y0 = (H - tot) / 2 if pos == 'center' else H - 260 - tot
+    ws = [d.textlength(ln, font=f) for ln in lines]; bw = max(ws)
+    if box:
+        px, py = 70, 44
+        d.rounded_rectangle([(W - bw) / 2 - px, y0 - py + 10, (W + bw) / 2 + px, y0 + tot + py - 6], 22, fill=(18, 16, 14, 200))
+        d.rectangle([(W - bw) / 2 - px, y0 + tot + py - 14, (W + bw) / 2 + px, y0 + tot + py - 6], fill=CARAMEL + (255,))
+    y = y0
+    for ln, w in zip(lines, ws):
+        x = (W - w) / 2
+        d.text((x, y), ln, font=f, fill=color); y += lh
     return o
 
 
@@ -262,7 +270,7 @@ def stamp(text, ok=False):
     f = sans(64, 900); s = ('✓ ' if ok else '✕ ') + text.upper()
     fd = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 64)
     w = d.textlength(s, font=fd) + 60
-    d.rounded_rectangle([10, 40, 10 + w, 170], 14, outline=col, width=10)
+    d.rounded_rectangle([10, 40, 10 + w, 170], 14, fill=(18, 16, 14, 225), outline=col, width=10)
     d.text((40, 62), s, font=fd, fill=col)
     t = t.rotate(-8, expand=True, resample=Image.BICUBIC)
     o = Image.new('RGBA', (W, H), (0, 0, 0, 0)); o.alpha_composite(t, (110, 90))
