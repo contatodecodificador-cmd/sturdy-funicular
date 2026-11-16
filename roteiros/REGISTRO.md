@@ -26,3 +26,5 @@ Antes de escrever um roteiro novo, ler esta tabela e **não repetir** a estrutur
 - Público italiano 45+: linguagem simples, referência italiana específica e correta.
 - A promessa do título começa a ser cumprida logo após a introdução; a introdução antecipa o que vem.
 - Escrito pensando na edição 2D (cenas visuais, mapas, relógios, personagens).
+- **Texto na tela (regra da edição):** só quando for necessário — apresentação de personagem/navio (letreiro), **palavra de impacto** (entra com impacto: tranco, zoom e som) e **pergunta** ao público. Nada de legendas descritivas em todas as cenas.
+- **Material real:** fotos e filmes reais de domínio público, sempre ligados ao que está sendo narrado e à história; com a fonte na tela. Evitar Istituto Luce e British Pathé (Content ID).
