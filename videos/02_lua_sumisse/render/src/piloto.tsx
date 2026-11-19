@@ -6,12 +6,12 @@ import {useT, Cena, Rotulo, Caixa} from './ui';
 import {Mapa, Pin, prog, sm, clamp01} from './prims';
 import {brasil, mundo, orto, pathOf, pt} from './geo';
 
-const lerp = (a: number, b: number, k: number) => a + (b - a) * k;
-const rnd = (i: number) => {
+export const lerp = (a: number, b: number, k: number) => a + (b - a) * k;
+export const rnd = (i: number) => {
   const x = Math.sin(i * 12.9898 + 78.233) * 43758.5453;
   return x - Math.floor(x);
 };
-const K = (t: number, a: number, b: number) => sm(prog(t, a, b));
+export const K = (t: number, a: number, b: number) => sm(prog(t, a, b));
 
 // =================== LUA (2D) ===================
 export const Lua: React.FC<{x: number; y: number; r: number; on?: number; ghost?: number; id: string}> = ({x, y, r, on = 1, ghost = 0, id}) => (
@@ -73,7 +73,7 @@ export const Estrelas: React.FC<{k: number; via?: number; tmul?: number}> = ({k,
   );
 };
 
-const Acai: React.FC<{x: number; y: number; h: number; c: string; s?: number}> = ({x, y, h, c, s = 1}) => {
+export const Acai: React.FC<{x: number; y: number; h: number; c: string; s?: number}> = ({x, y, h, c, s = 1}) => {
   const top: [number, number] = [x + 10 * s, y - h];
   const fr = [-1.1, -0.7, -0.3, 0.2, 0.6, 1.0, 1.3];
   return (
@@ -153,7 +153,7 @@ export const Mandacaru2: React.FC<{x: number; y: number; h: number; c: string; s
     </g>
   );
 };
-const Juazeiro: React.FC<{x: number; y: number; s: number; c: string}> = ({x, y, s, c}) => (
+export const Juazeiro: React.FC<{x: number; y: number; s: number; c: string}> = ({x, y, s, c}) => (
   <g fill={c}>
     <path d={`M${x - 6 * s},${y} L${x - 4 * s},${y - 40 * s} L${x - 22 * s},${y - 64 * s} M${x - 4 * s},${y - 40 * s} L${x + 18 * s},${y - 66 * s}`} {...lim(c, 8 * s)} />
     {[[-40, -78, 34], [-8, -96, 40], [30, -80, 34], [0, -70, 30], [-26, -64, 24], [26, -62, 24]].map(([a, b, r], i) => <circle key={i} cx={x + a * s} cy={y + b * s} r={r * s} />)}
@@ -173,7 +173,7 @@ const CasaTaipa: React.FC<{x: number; y: number; c: string; janela: number}> = (
 const MATA_F = Array.from({length: 60}, (_, i) => ({x: i * 34 - 20, h: 26 + rnd(i + 1300) * 34}));
 const MATA = Array.from({length: 46}, (_, i) => ({x: i * 44 - 20 + rnd(i + 300) * 20, h: 40 + rnd(i + 400) * 60}));
 const ACAIS = Array.from({length: 13}, (_, i) => ({x: 60 + i * 150 + rnd(i + 500) * 70, h: 120 + rnd(i + 600) * 70}));
-const Palafita: React.FC<{x: number; y: number; c: string; luz: number; s?: number; noite: number}> = ({x, y, c, luz, s = 1, noite}) => {
+export const Palafita: React.FC<{x: number; y: number; c: string; luz: number; s?: number; noite: number}> = ({x, y, c, luz, s = 1, noite}) => {
   const mad = `rgb(${lerp(122, 40, noite)},${lerp(86, 30, noite)},${lerp(56, 26, noite)})`;
   const tel = `rgb(${lerp(150, 46, noite)},${lerp(70, 26, noite)},${lerp(44, 22, noite)})`;
   return (
@@ -189,7 +189,7 @@ const Palafita: React.FC<{x: number; y: number; c: string; luz: number; s?: numb
     </g>
   );
 };
-export const Rio: React.FC<{noite: number; lua: number; luaGhost?: number; onda: number; ondaAlt: number; lx?: number; ly?: number}> = ({noite, lua, luaGhost = 0, onda, ondaAlt, lx = 1540, ly = 330}) => {
+export const Rio: React.FC<{noite: number; lua: number; luaGhost?: number; onda: number; ondaAlt: number; lx?: number; ly?: number; festival?: number; parados?: number; canoa?: boolean}> = ({noite, lua, luaGhost = 0, onda, ondaAlt, lx = 1540, ly = 330, festival = 0, parados = 0, canoa = true}) => {
   const t = useT();
   const hz = 600;
   const ceuTop = `rgb(${lerp(40, 8, noite)},${lerp(52, 14, noite)},${lerp(98, 30, noite)})`;
@@ -226,7 +226,7 @@ export const Rio: React.FC<{noite: number; lua: number; luaGhost?: number; onda:
         })}
         {lua > 0.01 && Array.from({length: 9}, (_, i) => <rect key={i} x={lx - 60 + Math.sin(t * 2 + i) * 14} y={hz + 40 + i * 30} width={120 - i * 8} height={4} rx={2} fill="#fff3d0" opacity={0.35 * lua} />)}
         {/* canoa com ribeirinho, na frente da onda */}
-        {(() => {
+        {canoa && (() => {
           const cx = 1180 + Math.sin(t * 0.6) * 6, cy = 880 + Math.sin(t * 1.4) * 3;
           return (
             <g transform={`translate(${cx},${cy})`} opacity={fx < 1060 ? 1 : 1 - clamp01((fx - 1060) / 120)}>
@@ -269,6 +269,25 @@ export const Rio: React.FC<{noite: number; lua: number; luaGhost?: number; onda:
             </g>
           );
         })()}
+        {festival > 0 && (
+          <g opacity={festival}>
+            {Array.from({length: 7}, (_, i) => {
+              const x = 420 + i * 110, h = 60 + (i % 3) * 14, cs = ['#e76f51', '#2a9d8f', '#e9c46a', '#f4a261', '#8ecae6', '#e63946', '#90be6d'][i];
+              return <g key={'cs' + i}><rect x={x} y={hz + 18 - h} width={96} height={h} fill={cs} opacity={lerp(1, 0.45, noite)} /><path d={`M${x - 6},${hz + 20 - h} L${x + 48},${hz - 8 - h} L${x + 102},${hz + 20 - h} Z`} fill="#7a3b26" opacity={lerp(1, 0.5, noite)} /><rect x={x + 38} y={hz - 18} width={20} height={34} fill="#3a2418" /></g>;
+            })}
+            <path d={`M380,${hz - 120} Q800,${hz - 70} 1240,${hz - 120}`} stroke="#ddd" strokeWidth={1.5} fill="none" />
+            {Array.from({length: 22}, (_, i) => { const k = i / 21, x = lerp(380, 1240, k), y = hz - 120 + Math.sin(k * Math.PI) * 50; return <path key={'bd' + i} d={`M${x - 10},${y} L${x + 10},${y} L${x},${y + 18} Z`} fill={['#e63946', '#f4c430', '#2ba84a', '#1e6fd9'][i % 4]} />; })}
+          </g>
+        )}
+        {parados > 0 && [0, 1, 2].map((i) => (
+          <g key={'pa' + i} opacity={parados} transform={`translate(${520 + i * 300},${800 + Math.sin(t * 1.2 + i) * 4})`}>
+            <path d="M-70,6 Q-10,-6 74,-2 Q84,2 72,8 Q0,14 -64,12 Z" fill={['#e9c46a', '#e76f51', '#8ecae6'][i]} />
+            <path d="M-10,0 L-26,34 M10,0 L24,34" stroke={corpo} strokeWidth={12} strokeLinecap="round" />
+            <path d="M-12,2 L12,2 L8,-44 L-8,-44 Z" fill={corpo} stroke={corpo} strokeWidth={8} strokeLinejoin="round" />
+            <circle cx={0} cy={-60} r={12} fill={corpo} />
+            <path d="M-6,-38 L-22,-10 M6,-38 L22,-10" stroke={corpo} strokeWidth={8} strokeLinecap="round" />
+          </g>
+        ))}
         {/* vegetação da margem de cá (aninga) */}
         {Array.from({length: 7}, (_, i) => <path key={'an' + i} d={`M${i * 30 - 20},1080 Q${i * 30 - 10},${980 - (i % 3) * 30} ${i * 30 + 10},${950 - (i % 2) * 40} Q${i * 30 + 4},${990} ${i * 30 + 6},1080 Z`} fill="#06080a" />)}
         {Array.from({length: 6}, (_, i) => <path key={'an2' + i} d={`M${1960 - i * 34},1080 Q${1950 - i * 34},${990 - (i % 3) * 30} ${1920 - i * 34},${960 - (i % 2) * 36} Q${1930 - i * 34},${1000} ${1928 - i * 34},1080 Z`} fill="#06080a" />)}
@@ -389,7 +408,7 @@ export const EspacoReal: React.FC<{drift?: number; dim?: number}> = ({drift = 1,
   const t = useT();
   return (
     <AbsoluteFill style={{background: '#03050a'}}>
-      <Img src={staticFile('espaco.jpg')} style={{position: 'absolute', width: 1920, height: 1080, opacity: dim, transform: `scale(${1.06 + t * 0.0004 * drift}) translate(${-t * 1.5 * drift}px, ${t * 0.4 * drift}px)`}} />
+      <Img src={staticFile('espaco.jpg')} style={{position: 'absolute', width: 1920, height: 1080, opacity: dim, transform: `scale(1.14) translate(${Math.sin(t * 0.035) * Math.min(90, 30 * drift)}px, ${Math.cos(t * 0.027) * Math.min(40, 12 * drift)}px)`}} />
       <AbsoluteFill style={{background: 'radial-gradient(ellipse 60% 45% at 75% 30%, rgba(30,120,130,0.22), transparent 70%), radial-gradient(ellipse 50% 40% at 18% 72%, rgba(40,70,150,0.20), transparent 70%)', mixBlendMode: 'screen'}} />
       <AbsoluteFill style={{background: 'radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.6) 100%)'}} />
     </AbsoluteFill>
@@ -427,7 +446,14 @@ export const Tag: React.FC<{x: number; y: number; cor?: string; children: React.
 
 // =================== CRONÔMETRO ===================
 const two = (n: number) => String(Math.floor(n)).padStart(2, '0');
-export const fmtCron = (s: number) => `${two(s / 3600)}:${two((s % 3600) / 60)}:${two(s % 60)},${Math.floor((s * 10) % 10)}`;
+export const fmtCron = (s: number) => {
+  const D = 86400, A = 365.25 * D;
+  if (s < D) return `${two(s / 3600)}:${two((s % 3600) / 60)}:${two(s % 60)},${Math.floor((s * 10) % 10)}`;
+  if (s < 60 * D) return `${Math.floor(s / D)} ${Math.floor(s / D) === 1 ? 'DIA' : 'DIAS'} ${two((s % D) / 3600)}:${two((s % 3600) / 60)}`;
+  if (s < A) return `${Math.floor(s / (30.44 * D))} MESES`;
+  if (s < 100 * A) { const a = Math.floor(s / A), m = Math.floor((s - a * A) / (30.44 * D)); return `${a} ${a === 1 ? 'ANO' : 'ANOS'}${m ? ` E ${m} ${m === 1 ? 'MÊS' : 'MESES'}` : ''}`; }
+  return `${Math.round(s / A).toLocaleString('pt-BR')} DE ANOS`;
+};
 export const CronoGrande: React.FC<{seg: number; k: number; op: number}> = ({seg, k, op}) => {
   const ang = (seg % 60) * 6;
   const cx = 960, cy = lerp(620, 90, k), sc = lerp(1, 0.25, k);
@@ -458,7 +484,7 @@ export const HUD: React.FC<{evs: HEv[]}> = ({evs}) => {
   const op = interpolate(t, [e.a - 0.4, e.a, e.b, e.b + 0.6], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const k = clamp01((t - e.s0) / Math.max(0.001, e.s1 - e.s0));
   const kk = e.s1 - e.s0 > 3 ? sm(k) : k;
-  const v = e.v0 + (e.v1 - e.v0) * kk;
+  const v = e.v0 > 0 && e.v1 / e.v0 > 20 ? Math.exp(Math.log(e.v0) + (Math.log(e.v1) - Math.log(e.v0)) * kk) : e.v0 + (e.v1 - e.v0) * kk;
   return (
     <div style={{position: 'absolute', left: 0, right: 0, top: 36, display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: op}}>
       <div style={{padding: '8px 26px', borderRadius: 14, background: 'rgba(6,10,20,0.75)', border: `1.5px solid ${C.ouro}66`, display: 'flex', alignItems: 'center', gap: 16}}>
@@ -479,7 +505,7 @@ const ORTO = orto([45, -10], 120, 300, 300);
 const PATH_ORTO = pathOf(ORTO);
 const TERRAS = mundo.map((f) => PATH_ORTO(f) || '').join(' ');
 
-const Painel: React.FC<{x: number; k: number; titulo: string; children: React.ReactNode}> = ({x, k, titulo, children}) => (
+export const Painel: React.FC<{x: number; k: number; titulo: string; children: React.ReactNode}> = ({x, k, titulo, children}) => (
   <g opacity={k} transform={`translate(${x},${lerp(560, 520, k)})`}>
     <rect x={-250} y={-230} width={500} height={460} rx={24} fill="#0b1426" stroke={C.ouro} strokeOpacity={0.45} strokeWidth={2} />
     <g>{children}</g>
@@ -501,7 +527,7 @@ const Sombrinha: React.FC<{t: number}> = ({t}) => {
 const CONF = Array.from({length: 40}, (_, i) => ({x: rnd(i + 70) * 440 - 220, y0: rnd(i + 80) * 400 - 200, c: ['#E63946', '#F4C430', '#2BA84A', '#1E6FD9', '#fff'][i % 5], s: 0.5 + rnd(i + 90)}));
 
 // =================== CENAS DO PILOTO ===================
-const ANCORA = {lon: -41.95, lat: -21.87}; // Parque Estadual do Desengano (RJ)
+export const ANCORA = {lon: -41.95, lat: -21.87}; // Parque Estadual do Desengano (RJ)
 const CIDADES: [number, number, number][] = [[-46.63, -23.55, 1.4], [-43.2, -22.9, 1.2], [-43.94, -19.92, 0.9], [-47.88, -15.79, 0.9], [-38.5, -12.97, 0.9], [-34.88, -8.05, 0.9], [-38.54, -3.72, 0.9], [-60.02, -3.1, 0.8], [-48.5, -1.45, 0.8], [-51.23, -30.03, 0.9], [-49.27, -25.43, 0.8], [-49.25, -16.68, 0.7]];
 const PONTOS_BR = (() => {
   const out: [number, number, number][] = [];
