@@ -93,9 +93,9 @@ export const CenasLote3: React.FC = () => {
       {/* B8b — zona entremarés: respira, sementes; a faixa encolhe */}
       <Cena from={369.6} to={392.0} zoom={0.03} fade={0.45} fixo={
         <>
-          <Tag x={160} y={290} anchor="start" cor={C.impacto} size={24} op={K(t, 371.0, 371.6)}>FAIXA ENTRE MARÉ ALTA E BAIXA</Tag>
-          <Tag x={160} y={350} anchor="start" cor={C.cinza} size={20} op={K(t, 374.0, 374.5) * (1 - K(t, 377.4, 377.8))}>RESPIRA · ÁGUA SALGADA · SEMENTES</Tag>
-          <Tag x={160} y={350} anchor="start" cor={C.perigo} size={22} op={K(t, 379.2, 379.7)}>MARÉ CAI PRA ~1/3 → A FAIXA ENCOLHE</Tag>
+          <Tag x={160} y={330} anchor="start" cor={C.impacto} size={24} op={K(t, 371.0, 371.6)}>FAIXA ENTRE MARÉ ALTA E BAIXA</Tag>
+          <Tag x={160} y={390} anchor="start" cor={C.cinza} size={20} op={K(t, 374.0, 374.5) * (1 - K(t, 377.4, 377.8))}>RESPIRA · ÁGUA SALGADA · SEMENTES</Tag>
+          <Tag x={160} y={390} anchor="start" cor={C.perigo} size={22} op={K(t, 379.2, 379.7)}>MARÉ CAI PRA ~1/3 → A FAIXA ENCOLHE</Tag>
           <Tag x={960} y={970} anchor="middle" cor={C.cinza} size={22} op={K(t, 387.4, 387.9)}>NENHUM ESTUDO DIZ QUANTO</Tag>
           <svg width={1920} height={1080} style={{opacity: K(t, 383.8, 384.4) * (1 - K(t, 390.8, 391.4))}}>
             <g transform="translate(1480,520)"><ellipse rx={30} ry={20} fill="#5c4a60" /><path d="M-24,-6 L-44,-24 M24,-6 L44,-24 M-20,6 L-40,18 M20,6 L40,18" stroke="#a65d48" strokeWidth={5} /></g>
@@ -108,7 +108,7 @@ export const CenasLote3: React.FC = () => {
       {/* B8c — a batedeira do oceano perde força */}
       <Cena from={392.0} to={409.2} zoom={0.03} fade={0.45} fixo={
         <>
-          <Tag x={160} y={260} cor={C.ouro} size={22} op={K(t, 392.4, 393.0)}>ÁGUA MAIS QUENTE</Tag>
+          <Tag x={160} y={330} cor={C.ouro} size={22} op={K(t, 392.4, 393.0)}>ÁGUA MAIS QUENTE</Tag>
           <Tag x={160} y={930} cor={C.dado} size={22} op={K(t, 396.4, 397.0)}>ÁGUA FRIA DO FUNDO</Tag>
           <Tag x={1760} y={600} anchor="end" cor={C.perigo} size={24} op={K(t, 400.4, 401.0) * (1 - K(t, 403.6, 404.0))}>SEM A LUA: MENOS MISTURA</Tag>
           <div style={{position: 'absolute', top: 470, width: '100%', display: 'flex', justifyContent: 'center', opacity: K(t, 403.0, 403.5) * (1 - K(t, 406.2, 406.6))}}><Caixa cor={C.dado} size={64}>E O CLIMA?</Caixa></div>
@@ -138,7 +138,7 @@ export const CenasLote3: React.FC = () => {
       {/* B9b — terremotos × maré */}
       <Cena from={414.7} to={431.2} zoom={0.02} fade={0.45} fixo={
         <>
-          <Tag x={260} y={250} cor={C.perigo} size={22}>MITO 1 · TERREMOTOS EM SÉRIE</Tag>
+          <Tag x={260} y={330} cor={C.perigo} size={22}>MITO 1 · TERREMOTOS EM SÉRIE</Tag>
           <div style={{position: 'absolute', left: 560, top: 760, width: 800, padding: '18px 24px', borderRadius: 12, background: 'rgba(6,10,20,0.86)', opacity: K(t, 419.2, 419.8) * (1 - K(t, 427.2, 427.6)), fontFamily: F.rotulo, color: C.info}}>
             <div style={{fontSize: 16, letterSpacing: 4, fontWeight: 700, color: '#B9C2D3'}}>CHANCE DE UM TREMOR VIRAR GIGANTE (ILUSTRATIVO)</div>
             {[{n: 'MARÉ FRACA', w: 0.62}, {n: 'MARÉ FORTE', w: 0.72, c: C.perigo}].map((b) => (
@@ -157,7 +157,7 @@ export const CenasLote3: React.FC = () => {
       {/* B9c — a Lua não é escudo; quem protege é o ar */}
       <Cena from={431.2} to={444.2} zoom={0.03} fade={0.45} fixo={
         <>
-          <Tag x={260} y={250} cor={C.perigo} size={22}>MITO 2 · CHUVA DE ASTEROIDES</Tag>
+          <Tag x={260} y={330} cor={C.perigo} size={22}>MITO 2 · CHUVA DE ASTEROIDES</Tag>
           <Tag x={1400} y={720} anchor="middle" cor={C.cinza} op={K(t, 434.0, 434.5)}>LUA: ALVO PEQUENO</Tag>
           <Tag x={760} y={860} anchor="middle" cor={C.dado} op={K(t, 441.6, 442.2)}>A ATMOSFERA QUEIMA A MAIORIA</Tag>
         </>
@@ -179,7 +179,7 @@ export const CenasLote3: React.FC = () => {
       {/* B9d — a órbita segue: 365 dias */}
       <Cena from={444.2} to={457.0} zoom={0.03} fade={0.45} fixo={
         <>
-          <Tag x={260} y={250} cor={C.perigo} size={22}>MITO 3 · TERRA SAI DA ÓRBITA</Tag>
+          <Tag x={260} y={330} cor={C.perigo} size={22}>MITO 3 · TERRA SAI DA ÓRBITA</Tag>
           <Tag x={960} y={900} anchor="middle" cor={C.ouro} size={30} op={K(t, 449.6, 450.2)}>1 VOLTA = 365 DIAS · NADA MUDA</Tag>
         </>
       }>

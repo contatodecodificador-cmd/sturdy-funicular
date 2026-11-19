@@ -40,11 +40,14 @@ export const Cena: React.FC<{from: number; to: number; children: React.ReactNode
   if (f < from - fade || f > to + fade) return null;
   const op = interpolate(f, [from - fade, from + fade * 0.2, to - fade * 0.2, to + fade], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const sc = 1 + zoom * interpolate(f, [from, to], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const opTxt = interpolate(f, [from - fade * 0.2, from + fade * 0.6, to - fade * 1.6, to - fade * 0.4], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
-    <AbsoluteFill style={{opacity: op}}>
-      <AbsoluteFill style={{transform: `scale(${sc})`}}>{children}</AbsoluteFill>
-      {fixo && <AbsoluteFill>{fixo}</AbsoluteFill>}
-    </AbsoluteFill>
+    <>
+      <AbsoluteFill style={{opacity: op}}>
+        <AbsoluteFill style={{transform: `scale(${sc})`}}>{children}</AbsoluteFill>
+      </AbsoluteFill>
+      {fixo && <AbsoluteFill style={{opacity: opTxt}}>{fixo}</AbsoluteFill>}
+    </>
   );
 };
 

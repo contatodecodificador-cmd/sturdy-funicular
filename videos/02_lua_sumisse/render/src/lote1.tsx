@@ -113,7 +113,7 @@ const MiniLua: React.FC<{x: number; y: number; f: number; r?: number; op?: numbe
   );
 };
 const Calendario: React.FC<{some: number; k: number; t: number}> = ({some, k, t}) => (
-  <div style={{position: 'absolute', left: 360, top: 250, width: 1200, padding: 28, borderRadius: 18, background: 'rgba(8,13,26,0.88)', border: '1px solid rgba(227,176,75,0.25)', boxShadow: '0 16px 40px rgba(0,0,0,0.5)', opacity: k}}>
+  <div style={{position: 'absolute', left: 360, top: 310, width: 1200, padding: 28, borderRadius: 18, background: 'rgba(8,13,26,0.88)', border: '1px solid rgba(227,176,75,0.25)', boxShadow: '0 16px 40px rgba(0,0,0,0.5)', opacity: k}}>
     <div style={{fontFamily: F.titulo, fontWeight: 600, fontSize: 40, color: C.info, letterSpacing: 3, marginBottom: 14}}>UM MÊS DE MARÉS</div>
     <svg width={1144} height={430} style={{position: 'relative'}}>
       {Array.from({length: 30}, (_, d) => {
@@ -146,7 +146,7 @@ export const CenasLote1: React.FC = () => {
       {/* B3b — o mito da onda gigante → "Não." */}
       <Cena from={124.0} to={130.3} zoom={0.04} fade={0.35} fixo={
         <>
-          <Tag x={420} y={300} cor={C.perigo} size={30} op={K(t, 125.4, 125.9) * (1 - K(t, 129.6, 130.0))}>O MITO</Tag>
+          <Tag x={420} y={330} cor={C.perigo} size={30} op={K(t, 125.4, 125.9) * (1 - K(t, 129.6, 130.0))}>O MITO</Tag>
           <svg width={1920} height={1080} style={{opacity: K(t, 129.7, 129.95)}}>
             <line x1={560} y1={260} x2={1360} y2={860} stroke={C.perigo} strokeWidth={22} strokeLinecap="round" />
             <line x1={1360} y1={260} x2={560} y2={860} stroke={C.perigo} strokeWidth={22} strokeLinecap="round" />
@@ -170,7 +170,7 @@ export const CenasLote1: React.FC = () => {
         <>
           <Tag x={140} y={810} anchor="middle" cor={C.ouro} op={K(t, 138.6, 139.2)}>SOL</Tag>
           <Tag x={1520} y={860} anchor="middle" cor={C.cinza} op={K(t, 137.4, 138)}>LUA</Tag>
-          <div style={{position: 'absolute', left: 1240, top: 250, width: 560, padding: '20px 26px', borderRadius: 14, background: 'rgba(6,10,20,0.84)', border: '1px solid rgba(227,176,75,0.25)', opacity: K(t, 145.6, 146.2), fontFamily: F.rotulo, color: C.info}}>
+          <div style={{position: 'absolute', left: 1240, top: 320, width: 560, padding: '20px 26px', borderRadius: 14, background: 'rgba(6,10,20,0.84)', border: '1px solid rgba(227,176,75,0.25)', opacity: K(t, 145.6, 146.2), fontFamily: F.rotulo, color: C.info}}>
             <div style={{fontSize: 17, letterSpacing: 4, fontWeight: 700, color: '#B9C2D3'}}>FORÇA DE MARÉ</div>
             {[{n: 'LUA', v: '100%', w: 1, c: '#efe8d6'}, {n: 'SOL', v: '~46%', w: 0.46, c: C.ouro}].map((b) => (
               <div key={b.n} style={{marginTop: 16}}>
@@ -193,7 +193,7 @@ export const CenasLote1: React.FC = () => {
           const amp = lerp(7.2, 2.4, K(t, 161.0, 163.6));
           return (
             <>
-              <Tag x={1340} y={280} cor={C.dado} size={28} op={K(t, 153.6, 154.2)}>{t < 161 ? 'SIZÍGIA: MAIS DE 7 M' : 'SEM A LUA: ~1/3 (≈ 2,4 M)'}</Tag>
+              <Tag x={1340} y={330} cor={C.dado} size={28} op={K(t, 153.6, 154.2)}>{t < 161 ? 'SIZÍGIA: MAIS DE 7 M' : 'SEM A LUA: ~1/3 (≈ 2,4 M)'}</Tag>
               <svg width={1920} height={1080}>
                 <g opacity={K(t, 155.2, 155.8)} transform="translate(560,900)">
                   <rect x={0} y={-430} width={200} height={430} fill="#4a6b8a" />
@@ -231,9 +231,9 @@ export const CenasLote1: React.FC = () => {
       {/* B4b — sizígia × quadratura */}
       <Cena from={175.3} to={191.3} zoom={0.02} fade={0.45} fixo={
         <>
-          <Tag x={1100} y={150 + 120} anchor="middle" cor={C.dado} size={26} op={K(t, 180.0, 180.5) * (1 - K(t, 183.6, 184.0))}>ALINHADOS: MARÉ GRANDE</Tag>
-          <Tag x={1100} y={270} anchor="middle" cor={C.cinza} size={26} op={K(t, 184.6, 185.1) * (1 - K(t, 187.8, 188.2))}>DESENCONTRADOS: MARÉ PEQUENA</Tag>
-          <Tag x={1100} y={270} anchor="middle" cor={C.ouro} size={26} op={K(t, 188.2, 188.7)}>A POROROCA VIVE DA MARÉ GRANDE</Tag>
+          <Tag x={1100} y={330} anchor="middle" cor={C.dado} size={26} op={K(t, 180.0, 180.5) * (1 - K(t, 183.6, 184.0))}>ALINHADOS: MARÉ GRANDE</Tag>
+          <Tag x={1100} y={330} anchor="middle" cor={C.cinza} size={26} op={K(t, 184.6, 185.1) * (1 - K(t, 187.8, 188.2))}>DESENCONTRADOS: MARÉ PEQUENA</Tag>
+          <Tag x={1100} y={330} anchor="middle" cor={C.ouro} size={26} op={K(t, 188.2, 188.7)}>A POROROCA VIVE DA MARÉ GRANDE</Tag>
         </>
       }>
         <EspacoReal />

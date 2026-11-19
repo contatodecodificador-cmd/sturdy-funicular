@@ -219,6 +219,16 @@ export const Rio: React.FC<{noite: number; lua: number; luaGhost?: number; onda:
         <Palafita x={1180} y={hz + 6} c={mata} luz={0.35 + 0.6 * noite} s={0.9} noite={noite} />
         <Palafita x={1310} y={hz + 8} c={mata} luz={0.0} s={0.7} noite={noite} />
         <Palafita x={260} y={hz + 6} c={mata} luz={0.3 + 0.6 * noite} s={0.8} noite={noite} />
+        {festival > 0 && (
+          <g opacity={festival}>
+            {Array.from({length: 7}, (_, i) => {
+              const x = 420 + i * 110, h = 60 + (i % 3) * 14, cs = ['#e76f51', '#2a9d8f', '#e9c46a', '#f4a261', '#8ecae6', '#e63946', '#90be6d'][i];
+              return <g key={'cs' + i}><rect x={x} y={hz + 18 - h} width={96} height={h} fill={cs} opacity={lerp(1, 0.45, noite)} /><path d={`M${x - 6},${hz + 20 - h} L${x + 48},${hz - 8 - h} L${x + 102},${hz + 20 - h} Z`} fill="#7a3b26" opacity={lerp(1, 0.5, noite)} /><rect x={x + 38} y={hz - 18} width={20} height={34} fill="#3a2418" /></g>;
+            })}
+            <path d={`M380,${hz - 120} Q800,${hz - 70} 1240,${hz - 120}`} stroke="#ddd" strokeWidth={1.5} fill="none" />
+            {Array.from({length: 22}, (_, i) => { const k = i / 21, x = lerp(380, 1240, k), y = hz - 120 + Math.sin(k * Math.PI) * 50; return <path key={'bd' + i} d={`M${x - 10},${y} L${x + 10},${y} L${x},${y + 18} Z`} fill={['#e63946', '#f4c430', '#2ba84a', '#1e6fd9'][i % 4]} />; })}
+          </g>
+        )}
         <rect y={hz + 22} width={1920} height={1080 - hz} fill="url(#ragua)" />
         {Array.from({length: 26}, (_, i) => {
           const y = hz + 40 + (i % 13) * 34, x = ((i * 157 - t * (20 + (i % 3) * 8)) % 2100 + 2100) % 2100 - 100;
@@ -269,16 +279,6 @@ export const Rio: React.FC<{noite: number; lua: number; luaGhost?: number; onda:
             </g>
           );
         })()}
-        {festival > 0 && (
-          <g opacity={festival}>
-            {Array.from({length: 7}, (_, i) => {
-              const x = 420 + i * 110, h = 60 + (i % 3) * 14, cs = ['#e76f51', '#2a9d8f', '#e9c46a', '#f4a261', '#8ecae6', '#e63946', '#90be6d'][i];
-              return <g key={'cs' + i}><rect x={x} y={hz + 18 - h} width={96} height={h} fill={cs} opacity={lerp(1, 0.45, noite)} /><path d={`M${x - 6},${hz + 20 - h} L${x + 48},${hz - 8 - h} L${x + 102},${hz + 20 - h} Z`} fill="#7a3b26" opacity={lerp(1, 0.5, noite)} /><rect x={x + 38} y={hz - 18} width={20} height={34} fill="#3a2418" /></g>;
-            })}
-            <path d={`M380,${hz - 120} Q800,${hz - 70} 1240,${hz - 120}`} stroke="#ddd" strokeWidth={1.5} fill="none" />
-            {Array.from({length: 22}, (_, i) => { const k = i / 21, x = lerp(380, 1240, k), y = hz - 120 + Math.sin(k * Math.PI) * 50; return <path key={'bd' + i} d={`M${x - 10},${y} L${x + 10},${y} L${x},${y + 18} Z`} fill={['#e63946', '#f4c430', '#2ba84a', '#1e6fd9'][i % 4]} />; })}
-          </g>
-        )}
         {parados > 0 && [0, 1, 2].map((i) => (
           <g key={'pa' + i} opacity={parados} transform={`translate(${520 + i * 300},${800 + Math.sin(t * 1.2 + i) * 4})`}>
             <path d="M-70,6 Q-10,-6 74,-2 Q84,2 72,8 Q0,14 -64,12 Z" fill={['#e9c46a', '#e76f51', '#8ecae6'][i]} />

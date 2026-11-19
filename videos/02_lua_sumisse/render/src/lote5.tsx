@@ -116,8 +116,8 @@ export const CenasLote5: React.FC = () => {
       {/* FECHO c — a foz fechou: lama, hidrelétricas, búfalos */}
       <Cena from={668.6} to={676.0} zoom={0.03} fade={0.4} fixo={
         <>
-          <Tag x={1320} y={300} anchor="middle" cor={C.perigo} op={K(t, 669.4, 670.0)}>FOZ ENTUPIDA DE LAMA</Tag>
-          <Tag x={360} y={300} anchor="middle" cor={C.cinza} op={K(t, 671.6, 672.2)}>HIDRELÉTRICAS RIO ACIMA</Tag>
+          <Tag x={1320} y={340} anchor="middle" cor={C.perigo} op={K(t, 669.4, 670.0)}>FOZ ENTUPIDA DE LAMA</Tag>
+          <Tag x={360} y={340} anchor="middle" cor={C.cinza} op={K(t, 671.6, 672.2)}>HIDRELÉTRICAS RIO ACIMA</Tag>
           <Tag x={760} y={860} anchor="middle" cor={C.cinza} op={K(t, 673.6, 674.2)}>CANAIS ABERTOS PELOS BÚFALOS</Tag>
         </>
       }>
@@ -128,7 +128,7 @@ export const CenasLote5: React.FC = () => {
         </svg>
       </Cena>
       {/* FECHO d — onze anos depois, ela voltou por um caminho novo */}
-      <Cena from={676.0} to={680.8} zoom={0.04} fade={0.45} fixo={<Tag x={960} y={250} anchor="middle" cor={C.impacto} op={K(t, 678.2, 678.8)}>POR UM CAMINHO NOVO</Tag>}>
+      <Cena from={676.0} to={680.8} zoom={0.04} fade={0.45} fixo={<Tag x={960} y={330} anchor="middle" cor={C.impacto} op={K(t, 678.2, 678.8)}>POR UM CAMINHO NOVO</Tag>}>
         <Foz fechada={1} t={t} onda={K(t, 676.6, 678.0)} />
       </Cena>
       {/* FECHO e — a Lua não vai sumir: São Luís / caranguejo / Carnaval */}

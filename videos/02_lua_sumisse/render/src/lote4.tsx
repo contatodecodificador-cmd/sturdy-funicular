@@ -169,7 +169,7 @@ export const CenasLote4: React.FC = () => {
       {/* B10c — atrito das marés = freio de mão */}
       <Cena from={488.8} to={498.8} zoom={0.03} fade={0.45} fixo={
         <>
-          <Tag x={960} y={250} anchor="middle" cor={C.ouro} size={24} op={K(t, 492.4, 493.0)}>ATRITO DAS MARÉS ESTICA O DIA</Tag>
+          <Tag x={960} y={900} anchor="middle" cor={C.ouro} size={24} op={K(t, 492.4, 493.0) * (1 - K(t, 496.0, 496.4))}>ATRITO DAS MARÉS ESTICA O DIA</Tag>
           <Tag x={960} y={900} anchor="middle" cor={C.perigo} size={30} op={K(t, 496.6, 497.2)}>FREIO DE MÃO DA TERRA</Tag>
         </>
       }>
@@ -198,8 +198,8 @@ export const CenasLote4: React.FC = () => {
       {/* B11a — o eixo: 23,4°, quase não mexe com a Lua */}
       <Cena from={514.7} to={532.4} zoom={0.03} fade={0.45} fixo={
         <>
-          <Tag x={1240} y={300} cor={C.ouro} size={30} op={K(t, 521.4, 522.0)}>23,4°</Tag>
-          <Tag x={1240} y={360} cor={C.cinza} size={20} op={K(t, 523.2, 523.8)}>A INCLINAÇÃO CRIA AS ESTAÇÕES</Tag>
+          <Tag x={1240} y={340} cor={C.ouro} size={30} op={K(t, 521.4, 522.0)}>23,4°</Tag>
+          <Tag x={1240} y={400} cor={C.cinza} size={20} op={K(t, 523.2, 523.8)}>A INCLINAÇÃO CRIA AS ESTAÇÕES</Tag>
           <div style={{position: 'absolute', left: 1240, top: 470, width: 520, padding: '18px 24px', borderRadius: 12, background: 'rgba(6,10,20,0.86)', opacity: K(t, 528.6, 529.2), fontFamily: F.rotulo, color: C.info}}>
             <div style={{fontSize: 16, letterSpacing: 4, fontWeight: 700, color: '#B9C2D3'}}>COM A LUA</div>
             <div style={{fontFamily: F.titulo, fontSize: 44, marginTop: 4}}>22,1° ↔ 24,5°</div>
@@ -284,7 +284,6 @@ export const CenasLote4: React.FC = () => {
       <Cena from={611.2} to={620.4} zoom={0} fade={0.45} fixo={
         <>
           {(() => { const q = projTrop(-51.23, -30.03); return <Tag x={q[0] - 24} y={q[1]} anchor="end" cor={C.cinza} size={18} op={K(t, 618.4, 619.0)}>PORTO ALEGRE</Tag>; })()}
-          <Tag x={1500} y={300} anchor="end" cor={C.ouro} size={26} op={K(t, 614.6, 615.2)}>TUDO EM MILHÕES DE ANOS</Tag>
         </>
       }>
         <MapaTropico lat={lerp(-23.44, -27, prog(t, 611.2, 620.4))} show={['PORTO ALEGRE']} t={t} />
