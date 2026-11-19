@@ -4,7 +4,7 @@
 - 11 min, ~1.865 palavras narradas (~170 palavras/min). ~27 paradas. Cada parada ~20-30 s (60-90 palavras).
 - Intro (gancho) = 0:00-0:30 (~85 palavras).
 
-## Arquitetura
+## Arquitetura (a do vídeo 1 — é UM modelo, não fôrma; variar a cada vídeo, ver 08)
 | Tempo | Bloco | Função |
 |---|---|---|
 | 0:00-0:30 | INTRO | Começa pelo FIM (o fato final mais chocante), promete a viagem, mostra a escada de tempo (1 ano, 100, 1 milhão, 1 bilhão). "Então a gente vai fazer uma viagem." "E a primeira parada é praticamente agora." |

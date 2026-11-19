@@ -6,8 +6,8 @@
 - Prova de localização: "1 Milyon Yıl Sonra Türkiye" (Turquia daqui a 1 milhão de anos) — 4,8 milhões de views.
 
 ## Fila de vídeos do Brasil Milenar (ordem de lançamento)
-1. O que vai acontecer com o Brasil daqui a 1 milhão de anos? (feito — ver examples/)
-2. Quanto tempo a humanidade duraria se a Lua sumisse? — relógio de consequências; pororoca some, marés de São Luís, noites do sertão. Demanda: "Como seria se a Lua desaparecesse" (Você Sabia?) 14 milhões.
+1. O que vai acontecer com o Brasil daqui a 1 milhão de anos? (em produção — ver examples/)
+2. Quanto tempo a humanidade duraria se a Lua sumisse? (ROTEIRO PRONTO — `videos/02_lua_sumisse/`) — relógio de consequências; pororoca some, marés de São Luís, noites do sertão. Demanda: "Como seria se a Lua desaparecesse" (Você Sabia?) 14 milhões.
 3. Se você cavasse um buraco no Brasil, sairia onde? — descida km a km; "todo mundo diz Japão, errado" (a maior parte do Brasil sai no oceano; Manaus perto da Indonésia, RS perto da Coreia — VERIFICAR). Versão brasileira só 620 views; genérica 960 mil.
 4. Viajamos 1 bilhão de anos ao passado: o que tinha onde hoje é o Brasil? — Rodínia, geleira em Salto (SP), primeiros dinossauros no RS (~233 Ma), Araripe, separação da África, Amazonas ao contrário, megafauna, Luzia.
 5. E se a Terra parasse de girar? O que aconteceria com o Brasil — cidade a cidade (Macapá no Equador, 1.670 km/h). Demanda: 13 milhões (Você Sabia?) e 1,8 milhão (Ciência Todo Dia), ambos genéricos.

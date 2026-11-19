@@ -15,7 +15,7 @@ Modelo de referência que inspirou o estilo: canal "Além da Escala", vídeo "O 
 
 1. **Ideia e título** → `references/05_ideias_e_titulos.md` (lista de vídeos validados + como validar um novo tema).
 2. **Pesquisa com dados reais** → `references/03_pesquisa_e_checagem.md`. Dividir em 2-3 frentes (ex.: futuro próximo / geologia profunda / céu e vida). Toda afirmação precisa de FONTE + NÚMERO + CONFIANÇA. Depois, uma rodada de **verificação** que reabre as fontes e corrige números "de memória".
-3. **Escaleta** (mapa das paradas) → `references/02_estrutura_do_roteiro.md`. Escolher o **fio condutor** e checar a regra de originalidade.
+3. **Escaleta** (mapa das paradas) → `references/02_estrutura_do_roteiro.md`. Escolher o **fio condutor** e checar a regra de originalidade. **Antes**, ler `references/08_unicidade_entre_videos.md`: escolher contador, abertura, fio, arquitetura e fecho DIFERENTES dos vídeos anteriores e não repetir fatos já usados.
 4. **Corpo do roteiro PRIMEIRO, sem introdução.** Bloco 1 em diante, com marcações visuais.
 5. **Introdução DEPOIS**, construída a partir do corpo pronto (começa pelo fato final mais chocante, promete a viagem, mostra a escada).
 6. **Checagem final de fatos** do texto pronto (cada número, cada comparação, cada conta). Aplicar correções.
@@ -28,6 +28,7 @@ Quando houver subagentes disponíveis, delegue por função: pesquisa e verifica
 
 ## Regras de ouro
 
+- **Cada vídeo é único.** Nada de roteiro com cara de fôrma: mudar forma do contador, abertura, fio condutor, arquitetura e fecho; não repetir fatos nem frases de vídeos anteriores (registro em `references/08_unicidade_entre_videos.md`, atualizar a cada vídeo).
 - **Dados reais, sempre.** Nada de número inventado. Incerteza vira honestidade na fala ("anota com lápis", "num dos modelos", "um estudo de 2024 sugere", "não é previsão com data, é média").
 - **Corpo antes da intro.** A intro é escrita por último.
 - **Brasil a cada ~1,5 min** de narração.
