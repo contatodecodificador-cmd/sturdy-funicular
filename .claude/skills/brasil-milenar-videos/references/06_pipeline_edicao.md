@@ -56,3 +56,10 @@ Tudo é feito por código, sem editor de vídeo. Ambiente usado: Linux com ffmpe
 - **Palavras-chave**: ajustes manuais de tempo em `ajustes_palavras.py` (rodar depois do alinhamento) quando a frase-gatilho vem depois da palavra que casou.
 - **Créditos do ElevenLabs acabam**: 1 vídeo de ~12 min consumiu ~10 trilhas + 10 efeitos. Gerar as trilhas do vídeo todo ANTES de começar a edição e reaproveitar faixas por clima (mistério, curiosidade, grave, encanto, calma, melancolia, orgânico) se faltar crédito.
 - **Render**: não rodar stills/mixagem junto com o render longo (divide a CPU). Matar renders antigos com `pkill -9 -f remotion; pkill -9 -f chrome-headless`.
+
+## Regras anti-sobreposição (apontadas pelo dono no vídeo 2)
+- **Faixa da palavra-chave é reservada**: y ≈ 160–265 px no centro. Nenhum rótulo/painel de cena acima de y = 310 (Tag) ou top = 300 (div). Contador fica em y < 140.
+- **Texto da cena sai antes da transição** (`Cena` usa `opTxt` que zera em `to - fade*0.4`): o texto da cena que sai nunca aparece por baixo do texto da próxima.
+- **Ordem de camadas**: cenário de fundo (casas, margem) antes de personagens e onda — nunca desenhar cenário por cima de personagem.
+- **Não repetir em rótulo o que a palavra-chave já diz** (ex.: "TUDO EM MILHÕES DE ANOS" sob "MILHÕES DE ANOS, NÃO SÉCULOS").
+- **QA final obrigatório**: extrair 1 quadro em cada palavra-chave (+0,9 s), etiqueta (+1,5 s) e fonte (+2 s) do vídeo final, montar grades 4x4 e revisar todas antes de entregar.
