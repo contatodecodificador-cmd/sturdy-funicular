@@ -48,3 +48,11 @@ Tudo é feito por código, sem editor de vídeo. Ambiente usado: Linux com ffmpe
 - **Rede**: Commons bloqueia arquivo original (429) — usar miniatura `/thumb/<h>/<hh>/<nome>/3840px-<nome>` (hash md5 do nome). eoimages.gsfc.nasa.gov e images-assets.nasa.gov ficam bloqueados no ambiente padrão.
 - **ElevenLabs**: a conta permite só 2 pedidos simultâneos — gerar em fila (1 por vez). Efeitos longos (grilos, rio) cortados para ≤ 6 s com fade; música 3-4 dB mais baixa que o padrão (o dono quer bem sutil): trilhas em -31 a -34 LUFS antes do ducking.
 - **Créditos**: manter `CREDITOS.md` por vídeo e colar na descrição.
+
+## Lições da montagem completa do vídeo 2
+- **Lotes**: um arquivo de cenas por lote (`lote1.tsx`…), cada um com seu `HUD_LOTEn`; `Video.tsx` só junta. Revisar stills de cada lote antes de seguir.
+- **Movimento de fundo nunca pode depender do tempo absoluto do vídeo** (bug do vídeo 2: o fundo escorregava e mostrava a borda depois de 1-2 min). Use oscilação limitada (`sin(t)`) com `scale` que cubra a amplitude.
+- **Cronômetro adaptativo** (`fmtCron`): HH:MM:SS → "N DIAS" → "N MESES" → "A ANOS E M MESES" → "1.000.000 DE ANOS"; interpolação logarítmica em saltos grandes.
+- **Palavras-chave**: ajustes manuais de tempo em `ajustes_palavras.py` (rodar depois do alinhamento) quando a frase-gatilho vem depois da palavra que casou.
+- **Créditos do ElevenLabs acabam**: 1 vídeo de ~12 min consumiu ~10 trilhas + 10 efeitos. Gerar as trilhas do vídeo todo ANTES de começar a edição e reaproveitar faixas por clima (mistério, curiosidade, grave, encanto, calma, melancolia, orgânico) se faltar crédito.
+- **Render**: não rodar stills/mixagem junto com o render longo (divide a CPU). Matar renders antigos com `pkill -9 -f remotion; pkill -9 -f chrome-headless`.
