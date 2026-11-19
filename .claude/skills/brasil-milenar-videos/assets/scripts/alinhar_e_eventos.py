@@ -33,7 +33,11 @@ for p in pars:
             a,_,c=val.partition('/'); ev['etiqueta'].append({'t':p['t']+0.2,'small':a.strip().upper(),'big':c.strip().upper()})
         elif tag=='PALAVRA':
             txt,_,c=val.rpartition('|'); txt=txt.strip(); keys=[norm(k) for k in re.findall(r'[\wÀ-ú]+',txt) if len(k)>3]
-            tt=next((w['start'] for w in al[p['w0']:p['w1']] if any(k[:5] in norm(w['text']) for k in keys)),p['t']+0.3)
+            ws=al[p['w0']:p['w1']]; best=(0,None)
+            for j in range(len(ws)):  # janela de 6 palavras que casa MAIS palavras-chave (não só a primeira)
+                sc=sum(any(k[:5] in norm(w['text']) for w in ws[j:j+6]) for k in keys)
+                if sc>best[0] and any(k[:5] in norm(ws[j]['text']) for k in keys): best=(sc,ws[j]['start'])
+            tt=best[1] if best[1] is not None else p['t']+0.3
             ev['palavra'].append({'t':tt,'texto':txt.upper(),'cor':COL.get(c.strip(),'info')})
         elif tag=='FONTE': ev['fonte'].append({'t':p['t']+0.5,'texto':'FONTE: '+val})
         elif tag=='CONTADOR': ev['counter'].append({'t':p['t'],'raw':val})

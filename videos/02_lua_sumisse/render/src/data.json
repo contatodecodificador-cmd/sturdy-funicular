@@ -1,0 +1,955 @@
+{
+ "paragrafos": [
+  {
+   "i": 0,
+   "seg": 0,
+   "t": 0.12,
+   "t_end": 12.0
+  },
+  {
+   "i": 1,
+   "seg": 0,
+   "t": 12.74,
+   "t_end": 20.76
+  },
+  {
+   "i": 2,
+   "seg": 0,
+   "t": 21.3,
+   "t_end": 30.64
+  },
+  {
+   "i": 3,
+   "seg": 0,
+   "t": 31.3,
+   "t_end": 35.58
+  },
+  {
+   "i": 4,
+   "seg": 0,
+   "t": 36.1,
+   "t_end": 38.58
+  },
+  {
+   "i": 5,
+   "seg": 1,
+   "t": 39.1,
+   "t_end": 43.58
+  },
+  {
+   "i": 6,
+   "seg": 1,
+   "t": 44.04,
+   "t_end": 52.44
+  },
+  {
+   "i": 7,
+   "seg": 1,
+   "t": 52.86,
+   "t_end": 62.0
+  },
+  {
+   "i": 8,
+   "seg": 1,
+   "t": 62.64,
+   "t_end": 68.02
+  },
+  {
+   "i": 9,
+   "seg": 2,
+   "t": 68.48,
+   "t_end": 73.2
+  },
+  {
+   "i": 10,
+   "seg": 2,
+   "t": 73.64,
+   "t_end": 83.28
+  },
+  {
+   "i": 11,
+   "seg": 2,
+   "t": 83.78,
+   "t_end": 92.7
+  },
+  {
+   "i": 12,
+   "seg": 2,
+   "t": 93.22,
+   "t_end": 104.98
+  },
+  {
+   "i": 13,
+   "seg": 2,
+   "t": 105.3,
+   "t_end": 117.52
+  },
+  {
+   "i": 14,
+   "seg": 3,
+   "t": 118.18,
+   "t_end": 123.62
+  },
+  {
+   "i": 15,
+   "seg": 3,
+   "t": 124.02,
+   "t_end": 136.54
+  },
+  {
+   "i": 16,
+   "seg": 3,
+   "t": 136.98,
+   "t_end": 148.6
+  },
+  {
+   "i": 17,
+   "seg": 3,
+   "t": 149.12,
+   "t_end": 165.14
+  },
+  {
+   "i": 18,
+   "seg": 3,
+   "t": 165.3,
+   "t_end": 171.08
+  },
+  {
+   "i": 19,
+   "seg": 4,
+   "t": 171.5,
+   "t_end": 174.9
+  },
+  {
+   "i": 20,
+   "seg": 4,
+   "t": 175.44,
+   "t_end": 191.04
+  },
+  {
+   "i": 21,
+   "seg": 4,
+   "t": 191.44,
+   "t_end": 201.84
+  },
+  {
+   "i": 22,
+   "seg": 4,
+   "t": 202.3,
+   "t_end": 216.94
+  },
+  {
+   "i": 23,
+   "seg": 4,
+   "t": 217.42,
+   "t_end": 226.74
+  },
+  {
+   "i": 24,
+   "seg": 5,
+   "t": 227.98,
+   "t_end": 232.2
+  },
+  {
+   "i": 25,
+   "seg": 5,
+   "t": 232.62,
+   "t_end": 244.4
+  },
+  {
+   "i": 26,
+   "seg": 5,
+   "t": 244.88,
+   "t_end": 258.14
+  },
+  {
+   "i": 27,
+   "seg": 5,
+   "t": 258.72,
+   "t_end": 272.52
+  },
+  {
+   "i": 28,
+   "seg": 6,
+   "t": 273.06,
+   "t_end": 276.74
+  },
+  {
+   "i": 29,
+   "seg": 6,
+   "t": 277.3,
+   "t_end": 284.58
+  },
+  {
+   "i": 30,
+   "seg": 6,
+   "t": 284.98,
+   "t_end": 297.64
+  },
+  {
+   "i": 31,
+   "seg": 6,
+   "t": 298.08,
+   "t_end": 311.32
+  },
+  {
+   "i": 32,
+   "seg": 6,
+   "t": 311.7,
+   "t_end": 319.5
+  },
+  {
+   "i": 33,
+   "seg": 7,
+   "t": 320.04,
+   "t_end": 331.28
+  },
+  {
+   "i": 34,
+   "seg": 7,
+   "t": 331.66,
+   "t_end": 337.06
+  },
+  {
+   "i": 35,
+   "seg": 7,
+   "t": 337.58,
+   "t_end": 356.3
+  },
+  {
+   "i": 36,
+   "seg": 8,
+   "t": 356.96,
+   "t_end": 369.24
+  },
+  {
+   "i": 37,
+   "seg": 8,
+   "t": 369.66,
+   "t_end": 377.48
+  },
+  {
+   "i": 38,
+   "seg": 8,
+   "t": 377.92,
+   "t_end": 391.76
+  },
+  {
+   "i": 39,
+   "seg": 8,
+   "t": 392.14,
+   "t_end": 408.86
+  },
+  {
+   "i": 40,
+   "seg": 9,
+   "t": 409.38,
+   "t_end": 414.26
+  },
+  {
+   "i": 41,
+   "seg": 9,
+   "t": 414.76,
+   "t_end": 430.84
+  },
+  {
+   "i": 42,
+   "seg": 9,
+   "t": 431.42,
+   "t_end": 443.9
+  },
+  {
+   "i": 43,
+   "seg": 9,
+   "t": 444.28,
+   "t_end": 455.88
+  },
+  {
+   "i": 44,
+   "seg": 10,
+   "t": 457.16,
+   "t_end": 468.88
+  },
+  {
+   "i": 45,
+   "seg": 11,
+   "t": 469.34,
+   "t_end": 473.56
+  },
+  {
+   "i": 46,
+   "seg": 11,
+   "t": 474.02,
+   "t_end": 488.46
+  },
+  {
+   "i": 47,
+   "seg": 11,
+   "t": 488.88,
+   "t_end": 498.42
+  },
+  {
+   "i": 48,
+   "seg": 11,
+   "t": 498.88,
+   "t_end": 514.48
+  },
+  {
+   "i": 49,
+   "seg": 12,
+   "t": 514.94,
+   "t_end": 519.039
+  },
+  {
+   "i": 50,
+   "seg": 12,
+   "t": 519.48,
+   "t_end": 532.16
+  },
+  {
+   "i": 51,
+   "seg": 12,
+   "t": 532.52,
+   "t_end": 546.38
+  },
+  {
+   "i": 52,
+   "seg": 12,
+   "t": 546.88,
+   "t_end": 560.34
+  },
+  {
+   "i": 53,
+   "seg": 12,
+   "t": 560.74,
+   "t_end": 577.3
+  },
+  {
+   "i": 54,
+   "seg": 12,
+   "t": 577.72,
+   "t_end": 597.12
+  },
+  {
+   "i": 55,
+   "seg": 12,
+   "t": 597.54,
+   "t_end": 610.88
+  },
+  {
+   "i": 56,
+   "seg": 12,
+   "t": 611.36,
+   "t_end": 620.04
+  },
+  {
+   "i": 57,
+   "seg": 13,
+   "t": 620.32,
+   "t_end": 625.52
+  },
+  {
+   "i": 58,
+   "seg": 13,
+   "t": 625.98,
+   "t_end": 638.12
+  },
+  {
+   "i": 59,
+   "seg": 13,
+   "t": 638.52,
+   "t_end": 651.46
+  },
+  {
+   "i": 60,
+   "seg": 14,
+   "t": 651.84,
+   "t_end": 663.56
+  },
+  {
+   "i": 61,
+   "seg": 14,
+   "t": 663.84,
+   "t_end": 675.78
+  },
+  {
+   "i": 62,
+   "seg": 14,
+   "t": 676.18,
+   "t_end": 680.5
+  },
+  {
+   "i": 63,
+   "seg": 14,
+   "t": 680.94,
+   "t_end": 691.64
+  },
+  {
+   "i": 64,
+   "seg": 14,
+   "t": 691.96,
+   "t_end": 698.48
+  },
+  {
+   "i": 65,
+   "seg": 14,
+   "t": 698.94,
+   "t_end": 705.76
+  }
+ ],
+ "segmentos": [
+  {
+   "id": 0,
+   "start": 0.12,
+   "end": 38.58
+  },
+  {
+   "id": 1,
+   "start": 39.1,
+   "end": 68.02
+  },
+  {
+   "id": 2,
+   "start": 68.48,
+   "end": 117.52
+  },
+  {
+   "id": 3,
+   "start": 118.18,
+   "end": 171.08
+  },
+  {
+   "id": 4,
+   "start": 171.5,
+   "end": 226.74
+  },
+  {
+   "id": 5,
+   "start": 227.98,
+   "end": 272.52
+  },
+  {
+   "id": 6,
+   "start": 273.06,
+   "end": 319.5
+  },
+  {
+   "id": 7,
+   "start": 320.04,
+   "end": 356.3
+  },
+  {
+   "id": 8,
+   "start": 356.96,
+   "end": 408.86
+  },
+  {
+   "id": 9,
+   "start": 409.38,
+   "end": 455.88
+  },
+  {
+   "id": 10,
+   "start": 457.16,
+   "end": 468.88
+  },
+  {
+   "id": 11,
+   "start": 469.34,
+   "end": 514.48
+  },
+  {
+   "id": 12,
+   "start": 514.94,
+   "end": 620.04
+  },
+  {
+   "id": 13,
+   "start": 620.32,
+   "end": 651.46
+  },
+  {
+   "id": 14,
+   "start": 651.84,
+   "end": 705.76
+  }
+ ],
+ "eventos": {
+  "counter": [
+   {
+    "t": 0.12,
+    "raw": "00:00:00"
+   },
+   {
+    "t": 39.1,
+    "raw": "00:00:01"
+   },
+   {
+    "t": 68.48,
+    "raw": "00:01:00"
+   },
+   {
+    "t": 118.18,
+    "raw": "06:00:00"
+   },
+   {
+    "t": 171.5,
+    "raw": "15 DIAS"
+   },
+   {
+    "t": 227.98,
+    "raw": "3 MESES"
+   },
+   {
+    "t": 273.06,
+    "raw": "3 MESES"
+   },
+   {
+    "t": 320.04,
+    "raw": "2 ANOS E 7 MESES"
+   },
+   {
+    "t": 356.96,
+    "raw": "5 ANOS"
+   },
+   {
+    "t": 409.38,
+    "raw": "5 ANOS"
+   },
+   {
+    "t": 457.16,
+    "raw": "dispara — passa de anos para milhares e depois milhões"
+   },
+   {
+    "t": 469.34,
+    "raw": "−1.400.000.000 (FLASHBACK)"
+   },
+   {
+    "t": 514.94,
+    "raw": "1.000.000 DE ANOS"
+   },
+   {
+    "t": 620.32,
+    "raw": "1.000.000 DE ANOS (parado)"
+   },
+   {
+    "t": 651.84,
+    "raw": "some"
+   }
+  ],
+  "etiqueta": [
+   {
+    "t": 39.300000000000004,
+    "small": "SÃO LUÍS (MA)",
+    "big": "1,3 SEGUNDO"
+   },
+   {
+    "t": 68.68,
+    "small": "SERTÃO",
+    "big": "PRIMEIRA NOITE"
+   },
+   {
+    "t": 105.5,
+    "small": "PARQUE ESTADUAL DO DESENGANO (RJ)",
+    "big": "CÉU ESCURO"
+   },
+   {
+    "t": 118.38000000000001,
+    "small": "BAÍA DE SÃO MARCOS (MA)",
+    "big": "6 HORAS"
+   },
+   {
+    "t": 171.7,
+    "small": "SÃO DOMINGOS DO CAPIM (PA)",
+    "big": "15 DIAS"
+   },
+   {
+    "t": 228.17999999999998,
+    "small": "MANGUEZAIS DO NORTE E NORDESTE",
+    "big": "A ANDADA"
+   },
+   {
+    "t": 273.26,
+    "small": "BRASIL INTEIRO",
+    "big": "CARNAVAL"
+   },
+   {
+    "t": 320.24,
+    "small": "BRASIL INTEIRO",
+    "big": "25-26 DE JUNHO DE 2029"
+   },
+   {
+    "t": 357.15999999999997,
+    "small": "COSTA DO MARANHÃO E DO PARÁ",
+    "big": "MANGUEZAIS"
+   },
+   {
+    "t": 409.58,
+    "small": "MITOS",
+    "big": "O QUE NÃO MUDA"
+   },
+   {
+    "t": 469.53999999999996,
+    "small": "HÁ 1,4 BILHÃO DE ANOS",
+    "big": "DIA DE ~18 H 40 MIN"
+   },
+   {
+    "t": 515.1400000000001,
+    "small": "EIXO DA TERRA",
+    "big": "1 MILHÃO DE ANOS"
+   },
+   {
+    "t": 597.74,
+    "small": "MARTE",
+    "big": "EIXO SEM LUA GRANDE"
+   },
+   {
+    "t": 620.5200000000001,
+    "small": "HUMANIDADE",
+    "big": "A RESPOSTA"
+   },
+   {
+    "t": 652.0400000000001,
+    "small": "RIO ARAGUARI (AP)",
+    "big": "2014"
+   }
+  ],
+  "palavra": [
+   {
+    "t": 13.040000000000001,
+    "texto": "E SE ELA SUMISSE?",
+    "cor": "impacto",
+    "dur": 4.0
+   },
+   {
+    "t": 31.6,
+    "texto": "TEMPO SEM A LUA",
+    "cor": "info",
+    "dur": 4.0
+   },
+   {
+    "t": 44.339999999999996,
+    "texto": "384.400 KM",
+    "cor": "dado",
+    "dur": 4.0
+   },
+   {
+    "t": 53.78,
+    "texto": "1,3 SEGUNDO",
+    "cor": "info",
+    "dur": 4.0
+   },
+   {
+    "t": 76.76,
+    "texto": "~100 VEZES MAIS ESCURO",
+    "cor": "perigo",
+    "dur": 4.0
+   },
+   {
+    "t": 86.22,
+    "texto": "1.700 VEZES",
+    "cor": "dado",
+    "dur": 4.0
+   },
+   {
+    "t": 114.5,
+    "texto": "TODA NOITE, CÉU DE PARQUE",
+    "cor": "impacto",
+    "dur": 4.0
+   },
+   {
+    "t": 124.32,
+    "texto": "NÃO TEM TSUNAMI",
+    "cor": "impacto",
+    "dur": 4.0
+   },
+   {
+    "t": 146.78,
+    "texto": "O SOL FAZ MENOS DA METADE",
+    "cor": "dado",
+    "dur": 4.0
+   },
+   {
+    "t": 154.46,
+    "texto": "DE 7 METROS PRA ~1/3",
+    "cor": "perigo",
+    "dur": 4.0
+   },
+   {
+    "t": 178.58,
+    "texto": "LUA CHEIA, LUA NOVA",
+    "cor": "info",
+    "dur": 4.0
+   },
+   {
+    "t": 206.7,
+    "texto": "SEM MARÉ GRANDE, SEM ONDA",
+    "cor": "perigo",
+    "dur": 4.0
+   },
+   {
+    "t": 217.72,
+    "texto": "A PRIMEIRA PERDA",
+    "cor": "info",
+    "dur": 4.0
+   },
+   {
+    "t": 239.28,
+    "texto": "A ANDADA",
+    "cor": "impacto",
+    "dur": 4.0
+   },
+   {
+    "t": 256.459,
+    "texto": "DEFESO MARCADO PELA LUA",
+    "cor": "dado",
+    "dur": 4.0
+   },
+   {
+    "t": 268.86,
+    "texto": "NINGUÉM SABE",
+    "cor": "perigo",
+    "dur": 4.0
+   },
+   {
+    "t": 277.6,
+    "texto": "\"MÊS\" VEM DE \"LUA\"",
+    "cor": "dado",
+    "dur": 4.0
+   },
+   {
+    "t": 304.2,
+    "texto": "UMA LUA DE TABELA",
+    "cor": "info",
+    "dur": 4.0
+   },
+   {
+    "t": 312.0,
+    "texto": "O BLOCO SAI MESMO ASSIM",
+    "cor": "impacto",
+    "dur": 4.0
+   },
+   {
+    "t": 331.96000000000004,
+    "texto": "VERMELHA POR 1H40",
+    "cor": "dado",
+    "dur": 4.0
+   },
+   {
+    "t": 337.88,
+    "texto": "CANCELADO. PRA SEMPRE",
+    "cor": "perigo",
+    "dur": 4.0
+   },
+   {
+    "t": 358.42,
+    "texto": "2º MAIOR DO MUNDO",
+    "cor": "impacto",
+    "dur": 4.0
+   },
+   {
+    "t": 379.98,
+    "texto": "A FAIXA ENCOLHE",
+    "cor": "perigo",
+    "dur": 4.0
+   },
+   {
+    "t": 414.76,
+    "texto": "TERREMOTOS? QUASE NADA",
+    "cor": "info",
+    "dur": 4.0
+   },
+   {
+    "t": 436.1,
+    "texto": "A LUA NÃO É ESCUDO",
+    "cor": "info",
+    "dur": 4.0
+   },
+   {
+    "t": 445.76,
+    "texto": "A ÓRBITA SEGUE",
+    "cor": "impacto",
+    "dur": 4.0
+   },
+   {
+    "t": 461.46,
+    "texto": "AGORA, O PLANETA",
+    "cor": "info",
+    "dur": 4.0
+   },
+   {
+    "t": 483.02,
+    "texto": "UM DIA DE 18 HORAS",
+    "cor": "dado",
+    "dur": 4.0
+   },
+   {
+    "t": 497.16,
+    "texto": "A LUA É O FREIO",
+    "cor": "info",
+    "dur": 2.8999999999999657
+   },
+   {
+    "t": 500.26,
+    "texto": "O FREIO AFROUXA",
+    "cor": "impacto",
+    "dur": 4.0
+   },
+   {
+    "t": 521.96,
+    "texto": "23,4 GRAUS",
+    "cor": "info",
+    "dur": 4.0
+   },
+   {
+    "t": 535.44,
+    "texto": "O TRÓPICO É O EIXO",
+    "cor": "info",
+    "dur": 4.0
+   },
+   {
+    "t": 559.94,
+    "texto": "DE 0 A 85 GRAUS?",
+    "cor": "perigo",
+    "dur": 4.0
+   },
+   {
+    "t": 571.54,
+    "texto": "O TRÓPICO ANDA",
+    "cor": "info",
+    "dur": 4.0
+   },
+   {
+    "t": 578.02,
+    "texto": "OS CIENTISTAS DISCORDAM",
+    "cor": "dado",
+    "dur": 4.0
+   },
+   {
+    "t": 600.24,
+    "texto": "MARTE JÁ PASSOU DE 60°",
+    "cor": "perigo",
+    "dur": 4.0
+   },
+   {
+    "t": 615.12,
+    "texto": "MILHÕES DE ANOS, NÃO SÉCULOS",
+    "cor": "impacto",
+    "dur": 4.0
+   },
+   {
+    "t": 629.96,
+    "texto": "A GENTE AGUENTARIA",
+    "cor": "impacto",
+    "dur": 4.0
+   },
+   {
+    "t": 638.52,
+    "texto": "QUEM SENTE PRIMEIRO",
+    "cor": "perigo",
+    "dur": 4.0
+   },
+   {
+    "t": 664.14,
+    "texto": "NÃO FOI A LUA",
+    "cor": "perigo",
+    "dur": 4.0
+   },
+   {
+    "t": 676.54,
+    "texto": "VOLTOU 11 ANOS DEPOIS",
+    "cor": "impacto",
+    "dur": 4.0
+   },
+   {
+    "t": 681.24,
+    "texto": "ELA NÃO VAI A LUGAR NENHUM",
+    "cor": "info",
+    "dur": 3.8
+   }
+  ],
+  "fonte": [
+   {
+    "t": 44.54,
+    "texto": "FONTE: NASA — Moon Fact Sheet"
+   },
+   {
+    "t": 74.14,
+    "texto": "FONTE: Wikipedia — Orders of magnitude (illuminance)"
+   },
+   {
+    "t": 93.72,
+    "texto": "FONTE: Sky & Telescope"
+   },
+   {
+    "t": 105.8,
+    "texto": "FONTE: DarkSky International, 2021"
+   },
+   {
+    "t": 137.48,
+    "texto": "FONTE: NOAA — Tides and Water Levels"
+   },
+   {
+    "t": 149.62,
+    "texto": "FONTE: Paschoaleti 2023, USP — Baía de São Marcos"
+   },
+   {
+    "t": 191.94,
+    "texto": "FONTE: Portal Amazônia, 2026; reportagens sobre o Festival da Pororoca"
+   },
+   {
+    "t": 245.38,
+    "texto": "FONTE: Portaria Interministerial MPA/MMA nº 45/2026; INEMA-BA"
+   },
+   {
+    "t": 277.8,
+    "texto": "FONTE: Wiktionary — mensis"
+   },
+   {
+    "t": 285.48,
+    "texto": "FONTE: regra do Concílio de Niceia (325 d.C.)"
+   },
+   {
+    "t": 320.54,
+    "texto": "FONTE: NASA; Observatório Nacional"
+   },
+   {
+    "t": 357.46,
+    "texto": "FONTE: ICMBio — Atlas dos Manguezais do Brasil (2018)"
+   },
+   {
+    "t": 392.64,
+    "texto": "FONTE: Munk & Wunsch 1998; Egbert & Ray 2000, Nature"
+   },
+   {
+    "t": 415.26,
+    "texto": "FONTE: Ide, Yabe & Tanaka 2016, Nature Geoscience"
+   },
+   {
+    "t": 431.92,
+    "texto": "FONTE: Universidade de Southampton / NASA, 2019 — registro de crateras"
+   },
+   {
+    "t": 474.52,
+    "texto": "FONTE: Meyers & Malinverno 2018, PNAS"
+   },
+   {
+    "t": 547.38,
+    "texto": "FONTE: Laskar, Joutel & Robutel 1993, Nature"
+   },
+   {
+    "t": 578.22,
+    "texto": "FONTE: Lissauer, Barnes & Chambers 2012, Icarus; Lissauer & Chambers 2004, NASA"
+   },
+   {
+    "t": 598.04,
+    "texto": "FONTE: Laskar et al. 2004, Icarus"
+   },
+   {
+    "t": 652.34,
+    "texto": "FONTE: ICMBio; MPF-AP; Portal Amazônia (g1)"
+   }
+  ]
+ },
+ "fim_audio": 705.76
+}

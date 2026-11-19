@@ -1,0 +1,7 @@
+render/node_modules/
+render/out/
+render/stills/
+render/*.jpg
+audio/*.wav
+*.wav
+*.log
