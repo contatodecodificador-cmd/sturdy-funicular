@@ -10,20 +10,20 @@ TR = [
     ('m2_luz', 171.3, 202.6, 4, 1.5, 1.5, -33),                   # 15 dias / festival
     ('m6_pororoca', 202.2, 228.2, 0, 2.0, 2.0, -31),             # a primeira perda
     ('m7_mangue', 227.8, 273.3, 0, 2.0, 1.5, -32),               # andada
-    ('m7_mangue', 273.0, 320.2, 12, 1.0, 2.0, -30),              # Carnaval (mais presente)
-    ('m4_estrelas', 319.8, 338.0, 6, 2.0, 1.0, -32),             # eclipse
+    (('m8_carnaval', 'm7_mangue'), 273.0, 320.2, 0, 1.0, 2.0, -31),  # Carnaval: samba suave
+    (('m9_eclipse', 'm4_estrelas'), 319.8, 338.0, 0, 2.0, 1.0, -32),  # eclipse
     ('m6_pororoca', 337.4, 357.4, 20, 1.0, 2.0, -32),            # cancelado / sai de cartaz
     ('m7_mangue', 357.0, 392.4, 30, 2.0, 2.0, -33),              # manguezais
-    ('m3_escuro', 391.8, 409.6, 0, 2.0, 1.5, -33),               # oceano
-    ('m2_luz', 409.2, 457.4, 10, 1.5, 1.5, -33),                 # mitos
-    ('m1_intro', 457.0, 469.6, 26, 1.0, 1.0, -30),               # virada
-    ('m3_escuro', 469.2, 515.0, 8, 2.0, 1.5, -33),               # o freio
+    (('m10_oceano', 'm3_escuro'), 391.8, 409.6, 0, 2.0, 1.5, -33),  # oceano
+    (('m11_mitos', 'm2_luz'), 409.2, 457.4, 0, 1.5, 1.5, -33),  # mitos
+    (('m12_virada', 'm1_intro'), 457.0, 469.6, 0, 1.0, 1.0, -30),  # virada
+    (('m13_freio', 'm3_escuro'), 469.2, 515.0, 0, 2.0, 1.5, -33),  # o freio
     ('m4_estrelas', 514.7, 547.0, 14, 2.0, 1.5, -32),            # o eixo / trópico
-    ('m1_intro', 546.8, 578.0, 0, 1.5, 1.5, -31),                # caos 0–85°
-    ('m3_escuro', 577.6, 620.6, 0, 2.0, 2.0, -33),               # honestidade / Marte
-    ('m4_estrelas', 620.3, 652.2, 0, 2.0, 2.0, -32),             # a resposta
+    (('m14_eixo', 'm1_intro'), 546.8, 611.4, 0, 1.5, 1.5, -31),  # caos / estudos / Marte
+    ('m3_escuro', 611.0, 620.6, 0, 2.0, 2.0, -33),  # devagar
+    (('m15_resposta', 'm4_estrelas'), 620.3, 652.2, 0, 2.0, 2.0, -32),  # a resposta
     ('m6_pororoca', 651.8, 681.2, 0, 2.0, 2.0, -31),             # Araguari
-    ('m4_estrelas', 680.8, FIM, 10, 3.0, 3.0, -30),              # fecho
+    (('m16_fecho', 'm4_estrelas'), 680.8, FIM, 0, 3.0, 4.0, -29),  # fecho emocional
 ]
 S = [  # (efeito, tempo, volume linear)
     ('pororoca', 3.0, 0.20), ('apagar', 15.05, 0.38), ('whoosh', 20.9, 0.12), ('tic', 31.9, 0.25), ('cronometro', 35.0, 0.12),
@@ -52,7 +52,11 @@ S = [  # (efeito, tempo, volume linear)
 DUR = {'grilos': 6.0, 'pororoca': 5.0}
 args = ['ffmpeg', '-y', '-loglevel', 'error', '-i', 'audio/voz_tratada.wav']
 fl = []; n = 1; mus = []
+import os
 for f, a, b, off, fi, fo, lufs in TR:
+    if isinstance(f, tuple):
+        f, alt = f
+        if not os.path.exists(f'musica/{f}.mp3'): print('sem', f, '-> usando', alt); f = alt
     args += ['-stream_loop', '-1', '-i', f'musica/{f}.mp3']; L = b - a
     fl.append(f"[{n}:a]atrim={off}:{off + L:.2f},asetpts=PTS-STARTPTS,loudnorm=I={lufs}:TP=-3,afade=t=in:d={fi},afade=t=out:st={L - fo:.2f}:d={fo},adelay={int(a * 1000)}|{int(a * 1000)},aformat=channel_layouts=stereo,apad=whole_dur={FIM}[m{n}]")
     mus.append(f"[m{n}]"); n += 1
