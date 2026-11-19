@@ -308,7 +308,7 @@ Se você quer ver o Brasil de um jeito que não cabe no livro de escola, se insc
 
 ## (a) CONTAGEM DE PALAVRAS DA NARRAÇÃO
 
-(preenchida abaixo após a contagem automática)
+Narração: **~2.015 palavras** (10.550 caracteres) → ~12 a 14 min a 145-165 palavras/min. Bloco mais longo: Bloco 11 (eixo, a parada do título, ~280 palavras). Para o ElevenLabs (limite de 5.000 caracteres): 3 partes em `texto_para_IA_partes.txt` — Parte 1 = Intro + Ato 1 (3.401), Parte 2 = Ato 2 (~3.360), Parte 3 = Virada + Ato 3 + Fecho (~3.780).
 
 ## (b) FONTES USADAS (por bloco)
 
