@@ -1,4 +1,5 @@
 import '@fontsource/oswald/500.css';
+import '@fontsource/oswald/600.css';
 import '@fontsource/oswald/700.css';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/700.css';

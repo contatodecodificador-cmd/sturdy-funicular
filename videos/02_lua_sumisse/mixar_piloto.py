@@ -9,12 +9,13 @@ TR = [
     ('musica/m3_escuro.mp3', 68.0, 94.5, 0, 2.5, 2.0, -34),     # escuridão do sertão
     ('musica/m4_estrelas.mp3', 92.8, FIM, 0, 3.0, 2.5, -32),    # o lado bonito: estrelas
 ]
+DUR = {'sfx/grilos.mp3': 6.0, 'sfx/pororoca.mp3': 5.0}  # efeitos longos encurtados com fade
 SFX = [  # (arquivo, tempo, volume linear)
     ('sfx/pororoca.mp3', 3.0, 0.20), ('sfx/apagar.mp3', 15.05, 0.38), ('sfx/whoosh.mp3', 20.9, 0.12),
     ('sfx/tic.mp3', 31.9, 0.25), ('sfx/cronometro.mp3', 35.0, 0.12), ('sfx/whoosh.mp3', 36.6, 0.14),
     ('sfx/pulso.mp3', 49.7, 0.22), ('sfx/pop.mp3', 53.8, 0.12), ('sfx/whoosh.mp3', 58.5, 0.10),
-    ('sfx/apagar.mp3', 63.05, 0.38), ('sfx/impacto.mp3', 67.1, 0.26), ('sfx/grilos.mp3', 68.3, 0.12),
-    ('sfx/grilos.mp3', 78.2, 0.06), ('sfx/pop.mp3', 76.8, 0.10), ('sfx/brilho.mp3', 94.0, 0.18),
+    ('sfx/apagar.mp3', 63.05, 0.38), ('sfx/impacto.mp3', 67.1, 0.26), ('sfx/grilos.mp3', 68.3, 0.10),
+    ('sfx/pop.mp3', 76.8, 0.10), ('sfx/brilho.mp3', 94.0, 0.18),
     ('sfx/brilho.mp3', 99.2, 0.14), ('sfx/whoosh.mp3', 104.9, 0.10), ('sfx/pop.mp3', 114.5, 0.10),
 ]
 args = ['ffmpeg', '-y', '-loglevel', 'error', '-i', 'audio/voz_tratada.wav']
@@ -27,7 +28,7 @@ fl.append("".join(mus) + f"amix=inputs={len(mus)}:normalize=0,atrim=0:{FIM}[mus]
 sf = []
 for f, t, v in SFX:
     args += ['-i', f]; d = int(max(0, t) * 1000)
-    fl.append(f"[{n}:a]aformat=channel_layouts=stereo,volume={v},adelay={d}|{d}[s{n}]"); sf.append(f"[s{n}]"); n += 1
+    fl.append(f"[{n}:a]aformat=channel_layouts=stereo,atrim=0:{DUR.get(f, 99)},afade=t=out:st={max(0, DUR.get(f, 99) - 1.5)}:d=1.5,volume={v},adelay={d}|{d}[s{n}]"); sf.append(f"[s{n}]"); n += 1
 fl.append("".join(sf) + f"amix=inputs={len(sf)}:normalize=0,apad=whole_dur={FIM},atrim=0:{FIM}[sfx]")
 fl.append(f"[0:a]atrim=0:{FIM},aformat=channel_layouts=stereo,apad=whole_dur={FIM},asplit=2[voz][sc]")
 fl.append("[mus][sc]sidechaincompress=threshold=0.03:ratio=4:attack=60:release=600:makeup=1[duck]")

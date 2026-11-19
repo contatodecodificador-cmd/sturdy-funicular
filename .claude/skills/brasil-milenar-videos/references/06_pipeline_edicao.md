@@ -37,3 +37,14 @@ Tudo é feito por código, sem editor de vídeo. Ambiente usado: Linux com ffmpe
 - [ ] Música não compete com a voz; efeitos quase imperceptíveis.
 - [ ] Loudness final -14 LUFS, pico ≤ -1 dBTP.
 - [ ] Último quadro: contador central + selo do canal.
+
+## Lições do vídeo 2 (piloto aprovado em etapas)
+- **Piloto primeiro** (~2 min: intro + 2 blocos), storyboard de quadros a cada 6 s, só depois o resto em lotes.
+- **Edição dinâmica**: cenas de 4-8 s, várias "batidas" por parágrafo, coreografadas no tempo exato das palavras (alinhamento).
+- **Texto nunca escala com o zoom**: `Cena` tem a prop `fixo` (camada sem push-in) — todo texto/rótulo vai nela. Rótulos HTML (`Tag`) com pílula escura + filete colorido.
+- **Palavras-chave**: caixa escura translúcida, sombra, texto BRANCO e filete colorido embaixo (a cor indica o sentido). O dono não gostou de texto colorido solto (ex.: verde).
+- **Personagens 2D**: silhuetas com proporção real (membros grossos, articulações, ciclo de caminhada), nunca "palitinho". Objetos fiéis ao real (mandacaru com braços em candelabro, chapéu de couro, palafitas, sombrinha de frevo, lampião colonial, paralelepípedo).
+- **Fundos reais + 2D por cima**: espaço = panorama ESO (Via Láctea, CC BY 4.0, creditar); mapas = Natural Earth HYP_HR_SR_OB_DR (naciscdn.org, domínio público, 21600 px) em projeção equirretangular com tratamento noturno (brightness 0.7); noite = "The earth at night" (NASA) via miniatura 3840 px do Commons.
+- **Rede**: Commons bloqueia arquivo original (429) — usar miniatura `/thumb/<h>/<hh>/<nome>/3840px-<nome>` (hash md5 do nome). eoimages.gsfc.nasa.gov e images-assets.nasa.gov ficam bloqueados no ambiente padrão.
+- **ElevenLabs**: a conta permite só 2 pedidos simultâneos — gerar em fila (1 por vez). Efeitos longos (grilos, rio) cortados para ≤ 6 s com fade; música 3-4 dB mais baixa que o padrão (o dono quer bem sutil): trilhas em -31 a -34 LUFS antes do ducking.
+- **Créditos**: manter `CREDITOS.md` por vídeo e colar na descrição.
