@@ -450,7 +450,7 @@ export const CenasPiloto: React.FC = () => {
               <Lua x={mx} y={y} r={48} on={1 - sumiu} ghost={sumiu} id="dg" />
               <text x={mx} y={y + 110} textAnchor="middle" fill={C.cinza} style={{fontFamily: F.rotulo, fontWeight: 700, fontSize: 22, letterSpacing: 4}}>LUA</text>
               <line x1={ex + 110} y1={y} x2={lerp(ex + 110, mx - 70, K(t, 44.3, 46.5))} y2={y} stroke={C.dado} strokeWidth={2} strokeDasharray="8 8" />
-              <text x={(ex + mx) / 2} y={y - 30} textAnchor="middle" fill={C.dado} opacity={K(t, 46, 47) * (1 - K(t, 57.3, 57.7))} style={{fontFamily: F.titulo, fontWeight: 500, fontSize: 40, letterSpacing: 3}}>384.400 KM</text>
+              <text x={(ex + mx) / 2} y={y - 30} textAnchor="middle" fill={C.dado} opacity={K(t, 46, 47) * (1 - K(t, 53.0, 53.5))} style={{fontFamily: F.titulo, fontWeight: 500, fontSize: 40, letterSpacing: 3}}>384.400 KM</text>
               {pk > 0 && pk < 1 && (
                 <g>
                   <circle cx={lerp(mx - 60, ex + 100, pk)} cy={y} r={16} fill="#fff6dc" opacity={0.9} />
