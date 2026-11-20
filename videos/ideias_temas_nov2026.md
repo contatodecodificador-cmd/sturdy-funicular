@@ -31,3 +31,27 @@ Método: 25 temas no formato "uma pessoa vive o que o título promete" (jornada 
 - **Asteroide dos dinossauros**: Kurzgesagt PT 3,5 mi (2022), INCRÍVEL 3,3 mi, E se 1,3 mi.
 - **Buraco atravessando a Terra**: CTD 960 mil (2022); EN 13,7 mi (Cleo Abram). Só com ângulo "onde você sairia, do Brasil".
 - **Terra parar de girar**: hits antigos (2018-19) + xkcd 3,5 mi (2024). Refação possível no formato "cidade a cidade".
+
+---
+
+# Aprofundamento: TROCAR O SOL POR OUTRA ESTRELA (títulos e ângulo)
+
+## O que já existe (o tema está ATIVO, não só antigo)
+- PT: INCRÍVEL 1,98 mi (2022) e 866 mil (2021) · Mundo Indomável "Nascer do Sol em outros lugares" 471 mil (jul/26) e "Terra orbitando outras estrelas" 83 mil (mar/26) · E se PT "Betelgeuse substituísse o Sol" 25 mil (jul/26) · CTD "Sol fosse buraco negro" 755 mil (2019).
+- EN: What If "swapped our Sun with other objects" 2,1 mi (2025) e "deadliest objects" 408 mil (set/26) · The Paint Explainer 844 mil (mar/26) · Cosmic Witness "12 real stars, smallest to biggest" 106 mil (nov/26) · sunsets 2,4 mi (2025).
+- **Todos usam a mesma estrutura**: "E se o Sol fosse (substituído por) X?" / "What if X replaced the Sun?". Ângulos VAZIOS em PT: placar de sobrevivência com uma pessoa; "existe um Sol MELHOR que o nosso?"; os 8 minutos de atraso da luz; a cor das plantas/da pele/do céu no seu dia a dia.
+
+## Estruturas NOVAS de título (para este tema e reutilizáveis)
+1. **Placar / eliminação** — "Trocamos o Sol 10 Vezes. Em Quantas Você Sobrevive?"
+2. **Pergunta invertida com virada** — "Existe um Sol Melhor Que o Nosso? Testamos 10 Estrelas"
+3. **Relógio do atraso** — "Trocaram o Sol Agora. Você Só Vai Perceber em 8 Minutos"
+4. **Escada de tamanho com número** — "Do Sol 10 Vezes Menor ao 1.000 Vezes Maior: Até Onde Você Aguenta?"
+5. **Cotidiano sob outro Sol** — "Seu Dia Com Outro Sol: a Cor do Céu, das Plantas e da Sua Pele"
+6. **Primeira pessoa / experimento** — "Coloquei 10 Estrelas no Lugar do Sol. Só Uma Deixou a Gente Viver"
+
+## Recomendação
+- **Título**: "Trocamos o Sol 10 Vezes. Em Quantas Você Sobrevive?" (alternativa A/B: "Existe um Sol Melhor Que o Nosso?").
+- **Gancho**: "Se alguém trocasse o Sol agora, você ia continuar no sol por 8 minutos e 20 segundos, sem saber."
+- **Arquitetura**: escada de estrelas da menor à maior (anã vermelha → anã laranja → Sol → Sirius → Vega → Rigel → Betelgeuse → UY Scuti...) + anomalias (anã branca, estrela de nêutrons, buraco negro); uma pessoa no quintal em cada troca (céu, calor, sombra, cor das plantas) + **placar** "SOBREVIVEU / NÃO SOBREVIVEU" + carimbo por estrela.
+- **Laço aberto + virada final**: "uma dessas estrelas seria um Sol MELHOR que o nosso" → anã laranja (hipótese dos planetas "superabitáveis", Schulze-Makuch et al. 2020, Astrobiology — verificar na pesquisa).
+- **Diferenciais**: personagem + placar (ninguém em PT), a virada do "Sol melhor", o atraso de 8 min, cotidiano (pele, plantas, pôr do sol). Evitar repetir o "buraco negro chegando" da referência (tratar o buraco negro em 1 parada curta).

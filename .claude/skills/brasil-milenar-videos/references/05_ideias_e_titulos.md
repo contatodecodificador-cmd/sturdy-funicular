@@ -32,3 +32,11 @@ Pesquisa de nov/2026: italiano é a melhor brecha (líderes são dublagens gené
 ## Novos temas pesquisados (nov/2026) — ranking completo em `videos/ideias_temas_nov2026.md`
 Ordem sugerida: 1) Do zero absoluto ao centro do Sol: até que temperatura você aguenta? · 2) Encolhemos você até o tamanho de um átomo · 3) Quanto tempo você duraria em cada lua do Sistema Solar? · 4) Quanto tempo você aguenta sem cada coisa? · 5) Caindo de cada altura · 6) Os piores dias da história da Terra · 7) Os lugares mais extremos da Terra.
 Regra de título: a frase "Quanto tempo você sobreviveria em cada ___" está saturada por canais copiadores (out-nov/2026); variar a forma.
+
+## Estruturas de título (para fugir do "E se X?" e do "Quanto tempo você sobreviveria em cada X?")
+- Placar/eliminação: "Trocamos o Sol 10 Vezes. Em Quantas Você Sobrevive?"
+- Pergunta invertida com virada: "Existe um Sol Melhor Que o Nosso?"
+- Relógio/atraso: "Trocaram o Sol Agora. Você Só Vai Perceber em 8 Minutos"
+- Escada com número: "Do 10 Vezes Menor ao 1.000 Vezes Maior: Até Onde Você Aguenta?"
+- Cotidiano: "Seu Dia Com Outro Sol: a Cor do Céu, das Plantas e da Sua Pele"
+- Primeira pessoa/experimento: "Coloquei 10 Estrelas no Lugar do Sol. Só Uma Deixou a Gente Viver"
