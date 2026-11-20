@@ -31,7 +31,7 @@ Quando houver subagentes disponíveis, delegue por função: pesquisa e verifica
 - **Cada vídeo é único.** Nada de roteiro com cara de fôrma: mudar forma do contador, abertura, fio condutor, arquitetura e fecho; não repetir fatos nem frases de vídeos anteriores (registro em `references/08_unicidade_entre_videos.md`, atualizar a cada vídeo).
 - **Dados reais, sempre.** Nada de número inventado. Incerteza vira honestidade na fala ("anota com lápis", "num dos modelos", "um estudo de 2024 sugere", "não é previsão com data, é média").
 - **Corpo antes da intro.** A intro é escrita por último.
-- **Brasil a cada ~1,5 min** de narração.
+- **Âncora brasileira opcional** (decisão do dono, nov/2026): temas universais são permitidos; quando houver comparação, prefira referências do cotidiano brasileiro.
 - **Uma pergunta aberta** no começo que só se resolve no fim + **fio condutor** que aparece 3-4 vezes.
 - **Sem CTA no meio.** Um único pedido de inscrição no final.
 - **Tudo sutil** na edição: nada de alarme, zoom agressivo ou efeito exagerado.

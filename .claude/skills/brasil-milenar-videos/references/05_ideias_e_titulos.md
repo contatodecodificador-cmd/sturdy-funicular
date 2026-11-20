@@ -28,3 +28,7 @@ Imagem fotorrealista (IA) com âncora brasileira + UM número gigante (branco, c
 
 ## Expansão para outros idiomas
 Pesquisa de nov/2026: italiano é a melhor brecha (líderes são dublagens genéricas em queda — IL LATO POSITIVO 3 mi de inscritos com 81-2.900 views por vídeo; "Cosa succederà tra 1 miliardo di anni?" 5 milhões de views). Alemão em 2º (anúncio paga mais; canal de 140 inscritos fez 34 mil com "Wie lange überlebst du auf jedem Planeten?"). Inglês, espanhol e francês: saturados. Na versão italiana, a âncora vira a Itália (Campos Flegreos, Vesúvio, Mediterrâneo secando — crise messiniana, Veneza, África empurrando a Europa).
+
+## Novos temas pesquisados (nov/2026) — ranking completo em `videos/ideias_temas_nov2026.md`
+Ordem sugerida: 1) Do zero absoluto ao centro do Sol: até que temperatura você aguenta? · 2) Encolhemos você até o tamanho de um átomo · 3) Quanto tempo você duraria em cada lua do Sistema Solar? · 4) Quanto tempo você aguenta sem cada coisa? · 5) Caindo de cada altura · 6) Os piores dias da história da Terra · 7) Os lugares mais extremos da Terra.
+Regra de título: a frase "Quanto tempo você sobreviveria em cada ___" está saturada por canais copiadores (out-nov/2026); variar a forma.
