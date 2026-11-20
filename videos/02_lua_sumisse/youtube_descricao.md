@@ -64,5 +64,5 @@ O Brasil tem bilhões de anos de história, e quase ninguém conhece. Aqui a gen
 
 #BrasilMilenar #Lua #Ciência
 
-## Tags (colar no campo de tags — 486 caracteres)
+## Tags (colar no campo de tags — 468 caracteres)
 e se a lua sumisse, o que aconteceria se a lua sumisse, se a lua desaparecesse, sem a lua, quanto tempo a humanidade duraria, lua, marés, pororoca, maré de são luís, caranguejo uçá, andada do caranguejo, carnaval e a lua, data do carnaval, eclipse lunar 2029, manguezais do brasil, eixo da terra, inclinação do eixo da terra, trópico de capricórnio, brasil milenar, curiosidades sobre a lua, ciência, astronomia, documentário, e se, brasil, terra sem lua, fases da lua
