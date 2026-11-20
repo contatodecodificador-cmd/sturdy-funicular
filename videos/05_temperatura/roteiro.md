@@ -92,7 +92,7 @@ Os médicos ligaram o sangue dela numa máquina que aquece e devolve. Grau por g
 
 [CARIMBO: SOBREVIVEU]
 [PALAVRA: O RECORDE MUNDIAL | DOURADO]
-É a temperatura corporal mais baixa da qual um adulto já voltou. E tem um detalhe bonito: o frio que quase matou a Anna também protegeu o cérebro dela, porque um cérebro gelado gasta menos oxigênio. Ela se recuperou e voltou a trabalhar como médica, no mesmo hospital que a salvou.
+É a temperatura corporal mais baixa da qual um adulto já voltou. E tem um detalhe bonito: o frio que quase matou a Anna também protegeu o cérebro dela, porque um cérebro gelado gasta menos oxigênio. Ela se recuperou e seguiu a carreira de médica.
 
 ## PORTA 4 — 40 → 46,5 °C (por dentro) — Quando o calor entra
 
@@ -123,7 +123,7 @@ E isso é só o que acontece por dentro. Agora a gente abre as portas de fora. C
 
 [VISUAL: duas metades: Caçador (SC) com geada / Araçuaí (MG) com asfalto tremendo]
 [ETIQUETA: Brasil / OS RECORDES]
-Primeiro, o nosso quintal. O frio oficial mais forte já medido no Brasil foi em Caçador, em Santa Catarina, em mil novecentos e cinquenta e dois: menos catorze graus. E o calor mais forte: quarenta e quatro vírgula oito, em Araçuaí, Minas Gerais, em dois mil e vinte e três.
+Primeiro, o nosso quintal. O frio oficial mais forte já medido no Brasil foi em Caçador, em Santa Catarina, em mil novecentos e cinquenta e dois: menos catorze graus. E o calor mais forte: quarenta e quatro vírgula oito, em Araçuaí, Minas Gerais, em dois mil e vinte e três. É o maior valor confirmado pelo instituto de meteorologia do país.
 
 [PLACAR: preenche "−14 Caçador" e "+44,8 Araçuaí"]
 [CARIMBO: VOCÊ AGUENTA: COM ROUPA CERTA, TRANQUILO]
@@ -135,7 +135,7 @@ Com roupa certa e água, você aguenta as duas. Gente vive nelas. Então vamos p
 [ETIQUETA: Oymyakon, Rússia / −67,7 °C]
 Oymyakon, na Sibéria. É chamada de o lugar habitado mais frio da Terra. Em mil novecentos e trinta e três, o termômetro de lá marcou menos sessenta e sete vírgula sete graus.
 
-Lá, os carros passam o dia ligados, porque se desligar, não liga mais. Os cílios congelam. A tinta da caneta congela. E mesmo assim, as crianças só são dispensadas da escola quando passa de uns cinquenta abaixo de zero.
+Lá, os carros passam o dia ligados, porque se desligar, não liga mais. Os cílios congelam. A tinta da caneta congela. E mesmo assim, as crianças menores só são dispensadas da escola quando passa de cinquenta e dois abaixo de zero.
 
 [FONTE: NOAA/NWS — tabela de sensação térmica e congelamento]
 [PALAVRA: PELE CONGELA EM MINUTOS | AZUL]
@@ -180,11 +180,11 @@ A diferença é quanta matéria quente encosta em você. O ar é ralo. Ele toca 
 
 [VISUAL: gravura do século 18: um senhor de peruca numa sala aquecida, com um ovo numa bandeja e um pedaço de carne]
 [ETIQUETA: Londres / 1774]
-E alguém já testou isso no próprio corpo, de propósito. Em mil setecentos e setenta e quatro, o médico inglês Charles Blagden entrou numa sala aquecida a mais de cem graus. Levou junto um ovo e um pedaço de carne.
+E alguém já testou isso no próprio corpo, de propósito. Em mil setecentos e setenta e quatro, o médico inglês Charles Blagden entrou numa sala aquecida a mais de cento e vinte graus. E ficou lá dentro oito minutos. Na mesma sala, deixaram ovos e um bife.
 
-[VISUAL: o ovo endurecendo, a carne mudando de cor; o termômetro do Blagden parado no 37]
+[VISUAL: sala de tijolos com termômetro antigo a 127 °C; ovos endurecendo numa bandeja; o termômetro do Blagden parado no 37; relógio de 8 minutos]
 [CARIMBO: O OVO COZINHOU. ELE NÃO.]
-O ovo endureceu. A carne cozinhou. E o Blagden saiu andando, com o corpo praticamente na mesma temperatura de quando entrou. Ele apresentou tudo à Real Sociedade de Londres: foi um dos primeiros a mostrar que o suor é o que segura a gente vivo no calor.
+Em vinte minutos, os ovos estavam cozidos, duros. E o Blagden saiu andando, com o corpo praticamente na temperatura normal. Ele apresentou tudo à Real Sociedade de Londres: foi um dos primeiros a mostrar que o suor é o que segura a gente vivo no calor.
 
 [VISUAL: botão de inscrição discreto no canto, sobre o corredor]
 Se você está curtindo abrir essas portas, se inscreve no canal. Porque daqui pra frente, nenhuma delas é da Terra.
@@ -197,7 +197,7 @@ Mas antes, a última porta do planeta. A lava de um vulcão como o do Havaí sai
 
 [FONTE: USGS]
 [PALAVRA: VOCÊ NÃO AFUNDA | BRANCO]
-E aqui vai um mito de filme: a pessoa que cai na lava e afunda como se fosse água. A lava é muito mais densa que o corpo humano. Você não afundaria. Ficaria na superfície. O que não muda o final: o calor que irradia dela queima a metros de distância.
+E aqui vai um mito de filme: a pessoa que cai na lava e afunda como se fosse água. A maior parte da lava é umas três vezes mais densa que o corpo humano. Você provavelmente não afundaria. Ficaria na superfície. O que não muda o final: o calor que irradia dela queima a metros de distância.
 
 [PLACAR: preenche "−89,2 Vostok" (prévia) e "1.170 lava"]
 E no frio, o recorde da Terra é um lugar que nem cidade tem.
@@ -301,7 +301,7 @@ Em Bremen, na Alemanha, tem uma torre de mais de cem metros feita pra largar exp
 
 [VISUAL: a régua do termômetro faz um zoom gigante perto do zero; a marca do espaço (2,7) fica enorme perto da marca do laboratório]
 [PALAVRA: 70 BILHÕES DE VEZES MAIS FRIO QUE O ESPAÇO | DOURADO]
-Pra ter ideia: o espaço profundo, perto disso, é quente. Uns setenta bilhões de vezes mais quente. E desde dois mil e dezoito, a NASA mantém um laboratório assim dentro da Estação Espacial. Lá em cima, a uns quatrocentos quilômetros da sua cabeça, existe uma caixa mais fria que qualquer lugar do universo que a gente conhece.
+Pra ter ideia: o espaço profundo, perto disso, é quente. Uns setenta bilhões de vezes mais quente. E desde dois mil e dezoito, a Nasa mantém um laboratório assim dentro da Estação Espacial. Lá em cima, a uns quatrocentos quilômetros da sua cabeça, existe uma caixa mais fria que qualquer lugar do universo que a gente conhece.
 
 [VISUAL: o zero absoluto como uma linha que a régua nunca toca]
 [PALAVRA: O ZERO NUNCA CHEGA | BRANCO]
@@ -361,17 +361,17 @@ E se esse vídeo te fez olhar diferente pro termômetro, se inscreve. Tem mais e
 
 ## FONTES (por porta) — checar na rodada final antes de gravar
 - 37 °C / hipotermia (35 / 32 / 28 °C), despir paradoxal: Wilderness Medical Society; MSD Manual; Mayo Clinic.
-- Anna Bågenholm (1999, 13,7 °C, ~80 min, circulação extracorpórea, Tromsø): relatos médicos (The Lancet, 2000); Wikipedia como ponte. ⚠ conferir "voltou a trabalhar no mesmo hospital".
+- Anna Bågenholm (1999, 13,7 °C, ~80 min, circulação extracorpórea, Tromsø): relatos médicos (The Lancet, 2000); seguiu como radiologista e fez doutorado na UiT (2020). ✔ (frase "mesmo hospital" retirada)
 - Insolação ≥ 40 °C; ~42 °C falência de órgãos (faixa aproximada): Mayo Clinic; MSD Manual.
 - Willie Jones (Atlanta, 10/7/1980, 46,5 °C, 24 dias internado): Guinness World Records.
-- Caçador (SC) −14 °C, 1952 (INMET); Araçuaí (MG) 44,8 °C, 19/11/2023 (INMET). ⚠ Nova Maringá (MT) 2020 pode ter igualado — falar "um dos maiores".
-- Oymyakon −67,7 °C (1933; registro histórico, não oficial OMM) ⚠; vida cotidiana: relatos. Escola dispensada abaixo de ~−50 ⚠ conferir.
+- Caçador (SC) −14 °C, 1952 (INMET); Araçuaí (MG) 44,8 °C, 19/11/2023 (INMET, recorde oficial). Nova Maringá (MT) 2020 não é reconhecido pelo INMET → falamos "confirmado pelo instituto". ✔
+- Oymyakon −67,7 °C (1933; registro histórico, não oficial OMM — dizer "já registrou"); escola: menores dispensados abaixo de −52 °C, maiores abaixo de ~−56 (reportagens 2017–2020). ✔
 - Congelamento da pele (−40 com vento: ~10 min; mais vento: ~5 min): NOAA / NWS Wind Chill Chart.
 - Vale da Morte 56,7 °C (10/7/1913): OMM. Lut 70,7 °C (solo, 2005): NASA Earth Observatory.
 - Bulbo úmido ~31 °C: Vecellio et al. 2022 (Penn State); 35 °C: Sherwood & Huber 2010.
-- Água 60 °C ~5 s / 70 °C ~1 s: Moritz & Henriques 1947 (Am J Pathol). Sauna 80-100 °C: faixa usual ⚠ fonte.
-- Blagden (1774-75, Phil. Trans. 65, "Experiments and Observations in an Heated Room"; sala acima de 100 °C; ovo e carne): Public Domain Review / Royal Society ⚠ número exato.
-- Lava ~1.170 °C (Kīlauea): USGS. Lava densa (não afunda): ⚠ fonte.
+- Água 60 °C ~5 s / 70 °C ~1 s: Moritz & Henriques 1947 (Am J Pathol). Sauna 80–100 °C: Laukkanen & Kunutsor (revisão 2024). ✔
+- Blagden (Phil. Trans. 65, 1775): sala 1–2° acima de 260 °F (~127 °C), ~8 min lá dentro; ovos e bife na sala, ovos duros em 20 min (Public Domain Review; texto original). ✔
+- Lava ~1.170 °C (Kīlauea): USGS. Densidade da lava ~2,5–3 g/cm³ (~3× o corpo): dizer "provavelmente não afundaria". ✔
 - Vostok −89,2 °C (21/7/1983): OMM; −98 °C solo (Scambos et al. 2018, GRL).
 - Nitrogênio líquido −196 °C; Leidenfrost: Lawrence Berkeley National Lab (segurança criogênica).
 - Espaço / vácuo / ~15 s de consciência: NASA (caso do traje que vazou); radiação cósmica de fundo 2,725 K: COBE/Planck.
