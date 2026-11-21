@@ -158,8 +158,8 @@ export const Corredor: React.FC<{t: number; cam?: number; camX?: number; camY?: 
       </svg>
       {/* bokeh em primeiro plano (profundidade de campo) */}
       <svg width={1920} height={1080} style={{position: 'absolute'}}>
-        <defs><filter id="bok"><feGaussianBlur stdDeviation="7" /></filter></defs>
-        {Array.from({length: 14}, (_, i) => { const fria = i % 2 === 0; const x = fria ? 40 + rnd(i + 300) * 640 : 1240 + rnd(i + 300) * 640; const y = ((rnd(i + 310) * 1300 + (fria ? 1 : -1) * t * (22 + rnd(i + 320) * 30)) % 1300 + 1300) % 1300 - 110; return <circle key={i} cx={x + Math.sin(t * 0.6 + i) * 18} cy={y} r={10 + rnd(i + 330) * 16} fill={fria ? '#E8F6FF' : '#FFB04A'} opacity={0.22} filter="url(#bok)" />; })}
+        <defs><radialGradient id="bokF"><stop offset="0%" stopColor="#E8F6FF" stopOpacity={0.5} /><stop offset="100%" stopColor="#E8F6FF" stopOpacity={0} /></radialGradient><radialGradient id="bokQ"><stop offset="0%" stopColor="#FFB04A" stopOpacity={0.5} /><stop offset="100%" stopColor="#FFB04A" stopOpacity={0} /></radialGradient></defs>
+        {Array.from({length: 14}, (_, i) => { const fria = i % 2 === 0; const x = fria ? 40 + rnd(i + 300) * 640 : 1240 + rnd(i + 300) * 640; const y = ((rnd(i + 310) * 1300 + (fria ? 1 : -1) * t * (22 + rnd(i + 320) * 30)) % 1300 + 1300) % 1300 - 110; return <circle key={i} cx={x + Math.sin(t * 0.6 + i) * 18} cy={y} r={18 + rnd(i + 330) * 26} fill={fria ? 'url(#bokF)' : 'url(#bokQ)'} opacity={0.5} />; })}
       </svg>
       <AbsoluteFill style={{background: 'linear-gradient(270deg, rgba(255,110,30,0.10), transparent 35%)', opacity: 0.6 + 0.4 * Math.sin(t * 7.3) * Math.sin(t * 3.1), mixBlendMode: 'screen'}} />
       {/* névoa fria e calor: tingem cada metade */}

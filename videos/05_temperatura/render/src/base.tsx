@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, interpolate, useCurrentFrame, Easing} from 'remotion';
+import {AbsoluteFill, interpolate, useCurrentFrame, Easing, Img, staticFile} from 'remotion';
 import {C, F, FPS} from './theme';
 
 export const lerp = (a: number, b: number, k: number) => a + (b - a) * k;
@@ -100,12 +100,10 @@ export const Vinheta: React.FC<{forca?: number}> = ({forca = 0.6}) => (
 // grão de filme leve (dá textura "profissional")
 export const Grao: React.FC = () => {
   const f = useCurrentFrame();
+  const dx = -((f * 37) % 90), dy = -((f * 53) % 90);
   return (
-    <AbsoluteFill style={{opacity: 0.07, mixBlendMode: 'overlay', pointerEvents: 'none'}}>
-      <svg width={1920} height={1080}>
-        <filter id="grao"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves={2} seed={f % 12} /></filter>
-        <rect width={1920} height={1080} filter="url(#grao)" />
-      </svg>
+    <AbsoluteFill style={{opacity: 0.06, mixBlendMode: 'overlay', pointerEvents: 'none', overflow: 'hidden'}}>
+      <Img src={staticFile('grao.png')} style={{position: 'absolute', left: dx, top: dy, width: 2020, height: 1180}} />
     </AbsoluteFill>
   );
 };
