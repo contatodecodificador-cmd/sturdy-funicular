@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, OffthreadVideo, Sequence, staticFile} from 'remotion';
 
 // liga quando os mp4 estiverem em public/cozinha3d/
-export const USAR_3D = false;
+export const USAR_3D = true;
 
 // Planos 3D da cozinha (Blender/Cycles). Cada mp4 começa exatamente no instante "a" do plano.
 export const PLANOS3D: [number, string][] = [
