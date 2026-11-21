@@ -6,6 +6,7 @@ import {Piloto6, PILOTO6_FIM} from './Piloto6';
 import {COR, ReguaMag, Sismografo, Noticia, MapaAS, Rotulo, Pulso, MapaOficial, Cozinha, NumeroGigante, EscadaMag, BrasilAcre, Manaus, InfoNoticia} from './cenas6';
 import {MapaPontos, Estacao, CrostaNE, EnergiaEsferas, MagIntens, Caminhao, Povoado, ParedeAdobe, JoaoCamara, CopoQuebra, Serra, CorteNazca, CelularBoato, Calendario, BordaOeste, PredioCasa, GloboOndas, Paulista, AptoAlto, Lisboa, OndaAtlantico, Tamandare, FotoReal, CubosEnergia, GloboSino, RasgoBrasil, PrediosChile, CartelaNao, GloboPlacas, Rachaduras, Seguranca, MapaComentarios, CardFinal6} from './cenas6b';
 import {Carimbo} from './carimbo6';
+import {Cozinha3D, plano3d, USAR_3D} from './cozinha3d';
 import cortes from './cortes6.json';
 import em from '../public/noticias/em.json';
 import natgeo from '../public/noticias/natgeo.json';
@@ -119,7 +120,7 @@ export const Video6: React.FC = () => {
   return (
     <AbsoluteFill style={{background: '#05070D'}}>
       {CORTES6.filter((c) => t >= c.a - c.f && t < c.b).map((c) => (
-        <Shot key={c.a} a={c.a} b={c.b} fade={c.f}>{(lt, d) => <>{cena(c.c, c.p, lt, d, t)}{c.o.map((o, j) => overlay(o, lt, d, j))}</>}</Shot>
+        <Shot key={c.a} a={c.a} b={c.b} fade={c.f}>{(lt, d) => <>{USAR_3D && c.c === 'cozinha' && plano3d(c.a) ? <Cozinha3D a={c.a} /> : cena(c.c, c.p, lt, d, t)}{c.o.map((o, j) => overlay(o, lt, d, j))}</>}</Shot>
       ))}
       {hud && <ReguaMag k={1} valor={m} t={t} topoMisterio={t < 627.6} />}
       {hud && atual && atual.c === 'cozinha' && <Sismografo k={1} t={t} amp={amp} />}

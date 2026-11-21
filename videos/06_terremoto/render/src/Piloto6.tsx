@@ -3,6 +3,7 @@ import {AbsoluteFill} from 'remotion';
 import {F} from './theme';
 import {Shot, Cam, Etq, Grao, Vinheta, KO, KS, lerp, es, useT} from './base';
 import {COR, ReguaMag, Sismografo, CartelaData, Manaus, Lustre, Escritorio, Noticia, MapaAS, Rotulo, Pulso, MapaOficial, PredioPendulo, Cozinha, NumeroGigante, EscadaMag, BrasilAcre, CorteTeaser, InfoNoticia} from './cenas6';
+import {Cozinha3D, USAR_3D} from './cozinha3d';
 import oliberal from '../public/noticias/oliberal.json';
 import sbt from '../public/noticias/sbt.json';
 import cnn from '../public/noticias/cnn.json';
@@ -46,15 +47,15 @@ export const Piloto6: React.FC = () => {
         children={(P) => <g>{CAP.map(([n, lo, la, t0]) => <Pulso key={n} p={P(lo, la)} t={t} cor={COR.ouro} op={KO(lt, t0, t0 + 0.3)} r={9} />)}</g>}
         html={(P) => <>{CAP.map(([n, lo, la, t0], i) => <Rotulo key={n} x={P(lo, la)[0]} y={P(lo, la)[1]} txt={n} lado={i % 2 ? 1 : -1} op={KO(lt, t0, t0 + 0.3)} />)}</>} />}</Shot>
       <Shot a={42.4} b={47.4}>{(lt, d) => <Z lt={lt} d={d} mov><PredioPendulo lt={lt} t={t} amp={2.2} /></Z>}</Shot>
-      <Shot a={47.4} b={51.1}>{(lt, d) => <Z lt={lt} d={d}><Cozinha lt={lt} t={t} onda={0} copo={0} /></Z>}</Shot>
+      <Shot a={47.4} b={51.1}>{(lt, d) => USAR_3D ? <Cozinha3D a={47.4} /> : <Z lt={lt} d={d}><Cozinha lt={lt} t={t} onda={0} copo={0} /></Z>}</Shot>
       <Shot a={51.1} b={55.4}>{(lt, d) => <NumeroGigante lt={lt} d={d} t={t} txt="9,5" sub="O MAIOR TERREMOTO JÁ MEDIDO" />}</Shot>
       <Shot a={55.4} b={60.3}>{(lt, d) => <Z lt={lt} d={d} mov><EscadaMag lt={lt} d={d} t={t} ate={3.6} /></Z>}</Shot>
-      <Shot a={60.3} b={65.3}>{(lt, d) => <Z lt={lt} d={d}><Cozinha lt={lt} t={t} onda={0} close={0.12} copo={0} /></Z>}</Shot>
-      <Shot a={65.3} b={68.7}>{(lt, d) => <Cozinha lt={lt} t={t} onda={0.02} close={lerp(0.42, 0.47, es(lt / d))} copo={KS(lt, 0.35, 0.95)} />}</Shot>
+      <Shot a={60.3} b={65.3}>{(lt, d) => USAR_3D ? <Cozinha3D a={60.3} /> : <Z lt={lt} d={d}><Cozinha lt={lt} t={t} onda={0} close={0.12} copo={0} /></Z>}</Shot>
+      <Shot a={65.3} b={68.7}>{(lt, d) => USAR_3D ? <Cozinha3D a={65.3} /> : <Cozinha lt={lt} t={t} onda={0.02} close={lerp(0.42, 0.47, es(lt / d))} copo={KS(lt, 0.35, 0.95)} />}</Shot>
       <Shot a={68.7} b={73.6}>{(lt, d) => <BrasilAcre lt={lt} d={d} t={t} />}</Shot>
       <Shot a={73.6} b={78.5}>{(lt, d) => <Z lt={lt} d={d}><CorteTeaser lt={lt} d={d} t={t} /></Z>}</Shot>
-      <Shot a={78.5} b={80.7}>{(lt, d) => <Cozinha lt={lt} t={t} onda={0} close={lerp(0.5, 0.53, es(lt / d))} />}</Shot>
-      <Shot a={80.7} b={84.6}>{(lt, d) => <Z lt={lt} d={d}><Cozinha lt={lt} t={t} onda={0} close={0.12} /></Z>}</Shot>
+      <Shot a={78.5} b={80.7}>{(lt, d) => USAR_3D ? <Cozinha3D a={78.5} /> : <Cozinha lt={lt} t={t} onda={0} close={lerp(0.5, 0.53, es(lt / d))} />}</Shot>
+      <Shot a={80.7} b={84.6}>{(lt, d) => USAR_3D ? <Cozinha3D a={80.7} /> : <Z lt={lt} d={d}><Cozinha lt={lt} t={t} onda={0} close={0.12} /></Z>}</Shot>
       <Shot a={84.6} b={PILOTO6_FIM}>{(lt, d) => <MapaAS lt={lt} d={d} lonC={-53} latC={-14} s0={24} s1={24.6} escuro={0.55}
         html={() => <div style={{position: 'absolute', left: 0, right: 0, top: 380, textAlign: 'center', opacity: KO(lt, 0.2, 0.6)}}><span style={{fontFamily: F.titulo, fontWeight: 700, fontSize: 170, color: '#fff', textShadow: `0 0 40px ${COR.perigo}, 0 8px 24px rgba(0,0,0,0.8)`}}>9,5 NO BRASIL?</span></div>} />}</Shot>
 
