@@ -33,8 +33,8 @@ export const Nitrogenio: React.FC<{lt: number; t: number; modo: 'bacia' | 'mao' 
     <AbsoluteFill style={{background: 'linear-gradient(180deg,#24303C 0%,#3A4A58 60%,#2A3440 100%)'}}>
       <SVG>
         <defs><filter id="nevoaB"><feGaussianBlur stdDeviation="16" /></filter></defs>
-        {[0, 1, 2, 3].map((i) => <rect key={i} x={140 + i * 430} y={120} width={300} height={260} rx={8} fill="#1C2630" stroke="#46566A" strokeWidth={4} />)}
-        {[0, 1, 2, 3].map((i) => [0, 1, 2].map((j) => <rect key={`${i}${j}`} x={170 + i * 430 + j * 85} y={180 + (j % 2) * 30} width={50} height={150 - (j % 2) * 30} rx={10} fill={['#3E8EDE', '#3DDBB4', '#E3B04B'][(i + j) % 3]} opacity={0.5} />))}
+        {[0, 1, 2, 3].map((i) => <rect key={i} x={140 + i * 430} y={260} width={300} height={220} rx={8} fill="#1C2630" stroke="#46566A" strokeWidth={4} />)}
+        {[0, 1, 2, 3].map((i) => [0, 1, 2].map((j) => <rect key={`${i}${j}`} x={170 + i * 430 + j * 85} y={300 + (j % 2) * 30} width={50} height={140 - (j % 2) * 30} rx={10} fill={['#3E8EDE', '#3DDBB4', '#E3B04B'][(i + j) % 3]} opacity={0.5} />))}
         <rect y={700} width={1920} height={380} fill="#56626E" /><rect y={700} width={1920} height={18} fill="#7A8794" />
         <g transform="translate(960,720)">
           <ellipse cx={0} cy={0} rx={460} ry={90} fill="#5A6672" />
