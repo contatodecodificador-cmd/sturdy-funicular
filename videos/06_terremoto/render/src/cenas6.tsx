@@ -78,25 +78,43 @@ export const CartelaData: React.FC<{lt: number; t: number; txt: string; sub?: st
   </AbsoluteFill>
 );
 
-// ===================== Manaus: fachada do prédio histórico =====================
+// ===================== Manaus: fachada do prédio histórico (detalhada) =====================
 const Fachada: React.FC<{x: number; y: number; s: number; t: number; luz?: number}> = ({x, y, s, t, luz = 0.97}) => (
   <g transform={`translate(${x},${y}) scale(${s})`}>
-    <rect x={-420} y={-640} width={840} height={640} fill="#D9C7A3" />
-    <rect x={-420} y={-640} width={840} height={40} fill="#C2AE88" />
-    <rect x={-440} y={-680} width={880} height={44} rx={6} fill="#B89F74" />
-    <path d="M-120,-680 Q0,-760 120,-680 Z" fill="#B89F74" />
-    <rect x={-60} y={-740} width={120} height={20} fill="#9E865D" />
-    {[-1, 0, 1, 2].map((r) => [-3, -2, -1, 1, 2, 3].map((c) => {
-      const wx = c * 120 - 30, wy = -560 + r * 130;
-      if (r === 2) return null;
-      return <g key={`${r}${c}`}><rect x={wx} y={wy} width={60} height={86} rx={30} fill={rnd(r * 9 + c + 30) < luz ? '#FFDFA0' : '#3A3226'} /><rect x={wx - 6} y={wy + 86} width={72} height={8} fill="#B89F74" /></g>;
+    <rect x={-430} y={-650} width={860} height={650} fill="#DCCBA8" />
+    {/* faixas de pedra (rusticação) no térreo */}
+    {Array.from({length: 6}, (_, i) => <line key={i} x1={-430} x2={430} y1={-30 - i * 28} y2={-30 - i * 28} stroke="#C4B08A" strokeWidth={3} />)}
+    {/* pilastras */}
+    {[-430, -290, -150, 150, 290, 430].map((cx) => <g key={cx}><rect x={cx - 16} y={-640} width={32} height={640} fill="#CDB993" /><rect x={cx - 22} y={-470} width={44} height={14} fill="#B89F74" /></g>)}
+    {/* cornijas por andar */}
+    {[-470, -330].map((yy) => <g key={yy}><rect x={-450} y={yy} width={900} height={16} fill="#B89F74" /><rect x={-440} y={yy + 16} width={880} height={6} fill="#A68C62" /></g>)}
+    <rect x={-460} y={-690} width={920} height={46} rx={6} fill="#B89F74" />
+    {Array.from({length: 28}, (_, i) => <rect key={i} x={-450 + i * 32.5} y={-700} width={14} height={14} fill="#A68C62" />)}
+    <path d="M-150,-690 Q0,-790 150,-690 Z" fill="#C2A97E" stroke="#A68C62" strokeWidth={6} />
+    <circle cx={0} cy={-722} r={22} fill="#EFE3C4" stroke="#A68C62" strokeWidth={4} />
+    <line x1={0} y1={-790} x2={0} y2={-900} stroke="#6A5A44" strokeWidth={5} />
+    <path d={`M0,-900 q30,${-6 + Math.sin(t * 3) * 4} 60,0 q30,${6 - Math.sin(t * 3) * 4} 60,0 l0,40 q-30,${-6 + Math.sin(t * 3 + 1) * 4} -60,0 q-30,${6 - Math.sin(t * 3 + 1) * 4} -60,0 Z`} fill="#2B8A3E" />
+    {/* janelas em arco com sacadas */}
+    {[0, 1].map((r) => [-3, -2, -1, 1, 2, 3].map((c) => {
+      const wx = c * 140 - 32, wy = -620 + r * 150;
+      return <g key={`${r}${c}`}>
+        <rect x={wx - 8} y={wy - 8} width={80} height={112} rx={40} fill="#C2AE88" />
+        <rect x={wx} y={wy} width={64} height={98} rx={32} fill={rnd(r * 9 + c + 30) < luz ? '#FFE2A8' : '#3A3226'} />
+        <line x1={wx + 32} x2={wx + 32} y1={wy + 4} y2={wy + 98} stroke="#8C7458" strokeWidth={3} />
+        <line x1={wx} x2={wx + 64} y1={wy + 50} y2={wy + 50} stroke="#8C7458" strokeWidth={3} />
+        <rect x={wx - 14} y={wy + 98} width={92} height={10} fill="#A68C62" />
+        {Array.from({length: 9}, (_, k) => <line key={k} x1={wx - 10 + k * 10.5} x2={wx - 10 + k * 10.5} y1={wy + 108} y2={wy + 130} stroke="#3A3226" strokeWidth={2.5} />)}
+        <rect x={wx - 14} y={wy + 128} width={92} height={5} fill="#3A3226" />
+      </g>;
     }))}
-    {[-330, -210, -90, 90, 210, 330].map((cx) => <rect key={cx} x={cx - 10} y={-640} width={20} height={640} fill="#CDB993" opacity={0.6} />)}
-    <rect x={-80} y={-170} width={160} height={170} rx={70} fill="#4A3A28" />
-    <rect x={-70} y={-160} width={140} height={160} rx={62} fill="#FFDFA0" opacity={0.8} />
-    <rect x={-200} y={-36} width={400} height={36} fill="#9E8E78" />
-    <rect x={-210} y={-232} width={420} height={44} rx={4} fill="#6E5A3C" />
-    <text x={0} y={-201} textAnchor="middle" fill="#F2E6C8" style={{fontFamily: 'Georgia, serif', fontSize: 26, letterSpacing: 6}}>PALÁCIO DO COMÉRCIO</text>
+    {/* térreo: arcos e porta */}
+    {[-300, -170, 170, 300].map((cx) => <g key={cx}><rect x={cx - 46} y={-200} width={92} height={160} rx={46} fill="#3A3226" /><rect x={cx - 38} y={-192} width={76} height={152} rx={38} fill="#FFE2A8" opacity={0.75} /></g>)}
+    <rect x={-90} y={-230} width={180} height={230} rx={84} fill="#4A3A28" />
+    <rect x={-78} y={-218} width={156} height={218} rx={74} fill="#FFE2A8" opacity={0.85} />
+    <line x1={0} x2={0} y1={-200} y2={0} stroke="#4A3A28" strokeWidth={6} />
+    <rect x={-210} y={-266} width={420} height={36} rx={4} fill="#6E5A3C" />
+    <text x={0} y={-240} textAnchor="middle" fill="#F2E6C8" style={{fontFamily: 'Georgia, serif', fontSize: 22, letterSpacing: 6}}>PALÁCIO DO COMÉRCIO</text>
+    <rect x={-220} y={-36} width={440} height={36} fill="#9E8E78" />
   </g>
 );
 export const Manaus: React.FC<{lt: number; t: number; pessoas?: number; balanco?: number}> = ({lt, t, pessoas = 0, balanco = 0}) => {
@@ -110,12 +128,17 @@ export const Manaus: React.FC<{lt: number; t: number; pessoas?: number; balanco?
   return (
     <AbsoluteFill style={{background: 'linear-gradient(180deg,#5C8FC4 0%,#A9CBE6 55%,#E8D9B8 100%)'}}>
       <SVG>
-        <circle cx={1650} cy={210} r={70} fill="#FFF3D0" opacity={0.85} />
-        {[[180, 260], [1560, 300], [1760, 240]].map(([x, h], i) => <g key={i}><rect x={x - 70} y={900 - h - 200} width={140} height={h + 200} fill={['#9AA8B6', '#8C9AAA', '#A3AFBC'][i]} />{Array.from({length: 8}, (_, j) => <rect key={j} x={x - 50 + (j % 2) * 60} y={900 - h - 180 + Math.floor(j / 2) * 70} width={36} height={40} fill="#C9D6E2" />)}</g>)}
-        {[300, 1500].map((x, i) => <g key={'p' + i}><path d={`M${x},900 Q${x + 8},780 ${x - 4},640`} stroke="#5A4630" strokeWidth={14} fill="none" />{Array.from({length: 7}, (_, j) => <path key={j} d={`M${x - 4},640 q${Math.cos(j) * 90},${-30 + Math.sin(j * 2) * 30} ${Math.cos(j) * 150},${40}`} stroke="#2F6B3A" strokeWidth={16} fill="none" strokeLinecap="round" />)}</g>)}
-        <g transform={`rotate(${sw} 960 900)`}><Fachada x={960} y={900} s={1} t={t} /></g>
+        <circle cx={1650} cy={190} r={64} fill="#FFF3D0" opacity={0.9} />
+        {Array.from({length: 5}, (_, i) => <ellipse key={i} cx={(i * 470 + t * 8) % 2200 - 140} cy={140 + (i % 2) * 60} rx={150} ry={34} fill="#fff" opacity={0.55} />)}
+        {[[170, 300], [1580, 330], [1790, 250]].map(([x, h], i) => <g key={i}><rect x={x - 80} y={900 - h - 200} width={160} height={h + 200} fill={['#9AA8B6', '#8C9AAA', '#A3AFBC'][i]} />{Array.from({length: 12}, (_, j) => <rect key={j} x={x - 60 + (j % 3) * 44} y={900 - h - 180 + Math.floor(j / 3) * 70} width={30} height={40} fill="#C9D6E2" />)}</g>)}
+        {[300, 1500].map((x, i) => <g key={'p' + i}><path d={`M${x},900 Q${x + 8},780 ${x - 4},640`} stroke="#5A4630" strokeWidth={14} fill="none" />{Array.from({length: 8}, (_, j) => <path key={j} d={`M${x - 4},640 q${Math.cos(j * 0.8) * 90},${-30 + Math.sin(j * 2 + t * 0.8) * 26} ${Math.cos(j * 0.8) * 150},${40}`} stroke="#2F6B3A" strokeWidth={16} fill="none" strokeLinecap="round" />)}</g>)}
+        <g transform={`rotate(${sw} 960 900)`}><Fachada x={960} y={900} s={0.98} t={t} /></g>
         <rect y={900} width={1920} height={180} fill="#8E8A82" />
-        <rect y={900} width={1920} height={14} fill="#B5B0A6" />
+        <rect y={900} width={1920} height={16} fill="#B5B0A6" />
+        {/* postes */}
+        {[420, 1500].map((x) => <g key={x}><rect x={x - 5} y={760} width={10} height={150} fill="#2A2A2E" /><rect x={x - 22} y={748} width={44} height={16} rx={6} fill="#2A2A2E" /><circle cx={x} cy={770} r={9} fill="#FFE9B8" /></g>)}
+        {/* carros estacionados */}
+        {[[140, '#C0392B'], [1700, '#2E4A6E']].map(([x, c], i) => <g key={i} transform={`translate(${x},1010)`}><rect x={0} y={-50} width={220} height={50} rx={14} fill={c as string} /><path d="M36,-50 L70,-92 L160,-92 L190,-50 Z" fill={c as string} /><rect x={80} y={-86} width={44} height={30} fill="#BFD6E6" /><rect x={130} y={-86} width={44} height={30} fill="#BFD6E6" /><circle cx={50} cy={0} r={22} fill="#1A1A1A" /><circle cx={170} cy={0} r={22} fill="#1A1A1A" /></g>)}
         {pessoas > 0 && <>
           <g transform="translate(1120,1000) scale(0.62)"><Pessoa v={PORT} expr="susto" t={t} bD={[120, 40]} bE={[10, 10]} /></g>
           {MOR.map((v, i) => { const k = clamp01((lt - 0.2 - i * 0.5) / 3.2); const x = lerp(960, i === 1 ? 560 : i === 0 ? 700 : 1380, es(k)); return <g key={i} transform={`translate(${x},${1010 + i * 12 + Math.abs(Math.sin(lt * 7 + i)) * -5}) scale(0.6)`} opacity={k > 0 ? 1 : 0}><Pessoa v={v} expr="susto" t={t + i} bE={[20, 30]} bD={[20, 30]} /></g>; })}
@@ -125,70 +148,109 @@ export const Manaus: React.FC<{lt: number; t: number; pessoas?: number; balanco?
   );
 };
 
-// ===================== Interior: lustre balançando sozinho =====================
+// ===================== Interior: lustre de cristal balançando sozinho =====================
 export const Lustre: React.FC<{lt: number; t: number}> = ({lt, t}) => {
-  const ang = Math.sin(t * 1.9) * 9;
+  const ang = Math.sin(t * 1.9) * 8;
+  const braco = (a: number, r: number, y: number, i: number) => {
+    const x = Math.cos(a) * r, z = Math.sin(a);
+    return <g key={i} opacity={0.75 + 0.25 * (z + 1) / 2}>
+      <path d={`M0,${y - 20} Q${x * 0.5},${y + 10} ${x},${y}`} stroke="#C9A65A" strokeWidth={5} fill="none" />
+      <rect x={x - 7} y={y - 24} width={14} height={24} rx={3} fill="#F4ECD8" />
+      <path d={`M${x - 5},${y - 24} q5,-18 10,0 Z`} fill="#FFD27A" />
+      <circle cx={x} cy={y - 32} r={20} fill="#FFE9B8" opacity={0.25} />
+      {Array.from({length: 3}, (_, k) => <path key={k} d={`M${x + (k - 1) * 6},${y + 4} l-4,10 l4,14 l4,-14 Z`} fill="#E8F4FF" opacity={0.85} />)}
+    </g>;
+  };
   return (
     <AbsoluteFill style={{background: 'linear-gradient(180deg,#3A2E24 0%,#5A4634 60%,#2A2018 100%)'}}>
       <SVG>
+        {/* teto com moldura e rosácea */}
+        <rect y={0} width={1920} height={40} fill="#4A3C30" />
+        <ellipse cx={960} cy={40} rx={90} ry={18} fill="#C2AE88" />
         <rect y={760} width={1920} height={320} fill="#3A2A1C" />
         {Array.from({length: 12}, (_, i) => <line key={i} x1={i * 180} x2={i * 180 - 100} y1={760} y2={1080} stroke="#2A1E14" strokeWidth={4} />)}
-        <rect x={200} y={180} width={360} height={480} rx={8} fill="#6A5440" stroke="#8C7458" strokeWidth={10} />
-        <rect x={1360} y={180} width={360} height={480} rx={8} fill="#1E2A3A" stroke="#8C7458" strokeWidth={10} />
-        {Array.from({length: 20}, (_, i) => <rect key={i} x={1380 + (i % 5) * 68} y={200 + Math.floor(i / 5) * 110} width={40} height={60} fill="#FFD98A" opacity={rnd(i + 3) > 0.5 ? 0.6 : 0.1} />)}
-        {/* sombra do lustre no chão */}
-        <ellipse cx={960 + Math.sin(ang * Math.PI / 180) * 520} cy={900} rx={180} ry={30} fill="#000" opacity={0.25} />
-        <g transform={`rotate(${ang} 960 0)`}>
-          <line x1={960} y1={0} x2={960} y2={330} stroke="#B89F74" strokeWidth={6} />
-          <g transform="translate(960,330)">
-            <path d="M-120,0 Q0,-40 120,0 L90,70 Q0,100 -90,70 Z" fill="#C9A65A" />
-            {[-90, -45, 0, 45, 90].map((x, i) => <g key={i}><line x1={x} y1={60} x2={x} y2={110} stroke="#E3C27A" strokeWidth={3} /><path d={`M${x - 10},110 q10,-30 20,0 q-10,22 -20,0 Z`} fill="#FFF3D0" /><circle cx={x} cy={118} r={30} fill="#FFE6A8" opacity={0.25} /></g>)}
+        {/* papel de parede com listras e quadros */}
+        {Array.from({length: 24}, (_, i) => <rect key={i} x={i * 80} y={40} width={40} height={720} fill="#5E4A38" opacity={0.35} />)}
+        <rect x={200} y={200} width={340} height={440} rx={6} fill="#2A2018" stroke="#C9A65A" strokeWidth={12} />
+        <path d="M230,600 L330,420 L400,520 L460,450 L510,600 Z" fill="#4A6A5A" />
+        <rect x={1380} y={180} width={340} height={480} rx={8} fill="#1E2A3A" stroke="#8C7458" strokeWidth={12} />
+        {Array.from({length: 20}, (_, i) => <rect key={i} x={1400 + (i % 5) * 64} y={200 + Math.floor(i / 5) * 110} width={38} height={60} fill="#FFD98A" opacity={rnd(i + 3) > 0.5 ? 0.6 : 0.1} />)}
+        <ellipse cx={960 + Math.sin(ang * Math.PI / 180) * 560} cy={900} rx={200} ry={30} fill="#000" opacity={0.28} />
+        <g transform={`rotate(${ang} 960 40)`}>
+          <line x1={960} y1={40} x2={960} y2={300} stroke="#B89F74" strokeWidth={6} />
+          {Array.from({length: 6}, (_, i) => <circle key={i} cx={960} cy={60 + i * 40} r={6} fill="#C9A65A" />)}
+          <g transform="translate(960,330) scale(1.7)">
+            <ellipse cx={0} cy={0} rx={40} ry={12} fill="#C9A65A" />
+            <path d="M-26,0 Q0,90 26,0 Z" fill="#B8954A" />
+            {/* cascata de cristais */}
+            {Array.from({length: 14}, (_, i) => { const a = (i / 14) * Math.PI * 2; return <line key={i} x1={Math.cos(a) * 40} y1={6} x2={Math.cos(a) * 110} y2={70 + Math.sin(a) * 10} stroke="#E8F4FF" strokeWidth={1.5} strokeDasharray="4 5" opacity={0.7} />; })}
+            {Array.from({length: 8}, (_, i) => braco((i / 8) * Math.PI * 2 + t * 0.2, 130, 80, i))}
+            {Array.from({length: 6}, (_, i) => braco((i / 6) * Math.PI * 2 + 0.4 + t * 0.2, 80, 20, 20 + i))}
+            <path d="M-14,90 l14,60 l14,-60 Z" fill="#E8F4FF" opacity={0.85} />
           </g>
         </g>
       </SVG>
-      <AbsoluteFill style={{background: 'radial-gradient(circle at 50% 35%, rgba(255,220,150,0.18), transparent 60%)'}} />
+      <AbsoluteFill style={{background: 'radial-gradient(circle at 50% 38%, rgba(255,220,150,0.22), transparent 55%)'}} />
     </AbsoluteFill>
   );
 };
 
-// ===================== Escada vazia (sombra balançando) =====================
-export const EscadaVazia: React.FC<{lt: number; t: number}> = ({lt, t}) => {
-  const sw = Math.sin(t * 1.9) * 40;
+// ===================== Escritório: objetos tremendo sozinhos =====================
+export const Escritorio: React.FC<{lt: number; t: number}> = ({lt, t}) => {
+  const tr = tremor(t, 0.22, 4);
+  const caneta = lerp(0, 160, KS(lt, 0.4, 2.2));
   return (
-    <AbsoluteFill style={{background: '#4A4036'}}>
+    <AbsoluteFill style={{background: '#2E3440'}}>
       <SVG>
-        {Array.from({length: 11}, (_, i) => <g key={i}><rect x={420 + i * 70} y={980 - i * 70} width={1100 - i * 70} height={70} fill={i % 2 ? '#8C7A64' : '#9A8670'} /><rect x={420 + i * 70} y={980 - i * 70} width={1100 - i * 70} height={10} fill="#B39D82" /></g>)}
-        <path d="M400,940 L1180,180" stroke="#5A3E28" strokeWidth={14} />
-        {Array.from({length: 12}, (_, i) => <line key={i} x1={400 + i * 66} y1={940 - i * 64} x2={400 + i * 66} y2={1010 - i * 64} stroke="#5A3E28" strokeWidth={6} />)}
-        <ellipse cx={1250 + sw} cy={300} rx={260} ry={90} fill="#000" opacity={0.18} />
-        <rect x={1500} y={120} width={300} height={600} fill="#2E2822" />
+        <rect width={1920} height={640} fill="#3B4252" />
+        <rect x={1300} y={120} width={460} height={340} fill="#1E2A3A" stroke="#4C566A" strokeWidth={12} />
+        {Array.from({length: 16}, (_, i) => <rect key={i} x={1320 + (i % 4) * 110} y={140 + Math.floor(i / 4) * 80} width={70} height={50} fill="#FFD98A" opacity={rnd(i + 9) > 0.5 ? 0.55 : 0.12} />)}
+        <rect y={640} width={1920} height={440} fill="#5A4636" />
+        <rect y={640} width={1920} height={20} fill="#6E5644" />
+        <g transform={`translate(${tr.x},${tr.y * 0.6})`}>
+          {/* monitor */}
+          <rect x={280} y={300} width={460} height={300} rx={12} fill="#1E2430" /><rect x={300} y={320} width={420} height={250} fill="#2F4A6E" />
+          {Array.from({length: 6}, (_, i) => <rect key={i} x={330} y={350 + i * 34} width={240 + rnd(i) * 120} height={12} rx={6} fill="#9FC4E8" opacity={0.5} />)}
+          <rect x={490} y={600} width={40} height={50} fill="#1E2430" /><rect x={430} y={640} width={160} height={14} rx={6} fill="#1E2430" />
+          {/* papéis */}
+          <rect x={800} y={600} width={260} height={40} rx={4} fill="#F2F0E8" transform="rotate(-3 930 620)" />
+          <rect x={820} y={590} width={240} height={40} rx={4} fill="#E8E6DC" transform="rotate(4 940 610)" />
+          {/* porta-canetas */}
+          <rect x={1120} y={540} width={70} height={100} rx={8} fill="#8C2F39" />
+          {[0, 1, 2].map((i) => <line key={i} x1={1140 + i * 15} y1={540} x2={1132 + i * 18 + Math.sin(t * 9 + i) * 3} y2={480} stroke={['#2E6FD0', '#222', '#C0392B'][i]} strokeWidth={6} strokeLinecap="round" />)}
+          {/* caneca de café com a superfície tremendo */}
+          <g transform="translate(1290,640)"><rect x={-50} y={-110} width={100} height={110} rx={12} fill="#E8E6DC" /><path d="M50,-80 q34,0 34,30 q0,30 -34,30" stroke="#E8E6DC" strokeWidth={12} fill="none" /><ellipse cx={0} cy={-104} rx={44} ry={8} fill="#5A3A22" />{[0, 1].map((i) => { const k = (t * 1.6 + i / 2) % 1; return <ellipse key={i} cx={0} cy={-104} rx={6 + k * 36} ry={1 + k * 6} fill="none" stroke="#C9A27A" strokeWidth={1.5} opacity={1 - k} />; })}</g>
+        </g>
+        {/* caneta rolando sozinha pela mesa */}
+        <g transform={`translate(${700 + caneta},652) rotate(${caneta * 2.2})`}><rect x={-50} y={-6} width={100} height={12} rx={6} fill="#2E6FD0" /><rect x={30} y={-6} width={20} height={12} fill="#1E4A90" /></g>
       </SVG>
     </AbsoluteFill>
   );
 };
 
-// ===================== Cartão de notícia (só o parágrafo + grifo animado) =====================
-export type InfoNoticia = {w: number; h: number; linhas: {x: number; y: number; w: number; h: number}[]};
-export const Noticia: React.FC<{lt: number; d: number; img: string; info: InfoNoticia; fonte: string; data: string; fundo: React.ReactNode; g0?: number; g1?: number}> = ({lt, d, img, info, fonte, data, fundo, g0 = 0.5, g1}) => {
+// ===================== Cartão de notícia (fundo branco, texto preto, grifo só na frase-chave) =====================
+export type InfoNoticia = {w: number; h: number; linhas: {x: number; y: number; w: number; h: number}[]; destaques?: {x: number; y: number; w: number; h: number}[]};
+export const Noticia: React.FC<{lt: number; d: number; img: string; info: InfoNoticia; fonte: string; data: string; fundo: React.ReactNode; g0?: number; g1?: number; cor?: string}> = ({lt, d, img, info, fonte, data, fundo, g0 = 0.6, g1, cor = 'rgba(255,214,0,0.62)'}) => {
   const maxW = 1500, maxH = 660;
   const sc = Math.min(maxW / info.w, maxH / info.h, 2.2);
   const W = info.w * sc, H = info.h * sc;
   const k = KO(lt, 0, 0.45);
-  const fim = g1 ?? d - 0.5;
-  const n = info.linhas.length;
+  const fim = g1 ?? Math.min(d - 0.6, g0 + 2.4);
+  const D = (info.destaques || []).filter((x: any) => x.w);
+  const tot = D.reduce((s0, r) => s0 + r.w, 0) || 1;
+  let acc = 0;
   return (
     <AbsoluteFill style={{background: '#05070D'}}>
       <AbsoluteFill style={{filter: 'blur(10px) brightness(0.42) saturate(0.8)', transform: `scale(${lerp(1.1, 1.12, es(lt / d))})`}}>{fundo}</AbsoluteFill>
       <AbsoluteFill style={{background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.1), rgba(0,0,0,0.65) 100%)'}} />
       <div style={{position: 'absolute', left: 960 - W / 2, top: 540 - H / 2 + 30, width: W, height: H, transform: `translateY(${(1 - k) * 30}px) scale(${lerp(1, 1.02, es(lt / d))})`, opacity: k, boxShadow: '0 30px 80px rgba(0,0,0,0.65)', borderRadius: 10, overflow: 'hidden', background: '#fff'}}>
-        <Img src={staticFile(img)} style={{position: 'absolute', left: 0, top: 0, width: W, height: H}} />
-        {info.linhas.map((l, i) => {
-          const a = lerp(g0, fim, i / n), b = lerp(g0, fim, (i + 1) / n);
-          const p = clamp01((lt - a) / (b - a));
-          return <div key={i} style={{position: 'absolute', left: l.x * sc - 3, top: l.y * sc + l.h * sc * 0.06, width: (l.w + 6) * sc * p, height: l.h * sc * 0.88, background: 'rgba(255,214,0,0.55)', mixBlendMode: 'multiply', borderRadius: 3}} />;
+        {D.map((l, i) => {
+          const a = lerp(g0, fim, acc / tot); acc += l.w; const b = lerp(g0, fim, acc / tot);
+          const p = clamp01((lt - a) / Math.max(0.01, b - a));
+          return <div key={i} style={{position: 'absolute', left: l.x * sc - 4, top: l.y * sc + l.h * sc * 0.05, width: (l.w + 8) * sc * p, height: l.h * sc * 0.92, background: cor, borderRadius: 4}} />;
         })}
+        <Img src={staticFile(img)} style={{position: 'absolute', left: 0, top: 0, width: W, height: H, mixBlendMode: 'multiply'}} />
       </div>
-      {/* fonte */}
       <div style={{position: 'absolute', left: 960 - W / 2, top: 540 - H / 2 - 50, opacity: KO(lt, 0.15, 0.6), display: 'flex', alignItems: 'center', gap: 14}}>
         <span style={{fontFamily: F.rotulo, fontWeight: 700, fontSize: 22, letterSpacing: 4, color: '#06080F', background: COR.ouro, padding: '6px 14px', borderRadius: 6}}>FONTE</span>
         <span style={{fontFamily: F.rotulo, fontWeight: 700, fontSize: 26, letterSpacing: 3, color: '#fff'}}>{fonte}</span>
@@ -258,10 +320,12 @@ export const PredioPendulo: React.FC<{lt: number; t: number; amp: number}> = ({l
   );
 };
 
-// ===================== A cozinha + o copo d'água =====================
-export const Cozinha: React.FC<{lt: number; t: number; onda: number; tremorK?: number; close?: number}> = ({lt, t, onda, tremorK = 0, close = 0}) => {
+// ===================== A cozinha (detalhada) + o copo d'água (aparece quando é citado) =====================
+export const Cozinha: React.FC<{lt: number; t: number; onda: number; tremorK?: number; close?: number; copo?: number}> = ({lt, t, onda, tremorK = 0, close = 0, copo = 1}) => {
   const tr = tremor(t, tremorK, 2);
   const z = lerp(1, 2.3, close);
+  const lampX = 760 + Math.sin(t * 1.3) * tremorK * 30;
+  const cs = copo >= 1 ? 1 : es(copo);
   return (
     <AbsoluteFill style={{background: '#1A1E28', overflow: 'hidden'}}>
       <AbsoluteFill style={{transform: `translate(${tr.x}px,${tr.y}px) rotate(${tr.r}deg) scale(${z})`, transformOrigin: '50% 62%'}}>
@@ -269,38 +333,61 @@ export const Cozinha: React.FC<{lt: number; t: number; onda: number; tremorK?: n
           <defs>
             <linearGradient id="parede" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#2C3446" /><stop offset="100%" stopColor="#3A4256" /></linearGradient>
             <linearGradient id="agua" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#BFE6FF" stopOpacity={0.75} /><stop offset="100%" stopColor="#6FB4E8" stopOpacity={0.55} /></linearGradient>
-            <radialGradient id="luzLamp" cx="50%" cy="0%"><stop offset="0%" stopColor="#FFE9B8" stopOpacity={0.55} /><stop offset="100%" stopColor="#FFE9B8" stopOpacity={0} /></radialGradient>
+            <radialGradient id="luzLamp" cx="50%" cy="0%"><stop offset="0%" stopColor="#FFE9B8" stopOpacity={0.5} /><stop offset="100%" stopColor="#FFE9B8" stopOpacity={0} /></radialGradient>
+            <linearGradient id="geladeira" x1="0" x2="1"><stop offset="0%" stopColor="#D8DDE4" /><stop offset="100%" stopColor="#AEB6C2" /></linearGradient>
           </defs>
           <rect width={1920} height={1080} fill="url(#parede)" />
-          {/* azulejos */}
           {Array.from({length: 24}, (_, i) => <line key={'v' + i} x1={i * 80} x2={i * 80} y1={420} y2={640} stroke="#46506A" strokeWidth={1.5} />)}
           {Array.from({length: 4}, (_, i) => <line key={'h' + i} x1={0} x2={1920} y1={420 + i * 70} y2={420 + i * 70} stroke="#46506A" strokeWidth={1.5} />)}
-          {/* janela com a cidade à noite */}
+          {/* janela com cortina e cidade */}
           <rect x={1180} y={140} width={560} height={300} fill="#0C1426" stroke="#5A6276" strokeWidth={14} />
           {Array.from({length: 14}, (_, i) => { const h = 60 + rnd(i) * 180; return <g key={i}><rect x={1194 + i * 40} y={440 - h} width={34} height={h} fill="#141E34" />{Array.from({length: Math.floor(h / 26)}, (_, j) => rnd(i * 11 + j) > 0.5 && <rect key={j} x={1200 + i * 40} y={448 - h + j * 24} width={8} height={8} fill="#FFD98A" opacity={0.7} />)}</g>; })}
           <line x1={1460} x2={1460} y1={140} y2={440} stroke="#5A6276" strokeWidth={8} />
-          {/* armário e louça */}
+          <path d="M1170,130 L1250,130 Q1230,300 1260,450 L1170,450 Z" fill="#8C3B3B" opacity={0.9} />
+          <path d="M1750,130 L1670,130 Q1690,300 1660,450 L1750,450 Z" fill="#8C3B3B" opacity={0.9} />
+          <rect x={1160} y={120} width={600} height={14} rx={6} fill="#2A2420" />
+          {/* vaso de planta na janela */}
+          <g transform="translate(1300,440)"><rect x={-26} y={-40} width={52} height={40} rx={6} fill="#B5651D" />{Array.from({length: 6}, (_, i) => <path key={i} d={`M0,-40 q${(i - 2.5) * 14},-40 ${(i - 2.5) * 22},-70`} stroke="#3E8E4A" strokeWidth={8} fill="none" strokeLinecap="round" />)}</g>
+          {/* relógio */}
+          <g transform="translate(1000,200)"><circle r={50} fill="#F2F0E8" stroke="#2A2420" strokeWidth={6} />{Array.from({length: 12}, (_, i) => <line key={i} x1={Math.sin(i / 12 * Math.PI * 2) * 40} y1={-Math.cos(i / 12 * Math.PI * 2) * 40} x2={Math.sin(i / 12 * Math.PI * 2) * 46} y2={-Math.cos(i / 12 * Math.PI * 2) * 46} stroke="#2A2420" strokeWidth={3} />)}<line x1={0} y1={0} x2={0} y2={-30} stroke="#2A2420" strokeWidth={5} /><line x1={0} y1={0} x2={Math.sin(t * 0.5) * 38} y2={-Math.cos(t * 0.5) * 38} stroke="#C0392B" strokeWidth={2} /></g>
+          {/* armários com puxadores e louça na prateleira */}
           <rect x={140} y={120} width={720} height={250} rx={10} fill="#5A4636" />
-          {[0, 1, 2].map((i) => <rect key={i} x={160 + i * 236} y={140} width={220} height={210} rx={6} fill="#6A5442" />)}
-          {/* bancada */}
+          {[0, 1, 2].map((i) => <g key={i}><rect x={160 + i * 236} y={140} width={220} height={210} rx={6} fill="#6A5442" /><rect x={260 + i * 236} y={300} width={20} height={8} rx={3} fill="#C9B79C" /></g>)}
+          <rect x={140} y={380} width={720} height={10} fill="#4A3828" />
+          {[0, 1, 2, 3, 4].map((i) => <ellipse key={i} cx={200 + i * 40} cy={372} rx={16} ry={6} fill="#E8E6DC" />)}
+          {[0, 1, 2].map((i) => <rect key={'x' + i} x={560 + i * 50} y={330} width={36} height={44} rx={4} fill={['#2E6FD0', '#C0392B', '#E9C46A'][i]} opacity={0.85} />)}
+          {/* geladeira com ímãs */}
+          <rect x={20} y={300} width={110} height={560} rx={10} fill="url(#geladeira)" />
+          <line x1={20} x2={130} y1={500} y2={500} stroke="#8C95A3" strokeWidth={3} />
+          <rect x={110} y={360} width={8} height={90} rx={3} fill="#7A8494" /><rect x={110} y={540} width={8} height={120} rx={3} fill="#7A8494" />
+          {[[50, 380, '#E9C46A'], [80, 420, '#2A9D8F'], [45, 560, '#D1495B']].map(([x, y, c], i) => <rect key={i} x={x as number} y={y as number} width={22} height={18} rx={3} fill={c as string} />)}
+          {/* bancada, fogão e escorredor */}
           <rect x={0} y={640} width={1920} height={30} fill="#9A8C7A" />
           <rect x={0} y={670} width={1920} height={410} fill="#2A2420" />
+          <g transform="translate(1520,640)"><rect x={-110} y={-6} width={220} height={12} fill="#3A3A3E" />{[-55, 55].map((x) => <ellipse key={x} cx={x} cy={-8} rx={36} ry={7} fill="#1E1E22" />)}<rect x={-30} y={-70} width={60} height={60} rx={8} fill="#7A8494" /><rect x={-36} y={-76} width={72} height={10} rx={4} fill="#5E6876" /></g>
+          <g transform="translate(320,640)"><rect x={-70} y={-12} width={140} height={12} fill="#9AA4B0" />{[0, 1, 2, 3].map((i) => <ellipse key={i} cx={-48 + i * 32} cy={-40} rx={8} ry={30} fill="#E8E6DC" />)}</g>
+          {/* fruteira */}
+          <g transform="translate(1160,640)"><path d="M-70,-10 Q0,30 70,-10 Z" fill="#B5651D" />{[[-36, '#E9C46A'], [-6, '#D1495B'], [24, '#F4A259'], [8, '#6A9A3A']].map(([x, c], i) => <circle key={i} cx={x as number} cy={-22 - (i === 3 ? 18 : 0)} r={20} fill={c as string} />)}</g>
           {/* lâmpada pendente */}
-          <line x1={760} x2={760 + Math.sin(t * 1.3) * tremorK * 30} y1={0} y2={240} stroke="#222" strokeWidth={3} />
-          <g transform={`translate(${760 + Math.sin(t * 1.3) * tremorK * 30},240)`}><path d="M-60,0 L60,0 L40,-40 L-40,-40 Z" fill="#1E2430" /><ellipse cx={0} cy={4} rx={40} ry={10} fill="#FFE9B8" /></g>
+          <line x1={760} x2={lampX} y1={0} y2={240} stroke="#222" strokeWidth={3} />
+          <g transform={`translate(${lampX},240)`}><path d="M-60,0 L60,0 L40,-40 L-40,-40 Z" fill="#1E2430" /><ellipse cx={0} cy={4} rx={40} ry={10} fill="#FFE9B8" /></g>
           <path d={`M${760 - 420},${660} L${760 + 420},${660} L${760 + 60},${244} L${760 - 60},${244} Z`} fill="url(#luzLamp)" />
-          {/* mesa */}
+          {/* mesa com toalha e cadeiras */}
           <rect x={360} y={760} width={1200} height={36} rx={8} fill="#7A5A3C" />
+          <path d="M520,760 L1400,760 L1380,800 L540,800 Z" fill="#E8DCC8" opacity={0.9} />
+          {Array.from({length: 8}, (_, i) => <line key={i} x1={560 + i * 110} x2={555 + i * 110} y1={760} y2={800} stroke="#C0392B" strokeWidth={4} opacity={0.5} />)}
           <rect x={420} y={796} width={36} height={284} fill="#5A3E28" /><rect x={1464} y={796} width={36} height={284} fill="#5A3E28" />
+          {[250, 1670].map((x) => <g key={x}><rect x={x - 70} y={620} width={20} height={460} rx={6} fill="#4A3424" /><rect x={x - 70} y={820} width={140} height={20} rx={6} fill="#5A3E28" /><rect x={x + 50} y={820} width={20} height={260} rx={6} fill="#4A3424" /></g>)}
           {/* o copo */}
-          <g transform="translate(960,760)">
+          {copo > 0 && <g transform={`translate(960,760) scale(${cs}) `} opacity={Math.min(1, copo * 3)}>
             <ellipse cx={0} cy={0} rx={70} ry={12} fill="#000" opacity={0.3} />
             <path d="M-56,-210 L56,-210 L46,0 L-46,0 Z" fill="rgba(220,235,250,0.18)" stroke="rgba(230,240,255,0.7)" strokeWidth={4} />
             <path d={`M-53,-150 ${Array.from({length: 22}, (_, i) => { const x = -53 + i * 5.05; const y = -150 + Math.sin(i * 0.9 + t * 9) * 4 * onda + Math.sin(t * 3) * 3 * onda * (x / 53); return `L${x.toFixed(1)},${y.toFixed(1)}`; }).join(' ')} L49,-4 L-49,-4 Z`} fill="url(#agua)" />
             <ellipse cx={0} cy={-150} rx={53} ry={8} fill="#DFF3FF" opacity={0.5} />
             {onda > 0.05 && [0, 1, 2].map((i) => { const k = ((t * 1.4 + i / 3) % 1); return <ellipse key={i} cx={0} cy={-150} rx={6 + k * 46} ry={1.5 + k * 7} fill="none" stroke="#FFFFFF" strokeWidth={1.6} opacity={(1 - k) * Math.min(1, onda * 2)} />; })}
             <path d="M-40,-200 L-34,-20" stroke="#fff" strokeWidth={6} opacity={0.25} strokeLinecap="round" />
-          </g>
+            {copo < 1 && <circle cx={0} cy={-100} r={140 * (1 - copo)} fill="none" stroke="#FFE9B8" strokeWidth={3} opacity={1 - copo} />}
+          </g>}
         </SVG>
       </AbsoluteFill>
       <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 60%, transparent 40%, rgba(0,0,0,0.55) 100%)'}} />

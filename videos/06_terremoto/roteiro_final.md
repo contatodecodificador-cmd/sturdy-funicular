@@ -11,7 +11,7 @@
 
 [VISUAL: centro de Manaus à tarde; um lustre balançando sozinho dentro de um prédio antigo; ninguém por perto]
 [SFX: rangido de lustre, quase nada de música]
-Dez de agosto de dois mil e vinte e seis. Centro de Manaus. Dentro de um prédio, os lustres começam a balançar sozinhos. Ninguém bateu em nada. Ninguém subiu a escada correndo.
+Dez de agosto de dois mil e vinte e seis. Centro de Manaus. Dentro de um prédio, os lustres começam a balançar sozinhos. Ninguém bateu em nada.
 
 [VISUAL: fachada do Palácio do Comércio; pessoas descendo e saindo para a calçada]
 [ETIQUETA: Manaus (AM) / 10 DE AGOSTO DE 2026]

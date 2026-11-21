@@ -1,13 +1,13 @@
 """Mixagem do piloto do vídeo 6 (0–89,2 s): voz + trilha (ducking) + efeitos sutis."""
 import subprocess
-FIM = 89.2
+FIM = 87.5
 TR = [('musica/m1_abertura.mp3', 0.0, FIM, 0, 1.0, 2.0, -31)]
-SFX = [('sfx/lustre.mp3', 5.4, 0.28), ('sfx/ronco.mp3', 5.0, 0.12), ('sfx/passos.mp3', 12.2, 0.16), ('sfx/whoosh.mp3', 16.3, 0.12),
-       ('sfx/marcatexto.mp3', 16.9, 0.18), ('sfx/whoosh.mp3', 21.2, 0.1), ('sfx/agulha.mp3', 25.4, 0.14), ('sfx/whoosh.mp3', 28.1, 0.1),
-       ('sfx/marcatexto.mp3', 28.5, 0.16), ('sfx/ronco.mp3', 31.9, 0.14), ('sfx/whoosh.mp3', 33.9, 0.1), ('sfx/marcatexto.mp3', 34.5, 0.16),
-       ('sfx/pop.mp3', 40.5, 0.1), ('sfx/pop.mp3', 41.3, 0.1), ('sfx/pop.mp3', 42.1, 0.1), ('sfx/pop.mp3', 43.0, 0.1),
-       ('sfx/ronco.mp3', 43.6, 0.16), ('sfx/copo.mp3', 49.0, 0.12), ('sfx/ronco.mp3', 52.9, 0.2), ('sfx/agulha.mp3', 62.6, 0.16),
-       ('sfx/copo.mp3', 67.2, 0.1), ('sfx/whoosh.mp3', 70.3, 0.1), ('sfx/ronco.mp3', 75.6, 0.14), ('sfx/agulha.mp3', 82.8, 0.16), ('sfx/ronco.mp3', 86.1, 0.18)]
+SFX = [('sfx/lustre.mp3', 5.4, 0.28), ('sfx/ronco.mp3', 5.0, 0.12), ('sfx/copo.mp3', 8.6, 0.12), ('sfx/passos.mp3', 10.5, 0.16), ('sfx/whoosh.mp3', 14.9, 0.12),
+       ('sfx/marcatexto.mp3', 15.8, 0.18), ('sfx/whoosh.mp3', 19.9, 0.1), ('sfx/whoosh.mp3', 24.9, 0.1),
+       ('sfx/marcatexto.mp3', 25.6, 0.16), ('sfx/ronco.mp3', 32.3, 0.14), ('sfx/whoosh.mp3', 33.9, 0.1), ('sfx/marcatexto.mp3', 36.4, 0.16),
+       ('sfx/pop.mp3', 38.7, 0.1), ('sfx/pop.mp3', 39.5, 0.1), ('sfx/pop.mp3', 40.3, 0.1), ('sfx/pop.mp3', 41.3, 0.1),
+       ('sfx/ronco.mp3', 42.4, 0.16), ('sfx/ronco.mp3', 51.1, 0.2), ('sfx/agulha.mp3', 61.0, 0.16),
+       ('sfx/copo.mp3', 65.7, 0.14), ('sfx/whoosh.mp3', 68.6, 0.1), ('sfx/ronco.mp3', 73.6, 0.14), ('sfx/agulha.mp3', 81.0, 0.16), ('sfx/ronco.mp3', 84.5, 0.18)]
 DUR = {'sfx/ronco.mp3': 3.5, 'sfx/passos.mp3': 4.0}
 args = ['ffmpeg', '-y', '-loglevel', 'error', '-i', 'audio/voz_tratada.wav']
 fl = []; n = 1; mus = []
