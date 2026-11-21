@@ -88,7 +88,7 @@ const Chip: React.FC<{lt: number; d: number; n: number; nome: string}> = ({lt, d
   );
 };
 
-const POS_CARIMBO: Record<string, [number, number]> = {corpo: [1360, 140], pessoaAnna: [1360, 140], leito: [1380, 250], comparacao: [960, 930], lava: [960, 170], nitro: [960, 300], espacoP: [1360, 280], sol: [1560, 240], nebulosa: [960, 930], blagden: [960, 120], cidades: [960, 600], placar: [960, 960]};
+const POS_CARIMBO: Record<string, [number, number]> = {corpo: [1360, 140], pessoaAnna: [1360, 140], leito: [1380, 250], comparacao: [960, 930], lava: [960, 170], nitro: [1650, 620], espacoP: [1360, 280], sol: [1560, 240], nebulosa: [960, 930], blagden: [960, 120], cidades: [960, 600], placar: [960, 960]};
 const overlay = (o: any, lt: number, d: number, i: number, c: string) => {
   const cor = COR[o.cor] ?? COR.ouro;
   const lt2 = o.ja ? lt + 5 : lt;

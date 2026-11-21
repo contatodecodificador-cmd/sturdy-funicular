@@ -214,7 +214,7 @@ for i, (a, b, c, p, o, d) in enumerate(B):
                 ov2 = dict(ov); ov2['t0'] = 0; ov2['ja'] = 1; oo.append(ov2); continue
             if t0 > L: continue
             ov2 = dict(ov); ov2['t0'] = max(0, t0); oo.append(ov2)
-        fade = 0.35 if out and out[-1]['c'] == c and c in SEM_TEXTO and not oo and not out[-1]['o'] else 0
+        fade = 0.35 if out and out[-1]['c'] == c and out[-1]['p'].get('modo') == p.get('modo') and c in SEM_TEXTO and not oo and not out[-1]['o'] else 0
         out.append({'a': round(aa, 3), 'b': round(bb, 3), 'c': c, 'p': pp, 'o': oo, 'd': d + (f' ({j + 1}/{n})' if n > 1 else ''), 'f': fade})
 json.dump(out, open('render/src/cortes.json', 'w'), ensure_ascii=False, indent=0)
 print(len(out), 'planos; maior:', max(x['b'] - x['a'] for x in out), 's; fim', out[-1]['b'])
