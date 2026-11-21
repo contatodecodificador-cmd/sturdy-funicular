@@ -45,7 +45,7 @@ CAM = {
     'C2': ((0.13, -0.24, 1.07), (0.03, -0.03, 0.874), 80, 'agua', 4.0),
     'C2b': ((-0.14, -0.2, 1.08), (0.03, -0.03, 0.874), 80, 'agua', 4.0),
     'C3': ((0.41, -0.5, 0.9), (0.03, -0.03, 0.86), 65, 'copo', 2.8),
-    'Q1': ((0.95, -0.9, 1.75), (1.62, 1.6, 1.85), 30, None, 6),
+    'Q1': ((1.15, -0.45, 1.75), (1.62, 1.6, 1.86), 35, None, 6),
     'F1': ((-1.1, -1.7, 0.32), (0.9, 1.1, 0.75), 22, None, 8),
     'J1': ((-0.55, -0.7, 1.32), (-1.3, 1.6, 1.62), 35, None, 5),
 }
@@ -162,9 +162,7 @@ class Cena:
                 for kp in fc.keyframe_points:
                     kp.interpolation = 'SINE'
                     kp.easing = 'EASE_IN_OUT'
-            # marcador para trocar de câmera
-            m = bpy.context.scene.timeline_markers.new(pid, frame=f0)
-            m.camera = co
+            # (sem marcadores de câmera: cada plano é renderizado com sc.camera fixa)
             cams.append((pid, co, f0, f1, cid))
         self.cams = cams
         return cams
@@ -179,8 +177,12 @@ class Cena:
         pend = [0.0, 0.0, 0.0, 0.0]  # θx, ωx, θy, ωy
         slo = [0.0, 0.0, 0.0, 0.0]   # inclinação água x, vx, y, vy
         desl = {k: Vector((0, 0, 0)) for k in ('cad1', 'cad2', 'cad3', 'copo', 'chaleira', 'mesa')}
+        giro = {k: 0.0 for k in ('cad1', 'cad2', 'cad3', 'mesa')}
         rnd = random.Random(7)
         dirs = {k: Vector((rnd.uniform(-1, 1), rnd.uniform(-1, 1), 0)).normalized() for k in desl}
+        # direções que afastam as cadeiras da mesa (nada atravessa nada); mesa vem para a frente
+        dirs.update({'cad1': Vector((-1, -0.35, 0)).normalized(), 'cad2': Vector((0.25, 1, 0)).normalized(),
+                     'cad3': Vector((1, -0.25, 0)).normalized(), 'mesa': Vector((0.2, -1, 0)).normalized()})
         agua = O['agua'].modifiers['ondas']
         Iamp, Itmp, Ix, Iy = cena.gn(agua, 'Amp'), cena.gn(agua, 'Tempo'), cena.gn(agua, 'Incl_X'), cena.gn(agua, 'Incl_Y')
         louca = self.louca()
@@ -245,10 +247,18 @@ class Cena:
             for i, k in enumerate(('cad1', 'cad2', 'cad3', 'mesa')):
                 o = O[k]
                 if movem and E > 0.3:
-                    desl[k] += dirs[k] * (E ** 2) * (0.06 if k != 'mesa' else 0.02) * dt * (1 + ruido(t, 50 + i, 1.3))
+                    # móveis andam pelo chão: deslizam aos trancos (velocidade ∝ E², máx. 45 cm / mesa 12 cm)
+                    v = (E ** 2) * (0.38 if k != 'mesa' else 0.1) * max(0.0, 0.6 + ruido(t, 50 + i, 1.6))
+                    desl[k] += dirs[k] * v * dt
+                    lim = 0.45 if k != 'mesa' else 0.06
+                    if desl[k].length > lim:
+                        desl[k] = desl[k].normalized() * lim
+                    giro[k] += (0.35 if k != 'mesa' else 0.05) * v * dt * (1 if i % 2 else -1)
                 jit(o, 100 + i * 10, 0.012 if k != 'mesa' else 0.006, rot=0.02, z=0.012 if E > 0.6 else 0.003)
                 o.delta_location = Vector(o.delta_location) + desl[k]
+                o.delta_rotation_euler = Euler((o.delta_rotation_euler[0], o.delta_rotation_euler[1], o.delta_rotation_euler[2] + giro[k]))
                 o.keyframe_insert('delta_location', frame=f)
+                o.keyframe_insert('delta_rotation_euler', frame=f)
             # copo anda sobre a mesa (forte) e balança
             if E > 0.3:
                 desl['copo'] += dirs['copo'] * (E ** 2) * 0.03 * dt * (1 + ruido(t, 61, 1.1))

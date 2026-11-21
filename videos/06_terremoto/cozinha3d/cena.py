@@ -365,6 +365,17 @@ def arquitetura(M):
         mover_para(ct, cj)
     bpy.ops.mesh.primitive_cylinder_add(radius=0.011, depth=(JX1 - JX0) + 0.7, location=((JX0 + JX1) / 2, PY - 0.07, JZ1 + 0.22), rotation=(0, math.pi / 2, 0))
     vr = bpy.context.object; vr.name = 'varao'; vr.data.materials.append(M['inox_esc']); mover_para(vr, cj)
+    # folhinha de calendário na parede lateral direita (agosto de 2026)
+    mc = bpy.data.materials.new('calendario'); mc.use_nodes = True
+    ti = mc.node_tree.nodes.new('ShaderNodeTexImage'); ti.image = bpy.data.images.load(os.path.join(AQUI, 'texturas', 'calendario.png'))
+    mc.node_tree.links.new(ti.outputs[0], mc.node_tree.nodes['Principled BSDF'].inputs['Base Color'])
+    mc.node_tree.nodes['Principled BSDF'].inputs['Roughness'].default_value = 0.7
+    bpy.ops.mesh.primitive_plane_add(size=1, location=(PX1 - 0.004, 0.55, 1.95), rotation=(math.pi / 2, 0, -math.pi / 2))
+    cl = bpy.context.object; cl.name = 'calendario'; cl.scale = (0.3, 0.45, 1)
+    bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
+    cl.data.materials.append(mc); mover_para(cl, c)
+    bpy.ops.mesh.primitive_cylinder_add(radius=0.004, depth=0.01, location=(PX1 - 0.006, 0.55, 2.19), rotation=(0, math.pi / 2, 0))
+    pr = bpy.context.object; pr.name = 'prego'; pr.data.materials.append(M['inox_esc']); mover_para(pr, c)
     # tomada na parede
     caixa('tomada', (0.55, PY - 0.004, 1.15), (0.08, 0.008, 0.12), M['tomada'], c, bevel=0.003)
     return {'janela': (JX0, JX1, JZ0, JZ1), 'paredes': paredes}
