@@ -7,7 +7,7 @@ G=${@:-p1 p2 p3 p4 p5 c01 c02 c03 g4 c08 c11 g7 c14 g95 c18 c20}
 mkdir -p /workspace/out/img /workspace/out/mp4
 for g in $G; do
   echo "INICIO $g $(date +%T)"
-  /venv/bin/python planos3d.py $g --gpu --saida /workspace/out/img > /workspace/out/log_$g.txt 2>&1 || echo "FALHA $g"
+  /venv/bin/python planos3d.py $g --gpu --amostras 80 --saida /workspace/out/img > /workspace/out/log_$g.txt 2>&1 || echo "FALHA $g"
   for p in $(grep -o "^PLANO [a-z0-9]*" /workspace/out/log_$g.txt | cut -d' ' -f2); do
     ffmpeg -y -loglevel error -framerate 30 -i /workspace/out/img/$p/%04d.png -c:v libx264 -crf 14 -preset slow -pix_fmt yuv420p /workspace/out/mp4/$p.mp4 && echo "MP4 $p"
   done

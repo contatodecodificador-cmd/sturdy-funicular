@@ -504,6 +504,11 @@ def usar_gpu():
     for d in pr.devices:
         d.use = d.type == 'OPTIX'
     bpy.context.scene.cycles.device = 'GPU'
+    print('DISPOSITIVOS', [(d.name, d.type, d.use) for d in pr.devices], flush=True)
+    sc = bpy.context.scene
+    sc.render.use_persistent_data = True     # mantém BVH/texturas entre quadros
+    sc.cycles.denoiser = 'OPTIX'
+    sc.cycles.denoising_input_passes = 'RGB_ALBEDO_NORMAL'
 
 
 def renderizar(gid, saida, previa=None, so=None, frames=None, gpu=False, res=None, amostras=None, passo=1):
