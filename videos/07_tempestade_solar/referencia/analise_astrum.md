@@ -29,10 +29,43 @@ Todas seguem o mesmo molde:
 - Não aparece rosto, seta nem emoji. A paleta é escura (espaço) com uma única cor quente ou fria dominante.
 - A thumbnail não repete o título: ela anuncia que o fenômeno está chegando, e o título promete o que ele vai fazer.
 
-## Roteiro
-YouTube bloqueou a coleta automática das legendas (pede login para confirmar que não é robô), e os créditos do vidIQ acabaram (cada transcrição custa 5 e sobraram 2). Para estudar o roteiro de verdade, precisamos de uma destas duas coisas:
-1. **Colar a transcrição.** No YouTube, abrir o vídeo, clicar em "...mais" na descrição, depois em "Mostrar transcrição", copiar e colar aqui. Prioridade: "What El Niño Will Do to Earth" (7 mi) e "What the Upcoming Geomagnetic Reversal Will Do to Earth" (o mais próximo do nosso tema).
-2. **Recarregar os créditos do vidIQ.** Aí eu puxo as transcrições sozinho.
+## Roteiro: o que fez esse vídeo funcionar
+Vídeo estudado: "What the Upcoming Geomagnetic Reversal Will Do to Earth" (16 min 27 s, transcrição enviada pelo dono, vídeo baixado do Drive). Quadros em `quadros_intro_astrum.jpg` (de 3 em 3 s na introdução) e `quadros_corpo_astrum.jpg`.
+
+### Introdução (0:00–1:30): uma sequência de 7 passos
+1. **Algo familiar que "não pode mudar"** (o Polo Norte), seguido de uma **lista curta e meio cômica de consequências absurdas**: as bússolas apontariam errado, os mapas ficariam errados, os pássaros ficariam confusos. Isso prende pela curiosidade, sem medo ainda. (0–15 s)
+2. **A virada:** "E mesmo assim... é real, já aconteceu e é mais perigoso do que você pensa." (15–20 s)
+3. **Corrige a expectativa e aponta o perigo verdadeiro:** "Não é a inversão em si, é o caminho até ela." O escudo cai para 10%. Vem uma lista de catástrofes ditas com autoridade ("um grupo de cientistas em 2021"). (20–50 s)
+4. **Urgência:** "Estamos atrasados para a próxima" e "pode ter começado já". (50–60 s)
+5. **A pergunta central:** "Devemos nos preocupar?" (60 s)
+6. **Promessa binária com humor:** apocalipse ou "só uns pássaros perdidos"? O humor amarra de volta com o passo 1. (60–85 s)
+7. **Cartela "ASTRUM"** só depois da promessa, em 1:30.
+
+### Corpo: tensão em dente de serra
+- **Base:** por que o campo existe (Marte e Vênus não têm) e por que isso nos mantém vivos.
+- **Mecanismo com analogia do dia a dia:** usina e ímã, molas, pião. Ele nunca deixa a física abstrata.
+- **Instabilidade em números:** o polo andou 1.100 km e a velocidade subiu de 16 para 55 km/ano.
+- **Prova de que já aconteceu:** 183 vezes em 83 milhões de anos, registradas nas rochas.
+- **Derruba um mito ("estamos atrasados?"):** não há ritmo regular. Isso dá credibilidade.
+- **Como acontece**, e depois **o que muda para nós**, em lista: satélites, rede elétrica, câncer.
+- **A evidência mais assustadora** (Laschamps e a megafauna australiana), **e logo o contrapeso**: "honestamente, é misto"; dá tempo de se adaptar; a atmosfera também protege.
+- **Re-escalada no final:** "isto não é tão hipotético assim". O campo está enfraquecendo há 200 anos e existe a **Anomalia do Atlântico Sul, sobre a América do Sul**, onde o Hubble precisa se desligar. "Imagina isso no globo inteiro."
+- **Fecho honesto:** não acaba com a civilização, mas tem impacto, e as próximas gerações podem ver. O patrocínio entra só depois do conteúdo. O pedido final é a playlist.
+- **Transições sempre por pergunta retórica:** "Mas isso seria mesmo o fim do mundo?", "Quão reais são esses riscos?", "Você sabia que...".
+
+### Edição (quadros)
+- Introdução feita quase toda de **3D/CG**: Terra girando, polos, linhas do campo laranja e azul em volta do globo, Sol com vento solar batendo no escudo, Terra noturna e satélite.
+- Planos de 3 a 6 s na introdução e de 10 a 20 s no corpo, com **movimento de câmera contínuo e lento**.
+- Quase nenhum texto na tela: só rótulos ("10%") e créditos de dados (ESA, NASA).
+- No corpo, mistura de CG, visualização de dados científicos, imagens de banco (cidade, animais, pessoas) e gráficos de artigos.
+- A cartela do canal entra depois da promessa, e a trilha é contínua.
+
+### O que vamos modelar (sem copiar)
+- A sequência de 7 passos da introdução, com o nosso conteúdo.
+- O dente de serra: medo, depois contrapeso honesto, depois re-escalada no final.
+- As analogias do cotidiano, só que brasileiras.
+- As transições por pergunta e a promessa binária com uma ponta leve.
+- **O ponto em que ele termina, a Anomalia sobre a América do Sul, vira o nosso ponto de partida e a nossa virada.**
 
 ## Nosso título (modelando a estrutura, com o Brasil)
 "E se a maior tempestade solar da história atingisse o Brasil hoje?" é o **tema**, não o título final. Opções que seguem a estrutura do Astrum (fenômeno + "vai fazer" + a nossa casa):
