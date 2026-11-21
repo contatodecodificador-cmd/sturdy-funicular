@@ -115,8 +115,8 @@ E aquilo foi só um cinco.
 ## ANDAR 2 — O MAIOR DAQUI (5:00–8:30)
 
 [VISUAL: serra coberta de mata no norte de Mato Grosso, 1955; nenhuma casa à vista]
-[ETIQUETA: Serra do Tombador (MT) / 31 DE JANEIRO DE 1955]
-Degrau seis. Trinta e um de janeiro de mil novecentos e cinquenta e cinco. Serra do Tombador, no norte de Mato Grosso, onde hoje fica o município de Juara.
+[ETIQUETA: Serra do Tombador (MT) / JANEIRO DE 1955]
+Degrau seis. Janeiro de mil novecentos e cinquenta e cinco. Serra do Tombador, no norte de Mato Grosso, onde hoje fica o município de Juara.
 
 [VISUAL: a escada; a seta sobe até 6,2]
 Ali aconteceu o maior terremoto raso já registrado no Brasil. Magnitude estimada em seis vírgula dois. Umas quarenta vezes a energia de João Câmara.
@@ -289,7 +289,7 @@ Se inscreve para a próxima viagem. O chão daqui é calmo. Mas ele nunca fica c
 - Valdivia: oscilações livres da Terra registradas após 1960 (sismologia clássica).
 - Itacarambi 9/12/2007 (4,9 mb, foco raso, casas de adobe, primeira morte): USGS; USP.
 - João Câmara 30/11/1986, 2h19 (5,1 Mw; ~4 mil casas destruídas ou danificadas; ~10 mil desabrigados): UFRN; Wikipedia.
-- Serra do Tombador 31/1/1955 (~6,2; maior raso): Centro de Sismologia da USP; Nat Geo Brasil.
+- Serra do Tombador, jan/1955 (~6,2; maior raso; data 27 ou 31/1 conforme a fonte): Centro de Sismologia da USP; Nat Geo Brasil.
 - Acre 9/11/1963 (7,6; ~590 km; fronteira com o Peru) e jan/2024 (6,6): USGS (via EarthquakeTrack); Agência Brasil; USP.
 - Boato do megaterremoto de setembro de 2026: Aos Fatos; Observatório Nacional/RSBR.
 - Chile 16/9/2015 (8,3; Fiesp, Conjunto Nacional e Anhembi Morumbi esvaziados): Catraca Livre; Gazeta do Povo. Chile 27/2/2010 (8,8) sentido em SP: Gazeta do Povo; Jornal de Brasília.
