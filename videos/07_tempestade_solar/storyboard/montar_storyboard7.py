@@ -189,64 +189,26 @@ def p2(fn, *a, relo=None, cor=BRANCO, tela=None):
         return im
     return f
 
-# ---------- lista de planos (bloco, tipo, quadro, descrição, fala) ----------
-INTRO, B1, B2, B3, B4, B5, FE = ('INTRODUÇÃO · 100% 3D (tempos reais da narração)', 'BLOCO 1 · AS TRÊS ONDAS', 'BLOCO 2 · ARQUIVO: QUEM JÁ LEVOU UMA DESSAS', 'BLOCO 3 · IMPACTO, HORA A HORA NO BRASIL',
-                                'BLOCO 4 · O PONTO FRACO (A VIRADA)', 'BLOCO 5 · O PIOR CASO E A PARTE HONESTA', 'FECHO')
-P = [
- (B1, '2D', p2(q_ondas, 0, relo='17:20:00'), 'Esquema Sol → Terra; três ondas vão sair', 'Uma tempestade solar não chega de uma vez. Ela chega em três ondas.'),
- (B1, '2D', p2(q_ondas, 1, relo='17:20:00'), 'Onda 1: luz (8 min); rádio de ondas curtas some', 'A primeira é a luz do clarão: raios X e ultravioleta… Pilotos e navios perdem a voz.'),
- (B1, '2D', p2(q_ondas, 2, relo='17:20:00'), 'Onda 2: partículas (minutos a horas)', 'A segunda são partículas… atravessam a eletrônica dos satélites como agulha atravessa papel.'),
- (B1, '2D', p2(q_ondas, 3, relo='17:20:00', tela='17 HORAS E MEIA'), 'Onda 3: a nuvem (15 h a 3 dias)', 'A de mil oitocentos e cinquenta e nove levou dezessete horas e meia.'),
- (B1, '2D', p2(q_dinamo), 'Farol de bicicleta com dínamo (analogia)', 'É o mesmo princípio do farolzinho de bicicleta com dínamo… o dínamo é maior que a Lua.'),
- (B1, '2D', p2(q_escudo), 'O escudo desvia o vento solar', 'Esse escudo desvia o vento do Sol o tempo todo. A gente nem percebe.'),
- (B1, '2D', p2(q_aurora, relo='16:58:00'), 'Aurora: o escudo trabalhando', 'A aurora é exatamente isso: o escudo trabalhando… o que acontece quando chega uma nuvem forte demais?'),
- (B2, '2D', lambda: ficha('MAIO 2024', 'Estados Unidos', 'Tratores guiados por GPS saem da linha'), 'Ficha de arquivo', 'Maio de dois mil e vinte e quatro. A tempestade mais forte em vinte anos.'),
- (B2, '2D', p2(q_tratores), 'Plantio visto de cima: linhas tortas', 'Tratores guiados por GPS… começaram a sair da linha. Quase meio bilhão de dólares.'),
- (B2, '2D', p2(q_brasil, 'soja'), 'Mapa do Brasil: Centro-Oeste do agro', 'Guarda isso. Porque o agro brasileiro também planta guiado por satélite.'),
- (B2, '2D', lambda: ficha('MARÇO 1989', 'Quebec, Canadá', 'Rede inteira cai em menos de 2 minutos'), 'Ficha de arquivo', 'Março de mil novecentos e oitenta e nove. Quebec. Duas e quarenta e quatro da manhã.'),
- (B2, '2D', p2(q_quebec, 1, tela='6 MILHÕES SEM LUZ'), 'Mapa: luzes de Quebec se apagam de uma vez', 'Seis milhões de pessoas ficaram sem luz por cerca de nove horas.'),
- (B2, '2D', lambda: ficha('JULHO 2012', 'Órbita da Terra', 'Uma nuvem do tamanho de Carrington passa'), 'Ficha de arquivo', 'Julho de dois mil e doze. O Sol disparou uma nuvem tão forte quanto a de mil oitocentos e cinquenta e nove.'),
- (B2, '2D', p2(q_orbita, 1, tela='UMA SEMANA'), 'Órbita: a Terra estava do outro lado', '…no ponto onde o planeta tinha estado uma semana antes. Foi essa a margem.'),
- (B2, '2D', lambda: ficha('SETEMBRO 1859', 'Inglaterra', 'A primeira erupção solar vista por alguém'), 'Ficha de arquivo', 'Primeiro de setembro de mil oitocentos e cinquenta e nove…'),
- (B2, '2D', p2(q_carrington), 'Redesenho do esboço de Carrington: dois pontos brancos', 'Richard Carrington… viu dois pontos de luz branca surgirem sobre as manchas.'),
- (B2, '2D', p2(q_papel), 'Fita de telégrafo pegando fogo', 'Telegrafistas levaram choque e o papel pegou fogo… só com a eletricidade que vinha do céu.'),
- (B2, '2D', p2(q_americas), 'Mapa das Américas: onde a aurora foi vista em 1859', 'A aurora foi vista no Caribe, na Colômbia e até no Chile, em Santiago.'),
- (B2, '2D', p2(q_rio, tela='RIO DE JANEIRO · 1875'), 'Céu do Rio em 1875 com brilho vermelho; Observatório', '…o diretor do Observatório Imperial apontou um instrumento para o céu do Rio e anotou: aurora.'),
- (B2, '2D', p2(q_anel, tela='774 d.C.'), 'Anel de árvore destacado em laranja', 'No ano setecentos e setenta e quatro, árvores do mundo inteiro guardaram no tronco uma marca…'),
- (B2, '2D', p2(q_anel, relo='00:30:00', cor=VERM), 'Relógio fica vermelho: faltam 30 minutos', 'Mas a nossa nuvem é do tamanho da de mil oitocentos e cinquenta e nove. E faltam trinta minutos.'),
- (B3, '3D', p3('S14', relo='00:00:00', cor=VERM), 'IMPACTO: a nuvem bate, o escudo achata do lado do Sol', 'Um satélite… a um milhão e meio de quilômetros daqui, mede a nuvem passando. É o único aviso.'),
- (B3, '2D', p2(q_L1), 'Satélite de alerta entre o Sol e a Terra', '(continua a fala anterior)'),
- (B3, '2D', p2(q_brasil, 'bolhas', tela='PRIMEIRA HORA'), 'Mapa do Brasil com bolhas de plasma (mapas do INPE)', 'Primeira hora. O GPS começa a errar… nascem bolhas na camada elétrica da atmosfera.'),
- (B3, '2D', p2(q_tratores), 'Plantadeira no Mato Grosso saindo do traço', 'E se for entre setembro e dezembro, é plantio de soja.'),
- (B3, '2D', p2(q_torres), 'Torres de celular sincronizadas pelo relógio do GPS', 'Muitas redes de celular e de dados usam o horário do GPS para se sincronizar.'),
- (B3, '2D', p2(q_brasil, 'linhas', tela='2ª A 6ª HORA'), 'Linhas de transmissão; boa notícia: Brasil longe dos polos', 'Da segunda à sexta hora: a rede elétrica… muito mais fortes perto dos polos.'),
- (B3, '2D', p2(q_brasil, 'goias', tela='ATÉ 15 AMPÈRES'), 'Goiás: medição INPE/Furnas', 'Pesquisadores do INPE e de Furnas mediram essas correntes numa linha em Goiás.'),
- (B3, '2D', p2(q_brasil, 'linhas'), 'Linhões longos: Rondônia e Itaipu até o Sudeste', 'Algumas das linhas de transmissão mais longas do planeta… linha longa funciona como antena.'),
- (B3, '2D', p2(q_ceu_sul), 'Céu do extremo sul: brilho vermelho baixo no horizonte', 'Uma aurora no céu brasileiro seria raríssima. Talvez um brilho vermelho, baixo…'),
- (B3, '3D', p3('S08'), 'O escudo inteiro; o Brasil em segurança no chão', 'Então, no chão, o Brasil se sai melhor que muita gente… Só que a tempestade não acontece só no chão.'),
- (B4, '3D', p3('S09'), 'A anomalia: zoom no Atlântico Sul', 'Lembra do ponto fraco? Ele tem nome: Anomalia Magnética do Atlântico Sul.'),
- (B4, '2D', p2(q_brasil, 'anomalia', tela='DESDE 2014: CRESCENDO'), 'Mapa: a anomalia crescendo de 2014 até hoje', 'E ele está crescendo… e está se dividindo em duas.'),
- (B4, '3D', p3('S07'), 'Satélites cruzando a região (Hubble desliga detectores)', 'O telescópio Hubble passa um pedaço da vida dele com os detectores desligados…'),
- (B4, '2D', p2(q_astronauta), 'Astronauta de olhos fechados vê um flash', 'Astronautas contam que, passando por aqui, veem flashes de luz mesmo de olhos fechados.'),
- (B4, '3D', p3('S10'), 'Satélites sobre o Brasil ficam vermelhos', 'Os satélites que passam sobre o Brasil atravessam o ponto mais desprotegido do planeta.'),
- (B4, '2D', lambda: ficha('FEV. 2022', 'Órbita baixa', '38 satélites novos derrubados de uma vez'), 'Ficha rápida', 'Uma tempestade fraca, fraca mesmo, derrubou trinta e oito satélites novos de uma vez.'),
- (B4, '2D', p2(q_amazonia), 'Amazônia: antena de internet via satélite', 'E o Brasil depende de satélite onde não chega cabo.'),
- (B4, '3D', p3('S10', tela='NO CHÃO: PROTEGIDO · NO CÉU: EXPOSTO'), 'A resposta: o escudo inteiro e o Atlântico Sul piscando', 'No chão, o Brasil está entre os lugares mais protegidos… No céu acima do Brasil, fica o lugar mais exposto.'),
- (B5, '2D', p2(q_anel, tela='E SE FOSSE 774?'), 'O pior caso', 'E se fosse a de setecentos e setenta e quatro, dez vezes maior?'),
- (B5, '2D', p2(q_aurora), 'Calma: o alvo é a tecnologia, não o corpo', 'Nenhuma dessas tempestades faz mal ao seu corpo aqui no chão.'),
- (B5, '2D', p2(q_inpe), 'Monitoramento do clima espacial (INPE)', 'Não dá para impedir o Sol. Mas dá para se preparar…'),
- (FE, '3D', p3('S01'), 'O mesmo Sol do começo, agora calmo', 'O que você está vendo já tem oito minutos… os últimos a saber. E os primeiros a sentir.'),
- (FE, '2D', p2(q_celular, tela='SEM GPS E SEM INTERNET POR UMA SEMANA'), 'Pergunta para os comentários', 'Se o GPS e a internet sumissem por uma semana na sua cidade, qual seria a primeira coisa a parar?'),
- (FE, '2D', p2(q_cartela, relo='08:20 ATRASADO', cor=OURO), 'Selo do canal; o relógio mostra 8:20 atrasado', 'O Sol não manda aviso. Ele manda luz. E ela sempre chega oito minutos atrasada.'),
-]
-
+INTRO = 'INTRODUÇÃO · 100% 3D (tempos reais da narração)'
+P = []
 # introdução v2 com tempos reais
 import sys; sys.path.insert(0, AQ); from intro_planos import planos as _ip
 _I = []
 for x in _ip():
     fn = p2(q_cartela, relo=x['rel']) if x['prev'] == 'CARTELA' else p3(x['prev'], clarao=0.55 if x['desc'].startswith('Terra e Sol: CLARÃO') else 0, relo=x['rel'])
     _I.append((INTRO, '3D', fn, x['desc'], x['fala'], x))
-P = _I + [tuple(list(e) + [None]) for e in P]
+import quadros2d; quadros2d.instalar(globals())
+from corpo_planos import planos as _cp
+def _vis(c, rel, tela):
+    tipo, nome = c.split(':', 1)
+    if tipo == '3D': return p3(nome, relo=rel, cor=VERM if rel and rel.startswith('00') else BRANCO, tela=tela)
+    nm, _, arg = nome.partition(':')
+    if nm == 'ficha': return p2(ficha_arg, arg, relo=rel, tela=tela)
+    fn = globals()[nm]; args = []
+    if arg: args = [int(arg)] if arg.isdigit() else [arg]
+    return p2(fn, *args, relo=rel, cor=VERM if rel and rel.startswith('00') else (OURO if rel and 'ATRAS' in rel else BRANCO), tela=tela)
+_C = [(x['bloco'], x['vis'][:2], _vis(x['vis'], x['rel'], x['tela']), x['desc'], x['fala'], x) for x in _cp()]
+P = _I + _C
 
 # ---------- montagem do PDF ----------
 PW, PH, COLS, ROWS, CW, CH, IMW, IMH = 2400, 1500, 4, 3, 560, 420, 540, 304
@@ -265,13 +227,13 @@ while i < len(P):
         dur = max(2.5, len(fala.split()) / 2.7)
         d.rounded_rectangle((cx + 18, cy + 18, cx + 168, cy + 50), 8, fill=(6, 10, 20)); d.text((cx + 28, cy + 22), f'CENA {i + 1:02d}', font=F('Inter-SemiBold.otf', 19), fill=BRANCO)
         if info:
-            d.rounded_rectangle((cx + 18, cy + IMH - 40, cx + 300, cy + IMH - 8), 8, fill=(6, 10, 20))
-            d.text((cx + 28, cy + IMH - 36), f"{info['t0']:.1f}s → {info['t1']:.1f}s  ·  {info['t1'] - info['t0']:.1f}s".replace('.', ','), font=F('Inter-SemiBold.otf', 18), fill=OURO)
+            d.rounded_rectangle((cx + 160, cy + 18, cx + 430, cy + 50), 8, fill=(6, 10, 20))
+            d.text((cx + 170, cy + 22), f"{info['t0']:.1f}s → {info['t1']:.1f}s  ·  {info['t1'] - info['t0']:.1f}s".replace('.', ','), font=F('Inter-SemiBold.otf', 18), fill=OURO)
         corb = (255, 120, 30) if tipo == '3D' else (70, 150, 255)
         d.rounded_rectangle((cx + IMW - 70, cy + IMH - 40, cx + IMW, cy + IMH - 8), 8, fill=corb); d.text((cx + IMW - 35, cy + IMH - 36), tipo, font=F('Inter-Bold.otf', 19), fill=(8, 11, 20), anchor='ma')
         npl = max(1, math.ceil(dur / 5));
         d.text((cx + 12, cy + IMH + 16), textwrap.shorten(desc, 50, placeholder='…'), font=F('Inter-Bold.otf', 21), fill=BRANCO)
-        if info: fala = '[' + info['mov'].upper() + ']  ' + fala
+        if info: fala = '[' + {'mov': 'MOVIMENTO, SEM ZOOM', 'zoom': 'IMAGEM PARADA: ZOOM LEVE CONTÍNUO'}.get(info['mov'], info['mov']).upper() + ']  ' + fala
         for j, ln in enumerate(textwrap.wrap('“' + fala + '”', 62)[:3]): d.text((cx + 12, cy + IMH + 48 + j * 21), ln, font=F('Inter-Regular.otf', 16), fill=(160, 170, 190))
         t0 += dur; i += 1
     pages.append(p); n += 1
@@ -279,8 +241,8 @@ cap = Image.new('RGB', (PW, PH), (6, 9, 16)); d = ImageDraw.Draw(cap)
 hero = bloom(Image.open(os.path.join(PREV, 'S10.png')).convert('RGB').resize((1440, 810))); cap.paste(hero, (480, 300))
 d.text((PW // 2, 90), 'STORYBOARD · VÍDEO 7', font=F('Inter-Bold.otf', 64), fill=BRANCO, anchor='ma')
 d.text((PW // 2, 180), 'O Que a MAIOR TEMPESTADE SOLAR da História Faria com o BRASIL · Brasil Milenar', font=F('Inter-SemiBold.otf', 34), fill=CINZA, anchor='ma')
-n3 = sum(1 for x in P if x[1] == '3D')
-d.text((PW // 2, 1160), f'{len(P)} cenas · narração de cerca de {round(len(open(os.path.join(V, "texto_para_IA.txt")).read().split()) / 150)} min · {n3} cenas em 3D (laranja) · {len(P) - n3} em 2D (azul)', font=F('Inter-SemiBold.otf', 30), fill=OURO, anchor='ma')
+n3 = sum(1 for x in P if x[1] == '3D'); t0 = P[-1][5]['t1']
+d.text((PW // 2, 1160), f'{len(P)} planos (todos ≤ 5 s) · {int(t0 // 60)} min {int(t0 % 60)} s de narração · {n3} planos em 3D (laranja) · {len(P) - n3} em 2D (azul)', font=F('Inter-SemiBold.otf', 30), fill=OURO, anchor='ma')
 for j, l in enumerate(['Introdução 100% em 3D (Blender, render final na GPU). Quadros 3D aqui = prévias reais em baixa qualidade; o final ganha movimento de câmera, nitidez e brilho.',
                        'Regra: plano de no máximo 5 s. Imagem parada = UM zoom leve contínuo do começo ao fim (nunca vai-e-volta). Plano com movimento (globo girando, câmera andando) = sem zoom.',
                        'Quadros 2D = esboço de layout; cada cena longa do corpo vira 2 a 4 planos de até 5 s, seguindo a mesma regra.',
@@ -289,5 +251,5 @@ for j, l in enumerate(['Introdução 100% em 3D (Blender, render final na GPU). 
 pages.insert(0, cap)
 out = os.path.join(AQ, 'storyboard_video7.pdf')
 pages[0].save(out, save_all=True, append_images=pages[1:], resolution=150)
-pages[1].convert('RGB').resize((1600, 1000)).save(os.path.join(AQ, 'pagina_intro.jpg'), quality=88); pages[4].convert('RGB').resize((1600, 1000)).save('/tmp/claude-0/pag_b2.jpg', quality=85)
+pages[1].convert('RGB').resize((1600, 1000)).save(os.path.join(AQ, 'pagina_intro.jpg'), quality=88); pages[6].convert('RGB').resize((1600, 1000)).save('/tmp/claude-0/pag_b2.jpg', quality=85)
 print('OK', out, len(P), 'cenas', round(t0), 's')
