@@ -1,0 +1,4430 @@
+[
+{
+"a": 74.4,
+"b": 76.5,
+"c": "corpo",
+"p": {
+"temp0": 37,
+"temp1": 37,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Você de frente, termômetro interno em 37 °C",
+"f": 0
+},
+{
+"a": 76.5,
+"b": 80.0,
+"c": "janela",
+"p": {
+"z0": 0,
+"z1": 0.05,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chave",
+"txt": "UMA FAIXA DE 5 GRAUS",
+"t0": 0.4,
+"cor": "ouro"
+}
+],
+"d": "Régua do universo; a faixa da vida acende",
+"f": 0
+},
+{
+"a": 80.0,
+"b": 82.9,
+"c": "corpo",
+"p": {
+"temp0": 37,
+"temp1": 35,
+"fundo": "neve",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Termômetro desce a 35",
+"f": 0
+},
+{
+"a": 82.9,
+"b": 85.9,
+"c": "corpo",
+"p": {
+"temp0": 37,
+"temp1": 40,
+"fundo": "sol",
+"suor": 0.6,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Termômetro sobe a 40",
+"f": 0.35
+},
+{
+"a": 85.9,
+"b": 90.6,
+"c": "janela",
+"p": {
+"z0": 0,
+"z1": 0,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "De −273 a trilhões de graus",
+"f": 0
+},
+{
+"a": 90.6,
+"b": 93.8,
+"c": "janela",
+"p": {
+"z0": 0.1,
+"z1": 1,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Zoom até a janelinha: você cabe nela",
+"f": 0.35
+},
+{
+"a": 93.8,
+"b": 98.3,
+"c": "corredor",
+"p": {
+"cam0": 0.4,
+"cam1": 0.9,
+"x0": 0.0,
+"x1": -0.35,
+"pz": 3.4,
+"brilho": 0.55,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Corredor: você vira para o lado frio",
+"f": 0
+},
+{
+"a": 98.3,
+"b": 102.1,
+"c": "corpo",
+"p": {
+"temp0": 37,
+"temp1": 35,
+"fundo": "neve",
+"tremor": 1,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chip",
+"n": 2,
+"nome": "HIPOTERMIA",
+"t0": 0
+}
+],
+"d": "Porta 2: na neve, tremendo; 35 °C",
+"f": 0
+},
+{
+"a": 102.1,
+"b": 106.2,
+"c": "corpo",
+"p": {
+"temp0": 35,
+"temp1": 34,
+"fundo": "neve",
+"tremor": 1,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Mãos desajeitadas",
+"f": 0.35
+},
+{
+"a": 106.2,
+"b": 108.3,
+"c": "corpo",
+"p": {
+"temp0": 34,
+"temp1": 33,
+"fundo": "neve",
+"tremor": 0.6,
+"expr": "fechado",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Pensamento lento",
+"f": 0.35
+},
+{
+"a": 108.3,
+"b": 112.6,
+"c": "corpo",
+"p": {
+"temp0": 33,
+"temp1": 32,
+"fundo": "neve",
+"tremor": 1,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Lá pelos 32 °C",
+"f": 0.35
+},
+{
+"a": 112.6,
+"b": 116.2,
+"c": "corpo",
+"p": {
+"temp0": 32,
+"temp1": 32,
+"fundo": "neve",
+"tremor": 0,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "carimbo",
+"txt": "NÃO É MELHORA",
+"t0": 2.7,
+"cor": "perigo"
+}
+],
+"d": "O tremor para",
+"f": 0.35
+},
+{
+"a": 116.2,
+"b": 118.7,
+"c": "corpo",
+"p": {
+"temp0": 32,
+"temp1": 31,
+"fundo": "neve",
+"expr": "fechado",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "O corpo desistindo",
+"f": 0.35
+},
+{
+"a": 118.7,
+"b": 121.2,
+"c": "nevasca",
+"p": {
+"t0": 0,
+"t1": 0,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Nevasca, pessoa de casaco",
+"f": 0
+},
+{
+"a": 121.2,
+"b": 124.8,
+"c": "nevasca",
+"p": {
+"t0": 0,
+"t1": 1,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Ela tira o casaco",
+"f": 0.35
+},
+{
+"a": 124.8,
+"b": 129.7,
+"c": "corpo",
+"p": {
+"temp0": 30,
+"temp1": 30,
+"fundo": "neve",
+"expr": "calor",
+"falso": 1,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Cérebro confuso: calor falso",
+"f": 0
+},
+{
+"a": 129.7,
+"b": 134.6,
+"c": "nevasca",
+"p": {
+"t0": 1,
+"t1": 1,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Casaco abandonado na neve",
+"f": 0
+},
+{
+"a": 134.6,
+"b": 137.75,
+"c": "monitor",
+"p": {
+"bpm": 34,
+"irr": 1,
+"temp": "27 °C",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Abaixo de 28: coração devagar e fora de ritmo (1/2)",
+"f": 0
+},
+{
+"a": 137.75,
+"b": 140.9,
+"c": "monitor",
+"p": {
+"bpm": 34,
+"irr": 1,
+"temp": "27 °C",
+"parte": 1,
+"partes": 2,
+"off": 3.1500000000000057
+},
+"o": [],
+"d": "Abaixo de 28: coração devagar e fora de ritmo (2/2)",
+"f": 0.35
+},
+{
+"a": 140.9,
+"b": 143.2,
+"c": "monitor",
+"p": {
+"bpm": 18,
+"irr": 1,
+"temp": "24 °C",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Parece morta",
+"f": 0.35
+},
+{
+"a": 143.2,
+"b": 146.1,
+"c": "rio",
+"p": {
+"q0": 0,
+"q1": 0,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chip",
+"n": 3,
+"nome": "ANNA",
+"t0": 0
+}
+],
+"d": "Porta 3: rio congelado no norte da Noruega, à noite (1/2)",
+"f": 0
+},
+{
+"a": 146.1,
+"b": 149.0,
+"c": "rio",
+"p": {
+"q0": 0,
+"q1": 0,
+"parte": 1,
+"partes": 2,
+"off": 2.9000000000000057
+},
+"o": [],
+"d": "Porta 3: rio congelado no norte da Noruega, à noite (2/2)",
+"f": 0.35
+},
+{
+"a": 149.0,
+"b": 152.4,
+"c": "rio",
+"p": {
+"q0": 0,
+"q1": 0,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "etq",
+"small": "NORUEGA · 1999",
+"big": "ANNA BÅGENHOLM",
+"t0": 0.3,
+"cor": "dado"
+}
+],
+"d": "Anna esquiando",
+"f": 0.35
+},
+{
+"a": 152.4,
+"b": 156.0,
+"c": "rio",
+"p": {
+"q0": 0,
+"q1": 1,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Ela cai de cabeça no buraco do gelo",
+"f": 0.35
+},
+{
+"a": 156.0,
+"b": 158.75,
+"c": "anna",
+"p": {
+"d": 11.0,
+"off": 0.0,
+"parte": 0,
+"partes": 2
+},
+"o": [],
+"d": "Sob o gelo, no bolsão de ar; cronômetro corre (1/2)",
+"f": 0
+},
+{
+"a": 158.75,
+"b": 161.5,
+"c": "anna",
+"p": {
+"d": 11.0,
+"off": 2.75,
+"parte": 1,
+"partes": 2
+},
+"o": [],
+"d": "Sob o gelo, no bolsão de ar; cronômetro corre (2/2)",
+"f": 0.35
+},
+{
+"a": 161.5,
+"b": 163.9,
+"c": "anna",
+"p": {
+"d": 11.0,
+"off": 5.5,
+"close": 1,
+"parte": 0,
+"partes": 1
+},
+"o": [],
+"d": "Os amigos não conseguem puxá-la",
+"f": 0.35
+},
+{
+"a": 163.9,
+"b": 167.4,
+"c": "anna",
+"p": {
+"d": 11.0,
+"off": 7.9,
+"parte": 0,
+"partes": 1
+},
+"o": [],
+"d": "80 minutos",
+"f": 0.35
+},
+{
+"a": 167.4,
+"b": 169.5,
+"c": "monitor",
+"p": {
+"bpm": 0,
+"temp": "13,7 °C",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "O coração parado (linha reta)",
+"f": 0
+},
+{
+"a": 169.5,
+"b": 172.45,
+"c": "leito",
+"p": {
+"pac": "anna",
+"temp0": 13.7,
+"temp1": 13.7,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Hospital: 13,7 °C (1/2)",
+"f": 0
+},
+{
+"a": 172.45,
+"b": 175.4,
+"c": "leito",
+"p": {
+"pac": "anna",
+"temp0": 13.7,
+"temp1": 13.7,
+"parte": 1,
+"partes": 2,
+"off": 2.950000000000003
+},
+"o": [],
+"d": "Hospital: 13,7 °C (2/2)",
+"f": 0.35
+},
+{
+"a": 175.4,
+"b": 178.7,
+"c": "comparacao",
+"p": {
+"a": {
+"n": "13,7 °C",
+"l": "ANNA, POR DENTRO",
+"cor": "frio"
+},
+"b": {
+"n": "~20 °C",
+"l": "PISCINA NO INVERNO",
+"cor": "dado"
+},
+"vs": "<",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Mais fria que a água de uma piscina no inverno",
+"f": 0
+},
+{
+"a": 178.7,
+"b": 183.2,
+"c": "leito",
+"p": {
+"pac": "anna",
+"maq": 1,
+"temp0": 13.7,
+"temp1": 22,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Máquina aquece o sangue e devolve",
+"f": 0
+},
+{
+"a": 183.2,
+"b": 187.6,
+"c": "leito",
+"p": {
+"pac": "anna",
+"maq": 1,
+"temp0": 22,
+"temp1": 37,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Grau por grau; o coração volta",
+"f": 0.35
+},
+{
+"a": 187.6,
+"b": 191.8,
+"c": "leito",
+"p": {
+"pac": "anna",
+"temp0": 13.7,
+"temp1": 13.7,
+"leg": "MENOR TEMPERATURA DA QUAL UM ADULTO VOLTOU",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "carimbo",
+"txt": "RECORDE MUNDIAL",
+"t0": 1.0,
+"cor": "ouro"
+}
+],
+"d": "Recorde mundial",
+"f": 0.35
+},
+{
+"a": 191.8,
+"b": 196.4,
+"c": "cerebro",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "O frio protegeu o cérebro",
+"f": 0
+},
+{
+"a": 196.4,
+"b": 201.0,
+"c": "cerebro",
+"p": {
+"zoom": 1,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Cérebro gelado gasta menos oxigênio",
+"f": 0.35
+},
+{
+"a": 201.0,
+"b": 204.6,
+"c": "pessoaAnna",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "carimbo",
+"txt": "SOBREVIVEU",
+"t0": 0.6,
+"cor": "impacto"
+}
+],
+"d": "Anna de pé, recuperada",
+"f": 0
+},
+{
+"a": 204.6,
+"b": 207.2,
+"c": "corredor",
+"p": {
+"cam0": 0.4,
+"cam1": 0.65,
+"x0": 0.0,
+"x1": 0.2,
+"pz": 3.4,
+"brilho": 0.55,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Corredor: você vira para o lado quente (1/2)",
+"f": 0
+},
+{
+"a": 207.2,
+"b": 209.8,
+"c": "corredor",
+"p": {
+"cam0": 0.65,
+"cam1": 0.9,
+"x0": 0.2,
+"x1": 0.4,
+"pz": 3.4,
+"brilho": 0.55,
+"parte": 1,
+"partes": 2,
+"off": 2.6000000000000085
+},
+"o": [],
+"d": "Corredor: você vira para o lado quente (2/2)",
+"f": 0.35
+},
+{
+"a": 209.8,
+"b": 213.6,
+"c": "corpo",
+"p": {
+"temp0": 37,
+"temp1": 39,
+"fundo": "sol",
+"suor": 0.5,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chip",
+"n": 4,
+"nome": "INSOLAÇÃO",
+"t0": 0
+}
+],
+"d": "Porta 4: febre de 38, 39",
+"f": 0
+},
+{
+"a": 213.6,
+"b": 217.4,
+"c": "corpo",
+"p": {
+"temp0": 39.5,
+"temp1": 40.5,
+"fundo": "sol",
+"suor": 1,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Acima de 40: insolação",
+"f": 0.35
+},
+{
+"a": 217.4,
+"b": 221.4,
+"c": "corpo",
+"p": {
+"temp0": 41,
+"temp1": 41.5,
+"fundo": "sol",
+"suor": 1,
+"expr": "fechado",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Confusão, desmaio",
+"f": 0.35
+},
+{
+"a": 221.4,
+"b": 225.6,
+"c": "monitor",
+"p": {
+"bpm": 165,
+"irr": 0.6,
+"temp": "42 °C",
+"cor": "#FF6A4A",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Acima de 42: órgãos param",
+"f": 0
+},
+{
+"a": 225.6,
+"b": 229.9,
+"c": "rua",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Rua quente nos EUA, 1980; um homem exausto",
+"f": 0
+},
+{
+"a": 229.9,
+"b": 233.4,
+"c": "rua",
+"p": {
+"zoom": 1,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "etq",
+"small": "EUA · JULHO DE 1980",
+"big": "WILLIE JONES",
+"t0": 0.2,
+"cor": "perigo"
+}
+],
+"d": "Willie Jones",
+"f": 0.35
+},
+{
+"a": 233.4,
+"b": 236.05,
+"c": "leito",
+"p": {
+"pac": "willie",
+"temp0": 37,
+"temp1": 46.5,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "No hospital: 46,5 °C (1/2)",
+"f": 0
+},
+{
+"a": 236.05,
+"b": 238.7,
+"c": "leito",
+"p": {
+"pac": "willie",
+"temp0": 37,
+"temp1": 46.5,
+"parte": 1,
+"partes": 2,
+"off": 2.6499999999999915
+},
+"o": [],
+"d": "No hospital: 46,5 °C (2/2)",
+"f": 0.35
+},
+{
+"a": 238.7,
+"b": 242.7,
+"c": "leito",
+"p": {
+"pac": "willie",
+"temp0": 46.5,
+"temp1": 37,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "carimbo",
+"txt": "SOBREVIVEU · 24 DIAS",
+"t0": 2.7,
+"cor": "impacto"
+}
+],
+"d": "24 dias internado; saiu vivo",
+"f": 0.35
+},
+{
+"a": 242.7,
+"b": 247.0,
+"c": "reguaVida",
+"p": {
+"so": "q",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Ninguém sobreviveu a um corpo mais quente",
+"f": 0
+},
+{
+"a": 247.0,
+"b": 250.9,
+"c": "reguaVida",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Junta os dois recordes: 13,7 ←→ 46,5 (1/2)",
+"f": 0.35
+},
+{
+"a": 250.9,
+"b": 254.8,
+"c": "reguaVida",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 3.9000000000000057
+},
+"o": [
+{
+"tipo": "chave",
+"txt": "33 GRAUS",
+"t0": 1.8999999999999941,
+"cor": "ouro"
+}
+],
+"d": "Junta os dois recordes: 13,7 ←→ 46,5 (2/2)",
+"f": 0.35
+},
+{
+"a": 254.8,
+"b": 258.5,
+"c": "janela",
+"p": {
+"z0": 0.75,
+"z1": 1,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Todo o espaço que a vida humana já ocupou (1/2)",
+"f": 0
+},
+{
+"a": 258.5,
+"b": 262.2,
+"c": "janela",
+"p": {
+"z0": 0.75,
+"z1": 1,
+"parte": 1,
+"partes": 2,
+"off": 3.6999999999999886
+},
+"o": [],
+"d": "Todo o espaço que a vida humana já ocupou (2/2)",
+"f": 0.35
+},
+{
+"a": 262.2,
+"b": 265.1,
+"c": "corredor",
+"p": {
+"cam0": 1.6,
+"cam1": 1.0,
+"pz": 3.4,
+"brilho": 0.6,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "De volta ao corredor",
+"f": 0
+},
+{
+"a": 265.1,
+"b": 269.7,
+"c": "corredor",
+"p": {
+"cam0": 0.3,
+"cam1": 1.4,
+"brilho": 0.6,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "As portas de fora",
+"f": 0.35
+},
+{
+"a": 269.7,
+"b": 273.7,
+"c": "corredor",
+"p": {
+"cam0": 0.7999999999999998,
+"cam1": 1.2999999999999998,
+"x0": -0.75,
+"x1": -0.95,
+"y0": -0.35,
+"y1": -0.45,
+"brilho": 0.55,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "A primeira porta de fora: −14",
+"f": 0.35
+},
+{
+"a": 273.7,
+"b": 276.75,
+"c": "mapa",
+"p": {
+"t1": 0.8,
+"t2": 99,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chip",
+"n": 5,
+"nome": "BRASIL",
+"t0": 0
+}
+],
+"d": "Porta 5: mapa real do Brasil; Caçador (1/2)",
+"f": 0
+},
+{
+"a": 276.75,
+"b": 279.8,
+"c": "mapa",
+"p": {
+"t1": 0.8,
+"t2": 99,
+"parte": 1,
+"partes": 2,
+"off": 3.0500000000000114
+},
+"o": [],
+"d": "Porta 5: mapa real do Brasil; Caçador (2/2)",
+"f": 0.35
+},
+{
+"a": 279.8,
+"b": 283.6,
+"c": "cidades",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Caçador com geada × Araçuaí com asfalto tremendo (1/2)",
+"f": 0
+},
+{
+"a": 283.6,
+"b": 287.4,
+"c": "cidades",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 3.799999999999983
+},
+"o": [],
+"d": "Caçador com geada × Araçuaí com asfalto tremendo (2/2)",
+"f": 0.35
+},
+{
+"a": 287.4,
+"b": 290.1,
+"c": "mapa",
+"p": {
+"t1": -1,
+"t2": 0.3,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Araçuaí: +44,8 °C (1/2)",
+"f": 0
+},
+{
+"a": 290.1,
+"b": 292.8,
+"c": "mapa",
+"p": {
+"t1": -1,
+"t2": 0.3,
+"parte": 1,
+"partes": 2,
+"off": 2.700000000000017
+},
+"o": [],
+"d": "Araçuaí: +44,8 °C (2/2)",
+"f": 0.35
+},
+{
+"a": 292.8,
+"b": 297.2,
+"c": "placar",
+"p": {
+"linhas": [
+{
+"f": "−14 · CAÇADOR",
+"q": "+44,8 · ARAÇUAÍ"
+}
+],
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Placar: primeira linha preenchida",
+"f": 0
+},
+{
+"a": 297.2,
+"b": 302.1,
+"c": "cidades",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "carimbo",
+"txt": "VOCÊ AGUENTA",
+"t0": 0.6,
+"cor": "impacto"
+}
+],
+"d": "Com roupa certa e água, você aguenta",
+"f": 0
+},
+{
+"a": 302.1,
+"b": 305.2,
+"c": "corredor",
+"p": {
+"cam0": 5.3,
+"cam1": 5.8999999999999995,
+"x0": -0.75,
+"x1": -0.95,
+"y0": -0.35,
+"y1": -0.45,
+"brilho": 0.55,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Corredor até −67,7",
+"f": 0
+},
+{
+"a": 305.2,
+"b": 308.2,
+"c": "siberia",
+"p": {
+"modo": "vila",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chip",
+"n": 6,
+"nome": "OYMYAKON",
+"t0": 0
+}
+],
+"d": "Porta 6: vila de Oymyakon, Sibéria (1/2)",
+"f": 0
+},
+{
+"a": 308.2,
+"b": 311.2,
+"c": "siberia",
+"p": {
+"modo": "vila",
+"parte": 1,
+"partes": 2,
+"off": 3.0
+},
+"o": [],
+"d": "Porta 6: vila de Oymyakon, Sibéria (2/2)",
+"f": 0.35
+},
+{
+"a": 311.2,
+"b": 314.7,
+"c": "siberia",
+"p": {
+"modo": "vila",
+"zoom": 1,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "etq",
+"small": "OYMYAKON · 1933",
+"big": "−67,7 °C",
+"t0": 0.4,
+"cor": "dado"
+}
+],
+"d": "O termômetro marcou −67,7 (1/2)",
+"f": 0.35
+},
+{
+"a": 314.7,
+"b": 318.2,
+"c": "siberia",
+"p": {
+"modo": "vila",
+"zoom": 1,
+"parte": 1,
+"partes": 2,
+"off": 3.5
+},
+"o": [
+{
+"tipo": "etq",
+"small": "OYMYAKON · 1933",
+"big": "−67,7 °C",
+"t0": 0,
+"cor": "dado",
+"ja": 1
+}
+],
+"d": "O termômetro marcou −67,7 (2/2)",
+"f": 0.35
+},
+{
+"a": 318.2,
+"b": 320.85,
+"c": "siberia",
+"p": {
+"modo": "carro",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Carros ligados o dia inteiro (1/2)",
+"f": 0.35
+},
+{
+"a": 320.85,
+"b": 323.5,
+"c": "siberia",
+"p": {
+"modo": "carro",
+"parte": 1,
+"partes": 2,
+"off": 2.6500000000000057
+},
+"o": [],
+"d": "Carros ligados o dia inteiro (2/2)",
+"f": 0.35
+},
+{
+"a": 323.5,
+"b": 327.3,
+"c": "siberia",
+"p": {
+"modo": "rosto",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Cílios e tinta da caneta congelam",
+"f": 0.35
+},
+{
+"a": 327.3,
+"b": 330.95,
+"c": "siberia",
+"p": {
+"modo": "escola",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Escola: dispensa só abaixo de −52 (1/2)",
+"f": 0.35
+},
+{
+"a": 330.95,
+"b": 334.6,
+"c": "siberia",
+"p": {
+"modo": "escola",
+"parte": 1,
+"partes": 2,
+"off": 3.6500000000000057
+},
+"o": [
+{
+"tipo": "chave",
+"txt": "AULA SÓ ACABA ABAIXO DE −52 °C",
+"t0": 0.14999999999999414,
+"cor": "dado"
+}
+],
+"d": "Escola: dispensa só abaixo de −52 (2/2)",
+"f": 0.35
+},
+{
+"a": 334.6,
+"b": 338.8,
+"c": "siberia",
+"p": {
+"modo": "rosto",
+"timer": 1,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "tag",
+"txt": "10 MIN",
+"x": 1250,
+"y": 300,
+"t0": 3.0,
+"cor": "dado"
+}
+],
+"d": "Bochecha congela em ~10 min (1/2)",
+"f": 0.35
+},
+{
+"a": 338.8,
+"b": 343.0,
+"c": "siberia",
+"p": {
+"modo": "rosto",
+"timer": 1,
+"parte": 1,
+"partes": 2,
+"off": 4.199999999999989
+},
+"o": [
+{
+"tipo": "tag",
+"txt": "10 MIN",
+"x": 1250,
+"y": 300,
+"t0": 0,
+"cor": "dado",
+"ja": 1
+}
+],
+"d": "Bochecha congela em ~10 min (2/2)",
+"f": 0.35
+},
+{
+"a": 343.0,
+"b": 345.85,
+"c": "siberia",
+"p": {
+"modo": "rosto",
+"timer": 2,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "tag",
+"txt": "5 MIN",
+"x": 1250,
+"y": 300,
+"t0": 0.1,
+"cor": "perigo"
+}
+],
+"d": "Com mais vento, 5 min (1/2)",
+"f": 0.35
+},
+{
+"a": 345.85,
+"b": 348.7,
+"c": "siberia",
+"p": {
+"modo": "rosto",
+"timer": 2,
+"parte": 1,
+"partes": 2,
+"off": 2.8499999999999943
+},
+"o": [
+{
+"tipo": "tag",
+"txt": "5 MIN",
+"x": 1250,
+"y": 300,
+"t0": 0,
+"cor": "perigo",
+"ja": 1
+}
+],
+"d": "Com mais vento, 5 min (2/2)",
+"f": 0.35
+},
+{
+"a": 348.7,
+"b": 353.3,
+"c": "corredor",
+"p": {
+"cam0": 6.8,
+"cam1": 7.3999999999999995,
+"x0": 0.75,
+"x1": 0.95,
+"y0": -0.35,
+"y1": -0.45,
+"brilho": 0.55,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chip",
+"n": 7,
+"nome": "DESERTOS",
+"t0": 0
+}
+],
+"d": "Porta 7: o outro lado do corredor",
+"f": 0
+},
+{
+"a": 353.3,
+"b": 356.65,
+"c": "deserto",
+"p": {
+"modo": "vale",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "etq",
+"small": "VALE DA MORTE · 1913",
+"big": "AR A 56,7 °C",
+"t0": 2.5,
+"cor": "perigo"
+}
+],
+"d": "Vale da Morte: placa marca 56,7 (1/2)",
+"f": 0
+},
+{
+"a": 356.65,
+"b": 360.0,
+"c": "deserto",
+"p": {
+"modo": "vale",
+"parte": 1,
+"partes": 2,
+"off": 3.3499999999999943
+},
+"o": [
+{
+"tipo": "etq",
+"small": "VALE DA MORTE · 1913",
+"big": "AR A 56,7 °C",
+"t0": 0,
+"cor": "perigo",
+"ja": 1
+}
+],
+"d": "Vale da Morte: placa marca 56,7 (2/2)",
+"f": 0.35
+},
+{
+"a": 360.0,
+"b": 363.85,
+"c": "deserto",
+"p": {
+"modo": "lut",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Deserto de Lut visto por satélite (1/2)",
+"f": 0.35
+},
+{
+"a": 363.85,
+"b": 367.7,
+"c": "deserto",
+"p": {
+"modo": "lut",
+"parte": 1,
+"partes": 2,
+"off": 3.8499999999999943
+},
+"o": [
+{
+"tipo": "tag",
+"txt": "70,7 °C NO CHÃO",
+"x": 1000,
+"y": 540,
+"t0": 1.4500000000000055,
+"cor": "perigo"
+}
+],
+"d": "Deserto de Lut visto por satélite (2/2)",
+"f": 0.35
+},
+{
+"a": 367.7,
+"b": 370.85,
+"c": "deserto",
+"p": {
+"modo": "ovo",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Um chão onde dá pra fritar um ovo (1/2)",
+"f": 0.35
+},
+{
+"a": 370.85,
+"b": 374.0,
+"c": "deserto",
+"p": {
+"modo": "ovo",
+"parte": 1,
+"partes": 2,
+"off": 3.1500000000000057
+},
+"o": [],
+"d": "Um chão onde dá pra fritar um ovo (2/2)",
+"f": 0.35
+},
+{
+"a": 374.0,
+"b": 376.85,
+"c": "comparacao",
+"p": {
+"a": {
+"n": "45 °C",
+"l": "DESERTO SECO",
+"cor": "fogo"
+},
+"b": {
+"n": "35 °C",
+"l": "CIDADE ÚMIDA",
+"cor": "impacto"
+},
+"vs": "?",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chip",
+"n": 8,
+"nome": "CALOR ÚMIDO",
+"t0": 0
+}
+],
+"d": "Porta 8: qual é pior? (1/2)",
+"f": 0
+},
+{
+"a": 376.85,
+"b": 379.7,
+"c": "comparacao",
+"p": {
+"a": {
+"n": "45 °C",
+"l": "DESERTO SECO",
+"cor": "fogo"
+},
+"b": {
+"n": "35 °C",
+"l": "CIDADE ÚMIDA",
+"cor": "impacto"
+},
+"vs": "?",
+"parte": 1,
+"partes": 2,
+"off": 2.8499999999999943
+},
+"o": [],
+"d": "Porta 8: qual é pior? (2/2)",
+"f": 0.35
+},
+{
+"a": 379.7,
+"b": 384.0,
+"c": "comparacao",
+"p": {
+"a": {
+"n": "45 °C",
+"l": "DESERTO SECO",
+"cor": "fogo"
+},
+"b": {
+"n": "35 °C",
+"l": "CIDADE ÚMIDA",
+"cor": "impacto"
+},
+"vs": "?",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "carimbo",
+"txt": "ERRADO",
+"t0": 0.1,
+"cor": "perigo"
+}
+],
+"d": "Mito: maior número = pior",
+"f": 0.35
+},
+{
+"a": 384.0,
+"b": 387.85,
+"c": "suor",
+"p": {
+"foco": "ambos",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "O suor é o ar-condicionado do corpo (1/2)",
+"f": 0
+},
+{
+"a": 387.85,
+"b": 391.7,
+"c": "suor",
+"p": {
+"foco": "ambos",
+"parte": 1,
+"partes": 2,
+"off": 3.8499999999999943
+},
+"o": [],
+"d": "O suor é o ar-condicionado do corpo (2/2)",
+"f": 0.35
+},
+{
+"a": 391.7,
+"b": 394.8,
+"c": "suor",
+"p": {
+"foco": "umido",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "No úmido, o suor escorre e não evapora (1/2)",
+"f": 0.35
+},
+{
+"a": 394.8,
+"b": 397.9,
+"c": "suor",
+"p": {
+"foco": "umido",
+"parte": 1,
+"partes": 2,
+"off": 3.0999999999999943
+},
+"o": [],
+"d": "No úmido, o suor escorre e não evapora (2/2)",
+"f": 0.35
+},
+{
+"a": 397.9,
+"b": 401.0,
+"c": "corpo",
+"p": {
+"temp0": 38,
+"temp1": 38.8,
+"suor": 1,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Você esquenta parado na sombra",
+"f": 0
+},
+{
+"a": 401.0,
+"b": 404.3,
+"c": "limite",
+"p": {
+"k0": 0,
+"k1": 0,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "O limite antigo: 35 úmidos (1/2)",
+"f": 0
+},
+{
+"a": 404.3,
+"b": 407.6,
+"c": "limite",
+"p": {
+"k0": 0,
+"k1": 0,
+"parte": 1,
+"partes": 2,
+"off": 3.3000000000000114
+},
+"o": [],
+"d": "O limite antigo: 35 úmidos (2/2)",
+"f": 0.35
+},
+{
+"a": 407.6,
+"b": 412.0,
+"c": "corpo",
+"p": {
+"temp0": 37,
+"temp1": 37.8,
+"suor": 0.6,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "etq",
+"small": "PENN STATE · 2022",
+"big": "VOLUNTÁRIOS JOVENS",
+"t0": 0.3,
+"cor": "impacto"
+}
+],
+"d": "Teste com voluntários",
+"f": 0
+},
+{
+"a": 412.0,
+"b": 415.7,
+"c": "limite",
+"p": {
+"k0": 0,
+"k1": 1,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "O limite real: ~31",
+"f": 0
+},
+{
+"a": 415.7,
+"b": 419.0,
+"c": "comparacao",
+"p": {
+"a": {
+"n": "31 °C",
+"l": "ABAFADO",
+"cor": "impacto"
+},
+"b": {
+"n": "45 °C",
+"l": "DESERTO SECO",
+"cor": "fogo"
+},
+"vs": "≥",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Um dia abafado pode ser mais perigoso (1/2)",
+"f": 0
+},
+{
+"a": 419.0,
+"b": 422.3,
+"c": "comparacao",
+"p": {
+"a": {
+"n": "31 °C",
+"l": "ABAFADO",
+"cor": "impacto"
+},
+"b": {
+"n": "45 °C",
+"l": "DESERTO SECO",
+"cor": "fogo"
+},
+"vs": "≥",
+"parte": 1,
+"partes": 2,
+"off": 3.3000000000000114
+},
+"o": [],
+"d": "Um dia abafado pode ser mais perigoso (2/2)",
+"f": 0.35
+},
+{
+"a": 422.3,
+"b": 425.7,
+"c": "corredor",
+"p": {
+"cam0": 11.3,
+"cam1": 11.700000000000001,
+"x0": 0.75,
+"x1": 0.95,
+"y0": -0.35,
+"y1": -0.45,
+"brilho": 0.55,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chip",
+"n": 9,
+"nome": "SAUNA",
+"t0": 0
+}
+],
+"d": "Porta 9: a porta mais surpreendente",
+"f": 0
+},
+{
+"a": 425.7,
+"b": 429.8,
+"c": "sauna",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Sauna seca a 80–100 °C; pessoas conversando (1/2)",
+"f": 0
+},
+{
+"a": 429.8,
+"b": 433.9,
+"c": "sauna",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 4.099999999999994
+},
+"o": [],
+"d": "Sauna seca a 80–100 °C; pessoas conversando (2/2)",
+"f": 0.35
+},
+{
+"a": 433.9,
+"b": 437.3,
+"c": "panela",
+"p": {
+"temp": 60,
+"seg": "5 S",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Mão em água a 60 °C",
+"f": 0
+},
+{
+"a": 437.3,
+"b": 439.2,
+"c": "comparacao",
+"p": {
+"a": {
+"n": "90 °C",
+"l": "AR DA SAUNA",
+"cor": "fogo"
+},
+"b": {
+"n": "60 °C",
+"l": "ÁGUA",
+"cor": "dado"
+},
+"vs": ">",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Bem mais fria que a sauna",
+"f": 0
+},
+{
+"a": 439.2,
+"b": 442.5,
+"c": "panela",
+"p": {
+"temp": 60,
+"seg": "5 S",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Queimadura grave em 5 s",
+"f": 0
+},
+{
+"a": 442.5,
+"b": 445.6,
+"c": "panela",
+"p": {
+"temp": 70,
+"seg": "1 S",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "A 70 °C, em 1 s",
+"f": 0.35
+},
+{
+"a": 445.6,
+"b": 450.133,
+"c": "moleculas",
+"p": {
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "Ar ralo × água densa: o que encosta em você (1/3)",
+"f": 0
+},
+{
+"a": 450.133,
+"b": 454.667,
+"c": "moleculas",
+"p": {
+"parte": 1,
+"partes": 3,
+"off": 4.533333333333322
+},
+"o": [],
+"d": "Ar ralo × água densa: o que encosta em você (2/3)",
+"f": 0.35
+},
+{
+"a": 454.667,
+"b": 459.2,
+"c": "moleculas",
+"p": {
+"parte": 2,
+"partes": 3,
+"off": 9.066666666666643
+},
+"o": [],
+"d": "Ar ralo × água densa: o que encosta em você (3/3)",
+"f": 0.35
+},
+{
+"a": 459.2,
+"b": 463.6,
+"c": "corredor",
+"p": {
+"cam0": 6.0,
+"cam1": 9.0,
+"brilho": 0.9,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Guarda essa ideia (corredor, fundo brilhando)",
+"f": 0
+},
+{
+"a": 463.6,
+"b": 467.4,
+"c": "documento",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Philosophical Transactions, 1775",
+"f": 0
+},
+{
+"a": 467.4,
+"b": 471.3,
+"c": "blagden",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Blagden entra na sala a ~127 °C (1/2)",
+"f": 0
+},
+{
+"a": 471.3,
+"b": 475.2,
+"c": "blagden",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 3.9000000000000057
+},
+"o": [
+{
+"tipo": "etq",
+"small": "LONDRES · 1774",
+"big": "CHARLES BLAGDEN",
+"t0": 0.09999999999999432,
+"cor": "fogo"
+}
+],
+"d": "Blagden entra na sala a ~127 °C (2/2)",
+"f": 0.35
+},
+{
+"a": 475.2,
+"b": 477.6,
+"c": "blagden",
+"p": {
+"zoom": 1,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "tag",
+"txt": "8 MIN",
+"x": 1250,
+"y": 300,
+"t0": 0.2,
+"cor": "fogo"
+}
+],
+"d": "Fica 8 minutos",
+"f": 0.35
+},
+{
+"a": 477.6,
+"b": 481.25,
+"c": "blagden",
+"p": {
+"ovo": 1,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Ovos e um bife; em 20 min, ovos duros (1/2)",
+"f": 0.35
+},
+{
+"a": 481.25,
+"b": 484.9,
+"c": "blagden",
+"p": {
+"ovo": 1,
+"parte": 1,
+"partes": 2,
+"off": 3.6499999999999773
+},
+"o": [],
+"d": "Ovos e um bife; em 20 min, ovos duros (2/2)",
+"f": 0.35
+},
+{
+"a": 484.9,
+"b": 489.3,
+"c": "blagden",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "carimbo",
+"txt": "O OVO COZINHOU. ELE NÃO.",
+"t0": 0.4,
+"cor": "fogo"
+}
+],
+"d": "Ele sai andando, temperatura normal",
+"f": 0.35
+},
+{
+"a": 489.3,
+"b": 492.3,
+"c": "documento",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Apresentado à Real Sociedade",
+"f": 0
+},
+{
+"a": 492.3,
+"b": 497.1,
+"c": "suor",
+"p": {
+"foco": "seco",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "O suor segura a gente vivo",
+"f": 0
+},
+{
+"a": 497.1,
+"b": 500.5,
+"c": "cta",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "CTA: botão de inscrição discreto sobre o corredor (1/2)",
+"f": 0
+},
+{
+"a": 500.5,
+"b": 503.9,
+"c": "cta",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 3.3999999999999773
+},
+"o": [],
+"d": "CTA: botão de inscrição discreto sobre o corredor (2/2)",
+"f": 0.35
+},
+{
+"a": 503.9,
+"b": 506.8,
+"c": "corredor",
+"p": {
+"cam0": 11.3,
+"cam1": 11.9,
+"x0": 0.75,
+"x1": 0.95,
+"y0": -0.35,
+"y1": -0.45,
+"brilho": 0.55,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chip",
+"n": 10,
+"nome": "LAVA",
+"t0": 0
+}
+],
+"d": "Porta 10: a última porta do planeta",
+"f": 0
+},
+{
+"a": 506.8,
+"b": 509.95,
+"c": "lava",
+"p": {
+"modo": "rio",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "etq",
+"small": "HAVAÍ",
+"big": "~1.170 °C",
+"t0": 0.4,
+"cor": "fogo"
+}
+],
+"d": "Lava no Havaí; pessoa de roupa aluminizada (1/2)",
+"f": 0
+},
+{
+"a": 509.95,
+"b": 513.1,
+"c": "lava",
+"p": {
+"modo": "rio",
+"parte": 1,
+"partes": 2,
+"off": 3.1500000000000057
+},
+"o": [
+{
+"tipo": "etq",
+"small": "HAVAÍ",
+"big": "~1.170 °C",
+"t0": 0,
+"cor": "fogo",
+"ja": 1
+}
+],
+"d": "Lava no Havaí; pessoa de roupa aluminizada (2/2)",
+"f": 0.35
+},
+{
+"a": 513.1,
+"b": 517.05,
+"c": "lava",
+"p": {
+"modo": "mito",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Mito de filme: afundar na lava (1/2)",
+"f": 0.35
+},
+{
+"a": 517.05,
+"b": 521.0,
+"c": "lava",
+"p": {
+"modo": "mito",
+"parte": 1,
+"partes": 2,
+"off": 3.9499999999999886
+},
+"o": [],
+"d": "Mito de filme: afundar na lava (2/2)",
+"f": 0.35
+},
+{
+"a": 521.0,
+"b": 524.9,
+"c": "lava",
+"p": {
+"modo": "mito",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "carimbo",
+"txt": "NÃO AFUNDA",
+"t0": 0.2,
+"cor": "fogo"
+}
+],
+"d": "Você ficaria na superfície",
+"f": 0.35
+},
+{
+"a": 524.9,
+"b": 527.5,
+"c": "lava",
+"p": {
+"modo": "rio",
+"zoom": 1,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "O calor queima a metros (1/2)",
+"f": 0.35
+},
+{
+"a": 527.5,
+"b": 530.1,
+"c": "lava",
+"p": {
+"modo": "rio",
+"zoom": 1,
+"parte": 1,
+"partes": 2,
+"off": 2.6000000000000227
+},
+"o": [],
+"d": "O calor queima a metros (2/2)",
+"f": 0.35
+},
+{
+"a": 530.1,
+"b": 534.3,
+"c": "corredor",
+"p": {
+"cam0": 9.8,
+"cam1": 10.4,
+"x0": -0.75,
+"x1": -0.95,
+"y0": -0.35,
+"y1": -0.45,
+"brilho": 0.55,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chip",
+"n": 11,
+"nome": "ANTÁRTIDA",
+"t0": 0
+}
+],
+"d": "Porta 11: um lugar que nem cidade tem",
+"f": 0
+},
+{
+"a": 534.3,
+"b": 537.35,
+"c": "antartida",
+"p": {
+"modo": "estacao",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "etq",
+"small": "21 DE JULHO DE 1983",
+"big": "ESTAÇÃO VOSTOK",
+"t0": 0.4,
+"cor": "dado"
+}
+],
+"d": "Estação Vostok na noite polar (1/2)",
+"f": 0
+},
+{
+"a": 537.35,
+"b": 540.4,
+"c": "antartida",
+"p": {
+"modo": "estacao",
+"parte": 1,
+"partes": 2,
+"off": 3.0500000000000114
+},
+"o": [
+{
+"tipo": "etq",
+"small": "21 DE JULHO DE 1983",
+"big": "ESTAÇÃO VOSTOK",
+"t0": 0,
+"cor": "dado",
+"ja": 1
+}
+],
+"d": "Estação Vostok na noite polar (2/2)",
+"f": 0.35
+},
+{
+"a": 540.4,
+"b": 543.3,
+"c": "antartida",
+"p": {
+"modo": "mapa",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Recorde oficial: −89,2 (1/2)",
+"f": 0.35
+},
+{
+"a": 543.3,
+"b": 546.2,
+"c": "antartida",
+"p": {
+"modo": "mapa",
+"parte": 1,
+"partes": 2,
+"off": 2.900000000000034
+},
+"o": [],
+"d": "Recorde oficial: −89,2 (2/2)",
+"f": 0.35
+},
+{
+"a": 546.2,
+"b": 549.7,
+"c": "antartida",
+"p": {
+"modo": "mapa",
+"zoom": 1,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Satélites: −98 na superfície do gelo (1/2)",
+"f": 0.35
+},
+{
+"a": 549.7,
+"b": 553.2,
+"c": "antartida",
+"p": {
+"modo": "mapa",
+"zoom": 1,
+"parte": 1,
+"partes": 2,
+"off": 3.5
+},
+"o": [],
+"d": "Satélites: −98 na superfície do gelo (2/2)",
+"f": 0.35
+},
+{
+"a": 553.2,
+"b": 558.1,
+"c": "antartida",
+"p": {
+"modo": "respiracao",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "A respiração vira cristal",
+"f": 0.35
+},
+{
+"a": 558.1,
+"b": 563.0,
+"c": "siberia",
+"p": {
+"modo": "rosto",
+"timer": 2,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "A tabela de congelamento nem chega tão longe",
+"f": 0
+},
+{
+"a": 563.0,
+"b": 565.75,
+"c": "antartida",
+"p": {
+"modo": "estacao",
+"zoom": 1,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Sem roupa certa, minutos (1/2)",
+"f": 0
+},
+{
+"a": 565.75,
+"b": 568.5,
+"c": "antartida",
+"p": {
+"modo": "estacao",
+"zoom": 1,
+"parte": 1,
+"partes": 2,
+"off": 2.75
+},
+"o": [],
+"d": "Sem roupa certa, minutos (2/2)",
+"f": 0.35
+},
+{
+"a": 568.5,
+"b": 571.4,
+"c": "placar",
+"p": {
+"linhas": [
+{
+"f": "−14 · CAÇADOR",
+"q": "+44,8 · ARAÇUAÍ"
+},
+{
+"f": "−67,7 · OYMYAKON",
+"q": "+56,7 · VALE DA MORTE"
+},
+{
+"f": "−89,2 · VOSTOK",
+"q": "+70,7 · LUT (CHÃO)"
+},
+{
+"q": "1.170 · LAVA"
+}
+],
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Placar: a Terra completa",
+"f": 0
+},
+{
+"a": 571.4,
+"b": 574.1,
+"c": "corredor",
+"p": {
+"cam0": 14.3,
+"cam1": 14.9,
+"x0": -0.75,
+"x1": -0.95,
+"y0": -0.35,
+"y1": -0.45,
+"brilho": 0.55,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chip",
+"n": 12,
+"nome": "NITROGÊNIO",
+"t0": 0
+}
+],
+"d": "Porta 12: −196",
+"f": 0
+},
+{
+"a": 574.1,
+"b": 576.8,
+"c": "nitro",
+"p": {
+"modo": "bacia",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Nitrogênio líquido no laboratório (1/2)",
+"f": 0
+},
+{
+"a": 576.8,
+"b": 579.5,
+"c": "nitro",
+"p": {
+"modo": "bacia",
+"parte": 1,
+"partes": 2,
+"off": 2.6999999999999886
+},
+"o": [],
+"d": "Nitrogênio líquido no laboratório (2/2)",
+"f": 0.35
+},
+{
+"a": 579.5,
+"b": 583.467,
+"c": "nitro",
+"p": {
+"modo": "mao",
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "A mão passa rápido; colchão de vapor (1/3)",
+"f": 0.35
+},
+{
+"a": 583.467,
+"b": 587.433,
+"c": "nitro",
+"p": {
+"modo": "mao",
+"parte": 1,
+"partes": 3,
+"off": 3.9666666666666592
+},
+"o": [
+{
+"tipo": "chave",
+"txt": "EFEITO LEIDENFROST",
+"t0": 1.6333333333333404,
+"cor": "dado"
+}
+],
+"d": "A mão passa rápido; colchão de vapor (2/3)",
+"f": 0.35
+},
+{
+"a": 587.433,
+"b": 591.4,
+"c": "nitro",
+"p": {
+"modo": "mao",
+"parte": 2,
+"partes": 3,
+"off": 7.9333333333333185
+},
+"o": [
+{
+"tipo": "chave",
+"txt": "EFEITO LEIDENFROST",
+"t0": 0,
+"cor": "dado",
+"ja": 1
+}
+],
+"d": "A mão passa rápido; colchão de vapor (3/3)",
+"f": 0.35
+},
+{
+"a": 591.4,
+"b": 595.7,
+"c": "nitro",
+"p": {
+"modo": "gota",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "A gota dançando na frigideira",
+"f": 0.35
+},
+{
+"a": 595.7,
+"b": 598.85,
+"c": "nitro",
+"p": {
+"modo": "bacia",
+"zoom": 1,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "carimbo",
+"txt": "NÃO TENTE",
+"t0": 1.0,
+"cor": "perigo"
+}
+],
+"d": "Um segundo a mais: queimadura grave (1/2)",
+"f": 0.35
+},
+{
+"a": 598.85,
+"b": 602.0,
+"c": "nitro",
+"p": {
+"modo": "bacia",
+"zoom": 1,
+"parte": 1,
+"partes": 2,
+"off": 3.1499999999999773
+},
+"o": [
+{
+"tipo": "carimbo",
+"txt": "NÃO TENTE",
+"t0": 0,
+"cor": "perigo",
+"ja": 1
+}
+],
+"d": "Um segundo a mais: queimadura grave (2/2)",
+"f": 0.35
+},
+{
+"a": 602.0,
+"b": 605.8,
+"c": "moleculas",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "A lição da sauna: o que encosta em você (1/2)",
+"f": 0
+},
+{
+"a": 605.8,
+"b": 609.6,
+"c": "moleculas",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 3.8000000000000114
+},
+"o": [],
+"d": "A lição da sauna: o que encosta em você (2/2)",
+"f": 0.35
+},
+{
+"a": 609.6,
+"b": 612.6,
+"c": "corredor",
+"p": {
+"cam0": 18.8,
+"cam1": 19.400000000000002,
+"x0": -0.75,
+"x1": -0.95,
+"y0": -0.35,
+"y1": -0.45,
+"brilho": 0.55,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chip",
+"n": 13,
+"nome": "O ESPAÇO",
+"t0": 0
+}
+],
+"d": "Porta 13: o mito mais famoso do frio",
+"f": 0
+},
+{
+"a": 612.6,
+"b": 617.2,
+"c": "espacoP",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Você no espaço, de camiseta",
+"f": 0
+},
+{
+"a": 617.2,
+"b": 620.0,
+"c": "espacoP",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "carimbo",
+"txt": "ERRADO",
+"t0": 0,
+"cor": "perigo"
+}
+],
+"d": "Vira picolé? Errado",
+"f": 0.35
+},
+{
+"a": 620.0,
+"b": 624.15,
+"c": "garrafa",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Vácuo = garrafa térmica (1/2)",
+"f": 0
+},
+{
+"a": 624.15,
+"b": 628.3,
+"c": "garrafa",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 4.149999999999977
+},
+"o": [],
+"d": "Vácuo = garrafa térmica (2/2)",
+"f": 0.35
+},
+{
+"a": 628.3,
+"b": 631.0,
+"c": "espacoP",
+"p": {
+"zoom": 1,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Você esfriaria muito devagar; falta de ar (1/2)",
+"f": 0
+},
+{
+"a": 631.0,
+"b": 633.7,
+"c": "espacoP",
+"p": {
+"zoom": 1,
+"parte": 1,
+"partes": 2,
+"off": 2.7000000000000455
+},
+"o": [],
+"d": "Você esfriaria muito devagar; falta de ar (2/2)",
+"f": 0.35
+},
+{
+"a": 633.7,
+"b": 636.3,
+"c": "espacoP",
+"p": {
+"apaga": 1,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "tag",
+"txt": "15 S",
+"x": 1250,
+"y": 300,
+"t0": 0.2,
+"cor": "perigo"
+}
+],
+"d": "Em ~15 s você apaga (1/2)",
+"f": 0.35
+},
+{
+"a": 636.3,
+"b": 638.9,
+"c": "espacoP",
+"p": {
+"apaga": 1,
+"parte": 1,
+"partes": 2,
+"off": 2.599999999999966
+},
+"o": [
+{
+"tipo": "tag",
+"txt": "15 S",
+"x": 1250,
+"y": 300,
+"t0": 0,
+"cor": "perigo",
+"ja": 1
+}
+],
+"d": "Em ~15 s você apaga (2/2)",
+"f": 0.35
+},
+{
+"a": 638.9,
+"b": 642.9,
+"c": "universo",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Longe de qualquer estrela",
+"f": 0
+},
+{
+"a": 642.9,
+"b": 645.45,
+"c": "cmb",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "O brilho que sobrou do Big Bang (1/2)",
+"f": 0
+},
+{
+"a": 645.45,
+"b": 648.0,
+"c": "cmb",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 2.5500000000000114
+},
+"o": [],
+"d": "O brilho que sobrou do Big Bang (2/2)",
+"f": 0.35
+},
+{
+"a": 648.0,
+"b": 651.9,
+"c": "espaco",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "−270,4 °C (1/2)",
+"f": 0
+},
+{
+"a": 651.9,
+"b": 655.8,
+"c": "espaco",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 3.8999999999999773
+},
+"o": [],
+"d": "−270,4 °C (2/2)",
+"f": 0.35
+},
+{
+"a": 655.8,
+"b": 660.5,
+"c": "corredor",
+"p": {
+"cam0": 15.8,
+"cam1": 16.400000000000002,
+"x0": 0.75,
+"x1": 0.95,
+"y0": -0.35,
+"y1": -0.45,
+"brilho": 0.55,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chip",
+"n": 14,
+"nome": "O RAIO",
+"t0": 0
+}
+],
+"d": "Porta 14: bem perto de você",
+"f": 0
+},
+{
+"a": 660.5,
+"b": 663.25,
+"c": "raio",
+"p": {
+"modo": "cidade",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "tag",
+"txt": "~28.000 °C",
+"x": 1250,
+"y": 300,
+"t0": 1.5,
+"cor": "fogo"
+}
+],
+"d": "Um raio cai sobre a cidade (1/2)",
+"f": 0
+},
+{
+"a": 663.25,
+"b": 666.0,
+"c": "raio",
+"p": {
+"modo": "cidade",
+"parte": 1,
+"partes": 2,
+"off": 2.75
+},
+"o": [
+{
+"tipo": "tag",
+"txt": "~28.000 °C",
+"x": 1250,
+"y": 300,
+"t0": 0,
+"cor": "fogo",
+"ja": 1
+}
+],
+"d": "Um raio cai sobre a cidade (2/2)",
+"f": 0.35
+},
+{
+"a": 666.0,
+"b": 669.9,
+"c": "comparacao",
+"p": {
+"a": {
+"n": "28.000 °C",
+"l": "UM RAIO",
+"cor": "dado"
+},
+"b": {
+"n": "5.500 °C",
+"l": "SUPERFÍCIE DO SOL",
+"cor": "fogo"
+},
+"vs": ">",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "5 vezes a superfície do Sol",
+"f": 0
+},
+{
+"a": 669.9,
+"b": 674.5,
+"c": "raio",
+"p": {
+"modo": "canal",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Da grossura de um dedo",
+"f": 0
+},
+{
+"a": 674.5,
+"b": 678.4,
+"c": "raio",
+"p": {
+"modo": "cidade",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Toda tempestade de verão (1/2)",
+"f": 0.35
+},
+{
+"a": 678.4,
+"b": 682.3,
+"c": "raio",
+"p": {
+"modo": "cidade",
+"parte": 1,
+"partes": 2,
+"off": 3.8999999999999773
+},
+"o": [],
+"d": "Toda tempestade de verão (2/2)",
+"f": 0.35
+},
+{
+"a": 682.3,
+"b": 686.45,
+"c": "sol",
+"p": {
+"num": "5.500 °C",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chip",
+"n": 15,
+"nome": "O SOL",
+"t0": 0
+}
+],
+"d": "Porta 15: a superfície do Sol (1/2)",
+"f": 0
+},
+{
+"a": 686.45,
+"b": 690.6,
+"c": "sol",
+"p": {
+"num": "5.500 °C",
+"parte": 1,
+"partes": 2,
+"off": 4.150000000000034
+},
+"o": [],
+"d": "Porta 15: a superfície do Sol (2/2)",
+"f": 0.35
+},
+{
+"a": 690.6,
+"b": 693.8,
+"c": "solCorte",
+"p": {
+"m0": 0,
+"m1": 0.6,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Mergulho até o núcleo (1/2)",
+"f": 0
+},
+{
+"a": 693.8,
+"b": 697.0,
+"c": "solCorte",
+"p": {
+"m0": 0,
+"m1": 0.6,
+"parte": 1,
+"partes": 2,
+"off": 3.1999999999999886
+},
+"o": [],
+"d": "Mergulho até o núcleo (2/2)",
+"f": 0.35
+},
+{
+"a": 697.0,
+"b": 700.7,
+"c": "sol",
+"p": {
+"num": "15.000.000 °C",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Hidrogênio vira hélio",
+"f": 0
+},
+{
+"a": 700.7,
+"b": 704.2,
+"c": "sol",
+"p": {
+"num": "15.000.000 °C",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "carimbo",
+"txt": "VOCÊ AGUENTA: NADA",
+"t0": 0.2,
+"cor": "perigo"
+}
+],
+"d": "O cronômetro nem liga",
+"f": 0.35
+},
+{
+"a": 704.2,
+"b": 707.75,
+"c": "placar",
+"p": {
+"linhas": [
+{
+"f": "−14 · CAÇADOR",
+"q": "+44,8 · ARAÇUAÍ"
+},
+{
+"f": "−67,7 · OYMYAKON",
+"q": "+56,7 · VALE DA MORTE"
+},
+{
+"f": "−89,2 · VOSTOK",
+"q": "+70,7 · LUT (CHÃO)"
+},
+{
+"f": "−196 · NITROGÊNIO",
+"q": "1.170 · LAVA"
+},
+{
+"f": "−270,4 · ESPAÇO",
+"q": "28.000 · RAIO"
+},
+{
+"q": "15 MI · NÚCLEO DO SOL"
+}
+],
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Placar: do espaço ao núcleo do Sol (1/2)",
+"f": 0
+},
+{
+"a": 707.75,
+"b": 711.3,
+"c": "placar",
+"p": {
+"linhas": [
+{
+"f": "−14 · CAÇADOR",
+"q": "+44,8 · ARAÇUAÍ"
+},
+{
+"f": "−67,7 · OYMYAKON",
+"q": "+56,7 · VALE DA MORTE"
+},
+{
+"f": "−89,2 · VOSTOK",
+"q": "+70,7 · LUT (CHÃO)"
+},
+{
+"f": "−196 · NITROGÊNIO",
+"q": "1.170 · LAVA"
+},
+{
+"f": "−270,4 · ESPAÇO",
+"q": "28.000 · RAIO"
+},
+{
+"q": "15 MI · NÚCLEO DO SOL"
+}
+],
+"parte": 1,
+"partes": 2,
+"off": 3.5499999999999545
+},
+"o": [],
+"d": "Placar: do espaço ao núcleo do Sol (2/2)",
+"f": 0.35
+},
+{
+"a": 711.3,
+"b": 714.5,
+"c": "corredor",
+"p": {
+"cam0": 19.5,
+"cam1": 21.25,
+"brilho": 1,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Faltam as duas últimas portas (1/2)",
+"f": 0
+},
+{
+"a": 714.5,
+"b": 717.7,
+"c": "corredor",
+"p": {
+"cam0": 21.25,
+"cam1": 23.0,
+"brilho": 1,
+"parte": 1,
+"partes": 2,
+"off": 3.2000000000000455
+},
+"o": [],
+"d": "Faltam as duas últimas portas (2/2)",
+"f": 0.35
+},
+{
+"a": 717.7,
+"b": 720.8,
+"c": "corredor",
+"p": {
+"cam0": 24.8,
+"cam1": 25.3,
+"x0": -0.75,
+"x1": -0.95,
+"y0": -0.35,
+"y1": -0.45,
+"brilho": 0.55,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Algo mais frio que o espaço",
+"f": 0.35
+},
+{
+"a": 720.8,
+"b": 723.3,
+"c": "corredor",
+"p": {
+"cam0": 26.3,
+"cam1": 26.8,
+"x0": 0.75,
+"x1": 0.95,
+"y0": -0.35,
+"y1": -0.45,
+"brilho": 0.55,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Algo mais quente que o Sol",
+"f": 0.35
+},
+{
+"a": 723.3,
+"b": 727.0,
+"c": "laboratorio",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Os recordes de verdade não estão lá fora",
+"f": 0
+},
+{
+"a": 727.0,
+"b": 729.8,
+"c": "corredor",
+"p": {
+"cam0": 24.8,
+"cam1": 25.3,
+"x0": -0.75,
+"x1": -0.95,
+"y0": -0.35,
+"y1": -0.45,
+"brilho": 0.55,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chip",
+"n": 16,
+"nome": "BUMERANGUE",
+"t0": 0
+}
+],
+"d": "Porta 16: o frio da natureza",
+"f": 0
+},
+{
+"a": 729.8,
+"b": 733.6,
+"c": "nebulosa",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Estrela velha soltando gás (1/2)",
+"f": 0
+},
+{
+"a": 733.6,
+"b": 737.4,
+"c": "nebulosa",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 3.8000000000000114
+},
+"o": [
+{
+"tipo": "etq",
+"small": "A 5 MIL ANOS-LUZ",
+"big": "NEBULOSA DO BUMERANGUE",
+"t0": 0.09999999999998854,
+"cor": "dado"
+}
+],
+"d": "Estrela velha soltando gás (2/2)",
+"f": 0.35
+},
+{
+"a": 737.4,
+"b": 740.2,
+"c": "spray",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Como o spray que gela",
+"f": 0
+},
+{
+"a": 740.2,
+"b": 745.0,
+"c": "nebulosa",
+"p": {
+"zoom": 1,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "tag",
+"txt": "≈ 1 K · −272 °C",
+"x": 1250,
+"y": 300,
+"t0": 0.3,
+"cor": "dado"
+}
+],
+"d": "Um grau acima do zero absoluto",
+"f": 0
+},
+{
+"a": 745.0,
+"b": 747.5,
+"c": "comparacao",
+"p": {
+"a": {
+"n": "1 K",
+"l": "NEBULOSA",
+"cor": "frio"
+},
+"b": {
+"n": "2,7 K",
+"l": "ESPAÇO",
+"cor": "dado"
+},
+"vs": "<",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Mais frio que o próprio espaço",
+"f": 0
+},
+{
+"a": 747.5,
+"b": 752.2,
+"c": "nebulosa",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "carimbo",
+"txt": "NÃO É O RECORDE",
+"t0": 3.2,
+"cor": "dado"
+}
+],
+"d": "O lugar natural mais frio... mas não é o recorde",
+"f": 0
+},
+{
+"a": 752.2,
+"b": 755.6,
+"c": "torre",
+"p": {
+"q0": 0,
+"q1": 0,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chip",
+"n": 17,
+"nome": "BREMEN",
+"t0": 0
+}
+],
+"d": "Porta 17: torre de queda livre em Bremen (1/2)",
+"f": 0
+},
+{
+"a": 755.6,
+"b": 759.0,
+"c": "torre",
+"p": {
+"q0": 0,
+"q1": 0,
+"parte": 1,
+"partes": 2,
+"off": 3.3999999999999773
+},
+"o": [],
+"d": "Porta 17: torre de queda livre em Bremen (2/2)",
+"f": 0.35
+},
+{
+"a": 759.0,
+"b": 762.05,
+"c": "torre",
+"p": {
+"q0": 0,
+"q1": 1,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "A nuvem de átomos solta lá de cima (1/2)",
+"f": 0.35
+},
+{
+"a": 762.05,
+"b": 765.1,
+"c": "torre",
+"p": {
+"q0": 0,
+"q1": 1,
+"parte": 1,
+"partes": 2,
+"off": 3.0500000000000114
+},
+"o": [],
+"d": "A nuvem de átomos solta lá de cima (2/2)",
+"f": 0.35
+},
+{
+"a": 765.1,
+"b": 769.15,
+"c": "torre",
+"p": {
+"q0": 1,
+"q1": 1,
+"nuvem": 1,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "tag",
+"txt": "38 TRILIONÉSIMOS DE GRAU",
+"x": 1080,
+"y": 860,
+"t0": 3.0,
+"cor": "dado"
+}
+],
+"d": "A nuvem a 38 trilionésimos de grau (1/2)",
+"f": 0.35
+},
+{
+"a": 769.15,
+"b": 773.2,
+"c": "torre",
+"p": {
+"q0": 1,
+"q1": 1,
+"nuvem": 1,
+"parte": 1,
+"partes": 2,
+"off": 4.050000000000011
+},
+"o": [
+{
+"tipo": "tag",
+"txt": "38 TRILIONÉSIMOS DE GRAU",
+"x": 1080,
+"y": 860,
+"t0": 0,
+"cor": "dado",
+"ja": 1
+}
+],
+"d": "A nuvem a 38 trilionésimos de grau (2/2)",
+"f": 0.35
+},
+{
+"a": 773.2,
+"b": 777.2,
+"c": "reguaZero",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "O espaço é quente perto disso: 70 bilhões de vezes (1/2)",
+"f": 0
+},
+{
+"a": 777.2,
+"b": 781.2,
+"c": "reguaZero",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 4.0
+},
+"o": [],
+"d": "O espaço é quente perto disso: 70 bilhões de vezes (2/2)",
+"f": 0.35
+},
+{
+"a": 781.2,
+"b": 785.867,
+"c": "iss",
+"p": {
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "Laboratório frio na Estação Espacial (1/3)",
+"f": 0
+},
+{
+"a": 785.867,
+"b": 790.533,
+"c": "iss",
+"p": {
+"parte": 1,
+"partes": 3,
+"off": 4.666666666666667
+},
+"o": [],
+"d": "Laboratório frio na Estação Espacial (2/3)",
+"f": 0.35
+},
+{
+"a": 790.533,
+"b": 795.2,
+"c": "iss",
+"p": {
+"parte": 2,
+"partes": 3,
+"off": 9.333333333333334
+},
+"o": [],
+"d": "Laboratório frio na Estação Espacial (3/3)",
+"f": 0.35
+},
+{
+"a": 795.2,
+"b": 799.85,
+"c": "assintota",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "O zero absoluto nunca chega (1/2)",
+"f": 0
+},
+{
+"a": 799.85,
+"b": 804.5,
+"c": "assintota",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 4.649999999999977
+},
+"o": [],
+"d": "O zero absoluto nunca chega (2/2)",
+"f": 0.35
+},
+{
+"a": 804.5,
+"b": 807.867,
+"c": "tokamak",
+"p": {
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chip",
+"n": 18,
+"nome": "KSTAR",
+"t0": 0
+},
+{
+"tipo": "etq",
+"small": "COREIA DO SUL",
+"big": "100 MILHÕES °C",
+"t0": 2.0,
+"cor": "fogo"
+}
+],
+"d": "Porta 18: reator de fusão, 48 s (1/3)",
+"f": 0
+},
+{
+"a": 807.867,
+"b": 811.233,
+"c": "tokamak",
+"p": {
+"parte": 1,
+"partes": 3,
+"off": 3.3666666666666742
+},
+"o": [
+{
+"tipo": "etq",
+"small": "COREIA DO SUL",
+"big": "100 MILHÕES °C",
+"t0": 0,
+"cor": "fogo",
+"ja": 1
+}
+],
+"d": "Porta 18: reator de fusão, 48 s (2/3)",
+"f": 0.35
+},
+{
+"a": 811.233,
+"b": 814.6,
+"c": "tokamak",
+"p": {
+"parte": 2,
+"partes": 3,
+"off": 6.7333333333333485
+},
+"o": [],
+"d": "Porta 18: reator de fusão, 48 s (3/3)",
+"f": 0.35
+},
+{
+"a": 814.6,
+"b": 818.4,
+"c": "comparacao",
+"p": {
+"a": {
+"n": "100 MI °C",
+"l": "KSTAR",
+"cor": "fogo"
+},
+"b": {
+"n": "15 MI °C",
+"l": "NÚCLEO DO SOL",
+"cor": "fogo"
+},
+"vs": "≈ 7×",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Quase 7× o centro do Sol",
+"f": 0
+},
+{
+"a": 818.4,
+"b": 820.4,
+"c": "tokamak",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Por que não derrete?",
+"f": 0
+},
+{
+"a": 820.4,
+"b": 821.6,
+"c": "sauna",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Lembra da sauna?",
+"f": 0
+},
+{
+"a": 821.6,
+"b": 824.4,
+"c": "moleculas",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "O mesmo princípio",
+"f": 0
+},
+{
+"a": 824.4,
+"b": 827.9,
+"c": "tokamak",
+"p": {
+"campo": 1,
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "Gás ralíssimo, campo magnético segura no meio (1/3)",
+"f": 0
+},
+{
+"a": 827.9,
+"b": 831.4,
+"c": "tokamak",
+"p": {
+"campo": 1,
+"parte": 1,
+"partes": 3,
+"off": 3.5
+},
+"o": [],
+"d": "Gás ralíssimo, campo magnético segura no meio (2/3)",
+"f": 0.35
+},
+{
+"a": 831.4,
+"b": 834.9,
+"c": "tokamak",
+"p": {
+"campo": 1,
+"parte": 2,
+"partes": 3,
+"off": 7.0
+},
+"o": [],
+"d": "Gás ralíssimo, campo magnético segura no meio (3/3)",
+"f": 0.35
+},
+{
+"a": 834.9,
+"b": 839.0,
+"c": "lhc",
+"p": {
+"modo": "tunel",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chip",
+"n": 19,
+"nome": "CERN",
+"t0": 0
+}
+],
+"d": "Porta 19: a última porta",
+"f": 0
+},
+{
+"a": 839.0,
+"b": 842.5,
+"c": "lhc",
+"p": {
+"modo": "mapa",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Anel de 27 km entre Suíça e França",
+"f": 0.35
+},
+{
+"a": 842.5,
+"b": 845.6,
+"c": "lhc",
+"p": {
+"modo": "tunel",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "O maior acelerador do mundo",
+"f": 0.35
+},
+{
+"a": 845.6,
+"b": 850.3,
+"c": "lhc",
+"p": {
+"modo": "colisao",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Núcleos de chumbo se chocam (1/2)",
+"f": 0.35
+},
+{
+"a": 850.3,
+"b": 855.0,
+"c": "lhc",
+"p": {
+"modo": "colisao",
+"parte": 1,
+"partes": 2,
+"off": 4.699999999999989
+},
+"o": [],
+"d": "Núcleos de chumbo se chocam (2/2)",
+"f": 0.35
+},
+{
+"a": 855.0,
+"b": 858.3,
+"c": "numero",
+"p": {
+"txt": "5 TRILHÕES °C",
+"cor": "fogo",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Uma sopa de matéria a 5 trilhões de graus (1/2)",
+"f": 0
+},
+{
+"a": 858.3,
+"b": 861.6,
+"c": "numero",
+"p": {
+"txt": "5 TRILHÕES °C",
+"cor": "fogo",
+"parte": 1,
+"partes": 2,
+"off": 3.3000000000000114
+},
+"o": [],
+"d": "Uma sopa de matéria a 5 trilhões de graus (2/2)",
+"f": 0.35
+},
+{
+"a": 861.6,
+"b": 865.7,
+"c": "comparacao",
+"p": {
+"a": {
+"n": "5 TRI °C",
+"l": "CERN · 2012",
+"cor": "fogo"
+},
+"b": {
+"n": "15 MI °C",
+"l": "NÚCLEO DO SOL",
+"cor": "fogo"
+},
+"vs": "300 MIL ×",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "300 mil vezes o centro do Sol",
+"f": 0
+},
+{
+"a": 865.7,
+"b": 868.6,
+"c": "placar",
+"p": {
+"linhas": [
+{
+"f": "−14 · CAÇADOR",
+"q": "+44,8 · ARAÇUAÍ"
+},
+{
+"f": "−67,7 · OYMYAKON",
+"q": "+56,7 · VALE DA MORTE"
+},
+{
+"f": "−89,2 · VOSTOK",
+"q": "+70,7 · LUT (CHÃO)"
+},
+{
+"f": "−196 · NITROGÊNIO",
+"q": "1.170 · LAVA"
+},
+{
+"f": "−270,4 · ESPAÇO",
+"q": "28.000 · RAIO"
+},
+{
+"q": "15 MI · NÚCLEO DO SOL"
+}
+],
+"fimQ": "5 TRILHÕES · CERN",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "A temperatura mais alta já registrada",
+"f": 0
+},
+{
+"a": 868.6,
+"b": 873.3,
+"c": "lhc",
+"p": {
+"modo": "sala",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Sala de controle, com café na mesa",
+"f": 0
+},
+{
+"a": 873.3,
+"b": 877.5,
+"c": "placar",
+"p": {
+"linhas": [
+{
+"f": "−14 · CAÇADOR",
+"q": "+44,8 · ARAÇUAÍ"
+},
+{
+"f": "−67,7 · OYMYAKON",
+"q": "+56,7 · VALE DA MORTE"
+},
+{
+"f": "−89,2 · VOSTOK",
+"q": "+70,7 · LUT (CHÃO)"
+},
+{
+"f": "−196 · NITROGÊNIO",
+"q": "1.170 · LAVA"
+},
+{
+"f": "−270,4 · ESPAÇO",
+"q": "28.000 · RAIO"
+},
+{
+"q": "15 MI · NÚCLEO DO SOL"
+}
+],
+"fimF": "38 pK · BREMEN",
+"fimQ": "5 TRILHÕES · CERN",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chave",
+"txt": "AS DUAS PONTAS SÃO NOSSAS",
+"t0": 0.5,
+"cor": "ouro"
+}
+],
+"d": "Fecha o placar (1/2)",
+"f": 0
+},
+{
+"a": 877.5,
+"b": 881.7,
+"c": "placar",
+"p": {
+"linhas": [
+{
+"f": "−14 · CAÇADOR",
+"q": "+44,8 · ARAÇUAÍ"
+},
+{
+"f": "−67,7 · OYMYAKON",
+"q": "+56,7 · VALE DA MORTE"
+},
+{
+"f": "−89,2 · VOSTOK",
+"q": "+70,7 · LUT (CHÃO)"
+},
+{
+"f": "−196 · NITROGÊNIO",
+"q": "1.170 · LAVA"
+},
+{
+"f": "−270,4 · ESPAÇO",
+"q": "28.000 · RAIO"
+},
+{
+"q": "15 MI · NÚCLEO DO SOL"
+}
+],
+"fimF": "38 pK · BREMEN",
+"fimQ": "5 TRILHÕES · CERN",
+"parte": 1,
+"partes": 2,
+"off": 4.2000000000000455
+},
+"o": [
+{
+"tipo": "chave",
+"txt": "AS DUAS PONTAS SÃO NOSSAS",
+"t0": 0,
+"cor": "ouro",
+"ja": 1
+}
+],
+"d": "Fecha o placar (2/2)",
+"f": 0.35
+},
+{
+"a": 881.7,
+"b": 884.5,
+"c": "terra",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Estão aqui, na Terra",
+"f": 0
+},
+{
+"a": 884.5,
+"b": 889.0,
+"c": "janela",
+"p": {
+"z0": 0.8,
+"z1": 1,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Uma espécie que só aguenta 5 graus",
+"f": 0
+},
+{
+"a": 889.0,
+"b": 893.7,
+"c": "corredor",
+"p": {
+"cam0": 2.0,
+"cam1": 1.0,
+"pz": 3.4,
+"brilho": 0.8,
+"ab": 1,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Fecho: o corredor com todas as portas abertas",
+"f": 0
+},
+{
+"a": 893.7,
+"b": 897.0,
+"c": "corredor",
+"p": {
+"cam0": 4.0,
+"cam1": 12.0,
+"brilho": 1,
+"ab": 1,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Do espaço ao Sol; a mão humana nas pontas (1/2)",
+"f": 0.35
+},
+{
+"a": 897.0,
+"b": 900.3,
+"c": "corredor",
+"p": {
+"cam0": 12.0,
+"cam1": 20.0,
+"brilho": 1,
+"ab": 1,
+"parte": 1,
+"partes": 2,
+"off": 3.2999999999999545
+},
+"o": [],
+"d": "Do espaço ao Sol; a mão humana nas pontas (2/2)",
+"f": 0.35
+},
+{
+"a": 900.3,
+"b": 904.3,
+"c": "universo",
+"p": {
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "Quase tudo no universo está a −270 (1/3)",
+"f": 0
+},
+{
+"a": 904.3,
+"b": 908.3,
+"c": "universo",
+"p": {
+"parte": 1,
+"partes": 3,
+"off": 4.0
+},
+"o": [],
+"d": "Quase tudo no universo está a −270 (2/3)",
+"f": 0.35
+},
+{
+"a": 908.3,
+"b": 912.3,
+"c": "universo",
+"p": {
+"parte": 2,
+"partes": 3,
+"off": 8.0
+},
+"o": [],
+"d": "Quase tudo no universo está a −270 (3/3)",
+"f": 0.35
+},
+{
+"a": 912.3,
+"b": 915.4,
+"c": "terra",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "A faixa minúscula onde a água é líquida (1/2)",
+"f": 0
+},
+{
+"a": 915.4,
+"b": 918.5,
+"c": "terra",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 3.1000000000000227
+},
+"o": [],
+"d": "A faixa minúscula onde a água é líquida (2/2)",
+"f": 0.35
+},
+{
+"a": 918.5,
+"b": 923.1,
+"c": "corredor",
+"p": {
+"cam0": 0.6,
+"cam1": 1.2,
+"pz": 3.4,
+"brilho": 0.7,
+"ab": 1,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "O número mais raro do vídeo",
+"f": 0
+},
+{
+"a": 923.1,
+"b": 926.5,
+"c": "corpo37",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "É o seu: 37 °C (1/2)",
+"f": 0
+},
+{
+"a": 926.5,
+"b": 929.9,
+"c": "corpo37",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 3.3999999999999773
+},
+"o": [],
+"d": "É o seu: 37 °C (2/2)",
+"f": 0.35
+},
+{
+"a": 929.9,
+"b": 933.7,
+"c": "universo",
+"p": {
+"zoom": 1,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Uma chama pequena e teimosa",
+"f": 0
+},
+{
+"a": 933.7,
+"b": 938.1,
+"c": "corredor",
+"p": {
+"cam0": 0.4,
+"cam1": 0.7,
+"pz": 3.4,
+"brilho": 0.7,
+"ab": 1,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chave",
+"txt": "QUAL PORTA VOCÊ ABRIRIA?",
+"t0": 2.2,
+"cor": "ouro"
+}
+],
+"d": "Pergunta para os comentários (1/2)",
+"f": 0
+},
+{
+"a": 938.1,
+"b": 942.5,
+"c": "corredor",
+"p": {
+"cam0": 0.7,
+"cam1": 1.0,
+"pz": 3.4,
+"brilho": 0.7,
+"ab": 1,
+"parte": 1,
+"partes": 2,
+"off": 4.399999999999977
+},
+"o": [
+{
+"tipo": "chave",
+"txt": "QUAL PORTA VOCÊ ABRIRIA?",
+"t0": 0,
+"cor": "ouro",
+"ja": 1
+}
+],
+"d": "Pergunta para os comentários (2/2)",
+"f": 0.35
+},
+{
+"a": 942.5,
+"b": 946.25,
+"c": "card",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Selo do canal + inscrição + vídeos finais (1/2)",
+"f": 0
+},
+{
+"a": 946.25,
+"b": 950.0,
+"c": "card",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 3.75
+},
+"o": [],
+"d": "Selo do canal + inscrição + vídeos finais (2/2)",
+"f": 0.35
+}
+]

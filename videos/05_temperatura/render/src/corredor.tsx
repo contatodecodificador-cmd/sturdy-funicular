@@ -18,7 +18,7 @@ export const PLACAS: Placa[] = [
   {lado: -1, z: 28, txt: '???'}, {lado: 1, z: 29.5, txt: '???'},
 ];
 
-export const Corredor: React.FC<{t: number; cam?: number; camX?: number; camY?: number; zoom?: number; pessoaZ?: number; pessoaX?: number; pessoaBraco?: number; brilhoFim?: number; destaque?: number; placasOp?: number; placas?: Placa[]; portaAberta?: {i: number; k: number}}> = ({t, cam = 0, camX = 0, camY = 0, zoom = 1, pessoaZ, pessoaX = 0, pessoaBraco = 0, brilhoFim = 0.6, destaque = 0, placasOp = 1, placas = PLACAS, portaAberta}) => {
+export const Corredor: React.FC<{t: number; cam?: number; camX?: number; camY?: number; zoom?: number; pessoaZ?: number; pessoaX?: number; pessoaBraco?: number; brilhoFim?: number; destaque?: number; placasOp?: number; placas?: Placa[]; portaAberta?: {i: number; k: number}; abertas?: number}> = ({abertas = 0, t, cam = 0, camX = 0, camY = 0, zoom = 1, pessoaZ, pessoaX = 0, pessoaBraco = 0, brilhoFim = 0.6, destaque = 0, placasOp = 1, placas = PLACAS, portaAberta}) => {
   const P = (x: number, y: number, z: number): [number, number] => {
     const zz = Math.max(0.2, z - cam);
     return [VPX + (FOC * (x - camX)) / zz, VPY + (FOC * (y - camY)) / zz];
@@ -61,7 +61,7 @@ export const Corredor: React.FC<{t: number; cam?: number; camX?: number; camY?: 
     const x = pl.lado * W, z0 = pl.z, z1 = pl.z + 1.25, yT = CHAO - 2.55;
     if (!vis(z0)) return null;
     const fria = pl.lado < 0;
-    const ab = portaAberta && portaAberta.i === i ? portaAberta.k : 0;
+    const ab = Math.max(abertas, portaAberta && portaAberta.i === i ? portaAberta.k : 0);
     const zFolha = lerp(z1, z0 + 0.15, ab);
     const xFolha = x - pl.lado * ab * 1.1;
     return (
@@ -156,6 +156,12 @@ export const Corredor: React.FC<{t: number; cam?: number; camX?: number; camY?: 
         {brasas.map((p, i) => { if (p.z - cam < 0.4) return null; const [x, y] = P(p.x, p.y, p.z); return <circle key={'b' + i} cx={x} cy={y} r={(FOC * p.r) / (p.z - cam)} fill={i % 3 ? QU.fogo : '#FFE3A8'} opacity={0.85} />; })}
         {pessoa}
       </svg>
+      {/* bokeh em primeiro plano (profundidade de campo) */}
+      <svg width={1920} height={1080} style={{position: 'absolute'}}>
+        <defs><filter id="bok"><feGaussianBlur stdDeviation="7" /></filter></defs>
+        {Array.from({length: 14}, (_, i) => { const fria = i % 2 === 0; const x = fria ? 40 + rnd(i + 300) * 640 : 1240 + rnd(i + 300) * 640; const y = ((rnd(i + 310) * 1300 + (fria ? 1 : -1) * t * (22 + rnd(i + 320) * 30)) % 1300 + 1300) % 1300 - 110; return <circle key={i} cx={x + Math.sin(t * 0.6 + i) * 18} cy={y} r={10 + rnd(i + 330) * 16} fill={fria ? '#E8F6FF' : '#FFB04A'} opacity={0.22} filter="url(#bok)" />; })}
+      </svg>
+      <AbsoluteFill style={{background: 'linear-gradient(270deg, rgba(255,110,30,0.10), transparent 35%)', opacity: 0.6 + 0.4 * Math.sin(t * 7.3) * Math.sin(t * 3.1), mixBlendMode: 'screen'}} />
       {/* névoa fria e calor: tingem cada metade */}
       <AbsoluteFill style={{background: `linear-gradient(90deg, rgba(120,190,255,${0.12 + destaque * 0.0}) 0%, transparent 40%, transparent 60%, rgba(255,120,40,0.14) 100%)`, mixBlendMode: 'screen'}} />
       <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 42%, transparent 40%, rgba(0,0,0,0.55) 100%)'}} />

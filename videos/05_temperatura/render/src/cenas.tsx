@@ -194,7 +194,7 @@ export const AnnaTimer: React.FC<{lt: number; d: number}> = ({lt, d}) => {
   return (
     <AbsoluteFill>
       <div style={{position: 'absolute', right: 90, top: 400, opacity: KO(lt, 1.4, 1.8), padding: '16px 28px', borderRadius: 14, background: 'rgba(4,10,22,0.86)', borderLeft: `5px solid ${FR.azul}`, boxShadow: '0 12px 36px rgba(0,0,0,0.6)'}}>
-        <div style={{fontFamily: F.rotulo, fontWeight: 700, fontSize: 18, letterSpacing: 4, color: '#B9C2D3'}}>SOB O GELO</div>
+        <div style={{fontFamily: F.rotulo, fontWeight: 700, fontSize: 18, letterSpacing: 4, color: '#B9C2D3'}}>NORUEGA, 1999 · SOB O GELO</div>
         <div style={{fontFamily: F.titulo, fontWeight: 700, fontSize: 86, color: '#fff', fontVariantNumeric: 'tabular-nums', lineHeight: 1.05}}>{minutos} MIN</div>
       </div>
     </AbsoluteFill>
@@ -280,13 +280,14 @@ export const Hospital: React.FC<{lt: number; t: number; d: number}> = ({lt, t, d
           <g transform="translate(150,-205) rotate(-90) scale(1.25)">
             <Pessoa v={WILLIE} expr="dor" t={t} suor={1} semPernas bE={[3, 0]} bD={[3, 0]} />
           </g>
-          <path d="M-180,-215 Q100,-260 500,-200 L500,-120 L-180,-120 Z" fill="#9FC2D1" />
-          <path d="M-180,-215 Q100,-260 500,-200" stroke="#7FA8BA" strokeWidth={6} fill="none" />
+          <path d="M-215,-292 Q-150,-300 100,-288 Q350,-276 500,-250 L500,-120 L-215,-120 Q-232,-200 -215,-292 Z" fill="#9FC2D1" />
+          <path d="M-215,-292 Q-150,-300 100,-288 Q350,-276 500,-250" stroke="#7FA8BA" strokeWidth={6} fill="none" />
+          <path d="M-200,-250 Q100,-262 480,-215" stroke="#B9D6E2" strokeWidth={4} fill="none" opacity={0.7} />
         </g>
       </SVG>
       {/* termômetro clínico grande */}
-      <div style={{position: 'absolute', right: 100, top: 520, padding: '14px 26px', borderRadius: 14, background: 'rgba(6,10,20,0.9)', borderLeft: `5px solid ${QU.lava}`, boxShadow: '0 12px 36px rgba(0,0,0,0.5)'}}>
-        <div style={{fontFamily: F.rotulo, fontWeight: 700, fontSize: 18, letterSpacing: 4, color: '#B9C2D3'}}>TEMPERATURA DO CORPO</div>
+      <div style={{position: 'absolute', right: 90, top: 820, padding: '14px 26px', borderRadius: 14, background: 'rgba(6,10,20,0.9)', borderLeft: `5px solid ${QU.lava}`, boxShadow: '0 12px 36px rgba(0,0,0,0.5)'}}>
+        <div style={{fontFamily: F.rotulo, fontWeight: 700, fontSize: 18, letterSpacing: 4, color: '#B9C2D3'}}>EUA, 1980 · TEMPERATURA DO CORPO</div>
         <div style={{fontFamily: F.titulo, fontWeight: 700, fontSize: 92, color: temp > 42 ? '#FF8A6A' : '#fff', fontVariantNumeric: 'tabular-nums', lineHeight: 1.05}}>{temp.toFixed(1).replace('.', ',')} °C</div>
       </div>
     </AbsoluteFill>

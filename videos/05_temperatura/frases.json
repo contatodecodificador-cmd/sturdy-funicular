@@ -1,0 +1,1622 @@
+[
+{
+"p": 0,
+"t": 0.08,
+"e": 1.54,
+"txt": "Você acorda num corredor."
+},
+{
+"p": 0,
+"t": 2.14,
+"e": 5.2,
+"txt": "À sua esquerda, o ar fica cada vez mais frio."
+},
+{
+"p": 0,
+"t": 5.74,
+"e": 8.2,
+"txt": "À sua direita, cada vez mais quente."
+},
+{
+"p": 0,
+"t": 8.7,
+"e": 10.32,
+"txt": "E em cada porta tem um número."
+},
+{
+"p": 1,
+"t": 10.86,
+"e": 12.24,
+"txt": "As primeiras você conhece."
+},
+{
+"p": 1,
+"t": 12.76,
+"e": 14.1,
+"txt": "Menos catorze graus."
+},
+{
+"p": 1,
+"t": 14.52,
+"e": 15.74,
+"txt": "Mais quarenta e quatro."
+},
+{
+"p": 1,
+"t": 16.12,
+"e": 17.42,
+"txt": "São recordes do Brasil."
+},
+{
+"p": 2,
+"t": 18.1,
+"e": 19.36,
+"txt": "Mas o corredor não para."
+},
+{
+"p": 2,
+"t": 19.72,
+"e": 21.52,
+"txt": "Ele vai até o frio do espaço."
+},
+{
+"p": 2,
+"t": 21.8,
+"e": 23.28,
+"txt": "E até o centro do Sol."
+},
+{
+"p": 3,
+"t": 24.1,
+"e": 29.0,
+"txt": "Atrás dessas portas tem uma mulher que ficou oitenta minutos presa debaixo do gelo."
+},
+{
+"p": 3,
+"t": 29.56,
+"e": 33.6,
+"txt": "Um médico que cozinhou um ovo só com o ar da sala, e saiu andando."
+},
+{
+"p": 3,
+"t": 34.22,
+"e": 37.72,
+"txt": "E um homem que chegou a quarenta e seis graus e meio por dentro."
+},
+{
+"p": 4,
+"t": 38.38,
+"e": 43.2,
+"txt": "E lá no fim, nas duas pontas, estão as duas portas mais extremas que existem."
+},
+{
+"p": 4,
+"t": 43.66,
+"e": 47.42,
+"txt": "O lugar mais frio e o lugar mais quente do universo conhecido."
+},
+{
+"p": 5,
+"t": 48.1,
+"e": 50.22,
+"txt": "E aqui vai a parte que quase ninguém sabe:"
+},
+{
+"p": 5,
+"t": 50.74,
+"e": 52.78,
+"txt": "as duas ficam aqui na Terra."
+},
+{
+"p": 5,
+"t": 53.18,
+"e": 54.76,
+"txt": "E fomos nós que construímos."
+},
+{
+"p": 6,
+"t": 55.5,
+"e": 57.5,
+"txt": "A gente vai abrir porta por porta."
+},
+{
+"p": 6,
+"t": 57.8,
+"e": 59.94,
+"txt": "E em cada uma, a pergunta é a mesma:"
+},
+{
+"p": 6,
+"t": 60.46,
+"e": 61.86,
+"txt": "quanto tempo você aguenta?"
+},
+{
+"p": 6,
+"t": 62.54,
+"e": 64.879,
+"txt": "Começa pelo número mais importante do vídeo."
+},
+{
+"p": 6,
+"t": 65.22,
+"e": 65.72,
+"txt": "O seu."
+},
+{
+"p": 7,
+"t": 66.32,
+"e": 69.06,
+"txt": "Por dentro, você está a uns trinta e sete graus."
+},
+{
+"p": 7,
+"t": 69.48,
+"e": 70.14,
+"txt": "Não a pele."
+},
+{
+"p": 7,
+"t": 70.38,
+"e": 71.02,
+"txt": "O centro."
+},
+{
+"p": 7,
+"t": 71.38,
+"e": 73.92,
+"txt": "O sangue que passa pelo coração e pelo cérebro."
+},
+{
+"p": 8,
+"t": 74.54,
+"e": 76.06,
+"txt": "E aqui vai o primeiro susto:"
+},
+{
+"p": 8,
+"t": 76.58,
+"e": 79.48,
+"txt": "você funciona direito numa faixa de uns cinco graus."
+},
+{
+"p": 8,
+"t": 80.0,
+"e": 85.3,
+"txt": "Um pouco abaixo de trinta e cinco, ou um pouco acima de quarenta, as coisas começam a quebrar."
+},
+{
+"p": 8,
+"t": 85.9,
+"e": 90.2,
+"txt": "O universo vai de menos duzentos e setenta a trilhões de graus."
+},
+{
+"p": 8,
+"t": 90.6,
+"e": 93.26,
+"txt": "E a sua vida inteira cabe nessa janelinha."
+},
+{
+"p": 9,
+"t": 93.82,
+"e": 95.92,
+"txt": "Então vamos ver o que acontece quando ela fecha."
+},
+{
+"p": 9,
+"t": 96.3,
+"e": 97.7,
+"txt": "Primeiro, pro lado frio."
+},
+{
+"p": 10,
+"t": 98.34,
+"e": 101.66,
+"txt": "Abaixo de trinta e cinco graus por dentro é hipotermia."
+},
+{
+"p": 10,
+"t": 102.12,
+"e": 103.9,
+"txt": "O corpo treme pra gerar calor."
+},
+{
+"p": 10,
+"t": 104.24,
+"e": 105.84,
+"txt": "As mãos ficam desajeitadas."
+},
+{
+"p": 10,
+"t": 106.16,
+"e": 107.68,
+"txt": "O pensamento fica lento."
+},
+{
+"p": 11,
+"t": 108.32,
+"e": 112.28,
+"txt": "Lá pelos trinta e dois graus, acontece uma coisa que engana muita gente."
+},
+{
+"p": 11,
+"t": 112.64,
+"e": 113.62,
+"txt": "O tremor para."
+},
+{
+"p": 11,
+"t": 114.04,
+"e": 114.88,
+"txt": "Parece melhora."
+},
+{
+"p": 11,
+"t": 115.28,
+"e": 115.7,
+"txt": "Não é."
+},
+{
+"p": 11,
+"t": 116.18,
+"e": 118.12,
+"txt": "É o corpo desistindo de lutar."
+},
+{
+"p": 12,
+"t": 118.74,
+"e": 120.74,
+"txt": "E tem um fenômeno ainda mais estranho."
+},
+{
+"p": 12,
+"t": 121.2,
+"e": 124.26,
+"txt": "Muita gente, no estágio mais grave, tira a roupa."
+},
+{
+"p": 12,
+"t": 124.82,
+"e": 129.12,
+"txt": "Os médicos acreditam que é o cérebro, confuso, sentindo um calor falso."
+},
+{
+"p": 12,
+"t": 129.74,
+"e": 133.94,
+"txt": "Equipes de resgate já acharam vítimas de frio sem casaco por causa disso."
+},
+{
+"p": 13,
+"t": 134.58,
+"e": 140.46,
+"txt": "Abaixo de vinte e oito graus, vem a inconsciência, e o coração bate devagar e fora de ritmo."
+},
+{
+"p": 13,
+"t": 140.86,
+"e": 142.56,
+"txt": "A pessoa pode parecer morta."
+},
+{
+"p": 14,
+"t": 143.16,
+"e": 144.86,
+"txt": "E foi aqui que entrou a Anna."
+},
+{
+"p": 14,
+"t": 145.32,
+"e": 148.34,
+"txt": "Mil novecentos e noventa e nove, no norte da Noruega."
+},
+{
+"p": 14,
+"t": 148.96,
+"e": 155.4,
+"txt": "A Anna Bôguenholm era médica, tinha vinte e nove anos e caiu de cabeça num rio congelado enquanto esquiava."
+},
+{
+"p": 15,
+"t": 155.98,
+"e": 157.7,
+"txt": "Ela ficou presa debaixo do gelo."
+},
+{
+"p": 15,
+"t": 158.18,
+"e": 161.0,
+"txt": "Achou um bolsão de ar e respirou ali por um tempo."
+},
+{
+"p": 15,
+"t": 161.54,
+"e": 163.38,
+"txt": "Os amigos não conseguiam puxá-la."
+},
+{
+"p": 15,
+"t": 163.94,
+"e": 166.98,
+"txt": "Oitenta minutos depois, o resgate a tirou da água."
+},
+{
+"p": 15,
+"t": 167.4,
+"e": 169.28,
+"txt": "O coração dela estava parado."
+},
+{
+"p": 16,
+"t": 169.5,
+"e": 174.9,
+"txt": "Quando chegou ao hospital, a temperatura do corpo dela era de treze vírgula sete graus."
+},
+{
+"p": 16,
+"t": 175.44,
+"e": 178.06,
+"txt": "É mais fria que a água de uma piscina no inverno."
+},
+{
+"p": 17,
+"t": 178.72,
+"e": 182.78,
+"txt": "Os médicos ligaram o sangue dela numa máquina que aquece e devolve."
+},
+{
+"p": 17,
+"t": 183.22,
+"e": 184.1,
+"txt": "Grau por grau."
+},
+{
+"p": 17,
+"t": 184.78,
+"e": 186.76,
+"txt": "Horas depois, o coração voltou."
+},
+{
+"p": 18,
+"t": 187.58,
+"e": 191.28,
+"txt": "É a temperatura corporal mais baixa da qual um adulto já voltou."
+},
+{
+"p": 18,
+"t": 191.84,
+"e": 192.86,
+"txt": "E tem um detalhe bonito:"
+},
+{
+"p": 18,
+"t": 193.38,
+"e": 200.46,
+"txt": "o frio que quase matou a Anna também protegeu o cérebro dela, porque um cérebro gelado gasta menos oxigênio."
+},
+{
+"p": 18,
+"t": 201.04,
+"e": 203.58,
+"txt": "Ela se recuperou e seguiu a carreira de médica."
+},
+{
+"p": 19,
+"t": 204.64,
+"e": 206.04,
+"txt": "Agora a outra porta."
+},
+{
+"p": 19,
+"t": 206.58,
+"e": 209.22,
+"txt": "Pro lado quente, a margem é ainda menor."
+},
+{
+"p": 19,
+"t": 209.84,
+"e": 213.04,
+"txt": "Febre de trinta e oito, trinta e nove, o corpo aguenta."
+},
+{
+"p": 19,
+"t": 213.62,
+"e": 216.92,
+"txt": "Acima de quarenta graus por dentro, é insolação."
+},
+{
+"p": 19,
+"t": 217.42,
+"e": 218.94,
+"txt": "O cérebro começa a falhar."
+},
+{
+"p": 19,
+"t": 219.24,
+"e": 220.84,
+"txt": "Confusão, desmaio."
+},
+{
+"p": 19,
+"t": 221.44,
+"e": 225.0,
+"txt": "Acima de uns quarenta e dois, os órgãos começam a parar."
+},
+{
+"p": 20,
+"t": 225.64,
+"e": 229.28,
+"txt": "E o recorde do lado quente é de um homem chamado Willie Jones."
+},
+{
+"p": 20,
+"t": 229.86,
+"e": 232.86,
+"txt": "Julho de mil novecentos e oitenta, nos Estados Unidos."
+},
+{
+"p": 20,
+"t": 233.42,
+"e": 238.18,
+"txt": "Ele chegou ao hospital com quarenta e seis vírgula cinco graus de temperatura corporal."
+},
+{
+"p": 21,
+"t": 238.7,
+"e": 241.02,
+"txt": "Passou vinte e quatro dias internado."
+},
+{
+"p": 21,
+"t": 241.38,
+"e": 242.12,
+"txt": "E saiu vivo."
+},
+{
+"p": 21,
+"t": 242.68,
+"e": 245.98,
+"txt": "Até hoje, ninguém sobreviveu a um corpo mais quente."
+},
+{
+"p": 22,
+"t": 247.0,
+"e": 248.28,
+"txt": "Junta os dois recordes."
+},
+{
+"p": 22,
+"t": 248.64,
+"e": 252.36,
+"txt": "Do treze vírgula sete da Anna ao quarenta e seis e meio do Willie:"
+},
+{
+"p": 22,
+"t": 252.76,
+"e": 254.14,
+"txt": "trinta e três graus."
+},
+{
+"p": 22,
+"t": 254.8,
+"e": 261.399,
+"txt": "Esse é todo o espaço que a vida humana já ocupou, e só com hospital, máquina e muita sorte."
+},
+{
+"p": 23,
+"t": 262.2,
+"e": 264.46,
+"txt": "E isso é só o que acontece por dentro."
+},
+{
+"p": 23,
+"t": 265.06,
+"e": 267.28,
+"txt": "Agora a gente abre as portas de fora."
+},
+{
+"p": 23,
+"t": 267.74,
+"e": 269.24,
+"txt": "Começando pelo nosso planeta."
+},
+{
+"p": 23,
+"t": 269.74,
+"e": 272.8,
+"txt": "E logo na primeira, tem uma regra que você aprendeu errado."
+},
+{
+"p": 24,
+"t": 273.7,
+"e": 275.28,
+"txt": "Primeiro, o nosso quintal."
+},
+{
+"p": 24,
+"t": 275.84,
+"e": 283.16,
+"txt": "O frio oficial mais forte já medido no Brasil foi em Caçador, em Santa Catarina, em mil novecentos e cinquenta e dois:"
+},
+{
+"p": 24,
+"t": 283.76,
+"e": 285.32,
+"txt": "menos catorze graus."
+},
+{
+"p": 24,
+"t": 285.86,
+"e": 286.9,
+"txt": "E o calor mais forte:"
+},
+{
+"p": 24,
+"t": 287.36,
+"e": 292.3,
+"txt": "quarenta e quatro vírgula oito, em Araçuaí, Minas Gerais, em dois mil e vinte e três."
+},
+{
+"p": 24,
+"t": 292.84,
+"e": 296.62,
+"txt": "É o maior valor confirmado pelo instituto de meteorologia do país."
+},
+{
+"p": 25,
+"t": 297.24,
+"e": 299.9,
+"txt": "Com roupa certa e água, você aguenta as duas."
+},
+{
+"p": 25,
+"t": 300.26,
+"e": 301.48,
+"txt": "Gente vive nelas."
+},
+{
+"p": 25,
+"t": 302.1,
+"e": 304.68,
+"txt": "Então vamos pra onde ninguém deveria morar."
+},
+{
+"p": 26,
+"t": 305.18,
+"e": 306.8,
+"txt": "Oimiakon, na Sibéria."
+},
+{
+"p": 26,
+"t": 307.4,
+"e": 310.56,
+"txt": "É chamada de o lugar habitado mais frio da Terra."
+},
+{
+"p": 26,
+"t": 311.18,
+"e": 317.56,
+"txt": "Em mil novecentos e trinta e três, o termômetro de lá marcou menos sessenta e sete vírgula sete graus."
+},
+{
+"p": 27,
+"t": 318.16,
+"e": 322.94,
+"txt": "Lá, os carros passam o dia ligados, porque se desligar, não liga mais."
+},
+{
+"p": 27,
+"t": 323.46,
+"e": 324.8,
+"txt": "Os cílios congelam."
+},
+{
+"p": 27,
+"t": 325.16,
+"e": 326.92,
+"txt": "A tinta da caneta congela."
+},
+{
+"p": 27,
+"t": 327.3,
+"e": 334.0,
+"txt": "E mesmo assim, as crianças menores só são dispensadas da escola quando passa de cinquenta e dois abaixo de zero."
+},
+{
+"p": 28,
+"t": 334.64,
+"e": 336.82,
+"txt": "Pra pele exposta, a conta é rápida."
+},
+{
+"p": 28,
+"t": 337.28,
+"e": 342.64,
+"txt": "Com menos quarenta e um pouco de vento, uma bochecha descoberta pode congelar em uns dez minutos."
+},
+{
+"p": 28,
+"t": 343.04,
+"e": 344.74,
+"txt": "Com mais vento, em cinco."
+},
+{
+"p": 28,
+"t": 345.32,
+"e": 348.06,
+"txt": "É por isso que lá ninguém sai com o rosto de fora."
+},
+{
+"p": 29,
+"t": 348.72,
+"e": 352.76,
+"txt": "Do outro lado do corredor, o ar mais quente já medido oficialmente:"
+},
+{
+"p": 29,
+"t": 353.26,
+"e": 359.4,
+"txt": "cinquenta e seis vírgula sete graus, no Vale da Morte, nos Estados Unidos, em mil novecentos e treze."
+},
+{
+"p": 30,
+"t": 360.04,
+"e": 364.76,
+"txt": "E o chão mais quente que um satélite já mediu fica no deserto de Lut, no Irã:"
+},
+{
+"p": 30,
+"t": 365.18,
+"e": 367.18,
+"txt": "setenta vírgula sete graus."
+},
+{
+"p": 30,
+"t": 367.68,
+"e": 369.62,
+"txt": "Ali não é o ar, é o solo."
+},
+{
+"p": 30,
+"t": 370.06,
+"e": 372.16,
+"txt": "Um chão onde dá pra fritar um ovo."
+},
+{
+"p": 30,
+"t": 372.56,
+"e": 373.42,
+"txt": "Literalmente."
+},
+{
+"p": 31,
+"t": 374.02,
+"e": 376.3,
+"txt": "E aqui está a regra que você aprendeu errado:"
+},
+{
+"p": 31,
+"t": 376.82,
+"e": 379.2,
+"txt": "achar que quanto maior o número, pior."
+},
+{
+"p": 31,
+"t": 379.68,
+"e": 380.52,
+"txt": "Não é bem assim."
+},
+{
+"p": 31,
+"t": 381.06,
+"e": 383.62,
+"txt": "O que mais mata no calor não é só o número."
+},
+{
+"p": 31,
+"t": 384.02,
+"e": 386.06,
+"txt": "É o número junto com a umidade."
+},
+{
+"p": 32,
+"t": 386.66,
+"e": 388.92,
+"txt": "O seu ar-condicionado interno é o suor."
+},
+{
+"p": 32,
+"t": 389.3,
+"e": 391.12,
+"txt": "Ele só funciona se evaporar."
+},
+{
+"p": 32,
+"t": 391.7,
+"e": 395.28,
+"txt": "Num ar muito úmido, o suor escorre e não evapora."
+},
+{
+"p": 32,
+"t": 395.7,
+"e": 397.48,
+"txt": "O corpo para de perder calor."
+},
+{
+"p": 32,
+"t": 397.88,
+"e": 400.36,
+"txt": "E você esquenta mesmo parado na sombra."
+},
+{
+"p": 33,
+"t": 400.96,
+"e": 407.06,
+"txt": "Por muito tempo os cientistas achavam que o limite era uma combinação equivalente a trinta e cinco graus úmidos."
+},
+{
+"p": 33,
+"t": 407.56,
+"e": 411.58,
+"txt": "Em dois mil e vinte e dois, testaram com voluntários jovens e saudáveis."
+},
+{
+"p": 33,
+"t": 412.04,
+"e": 413.58,
+"txt": "O limite real veio antes:"
+},
+{
+"p": 33,
+"t": 413.92,
+"e": 415.28,
+"txt": "por volta de trinta e um."
+},
+{
+"p": 33,
+"t": 415.74,
+"e": 421.74,
+"txt": "Ou seja, um dia de calor abafado pode ser mais perigoso do que um deserto mais quente e seco."
+},
+{
+"p": 34,
+"t": 422.34,
+"e": 425.16,
+"txt": "E isso leva à porta mais surpreendente do vídeo."
+},
+{
+"p": 34,
+"t": 425.72,
+"e": 429.5,
+"txt": "Numa sauna seca, o ar fica entre oitenta e cem graus."
+},
+{
+"p": 34,
+"t": 429.82,
+"e": 433.38,
+"txt": "E as pessoas ficam lá dentro, conversando, por vários minutos."
+},
+{
+"p": 35,
+"t": 433.94,
+"e": 436.86,
+"txt": "Agora, põe a mão em água a sessenta graus."
+},
+{
+"p": 35,
+"t": 437.34,
+"e": 438.7,
+"txt": "Bem mais fria que a sauna."
+},
+{
+"p": 35,
+"t": 439.24,
+"e": 442.1,
+"txt": "Em uns cinco segundos, você tem uma queimadura grave."
+},
+{
+"p": 35,
+"t": 442.5,
+"e": 444.96,
+"txt": "A setenta, em cerca de um segundo."
+},
+{
+"p": 36,
+"t": 445.56,
+"e": 448.7,
+"txt": "A diferença é quanta matéria quente encosta em você."
+},
+{
+"p": 36,
+"t": 448.98,
+"e": 449.9,
+"txt": "O ar é ralo."
+},
+{
+"p": 36,
+"t": 450.3,
+"e": 454.26,
+"txt": "Ele toca sua pele com pouca coisa, e o suor ainda resfria."
+},
+{
+"p": 36,
+"t": 454.9,
+"e": 455.9,
+"txt": "A água é densa:"
+},
+{
+"p": 36,
+"t": 456.26,
+"e": 458.7,
+"txt": "ela despeja calor na sua pele sem parar."
+},
+{
+"p": 36,
+"t": 459.16,
+"e": 463.16,
+"txt": "Guarda essa ideia, porque ela vai explicar uma das portas mais loucas do final."
+},
+{
+"p": 37,
+"t": 463.64,
+"e": 466.96,
+"txt": "E alguém já testou isso no próprio corpo, de propósito."
+},
+{
+"p": 37,
+"t": 467.36,
+"e": 474.88,
+"txt": "Em mil setecentos e setenta e quatro, o médico inglês Charles Blagden entrou numa sala aquecida a mais de cento e vinte graus."
+},
+{
+"p": 37,
+"t": 475.22,
+"e": 477.2,
+"txt": "E ficou lá dentro oito minutos."
+},
+{
+"p": 37,
+"t": 477.64,
+"e": 480.46,
+"txt": "Na mesma sala, deixaram ovos e um bife."
+},
+{
+"p": 38,
+"t": 480.84,
+"e": 484.48,
+"txt": "Em vinte minutos, os ovos estavam cozidos, duros."
+},
+{
+"p": 38,
+"t": 484.9,
+"e": 488.92,
+"txt": "E o Blagden saiu andando, com o corpo praticamente na temperatura normal."
+},
+{
+"p": 38,
+"t": 489.28,
+"e": 491.94,
+"txt": "Ele apresentou tudo à Real Sociedade de Londres:"
+},
+{
+"p": 38,
+"t": 492.34,
+"e": 496.76,
+"txt": "foi um dos primeiros a mostrar que o suor é o que segura a gente vivo no calor."
+},
+{
+"p": 39,
+"t": 497.12,
+"e": 500.42,
+"txt": "Se você está curtindo abrir essas portas, se inscreve no canal."
+},
+{
+"p": 39,
+"t": 500.7,
+"e": 503.58,
+"txt": "Porque daqui pra frente, nenhuma delas é da Terra."
+},
+{
+"p": 40,
+"t": 503.94,
+"e": 506.4,
+"txt": "Mas antes, a última porta do planeta."
+},
+{
+"p": 40,
+"t": 506.78,
+"e": 510.88,
+"txt": "A lava de um vulcão como o do Havaí sai a uns mil cento e setenta graus."
+},
+{
+"p": 41,
+"t": 511.3,
+"e": 512.74,
+"txt": "E aqui vai um mito de filme:"
+},
+{
+"p": 41,
+"t": 513.08,
+"e": 516.32,
+"txt": "a pessoa que cai na lava e afunda como se fosse água."
+},
+{
+"p": 41,
+"t": 516.62,
+"e": 520.659,
+"txt": "A maior parte da lava é umas três vezes mais densa que o corpo humano."
+},
+{
+"p": 41,
+"t": 521.0,
+"e": 523.1,
+"txt": "Você provavelmente não afundaria."
+},
+{
+"p": 41,
+"t": 523.38,
+"e": 524.56,
+"txt": "Ficaria na superfície."
+},
+{
+"p": 41,
+"t": 524.86,
+"e": 525.88,
+"txt": "O que não muda o final:"
+},
+{
+"p": 41,
+"t": 526.22,
+"e": 529.72,
+"txt": "o calor que irradia dela queima a metros de distância."
+},
+{
+"p": 42,
+"t": 530.08,
+"e": 533.86,
+"txt": "E no frio, o recorde da Terra é um lugar que nem cidade tem."
+},
+{
+"p": 43,
+"t": 534.3,
+"e": 540.04,
+"txt": "Vinte e um de julho de mil novecentos e oitenta e três, estação Vostok, no meio da Antártida."
+},
+{
+"p": 43,
+"t": 540.36,
+"e": 543.68,
+"txt": "O ar chega a menos oitenta e nove vírgula dois graus."
+},
+{
+"p": 43,
+"t": 544.04,
+"e": 545.86,
+"txt": "É o recorde oficial do planeta."
+},
+{
+"p": 44,
+"t": 546.22,
+"e": 552.9,
+"txt": "Satélites já mediram ainda mais frio, uns menos noventa e oito, mas na superfície do gelo, não no ar."
+},
+{
+"p": 44,
+"t": 553.2,
+"e": 557.86,
+"txt": "Nesse frio, o vapor da sua respiração vira cristal antes de sair do rosto."
+},
+{
+"p": 44,
+"t": 558.12,
+"e": 562.72,
+"txt": "E a tabela de congelamento da pele que os meteorologistas usam nem chega tão longe."
+},
+{
+"p": 45,
+"t": 563.04,
+"e": 564.94,
+"txt": "Sem a roupa certa, minutos."
+},
+{
+"p": 45,
+"t": 565.32,
+"e": 568.54,
+"txt": "E esse é o frio mais forte do planeta inteiro."
+},
+{
+"p": 45,
+"t": 569.02,
+"e": 570.48,
+"txt": "Agora a gente sai dele."
+},
+{
+"p": 46,
+"t": 571.4,
+"e": 573.58,
+"txt": "Menos cento e noventa e seis graus."
+},
+{
+"p": 46,
+"t": 574.1,
+"e": 577.14,
+"txt": "É o nitrogênio líquido, que existe em qualquer laboratório."
+},
+{
+"p": 46,
+"t": 577.72,
+"e": 578.9,
+"txt": "E ele esconde um truque."
+},
+{
+"p": 47,
+"t": 579.46,
+"e": 584.34,
+"txt": "Se você passar a mão nele, rápido, por uma fração de segundo, ela não congela."
+},
+{
+"p": 47,
+"t": 585.02,
+"e": 590.8,
+"txt": "O líquido encosta na sua pele quente, ferve na hora e forma um colchão de vapor que te protege."
+},
+{
+"p": 47,
+"t": 591.42,
+"e": 595.04,
+"txt": "É o mesmo motivo de uma gota d'água dançar numa frigideira quente."
+},
+{
+"p": 48,
+"t": 595.68,
+"e": 601.12,
+"txt": "Mas basta um segundo a mais, um anel, um pano molhado, e a queimadura é grave."
+},
+{
+"p": 48,
+"t": 601.98,
+"e": 604.8,
+"txt": "Pela régua do vídeo, a lição é a mesma da sauna:"
+},
+{
+"p": 48,
+"t": 605.3,
+"e": 606.6,
+"txt": "não importa só o número."
+},
+{
+"p": 48,
+"t": 607.04,
+"e": 608.78,
+"txt": "Importa o que encosta em você."
+},
+{
+"p": 49,
+"t": 609.64,
+"e": 612.0,
+"txt": "E aqui está o mito mais famoso do frio."
+},
+{
+"p": 49,
+"t": 612.62,
+"e": 616.68,
+"txt": "Nos filmes, a pessoa sai no espaço e vira picolé em segundos."
+},
+{
+"p": 49,
+"t": 617.18,
+"e": 617.68,
+"txt": "Errado."
+},
+{
+"p": 50,
+"t": 618.18,
+"e": 619.58,
+"txt": "O espaço é vácuo."
+},
+{
+"p": 50,
+"t": 620.02,
+"e": 623.44,
+"txt": "E vácuo é exatamente o que tem dentro de uma garrafa térmica."
+},
+{
+"p": 50,
+"t": 624.08,
+"e": 627.8,
+"txt": "Sem ar encostando em você, quase não há nada pra roubar o seu calor."
+},
+{
+"p": 50,
+"t": 628.34,
+"e": 630.3,
+"txt": "Você esfriaria muito devagar."
+},
+{
+"p": 51,
+"t": 630.98,
+"e": 633.24,
+"txt": "O que te pega primeiro é a falta de ar."
+},
+{
+"p": 51,
+"t": 633.72,
+"e": 635.96,
+"txt": "Em uns quinze segundos, você apaga."
+},
+{
+"p": 51,
+"t": 636.5,
+"e": 637.94,
+"txt": "Muito antes de congelar."
+},
+{
+"p": 52,
+"t": 638.88,
+"e": 642.2,
+"txt": "E quanto frio faz no espaço, longe de qualquer estrela?"
+},
+{
+"p": 52,
+"t": 642.88,
+"e": 645.08,
+"txt": "O próprio universo tem uma temperatura:"
+},
+{
+"p": 52,
+"t": 645.54,
+"e": 647.4,
+"txt": "o brilho que sobrou do Big Bang."
+},
+{
+"p": 52,
+"t": 648.0,
+"e": 651.56,
+"txt": "Ela marca menos duzentos e setenta vírgula quatro graus."
+},
+{
+"p": 52,
+"t": 652.14,
+"e": 654.86,
+"txt": "Menos de três graus acima do zero absoluto."
+},
+{
+"p": 53,
+"t": 655.82,
+"e": 659.78,
+"txt": "Agora o lado quente, e a primeira porta já fica bem perto de você."
+},
+{
+"p": 53,
+"t": 660.52,
+"e": 665.38,
+"txt": "Quando um raio cai, o ar dentro do canal esquenta a uns vinte e oito mil graus."
+},
+{
+"p": 53,
+"t": 666.0,
+"e": 669.2,
+"txt": "Cerca de cinco vezes mais quente que a superfície do Sol."
+},
+{
+"p": 54,
+"t": 669.92,
+"e": 673.76,
+"txt": "Dura uma fração de segundo, e cabe num canal da grossura de um dedo."
+},
+{
+"p": 54,
+"t": 674.48,
+"e": 681.52,
+"txt": "Mas toda tempestade de verão que passa pela sua cidade cria, por um instante, uma coisa mais quente que o Sol."
+},
+{
+"p": 55,
+"t": 682.34,
+"e": 687.0,
+"txt": "A superfície do Sol, a parte que a gente vê, está a uns cinco mil e quinhentos graus."
+},
+{
+"p": 55,
+"t": 687.58,
+"e": 689.92,
+"txt": "Nada que a gente conhece continua sólido ali."
+},
+{
+"p": 56,
+"t": 690.64,
+"e": 696.42,
+"txt": "E lá no centro, onde o Sol faz a luz que chega até aqui, são uns quinze milhões de graus."
+},
+{
+"p": 56,
+"t": 697.04,
+"e": 700.12,
+"txt": "É onde átomos de hidrogênio se esmagam e viram hélio."
+},
+{
+"p": 57,
+"t": 700.74,
+"e": 703.36,
+"txt": "Pra você, aqui o cronômetro nem liga."
+},
+{
+"p": 57,
+"t": 704.18,
+"e": 705.5,
+"txt": "E agora olha o placar."
+},
+{
+"p": 57,
+"t": 705.92,
+"e": 707.8,
+"txt": "Parece que chegamos ao fim do corredor."
+},
+{
+"p": 57,
+"t": 708.28,
+"e": 710.64,
+"txt": "Do frio do espaço ao centro do Sol."
+},
+{
+"p": 57,
+"t": 711.28,
+"e": 713.64,
+"txt": "Só que ainda faltam as duas últimas portas."
+},
+{
+"p": 57,
+"t": 714.04,
+"e": 716.96,
+"txt": "E as duas são mais extremas que tudo isso."
+},
+{
+"p": 58,
+"t": 717.68,
+"e": 720.44,
+"txt": "A natureza tem um lugar mais frio que o espaço."
+},
+{
+"p": 58,
+"t": 720.8,
+"e": 722.66,
+"txt": "E tem coisa mais quente que o Sol."
+},
+{
+"p": 58,
+"t": 723.26,
+"e": 726.12,
+"txt": "Mas os recordes de verdade não estão lá fora."
+},
+{
+"p": 59,
+"t": 727.02,
+"e": 729.12,
+"txt": "Primeiro, o frio da natureza."
+},
+{
+"p": 59,
+"t": 729.8,
+"e": 736.8,
+"txt": "A uns cinco mil anos-luz daqui, uma estrela velha está soltando gás tão rápido que ele se expande e esfria."
+},
+{
+"p": 59,
+"t": 737.4,
+"e": 739.46,
+"txt": "Como o spray que gela quando você aperta."
+},
+{
+"p": 59,
+"t": 740.18,
+"e": 744.52,
+"txt": "Ali, a temperatura cai pra mais ou menos um grau acima do zero absoluto."
+},
+{
+"p": 59,
+"t": 745.04,
+"e": 746.98,
+"txt": "Mais frio que o próprio espaço."
+},
+{
+"p": 59,
+"t": 747.48,
+"e": 750.02,
+"txt": "É o lugar natural mais frio que a gente conhece."
+},
+{
+"p": 60,
+"t": 750.64,
+"e": 751.62,
+"txt": "Mas não é o recorde."
+},
+{
+"p": 61,
+"t": 752.16,
+"e": 758.42,
+"txt": "Em Bremen, na Alemanha, tem uma torre de mais de cem metros feita pra largar experimentos em queda livre."
+},
+{
+"p": 61,
+"t": 759.0,
+"e": 764.54,
+"txt": "Em dois mil e vinte e um, cientistas resfriaram uma nuvem de átomos e soltaram tudo lá de cima."
+},
+{
+"p": 61,
+"t": 765.14,
+"e": 772.66,
+"txt": "Durante a queda, por uns dois segundos, aquela nuvem chegou a trinta e oito trilionésimos de grau acima do zero absoluto."
+},
+{
+"p": 62,
+"t": 773.22,
+"e": 773.88,
+"txt": "Pra ter ideia:"
+},
+{
+"p": 62,
+"t": 774.26,
+"e": 777.32,
+"txt": "o espaço profundo, perto disso, é quente."
+},
+{
+"p": 62,
+"t": 777.74,
+"e": 780.66,
+"txt": "Uns setenta bilhões de vezes mais quente."
+},
+{
+"p": 62,
+"t": 781.2,
+"e": 786.06,
+"txt": "E desde dois mil e dezoito, a Nasa mantém um laboratório assim dentro da Estação Espacial."
+},
+{
+"p": 62,
+"t": 786.66,
+"e": 794.46,
+"txt": "Lá em cima, a uns quatrocentos quilômetros da sua cabeça, existe uma caixa mais fria que qualquer lugar do universo que a gente conhece."
+},
+{
+"p": 63,
+"t": 795.18,
+"e": 796.18,
+"txt": "E o zero absoluto?"
+},
+{
+"p": 63,
+"t": 796.72,
+"e": 797.92,
+"txt": "Esse ninguém alcança."
+},
+{
+"p": 63,
+"t": 798.34,
+"e": 799.88,
+"txt": "As leis da física não deixam."
+},
+{
+"p": 63,
+"t": 800.38,
+"e": 803.64,
+"txt": "Dá pra chegar cada vez mais perto, mas nunca encostar."
+},
+{
+"p": 64,
+"t": 804.46,
+"e": 805.7,
+"txt": "Agora, o calor."
+},
+{
+"p": 64,
+"t": 806.24,
+"e": 814.16,
+"txt": "Na Coreia do Sul, um reator de fusão chamado Kêi Star segurou um gás a cem milhões de graus, por quarenta e oito segundos."
+},
+{
+"p": 64,
+"t": 814.58,
+"e": 817.72,
+"txt": "Quase sete vezes mais quente que o centro do Sol."
+},
+{
+"p": 65,
+"t": 818.4,
+"e": 819.78,
+"txt": "E por que o reator não derrete?"
+},
+{
+"p": 65,
+"t": 820.36,
+"e": 821.2,
+"txt": "Lembra da sauna?"
+},
+{
+"p": 65,
+"t": 821.58,
+"e": 823.82,
+"txt": "É o mesmo princípio, levado ao extremo:"
+},
+{
+"p": 65,
+"t": 824.38,
+"e": 831.02,
+"txt": "aquele gás é ralíssimo, e um campo magnético gigante segura ele no meio, sem encostar nas paredes."
+},
+{
+"p": 65,
+"t": 831.4,
+"e": 834.08,
+"txt": "Calor absurdo, quase nada encostando."
+},
+{
+"p": 66,
+"t": 834.88,
+"e": 835.86,
+"txt": "E a última porta."
+},
+{
+"p": 66,
+"t": 836.38,
+"e": 842.12,
+"txt": "Na fronteira entre a Suíça e a França, embaixo da terra, existe um anel de vinte e sete quilômetros:"
+},
+{
+"p": 66,
+"t": 842.54,
+"e": 845.08,
+"txt": "o maior acelerador de partículas do mundo."
+},
+{
+"p": 66,
+"t": 845.64,
+"e": 851.28,
+"txt": "Em dois mil e doze, ele jogou núcleos de chumbo uns contra os outros, quase na velocidade da luz."
+},
+{
+"p": 67,
+"t": 851.74,
+"e": 861.16,
+"txt": "Por uma fração de tempo menor do que qualquer coisa que você consiga imaginar, aquele choque criou uma sopa de matéria a cerca de cinco trilhões de graus."
+},
+{
+"p": 67,
+"t": 861.58,
+"e": 865.2,
+"txt": "Uns trezentos mil vezes mais quente que o centro do Sol."
+},
+{
+"p": 67,
+"t": 865.72,
+"e": 868.12,
+"txt": "É a temperatura mais alta já registrada."
+},
+{
+"p": 67,
+"t": 868.58,
+"e": 872.58,
+"txt": "E foi feita por pessoas, numa sala de controle, com café na mesa."
+},
+{
+"p": 68,
+"t": 873.3,
+"e": 874.06,
+"txt": "Fecha o placar."
+},
+{
+"p": 68,
+"t": 874.44,
+"e": 881.38,
+"txt": "O lugar mais frio e o lugar mais quente que a gente conhece no universo não estão em nenhuma estrela, em nenhuma nebulosa."
+},
+{
+"p": 68,
+"t": 881.72,
+"e": 884.04,
+"txt": "Estão aqui, em laboratórios na Terra."
+},
+{
+"p": 68,
+"t": 884.48,
+"e": 888.36,
+"txt": "Feitos por uma espécie que só aguenta cinco graus de variação por dentro."
+},
+{
+"p": 69,
+"t": 888.96,
+"e": 890.8,
+"txt": "E é aí que o corredor faz sentido."
+},
+{
+"p": 69,
+"t": 891.26,
+"e": 893.28,
+"txt": "A gente começou no número trinta e sete."
+},
+{
+"p": 69,
+"t": 893.74,
+"e": 896.46,
+"txt": "Andou até o frio do espaço e o centro do Sol."
+},
+{
+"p": 69,
+"t": 896.72,
+"e": 899.68,
+"txt": "E descobriu que nas duas pontas tem a mão humana."
+},
+{
+"p": 70,
+"t": 900.26,
+"e": 901.82,
+"txt": "Só que tem uma última conta."
+},
+{
+"p": 70,
+"t": 902.34,
+"e": 907.8,
+"txt": "A maior parte do universo está naquele frio do espaço, a menos duzentos e setenta."
+},
+{
+"p": 70,
+"t": 908.42,
+"e": 911.78,
+"txt": "As estrelas são ilhas quentes, longe umas das outras."
+},
+{
+"p": 70,
+"t": 912.34,
+"e": 917.76,
+"txt": "E a temperatura certa pra água ser líquida e pra um corpo funcionar é uma faixa minúscula."
+},
+{
+"p": 71,
+"t": 918.46,
+"e": 922.6,
+"txt": "O número mais raro deste vídeo não é o do Sol nem o do laboratório."
+},
+{
+"p": 71,
+"t": 923.08,
+"e": 923.68,
+"txt": "É o seu."
+},
+{
+"p": 71,
+"t": 924.28,
+"e": 925.52,
+"txt": "Trinta e sete graus."
+},
+{
+"p": 71,
+"t": 926.22,
+"e": 932.96,
+"txt": "Num universo que, quase inteiro, está perto do zero absoluto, você é uma chama pequena e teimosa."
+},
+{
+"p": 72,
+"t": 933.72,
+"e": 935.22,
+"txt": "E agora me conta nos comentários:"
+},
+{
+"p": 72,
+"t": 935.76,
+"e": 941.7,
+"txt": "se você tivesse que abrir uma única porta desse corredor e ficar um minuto lá dentro, qual você escolheria?"
+},
+{
+"p": 73,
+"t": 942.48,
+"e": 946.06,
+"txt": "E se esse vídeo te fez olhar diferente pro termômetro, se inscreve."
+},
+{
+"p": 73,
+"t": 946.44,
+"e": 948.28,
+"txt": "Tem mais escala pra gente atravessar."
+}
+]

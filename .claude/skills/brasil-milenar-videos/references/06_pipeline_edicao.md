@@ -63,3 +63,10 @@ Tudo é feito por código, sem editor de vídeo. Ambiente usado: Linux com ffmpe
 - **Ordem de camadas**: cenário de fundo (casas, margem) antes de personagens e onda — nunca desenhar cenário por cima de personagem.
 - **Não repetir em rótulo o que a palavra-chave já diz** (ex.: "TUDO EM MILHÕES DE ANOS" sob "MILHÕES DE ANOS, NÃO SÉCULOS").
 - **QA final obrigatório**: extrair 1 quadro em cada palavra-chave (+0,9 s), etiqueta (+1,5 s) e fonte (+2 s) do vídeo final, montar grades 4x4 e revisar todas antes de entregar.
+
+## Lições do vídeo 5 (temperatura) — pedido do dono, nov/2026
+- **Câmera sempre suave**: todo movimento usa easeInOutSine (sem tranco no começo nem no fim); zoom lento (≈3–5% por plano); nada de "pulo" de zoom entre dois planos da mesma cena — use fusão de 0,3–0,45 s quando a mesma cena muda de enquadramento; corte seco só entre cenas diferentes; clarão só nas 2–3 viradas grandes.
+- **Planos de no máximo 5 s** (checar a lista inteira: inclusive planos "contínuos" — dividir em enquadramentos com fusão).
+- **Pouco texto**: no máximo 1 elemento de texto por plano; carimbos em área livre definida por cena (nunca sobre personagem, número ou outro texto).
+- Imagens reais ≤ 10% do vídeo; o resto em 2D vetorial próprio (personagens com 6 expressões, frente e costas).
+- Fluxo: lista de cortes gerada por script a partir das frases alinhadas (`gerar_cortes.py`) → `cortes.json` → `Video.tsx` → storyboard em PDF com 1 frame real por plano (`montar_storyboard.py`).

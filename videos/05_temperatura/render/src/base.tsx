@@ -9,6 +9,9 @@ export const sm = (k: number) => k * k * (3 - 2 * k);
 export const K = (t: number, a: number, b: number) => sm(prog(t, a, b));
 export const eo = (k: number) => 1 - Math.pow(1 - k, 3); // ease-out
 export const KO = (t: number, a: number, b: number) => eo(prog(t, a, b));
+// easeInOutSine: o movimento de câmera mais suave (sem tranco no começo nem no fim)
+export const es = (k: number) => -(Math.cos(Math.PI * clamp01(k)) - 1) / 2;
+export const KS = (t: number, a: number, b: number) => es(prog(t, a, b));
 export const rnd = (i: number) => {
   const x = Math.sin(i * 9301 + 49297) * 233280;
   return x - Math.floor(x);
@@ -20,15 +23,16 @@ export const FR = {gelo: '#9FD8FF', gelo2: '#5FA8E0', geloEsc: '#123A5C', azul: 
 export const QU = {brasa: '#FF7A2F', fogo: '#FFB547', lava: '#E2452B', escuro: '#2A0E08'};
 
 // ---------- tomada: corte seco; o conteúdo recebe o tempo local ----------
-export const Shot: React.FC<{a: number; b: number; children: (lt: number, d: number) => React.ReactNode}> = ({a, b, children}) => {
+export const Shot: React.FC<{a: number; b: number; fade?: number; children: (lt: number, d: number) => React.ReactNode}> = ({a, b, fade = 0, children}) => {
   const t = useT();
-  if (t < a || t >= b) return null;
-  return <AbsoluteFill>{children(t - a, b - a)}</AbsoluteFill>;
+  if (t < a - fade || t >= b) return null;
+  const op = fade > 0 ? es(prog(t, a - fade, a)) : 1;
+  return <AbsoluteFill style={{opacity: op}}>{children(t - a, b - a)}</AbsoluteFill>;
 };
 
 // leve "punch-in" de câmera dentro da tomada
-export const Cam: React.FC<{lt: number; d: number; z0?: number; z1?: number; ox?: number; oy?: number; shake?: number; children: React.ReactNode}> = ({lt, d, z0 = 1, z1 = 1.06, ox = 50, oy = 50, shake = 0, children}) => {
-  const k = sm(clamp01(lt / d));
+export const Cam: React.FC<{lt: number; d: number; z0?: number; z1?: number; ox?: number; oy?: number; shake?: number; children: React.ReactNode}> = ({lt, d, z0 = 1, z1 = 1.035, ox = 50, oy = 50, shake = 0, children}) => {
+  const k = es(lt / d);
   const s = lerp(z0, z1, k);
   const sx = shake ? Math.sin(lt * 61) * shake * Math.exp(-lt * 5) : 0;
   const sy = shake ? Math.cos(lt * 47) * shake * Math.exp(-lt * 5) : 0;
