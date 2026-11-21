@@ -1,0 +1,3012 @@
+[
+{
+"a": 87.5,
+"b": 92.0,
+"c": "cozinha",
+"p": {
+"onda": 0.0,
+"close": 0.15,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Andar 1 — cozinha calma, régua no 2",
+"f": 0,
+"hud": true
+},
+{
+"a": 92.0,
+"b": 96.2,
+"c": "pontos",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "etq",
+"small": "ANDAR 1",
+"big": "O BRASIL QUE TREME SEM VOCÊ SABER",
+"t0": 0.2,
+"cor": "ouro"
+}
+],
+"d": "Mapa do Brasil: pontinhos de tremores acendendo",
+"f": 0,
+"hud": true
+},
+{
+"a": 96.2,
+"b": 99.933,
+"c": "pontos",
+"p": {
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chave",
+"txt": "≈ 2.450 TREMORES EM 10 ANOS",
+"t0": 0.6,
+"cor": "ouro"
+}
+],
+"d": "2.450 terremotos em 10 anos, quase todos imperceptíveis (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 99.933,
+"b": 103.667,
+"c": "pontos",
+"p": {
+"parte": 1,
+"partes": 3,
+"off": 3.7333333333333343
+},
+"o": [
+{
+"tipo": "chave",
+"txt": "≈ 2.450 TREMORES EM 10 ANOS",
+"t0": 0,
+"cor": "ouro",
+"ja": 1
+}
+],
+"d": "2.450 terremotos em 10 anos, quase todos imperceptíveis (2/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 103.667,
+"b": 107.4,
+"c": "pontos",
+"p": {
+"parte": 2,
+"partes": 3,
+"off": 7.466666666666669
+},
+"o": [],
+"d": "2.450 terremotos em 10 anos, quase todos imperceptíveis (3/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 107.4,
+"b": 112.267,
+"c": "estacao",
+"p": {
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "Estação sismográfica no mato, sensor enterrado escutando o chão (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 112.267,
+"b": 117.133,
+"c": "estacao",
+"p": {
+"parte": 1,
+"partes": 3,
+"off": 4.8666666666666645
+},
+"o": [],
+"d": "Estação sismográfica no mato, sensor enterrado escutando o chão (2/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 117.133,
+"b": 122.0,
+"c": "estacao",
+"p": {
+"parte": 2,
+"partes": 3,
+"off": 9.733333333333329
+},
+"o": [],
+"d": "Estação sismográfica no mato, sensor enterrado escutando o chão (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 122.0,
+"b": 125.867,
+"c": "pontos",
+"p": {
+"foco": "nordeste",
+"marca": "divisa",
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "Currais Novos (RN): três tremores de 1,6–1,7 (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 125.867,
+"b": 129.733,
+"c": "pontos",
+"p": {
+"foco": "nordeste",
+"marca": "divisa",
+"parte": 1,
+"partes": 3,
+"off": 3.866666666666665
+},
+"o": [],
+"d": "Currais Novos (RN): três tremores de 1,6–1,7 (2/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 129.733,
+"b": 133.6,
+"c": "pontos",
+"p": {
+"foco": "nordeste",
+"marca": "divisa",
+"parte": 2,
+"partes": 3,
+"off": 7.73333333333333
+},
+"o": [],
+"d": "Currais Novos (RN): três tremores de 1,6–1,7 (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 133.6,
+"b": 137.3,
+"c": "pontos",
+"p": {
+"foco": "nordeste",
+"marca": "bahia",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Bahia: tremor de 2,0; vizinhos na porta (1/2)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 137.3,
+"b": 141.0,
+"c": "pontos",
+"p": {
+"foco": "nordeste",
+"marca": "bahia",
+"parte": 1,
+"partes": 2,
+"off": 3.700000000000003
+},
+"o": [],
+"d": "Bahia: tremor de 2,0; vizinhos na porta (2/2)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 141.0,
+"b": 144.2,
+"c": "cozinha",
+"p": {
+"onda": 0.0,
+"close": 0.45,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "O copo: nem uma ondinha",
+"f": 0,
+"hud": true
+},
+{
+"a": 144.2,
+"b": 147.15,
+"c": "pontos",
+"p": {
+"foco": "nordeste",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Os pontinhos se juntam no Nordeste (1/2)",
+"f": 0,
+"hud": true
+},
+{
+"a": 147.15,
+"b": 150.1,
+"c": "pontos",
+"p": {
+"foco": "nordeste",
+"parte": 1,
+"partes": 2,
+"off": 2.950000000000003
+},
+"o": [],
+"d": "Os pontinhos se juntam no Nordeste (2/2)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 150.1,
+"b": 154.2,
+"c": "crosta",
+"p": {
+"parte": 0,
+"partes": 4,
+"off": 0.0
+},
+"o": [],
+"d": "Corte da crosta fina do Nordeste com falhas antigas reativando (1/4)",
+"f": 0,
+"hud": true
+},
+{
+"a": 154.2,
+"b": 158.3,
+"c": "crosta",
+"p": {
+"parte": 1,
+"partes": 4,
+"off": 4.100000000000001
+},
+"o": [],
+"d": "Corte da crosta fina do Nordeste com falhas antigas reativando (2/4)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 158.3,
+"b": 162.4,
+"c": "crosta",
+"p": {
+"parte": 2,
+"partes": 4,
+"off": 8.200000000000003
+},
+"o": [],
+"d": "Corte da crosta fina do Nordeste com falhas antigas reativando (3/4)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 162.4,
+"b": 166.5,
+"c": "crosta",
+"p": {
+"parte": 3,
+"partes": 4,
+"off": 12.300000000000004
+},
+"o": [],
+"d": "Corte da crosta fina do Nordeste com falhas antigas reativando (4/4)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 166.5,
+"b": 170.15,
+"c": "escada",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "A escada que engana (1/2)",
+"f": 0,
+"hud": true
+},
+{
+"a": 170.15,
+"b": 173.8,
+"c": "escada",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 3.6500000000000057
+},
+"o": [],
+"d": "A escada que engana (2/2)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 173.8,
+"b": 176.5,
+"c": "escada",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "chave",
+"txt": "CADA DEGRAU ≈ 32× MAIS ENERGIA",
+"t0": 0.3,
+"cor": "ouro"
+}
+],
+"d": "32× mais energia por degrau (1/2)",
+"f": 0,
+"hud": true
+},
+{
+"a": 176.5,
+"b": 179.2,
+"c": "escada",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 2.6999999999999886
+},
+"o": [
+{
+"tipo": "chave",
+"txt": "CADA DEGRAU ≈ 32× MAIS ENERGIA",
+"t0": 0,
+"cor": "ouro",
+"ja": 1
+}
+],
+"d": "32× mais energia por degrau (2/2)",
+"f": 0,
+"hud": true
+},
+{
+"a": 179.2,
+"b": 182.45,
+"c": "energia",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Um 3 contra um 6: ~30 mil vezes (1/2)",
+"f": 0,
+"hud": true
+},
+{
+"a": 182.45,
+"b": 185.7,
+"c": "energia",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 3.25
+},
+"o": [],
+"d": "Um 3 contra um 6: ~30 mil vezes (2/2)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 185.7,
+"b": 190.5,
+"c": "magint",
+"p": {
+"parte": 0,
+"partes": 4,
+"off": 0.0
+},
+"o": [],
+"d": "Magnitude (na origem) × intensidade (na sua casa) (1/4)",
+"f": 0,
+"hud": true
+},
+{
+"a": 190.5,
+"b": 195.3,
+"c": "magint",
+"p": {
+"parte": 1,
+"partes": 4,
+"off": 4.800000000000004
+},
+"o": [],
+"d": "Magnitude (na origem) × intensidade (na sua casa) (2/4)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 195.3,
+"b": 200.1,
+"c": "magint",
+"p": {
+"parte": 2,
+"partes": 4,
+"off": 9.600000000000009
+},
+"o": [],
+"d": "Magnitude (na origem) × intensidade (na sua casa) (3/4)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 200.1,
+"b": 204.9,
+"c": "magint",
+"p": {
+"parte": 3,
+"partes": 4,
+"off": 14.400000000000013
+},
+"o": [],
+"d": "Magnitude (na origem) × intensidade (na sua casa) (4/4)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 204.9,
+"b": 208.6,
+"c": "caminhao",
+"p": {
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "Degrau 3: como um caminhão passando; a janela vibra (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 208.6,
+"b": 212.3,
+"c": "caminhao",
+"p": {
+"parte": 1,
+"partes": 3,
+"off": 3.699999999999998
+},
+"o": [],
+"d": "Degrau 3: como um caminhão passando; a janela vibra (2/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 212.3,
+"b": 216.0,
+"c": "caminhao",
+"p": {
+"parte": 2,
+"partes": 3,
+"off": 7.399999999999996
+},
+"o": [],
+"d": "Degrau 3: como um caminhão passando; a janela vibra (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 216.0,
+"b": 218.6,
+"c": "cozinha",
+"p": {
+"onda": 0.35,
+"close": 0.45,
+"tremor": 0.04,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "O copo: círculos fininhos (1/2)",
+"f": 0,
+"hud": true
+},
+{
+"a": 218.6,
+"b": 221.2,
+"c": "cozinha",
+"p": {
+"onda": 0.35,
+"close": 0.45,
+"tremor": 0.04,
+"parte": 1,
+"partes": 2,
+"off": 2.5999999999999943
+},
+"o": [],
+"d": "O copo: círculos fininhos (2/2)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 221.2,
+"b": 225.967,
+"c": "cozinha",
+"p": {
+"onda": 0.7,
+"close": 0.0,
+"tremor": 0.16,
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "Degrau 4: louça chacoalha, quadro torto (1/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 225.967,
+"b": 230.733,
+"c": "cozinha",
+"p": {
+"onda": 0.7,
+"close": 0.0,
+"tremor": 0.16,
+"parte": 1,
+"partes": 3,
+"off": 4.76666666666667
+},
+"o": [],
+"d": "Degrau 4: louça chacoalha, quadro torto (2/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 230.733,
+"b": 235.5,
+"c": "cozinha",
+"p": {
+"onda": 0.7,
+"close": 0.0,
+"tremor": 0.16,
+"parte": 2,
+"partes": 3,
+"off": 9.53333333333334
+},
+"o": [],
+"d": "Degrau 4: louça chacoalha, quadro torto (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 235.5,
+"b": 239.8,
+"c": "povoado",
+"p": {
+"modo": "calmo",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "etq",
+"small": "ITACARAMBI (MG)",
+"big": "9 DE DEZEMBRO DE 2007",
+"t0": 1.6,
+"cor": "ouro"
+}
+],
+"d": "Caraíbas, povoado no norte de Minas (1/2)",
+"f": 0,
+"hud": true
+},
+{
+"a": 239.8,
+"b": 244.1,
+"c": "povoado",
+"p": {
+"modo": "calmo",
+"parte": 1,
+"partes": 2,
+"off": 4.299999999999997
+},
+"o": [],
+"d": "Caraíbas, povoado no norte de Minas (2/2)",
+"f": 0,
+"hud": true
+},
+{
+"a": 244.1,
+"b": 247.0,
+"c": "noticia",
+"p": {
+"img": "noticias/em.png",
+"fonte": "ESTADO DE MINAS",
+"data": "10/12/2017",
+"g0": 0.8,
+"fundo": "povoado",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Print do Estado de Minas: primeira morte registrada (1/2)",
+"f": 0,
+"hud": false
+},
+{
+"a": 247.0,
+"b": 249.9,
+"c": "noticia",
+"p": {
+"img": "noticias/em.png",
+"fonte": "ESTADO DE MINAS",
+"data": "10/12/2017",
+"g0": 0.8,
+"fundo": "povoado",
+"parte": 1,
+"partes": 2,
+"off": 2.9000000000000057
+},
+"o": [],
+"d": "Print do Estado de Minas: primeira morte registrada (2/2)",
+"f": 0,
+"hud": false
+},
+{
+"a": 249.9,
+"b": 253.267,
+"c": "adobe",
+"p": {
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "Parede de adobe sem amarração × parede com vigas (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 253.267,
+"b": 256.633,
+"c": "adobe",
+"p": {
+"parte": 1,
+"partes": 3,
+"off": 3.366666666666665
+},
+"o": [],
+"d": "Parede de adobe sem amarração × parede com vigas (2/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 256.633,
+"b": 260.0,
+"c": "adobe",
+"p": {
+"parte": 2,
+"partes": 3,
+"off": 6.73333333333333
+},
+"o": [],
+"d": "Parede de adobe sem amarração × parede com vigas (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 260.0,
+"b": 264.5,
+"c": "povoado",
+"p": {
+"modo": "desaba",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Silhueta de uma casa cedendo; poeira (sem pessoas) (1/2)",
+"f": 0,
+"hud": true
+},
+{
+"a": 264.5,
+"b": 269.0,
+"c": "povoado",
+"p": {
+"modo": "desaba",
+"parte": 1,
+"partes": 2,
+"off": 4.5
+},
+"o": [],
+"d": "Silhueta de uma casa cedendo; poeira (sem pessoas) (2/2)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 269.0,
+"b": 271.8,
+"c": "cartela",
+"p": {
+"txt": "QUEM MATOU FOI A CASA",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Quem matou foi a casa (1/2)",
+"f": 0,
+"hud": false
+},
+{
+"a": 271.8,
+"b": 274.6,
+"c": "cartela",
+"p": {
+"txt": "QUEM MATOU FOI A CASA",
+"parte": 1,
+"partes": 2,
+"off": 2.8000000000000114
+},
+"o": [],
+"d": "Quem matou foi a casa (2/2)",
+"f": 0,
+"hud": false
+},
+{
+"a": 274.6,
+"b": 279.3,
+"c": "joao",
+"p": {
+"modo": "noite",
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "etq",
+"small": "JOÃO CÂMARA (RN)",
+"big": "1986",
+"t0": 1.4,
+"cor": "ouro"
+}
+],
+"d": "João Câmara à noite, cidade tremendo há meses (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 279.3,
+"b": 284.0,
+"c": "joao",
+"p": {
+"modo": "noite",
+"parte": 1,
+"partes": 3,
+"off": 4.699999999999989
+},
+"o": [],
+"d": "João Câmara à noite, cidade tremendo há meses (2/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 284.0,
+"b": 288.7,
+"c": "joao",
+"p": {
+"modo": "noite",
+"parte": 2,
+"partes": 3,
+"off": 9.399999999999977
+},
+"o": [],
+"d": "João Câmara à noite, cidade tremendo há meses (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 288.7,
+"b": 293.05,
+"c": "joao",
+"p": {
+"modo": "falha",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "A falha de Samambaia brilhando no subsolo (1/2)",
+"f": 0,
+"hud": true
+},
+{
+"a": 293.05,
+"b": 297.4,
+"c": "joao",
+"p": {
+"modo": "falha",
+"parte": 1,
+"partes": 2,
+"off": 4.349999999999994
+},
+"o": [],
+"d": "A falha de Samambaia brilhando no subsolo (2/2)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 297.4,
+"b": 301.05,
+"c": "oficial",
+"p": {
+"img": "joao_camara_1986_intensidade.jpg",
+"titulo": "JOÃO CÂMARA · 30/11/1986 · 5,1",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Mapa oficial USGS do 5,1 (1/2)",
+"f": 0,
+"hud": false
+},
+{
+"a": 301.05,
+"b": 304.7,
+"c": "oficial",
+"p": {
+"img": "joao_camara_1986_intensidade.jpg",
+"titulo": "JOÃO CÂMARA · 30/11/1986 · 5,1",
+"parte": 1,
+"partes": 2,
+"off": 3.6500000000000057
+},
+"o": [],
+"d": "Mapa oficial USGS do 5,1 (2/2)",
+"f": 0,
+"hud": false
+},
+{
+"a": 304.7,
+"b": 308.9,
+"c": "joao",
+"p": {
+"modo": "dano",
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "Casas rachadas, ~4 mil danificadas; famílias dormindo na praça (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 308.9,
+"b": 313.1,
+"c": "joao",
+"p": {
+"modo": "dano",
+"parte": 1,
+"partes": 3,
+"off": 4.200000000000007
+},
+"o": [],
+"d": "Casas rachadas, ~4 mil danificadas; famílias dormindo na praça (2/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 313.1,
+"b": 317.3,
+"c": "joao",
+"p": {
+"modo": "dano",
+"parte": 2,
+"partes": 3,
+"off": 8.400000000000015
+},
+"o": [],
+"d": "Casas rachadas, ~4 mil danificadas; famílias dormindo na praça (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 317.3,
+"b": 320.2,
+"c": "copoquebra",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "O copo cai e quebra — E aquilo foi só um cinco",
+"f": 0,
+"hud": true
+},
+{
+"a": 320.2,
+"b": 323.7,
+"c": "serra",
+"p": {
+"treme": 0.0,
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "etq",
+"small": "SERRA DO TOMBADOR (MT)",
+"big": "JANEIRO DE 1955",
+"t0": 1.6,
+"cor": "ouro"
+}
+],
+"d": "Andar 2 — a serra no Mato Grosso (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 323.7,
+"b": 327.2,
+"c": "serra",
+"p": {
+"treme": 0.0,
+"parte": 1,
+"partes": 3,
+"off": 3.5
+},
+"o": [],
+"d": "Andar 2 — a serra no Mato Grosso (2/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 327.2,
+"b": 330.7,
+"c": "serra",
+"p": {
+"treme": 0.0,
+"parte": 2,
+"partes": 3,
+"off": 7.0
+},
+"o": [],
+"d": "Andar 2 — a serra no Mato Grosso (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 330.7,
+"b": 335.5,
+"c": "noticia",
+"p": {
+"img": "noticias/natgeo.png",
+"fonte": "NATIONAL GEOGRAPHIC BRASIL",
+"data": "2023",
+"g0": 0.5,
+"fundo": "serra",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Print Nat Geo: o maior sismo registrado até então",
+"f": 0,
+"hud": false
+},
+{
+"a": 335.5,
+"b": 340.35,
+"c": "serra",
+"p": {
+"treme": 0.6,
+"parte": 0,
+"partes": 4,
+"off": 0.0
+},
+"o": [],
+"d": "A mata tremendo, pássaros voando, ninguém para ver (1/4)",
+"f": 0,
+"hud": true
+},
+{
+"a": 340.35,
+"b": 345.2,
+"c": "serra",
+"p": {
+"treme": 0.6,
+"parte": 1,
+"partes": 4,
+"off": 4.849999999999994
+},
+"o": [],
+"d": "A mata tremendo, pássaros voando, ninguém para ver (2/4)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 345.2,
+"b": 350.05,
+"c": "serra",
+"p": {
+"treme": 0.6,
+"parte": 2,
+"partes": 4,
+"off": 9.699999999999989
+},
+"o": [],
+"d": "A mata tremendo, pássaros voando, ninguém para ver (3/4)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 350.05,
+"b": 354.9,
+"c": "serra",
+"p": {
+"treme": 0.6,
+"parte": 3,
+"partes": 4,
+"off": 14.549999999999983
+},
+"o": [],
+"d": "A mata tremendo, pássaros voando, ninguém para ver (4/4)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 354.9,
+"b": 359.567,
+"c": "acre",
+"p": {
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "etq",
+"small": "FRONTEIRA ACRE–PERU",
+"big": "9 DE NOVEMBRO DE 1963",
+"t0": 3.2,
+"cor": "perigo"
+}
+],
+"d": "O ponto no Acre: 7,6 (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 359.567,
+"b": 364.233,
+"c": "acre",
+"p": {
+"parte": 1,
+"partes": 3,
+"off": 4.666666666666667
+},
+"o": [],
+"d": "O ponto no Acre: 7,6 (2/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 364.233,
+"b": 368.9,
+"c": "acre",
+"p": {
+"parte": 2,
+"partes": 3,
+"off": 9.333333333333334
+},
+"o": [],
+"d": "O ponto no Acre: 7,6 (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 368.9,
+"b": 372.8,
+"c": "cozinha",
+"p": {
+"onda": 0.0,
+"close": 0.45,
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "Mais forte que a Colômbia… e o copo parado (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 372.8,
+"b": 376.7,
+"c": "cozinha",
+"p": {
+"onda": 0.0,
+"close": 0.45,
+"parte": 1,
+"partes": 3,
+"off": 3.900000000000015
+},
+"o": [],
+"d": "Mais forte que a Colômbia… e o copo parado (2/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 376.7,
+"b": 380.6,
+"c": "cozinha",
+"p": {
+"onda": 0.0,
+"close": 0.45,
+"parte": 2,
+"partes": 3,
+"off": 7.80000000000003
+},
+"o": [
+{
+"tipo": "chave",
+"txt": "E QUASE NINGUÉM SENTIU",
+"t0": 1.0999999999999703,
+"cor": "calmo"
+}
+],
+"d": "Mais forte que a Colômbia… e o copo parado (3/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 380.6,
+"b": 385.4,
+"c": "nazca",
+"p": {
+"modo": "placa",
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "Corte: a placa de Nazca mergulhando sob a América do Sul (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 385.4,
+"b": 390.2,
+"c": "nazca",
+"p": {
+"modo": "placa",
+"parte": 1,
+"partes": 3,
+"off": 4.799999999999993
+},
+"o": [],
+"d": "Corte: a placa de Nazca mergulhando sob a América do Sul (2/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 390.2,
+"b": 395.0,
+"c": "nazca",
+"p": {
+"modo": "placa",
+"parte": 2,
+"partes": 3,
+"off": 9.599999999999985
+},
+"o": [],
+"d": "Corte: a placa de Nazca mergulhando sob a América do Sul (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 395.0,
+"b": 399.05,
+"c": "nazca",
+"p": {
+"modo": "ondas",
+"parte": 0,
+"partes": 4,
+"off": 0.0
+},
+"o": [],
+"d": "A placa racha a ~600 km; ondas chegam fracas (1/4)",
+"f": 0,
+"hud": true
+},
+{
+"a": 399.05,
+"b": 403.1,
+"c": "nazca",
+"p": {
+"modo": "ondas",
+"parte": 1,
+"partes": 4,
+"off": 4.049999999999997
+},
+"o": [],
+"d": "A placa racha a ~600 km; ondas chegam fracas (2/4)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 403.1,
+"b": 407.15,
+"c": "nazca",
+"p": {
+"modo": "ondas",
+"parte": 2,
+"partes": 4,
+"off": 8.099999999999994
+},
+"o": [],
+"d": "A placa racha a ~600 km; ondas chegam fracas (3/4)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 407.15,
+"b": 411.2,
+"c": "nazca",
+"p": {
+"modo": "ondas",
+"parte": 3,
+"partes": 4,
+"off": 12.149999999999991
+},
+"o": [],
+"d": "A placa racha a ~600 km; ondas chegam fracas (4/4)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 411.2,
+"b": 414.4,
+"c": "oficial",
+"p": {
+"img": "acre_2024_intensidade.jpg",
+"titulo": "TARAUACÁ · 20/01/2024 · 6,6",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Mapa oficial USGS do 6,6 de 2024 (1/2)",
+"f": 0,
+"hud": false
+},
+{
+"a": 414.4,
+"b": 417.6,
+"c": "oficial",
+"p": {
+"img": "acre_2024_intensidade.jpg",
+"titulo": "TARAUACÁ · 20/01/2024 · 6,6",
+"parte": 1,
+"partes": 2,
+"off": 3.200000000000017
+},
+"o": [],
+"d": "Mapa oficial USGS do 6,6 de 2024 (2/2)",
+"f": 0,
+"hud": false
+},
+{
+"a": 417.6,
+"b": 421.35,
+"c": "noticia",
+"p": {
+"img": "noticias/agenciabrasil.png",
+"fonte": "AGÊNCIA BRASIL",
+"data": "20/01/2024",
+"g0": 0.5,
+"fundo": "mapa",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Print Agência Brasil: 614,5 km; dificilmente sentido (1/2)",
+"f": 0,
+"hud": false
+},
+{
+"a": 421.35,
+"b": 425.1,
+"c": "noticia",
+"p": {
+"img": "noticias/agenciabrasil.png",
+"fonte": "AGÊNCIA BRASIL",
+"data": "20/01/2024",
+"g0": 0.5,
+"fundo": "mapa",
+"parte": 1,
+"partes": 2,
+"off": 3.75
+},
+"o": [],
+"d": "Print Agência Brasil: 614,5 km; dificilmente sentido (2/2)",
+"f": 0,
+"hud": false
+},
+{
+"a": 425.1,
+"b": 428.3,
+"c": "cozinha",
+"p": {
+"onda": 0.0,
+"close": 0.45,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "O copo em Tarauacá continua parado",
+"f": 0,
+"hud": true
+},
+{
+"a": 428.3,
+"b": 433.3,
+"c": "cta",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "CTA: inscreva-se; daqui pra cima fica perigoso (1/2)",
+"f": 0,
+"hud": false
+},
+{
+"a": 433.3,
+"b": 438.3,
+"c": "cta",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 5.0
+},
+"o": [],
+"d": "CTA: inscreva-se; daqui pra cima fica perigoso (2/2)",
+"f": 0.35,
+"hud": false
+},
+{
+"a": 438.3,
+"b": 442.3,
+"c": "celular",
+"p": {
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "A mensagem do megaterremoto no celular (1/3)",
+"f": 0,
+"hud": false
+},
+{
+"a": 442.3,
+"b": 446.3,
+"c": "celular",
+"p": {
+"parte": 1,
+"partes": 3,
+"off": 4.0
+},
+"o": [],
+"d": "A mensagem do megaterremoto no celular (2/3)",
+"f": 0.35,
+"hud": false
+},
+{
+"a": 446.3,
+"b": 450.3,
+"c": "celular",
+"p": {
+"parte": 2,
+"partes": 3,
+"off": 8.0
+},
+"o": [],
+"d": "A mensagem do megaterremoto no celular (3/3)",
+"f": 0.35,
+"hud": false
+},
+{
+"a": 450.3,
+"b": 452.85,
+"c": "calendario",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Setembro passando, nada acontece (1/2)",
+"f": 0,
+"hud": false
+},
+{
+"a": 452.85,
+"b": 455.4,
+"c": "calendario",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 2.549999999999983
+},
+"o": [],
+"d": "Setembro passando, nada acontece (2/2)",
+"f": 0.35,
+"hud": false
+},
+{
+"a": 455.4,
+"b": 459.367,
+"c": "noticia",
+"p": {
+"img": "noticias/aosfatos.png",
+"fonte": "AOS FATOS",
+"data": "2026",
+"g0": 0.6,
+"fundo": "mapa",
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "carimbo",
+"txt": "BOATO",
+"t0": 3.5,
+"cor": "perigo",
+"x": 1560,
+"y": 200
+}
+],
+"d": "Print Aos Fatos + carimbo BOATO (1/3)",
+"f": 0,
+"hud": false
+},
+{
+"a": 459.367,
+"b": 463.333,
+"c": "noticia",
+"p": {
+"img": "noticias/aosfatos.png",
+"fonte": "AOS FATOS",
+"data": "2026",
+"g0": 0.6,
+"fundo": "mapa",
+"parte": 1,
+"partes": 3,
+"off": 3.966666666666678
+},
+"o": [
+{
+"tipo": "carimbo",
+"txt": "BOATO",
+"t0": 0,
+"cor": "perigo",
+"x": 1560,
+"y": 200,
+"ja": 1
+}
+],
+"d": "Print Aos Fatos + carimbo BOATO (2/3)",
+"f": 0,
+"hud": false
+},
+{
+"a": 463.333,
+"b": 467.3,
+"c": "noticia",
+"p": {
+"img": "noticias/aosfatos.png",
+"fonte": "AOS FATOS",
+"data": "2026",
+"g0": 0.6,
+"fundo": "mapa",
+"parte": 2,
+"partes": 3,
+"off": 7.933333333333356
+},
+"o": [],
+"d": "Print Aos Fatos + carimbo BOATO (3/3)",
+"f": 0,
+"hud": false
+},
+{
+"a": 467.3,
+"b": 470.65,
+"c": "borda",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "etq",
+"small": "ANDAR 3",
+"big": "OS DE FORA QUE BALANÇAM O BRASIL",
+"t0": 0.2,
+"cor": "ouro"
+}
+],
+"d": "A borda oeste da América do Sul acende (1/2)",
+"f": 0,
+"hud": true
+},
+{
+"a": 470.65,
+"b": 474.0,
+"c": "borda",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 3.3499999999999943
+},
+"o": [],
+"d": "A borda oeste da América do Sul acende (2/2)",
+"f": 0,
+"hud": true
+},
+{
+"a": 474.0,
+"b": 477.8,
+"c": "cozinha",
+"p": {
+"onda": 1.0,
+"close": 0.0,
+"tremor": 0.5,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Perto de um 7: móveis andam, paredes racham (1/2)",
+"f": 0,
+"hud": true
+},
+{
+"a": 477.8,
+"b": 481.6,
+"c": "cozinha",
+"p": {
+"onda": 1.0,
+"close": 0.0,
+"tremor": 0.5,
+"parte": 1,
+"partes": 2,
+"off": 3.8000000000000114
+},
+"o": [],
+"d": "Perto de um 7: móveis andam, paredes racham (2/2)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 481.6,
+"b": 485.433,
+"c": "venezuela",
+"p": {
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "Venezuela 7,2/7,5 e Colômbia 7,4 no mapa (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 485.433,
+"b": 489.267,
+"c": "venezuela",
+"p": {
+"parte": 1,
+"partes": 3,
+"off": 3.8333333333333335
+},
+"o": [],
+"d": "Venezuela 7,2/7,5 e Colômbia 7,4 no mapa (2/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 489.267,
+"b": 493.1,
+"c": "venezuela",
+"p": {
+"parte": 2,
+"partes": 3,
+"off": 7.666666666666667
+},
+"o": [],
+"d": "Venezuela 7,2/7,5 e Colômbia 7,4 no mapa (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 493.1,
+"b": 496.65,
+"c": "prediocasa",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Quem sentiu mais: os andares altos (1/2)",
+"f": 0,
+"hud": true
+},
+{
+"a": 496.65,
+"b": 500.2,
+"c": "prediocasa",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 3.549999999999983
+},
+"o": [],
+"d": "Quem sentiu mais: os andares altos (2/2)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 500.2,
+"b": 504.28,
+"c": "prediocasa",
+"p": {
+"parte": 0,
+"partes": 5,
+"off": 0.0
+},
+"o": [],
+"d": "Ondas lentas; prédio balança como pêndulo; casa térrea quase nada (1/5)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 504.28,
+"b": 508.36,
+"c": "prediocasa",
+"p": {
+"parte": 1,
+"partes": 5,
+"off": 4.080000000000007
+},
+"o": [],
+"d": "Ondas lentas; prédio balança como pêndulo; casa térrea quase nada (2/5)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 508.36,
+"b": 512.44,
+"c": "prediocasa",
+"p": {
+"parte": 2,
+"partes": 5,
+"off": 8.160000000000014
+},
+"o": [],
+"d": "Ondas lentas; prédio balança como pêndulo; casa térrea quase nada (3/5)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 512.44,
+"b": 516.52,
+"c": "prediocasa",
+"p": {
+"parte": 3,
+"partes": 5,
+"off": 12.240000000000022
+},
+"o": [],
+"d": "Ondas lentas; prédio balança como pêndulo; casa térrea quase nada (4/5)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 516.52,
+"b": 520.6,
+"c": "prediocasa",
+"p": {
+"parte": 4,
+"partes": 5,
+"off": 16.32000000000003
+},
+"o": [],
+"d": "Ondas lentas; prédio balança como pêndulo; casa térrea quase nada (5/5)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 520.6,
+"b": 524.067,
+"c": "nazca",
+"p": {
+"modo": "bolivia",
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "etq",
+"small": "BOLÍVIA",
+"big": "9 DE JUNHO DE 1994 · 8,2",
+"t0": 1.4,
+"cor": "perigo"
+}
+],
+"d": "Bolívia 1994: a mais de 600 km de profundidade (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 524.067,
+"b": 527.533,
+"c": "nazca",
+"p": {
+"modo": "bolivia",
+"parte": 1,
+"partes": 3,
+"off": 3.4666666666666592
+},
+"o": [],
+"d": "Bolívia 1994: a mais de 600 km de profundidade (2/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 527.533,
+"b": 531.0,
+"c": "nazca",
+"p": {
+"modo": "bolivia",
+"parte": 2,
+"partes": 3,
+"off": 6.9333333333333185
+},
+"o": [],
+"d": "Bolívia 1994: a mais de 600 km de profundidade (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 531.0,
+"b": 535.733,
+"c": "globo",
+"p": {
+"lon": -67.5,
+"lat": -13.8,
+"alvos": [
+[
+"SÃO PAULO",
+-46.6,
+-23.5
+],
+[
+"TORONTO",
+-79.4,
+43.7
+]
+],
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "As ondas no globo chegam a São Paulo e Toronto (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 535.733,
+"b": 540.467,
+"c": "globo",
+"p": {
+"lon": -67.5,
+"lat": -13.8,
+"alvos": [
+[
+"SÃO PAULO",
+-46.6,
+-23.5
+],
+[
+"TORONTO",
+-79.4,
+43.7
+]
+],
+"parte": 1,
+"partes": 3,
+"off": 4.7333333333333485
+},
+"o": [],
+"d": "As ondas no globo chegam a São Paulo e Toronto (2/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 540.467,
+"b": 545.2,
+"c": "globo",
+"p": {
+"lon": -67.5,
+"lat": -13.8,
+"alvos": [
+[
+"SÃO PAULO",
+-46.6,
+-23.5
+],
+[
+"TORONTO",
+-79.4,
+43.7
+]
+],
+"parte": 2,
+"partes": 3,
+"off": 9.466666666666697
+},
+"o": [],
+"d": "As ondas no globo chegam a São Paulo e Toronto (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 545.2,
+"b": 549.0,
+"c": "oficial",
+"p": {
+"img": "chile_2015_intensidade.jpg",
+"titulo": "CHILE · 16/09/2015 · 8,3",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Mapa oficial USGS do Chile 2015 (1/2)",
+"f": 0,
+"hud": false
+},
+{
+"a": 549.0,
+"b": 552.8,
+"c": "oficial",
+"p": {
+"img": "chile_2015_intensidade.jpg",
+"titulo": "CHILE · 16/09/2015 · 8,3",
+"parte": 1,
+"partes": 2,
+"off": 3.7999999999999545
+},
+"o": [],
+"d": "Mapa oficial USGS do Chile 2015 (2/2)",
+"f": 0,
+"hud": false
+},
+{
+"a": 552.8,
+"b": 556.9,
+"c": "paulista",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Avenida Paulista à noite: prédios esvaziados (1/2)",
+"f": 0,
+"hud": true
+},
+{
+"a": 556.9,
+"b": 561.0,
+"c": "paulista",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 4.100000000000023
+},
+"o": [],
+"d": "Avenida Paulista à noite: prédios esvaziados (2/2)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 561.0,
+"b": 564.1,
+"c": "noticia",
+"p": {
+"img": "noticias/catraca.png",
+"fonte": "CATRACA LIVRE",
+"data": "17/09/2015",
+"g0": 0.3,
+"fundo": "paulista",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "Print Catraca Livre: prédios evacuados",
+"f": 0,
+"hud": false
+},
+{
+"a": 564.1,
+"b": 567.4,
+"c": "paulista",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "etq",
+"small": "CHILE · 2010",
+"big": "8,8 SENTIDO EM SÃO PAULO",
+"t0": 0.4,
+"cor": "ouro"
+}
+],
+"d": "Chile 2010: sentido em SP de madrugada (1/2)",
+"f": 0,
+"hud": true
+},
+{
+"a": 567.4,
+"b": 570.7,
+"c": "paulista",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 3.3000000000000114
+},
+"o": [],
+"d": "Chile 2010: sentido em SP de madrugada (2/2)",
+"f": 0,
+"hud": true
+},
+{
+"a": 570.7,
+"b": 574.1,
+"c": "cozinha",
+"p": {
+"onda": 0.0,
+"close": 0.45,
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "No térreo, o copo quieto",
+"f": 0,
+"hud": true
+},
+{
+"a": 574.1,
+"b": 577.6,
+"c": "apto",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "No 30º andar, a água balança devagar",
+"f": 0,
+"hud": true
+},
+{
+"a": 577.6,
+"b": 582.0,
+"c": "lisboa",
+"p": {
+"modo": "calmo",
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [
+{
+"tipo": "etq",
+"small": "LISBOA",
+"big": "1º DE NOVEMBRO DE 1755",
+"t0": 2.8,
+"cor": "perigo"
+}
+],
+"d": "Lisboa 1755 (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 582.0,
+"b": 586.4,
+"c": "lisboa",
+"p": {
+"modo": "calmo",
+"parte": 1,
+"partes": 3,
+"off": 4.399999999999977
+},
+"o": [],
+"d": "Lisboa 1755 (2/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 586.4,
+"b": 590.8,
+"c": "lisboa",
+"p": {
+"modo": "calmo",
+"parte": 2,
+"partes": 3,
+"off": 8.799999999999955
+},
+"o": [],
+"d": "Lisboa 1755 (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 590.8,
+"b": 595.2,
+"c": "lisboa",
+"p": {
+"modo": "desaba",
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "A cidade desaba, pega fogo, o mar invade",
+"f": 0,
+"hud": true
+},
+{
+"a": 595.2,
+"b": 600.033,
+"c": "atlantico",
+"p": {
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "A onda atravessa o Atlântico até o Nordeste (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 600.033,
+"b": 604.867,
+"c": "atlantico",
+"p": {
+"parte": 1,
+"partes": 3,
+"off": 4.833333333333333
+},
+"o": [],
+"d": "A onda atravessa o Atlântico até o Nordeste (2/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 604.867,
+"b": 609.7,
+"c": "atlantico",
+"p": {
+"parte": 2,
+"partes": 3,
+"off": 9.666666666666666
+},
+"o": [],
+"d": "A onda atravessa o Atlântico até o Nordeste (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 609.7,
+"b": 613.233,
+"c": "tamandare",
+"p": {
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "Tamandaré: o mar avançando entre os coqueiros (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 613.233,
+"b": 616.767,
+"c": "tamandare",
+"p": {
+"parte": 1,
+"partes": 3,
+"off": 3.533333333333303
+},
+"o": [],
+"d": "Tamandaré: o mar avançando entre os coqueiros (2/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 616.767,
+"b": 620.3,
+"c": "tamandare",
+"p": {
+"parte": 2,
+"partes": 3,
+"off": 7.066666666666606
+},
+"o": [],
+"d": "Tamandaré: o mar avançando entre os coqueiros (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 620.3,
+"b": 623.95,
+"c": "cartela",
+"p": {
+"txt": "CHEGOU PELO MAR",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "O maior susto chegou pelo mar (1/2)",
+"f": 0,
+"hud": false
+},
+{
+"a": 623.95,
+"b": 627.6,
+"c": "cartela",
+"p": {
+"txt": "CHEGOU PELO MAR",
+"parte": 1,
+"partes": 2,
+"off": 3.650000000000034
+},
+"o": [],
+"d": "O maior susto chegou pelo mar (2/2)",
+"f": 0,
+"hud": false
+},
+{
+"a": 627.6,
+"b": 630.7,
+"c": "numero",
+"p": {
+"txt": "9,5",
+"sub": "VALDIVIA, CHILE · 22/05/1960",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Último degrau: 9,5 (1/2)",
+"f": 0,
+"hud": false
+},
+{
+"a": 630.7,
+"b": 633.8,
+"c": "numero",
+"p": {
+"txt": "9,5",
+"sub": "VALDIVIA, CHILE · 22/05/1960",
+"parte": 1,
+"partes": 2,
+"off": 3.099999999999966
+},
+"o": [],
+"d": "Último degrau: 9,5 (2/2)",
+"f": 0,
+"hud": false
+},
+{
+"a": 633.8,
+"b": 636.5,
+"c": "foto",
+"p": {
+"img": "valdivia_1960_foto.jpg",
+"legenda": "VALDIVIA, CHILE · 1960",
+"credito": "FOTO: USGS (DOMÍNIO PÚBLICO)",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "Foto histórica de Valdivia destruída (1/2)",
+"f": 0,
+"hud": false
+},
+{
+"a": 636.5,
+"b": 639.2,
+"c": "foto",
+"p": {
+"img": "valdivia_1960_foto.jpg",
+"legenda": "VALDIVIA, CHILE · 1960",
+"credito": "FOTO: USGS (DOMÍNIO PÚBLICO)",
+"parte": 1,
+"partes": 2,
+"off": 2.7000000000000455
+},
+"o": [],
+"d": "Foto histórica de Valdivia destruída (2/2)",
+"f": 0,
+"hud": false
+},
+{
+"a": 639.2,
+"b": 644.1,
+"c": "cubos",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "~1.000× a energia de um 7,5",
+"f": 0,
+"hud": true
+},
+{
+"a": 644.1,
+"b": 647.867,
+"c": "oficial",
+"p": {
+"img": "valdivia_1960_intensidade.jpg",
+"titulo": "VALDIVIA · 1960 · 9,5",
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "Ruptura de ~1.000 km; 10 minutos; tsunami no Pacífico (1/3)",
+"f": 0,
+"hud": false
+},
+{
+"a": 647.867,
+"b": 651.633,
+"c": "oficial",
+"p": {
+"img": "valdivia_1960_intensidade.jpg",
+"titulo": "VALDIVIA · 1960 · 9,5",
+"parte": 1,
+"partes": 3,
+"off": 3.7666666666666515
+},
+"o": [],
+"d": "Ruptura de ~1.000 km; 10 minutos; tsunami no Pacífico (2/3)",
+"f": 0,
+"hud": false
+},
+{
+"a": 651.633,
+"b": 655.4,
+"c": "oficial",
+"p": {
+"img": "valdivia_1960_intensidade.jpg",
+"titulo": "VALDIVIA · 1960 · 9,5",
+"parte": 2,
+"partes": 3,
+"off": 7.533333333333303
+},
+"o": [],
+"d": "Ruptura de ~1.000 km; 10 minutos; tsunami no Pacífico (3/3)",
+"f": 0,
+"hud": false
+},
+{
+"a": 655.4,
+"b": 660.35,
+"c": "sino",
+"p": {
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "A Terra vibrando como um sino (1/2)",
+"f": 0,
+"hud": true
+},
+{
+"a": 660.35,
+"b": 665.3,
+"c": "sino",
+"p": {
+"parte": 1,
+"partes": 2,
+"off": 4.949999999999989
+},
+"o": [],
+"d": "A Terra vibrando como um sino (2/2)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 665.3,
+"b": 669.033,
+"c": "rasgo",
+"p": {
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "HIPÓTESE: o rasgo de 1.000 km entre São Paulo e Brasília (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 669.033,
+"b": 672.767,
+"c": "rasgo",
+"p": {
+"parte": 1,
+"partes": 3,
+"off": 3.7333333333333485
+},
+"o": [],
+"d": "HIPÓTESE: o rasgo de 1.000 km entre São Paulo e Brasília (2/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 672.767,
+"b": 676.5,
+"c": "rasgo",
+"p": {
+"parte": 2,
+"partes": 3,
+"off": 7.466666666666697
+},
+"o": [],
+"d": "HIPÓTESE: o rasgo de 1.000 km entre São Paulo e Brasília (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 676.5,
+"b": 681.333,
+"c": "cozinha",
+"p": {
+"onda": 1.0,
+"close": 0.0,
+"tremor": 0.85,
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "Em cima da falha: ninguém fica de pé (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 681.333,
+"b": 686.167,
+"c": "cozinha",
+"p": {
+"onda": 1.0,
+"close": 0.0,
+"tremor": 0.85,
+"parte": 1,
+"partes": 3,
+"off": 4.833333333333333
+},
+"o": [],
+"d": "Em cima da falha: ninguém fica de pé (2/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 686.167,
+"b": 691.0,
+"c": "cozinha",
+"p": {
+"onda": 1.0,
+"close": 0.0,
+"tremor": 0.85,
+"parte": 2,
+"partes": 3,
+"off": 9.666666666666666
+},
+"o": [],
+"d": "Em cima da falha: ninguém fica de pé (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 691.0,
+"b": 695.3,
+"c": "rasgo",
+"p": {
+"aneis": 1,
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "Anéis: 100 km, 500 km, 1.000 km (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 695.3,
+"b": 699.6,
+"c": "rasgo",
+"p": {
+"aneis": 1,
+"parte": 1,
+"partes": 3,
+"off": 4.299999999999993
+},
+"o": [],
+"d": "Anéis: 100 km, 500 km, 1.000 km (2/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 699.6,
+"b": 703.9,
+"c": "rasgo",
+"p": {
+"aneis": 1,
+"parte": 2,
+"partes": 3,
+"off": 8.599999999999985
+},
+"o": [],
+"d": "Anéis: 100 km, 500 km, 1.000 km (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 703.9,
+"b": 708.0,
+"c": "chile",
+"p": {
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "Prédio antissísmico do Chile × prédio comum (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 708.0,
+"b": 712.1,
+"c": "chile",
+"p": {
+"parte": 1,
+"partes": 3,
+"off": 4.100000000000023
+},
+"o": [],
+"d": "Prédio antissísmico do Chile × prédio comum (2/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 712.1,
+"b": 716.2,
+"c": "chile",
+"p": {
+"parte": 2,
+"partes": 3,
+"off": 8.200000000000045
+},
+"o": [],
+"d": "Prédio antissísmico do Chile × prédio comum (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 716.2,
+"b": 718.75,
+"c": "cozinha",
+"p": {
+"onda": 0.0,
+"close": 0.12,
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "A resposta que eu prometi (régua no 9,5) (1/2)",
+"f": 0,
+"hud": true
+},
+{
+"a": 718.75,
+"b": 721.3,
+"c": "cozinha",
+"p": {
+"onda": 0.0,
+"close": 0.12,
+"parte": 1,
+"partes": 2,
+"off": 2.5499999999999545
+},
+"o": [],
+"d": "A resposta que eu prometi (régua no 9,5) (2/2)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 721.3,
+"b": 722.0,
+"c": "nao",
+"p": {
+"parte": 0,
+"partes": 1,
+"off": 0.0
+},
+"o": [],
+"d": "NÃO.",
+"f": 0,
+"hud": false
+},
+{
+"a": 722.0,
+"b": 726.1,
+"c": "globoplacas",
+"p": {
+"centro": [
+-80,
+15
+],
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "Bordas onde nascem os gigantes: Chile, Japão, Alasca (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 726.1,
+"b": 730.2,
+"c": "globoplacas",
+"p": {
+"centro": [
+-80,
+15
+],
+"parte": 1,
+"partes": 3,
+"off": 4.0999999999999845
+},
+"o": [],
+"d": "Bordas onde nascem os gigantes: Chile, Japão, Alasca (2/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 730.2,
+"b": 734.3,
+"c": "globoplacas",
+"p": {
+"centro": [
+-80,
+15
+],
+"parte": 2,
+"partes": 3,
+"off": 8.199999999999969
+},
+"o": [],
+"d": "Bordas onde nascem os gigantes: Chile, Japão, Alasca (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 734.3,
+"b": 737.933,
+"c": "globoplacas",
+"p": {
+"centro": [
+-45,
+-15
+],
+"brasil": 1,
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "O Brasil no meio da placa; Andes e cordilheira do Atlântico (1/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 737.933,
+"b": 741.567,
+"c": "globoplacas",
+"p": {
+"centro": [
+-45,
+-15
+],
+"brasil": 1,
+"parte": 1,
+"partes": 3,
+"off": 3.6333333333333635
+},
+"o": [],
+"d": "O Brasil no meio da placa; Andes e cordilheira do Atlântico (2/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 741.567,
+"b": 745.2,
+"c": "globoplacas",
+"p": {
+"centro": [
+-45,
+-15
+],
+"brasil": 1,
+"parte": 2,
+"partes": 3,
+"off": 7.266666666666727
+},
+"o": [],
+"d": "O Brasil no meio da placa; Andes e cordilheira do Atlântico (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 745.2,
+"b": 749.7,
+"c": "rachaduras",
+"p": {
+"parte": 0,
+"partes": 5,
+"off": 0.0
+},
+"o": [],
+"d": "Rachaduras antigas: João Câmara, Itacarambi, Tombador; máximo ~7, raro (1/5)",
+"f": 0,
+"hud": true
+},
+{
+"a": 749.7,
+"b": 754.2,
+"c": "rachaduras",
+"p": {
+"parte": 1,
+"partes": 5,
+"off": 4.5
+},
+"o": [],
+"d": "Rachaduras antigas: João Câmara, Itacarambi, Tombador; máximo ~7, raro (2/5)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 754.2,
+"b": 758.7,
+"c": "rachaduras",
+"p": {
+"parte": 2,
+"partes": 5,
+"off": 9.0
+},
+"o": [],
+"d": "Rachaduras antigas: João Câmara, Itacarambi, Tombador; máximo ~7, raro (3/5)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 758.7,
+"b": 763.2,
+"c": "rachaduras",
+"p": {
+"parte": 3,
+"partes": 5,
+"off": 13.5
+},
+"o": [],
+"d": "Rachaduras antigas: João Câmara, Itacarambi, Tombador; máximo ~7, raro (4/5)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 763.2,
+"b": 767.7,
+"c": "rachaduras",
+"p": {
+"parte": 4,
+"partes": 5,
+"off": 18.0
+},
+"o": [],
+"d": "Rachaduras antigas: João Câmara, Itacarambi, Tombador; máximo ~7, raro (5/5)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 767.7,
+"b": 772.175,
+"c": "seguranca",
+"p": {
+"parte": 0,
+"partes": 4,
+"off": 0.0
+},
+"o": [],
+"d": "Abaixa, protege, segura; escada, nunca elevador (1/4)",
+"f": 0,
+"hud": false
+},
+{
+"a": 772.175,
+"b": 776.65,
+"c": "seguranca",
+"p": {
+"parte": 1,
+"partes": 4,
+"off": 4.474999999999994
+},
+"o": [],
+"d": "Abaixa, protege, segura; escada, nunca elevador (2/4)",
+"f": 0.35,
+"hud": false
+},
+{
+"a": 776.65,
+"b": 781.125,
+"c": "seguranca",
+"p": {
+"parte": 2,
+"partes": 4,
+"off": 8.949999999999989
+},
+"o": [],
+"d": "Abaixa, protege, segura; escada, nunca elevador (3/4)",
+"f": 0.35,
+"hud": false
+},
+{
+"a": 781.125,
+"b": 785.6,
+"c": "seguranca",
+"p": {
+"parte": 3,
+"partes": 4,
+"off": 13.424999999999983
+},
+"o": [],
+"d": "Abaixa, protege, segura; escada, nunca elevador (4/4)",
+"f": 0.35,
+"hud": false
+},
+{
+"a": 785.6,
+"b": 790.0,
+"c": "cozinha",
+"p": {
+"onda": 0.0,
+"close": 0.3,
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "O copo parado: um dos chãos mais calmos das Américas (1/3)",
+"f": 0,
+"hud": true
+},
+{
+"a": 790.0,
+"b": 794.4,
+"c": "cozinha",
+"p": {
+"onda": 0.0,
+"close": 0.3,
+"parte": 1,
+"partes": 3,
+"off": 4.399999999999977
+},
+"o": [],
+"d": "O copo parado: um dos chãos mais calmos das Américas (2/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 794.4,
+"b": 798.8,
+"c": "cozinha",
+"p": {
+"onda": 0.0,
+"close": 0.3,
+"parte": 2,
+"partes": 3,
+"off": 8.799999999999955
+},
+"o": [],
+"d": "O copo parado: um dos chãos mais calmos das Américas (3/3)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 798.8,
+"b": 802.25,
+"c": "joao",
+"p": {
+"modo": "manha",
+"parte": 0,
+"partes": 2,
+"off": 0.0
+},
+"o": [],
+"d": "A praça de João Câmara de manhã (1/2)",
+"f": 0,
+"hud": true
+},
+{
+"a": 802.25,
+"b": 805.7,
+"c": "joao",
+"p": {
+"modo": "manha",
+"parte": 1,
+"partes": 2,
+"off": 3.4500000000000455
+},
+"o": [],
+"d": "A praça de João Câmara de manhã (2/2)",
+"f": 0.35,
+"hud": true
+},
+{
+"a": 805.7,
+"b": 809.067,
+"c": "comentarios",
+"p": {
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "Pergunta para os comentários; pontos acendendo no mapa (1/3)",
+"f": 0,
+"hud": false
+},
+{
+"a": 809.067,
+"b": 812.433,
+"c": "comentarios",
+"p": {
+"parte": 1,
+"partes": 3,
+"off": 3.3666666666666365
+},
+"o": [],
+"d": "Pergunta para os comentários; pontos acendendo no mapa (2/3)",
+"f": 0.35,
+"hud": false
+},
+{
+"a": 812.433,
+"b": 815.8,
+"c": "comentarios",
+"p": {
+"parte": 2,
+"partes": 3,
+"off": 6.733333333333273
+},
+"o": [],
+"d": "Pergunta para os comentários; pontos acendendo no mapa (3/3)",
+"f": 0.35,
+"hud": false
+},
+{
+"a": 815.8,
+"b": 819.2,
+"c": "card",
+"p": {
+"parte": 0,
+"partes": 3,
+"off": 0.0
+},
+"o": [],
+"d": "Selo final + frase (1/3)",
+"f": 0,
+"hud": false
+},
+{
+"a": 819.2,
+"b": 822.6,
+"c": "card",
+"p": {
+"parte": 1,
+"partes": 3,
+"off": 3.400000000000015
+},
+"o": [],
+"d": "Selo final + frase (2/3)",
+"f": 0.35,
+"hud": false
+},
+{
+"a": 822.6,
+"b": 826.0,
+"c": "card",
+"p": {
+"parte": 2,
+"partes": 3,
+"off": 6.80000000000003
+},
+"o": [],
+"d": "Selo final + frase (3/3)",
+"f": 0.35,
+"hud": false
+}
+]

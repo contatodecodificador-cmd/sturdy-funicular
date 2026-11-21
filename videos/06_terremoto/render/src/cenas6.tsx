@@ -261,7 +261,7 @@ export const Noticia: React.FC<{lt: number; d: number; img: string; info: InfoNo
 };
 
 // ===================== Mapa real da América do Sul (satélite) =====================
-const BOX = {lon0: -100, lon1: -10, lat0: 25, lat1: -60};
+const BOX = {lon0: -100, lon1: 20, lat0: 50, lat1: -60};
 export const MapaAS: React.FC<{lt: number; d: number; lonC: number; latC: number; s0: number; s1: number; children?: (P: (lon: number, lat: number) => [number, number]) => React.ReactNode; html?: (P: (lon: number, lat: number) => [number, number]) => React.ReactNode; escuro?: number}> = ({lt, d, lonC, latC, s0, s1, children, html, escuro = 0.35}) => {
   const s = lerp(s0, s1, es(lt / d));
   const P = (lon: number, lat: number): [number, number] => [960 + (lon - lonC) * s, 540 - (lat - latC) * s];
