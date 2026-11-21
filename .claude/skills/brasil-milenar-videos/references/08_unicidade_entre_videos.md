@@ -18,6 +18,12 @@ O dono do canal pediu: **cada vídeo precisa ter um roteiro diferente**. Os víd
 | Fecho | volta ao fio com virada · convite a olhar/fazer algo hoje · pergunta para o próximo vídeo · imagem circular (abre e fecha igual) |
 | Frase final | nunca repetir a frase final de um vídeo anterior |
 
+## Alternância e checagem de estrutura (regra do dono, nov/2026)
+- Ordem dos temas: Brasil → geral → Brasil → geral… Histórico: v1 Brasil (Noronha) · v2 Brasil/Lua · v4 Brasil (passado) · v5 geral (temperatura) · **próximo: Brasil**.
+- Checagem obrigatória antes da escaleta (escrever no topo do roteiro): para cada item da tabela acima, qual foi a escolha em cada vídeo anterior e qual será a nova. Nenhuma repetida.
+- Arquiteturas já usadas: v1 calendário→céu/mar→chão · v2 cronômetro (noite→ano→longo prazo) · v4 régua do tempo, viagem de volta pra casa · v5 corredor de 19 portas (corpo→Terra→fora→virada).
+- Aberturas já usadas: v1 o fato final · v2 cena viva da pororoca · v4 objeto (pedra do Pão de Açúcar) · v5 "você acorda num corredor" (2ª pessoa).
+
 ## Proibições
 - Não reaproveitar FATOS/PARADAS já usados em outro vídeo do canal (exceto callback curto e explícito, no máximo 1 por vídeo).
 - Não reaproveitar frases-assinatura entre vídeos.

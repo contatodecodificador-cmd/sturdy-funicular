@@ -55,3 +55,18 @@ Método: 25 temas no formato "uma pessoa vive o que o título promete" (jornada 
 - **Arquitetura**: escada de estrelas da menor à maior (anã vermelha → anã laranja → Sol → Sirius → Vega → Rigel → Betelgeuse → UY Scuti...) + anomalias (anã branca, estrela de nêutrons, buraco negro); uma pessoa no quintal em cada troca (céu, calor, sombra, cor das plantas) + **placar** "SOBREVIVEU / NÃO SOBREVIVEU" + carimbo por estrela.
 - **Laço aberto + virada final**: "uma dessas estrelas seria um Sol MELHOR que o nosso" → anã laranja (hipótese dos planetas "superabitáveis", Schulze-Makuch et al. 2020, Astrobiology — verificar na pesquisa).
 - **Diferenciais**: personagem + placar (ninguém em PT), a virada do "Sol melhor", o atraso de 8 min, cotidiano (pele, plantas, pôr do sol). Evitar repetir o "buraco negro chegando" da referência (tratar o buraco negro em 1 parada curta).
+
+---
+
+# Próximo tema (Brasil) — pesquisa de 21/11/2026
+
+Busca no YouTube (8 resultados por termo, views e data). Concorrência em português e demanda provada:
+
+| # | Tema | Demanda | Concorrência PT | Momento | Nota |
+|---|---|---|---|---|---|
+| 1 | **Terremotos no Brasil, magnitude por magnitude** | EN: EarthquakeSim 6,0 mi e 6,2 mi; Reigarw 5,9 mi; xkcd "magnitude 15" 9,1 mi; Pined Apple 830 mil | Explicativos minúsculos (Leandro Ribeiro 4 mil; Atlas 2,5 mil; Fundamental 6 mil; vários com < 20 views) | Tremores no NE (set/26), Saquarema (jul/26), terremoto da Venezuela sentido em capitais (jul/26), M7 na América do Sul em 20/11/26 | ★★★★★ |
+| 2 | Tornados e ventos no Brasil (escala do vento) | Leandro Ribeiro "tornado F4 no RS" 50 mil (18/11/26); Manual do Mundo "por que o Brasil não tem furacão" 2,6 mi | Notícias; explicativo com personagem: vazio | Tornado F4 no RS (nov/26) — tema sensível, há vítimas: tom cuidadoso | ★★★★☆ |
+| 3 | Brasil, o país dos raios | Fantástico 214 mil (2015); notícias 12 mil | Quase vazio em formato explicativo | Verão/tempestades | ★★★☆☆ |
+| 4 | Rios voadores: a viagem de uma gota da Amazônia até a sua torneira | BBC 143 mil; GIZ 248 mil; Nat Geo 104 mil | Educativo antigo; formato "gota-personagem" só infantil | Secas/enchentes | ★★★☆☆ |
+| 5 | O Brasil se o mar subisse, metro a metro | O Mapa Não Mente 87 mil (out/26) | Moderada e crescendo | — | ★★☆☆☆ |
+| — | E se a Amazônia sumisse / sobreviver em cada bioma | — | Lotado de canais copiadores (nov/26) | — | evitar |
