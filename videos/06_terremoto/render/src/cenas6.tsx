@@ -314,7 +314,7 @@ export const NumeroGigante: React.FC<{lt: number; d: number; t: number; txt: str
   return (
     <AbsoluteFill style={{background: 'radial-gradient(circle at 50% 50%, #3A0E14, #08030A 70%)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
       <div style={{transform: `translate(${tr.x}px,${tr.y}px) scale(${lerp(1, 1.025, es(lt / d))})`}}><Numero cor={COR.perigo} size={340} op={KO(lt, 0.05, 0.35)}>{txt}</Numero></div>
-      {sub && <div style={{fontFamily: F.rotulo, fontWeight: 700, fontSize: 30, letterSpacing: 10, color: '#E8C8C8', marginTop: 10, opacity: KO(lt, 0.4, 0.8)}}>{sub}</div>}
+      {sub && <div style={{fontFamily: F.rotulo, fontWeight: 700, fontSize: 30, letterSpacing: 10, color: '#E8C8C8', marginTop: 70, padding: '8px 22px', borderRadius: 8, background: 'rgba(6,10,20,0.6)', opacity: KO(lt, 0.4, 0.8)}}>{sub}</div>}
     </AbsoluteFill>
   );
 };
