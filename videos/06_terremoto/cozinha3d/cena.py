@@ -550,9 +550,11 @@ def objetos(M):
     O = {}
     # mesa e cadeiras
     O['mesa'], _ = importar('wooden_table_02', loc=(MESA[0], MESA[1], 0), rot=(0, 0, 0), c=c)
-    O['cad1'], _ = importar('painted_wooden_chair_01', loc=(MESA[0] - 0.78, MESA[1] - 0.05, 0), rot=(0, 0, -math.pi / 2 + 0.12), c=c)
-    O['cad2'], _ = importar('painted_wooden_chair_01', loc=(MESA[0] + 0.25, MESA[1] + 0.62, 0), rot=(0, 0, math.pi + 0.08), c=c)
-    O['cad3'], _ = importar('painted_wooden_chair_01', loc=(MESA[0] + 0.86, MESA[1] - 0.1, 0), rot=(0, 0, math.pi / 2 - 0.2), c=c)
+    # cadeira: frente do assento = -Y local, encosto = +Y. Rotação θ leva a frente para (sinθ, -cosθ).
+    # assento entra ~12 cm sob o tampo (assento 0,45 m < saia da mesa 0,73 m); encosto fica fora da mesa.
+    O['cad1'], _ = importar('painted_wooden_chair_01', loc=(MESA[0] - 0.69, MESA[1] - 0.05, 0), rot=(0, 0, math.pi / 2 - 0.08), c=c)
+    O['cad2'], _ = importar('painted_wooden_chair_01', loc=(MESA[0] + 0.2, MESA[1] + 0.49, 0), rot=(0, 0, 0.06), c=c)
+    O['cad3'], _ = importar('painted_wooden_chair_01', loc=(MESA[0] + 0.76, MESA[1] - 0.1, 0), rot=(0, 0, -math.pi / 2 + 0.18), c=c)
     TOPO = 0.8
     # toalha xadrez (fina, com caimento): grade dobrada nas bordas
     tw, td, queda = 1.16, 0.73, 0.17
