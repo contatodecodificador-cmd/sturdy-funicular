@@ -24,3 +24,9 @@ Regra do dono (nov/2026): **buscar referências SEMPRE em canais em inglês** e 
 - xkcd's What If? (magnitude 15: 9,1 mi)
 - RealLifeLore (geografia/escala)
 - WatchData / Debunked (quedas, corpo humano)
+
+## Base montada (nov/2026)
+- Planilha: `videos/canais_referencia.xlsx` (abas: Temas para o canal · Canais · Vídeos que estouraram · Concorrência PT). Script: `videos/pesquisa_canais/montar_planilha.py` (dados brutos em `videos/pesquisa_canais/dados/`).
+- Canais novos que entraram pela busca de semelhantes do Astrum: Astrum Extra, Space Matters, Stargaze, SEA, Destiny, ReYOUniverse, Kosmo, Cool Worlds, Insane Curiosity, GeologyHub, Dark Records, Primal Space, The Cosmic Witness.
+- Método sem créditos do vidIQ: `yt-dlp --flat-playlist --playlist-end 50 -J <canal>/videos` (views dos últimos 50 vídeos → mediana → outliers ≥2×) e `yt-dlp --flat-playlist -J "ytsearch12:<tema em PT>"` para medir a concorrência em português.
+- Padrões de título que mais estouram (nov/2026): "What Lies Beneath [lugar]?" · "X Is So Huge Your Brain Can't Comprehend It" · "You Are Alive to Watch..." · "What Happens After X Is Worse Than X" · "What If X Came Closer / Entered Our Solar System".
