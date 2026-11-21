@@ -33,64 +33,88 @@
 
 ---
 
-## INTRODUÇÃO: 100% 3D (0:00–1:10)
-*Sequência do Astrum, com conteúdo nosso:*
-1. algo familiar;
-2. consequências inesperadas;
-3. "e é real, já aconteceu";
-4. o perigo verdadeiro;
-5. urgência;
-6. pergunta com resposta dupla;
-7. cartela.
+## INTRODUÇÃO v2: 100% 3D (0:00–1:27; tempos reais do áudio `audio/intro_v2.mp3`)
+*Primeira frase de impacto tirada do título. 25 planos, todos com no máximo 5 s. Regra do movimento: plano que já se move (globo girando, câmera andando, nuvem crescendo) fica SEM zoom; imagem parada leva UM zoom leve contínuo do começo ao fim do plano, nunca vai-e-volta.*
 
-**[3D-01]** Close do disco do Sol, com granulação fervendo e uma protuberância se curvando na borda. A câmera recua devagar.
-[SFX: grave contínuo, quase inaudível]
-Olha para o Sol. Na verdade, não olha. Mas guarda isso: o Sol que você vê agora já é passado. A luz dele leva oito minutos para chegar aqui.
+**[3D-01] 0.0–4.0 s (4.0 s) · S01** · Sol em close: uma erupção nasce na borda · *câmera recua devagar*
+Se a maior tempestade solar da história saísse do Sol agora,
 
-**[3D-02]** A Terra à noite vista do espaço, com o Brasil iluminado (São Paulo, Rio, BH, o litoral do Nordeste). A câmera desliza devagar de leste para oeste.
-Então, se ele explodisse neste segundo, você não ia saber. O céu continuaria igual.
+**[3D-02] 4.0–8.7 s (4.6 s) · S02** · Brasil à noite visto do espaço; relógio aparece · *globo girando (sem zoom)* · [HUD 17:36:00]
+o Brasil teria dezessete horas. E quase ninguém ia perceber.
 
-**[3D-03]** Interior noturno de uma casa brasileira: um celular na mesa da sala, tela acesa com o mapa e a rota ativa, a luz da TV no fundo. Dolly lento em direção ao celular.
-O GPS continuaria te guiando. O Pix continuaria caindo. A geladeira continuaria gelando.
+**[3D-03] 8.7–11.6 s (2.9 s) · A03** · O Sol inteiro, distante · *Sol girando (sem zoom)* · [HUD 17:36:00]
+Porque o Sol que você vê já é passado.
 
-**[3D-04]** A Terra inteira com o Sol ao fundo. **Clarão**: a tela estoura em branco por 4 quadros.
-[SFX: um estalo seco e abafado, sem estrondo]
-[HUD: a contagem aparece no canto superior direito: **CHEGADA EM 17:36:00**]
-Oito minutos depois, você veria um clarão. E aí começaria uma contagem regressiva.
+**[3D-04] 11.6–14.8 s (3.3 s) · A04** · Um feixe de luz cruza o espaço até a Terra · *câmera acompanha a luz* · [HUD 17:36:00]
+A luz dele leva oito minutos para chegar aqui.
 
-**[3D-05]** A nuvem de plasma (CME) sai do Sol como uma bolha laranja que se expande. A câmera acompanha de lado.
-Uma nuvem com bilhões de toneladas de gás eletrificado, viajando na nossa direção a milhões de quilômetros por hora.
+**[3D-05] 14.8–19.4 s (4.5 s) · S11** · Brasil à noite, tranquilo · *globo girando (sem zoom)* · [HUD 17:36:00]
+Então, quando ele explode, durante oito minutos nada muda.
 
-**[3D-06]** Close de um fio de telégrafo antigo, com poste de madeira, isolador de vidro e uma faísca azul saltando do fio. Cena estilizada em 3D, sem pessoas.
-[SFX: faísca e zumbido elétrico]
-A última vez que uma dessas acertou a Terra em cheio foi em mil oitocentos e cinquenta e nove. Os fios do telégrafo soltaram faíscas e puseram fogo no papel dos aparelhos.
+**[3D-06] 19.4–21.5 s (2.1 s) · S03** · Sala à noite: celular com a rota do GPS · *dolly lento até o celular* · [HUD 17:36:00]
+O GPS continua te guiando.
 
-**[3D-07]** A câmera atravessa um emaranhado de cabos, satélites e antenas em órbita, vistos contra a Terra.
+**[3D-07] 21.5–26.4 s (4.9 s) · A07** · Close: notificação de Pix na tela · *dolly lento* · [HUD 17:36:00]
+O Pix continua caindo. A geladeira continua gelando.
+
+**[3D-08] 26.4–30.3 s (3.9 s) · S04** · Terra e Sol: CLARÃO; o relógio começa a correr · *clarão + câmera parada → leve avanço* · [HUD 17:35:59]
+Aí vem o clarão. E começa a contagem regressiva.
+
+**[3D-09] 30.3–34.0 s (3.7 s) · S05** · A nuvem de plasma sai do Sol · *nuvem crescendo (sem zoom)* · [HUD 17:35:56]
+Uma nuvem com bilhões de toneladas de gás eletrificado,
+
+**[3D-10] 34.0–37.9 s (3.9 s) · S14** · A nuvem viaja rumo à Terra · *câmera acompanha a nuvem* · [HUD 17:35:53]
+vindo na nossa direção a milhões de quilômetros por hora.
+
+**[3D-11] 37.9–40.9 s (3.0 s) · A11** · 1859: poste de telégrafo sob a aurora · *câmera sobe pelo poste* · [HUD 17:35:50]
+A última vez que uma dessas acertou a Terra em cheio
+
+**[3D-12] 40.9–43.7 s (2.8 s) · A11** · Close do poste e dos fios sob a aurora · *câmera parada → leve avanço (outro ângulo)* · [HUD 17:35:47]
+foi em mil oitocentos e cinquenta e nove.
+
+**[3D-13] 43.7–48.2 s (4.4 s) · S06** · Faísca no fio; papel pegando fogo · *faísca piscando + zoom leve* · [HUD 17:35:45]
+Os fios do telégrafo soltaram faíscas e puseram fogo no papel.
+
+**[3D-14] 48.2–53.1 s (4.9 s) · S07** · Satélites e cabos em órbita · *satélites passando (sem zoom)* · [HUD 17:35:40]
 Aquilo foi com fios. Hoje, a gente vive dentro deles.
 
-**[3D-08]** A Terra com as linhas do campo magnético laranja envolvendo o planeta. A câmera gira devagar até a América do Sul.
-Só que tem um detalhe que quase ninguém conta. O escudo que protege a Terra dessas nuvens tem um ponto fraco.
+**[3D-15] 53.1–55.7 s (2.6 s) · A20** · O escudo magnético envolve a Terra · *globo girando (sem zoom)* · [HUD 17:35:36]
+E tem um detalhe que quase ninguém conta.
 
-**[3D-09]** Zoom lento até o Atlântico Sul: as linhas ficam ralas e tremidas, e uma mancha vermelha pulsa devagar sobre o Sul e o Sudeste do Brasil.
+**[3D-16] 55.7–59.8 s (4.1 s) · S08** · O escudo... e uma falha aparece · *globo girando até a América do Sul* · [HUD 17:35:33]
+O escudo que protege a Terra dessas nuvens tem um ponto fraco.
+
+**[3D-17] 59.8–63.6 s (3.8 s) · S09** · A falha pulsa em cima do Brasil · *câmera desce sobre o Atlântico Sul* · [HUD 17:35:30]
 E esse ponto fraco fica bem em cima do Brasil.
 
-**[3D-10]** A Terra recua e o Sol volta ao fundo. O relógio do canto marca **17:35:58**.
-Um estudo calculou uma chance em oito de uma tempestade desse tamanho acontecer nos próximos dez anos. E o Sol acabou de passar pelo auge do ciclo dele.
+**[3D-18] 63.6–65.7 s (2.1 s) · S10** · Terra e Sol; relógio em destaque · *câmera recua devagar* · [HUD 17:35:27]
+Um estudo calculou uma chance em oito
 
-**[3D-11]** O Brasil à noite, visto do espaço, com as luzes das cidades. A câmera se aproxima devagar.
-Então hoje a gente vai responder uma pergunta. Se a maior tempestade solar da história chegasse agora, o Brasil seria o lugar mais exposto da Terra... ou um dos mais protegidos?
+**[3D-19] 65.7–69.4 s (3.7 s) · S04** · A Terra pequena diante do Sol · *câmera recua devagar* · [HUD 17:35:25]
+de uma tempestade desse tamanho nos próximos dez anos.
 
-**[3D-12]** As luzes de uma capital piscam uma vez e voltam. A câmera para.
-A resposta tem as duas coisas. E uma delas quase ninguém espera.
+**[3D-20] 69.4–73.2 s (3.8 s) · A18** · O Sol ativo, cheio de manchas · *câmera gira em volta do Sol* · [HUD 17:35:22]
+E o Sol acabou de passar pelo auge do ciclo dele.
 
-**[3D-13]** Cartela: o selo do Brasil Milenar se forma de partículas laranja que vêm do Sol. O relógio continua: **17:35:51**.
-[SFX: o tique do relógio entra e fica baixinho por baixo do bloco seguinte]
+**[3D-21] 73.2–75.5 s (2.3 s) · S11** · Brasil à noite: "mais exposto..." · *globo girando (sem zoom)* · [HUD 17:35:18]
+Então, se ela chegasse agora,
 
-> **Gancho aberto (só se fecha no Bloco 4):** "mais exposto ou mais protegido?"
-> **Fio:** o relógio da contagem (volta em todo bloco até chegar a 00:00:00).
+**[3D-22] 75.5–78.7 s (3.2 s) · S09** · "...o lugar mais exposto da Terra..." · *câmera desce sobre a falha* · [HUD 17:35:16]
+o Brasil seria o lugar mais exposto da Terra...
+
+**[3D-23] 78.7–81.1 s (2.4 s) · A20** · "...ou um dos mais protegidos?" · *globo girando (sem zoom)* · [HUD 17:35:15]
+ou um dos mais protegidos?
+
+**[3D-24] 81.1–83.6 s (2.5 s) · S11** · As luzes de uma capital piscam uma vez · *câmera para; luzes piscam* · [HUD 17:35:11]
+A resposta tem as duas coisas.
+
+**[3D-25] 83.6–87.0 s (3.4 s) · CARTELA** · Cartela do canal; tique do relógio · *partículas formam o selo* · [HUD 17:35:08]
+E uma delas quase ninguém espera.
+
+> **Gancho aberto (fecha no Bloco 4):** "mais exposto ou mais protegido?"
+> **Fio:** o relógio (17:36:00 parado até o clarão, depois correndo; vermelho em 00:30:00; some no impacto e volta no fim).
 
 ---
-
 ## BLOCO 1: AS TRÊS ONDAS (1:10–3:30)
 [HUD: o relógio fixo no canto, contando]
 
@@ -241,7 +265,7 @@ E não dá para impedir o Sol, mas dá para se preparar. Operadores de energia p
 
 ## FECHO (13:30–14:10)
 [3D-18: o mesmo close do Sol da abertura, agora calmo]
-Na próxima vez que você olhar para o Sol (não olha), lembra: o que você está vendo já tem oito minutos. Se alguma coisa grande acontecer lá, a gente vai ser os últimos a saber. E os primeiros a sentir.
+Na próxima vez que o Sol estiver bonito lá fora, lembra: o que você está vendo já tem oito minutos. Se alguma coisa grande acontecer lá, a gente vai ser os últimos a saber. E os primeiros a sentir.
 
 [2D: um celular sem sinal em cima da mesa]
 [TXT: SEM GPS E SEM INTERNET POR UMA SEMANA]
@@ -271,7 +295,7 @@ Se inscreve para a próxima viagem. O Sol não manda aviso. Ele manda luz, e ela
 
 ## (d) DIFERENÇAS DELIBERADAS EM RELAÇÃO AOS VÍDEOS ANTERIORES
 - Contador: contagem REGRESSIVA até o impacto, depois o medidor do escudo. Nenhum vídeo usou.
-- Abertura: "o Sol que você vê é de 8 minutos atrás", um atraso real como gancho.
+- Abertura: frase de impacto do título ("o Brasil teria dezessete horas") + o atraso de 8 minutos da luz.
 - Fio: o relógio + a pergunta "mais exposto ou mais protegido?", com resposta dupla.
 - Arquitetura: três ondas, arquivo, impacto hora a hora, virada, pior caso e honestidade.
 - Bloco especial: "Arquivo" com fichas de 2024, 1989, 2012, 1859, Rio 1875 e 774.

@@ -37,7 +37,8 @@ Quando houver subagentes disponíveis, delegue por função: pesquisa e verifica
 - **Estrutura SEMPRE diferente (obrigatório, regra do dono)**: nenhum roteiro pode repetir a estrutura do anterior — para não parecer cópia nem produção em massa no YouTube. Antes de escrever a escaleta, preencher a tabela "o que precisa mudar" de `references/08_unicidade_entre_videos.md` (contador, abertura, fio condutor, arquitetura dos atos, bloco especial, fecho, frase final) e comparar item a item com TODOS os vídeos já registrados; se algum item coincidir, trocar. Registrar o vídeo novo no arquivo ao terminar.
 - **Uma pergunta aberta** no começo que só se resolve no fim + **fio condutor** que aparece 3-4 vezes.
 - **Sem CTA no meio.** Um único pedido de inscrição no final.
-- **Tudo sutil** na edição: nada de alarme, zoom agressivo ou efeito exagerado.
+- **Tudo sutil** na edição: nada de alarme, zoom agressivo ou efeito exagerado. Planos de no máximo 5 s; imagem parada = um zoom leve contínuo do começo ao fim (nunca vai-e-volta); plano que já se move = sem zoom.
+- **Introdução sempre abre com uma frase de impacto tirada do título** (regra do dono, nov/2026).
 - **Economia de créditos** (ElevenLabs/Claude): gerar pequeno primeiro (1 bloco), validar, depois gerar o resto; nunca regenerar o vídeo inteiro por causa de um trecho.
 
 ## Dados do canal

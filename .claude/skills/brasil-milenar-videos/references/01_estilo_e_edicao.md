@@ -38,6 +38,7 @@ Conclusão: **o vídeo NÃO é feito com imagens de IA nem banco de vídeo**. É
 - Cada parada = 1 cena principal (12-30 s) com 2-4 "batidas" de texto.
 - Transição entre paradas: dissolve de 0,5-0,8 s ou fade pelo preto; corte seco só em momentos de impacto (máx. 1 por ato).
 - Movimento de câmera: push-in de 3-6% ao longo da cena ou drift lateral lento. Nada de zoom brusco, shake, glitch ou flash.
+- **REGRA DO ZOOM (dono, nov/2026, obrigatória):** plano de no máximo 5 s. Se a imagem é PARADA, ela leva UM zoom leve e contínuo do primeiro ao último quadro do plano: nunca para no meio, nunca volta. Se o plano JÁ TEM MOVIMENTO (globo girando, câmera 3D andando, nuvem crescendo, animação), ele fica SEM zoom. Um plano nunca combina dois zooms.
 - Abertura (0-30 s): mais movimento e cortes mais curtos (3-5 s).
 - Viradas de ato: contador acelera (gira rápido de milhar em milhar, depois de milhão em milhão) + 1 s de quase silêncio.
 - Final: contador grande no centro + selo do canal com botão "INSCREVER-SE" no canto inferior esquerdo (últimos 8-10 s).

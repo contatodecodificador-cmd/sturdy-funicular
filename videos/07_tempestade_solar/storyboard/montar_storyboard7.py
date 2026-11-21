@@ -190,22 +190,9 @@ def p2(fn, *a, relo=None, cor=BRANCO, tela=None):
     return f
 
 # ---------- lista de planos (bloco, tipo, quadro, descrição, fala) ----------
-INTRO, B1, B2, B3, B4, B5, FE = ('INTRODUÇÃO · 100% 3D', 'BLOCO 1 · AS TRÊS ONDAS', 'BLOCO 2 · ARQUIVO: QUEM JÁ LEVOU UMA DESSAS', 'BLOCO 3 · IMPACTO, HORA A HORA NO BRASIL',
+INTRO, B1, B2, B3, B4, B5, FE = ('INTRODUÇÃO · 100% 3D (tempos reais da narração)', 'BLOCO 1 · AS TRÊS ONDAS', 'BLOCO 2 · ARQUIVO: QUEM JÁ LEVOU UMA DESSAS', 'BLOCO 3 · IMPACTO, HORA A HORA NO BRASIL',
                                 'BLOCO 4 · O PONTO FRACO (A VIRADA)', 'BLOCO 5 · O PIOR CASO E A PARTE HONESTA', 'FECHO')
 P = [
- (INTRO, '3D', p3('S01'), 'Close do Sol, protuberância na borda; câmera recua', 'Olha para o Sol. Na verdade, não olha. Mas guarda isso: o Sol que você vê agora já é passado. A luz dele leva oito minutos para chegar aqui.'),
- (INTRO, '3D', p3('S02'), 'Terra à noite, Brasil aceso; câmera desliza L→O', 'Então, se ele explodisse neste segundo, você não ia saber. O céu continuaria igual.'),
- (INTRO, '3D', p3('S03'), 'Sala à noite: celular com rota na mesa; dolly lento', 'O GPS continuaria te guiando. O Pix continuaria caindo. A geladeira continuaria gelando.'),
- (INTRO, '3D', p3('S04', clarao=0.55, relo='CHEGADA EM 17:36:00'), 'Terra e Sol: CLARÃO (4 quadros) e o relógio aparece', 'Oito minutos depois, você veria um clarão. E aí começaria uma contagem regressiva.'),
- (INTRO, '3D', p3('S05', relo='17:35:59'), 'A nuvem de plasma sai do Sol rumo à Terra', 'Uma nuvem com bilhões de toneladas de gás eletrificado, viajando na nossa direção a milhões de quilômetros por hora.'),
- (INTRO, '3D', p3('S06', relo='17:35:57'), 'Telégrafo de 1859: faísca azul no fio', 'A última vez que uma dessas acertou a Terra em cheio foi em mil oitocentos e cinquenta e nove. Os fios do telégrafo soltaram faíscas…'),
- (INTRO, '3D', p3('S07', relo='17:35:55'), 'Satélites em órbita sobre a Terra', 'Aquilo foi com fios. Hoje, a gente vive dentro deles.'),
- (INTRO, '3D', p3('S08', relo='17:35:54'), 'O escudo: linhas do campo magnético; gira até a América do Sul', 'Só que tem um detalhe que quase ninguém conta. O escudo que protege a Terra dessas nuvens tem um ponto fraco.'),
- (INTRO, '3D', p3('S09', relo='17:35:53'), 'Zoom: o escudo fica ralo e a mancha pulsa sobre o Brasil', 'E esse ponto fraco fica bem em cima do Brasil.'),
- (INTRO, '3D', p3('S10', relo='17:35:51'), 'Terra recua com o Sol ao fundo', 'Um estudo calculou uma chance em oito de uma tempestade desse tamanho acontecer nos próximos dez anos.'),
- (INTRO, '3D', p3('S11', relo='17:35:49'), 'Brasil à noite, mais perto', 'Se a maior tempestade solar da história chegasse agora, o Brasil seria o lugar mais exposto da Terra… ou um dos mais protegidos?'),
- (INTRO, '3D', p3('S11', clarao=0.0, relo='17:35:47'), 'As luzes de uma capital piscam uma vez; câmera para', 'A resposta tem as duas coisas. E uma delas quase ninguém espera.'),
- (INTRO, '3D', p2(q_cartela, relo='17:35:45'), 'Cartela: selo do canal formado por partículas do Sol', '[tique do relógio]'),
  (B1, '2D', p2(q_ondas, 0, relo='17:20:00'), 'Esquema Sol → Terra; três ondas vão sair', 'Uma tempestade solar não chega de uma vez. Ela chega em três ondas.'),
  (B1, '2D', p2(q_ondas, 1, relo='17:20:00'), 'Onda 1: luz (8 min); rádio de ondas curtas some', 'A primeira é a luz do clarão: raios X e ultravioleta… Pilotos e navios perdem a voz.'),
  (B1, '2D', p2(q_ondas, 2, relo='17:20:00'), 'Onda 2: partículas (minutos a horas)', 'A segunda são partículas… atravessam a eletrônica dos satélites como agulha atravessa papel.'),
@@ -253,6 +240,14 @@ P = [
  (FE, '2D', p2(q_cartela, relo='08:20 ATRASADO', cor=OURO), 'Selo do canal; o relógio mostra 8:20 atrasado', 'O Sol não manda aviso. Ele manda luz. E ela sempre chega oito minutos atrasada.'),
 ]
 
+# introdução v2 com tempos reais
+import sys; sys.path.insert(0, AQ); from intro_planos import planos as _ip
+_I = []
+for x in _ip():
+    fn = p2(q_cartela, relo=x['rel']) if x['prev'] == 'CARTELA' else p3(x['prev'], clarao=0.55 if x['desc'].startswith('Terra e Sol: CLARÃO') else 0, relo=x['rel'])
+    _I.append((INTRO, '3D', fn, x['desc'], x['fala'], x))
+P = _I + [tuple(list(e) + [None]) for e in P]
+
 # ---------- montagem do PDF ----------
 PW, PH, COLS, ROWS, CW, CH, IMW, IMH = 2400, 1500, 4, 3, 560, 420, 540, 304
 def pag(tit, n):
@@ -265,14 +260,18 @@ while i < len(P):
     tit = P[i][0]; p, d = pag(tit, n)
     for k in range(COLS * ROWS):
         if i >= len(P) or P[i][0] != tit: break
-        bl, tipo, fn, desc, fala = P[i]; cx = 60 + (k % COLS) * (CW + 20); cy = 160 + (k // COLS) * (CH + 20)
+        bl, tipo, fn, desc, fala, info = P[i]; cx = 60 + (k % COLS) * (CW + 20); cy = 160 + (k // COLS) * (CH + 20)
         im = fn().resize((IMW, IMH)); d.rounded_rectangle((cx, cy, cx + CW, cy + CH), 14, fill=(16, 21, 34)); p.paste(im, (cx + 10, cy + 10))
         dur = max(2.5, len(fala.split()) / 2.7)
         d.rounded_rectangle((cx + 18, cy + 18, cx + 168, cy + 50), 8, fill=(6, 10, 20)); d.text((cx + 28, cy + 22), f'CENA {i + 1:02d}', font=F('Inter-SemiBold.otf', 19), fill=BRANCO)
+        if info:
+            d.rounded_rectangle((cx + 18, cy + IMH - 40, cx + 300, cy + IMH - 8), 8, fill=(6, 10, 20))
+            d.text((cx + 28, cy + IMH - 36), f"{info['t0']:.1f}s → {info['t1']:.1f}s  ·  {info['t1'] - info['t0']:.1f}s".replace('.', ','), font=F('Inter-SemiBold.otf', 18), fill=OURO)
         corb = (255, 120, 30) if tipo == '3D' else (70, 150, 255)
         d.rounded_rectangle((cx + IMW - 70, cy + IMH - 40, cx + IMW, cy + IMH - 8), 8, fill=corb); d.text((cx + IMW - 35, cy + IMH - 36), tipo, font=F('Inter-Bold.otf', 19), fill=(8, 11, 20), anchor='ma')
         npl = max(1, math.ceil(dur / 5));
         d.text((cx + 12, cy + IMH + 16), textwrap.shorten(desc, 50, placeholder='…'), font=F('Inter-Bold.otf', 21), fill=BRANCO)
+        if info: fala = '[' + info['mov'].upper() + ']  ' + fala
         for j, ln in enumerate(textwrap.wrap('“' + fala + '”', 62)[:3]): d.text((cx + 12, cy + IMH + 48 + j * 21), ln, font=F('Inter-Regular.otf', 16), fill=(160, 170, 190))
         t0 += dur; i += 1
     pages.append(p); n += 1
@@ -283,7 +282,8 @@ d.text((PW // 2, 180), 'O Que a MAIOR TEMPESTADE SOLAR da História Faria com o 
 n3 = sum(1 for x in P if x[1] == '3D')
 d.text((PW // 2, 1160), f'{len(P)} cenas · narração de cerca de {round(len(open(os.path.join(V, "texto_para_IA.txt")).read().split()) / 150)} min · {n3} cenas em 3D (laranja) · {len(P) - n3} em 2D (azul)', font=F('Inter-SemiBold.otf', 30), fill=OURO, anchor='ma')
 for j, l in enumerate(['Introdução 100% em 3D (Blender, render final na GPU). Quadros 3D aqui = prévias reais em baixa qualidade; o final ganha movimento de câmera, nitidez e brilho.',
-                       'Quadros 2D = esboço de layout (o que entra na tela); a arte final segue a paleta do canal. Cada cena longa vira 2 a 4 planos de até 5 s, um zoom leve por plano.',
+                       'Regra: plano de no máximo 5 s. Imagem parada = UM zoom leve contínuo do começo ao fim (nunca vai-e-volta). Plano com movimento (globo girando, câmera andando) = sem zoom.',
+                       'Quadros 2D = esboço de layout; cada cena longa do corpo vira 2 a 4 planos de até 5 s, seguindo a mesma regra.',
                        'Fio condutor: o relógio da contagem regressiva no canto superior direito (some depois do impacto e volta no fim, "8:20 atrasado").']):
     d.text((PW // 2, 1220 + j * 40), l, font=F('Inter-Regular.otf', 24), fill=(150, 160, 180), anchor='ma')
 pages.insert(0, cap)

@@ -370,6 +370,58 @@ def S14():  # impacto: escudo achatado do lado do Sol
     sdir = (cx @ Vector((1.0, 0.15, 0.0))).normalized()
     cme_fios(tuple(sdir * 9.0), tuple(-sdir), 7.6, abertura=0.42, n=520, forca=1.6)
 
+# ---------------- cenas novas da introdução v2 ----------------
+def A03():  # o Sol inteiro, distante, girando devagar
+    espaco(0.5); camera((0, -30, 0), (0, 0, 0), 50); sol((0, 0, 0), 3.0); protuberancia((0, 0, 0), 3.0, ang=30)
+
+def A04():  # feixe de luz saindo do Sol e cruzando o espaço até a Terra
+    espaco(0.5); camera((0.5, -30, 2.5), (0.5, 0, 0), 30); sol((-11, 0, 0), 2.2)
+    m = emissivo('feixe', (1.0, 0.92, 0.75), 6)
+    bpy.ops.mesh.primitive_cylinder_add(radius=0.035, depth=12, location=(-2.5, 0, 0), rotation=(0, math.pi / 2, 0)); bpy.context.object.data.materials.append(m)
+    bpy.ops.mesh.primitive_uv_sphere_add(radius=0.12, location=(3.5, 0, 0)); bpy.context.object.data.materials.append(emissivo('ponta', (1, 0.95, 0.8), 25))
+    bpy.ops.mesh.primitive_uv_sphere_add(radius=0.7, location=(12, 0, 0)); t = bpy.context.object; bpy.ops.object.shade_smooth()
+    mt, n, L = mat('t'); b = n.new('ShaderNodeBsdfPrincipled'); b.inputs['Base Color'].default_value = (0.12, 0.3, 0.65, 1); o = n.new('ShaderNodeOutputMaterial'); L.new(b.outputs[0], o.inputs[0]); t.data.materials.append(mt)
+    sol_luz(Vector((-1, 0, 0)), 4)
+
+def A07():  # celular com notificação de Pix (mesma sala, outro ângulo)
+    S03()
+    for m in bpy.data.materials:
+        if m.name.startswith('cel'):
+            for nd in m.node_tree.nodes:
+                if nd.type == 'TEX_IMAGE': nd.image = bpy.data.images.load(os.path.join(AQUI, 'texturas/tela_pix.png'))
+    c = bpy.context.scene.camera; cel = [o for o in bpy.data.objects if o.data and hasattr(o.data, 'materials') and any(m and m.name.startswith('cel') for m in o.data.materials)][0]
+    alvo = cel.location.copy(); c.location = alvo + Vector((0.16, -0.2, 0.2)); c.data.lens = 50
+    c.rotation_euler = (alvo - c.location).to_track_quat('-Z', 'Y').to_euler(); c.data.dof.focus_distance = (alvo - c.location).length
+    bpy.context.view_layer.update()
+
+def A11():  # telégrafo sob uma aurora vermelha e verde (antes da faísca)
+    S06()
+    w = bpy.context.scene.world; nt = w.node_tree; bg = nt.nodes['Background']
+    tc = nt.nodes.new('ShaderNodeTexCoord'); sep = nt.nodes.new('ShaderNodeSeparateXYZ'); nt.links.new(tc.outputs['Generated'], sep.inputs[0])
+    nz = nt.nodes.new('ShaderNodeTexNoise'); nz.inputs['Scale'].default_value = 2; nz.inputs['Detail'].default_value = 2; mpc = nt.nodes.new('ShaderNodeMapping'); mpc.inputs['Scale'].default_value = (6, 6, 0.6); nt.links.new(tc.outputs['Generated'], mpc.inputs[0]); nt.links.new(mpc.outputs[0], nz.inputs['Vector'])
+    cr = nt.nodes.new('ShaderNodeValToRGB'); e = cr.color_ramp.elements
+    e[0].position = 0.45; e[0].color = (0.02, 0.03, 0.07, 1); e[1].position = 0.75; e[1].color = (0.5, 0.06, 0.08, 1)
+    e2 = e.new(0.62); e2.color = (0.03, 0.22, 0.1, 1)
+    mx = nt.nodes.new('ShaderNodeMath'); mx.operation = 'ADD'; nt.links.new(sep.outputs['Z'], mx.inputs[0]); nt.links.new(nz.outputs['Fac'], mx.inputs[1])
+    mp = nt.nodes.new('ShaderNodeMath'); mp.operation = 'MULTIPLY'; mp.inputs[1].default_value = 0.62; nt.links.new(mx.outputs[0], mp.inputs[0])
+    nt.links.new(mp.outputs[0], cr.inputs['Fac']); nt.links.new(cr.outputs['Color'], bg.inputs['Color']); bg.inputs['Strength'].default_value = 0.55
+    for o in bpy.data.objects:
+        if o.name.startswith('faisca'): o.hide_render = True
+    c = bpy.context.scene.camera; c.location = (5.5, -8.5, 3.2); c.rotation_euler = (Vector((0.4, 0, 6.2)) - c.location).to_track_quat('-Z', 'Y').to_euler(); c.data.lens = 32; c.data.dof.use_dof = False
+
+def A18():  # Sol ativo: mais manchas, câmera girando em volta
+    espaco(0.4); camera((-4, -11, 2), (0, 0, 0), 45); s = sol((0, 0, 0), 3.0)
+    m = s.data.materials[0]; n = m.node_tree.nodes; L = m.node_tree.links
+    vo2 = n.new('ShaderNodeTexVoronoi'); vo2.inputs['Scale'].default_value = 3.2; tc = [x for x in n if x.type == 'TEX_COORD'][0]; L.new(tc.outputs['Object'], vo2.inputs['Vector'])
+    rr = n.new('ShaderNodeMapRange'); rr.inputs['From Min'].default_value = 0.05; rr.inputs['From Max'].default_value = 0.12; L.new(vo2.outputs['Distance'], rr.inputs['Value'])
+    em = [x for x in n if x.type == 'EMISSION'][0]; cr = [x for x in n if x.type == 'VALTORGB'][0]
+    mul = n.new('ShaderNodeMix'); mul.data_type = 'RGBA'; mul.blend_type = 'MULTIPLY'; mul.inputs['Factor'].default_value = 1
+    L.new(cr.outputs['Color'], mul.inputs['A']); L.new(rr.outputs['Result'], mul.inputs['B']); L.new(mul.outputs['Result'], em.inputs['Color'])
+    protuberancia((0, 0, 0), 3.0, ang=60); protuberancia((0, 0, 0), 3.0, ang=150)
+
+def A20():  # o escudo inteiro brilhando, protegendo (sem rasgo)
+    plano_espaco_terra((-30, 5), 4.6, alvo_z=0.0, linhas=True, rasgo=False, luzes=6, sol_cam=(0.6, 0.4, 0.6))
+
 if __name__ == '__main__':
     sc = base()
     globals()[PLANO]()
@@ -377,3 +429,4 @@ if __name__ == '__main__':
     sc.render.filepath = SAIDA
     bpy.ops.render.render(write_still=True)
     print('OK', PLANO, SAIDA)
+
