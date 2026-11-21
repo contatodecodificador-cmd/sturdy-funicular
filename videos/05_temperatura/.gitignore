@@ -7,3 +7,4 @@ audio/*.wav
 *.log
 *.mp4
 render/public/*.wav
+render/node_modules
