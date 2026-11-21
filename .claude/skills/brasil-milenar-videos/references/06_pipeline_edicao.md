@@ -70,3 +70,8 @@ Tudo é feito por código, sem editor de vídeo. Ambiente usado: Linux com ffmpe
 - **Pouco texto**: no máximo 1 elemento de texto por plano; carimbos em área livre definida por cena (nunca sobre personagem, número ou outro texto).
 - Imagens reais ≤ 10% do vídeo; o resto em 2D vetorial próprio (personagens com 6 expressões, frente e costas).
 - Fluxo: lista de cortes gerada por script a partir das frases alinhadas (`gerar_cortes.py`) → `cortes.json` → `Video.tsx` → storyboard em PDF com 1 frame real por plano (`montar_storyboard.py`).
+
+## Regras do dono (nov/2026, vídeo 6) — prints de notícia e zoom
+- **Print de notícia**: mostrar SÓ o parágrafo da notícia (recorte do elemento, sem foto/vídeo do veículo), em cartão branco sobre um fundo escuro e desfocado (mapa, ShakeMap ou cena do assunto). **Grifo amarelo animado**: as linhas vão sendo grifadas na ordem, do 1º ao último segundo do plano, acompanhando a fala. Nome da fonte sempre visível ("FONTE: CNN BRASIL · 24/06/2026"). Plano ≤ 5 s. Script: `print_paragrafo.js` (Playwright: recorte do parágrafo + posição de cada linha em JSON).
+- **Zoom**: um único movimento por plano, numa só direção (só in OU só out), muito leve e contínuo até o fim do plano — nunca "zoom e volta". Em planos seguidos da mesma cena, o zoom continua de onde parou (não reinicia). Em cenas que já têm movimento próprio (pessoa andando, carro, avião, tremor), zoom quase imperceptível (≈1–1,5% no plano inteiro). Cenas paradas: ≈2–3%.
+- Movimentos sempre suaves (easeInOutSine), sem trancos.

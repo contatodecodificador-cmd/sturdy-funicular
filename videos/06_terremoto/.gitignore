@@ -8,3 +8,4 @@ audio/*.wav
 *.mp4
 render/public/*.wav
 render/node_modules
+render/node_modules
