@@ -56,7 +56,7 @@ d.text((PW // 2, 180), 'E Se um TERREMOTO de 9,5 Atingisse o BRASIL? · Brasil M
 tot = L[-1]['b']; mx = max(x['b'] - x['a'] for x in L)
 d.text((PW // 2, 1160), f'{len(L)} planos · {int(tot // 60)} min {int(tot % 60)} s · plano mais longo: {mx:.1f} s · média {tot / len(L):.1f} s por plano'.replace('.', ','), font=f('Inter-SemiBold.otf', 30), fill=(227, 176, 75), anchor='ma')
 d.text((PW // 2, 1220), 'Cada quadro é um frame real da edição: 2D vetorial + prints de notícias (só o parágrafo, grifo na frase-chave) + mapas oficiais do USGS. Dourado = plano acima de 4,2 s.', font=FR, fill=(150, 160, 180), anchor='ma')
-d.text((PW // 2, 1260), 'Zoom único e leve por plano (sem vai-e-volta); fusão só entre planos sem texto; régua de magnitude e sismógrafo como contador; o copo d'água como fio condutor.', font=FR, fill=(150, 160, 180), anchor='ma')
+d.text((PW // 2, 1260), 'Zoom único e leve por plano (sem vai-e-volta); fusão só entre planos sem texto; régua de magnitude e sismógrafo como contador; o copo de água como fio condutor.', font=FR, fill=(150, 160, 180), anchor='ma')
 pages.insert(0, cap)
 pages[0].save('storyboard/storyboard_video6.pdf', save_all=True, append_images=pages[1:], resolution=150)
 for k in (0, 3, 9, 14): pages[k].resize((1200, 750)).save(f'/tmp/claude-0/sb6p{k}.jpg', quality=80)
