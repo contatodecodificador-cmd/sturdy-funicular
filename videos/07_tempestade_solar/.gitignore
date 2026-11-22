@@ -5,3 +5,4 @@ render/stills/
 render/public/3d/*.mp4
 *.log
 audio/*.wav
+*.wav
