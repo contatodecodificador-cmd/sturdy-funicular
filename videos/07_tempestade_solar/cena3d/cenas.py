@@ -400,17 +400,27 @@ def A07():  # celular com notificação de Pix (mesma sala, outro ângulo)
     c.rotation_euler = (alvo - c.location).to_track_quat('-Z', 'Y').to_euler(); c.data.dof.focus_distance = (alvo - c.location).length
     bpy.context.view_layer.update()
 
-def A11():  # telégrafo sob uma aurora vermelha e verde (antes da faísca)
+def A11():  # telégrafo sob uma aurora suave (cortinas verticais verdes com topo vermelho)
     S06()
     w = bpy.context.scene.world; nt = w.node_tree; bg = nt.nodes['Background']
-    tc = nt.nodes.new('ShaderNodeTexCoord'); sep = nt.nodes.new('ShaderNodeSeparateXYZ'); nt.links.new(tc.outputs['Generated'], sep.inputs[0])
-    nz = nt.nodes.new('ShaderNodeTexNoise'); nz.inputs['Scale'].default_value = 2; nz.inputs['Detail'].default_value = 2; mpc = nt.nodes.new('ShaderNodeMapping'); mpc.inputs['Scale'].default_value = (6, 6, 0.6); nt.links.new(tc.outputs['Generated'], mpc.inputs[0]); nt.links.new(mpc.outputs[0], nz.inputs['Vector'])
+    tc = nt.nodes.new('ShaderNodeTexCoord')
+    sep = nt.nodes.new('ShaderNodeSeparateXYZ'); nt.links.new(tc.outputs['Generated'], sep.inputs[0])
+    # cortinas: onda em X (raios verticais), suavizada
+    wv = nt.nodes.new('ShaderNodeTexWave'); wv.wave_type = 'BANDS'; wv.bands_direction = 'X'; wv.inputs['Scale'].default_value = 3.0
+    wv.inputs['Distortion'].default_value = 6.0; wv.inputs['Detail'].default_value = 1.5; wv.inputs['Detail Scale'].default_value = 1.2
+    nt.links.new(tc.outputs['Generated'], wv.inputs['Vector'])
+    # faixa de altura (onde a aurora aparece): z do céu entre ~0.52 e ~0.8
+    alt = nt.nodes.new('ShaderNodeMapRange'); alt.inputs['From Min'].default_value = 0.38; alt.inputs['From Max'].default_value = 0.78
+    nt.links.new(sep.outputs['Z'], alt.inputs['Value'])
     cr = nt.nodes.new('ShaderNodeValToRGB'); e = cr.color_ramp.elements
-    e[0].position = 0.45; e[0].color = (0.02, 0.03, 0.07, 1); e[1].position = 0.75; e[1].color = (0.5, 0.06, 0.08, 1)
-    e2 = e.new(0.62); e2.color = (0.03, 0.22, 0.1, 1)
-    mx = nt.nodes.new('ShaderNodeMath'); mx.operation = 'ADD'; nt.links.new(sep.outputs['Z'], mx.inputs[0]); nt.links.new(nz.outputs['Fac'], mx.inputs[1])
-    mp = nt.nodes.new('ShaderNodeMath'); mp.operation = 'MULTIPLY'; mp.inputs[1].default_value = 0.62; nt.links.new(mx.outputs[0], mp.inputs[0])
-    nt.links.new(mp.outputs[0], cr.inputs['Fac']); nt.links.new(cr.outputs['Color'], bg.inputs['Color']); bg.inputs['Strength'].default_value = 0.55
+    e[0].position = 0.0; e[0].color = (0.0, 0.0, 0.0, 1); e[1].position = 1.0; e[1].color = (0.0, 0.0, 0.0, 1)
+    for p_, c_ in [(0.3, (0.015, 0.16, 0.07, 1)), (0.45, (0.03, 0.45, 0.18, 1)), (0.68, (0.2, 0.06, 0.09, 1)), (0.9, (0.03, 0.01, 0.02, 1))]: x = e.new(p_); x.color = c_
+    nt.links.new(alt.outputs['Result'], cr.inputs['Fac'])
+    mul = nt.nodes.new('ShaderNodeMix'); mul.data_type = 'RGBA'; mul.blend_type = 'MULTIPLY'; mul.inputs['Factor'].default_value = 0.75
+    nt.links.new(cr.outputs['Color'], mul.inputs['A']); nt.links.new(wv.outputs['Color'], mul.inputs['B'])
+    add = nt.nodes.new('ShaderNodeMix'); add.data_type = 'RGBA'; add.blend_type = 'ADD'; add.inputs['Factor'].default_value = 1.0
+    add.inputs['A'].default_value = (0.006, 0.009, 0.024, 1); nt.links.new(mul.outputs['Result'], add.inputs['B'])
+    nt.links.new(add.outputs['Result'], bg.inputs['Color']); bg.inputs['Strength'].default_value = 1.0
     for o in bpy.data.objects:
         if o.name.startswith('faisca'): o.hide_render = True
     c = bpy.context.scene.camera; c.location = (5.5, -8.5, 3.2); c.rotation_euler = (Vector((0.4, 0, 6.2)) - c.location).to_track_quat('-Z', 'Y').to_euler(); c.data.lens = 32; c.data.dof.use_dof = False
