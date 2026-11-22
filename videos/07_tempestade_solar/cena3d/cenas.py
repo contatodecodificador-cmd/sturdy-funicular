@@ -82,20 +82,20 @@ def terra(sol_dir, luzes=9.0, anomalia=0.0, nuvens=True):
     L.new(geo.outputs['Normal'], dt.inputs[0])
     nf = n.new('ShaderNodeMath'); nf.operation = 'MULTIPLY_ADD'; nf.use_clamp = True; nf.inputs[1].default_value = -5; nf.inputs[2].default_value = 0.2; L.new(dt.outputs['Value'], nf.inputs[0])
     lum = n.new('ShaderNodeRGBToBW'); L.new(noite.outputs['Color'], lum.inputs[0])
-    g = n.new('ShaderNodeMath'); g.operation = 'POWER'; g.inputs[1].default_value = 1.4; L.new(lum.outputs[0], g.inputs[0])
+    g = n.new('ShaderNodeMath'); g.operation = 'POWER'; g.inputs[1].default_value = 1.8; L.new(lum.outputs[0], g.inputs[0])
     e1 = n.new('ShaderNodeMath'); e1.operation = 'MULTIPLY'; L.new(g.outputs[0], e1.inputs[0]); L.new(nf.outputs[0], e1.inputs[1])
     ult = e1
     if nub:
         e2 = n.new('ShaderNodeMath'); e2.operation = 'MULTIPLY'; L.new(e1.outputs[0], e2.inputs[0]); L.new(nub.outputs[0], e2.inputs[1]); ult = e2
     e3 = n.new('ShaderNodeMath'); e3.operation = 'MULTIPLY'; e3.inputs[1].default_value = luzes; L.new(ult.outputs[0], e3.inputs[0]); e3.name = 'luzes'
-    p.inputs['Emission Color'].default_value = (1.0, 0.66, 0.32, 1); L.new(e3.outputs[0], p.inputs['Emission Strength'])
+    p.inputs['Emission Color'].default_value = (1.0, 0.78, 0.48, 1); L.new(e3.outputs[0], p.inputs['Emission Strength'])
     saida = p.outputs[0]
     if anomalia > 0:
         ds = n.new('ShaderNodeVectorMath'); ds.operation = 'DISTANCE'; ds.inputs[1].default_value = tuple(ll(-45, -26)); L.new(nrm.outputs[0], ds.inputs[0])
-        rr = n.new('ShaderNodeMapRange'); rr.inputs['From Min'].default_value = 0.0; rr.inputs['From Max'].default_value = 0.32
+        rr = n.new('ShaderNodeMapRange'); rr.inputs['From Min'].default_value = 0.0; rr.inputs['From Max'].default_value = 0.38; rr.interpolation_type = 'SMOOTHERSTEP'
         rr.inputs['To Min'].default_value = 1; rr.inputs['To Max'].default_value = 0; L.new(ds.outputs['Value'], rr.inputs['Value'])
-        em = n.new('ShaderNodeEmission'); em.inputs['Color'].default_value = (1, 0.08, 0.02, 1)
-        k = n.new('ShaderNodeMath'); k.operation = 'MULTIPLY'; k.inputs[1].default_value = anomalia; L.new(rr.outputs['Result'], k.inputs[0]); L.new(k.outputs[0], em.inputs['Strength'])
+        em = n.new('ShaderNodeEmission'); em.inputs['Color'].default_value = (1, 0.12, 0.04, 1)
+        k = n.new('ShaderNodeMath'); k.operation = 'MULTIPLY'; k.name = 'anom'; k.inputs[1].default_value = anomalia * 0.55; L.new(rr.outputs['Result'], k.inputs[0]); L.new(k.outputs[0], em.inputs['Strength'])
         ad = n.new('ShaderNodeAddShader'); L.new(saida, ad.inputs[0]); L.new(em.outputs[0], ad.inputs[1]); saida = ad.outputs[0]
     L.new(saida, o.inputs[0])
     # atmosfera
@@ -237,6 +237,8 @@ def plano_espaco_terra(cam_lonlat, dist, alvo_z=0.0, lente=50, sol_cam=(0.8, 0.5
     c = camera(cd * dist, (0, 0, alvo_z), lente)
     cx = c.matrix_world.to_3x3(); sd = (cx @ Vector(sol_cam)).normalized()
     sol_luz(sd)
+    if luzes >= 40:  # cena noturna: luar azulado bem fraco para o contorno dos continentes aparecer
+        lua = sol_luz(cx @ Vector((0.2, 0.3, 1.0)), 0.18); lua.data.color = (0.55, 0.65, 1.0)
     terra(sd, luzes=luzes, anomalia=anomalia)
     if linhas: campo(cd, compressao=compressao, rasgo=rasgo, sol_dir=sd)
     if sol_visivel:
@@ -248,7 +250,7 @@ def S01():  # close do Sol com protuberância
     espaco(0.3); camera((0, -12, 0), (1.9, 0, 1.4), 50); sol((0, 0, 0), 3.2, 2.2); protuberancia((0, 0, 0), 3.2, ang=40)
 
 def S02():  # Terra à noite, Brasil iluminado
-    plano_espaco_terra((-48, -14), 2.6, alvo_z=0.0, sol_cam=(-1.0, 0.25, -0.45), luzes=45)
+    plano_espaco_terra((-48, -14), 2.6, alvo_z=0.0, sol_cam=(-1.0, 0.25, -0.45), luzes=80)
 
 def S03():  # sala à noite, celular com mapa na mesa
     sc = bpy.context.scene
@@ -316,12 +318,16 @@ def S06():  # telégrafo à noite com faísca
     L.new(nz.outputs['Fac'], bump.inputs['Height']); L.new(bump.outputs[0], b.inputs['Normal'])
     o = n.new('ShaderNodeOutputMaterial'); L.new(b.outputs[0], o.inputs[0])
     bpy.ops.mesh.primitive_cylinder_add(radius=0.11, depth=7, location=(0, 0, 3.5)); bpy.context.object.data.materials.append(mm)
-    bpy.ops.mesh.primitive_cube_add(size=1, location=(0, 0, 6.5)); cr = bpy.context.object; cr.scale = (1.4, 0.09, 0.09); cr.data.materials.append(mm)
+    for zc, lx in ((6.5, 2.6), (5.9, 2.2)):
+        bpy.ops.mesh.primitive_cube_add(size=1, location=(0, 0, zc)); cr = bpy.context.object; cr.scale = (lx, 0.09, 0.09); cr.data.materials.append(mm)
+    bpy.ops.mesh.primitive_cylinder_add(radius=0.13, depth=7.4, location=(0, 0, 3.3)); bpy.context.object.data.materials.append(mm)
     mv, n, L = mat('vidro'); g = n.new('ShaderNodeBsdfGlass'); g.inputs['Color'].default_value = (0.6, 0.9, 0.8, 1); g.inputs['Roughness'].default_value = 0.05
     o = n.new('ShaderNodeOutputMaterial'); L.new(g.outputs[0], o.inputs[0])
     mfio = emissivo('fio_dummy', (0, 0, 0), 0)
     mf, n, L = mat('fio'); b = n.new('ShaderNodeBsdfPrincipled'); b.inputs['Base Color'].default_value = (0.35, 0.22, 0.12, 1); b.inputs['Metallic'].default_value = 1; b.inputs['Roughness'].default_value = 0.4
     o = n.new('ShaderNodeOutputMaterial'); L.new(b.outputs[0], o.inputs[0])
+    for x2, z2 in [(-0.6, 6.68), (0.6, 6.68), (-0.95, 6.08), (0.95, 6.08), (-0.4, 6.08), (0.4, 6.08)]:
+        bpy.ops.mesh.primitive_cone_add(radius1=0.07, radius2=0.04, depth=0.18, location=(x2, 0, z2)); bpy.context.object.data.materials.append(mv)
     for x in (-1.15, 1.15):
         bpy.ops.mesh.primitive_cone_add(radius1=0.09, radius2=0.05, depth=0.2, location=(x, 0, 6.68)); bpy.context.object.data.materials.append(mv)
         cu = bpy.data.curves.new('fio', 'CURVE'); cu.dimensions = '3D'; cu.bevel_depth = 0.008
@@ -362,7 +368,7 @@ def S10():  # Terra recuada com o Sol ao fundo
     plano_espaco_terra((-45, -18), 5.6, alvo_z=0.3, sol_cam=(0.6, 0.4, 0.6), sol_visivel=(0.31, 0.14, 1.4), linhas=True, rasgo=True, luzes=6, anomalia=0.4)
 
 def S11():  # Brasil à noite, mais perto
-    plano_espaco_terra((-46, -20), 1.75, alvo_z=0.0, lente=50, sol_cam=(-1.0, 0.25, -0.45), luzes=45)
+    plano_espaco_terra((-46, -20), 1.75, alvo_z=0.0, lente=50, sol_cam=(-1.0, 0.25, -0.45), luzes=80)
 
 def S14():  # impacto: escudo achatado do lado do Sol
     plano_espaco_terra((-45, -10), 6.0, alvo_z=0.0, lente=40, sol_cam=(1.0, 0.15, 0.0), linhas=True, compressao=1.0, rasgo=True, luzes=6, anomalia=0.6)
@@ -422,11 +428,96 @@ def A18():  # Sol ativo: mais manchas, câmera girando em volta
 def A20():  # o escudo inteiro brilhando, protegendo (sem rasgo)
     plano_espaco_terra((-30, 5), 4.6, alvo_z=0.0, linhas=True, rasgo=False, luzes=6, sol_cam=(0.6, 0.4, 0.6))
 
+
+# ---------------------------------------------------------------- animação por plano (render final)
+def animar(e, N):
+    sc = bpy.context.scene; sc.frame_start = 1; sc.frame_end = N; mt = e.get('movtxt', '').lower(); dur = N / 30.0
+    cam = sc.camera; c0 = cam.location.copy()
+    def kf(ob, path, vals):  # vals: [(frame, valor)]
+        for f, v in vals: setattr(ob, path, v) if not isinstance(v, tuple) else setattr(ob, path, v); ob.keyframe_insert(path, frame=f)
+    def linear():
+        for ob in list(bpy.data.objects) + [w for w in bpy.data.worlds]:
+            ad = getattr(ob, 'animation_data', None)
+            if ad and ad.action:
+                for fc in getattr(ad.action, 'fcurves', []):
+                    for kp in fc.keyframe_points: kp.interpolation = 'LINEAR'
+    alvo = Vector((0, 0, 0))
+    try:
+        fwd = cam.matrix_world.to_3x3() @ Vector((0, 0, -1)); dist = c0.length
+    except Exception: fwd = Vector((0, 1, 0)); dist = 1
+    terra_ob = bpy.data.objects.get('terra')
+    if terra_ob:  # globo gira: tudo que está no centro (Terra, atmosfera, linhas) num pivô
+        bpy.ops.object.empty_add(location=(0, 0, 0)); piv = bpy.context.object; piv.name = 'pivo'
+        for ob in bpy.data.objects:
+            if ob is piv or ob.type in ('CAMERA', 'LIGHT') or ob.name.startswith('cme'): continue
+            if ob.location.length < 0.5: ob.parent = piv
+        kf(piv, 'rotation_euler', [(1, (0, 0, 0)), (N, (0, 0, math.radians(2.6 * dur)))])
+        no = terra_ob.data.materials[0].node_tree.nodes.get('luzes')
+        if no and 'piscam' in mt:
+            v = no.inputs[1].default_value
+            for f, x in [(1, v), (int(N * .42), v), (int(N * .5), v * 0.12), (int(N * .6), v * 0.12), (int(N * .7), v)]: no.inputs[1].default_value = x; no.inputs[1].keyframe_insert('default_value', frame=f)
+        an = terra_ob.data.materials[0].node_tree.nodes.get('anom')
+        if an:
+            v = an.inputs[1].default_value
+            for f in range(1, N + 1, 6): an.inputs[1].default_value = v * (0.8 + 0.35 * (0.5 + 0.5 * math.sin(f / 30 * 4.2))); an.inputs[1].keyframe_insert('default_value', frame=f)
+    if 'recua' in mt: kf(cam, 'location', [(1, tuple(c0)), (N, tuple(c0 + (c0 - alvo) * 0.07 if c0.length > 3 else c0 - fwd * 0.4))])
+    if 'avanço' in mt or 'zoom leve' in mt or 'dolly' in mt:
+        k = 0.1 if 'dolly' in mt else 0.04
+        alvo_d = (cam.location + fwd * (cam.data.dof.focus_distance if cam.data.dof.use_dof else dist))
+        kf(cam, 'location', [(1, tuple(c0)), (N, tuple(c0.lerp(alvo_d, k)))])
+    if 'desce' in mt: kf(cam, 'location', [(1, tuple(c0)), (N, tuple(c0 * 0.9))])
+    if 'sobe pelo poste' in mt:
+        r0 = cam.rotation_euler.copy(); kf(cam, 'location', [(1, tuple(c0)), (N, tuple(c0 + Vector((0, 0, 0.9))))])
+    if 'gira em volta' in mt or ('girando' in mt and not terra_ob):  # Sol: câmera orbita
+        bpy.ops.object.empty_add(location=(0, 0, 0)); po = bpy.context.object; cam.parent = po
+        kf(po, 'rotation_euler', [(1, (0, 0, 0)), (N, (0, 0, math.radians(1.8 * dur)))])
+    if PLANO in ('S05', 'S14'):
+        ob = [o for o in bpy.data.objects if o.name.startswith('cme')]
+        if ob:
+            org = Vector((-14, 7, 0)) if PLANO == 'S05' else ob[0].data.splines[0].points[0].co.xyz
+            bpy.ops.object.empty_add(location=tuple(org)); pc = bpy.context.object
+            for o in ob: o.parent = pc; o.location = tuple(-Vector(org))
+            kf(pc, 'scale', [(1, (0.55, 0.55, 0.55)), (N, (1.0, 1.0, 1.0))])
+    if PLANO == 'S06':  # faísca piscando
+        random.seed(11); fa = [o for o in bpy.data.objects if o.name.startswith('faisca')]; lz = [o for o in bpy.data.objects if o.type == 'LIGHT' and o.data.type == 'POINT']
+        f = 1
+        while f <= N:
+            on = random.random() < 0.55
+            for o in fa: o.hide_render = not on; o.keyframe_insert('hide_render', frame=f)
+            for l in lz: l.data.energy = 80 if on else 0; l.data.keyframe_insert('energy', frame=f)
+            f += random.randint(2, 5)
+    if PLANO == 'S07':
+        for o in bpy.data.objects:
+            if o.name.startswith('Cube') and o.parent is None and o.location.length > 1.05:
+                p0 = o.location.copy(); d = cam.matrix_world.to_3x3() @ Vector((-0.06 * dur, 0, 0))
+                kf(o, 'location', [(1, tuple(p0)), (N, tuple(p0 + d))]); kf(o, 'rotation_euler', [(1, tuple(o.rotation_euler)), (N, tuple(Vector(o.rotation_euler) + Vector((0.3, 0.2, 0))))])
+    if PLANO == 'A04':
+        ponta = [o for o in bpy.data.objects if o.data and getattr(o.data, 'materials', None) and any(m and m.name.startswith('ponta') for m in o.data.materials)][0]
+        feixe = [o for o in bpy.data.objects if o.data and getattr(o.data, 'materials', None) and any(m and m.name.startswith('feixe') for m in o.data.materials)][0]
+        for f in (1, N):
+            x = -8.8 + (11.2 + 8.8) * (0.25 + 0.75 * (f - 1) / (N - 1)); L = x + 8.8
+            ponta.location.x = x; ponta.keyframe_insert('location', frame=f)
+            feixe.location.x = (-8.8 + x) / 2; feixe.scale.z = L / 12; feixe.keyframe_insert('location', frame=f); feixe.keyframe_insert('scale', frame=f)
+    linear()
+
 if __name__ == '__main__':
     sc = base()
     globals()[PLANO]()
-    sc.frame_set(QUADRO)
-    sc.render.filepath = SAIDA
-    bpy.ops.render.render(write_still=True)
-    print('OK', PLANO, SAIDA)
+    if '--anim' in args:  # --anim <planos7.json> <id>: renderiza a sequência do plano em SAIDA/f_####.png
+        import json
+        jj, pid = args[args.index('--anim') + 1], args[args.index('--anim') + 2]
+        e = [x for x in json.load(open(jj)) if x['id'] == pid][0]
+        N = int(round((e['t1'] - e['t0']) * 30)) + 2
+        if '--frames' in args: N = int(opt('--frames', N))
+        animar(e, N)
+        os.makedirs(SAIDA, exist_ok=True); sc.render.filepath = os.path.join(SAIDA, 'f_')
+        sc.render.image_settings.file_format = 'PNG'
+        if '--quadro' in args: sc.frame_set(QUADRO); sc.render.filepath = os.path.join(SAIDA, f'q{QUADRO:04d}.png'); bpy.ops.render.render(write_still=True)
+        else: bpy.ops.render.render(animation=True)
+        print('OK', PLANO, pid, N)
+    else:
+        sc.frame_set(QUADRO)
+        sc.render.filepath = SAIDA
+        bpy.ops.render.render(write_still=True)
+        print('OK', PLANO, SAIDA)
 

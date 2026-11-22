@@ -1,1 +1,7 @@
 __pycache__/
+render/node_modules
+render/out/
+render/stills/
+render/public/3d/*.mp4
+*.log
+audio/*.wav
