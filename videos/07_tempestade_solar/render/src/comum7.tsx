@@ -108,8 +108,10 @@ export const Traco: React.FC<{d: string; k: number; cor: string; w?: number; L?:
     <path d={d} fill="none" stroke={cor} strokeWidth={w} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={dash || `${L * clamp01(k)} ${L}`} />
   </g>
 );
-export const pts = (a: [number, number][]) => 'M' + a.map((p) => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' L');
+export const pts = (a: [number, number][]) => !a || !a.length ? 'M0,0' : 'M' + a.map((p) => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' L');
 export const suave = (a: [number, number][]) => {  // curva Catmull-Rom → Bézier
+  if (!a || a.length === 0) return 'M0,0';
+  if (a.length === 1) return `M${a[0][0]},${a[0][1]}`;
   let d = `M${a[0][0]},${a[0][1]}`;
   for (let i = 0; i < a.length - 1; i++) {
     const p0 = a[Math.max(0, i - 1)], p1 = a[i], p2 = a[i + 1], p3 = a[Math.min(a.length - 1, i + 2)];
