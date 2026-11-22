@@ -122,9 +122,9 @@ export const Nucleo: React.FC<P> = ({lt, t}) => {
         <defs>
           <radialGradient id="manto"><stop offset="0.6" stopColor="#B4421E" /><stop offset="1" stopColor="#6A2512" /></radialGradient>
           <radialGradient id="ext"><stop offset="0" stopColor="#FFD27A" /><stop offset="1" stopColor="#FF8A2A" /></radialGradient>
-          <clipPath id="corte"><path d={`M${cx},${cy} L${cx},${cy - 460} A460,460 0 1 0 ${cx + 460},${cy} Z`} /></clipPath>
+          <clipPath id="corte"><path d={`M${cx},${cy} L${cx},${cy - 460} A460,460 0 0 1 ${cx + 460},${cy} Z`} /></clipPath>
         </defs>
-        <circle cx={cx} cy={cy} r={430} fill="#2C6CB0" />
+        <Globo cx={cx} cy={cy} r={430} lon={-52 + lt * 2} lat={-12} />
         <g clipPath="url(#corte)">
           <circle cx={cx} cy={cy} r={430} fill="#5A4030" /><circle cx={cx} cy={cy} r={410} fill="url(#manto)" />
           <circle cx={cx} cy={cy} r={240} fill="url(#ext)" /><circle cx={cx} cy={cy} r={105} fill="#FFF4D0" />
@@ -132,10 +132,10 @@ export const Nucleo: React.FC<P> = ({lt, t}) => {
         <path d={`M${cx},${cy} L${cx},${cy - 430} M${cx},${cy} L${cx + 430},${cy}`} stroke="#000" strokeOpacity={0.4} strokeWidth={4} />
         {Array.from({length: 10}, (_, i) => { const a0 = t * 0.9 + i * 0.63; const r = 125 + (i % 4) * 28; const a1 = a0 + 0.5;
           const sx = cx + r * Math.cos(a0), sy = cy + r * Math.sin(a0), ex = cx + r * Math.cos(a1), ey = cy + r * Math.sin(a1);
-          const visivel = !(Math.cos(a0) > 0 && Math.sin(a0) < 0);
+          const visivel = Math.cos(a0) > 0.05 && Math.sin(a0) < -0.05 && Math.cos(a1) > 0.05 && Math.sin(a1) < -0.05;
           return visivel ? <path key={i} d={`M${sx},${sy} A${r},${r} 0 0 1 ${ex},${ey}`} fill="none" stroke="#FFF1C2" strokeWidth={5} strokeLinecap="round" opacity={0.75} /> : null; })}
       </SVG>
-      <Rotulo x={cx + 250} y={cy + 300} txt="FERRO DERRETIDO" cor={COR.brasa} op={KO(lt, 0.6, 1.0)} size={28} />
+      <Rotulo x={cx + 470} y={cy - 160} txt="FERRO DERRETIDO" cor={COR.brasa} op={KO(lt, 0.6, 1.0)} size={28} />
     </AbsoluteFill>
   );
 };
@@ -475,11 +475,17 @@ const geoP = (lon: number) => geoOrthographic().rotate([-lon, 6]).scale(500).tra
 
 // ===================== Rio de Janeiro, 1875 =====================
 const RioSkyline: React.FC<{t: number; obs?: boolean}> = ({t, obs}) => (
-  <g>
-    <path d={suave([[0, 820], [180, 760], [330, 700], [420, 520], [470, 470], [520, 540], [640, 700], [780, 760], [900, 640], [980, 430], [1020, 400], [1070, 470], [1180, 690], [1360, 760], [1500, 600], [1560, 520], [1610, 600], [1700, 760], [1920, 800]]) + ' L1920,1080 L0,1080 Z'} fill="#05060C" />
-    <rect x={0} y={900} width={1920} height={180} fill="#08101E" />
-    {Array.from({length: 40}, (_, i) => <rect key={i} x={rnd(i) * 1900} y={905 + rnd(i + 2) * 40} width={30} height={3} fill="#E8B860" opacity={0.25 * (0.5 + 0.5 * Math.sin(t * 2 + i))} />)}
-    {obs && <g transform="translate(1180 690)"><rect x={-70} y={-60} width={140} height={60} fill="#0A0C14" /><path d="M-50,-60 A50,50 0 0 1 50,-60 Z" fill="#0A0C14" /><rect x={-10} y={-40} width={20} height={20} fill="#F2C46A" opacity={0.8} /></g>}
+  <g fill="#05060C">
+    {/* Corcovado (sem o Cristo: em 1875 ele ainda não existia) */}
+    <path d="M120,900 C260,860 360,700 440,520 C470,455 500,430 520,430 C545,430 565,470 590,540 C640,690 760,820 900,900 Z" />
+    {/* Morro da Urca e Pão de Açúcar */}
+    <path d="M1180,900 C1200,820 1250,760 1330,750 C1410,745 1450,800 1470,900 Z" />
+    <path d="M1420,900 C1430,760 1470,560 1560,520 C1640,490 1700,560 1720,700 C1730,780 1735,850 1740,900 Z" />
+    <path d="M1330,760 L1560,540" stroke="#05060C" strokeWidth={2} fill="none" />
+    <path d="M0,900 C200,880 400,885 600,890 C900,895 1200,880 1920,895 L1920,1080 L0,1080 Z" />
+    <rect x={0} y={905} width={1920} height={175} fill="#08101E" />
+    {Array.from({length: 40}, (_, i) => <rect key={i} x={rnd(i) * 1900} y={912 + rnd(i + 2) * 40} width={30} height={3} fill="#E8B860" opacity={0.25 * (0.5 + 0.5 * Math.sin(t * 2 + i))} />)}
+    {obs && <g transform="translate(1000 892)"><path d="M-160,8 C-120,-50 -60,-80 0,-82 C60,-80 120,-50 160,8 Z" /><rect x={-60} y={-130} width={120} height={50} /><path d="M-40,-130 A40,40 0 0 1 40,-130 Z" /><rect x={-10} y={-115} width={20} height={18} fill="#F2C46A" opacity={0.8} /></g>}
   </g>
 );
 export const Rio: React.FC<P> = ({lt, t}) => {
@@ -496,7 +502,7 @@ export const Rio: React.FC<P> = ({lt, t}) => {
 export const ObservatorioImperial: React.FC<P> = ({lt, t}) => (
   <AbsoluteFill style={{background: 'linear-gradient(180deg, #0A0814 0%, rgba(150,30,50,0.6) 45%, #160A14 70%)'}}>
     <SVG><RioSkyline t={t} obs /></SVG>
-    <Rotulo x={1180} y={560} txt="OBSERVATÓRIO IMPERIAL" cor={COR.ouro} op={KO(lt, 0.3, 0.7)} size={28} lado={1} />
+    <Rotulo x={1000} y={700} txt="OBSERVATÓRIO IMPERIAL" cor={COR.ouro} op={KO(lt, 0.3, 0.7)} size={28} lado={1} />
   </AbsoluteFill>
 );
 export const Caderno: React.FC<P> = ({lt}) => {
