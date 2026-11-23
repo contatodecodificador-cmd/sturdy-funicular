@@ -66,3 +66,68 @@ Tudo para montar o vídeo no CapCut. Duração final: **~12:48** (24 s de abertu
 > - nenhum clipe em loop.
 >
 > Trabalhe bloco por bloco (Abertura, Introdução, Ato 1, Ato 2, Ato 3, Lado a lado, Ato 4, Fecho): para cada bloco, diga quais arquivos arrastar em que ordem, onde cortar, que texto pôr e que efeito colocar. No fim, confira comigo a lista de planos do bloco antes de passar para o próximo.
+
+---
+
+# EDIÇÃO PROFISSIONAL COM TUDO O QUE O CAPCUT OFERECE (ordem do dono)
+Use **bastante** os recursos do CapCut, mas sempre dentro da essência do canal: documentário sério, cinematográfico, com mistério e ritmo. Nada de efeito infantil, emoji, sticker engraçado ou transição "de vlog". A edição tem que ser **dinâmica**, com algo acontecendo a cada plano.
+
+## 1. Cor e filtros (o "look" do canal)
+- Aplique um **ajuste de cor global** (camada de ajuste por cima de tudo): contraste +10, realce/destaques −10, sombras +5, nitidez +10, temperatura levemente quente (+5) na Amazônia de 1930, e levemente fria (−5) nas cenas de ciência e espaço (Ato 3).
+- **Filtro** cinematográfico suave (ex.: família "Filme"/"Movie" ou "Cinematográfico", intensidade 20–35%). Nos planos de 1930 (frei, vila, jornal, Rio 1930), um filtro de **filme antigo/vintage leve** (sépia sutil, 15–25%).
+- Mantenha as cores NATURAIS: o vermelho só domina nas cenas do céu em chamas. Não saturar.
+- **Vinheta** leve em todo o vídeo e **grão de filme** sutil (efeito "Grão"/"Film grain", 10–20%).
+
+## 2. Transições (com critério)
+- Entre planos do mesmo assunto: **corte seco** (é o padrão e dá ritmo).
+- Na troca de BLOCO (Introdução → Ato 1 → Ato 2 → Ato 3 → Lado a lado → Ato 4 → Fecho): transição marcante e curta (0,3–0,5 s): **flash branco**, **luz vazada (light leak)**, **desfoque de zoom (zoom blur)** ou **chicote (whip pan)**, acompanhada de um **whoosh**.
+- Nas **explosões e impactos** (abertura plano 4, H09, H19, H39, H41, H42): **flash branco** de 3–5 quadros no corte, seguido de **tremor de câmera** (efeito "Shake"/"Tremor", forte no 1º segundo e diminuindo).
+- Ao entrar num **gráfico/mapa**: transição de **desfoque** ou **zoom in** rápido (0,3 s).
+- Ao entrar numa **foto real em cartão**: o cartão entra com **escala + fade** (de 90% para 100% em 0,4 s) e uma leve **sombra**.
+- Viagem no tempo (1930 → 1995, 1930 → 2020): **glitch leve** ou **"film burn"** de 0,4 s.
+- Não use transições 3D giratórias, cubos, páginas virando, nem a mesma transição duas vezes seguidas.
+
+## 3. Efeitos de imagem (para dar vida)
+- **Tremor de câmera** em explosões, tremores de terra e impactos.
+- **Brilho/glow** e **flash** nas bolas de fogo e nos clarões.
+- **Light leaks / reflexo de lente** (lens flare) nos amanheceres e no sol vermelho (sutil).
+- **Partículas de poeira/cinzas** (efeito de partículas ou overlay) sobre as cenas do pó vermelho caindo.
+- **Velocidade (speed ramp)** em 2–3 momentos fortes: a bola de fogo (abertura plano 3) e o airburst (H39) acelerando até o impacto.
+- **Zoom com keyframe** leve e contínuo só em imagens paradas (gráficos de mapa já vêm animados: não precisa).
+- **Desfoque de fundo** atrás das fotos reais (cartão) e atrás dos textos grandes, quando o fundo estiver poluído.
+- Efeito **"Fita VHS/filme antigo"** curto e sutil apenas no Rio 1930 (H29) e no jornal do Vaticano.
+
+## 4. Texto animado (todos os textos da coluna "texto na tela")
+- Fonte **Oswald Bold** (ou similar condensada), branco, MAIÚSCULAS, caixa escura translúcida com traço dourado embaixo (estilo do canal).
+- Animação de entrada variada, mas elegante: **máquina de escrever** (datas e nomes: "7 MESES DEPOIS", "TUNGUSKA BRASILEIRO"), **subir com fade**, **revelar por máscara/linha**, **zoom suave**. Saída: **fade** rápido.
+- Números grandes ("~1 MEGATON", "1.500 FERIDOS", "R$ 120 MIL", "MENOS DE 9 METROS"): entrada com **escala/pulo leve** + **brilho**, e o efeito sonoro "pop/impacto" baixinho.
+- Palavras de suspense ("NINGUÉM SOUBE", "O QUE CAIU?", "UMA CRATERA?"): **glitch leve** ou **tremida** curta.
+- Legendas de lugar/data (ex.: "RIO CURUÇÁ · AMAZONAS · 1930"): canto inferior esquerdo, pequenas, com **digitação**.
+- Sempre UM texto por plano. Nada de texto sobre texto ou tapando rosto e foco da cena.
+
+## 5. Efeitos sonoros (biblioteca do CapCut + pasta 05_audio/efeitos)
+- Além dos efeitos do kit, use a **biblioteca de som do CapCut**:
+  - **whoosh/swoosh** em todas as transições de bloco e ao entrar texto grande;
+  - **boom/impacto grave/sub drop** nas explosões;
+  - **rumble/tremor** nos tremores;
+  - **vento/ar** nas cenas aéreas;
+  - **papel/folhear** no jornal e no caderno;
+  - **máquina de escrever** nos textos digitados;
+  - **clique/carimbo** quando uma prova entra na pasta do caso;
+  - **ambiente de floresta/rio** nas cenas da Amazônia;
+  - **multidão** no Rio 1930;
+  - **vidro quebrando** em Chelyabinsk e no Rio;
+  - **sirene distante** depois do impacto no Rio.
+- Para o meteoro, prefira **rugido grave + estalos de fogo (crackle)**, não assobio agudo.
+- Volume dos efeitos: 15–35% (explosões até 60%), sempre abaixo da voz. Use **fade** de entrada e saída em ambientes.
+- Use o recurso de **redução automática (ducking/"Destacar voz")** para o som nativo e os efeitos baixarem quando a narração fala.
+- Música: **não colocar por enquanto** (o dono vai mandar depois).
+
+## 6. Ritmo (edição dinâmica)
+- Algo muda a cada 2–5 s: corte, movimento, texto, efeito ou som. Nunca uma imagem parada sem movimento.
+- Nos momentos de clímax (abertura, explosões, "ninguém soube", "e se fosse aqui?", Chelyabinsk), acelere: planos mais curtos, flash, tremor e impacto sonoro.
+- Nos momentos de reflexão (o frei, o caderno, o fecho), desacelere: mais respiro, transições suaves (dissolve curto), menos efeitos.
+- Logo depois de uma explosão, deixe 0,3–0,5 s de "silêncio" (só um zumbido grave) antes da voz voltar: dá impacto.
+
+## ADENDO AO PROMPT DO GPT (cole junto)
+> Além de seguir o timeline.csv, use TODOS os recursos do CapCut que deixem a edição profissional e dinâmica, dentro do estilo de documentário cinematográfico do canal: ajuste de cor global e filtros cinematográficos suaves (vintage leve nas cenas de 1930), vinheta e grão, transições marcantes só nas trocas de bloco (flash, light leak, zoom blur, whip pan com whoosh), flash + tremor de câmera nas explosões, speed ramp nos clímax, partículas e lens flare sutis, textos animados (máquina de escrever, subir com fade, revelar, glitch leve nas frases de suspense, números com escala e brilho) e efeitos sonoros da biblioteca do CapCut (whoosh, boom, rumble, papel, máquina de escrever, ambiente de floresta, vidro, multidão), com redução automática sob a voz. Sem música por enquanto. Nada infantil, nada de stickers, nada de texto sobre texto, nenhum clipe em loop. Siga a seção "EDIÇÃO PROFISSIONAL" do guia.
