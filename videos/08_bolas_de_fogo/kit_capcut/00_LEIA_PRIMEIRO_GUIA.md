@@ -12,6 +12,8 @@ Tudo para montar o vídeo no CapCut. Duração final: **~12:48** (24 s de abertu
 | `04_fotos_reais/` | Fotos reais (Chelyabinsk 2013, meteorito de Bendegó, Perseidas), para usar em CARTÃO. |
 | `05_audio/` | `narracao_completa.mp3` + `efeitos/` (efeitos sonoros) + `musicas_opcional/` (trilhas; por enquanto o dono quer o vídeo SEM música de fundo). |
 | `06_thumbnail/` | A thumbnail aprovada. |
+| `07_prints_noticias/` | 4 prints de notícia REAIS já animados (cartão branco sobre vídeo desfocado, grifo amarelo linha a linha e fonte visível): Metrópoles (2), O Povo, Brasil de Fato. É só soltar no tempo do CSV. |
+| `08_3d/` | Animação 3D do barco navegando pelo Solimões até Manaus sobre o mapa em relevo (modelo gratuito do Poly Haven), usada na parte dos "dias de barco" e da viagem da notícia. |
 | `descricao_youtube.md` | Título, descrição, fontes, créditos e tags. |
 
 ## Passo a passo
@@ -48,6 +50,8 @@ Tudo para montar o vídeo no CapCut. Duração final: **~12:48** (24 s de abertu
 - Fotos reais sempre em cartão, com crédito.
 
 ## Créditos das fotos reais (pôr no canto e na descrição)
+- Prints de notícia: Metrópoles (ago/2020), O Povo (04/09/2020), Brasil de Fato (13/04/2023) — o nome da fonte já aparece no cartão.
+- Barco 3D: modelo "Ship Pinnace" do Poly Haven (CC0); relevo: Natural Earth (domínio público).
 - Chelyabinsk 2013: foto de Alex Alishevskikh, CC BY-SA 2.0 (Wikimedia Commons).
 - Meteorito de Bendegó: Wikimedia Commons (conferir o autor na página do arquivo "Bendegó meteorite.jpg").
 - Perseidas: Wikimedia Commons (conferir o autor na página do arquivo "Perseid Meteor.jpg").

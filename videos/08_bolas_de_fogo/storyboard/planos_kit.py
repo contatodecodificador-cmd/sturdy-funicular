@@ -8,12 +8,12 @@ C2 = {
  5: ['G:Sismo:papel', 'G:MapaLaPaz:0'], 6: ['G:MapaBR:alerta', 'G:Viagem:0', 'G:Jornal:0', 'G:Estante:0'], 7: ['HF:H10'],
  8: ['G:Pasta:abre', 'HF:H11', 'HF:H36', 'G:MapaSP:0'], 9: ['AB:p5', 'G:Pasta:pergunta'],
  10: ['G:MapaAM:0', 'G:MapaAM:1'], 11: ['G:MapaAM:regua', 'HF:H14', 'G:MapaAM:1'], 12: ['HF:H12', 'AB:p2', 'HF:H13'],
- 13: ['G:MapaAM:javari', 'HF:H51', 'G:MapaAM:barco', 'HF:H27'], 14: ['G:Relogio8'], 15: ['HF:H16', 'HF:H06'],
+ 13: ['G:MapaAM:javari', 'HF:H51', '3D:barco', 'HF:H27'], 14: ['G:Relogio8'], 15: ['HF:H16', 'HF:H06'],
  16: ['HF:H17', 'HF:H07', 'AB:p5'], 17: ['AB:p3', 'HF:H18', 'HF:H08'], 18: ['HF:H19', 'HF:H09'],
  19: ['HF:H20', 'HF:H21', 'HF:H09'], 20: ['G:Caderno:fechado', 'G:Pasta:pergunta'],
  21: ['HF:H22', 'HF:H11', 'HF:H23', 'G:MapaAM:1'], 22: ['G:Calendario', 'HF:H24'], 23: ['HF:H25', 'G:Caderno:escreve'],
  24: ['HF:H33', 'G:Airburst:1', 'HF:H39'], 25: ['G:Tunguska:mapa', 'HF:H26', 'G:Tunguska:kulik', 'HF:H22'],
- 26: ['G:Viagem:1', 'HF:H27', 'G:Viagem:2'], 27: ['HF:H28', 'G:Jornal:1', 'G:Jornal:0'], 28: ['HF:H29', 'G:MapaBR:apagado', 'HF:H14'],
+ 26: ['3D:barco', 'HF:H27', 'G:Viagem:2'], 27: ['HF:H28', 'G:Jornal:1', 'G:Jornal:0'], 28: ['HF:H29', 'G:MapaBR:apagado', 'HF:H14'],
  29: ['G:Estante:1', 'HF:H30'], 30: ['HF:H31', 'HF:H34', 'G:GloboBolidos'], 31: ['G:ArtigoRusso', 'G:Tunguska:kulik', 'HF:H26'],
  32: ['HF:H32', 'HF:H30'], 33: ['G:Jornal:2'], 34: ['HF:H33', 'G:Regua:0', 'HF:H39'],
  35: ['HF:H34', 'R:perseidas', 'G:GloboBolidos', 'HF:H47'], 36: ['G:MapaLaPaz:1', 'G:Pasta:abre'],
@@ -26,9 +26,9 @@ C2 = {
  52: ['R:chelyabinsk', 'HF:H41', 'G:Regua:2'], 53: ['HF:H41', 'R:chelyabinsk', 'HF:H43', 'G:Regua:2'],
  54: ['G:Regua:3', 'HF:H33'], 55: ['G:Regua:4', 'HF:H26'], 56: ['G:MapaSP:tunguska', 'HF:H26', 'G:Regua:4'],
  57: ['HF:H10', 'HF:H42', 'HF:H43', 'G:MapaSP:0', 'HF:H42', 'HF:H10'], 58: ['HF:H44', 'G:MapaBR:alerta'],
- 59: ['HF:H44', 'HF:H45', 'HF:H46'], 60: ['G:Celular', 'HF:H46', 'HF:H45'], 61: ['G:Split', 'HF:H11'],
+ 59: ['HF:H44', 'N:metropoles_estrondo', 'HF:H45'], 60: ['N:opovo_38kg', 'HF:H46', 'N:metropoles_venda'], 61: ['G:Split', 'HF:H11'],
  62: ['HF:H47', 'G:Bramon', 'G:Bramon:risco', 'HF:H34'], 63: ['HF:H48', 'HF:H34', 'HF:H47'],
- 64: ['R:bendego', 'HF:H32', 'R:bendego', 'HF:H48', 'R:bendego'], 65: ['HF:H50', 'HF:H46', 'HF:H44', 'HF:H50'],
+ 64: ['R:bendego', 'N:brasildefato_museu', 'R:bendego', 'HF:H48', 'R:bendego'], 65: ['HF:H50', 'HF:H46', 'HF:H44', 'HF:H50'],
  66: ['G:GloboBolidos', 'HF:H51'], 67: ['G:Pasta:pergunta'], 68: ['G:Hipoteses', 'HF:H33', 'HF:H39', 'G:Hipoteses'],
  69: ['HF:H51', 'HF:H40'], 70: ['HF:H52', 'HF:H25'], 71: ['HF:H53', 'AB:p1'], 72: ['G:Cartela', 'G:Cartela', 'G:Cartela'],
 }
@@ -51,7 +51,7 @@ POOL = {'INTRODUÇÃO': ['AB:p2', 'HF:H14', 'HF:H16', 'HF:H51'], 'ATO 1 · A MAN
         'LADO A LADO · A RÉGUA DE ENERGIA': ['HF:H33', 'HF:H39', 'HF:H41', 'HF:H09'], 'ATO 4 · QUEM VIGIA O CÉU': ['HF:H47', 'HF:H48', 'HF:H44', 'HF:H34'],
         'FECHO': ['HF:H51', 'HF:H14']}
 for i in range(1, len(P)):
-    if P[i]['vis'] == P[i - 1]['vis'] and P[i]['vis'][:3] in ('HF:', 'AB:'):
+    if P[i]['vis'] == P[i - 1]['vis'] and P[i]['vis'][:3] in ('HF:', 'AB:', 'N:m', 'N:o', 'N:b', '3D:'):
         viz = {P[i - 1]['vis'], P[i + 1]['vis'] if i + 1 < len(P) else ''}
         P[i]['vis'] = next(v for v in POOL[P[i]['bloco']] if v not in viz)
         P[i]['desc'] += ' (plano de cobertura)'

@@ -1,7 +1,7 @@
 """Monta o kit CapCut do vídeo 8 (para o GPT montar): pastas, arquivos nomeados na ordem, timeline.csv e guia."""
 import json, os, shutil, csv, subprocess
 K = 'kit_capcut'; T = json.load(open(f'{K}/timeline.json'))
-for d in ['01_abertura', '02_videos_ia', '03_graficos', '04_fotos_reais', '05_audio/efeitos', '05_audio/musicas_opcional', '06_thumbnail']:
+for d in ['07_prints_noticias', '08_3d', '01_abertura', '02_videos_ia', '03_graficos', '04_fotos_reais', '05_audio/efeitos', '05_audio/musicas_opcional', '06_thumbnail']:
     os.makedirs(f'{K}/{d}', exist_ok=True)
 # abertura
 for i in range(1, 6): shutil.copy(f'abertura/p{i}.mp4', f'{K}/01_abertura/abertura_plano{i}.mp4')
@@ -37,6 +37,10 @@ for i, p in enumerate(T):
         uso = f'usar do início do clipe por {d:.2f} s; sem zoom' + ('; manter o som nativo a ~30%' if h in COM_AUDIO else '; clipe mudo')
     elif v.startswith('AB:'):
         arq = f'01_abertura/abertura_{v[3:].replace("p", "plano")}.mp4'; tipo = 'vídeo IA (reuso da abertura)'; uso = f'usar a partir de 0,5 s por {d:.2f} s; sem zoom; som do clipe desligado'
+    elif v.startswith('N:'):
+        arq = f'07_prints_noticias/print_{v[2:]}.mp4'; tipo = 'PRINT DE NOTÍCIA (pronto)'; uso = f'usar do início por {d:.2f} s (cartão já animado, com grifo e fonte); entrada com escala + whoosh'
+    elif v.startswith('3D:'):
+        arq = '08_3d/barco_3d_viagem.mp4'; tipo = 'animação 3D (pronta)'; uso = f'usar do início por {d:.2f} s; sem zoom'
     elif v.startswith('R:'):
         foto, fundo = FUNDO_R[v]; arq = foto; tipo = 'FOTO REAL em cartão'
         uso = f'CARTÃO: foto no centro com ~68% da largura, borda branca 8 px, cantos 12 px, sombra forte; FUNDO = 02_videos_ia/{fundo}.mp4 desfocado (blur 30) e escurecido 50%; zoom leve 100→104% só na foto'
