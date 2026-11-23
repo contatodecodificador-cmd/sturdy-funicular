@@ -1,7 +1,7 @@
 # O Dia em Que BOLAS DE FOGO Caíram na AMAZÔNIA — ROTEIRO (Brasil Milenar, vídeo 8)
 
 **Duração-alvo:** 13–14 min (~2.050 palavras de narração). **Tipo:** Brasil, evento real.
-**Thumbnail:** bola de fogo gigante explodindo sobre o rio amazônico ao amanhecer, céu vermelho-sangue, uma canoa pequena na água. Número gigante: **1930**.
+**Thumbnail (aprovada, salva no Canva):** vista aérea de drone do rio amazônico no meio da floresta, cores naturais, bola de fogo gigante explodindo no horizonte, canoa pequena; frase "FOI REAL" em branco no canto inferior direito.
 
 ## Checagem de estrutura (nada igual aos vídeos anteriores)
 | Item | v1 Noronha | v2 Lua | v4 Passado | v5 Temperatura | v6 Terremoto | v7 Tempestade solar | **v8 Bolas de fogo (novo)** |
