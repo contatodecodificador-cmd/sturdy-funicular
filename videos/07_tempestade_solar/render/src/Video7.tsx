@@ -1,6 +1,6 @@
 /* Vídeo 7 — O Que a Maior Tempestade Solar da História Faria com o Brasil */
 import React from 'react';
-import {AbsoluteFill, OffthreadVideo, Sequence, Img, staticFile} from 'remotion';
+import {AbsoluteFill, OffthreadVideo, Sequence, Img, staticFile, getInputProps} from 'remotion';
 import {F} from './theme';
 import {Shot, Chave, Grao, Vinheta, KO, lerp, prog, clamp01, useT} from './base';
 import planosJ from './planos7.json';
@@ -13,6 +13,7 @@ type Plano = {id: string; t0: number; t1: number; vis: string; mov: string; movt
 export const PLANOS = planosJ as Plano[];
 export const FIM7 = PLANOS[PLANOS.length - 1].t1;
 const TEM3D = new Set(tem3d as string[]);
+const LIMPO = Boolean((getInputProps() as {limpo?: boolean}).limpo); // kit CapCut: só a imagem, sem textos/HUD
 
 const CENAS: Record<string, React.FC<A.P>> = {
   q_ondas: A.Ondas, q_radio: A.Radio, q_aviao: A.Aviao, q_protons: A.Protons, q_relogio: A.RelogioG, q_nucleo: A.Nucleo, q_lua_nucleo: A.LuaNucleo, q_dinamo: A.Dinamo,
@@ -91,14 +92,16 @@ export const Video7: React.FC = () => {
       {PLANOS.map((p) => (
         <Shot key={p.id} a={p.t0} b={p.t1}>{(lt, d) => <>
           {cena(p, lt, d, t)}
-          {p.tela && <Chave lt={lt} t0={0.25} size={56} top={150}>{p.tela}</Chave>}
+          {p.tela && !LIMPO && <Chave lt={lt} t0={0.25} size={56} top={150}>{p.tela}</Chave>}
         </>}</Shot>
       ))}
-      <Clarao t={t} t0={T_CLARAO} />
-      <Clarao t={t} t0={T_IMPACTO} dur={0.5} forca={0.8} />
-      <Relogio t={t} />
-      <Vinheta forca={0.35} />
-      <Grao />
+      {!LIMPO && <>
+        <Clarao t={t} t0={T_CLARAO} />
+        <Clarao t={t} t0={T_IMPACTO} dur={0.5} forca={0.8} />
+        <Relogio t={t} />
+        <Vinheta forca={0.35} />
+        <Grao />
+      </>}
     </AbsoluteFill>
   );
 };

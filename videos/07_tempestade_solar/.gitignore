@@ -7,3 +7,7 @@ render/public/3d/*.mp4
 audio/*.wav
 *.wav
 final/
+kit_capcut/01_imagens/
+kit_capcut/02_clipes_3d/
+kit_capcut/03_audio/
+kit_capcut/nomes.json
