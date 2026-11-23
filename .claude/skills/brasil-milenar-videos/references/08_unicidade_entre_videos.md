@@ -47,3 +47,13 @@ O dono do canal pediu: **cada vídeo precisa ter um roteiro diferente**. Os víd
 ### Vídeo 5 — "Do Zero Absoluto ao Centro do Sol" (roteiro em `videos/05_temperatura/`)
 - Contador: termômetro-régua lateral + placar FRIO | CALOR com "???" nas pontas. Abertura: cena viva em 2ª pessoa (você acorda num corredor de portas). Fio: o corredor das 19 portas. Bloco especial: mitos com carimbo ERRADO. Fecho: "o número mais raro é o seu: 37" + pergunta "qual porta você abriria?".
 - Fatos usados: faixa de 35–40 °C; hipotermia (tremor para, despir paradoxal); Anna Bågenholm 13,7 °C; Willie Jones 46,5 °C; Caçador −14 / Araçuaí 44,8; Oymyakon −67,7; Vale da Morte 56,7; Lut 70,7 (satélite); bulbo úmido 35→31 (Penn State 2022); sauna × água a 60/70 °C; Blagden 1774-75; lava ~1.170 °C (densidade); Vostok −89,2 e −98 (satélite); nitrogênio −196 (Leidenfrost); espaço/vácuo/garrafa térmica; radiação cósmica −270,4; raio ~28.000 °C; Sol 5.500 / 15 mi; Nebulosa do Bumerangue ~1 K; Bremen 38 pK; Cold Atom Lab (ISS); KSTAR 100 mi °C/48 s; LHC ~5 trilhões °C (2012).
+
+### Vídeo 6 — "E Se um TERREMOTO de 9,5 Atingisse o BRASIL?" (`videos/06_terremoto/`)
+- Contador: sismógrafo + escada de magnitude. Abertura: notícia real (prédio esvaziado em Manaus, 2026). Fio: copo d'água na mesa. Atos: 4 andares de magnitude. Bloco especial: previsão de terremoto desmontada. Fatos: terremotos profundos do Acre, tsunami, escala de magnitude.
+
+### Vídeo 7 — "O Que a MAIOR TEMPESTADE SOLAR da História Faria com o BRASIL" (`videos/07_tempestade_solar/`)
+- Contador: relógio regressivo "CHEGADA DA NUVEM" (17h36 → 0). Abertura: frase-hipótese do título. Fio: o relógio. Atos: três ondas → arquivo (fichas) → impacto hora a hora → o ponto fraco (Anomalia do Atlântico Sul) → pior caso. Fecho: "8:20 atrasado". Fatos: Carrington 1859, aurora no Rio 1875, Quebec 1989, 2012, maio 2024 (tratores), evento de 774, correntes em Goiás (INPE/Furnas), Starlink 2022.
+
+### Vídeo 8 — "O Dia em Que BOLAS DE FOGO Caíram na AMAZÔNIA" (`videos/08_bolas_de_fogo/`)
+- Abertura em vídeo (Higgsfield, 24 s) antes da narração. Contador: PASTA DO CASO com provas 0/6. Fio: uma pessoa histórica (o frei Fidélio d'Alviano e o caderno). Arquitetura: investigação (a manhã → o mensageiro → os detetives → lado a lado → quem vigia o céu). Bloco especial: régua de energia em bombas de Hiroshima. Fecho: caso aberto, "Na Amazônia, o céu pegou fogo. E o Brasil só ficou sabendo porque um frei resolveu escrever."
+- Fatos: Curuçá 1930 (Bailey 1995; Cordero & Poveda 2011; de la Reza 1997; San Calixto), Tunguska, Chelyabinsk, Santa Filomena 2020, BRAMON, SONEAR, Bendegó.

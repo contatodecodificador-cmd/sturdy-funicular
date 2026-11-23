@@ -11,6 +11,9 @@ Modelo de referência que inspirou o estilo: canal "Além da Escala", vídeo "O 
 
 **O diferencial do Brasil Milenar:** o Brasil é a âncora de TUDO. Todo tema global vira brasileiro (cidades, mapa, céu do hemisfério sul, Amazônia, Noronha, bandeira, livro de geografia da escola). Nunca copiar paradas, frases ou cores do canal de referência.
 
+## LEIA PRIMEIRO
+**`references/13_fluxo_atual_e_regras_do_dono.md`** tem o fluxo atual (nov/2026) e TODAS as regras do dono acumuladas nos vídeos 1 a 8: o que performa, título/thumbnail/descrição, a abertura em vídeo antes da narração, os vídeos do Higgsfield, o que foi reprovado (silhuetas vetoriais, loops, texto sobre texto, imagens do Canva nas cenas), a voz e os créditos do ElevenLabs, a montagem no Remotion (modelo em `assets/template_v8/`) e a rede do ambiente. Quando algo aqui embaixo conflitar com ele, **ele vence**.
+
 ## Fluxo de produção (siga nesta ordem)
 
 1. **Ideia e título** → `references/05_ideias_e_titulos.md` (lista de vídeos validados + como validar um novo tema).
@@ -46,7 +49,7 @@ Quando houver subagentes disponíveis, delegue por função: pesquisa e verifica
 - Nome: **Brasil Milenar** (escolhido por ser amplo: permite qualquer tema sobre o Brasil no tempo — passado, futuro, natureza, história profunda).
 - Descrição (Sobre): "O Brasil tem bilhões de anos de história, e quase ninguém conhece. No Brasil Milenar, a gente viaja no tempo para entender o país onde você vive: o que existia aqui antes de nós, o que mudou ao longo das eras e o que ainda vai acontecer com este chão. Vulcões, oceanos, dinossauros, o céu e o futuro distante, sempre com dados reais e fontes verificadas. Inscreva-se e venha conhecer o Brasil que nenhum livro de escola mostrou."
 - Identidade visual: azul-marinho de espaço, dourado e branco (perfil e banner já criados no Canva). Paleta de edição em `references/01_estilo_e_edicao.md`.
-- Voz: clone do dono do canal no ElevenLabs (voice_id `jZ0KzfdIFfYFdHDyYgUn`). O dono prefere gerar a narração pessoalmente no site do ElevenLabs; entregue o texto pronto.
+- Voz: Anderson Nogueira no ElevenLabs. Use a clonagem PROFISSIONAL (selinho) `yadCDjzaN5V6nqbIkYiU`, modelo `eleven_v4`, pt. (A instantânea antiga é `jZ0KzfdIFfYFdHDyYgUn`.) Quando o dono pedir, gere a narração pela API; senão entregue o texto pronto.
 
 ## Arquivos de apoio (assets/)
 - `assets/scripts/` — preparar_texto_ia.py, medir.py (variação de volume), alinhar_e_eventos.py (forced alignment ElevenLabs → eventos com tempo), gerar_musica.py, mixar.py (voz + música com ducking + efeitos, -14 LUFS), gerar_audio_api.py (só se o dono pedir narração via API).
