@@ -1,52 +1,56 @@
 <!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
-<title>Reel 001 · Nogueira Mídias em todo lugar</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap">
-<link rel="stylesheet" href="../brand/tokens.css">
+<title>Reel 001 · GRÃO RARO em todo lugar</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap">
 <style>
-/* Modelo @theplatterdotco: logo FIXO no centro, mundo trocando em volta. 241 quadros a 30fps (8,03s), 52 cortes nos quadros medidos do original.
-   Cada cena aparece em par: normal e negativo. Sem texto. */
+/* Modelo @theplatterdotco aplicado à marca fictícia GRÃO RARO (café).
+   Logo (símbolo + nome) FIXO no centro, mundo da marca trocando em volta. 241 quadros a 30fps, 52 cortes nos quadros medidos do original.
+   Cada cena aparece em par: normal e negativo. Sem legenda. */
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+:root{--cafe:#2B1A12;--creme:#F1E6D6;--cara:#C8873A;--folha:#3E5B3A}
 #stage{position:absolute;inset:0}
 .sc{position:absolute;inset:0;overflow:hidden;display:none}
 .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .fb{position:absolute;inset:0}
 .neg{filter:invert(1) grayscale(1) contrast(1.15)}
-.logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:10;display:flex;flex-direction:column;align-items:center;line-height:1;pointer-events:none}
-.logo .w{font-family:Archivo;font-weight:900;font-stretch:100%;font-size:86px;letter-spacing:-.045em}
-.logo .w sup{font-size:.28em;font-weight:600;letter-spacing:0;vertical-align:1.9em;margin-left:2px}
-.logo .s{font:600 15px Outfit;letter-spacing:.62em;margin-top:6px;padding-left:.62em}
-.lt{color:#F3EDE3}.dk{color:#0D0E0C}
+.logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:10;display:flex;flex-direction:column;align-items:center;gap:10px;line-height:1;pointer-events:none}
+.logo .w{font-family:Fraunces;font-weight:800;font-size:58px;letter-spacing:.06em}
+.logo .s{font:600 13px Outfit;letter-spacing:.55em;padding-left:.55em;opacity:.9}
+.mono{font-family:"JetBrains Mono",monospace}
 </style></head><body><div id="stage"></div>
 <script>
-const LOGO=c=>`<div class="logo ${c}"><div class="w">nogueira<sup>®</sup></div><div class="s">MÍDIAS</div></div>`;
-const OR='#F08A1C', NO='#0D0E0C', CR='#F3EDE3';
+const C={cafe:'#2B1A12',creme:'#F1E6D6',cara:'#C8873A',folha:'#3E5B3A'};
+/* símbolo: grão de café estilizado */
+const BEAN=(c,s=84)=>`<svg width="${s}" height="${s*1.18}" viewBox="0 0 100 118"><ellipse cx="50" cy="59" rx="42" ry="55" fill="${c}" transform="rotate(-18 50 59)"/><path d="M42 8 C70 40 30 78 58 110" fill="none" stroke="${c===C.creme?C.cafe:C.creme}" stroke-width="7" stroke-linecap="round" transform="rotate(-18 50 59)"/></svg>`;
+const LOGO=(c)=>`<div class="logo" style="color:${c}">${BEAN(c)}<div class="w">GRÃO RARO</div><div class="s">TORRA ARTESANAL</div></div>`;
 const img=(n,fb)=>`<div class="fb" style="background:${fb}"></div><img class="ph" src="raw/${n}.png" onerror="this.remove()">`;
+const grid=`<div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(241,230,214,.22)"></div><div style="position:absolute;top:50%;left:0;right:0;height:1px;background:rgba(241,230,214,.22)"></div>`;
 const SC=[
- [img('blob',`radial-gradient(circle at 50% 50%,#111 0 18%,${OR} 19%)`),'lt'],
- [img('camiseta',`linear-gradient(#2a2a2a,#111)`),'lt'],
- [`<div class="fb" style="background:${OR}"></div>
-   <div style="position:absolute;left:0;right:0;bottom:0;height:640px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr">
-    ${[['LIGHT','#F3EDE3','#0D0E0C'],['DEEP','#0D0E0C','#F3EDE3'],['DARK','#2A1C0B','#F3EDE3'],['WARM','#FFB43D','#0D0E0C']].map(([n,b,c])=>`<div style="background:${b};color:${c};padding:28px 32px;font:600 22px 'JetBrains Mono'">● ${n}<br><span style="font-weight:500;opacity:.7;font-size:18px;line-height:1.8">HEX ${b}</span></div>`).join('')}
-   </div><div style="position:absolute;left:32px;top:40px;font:600 22px 'JetBrains Mono';color:${NO}">● PRIMARY · ${OR}</div>`,'lt'],
- [img('celular',`linear-gradient(#cfcfcf,#7a7a7a)`),'dk'],
- [img('hoodie',`linear-gradient(#2a2a2a,#111)`),'lt'],
- [`<div class="fb" style="background:linear-gradient(180deg,#0D0E0C 0%,${OR} 100%)"></div><div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(255,255,255,.25)"></div><div style="position:absolute;top:50%;left:0;right:0;height:1px;background:rgba(255,255,255,.25)"></div>`,'lt'],
- [img('bone',`linear-gradient(#3a2a1a,#1a120a)`),'lt'],
- [img('notebook',`linear-gradient(${OR},#a65a10)`),'lt'],
- [img('etiqueta',OR),'lt'],
- [img('copos',OR),'lt'],
- [img('silhueta',OR),'lt'],
- [img('painel',`linear-gradient(#2b2d31,#0f1012)`),'lt'],
- [`<div class="fb" style="background:linear-gradient(180deg,${OR},#c96a0c)"></div><div style="position:absolute;left:640px;top:50%;transform:translateY(-50%);font:700 64px Outfit;color:${CR}">Mídias</div>`,'lt'],
- [`<div class="fb" style="background:#0D0E0C"></div>
+ [img('grao3d',`radial-gradient(circle,${C.cafe} 0 14%,${C.cara} 15%)`),C.creme],
+ [img('camiseta',`radial-gradient(40% 30% at 50% 50%,${C.creme} 0 99%,#3a2a20 100%)`),C.cafe],
+ [`<div class="fb" style="background:${C.cara}"></div>
+   <div style="position:absolute;left:0;right:0;bottom:0;height:620px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr">
+    ${[['CAFÉ',C.cafe,C.creme],['CREME',C.creme,C.cafe],['FOLHA',C.folha,C.creme],['CARAMELO','#B0742E',C.creme]].map(([n,b,c])=>`<div class="mono" style="background:${b};color:${c};padding:28px 32px;font-size:22px;font-weight:600">● ${n}<br><span style="font-weight:500;opacity:.75;font-size:18px;line-height:1.9">HEX ${b}</span></div>`).join('')}
+   </div><div class="mono" style="position:absolute;left:32px;top:40px;font-size:22px;font-weight:600;color:${C.cafe}">● PRIMÁRIA · ${C.cara}</div>`,C.cafe],
+ [img('celular',`radial-gradient(30% 28% at 50% 50%,${C.cara} 0 99%,#1c110b 100%)`),C.cafe],
+ [img('moletom',`linear-gradient(#3a2a20,#120b07)`),C.creme],
+ [`<div class="fb" style="background:linear-gradient(180deg,${C.cafe} 0%,${C.cara} 100%)"></div>${grid}`,C.creme],
+ [img('bone',`radial-gradient(35% 22% at 50% 50%,${C.creme} 0 99%,${C.cafe} 100%)`),C.cafe],
+ [img('pacote',C.creme),C.creme],
+ [`<div class="fb" style="background:${C.folha}"></div><div style="position:absolute;inset:-60px;opacity:.14;display:grid;grid-template-columns:repeat(6,1fr);gap:40px;transform:rotate(-12deg)">${Array.from({length:60},()=>BEAN(C.creme,90)).join('')}</div>`,C.creme],
+ [img('copos',C.cara),C.cafe],
+ [img('silhueta',C.creme),C.creme],
+ [img('letreiro',`radial-gradient(circle at 50% 50%,${C.creme} 0 22%,#140c08 23%)`),C.cafe],
+ [`<div class="fb" style="background:linear-gradient(180deg,${C.cara},#9d6427)"></div><div style="position:absolute;left:720px;top:50%;transform:translateY(-50%);font:700 46px Outfit;color:${C.creme}">desde a<br>primeira torra</div>`,C.creme],
+ [`<div class="fb" style="background:${C.cafe}"></div>
    <div style="position:absolute;left:-40px;right:-40px;top:880px;height:160px;display:flex;gap:22px;align-items:center">
-    <div style="width:150px;height:150px;border-radius:40px;border:2px solid #3a3c40;display:flex;align-items:center;justify-content:center;color:${CR};font-size:56px">⌄</div>
-    <div style="flex:1;height:150px;border-radius:40px;border:2px solid #3a3c40;background:#141517"></div>
+    <div style="width:150px;height:150px;border-radius:40px;border:2px solid #5a4030;display:flex;align-items:center;justify-content:center;color:${C.creme};font-size:56px">⌄</div>
+    <div style="flex:1;height:150px;border-radius:40px;border:2px solid #5a4030;background:#24150e"></div>
    </div>
-   <div style="position:absolute;left:60px;top:1110px;display:flex;gap:46px;font-size:64px;color:${CR};opacity:.8">← → ↻</div>`,'lt'],
- [img('sacola',`linear-gradient(#e6e6e6,#bdbdbd)`),'lt'],
- [img('garrafa',OR),'lt'],
+   <div style="position:absolute;left:60px;top:1110px;display:flex;gap:46px;font-size:64px;color:${C.creme};opacity:.8">← → ↻</div>`,C.creme],
+ [img('xicara',`radial-gradient(32% 20% at 50% 50%,${C.creme} 0 99%,${C.cafe} 100%)`),C.cafe],
+ [img('coldbrew',`radial-gradient(25% 22% at 50% 50%,${C.creme} 0 99%,${C.folha} 100%)`),C.cafe],
+ [img('sacola',`radial-gradient(34% 26% at 50% 50%,#c49a6c 0 99%,${C.folha} 100%)`),C.cafe],
 ];
 const S=document.getElementById('stage');
 SC.forEach(([html,c],i)=>{for(const neg of [0,1]){const d=document.createElement('div');d.className='sc';d.id=`s${i}_${neg}`;
@@ -54,10 +58,9 @@ SC.forEach(([html,c],i)=>{for(const neg of [0,1]){const d=document.createElement
 /* cortes medidos no original (quadros a 30fps) */
 const CUTS=[];for(let f=2;f<=50;f+=2)CUTS.push(f);for(let f=53;f<=77;f+=3)CUTS.push(f);
 [81,85,89,93,97,102,107,113,119,126,133,141,150,160,172,186,203,223].forEach(f=>CUTS.push(f));
-const N=241;
-let last=null;
+const N=241; let last=null;
 window.setT=p=>{const f=Math.round(p*N); let k=0; while(k<CUTS.length&&f>=CUTS[k])k++;
- const sc=Math.floor(k/2)%SC.length, neg=k%2; const id=`s${sc}_${neg}`;
+ const sc=Math.floor(k/2)%SC.length, neg=k%2, id=`s${sc}_${neg}`;
  if(id!==last){if(last)document.getElementById(last).style.display='none'; document.getElementById(id).style.display='block'; last=id;}};
 window.setT(0);
 </script></body></html>
