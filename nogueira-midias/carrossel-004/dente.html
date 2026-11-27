@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;700;800&family=Outfit:wght@500;600&display=swap">
+<style>
+/* Vídeo do dente (6s loop): dente de cristal flutuando sobre o mar de bolinhas. */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#cfe6f5}
+.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#d{position:absolute;left:290px;top:180px;width:500px;filter:drop-shadow(0 50px 40px rgba(11,42,74,.35))}
+#sh{position:absolute;left:390px;top:860px;width:300px;height:50px;border-radius:50%;background:radial-gradient(closest-side,rgba(11,42,74,.35),transparent)}
+.h{position:absolute;left:0;right:0;top:720px;text-align:center;font:300 64px/1.05 Sora;letter-spacing:-.03em;color:#0B2A4A}
+.h b{font-weight:700;color:#1F6FEB}
+.tag{position:absolute;top:30px;left:50%;transform:translateX(-50%);font:600 17px "JetBrains Mono",monospace;letter-spacing:.08em;background:rgba(11,42,74,.35);color:#fff;border-radius:999px;padding:5px 14px;white-space:nowrap}
+.cta{position:absolute;left:50%;top:880px;transform:translateX(-50%);font:600 22px Outfit;color:#0B2A4A;background:rgba(255,255,255,.7);border-radius:999px;padding:10px 24px;white-space:nowrap}
+</style></head><body>
+<img class="bg" src="raw/bolinhas.png" onerror="this.remove()">
+<div class="tag">05 / 06 · LUMI (marca fictícia)</div>
+<div id="sh"></div><img id="d" src="assets/dente_cut.png" onerror="this.remove()">
+<p class="h"><span>Prevenir é a forma</span><br><b>mais bonita de cuidar.</b></p>
+<div class="cta">Avaliação sem custo →</div>
+<script>
+const d=document.getElementById('d'), sh=document.getElementById('sh');
+window.setT=p=>{const a=p*Math.PI*2, y=Math.sin(a)*22, r=Math.sin(a)*6;
+ d.style.transform=`translateY(${y}px) rotate(${r}deg)`; const s=1-y/220; sh.style.transform=`scale(${s})`; sh.style.opacity=.6+(-y/110);};
+window.setT(0);
+</script></body></html>

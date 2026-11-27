@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;700&family=Outfit:wght@500;600;800&display=swap">
+<style>
+/* Vídeo de digitação (7s): fundo azul → gelo, texto sendo digitado, destaque final em "sem pensar". */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden}
+#bg{position:absolute;inset:0;background:#1F6FEB;transition:none}
+#t{position:absolute;left:90px;right:90px;top:430px;font:300 92px/1.1 Sora;letter-spacing:-.03em;color:#F2F7FA}
+#t b{font-weight:700}
+#t .hl{border-radius:10px;padding:0 10px;margin:0 -10px}
+.cur{display:inline-block;width:5px;height:.9em;background:currentColor;vertical-align:-.08em;margin-left:4px}
+.logo{position:absolute;left:90px;bottom:90px;display:flex;align-items:center;gap:14px;font:800 36px Sora;letter-spacing:-.04em}
+.logo i{width:46px;height:46px;border-radius:14px;background:#7FE3C8;display:inline-block}
+.tag{position:absolute;top:30px;left:50%;transform:translateX(-50%);font:600 17px "JetBrains Mono",monospace;letter-spacing:.08em;background:rgba(0,0,0,.25);color:#fff;border-radius:999px;padding:5px 14px;white-space:nowrap}
+</style></head><body>
+<div id="bg"></div><div class="tag">03 / 06 · LUMI (marca fictícia)</div>
+<div id="t"></div>
+<div class="logo" id="lg"><i></i>lumi</div>
+<script>
+const parts=[["l","Quando foi a última vez que você sorriu numa foto "],["b","sem pensar","hl"],["b"," nos dentes?"]];
+const full=parts.map(p=>p[1]).join(''), N=full.length;
+const t=document.getElementById('t'), bg=document.getElementById('bg'), lg=document.getElementById('lg');
+window.setT=p=>{
+  const typeEnd=.72, k=Math.min(N,Math.floor(N*Math.min(1,p/typeEnd)));
+  const light=p>.22; bg.style.background=light?'#F2F7FA':'#1F6FEB';
+  const col=light?'#1F6FEB':'#F2F7FA'; t.style.color=col; lg.style.color=light?'#0B2A4A':'#F2F7FA';
+  let out='',c=0;
+  for(const [w,s,cls] of parts){const take=Math.max(0,Math.min(s.length,k-c)); c+=s.length; if(!take) continue;
+    const txt=s.slice(0,take); const hl=cls&&p>.8;
+    out+= w==='b'?`<b class="${cls||''}" style="${hl?'background:#1F6FEB;color:#F2F7FA':''}">${txt}</b>`:txt;}
+  const blink=(Math.floor(p*14)%2===0)||p<typeEnd;
+  t.innerHTML=out+(blink?'<span class="cur"></span>':'');
+};
+window.setT(0);
+</script></body></html>
