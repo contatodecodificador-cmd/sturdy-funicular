@@ -1,12 +1,16 @@
-/* Nogueira Mídias — paleta quente v2 (baseada na referência: preto quente + laranja + âmbar + creme) */
+/* Nogueira Mídias — paleta oficial (= paleta medida nos posts da @agenciasetup, a referência)
+   Proporção: ~70% preto/escuro · 20% laranja/âmbar · 10% creme. */
 :root{
-  --noite:#0D0E0C;     /* fundo base */
-  --brasa:#2A1C0B;     /* halo quente atrás do título */
+  --noite:#0D0E0C;     /* fundo base: preto quente, quase neutro */
+  --brasa:#2A1C0B;     /* halo sutil atrás do título (nunca como fundo inteiro) */
   --laranja:#F08A1C;   /* cor-assinatura */
   --laranja-p:#A64F08; /* laranja sobre fundo claro (contraste 4,3:1) */
-  --ambar:#FFB43D;     /* números, topo do gradiente */
+  --ambar:#FFB43D;     /* números, topo do gradiente do CTA */
   --creme:#F3EDE3;     /* títulos */
-  --papel:#E4E1DA;     /* fundo claro de carrossel */
+  --papel:#E9E7E2;     /* fundo claro dos slides alternados */
+  --cobalto:#264872;   /* apoio: fundo de post/mockup */
+  --amarelo:#F7C21B;   /* apoio: quadro de virada */
+  --verde:#2FBF5B;     /* só para "aprovado"/check */
   --f-display:"Anton","Bebas Neue",Impact,sans-serif;
   --f-serif:"Instrument Serif",Georgia,serif;
   --f-ui:"Outfit",system-ui,sans-serif;

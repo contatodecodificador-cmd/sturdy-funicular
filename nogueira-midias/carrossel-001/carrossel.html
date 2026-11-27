@@ -10,9 +10,9 @@
 html,body{width:9720px;height:1350px;background:#000;overflow:hidden}
 #stage{position:relative;width:9720px;height:1350px;font-family:var(--f-ui);color:var(--creme)}
 .slide{position:absolute;top:0;width:1080px;height:1350px;overflow:hidden}
-.dark{background:radial-gradient(85% 50% at 50% 18%,#3b2810 0%,var(--brasa) 32%,var(--noite) 74%)}
-.dark2{background:radial-gradient(80% 45% at 50% 80%,#2e1f0c 0%,var(--noite) 70%)}
-.light{background:radial-gradient(120% 80% at 50% 15%,#F4F2ED 0%,var(--papel) 55%,#cfcac0 100%);color:#1b1712}
+.dark{background:radial-gradient(70% 38% at 50% 16%,#2a1d0e 0%,#16120d 40%,var(--noite) 75%)}
+.dark2{background:radial-gradient(70% 38% at 50% 85%,#22180c 0%,var(--noite) 70%)}
+.light{background:radial-gradient(120% 80% at 50% 15%,#F6F5F2 0%,var(--papel) 60%,#d6d3cc 100%);color:#1b1712}
 
 .bar{position:absolute;top:34px;left:44px;right:44px;display:flex;justify-content:space-between;align-items:center;font-size:24px;opacity:.9;z-index:60}
 .bar .m b{font-weight:700}.bar .x,.bar .min{font-size:30px;font-weight:300}
@@ -34,7 +34,7 @@ html,body{width:9720px;height:1350px;background:#000;overflow:hidden}
 .grain{position:absolute;inset:0;pointer-events:none;z-index:55;opacity:.16;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>")}
 .vign{position:absolute;inset:0;pointer-events:none;z-index:54;background:radial-gradient(120% 90% at 50% 45%,transparent 55%,rgba(0,0,0,.5) 100%)}
 .light .vign{background:radial-gradient(120% 90% at 50% 45%,transparent 60%,rgba(70,50,20,.18) 100%)}
-.grade{position:absolute;inset:0;pointer-events:none;z-index:53;mix-blend-mode:soft-light;background:linear-gradient(180deg,rgba(255,170,80,.25),rgba(20,10,0,.35))}
+.grade{position:absolute;inset:0;pointer-events:none;z-index:53;mix-blend-mode:soft-light;background:linear-gradient(180deg,rgba(255,170,80,.12),rgba(20,10,0,.3))}
 .obj{filter:drop-shadow(0 30px 30px rgba(0,0,0,.45))}
 .card{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.12);border-radius:26px}
 .light .card{background:rgba(255,255,255,.75);border-color:rgba(27,23,18,.08);box-shadow:0 30px 60px -24px rgba(70,50,20,.35)}
