@@ -53,35 +53,35 @@ const tag=n=>`<div class="tagp">post ${n} de 4 · Nonna Brasa (marca fictícia)<
 slide(1,'nb',`<img class="photo" src="raw/forno_${IMG.forno}.png"><div class="shadeT"></div><div class="shadeB"></div>${tag(1)}
  <div style="position:absolute;top:90px;left:0;right:0;display:flex;justify-content:center">${logo()}</div>
  <div style="position:absolute;left:56px;right:56px;bottom:180px">
-  <p class="h" style="font-size:132px">A margherita</p>
-  <p class="script" style="font-size:116px;margin-top:-6px;margin-left:120px">que faz fila.</p>
+  <p class="h" style="font-size:118px">A margherita</p>
+  <p class="script" style="font-size:100px;margin-top:-6px;margin-left:120px">que faz fila.</p>
   <p style="font-size:26px;margin-top:22px;opacity:.85;max-width:620px">Massa de fermentação natural, 90 segundos no forno a 450°C.</p>
  </div>${foot}`);
 
 /* 3 — PÔSTER 2: ingredientes voando */
-slide(2,'nb',`<img class="photo" src="raw/voando_${IMG.voando}.png"><div class="shadeT" style="height:38%"></div><div class="shadeB" style="height:30%;opacity:.8"></div>${tag(2)}
- <div style="position:absolute;top:84px;right:56px">${logo(.8)}</div>
- <div style="position:absolute;left:56px;top:130px">
-  <p class="h" style="font-size:120px">Tudo fresco.</p>
-  <p class="script" style="font-size:96px;margin-left:40px">nada congelado.</p>
+slide(2,'nb',`<img class="photo" src="raw/voando_${IMG.voando}.png"><div class="shadeT" style="height:30%;opacity:.6"></div><div class="shadeB" style="height:42%;opacity:.9"></div>${tag(2)}
+ <div style="position:absolute;top:84px;left:56px">${logo(.75)}</div>
+ <div style="position:absolute;left:56px;bottom:150px">
+  <p class="h" style="font-size:128px">Tudo fresco.</p>
+  <p class="script" style="font-size:100px;margin-left:60px;margin-top:-6px">nada congelado.</p>
  </div>
- <div style="position:absolute;left:56px;bottom:150px;display:flex;flex-direction:column;gap:10px;font-size:26px;font-weight:500">
+ <div style="position:absolute;left:56px;top:300px;display:flex;flex-direction:column;gap:10px;font-size:24px;font-weight:600;text-shadow:0 2px 10px rgba(0,0,0,.4)">
   ${['Tomate italiano San Marzano','Fior di latte feito no dia','Manjericão colhido de manhã'].map(t=>`<span style="display:flex;align-items:center;gap:12px"><i style="width:10px;height:10px;border-radius:50%;background:var(--ouro)"></i>${t}</span>`).join('')}
  </div>${foot}`);
 
 /* 4 — PÔSTER 3: promoção */
-slide(3,'nb',`<img class="photo" src="raw/caixa_${IMG.caixa}.png"><div class="shadeT" style="height:45%"></div><div class="shadeB" style="height:42%"></div>${tag(3)}
- <div style="position:absolute;top:84px;left:56px">${logo(.8)}</div>
- <div style="position:absolute;right:56px;top:300px;width:300px;height:300px;border-radius:50%;background:var(--tomate);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-10deg);box-shadow:0 20px 40px rgba(0,0,0,.45);border:4px dashed rgba(244,233,216,.6);outline:10px solid var(--tomate)">
+slide(3,'nb',`<img class="photo" src="raw/caixa_${IMG.caixa}.png"><div class="shadeT" style="height:50%"></div><div class="shadeB" style="height:22%"></div>${tag(3)}
+ <div style="position:absolute;top:84px;left:56px">${logo(.7)}</div>
+ <div style="position:absolute;right:70px;top:90px;width:250px;height:250px;border-radius:50%;background:var(--tomate);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-10deg);box-shadow:0 20px 40px rgba(0,0,0,.45);border:4px dashed rgba(244,233,216,.6);outline:10px solid var(--tomate)">
   <span style="font-family:var(--f-ui);font-weight:700;font-size:26px;letter-spacing:.1em">A 2ª SAI</span>
-  <span class="h" style="font-size:120px;color:var(--creme2)">50%</span>
+  <span class="h" style="font-size:100px;color:var(--creme2)">50%</span>
   <span style="font-family:var(--f-ui);font-weight:700;font-size:26px;letter-spacing:.1em">OFF</span>
  </div>
- <div style="position:absolute;left:56px;right:56px;bottom:170px">
-  <p class="script" style="font-size:90px">toda terça,</p>
-  <p class="h" style="font-size:150px;margin-top:-8px">pizza em dobro.</p>
-  <p style="font-size:24px;margin-top:14px;opacity:.8">Válido para pizzas grandes no delivery e no salão.</p>
- </div>${foot}`);
+ <div style="position:absolute;left:56px;right:56px;top:300px">
+  <p class="script" style="font-size:84px">toda terça,</p>
+  <p class="h" style="font-size:112px;margin-top:-6px">pizza em dobro.</p>
+ </div>
+ <p style="position:absolute;left:56px;bottom:120px;font-size:22px;opacity:.85">Válido para pizzas grandes no delivery e no salão.</p>${foot}`);
 
 /* 5 — PÔSTER 4: data comemorativa */
 slide(4,'nb',`<img class="photo" src="raw/natal_${IMG.natal}.png"><div class="shadeT" style="height:48%;background:linear-gradient(180deg,rgba(20,8,6,.85),transparent)"></div><div class="shadeB" style="height:36%"></div>${tag(4)}
@@ -98,13 +98,14 @@ slide(4,'nb',`<img class="photo" src="raw/natal_${IMG.natal}.png"><div class="sh
 const card=(n,st)=>`<div style="position:absolute;width:420px;height:525px;border-radius:14px;overflow:hidden;box-shadow:0 40px 60px rgba(0,0,0,.6),0 0 0 2px rgba(255,255,255,.08);${st}"><img src="out/slide-0${n}.png" style="width:100%;height:100%;object-fit:cover"></div>`;
 slide(0,'dark',`${bar()}<div class="cnt" style="color:var(--creme)">#002 / 365</div>
  <p style="position:absolute;top:168px;left:0;right:0;text-align:center;font-size:40px">e se essa <span class="it" style="font-size:50px">pizzaria</span> fosse</p>
- <div class="disp" style="position:absolute;top:228px;left:0;right:0;text-align:center;font-size:250px;color:var(--creme);z-index:2">Meu cliente</div>
+ <div class="disp" style="position:absolute;top:222px;left:0;right:0;text-align:center;font-size:330px;color:var(--creme);z-index:2;text-shadow:0 14px 40px rgba(0,0,0,.5)">Meu</div>
+ <p class="it" style="position:absolute;top:455px;left:0;right:0;text-align:center;font-size:150px;line-height:1;z-index:9;text-shadow:0 10px 30px rgba(0,0,0,.6)">cliente?</p>
  <div style="position:absolute;inset:0;z-index:5">
-  ${card(3,'left:40px;top:560px;transform:rotate(-12deg)')}
-  ${card(5,'left:620px;top:560px;transform:rotate(11deg)')}
-  ${card(2,'left:330px;top:470px;transform:rotate(-1deg);width:440px;height:550px')}
+  ${card(3,'left:40px;top:640px;transform:rotate(-12deg)')}
+  ${card(5,'left:620px;top:640px;transform:rotate(11deg)')}
+  ${card(2,'left:320px;top:590px;transform:rotate(-1deg);width:440px;height:550px')}
  </div>
- <img src="assets/fatia.png" style="position:absolute;width:360px;right:-40px;top:380px;z-index:8;transform:rotate(18deg);filter:drop-shadow(0 30px 30px rgba(0,0,0,.6))">
+ <img src="assets/fatia.png" style="position:absolute;width:340px;right:-50px;top:560px;z-index:8;transform:rotate(18deg);filter:drop-shadow(0 30px 30px rgba(0,0,0,.6))">
  <div style="position:absolute;bottom:52px;left:0;right:0;text-align:center;font-family:var(--f-mono);font-size:24px;letter-spacing:.42em;z-index:9;opacity:.9">ARRASTA PRO LADO →</div>${fx}`);
 
 /* 6 — CTA (Nogueira) */
@@ -113,10 +114,10 @@ slide(5,'dark',`${bar('06 / 06')}
   <p class="disp" style="font-size:118px;color:var(--creme)">Quer o Instagram</p>
   <p class="it" style="font-size:104px;line-height:1">da sua marca assim?</p>
  </div>
- <div style="position:absolute;left:190px;top:470px;width:700px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px">
+ <div style="position:absolute;left:80px;top:440px;width:920px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px">
   ${[2,3,4,5].map((n,i)=>`<div style="aspect-ratio:4/5;border-radius:10px;overflow:hidden;box-shadow:0 20px 30px rgba(0,0,0,.5);transform:rotate(${[-3,2,-2,3][i]}deg)"><img src="out/slide-0${n}.png" style="width:100%;height:100%;object-fit:cover"></div>`).join('')}
  </div>
- <div style="position:absolute;left:0;right:0;top:760px;text-align:center">
+ <div style="position:absolute;left:0;right:0;top:800px;text-align:center">
   <div style="display:inline-flex;align-items:center;gap:12px;background:var(--creme);color:var(--noite);font-size:32px;font-weight:700;padding:16px 34px;border-radius:999px">➤ me chama no direct</div>
   <div style="display:flex;align-items:center;justify-content:center;gap:22px;margin-top:56px">
    <svg width="62" height="80" viewBox="0 0 92 120"><path d="M8 6h76v108L46 88 8 114z" fill="none" stroke="#FFB43D" stroke-width="10" stroke-linejoin="round"/></svg>
