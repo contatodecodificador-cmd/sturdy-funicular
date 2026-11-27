@@ -1,0 +1,14 @@
+/* Nogueira Mídias — paleta quente v2 (baseada na referência: preto quente + laranja + âmbar + creme) */
+:root{
+  --noite:#0D0E0C;     /* fundo base */
+  --brasa:#2A1C0B;     /* halo quente atrás do título */
+  --laranja:#F08A1C;   /* cor-assinatura */
+  --laranja-p:#A64F08; /* laranja sobre fundo claro (contraste 4,3:1) */
+  --ambar:#FFB43D;     /* números, topo do gradiente */
+  --creme:#F3EDE3;     /* títulos */
+  --papel:#E4E1DA;     /* fundo claro de carrossel */
+  --f-display:"Anton","Bebas Neue",Impact,sans-serif;
+  --f-serif:"Instrument Serif",Georgia,serif;
+  --f-ui:"Outfit",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,monospace;
+}

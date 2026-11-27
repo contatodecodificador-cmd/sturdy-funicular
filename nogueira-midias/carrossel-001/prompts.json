@@ -1,0 +1,14 @@
+{
+  "dunes": {"w":1088,"h":1360,"seeds":[2,8],
+    "prompt":"vast empty desert sand dunes at golden hour, warm orange sunlight, long soft shadows, hazy atmosphere, a few soft clouds in a deep warm sky, shot on 35mm film, Kodak Portra 400, natural film grain, slight lens vignette, editorial landscape photography, no people, no objects"},
+  "easel": {"w":1024,"h":1280,"seeds":[11,22,33,44],
+    "prompt":"a vintage wooden painter's easel holding a large blank white canvas, front view, the canvas faces the camera straight on, real photograph, warm natural side light, worn wood with paint stains and scratches, full easel visible including legs, isolated on a plain flat light grey seamless studio background"},
+  "paper": {"w":1024,"h":1024,"seeds":[7],
+    "prompt":"a single crumpled sheet of white paper with faint pencil sketch lines, real photograph, soft natural light, isolated on a plain flat light grey background"},
+  "brush": {"w":1024,"h":1024,"seeds":[5],
+    "prompt":"an old wooden artist paintbrush with fresh orange paint on the bristles, diagonal, real photograph, isolated on a plain flat light grey background"},
+  "clouds": {"w":1344,"h":768,"seeds":[3],
+    "prompt":"soft fluffy white clouds, volumetric, real photograph, isolated on a pure black background"},
+  "bland": {"w":1024,"h":1024,"seeds":[9],
+    "prompt":"an easel with a canvas"}
+}
