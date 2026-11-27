@@ -11,7 +11,7 @@ for name, p in P.items():
         for tent in range(3):
             try:
                 t = time.time()
-                r = urllib.request.urlopen(urllib.request.Request(base + '/gen', body, {'Content-Type': 'application/json'}), timeout=300)
+                r = urllib.request.urlopen(urllib.request.Request(base + '/gen', body, {'Content-Type': 'application/json', 'User-Agent': 'curl/8.5.0'}), timeout=300)
                 open(out, 'wb').write(r.read()); print(f'ok {name}_{s} {time.time()-t:.0f}s', flush=True); break
             except Exception as e:
                 print(f'erro {name}_{s} tentativa {tent+1}: {e}', flush=True); time.sleep(10)
