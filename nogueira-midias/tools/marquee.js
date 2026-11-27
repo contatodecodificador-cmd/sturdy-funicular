@@ -11,7 +11,7 @@ const path = require('path'), fs = require('fs'), { execFileSync } = require('ch
   const p = await b.newPage({ viewport: { width: VW, height: VH } });
   await p.goto('file://' + page + (q ? '?' + q : ''));
   await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(1500);
-  const n = secs * fps;
+  const n = Math.round(secs * fps);
   for (let i = 0; i < n; i++) {
     await p.evaluate(t => window.setT(t), i / n);
     await p.screenshot({ path: path.join(tmp, `f${String(i).padStart(4, '0')}.png`) });

@@ -1,111 +1,63 @@
 <!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
-<title>Reel 001 · Essas marcas não existem</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;600&family=Archivo:ital,wdth,wght@0,62..125,200..900;1,62..125,200..900&display=swap">
+<title>Reel 001 · Nogueira Mídias em todo lugar</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap">
 <link rel="stylesheet" href="../brand/tokens.css">
 <style>
-/* Reel 9:16, 14s, cortes na batida de 136 BPM (0,441s). Zona segura: texto entre y=280 e y=1500. */
+/* Modelo @theplatterdotco: logo FIXO no centro, mundo trocando em volta. 241 quadros a 30fps (8,03s), 52 cortes nos quadros medidos do original.
+   Cada cena aparece em par: normal e negativo. Sem texto. */
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{width:1080px;height:1920px;overflow:hidden;background:#000;font-family:var(--f-ui);color:var(--creme)}
-.sc{position:absolute;inset:0;display:none;overflow:hidden}
-.full{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.blur{filter:blur(40px) brightness(.55) saturate(1.2);transform:scale(1.15)}
-.card{position:absolute;left:50%;top:50%;width:900px;height:1125px;margin:-600px 0 0 -450px;border-radius:28px;overflow:hidden;box-shadow:0 60px 120px rgba(0,0,0,.6)}
-.card img{width:100%;height:100%;object-fit:cover}
-.cap{position:absolute;left:60px;right:60px;top:1560px;text-align:center;font:800 76px/1.05 Outfit;letter-spacing:-.02em;color:#fff;text-shadow:0 6px 30px rgba(0,0,0,.6)}
-.cap .o{color:var(--laranja)}
-.band{position:absolute;left:-500px;top:330px;width:4000px;transform:rotate(-9deg);white-space:nowrap;font-family:Archivo;font-size:330px;line-height:1;color:#F3E9D6}
-.band span{display:inline-block;padding-right:70px}.band .b{font-weight:900;font-stretch:112%}.band .l{font-weight:200;font-style:italic;color:#F2B705}
-.word{position:absolute;left:0;right:0;text-align:center;font-family:var(--f-display);text-transform:uppercase;color:var(--creme);text-shadow:0 10px 40px rgba(0,0,0,.6)}
-.grain{position:absolute;inset:0;pointer-events:none;z-index:50;opacity:.12;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>")}
-/* perfil */
-.prof{position:absolute;left:90px;right:90px;top:620px;background:#111214;border:1.5px solid #26282c;border-radius:36px;padding:44px;transform-origin:50% 50%}
-.av{width:150px;height:150px;border-radius:50%;background:linear-gradient(135deg,var(--ambar),var(--laranja));display:flex;align-items:center;justify-content:center;font:400 96px var(--f-display);color:var(--noite)}
-.btn{display:flex;align-items:center;justify-content:center;height:96px;border-radius:20px;font:700 38px Outfit}
-.cursor{position:absolute;width:70px;height:70px;z-index:20}
-</style></head><body>
-
-<!-- S1 BRUTO -->
-<div class="sc" id="s1">
- <img class="full" src="../carrossel-003/assets/capa_bg.jpg" style="filter:blur(2px) brightness(.72)">
- <div class="band" id="band"></div>
- <img class="full" src="../carrossel-003/assets/capa_fg.png">
- <p class="cap" id="c1"></p>
-</div>
-<!-- S2 Nonna -->
-<div class="sc" id="s2"><img class="full blur" src="../carrossel-002/out/slide-02.png"><div class="card" id="k2"><img src="../carrossel-002/out/slide-02.png"></div><p class="cap" id="c2"></p></div>
-<!-- S3 LUMI -->
-<div class="sc" id="s3"><img class="full blur" src="../carrossel-004/out/slide-01.png"><div class="card" id="k3"><img src="../carrossel-004/out/slide-01.png"></div><p class="cap" id="c3"></p></div>
-<!-- S4 digitando -->
-<div class="sc" id="s4" style="background:var(--noite)"><p id="ty" style="position:absolute;left:80px;right:80px;top:800px;text-align:center;font:600 112px/1.1 Outfit;color:var(--creme)"></p></div>
-<!-- S5 DO ZERO -->
-<div class="sc" id="s5" style="background:var(--laranja)"><p class="word" id="dz" style="top:700px;font-size:300px;color:var(--noite);text-shadow:none">Do<br>zero.</p></div>
-<!-- S6 montagem -->
-<div class="sc" id="s6" style="background:var(--noite)"><img class="full blur" id="mb"><div class="card" id="k6" style="width:960px;height:1200px;margin:-640px 0 0 -480px"><img id="mi"></div>
- <p class="word" id="mw" style="top:1560px;font-size:150px;color:var(--laranja)"></p></div>
-<!-- S7 imagina -->
-<div class="sc" id="s7" style="background:radial-gradient(70% 40% at 50% 45%,#2a1d0e,var(--noite) 70%)">
- <p id="im1" style="position:absolute;left:0;right:0;top:760px;text-align:center;font:400 96px Outfit;color:var(--creme)">Imagina com a</p>
- <p id="im2" style="position:absolute;left:0;right:0;top:870px;text-align:center;font:italic 400 190px/1 var(--f-serif);color:var(--laranja)">sua marca.</p>
-</div>
-<!-- S8 perfil + seguir -->
-<div class="sc" id="s8" style="background:var(--noite)">
- <div class="prof" id="pf">
-  <div style="display:flex;align-items:center;gap:36px">
-   <div class="av">N</div>
-   <div><p style="font:700 48px Outfit">nogueira_midias</p><p style="font:500 32px Outfit;color:#9a9da3;margin-top:6px">Nogueira Mídias</p></div>
-  </div>
-  <p style="font:400 34px/1.4 Outfit;margin-top:34px;color:#d9d9dc">Design de posts que param o dedo 🎯<br>Crio com IA, mas quem dirige sou eu</p>
-  <div style="display:flex;gap:18px;margin-top:36px"><div class="btn" id="fb" style="flex:1;background:var(--laranja);color:var(--noite)">Seguir</div><div class="btn" style="flex:1;background:#26282c">Mensagem</div></div>
- </div>
- <svg class="cursor" id="cur" viewBox="0 0 24 24"><path d="M4 2l16 9-7 2-3 7z" fill="#fff" stroke="#000" stroke-width="1.2"/></svg>
- <div id="fill" style="position:absolute;inset:0;background:var(--laranja);clip-path:circle(0% at 50% 50%);display:flex;align-items:center;justify-content:center">
-  <p style="text-align:center;color:var(--noite)"><span style="font:400 220px/0.9 var(--f-display);text-transform:uppercase;display:block">Do zero</span><span style="font:italic 400 150px/1 var(--f-serif)">ao post.</span></p>
- </div>
-</div>
-<div class="grain"></div>
-
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#stage{position:absolute;inset:0}
+.sc{position:absolute;inset:0;overflow:hidden;display:none}
+.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fb{position:absolute;inset:0}
+.neg{filter:invert(1) grayscale(1) contrast(1.15)}
+.logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:10;display:flex;flex-direction:column;align-items:center;line-height:1;pointer-events:none}
+.logo .w{font-family:Archivo;font-weight:900;font-stretch:100%;font-size:86px;letter-spacing:-.045em}
+.logo .w sup{font-size:.28em;font-weight:600;letter-spacing:0;vertical-align:1.9em;margin-left:2px}
+.logo .s{font:600 15px Outfit;letter-spacing:.62em;margin-top:6px;padding-left:.62em}
+.lt{color:#F3EDE3}.dk{color:#0D0E0C}
+</style></head><body><div id="stage"></div>
 <script>
-const D=14, B=60/136;            // duração e batida
-const T0=0.07;                   // 1ª batida da música de referência
-const at=n=>T0+n*B;              // tempo da batida n
-const $=id=>document.getElementById(id);
-const sc=[...document.querySelectorAll('.sc')];
-const band=$('band'); band.innerHTML=Array.from({length:8},(_,i)=>`<span class="${i%2?'l':'b'}">burger</span>`).join('');
-const MONT=['../carrossel-003/out/slide-02.png','../carrossel-004/posts/out/slide-03.png','../carrossel-002/out/slide-03.png','../carrossel-004/posts/out/slide-04.png',
- '../carrossel-003/out/slide-04.png','../carrossel-004/posts/out/slide-07.png','../carrossel-002/out/slide-04.png','../carrossel-004/posts/out/slide-01.png',
- '../carrossel-003/out/slide-03.png','../carrossel-004/posts/out/slide-08.png','../carrossel-002/out/slide-05.png','../carrossel-004/posts/out/slide-05.png',
- '../carrossel-003/out/slide-05.png','../carrossel-004/posts/out/slide-02.png','../carrossel-002/out/slide-01.png','../carrossel-004/posts/out/slide-06.png',
- '../carrossel-003/out/slide-01.png','../carrossel-004/posts/out/slide-09.png','../carrossel-001/out/slide-01.png','../carrossel-004/out/slide-01.png',
- '../carrossel-002/out/slide-02.png','../carrossel-003/out/slide-06.png','../carrossel-004/out/slide-06.png','../carrossel-002/out/slide-06.png'];
-MONT.forEach(s=>{const i=new Image();i.src=s;});
-const WORDS=['logo','cores','posts','vídeos','fotos','cardápio','feed','marca'];
-const ease=x=>1-Math.pow(1-x,3), clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
-function show(id){sc.forEach(s=>s.style.display=s.id===id?'block':'none')}
-function pop(el,t0,t){const k=clamp((t-t0)/0.18); el.style.transform=`scale(${1.25-0.25*ease(k)})`; el.style.opacity=k;}
-function words(el,txt,t0,t){ // palavra por palavra a cada meia batida
- const w=txt.split(' '); const n=clamp(Math.floor((t-t0)/(B/2))+1,0,w.length);
- el.innerHTML=w.slice(0,n).map((x,i)=>`<span style="display:inline-block;margin:0 .14em;transform:scale(${i===n-1?1.2-0.2*ease(clamp(((t-t0)-(n-1)*B/2)/0.12)):1})">${x}</span>`).join('');}
-const S=[at(3),at(6),at(9),at(11.5),at(13.5),at(21.5),at(26),D];  // fim de cada cena
-window.setT=p=>{
- const t=p*D;
- if(t<S[0]){show('s1'); band.style.transform=`rotate(-9deg) translateX(${-t*380}px)`; words($('c1'),'Essa marca não existe.',0.05,t);}
- else if(t<S[1]){show('s2'); pop($('k2'),S[0],t); $('k2').style.transform+=` rotate(${-2}deg)`; words($('c2'),'Essa também não.',S[0],t);}
- else if(t<S[2]){show('s3'); pop($('k3'),S[1],t); $('k3').style.transform+=' rotate(2deg)'; words($('c3'),'Nem essa.',S[1],t);}
- else if(t<S[3]){show('s4'); const txt='Eu criei as três…'; const n=Math.floor(clamp((t-S[2])/(S[3]-S[2]-0.15))*txt.length); $('ty').innerHTML=txt.slice(0,n)+'<span style="color:var(--laranja)">|</span>';}
- else if(t<S[4]){show('s5'); pop($('dz'),S[3],t);}
- else if(t<S[5]){show('s6'); const k=Math.floor((t-S[4])/(B/3)); const src=MONT[k%MONT.length];
-   if($('mi').getAttribute('src')!==src){$('mi').src=src;$('mb').src=src;}
-   $('k6').style.transform=`rotate(${(k%2?1:-1)*1.5}deg) scale(${1.04-0.04*ease(clamp(((t-S[4])%(B/3))/(B/3)))})`;
-   const wi=Math.floor((t-S[4])/B); $('mw').textContent=WORDS[wi%WORDS.length];}
- else if(t<S[6]){show('s7'); const k=t-S[5]; $('im1').style.opacity=clamp(k/0.25); $('im1').style.filter=`blur(${10*(1-clamp(k/0.3))}px)`;
-   $('im2').style.opacity=clamp((k-B)/0.25); $('im2').style.transform=`translateY(${30*(1-ease(clamp((k-B)/0.3)))}px)`;}
- else {show('s8'); const k=t-S[6], pf=$('pf'), cur=$('cur'), fb=$('fb');
-   pf.style.transform=`scale(${0.9+0.1*ease(clamp(k/0.3))})`; pf.style.opacity=clamp(k/0.2);
-   const bx=pf.offsetLeft+44+200, by=pf.offsetTop+pf.offsetHeight-44-48; // centro do botão Seguir
-   const m=ease(clamp((k-0.3)/0.6)); cur.style.left=(900+(bx-900)*m)+'px'; cur.style.top=(1600+(by-1600)*m)+'px';
-   const click=k>1.0; cur.style.transform=`scale(${k>0.95&&k<1.1?0.8:1})`;
-   fb.textContent=click?'Seguindo':'Seguir'; fb.style.background=click?'#26282c':'var(--laranja)'; fb.style.color=click?'var(--creme)':'var(--noite)';
-   const r=ease(clamp((k-1.55)/0.45))*150; $('fill').style.clipPath=`circle(${r}% at ${bx}px ${by}px)`;}
-};
+const LOGO=c=>`<div class="logo ${c}"><div class="w">nogueira<sup>®</sup></div><div class="s">MÍDIAS</div></div>`;
+const OR='#F08A1C', NO='#0D0E0C', CR='#F3EDE3';
+const img=(n,fb)=>`<div class="fb" style="background:${fb}"></div><img class="ph" src="raw/${n}.png" onerror="this.remove()">`;
+const SC=[
+ [img('blob',`radial-gradient(circle at 50% 50%,#111 0 18%,${OR} 19%)`),'lt'],
+ [img('camiseta',`linear-gradient(#2a2a2a,#111)`),'lt'],
+ [`<div class="fb" style="background:${OR}"></div>
+   <div style="position:absolute;left:0;right:0;bottom:0;height:640px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr">
+    ${[['LIGHT','#F3EDE3','#0D0E0C'],['DEEP','#0D0E0C','#F3EDE3'],['DARK','#2A1C0B','#F3EDE3'],['WARM','#FFB43D','#0D0E0C']].map(([n,b,c])=>`<div style="background:${b};color:${c};padding:28px 32px;font:600 22px 'JetBrains Mono'">● ${n}<br><span style="font-weight:500;opacity:.7;font-size:18px;line-height:1.8">HEX ${b}</span></div>`).join('')}
+   </div><div style="position:absolute;left:32px;top:40px;font:600 22px 'JetBrains Mono';color:${NO}">● PRIMARY · ${OR}</div>`,'lt'],
+ [img('celular',`linear-gradient(#cfcfcf,#7a7a7a)`),'dk'],
+ [img('hoodie',`linear-gradient(#2a2a2a,#111)`),'lt'],
+ [`<div class="fb" style="background:linear-gradient(180deg,#0D0E0C 0%,${OR} 100%)"></div><div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(255,255,255,.25)"></div><div style="position:absolute;top:50%;left:0;right:0;height:1px;background:rgba(255,255,255,.25)"></div>`,'lt'],
+ [img('bone',`linear-gradient(#3a2a1a,#1a120a)`),'lt'],
+ [img('notebook',`linear-gradient(${OR},#a65a10)`),'lt'],
+ [img('etiqueta',OR),'lt'],
+ [img('copos',OR),'lt'],
+ [img('silhueta',OR),'lt'],
+ [img('painel',`linear-gradient(#2b2d31,#0f1012)`),'lt'],
+ [`<div class="fb" style="background:linear-gradient(180deg,${OR},#c96a0c)"></div><div style="position:absolute;left:640px;top:50%;transform:translateY(-50%);font:700 64px Outfit;color:${CR}">Mídias</div>`,'lt'],
+ [`<div class="fb" style="background:#0D0E0C"></div>
+   <div style="position:absolute;left:-40px;right:-40px;top:880px;height:160px;display:flex;gap:22px;align-items:center">
+    <div style="width:150px;height:150px;border-radius:40px;border:2px solid #3a3c40;display:flex;align-items:center;justify-content:center;color:${CR};font-size:56px">⌄</div>
+    <div style="flex:1;height:150px;border-radius:40px;border:2px solid #3a3c40;background:#141517"></div>
+   </div>
+   <div style="position:absolute;left:60px;top:1110px;display:flex;gap:46px;font-size:64px;color:${CR};opacity:.8">← → ↻</div>`,'lt'],
+ [img('sacola',`linear-gradient(#e6e6e6,#bdbdbd)`),'lt'],
+ [img('garrafa',OR),'lt'],
+];
+const S=document.getElementById('stage');
+SC.forEach(([html,c],i)=>{for(const neg of [0,1]){const d=document.createElement('div');d.className='sc';d.id=`s${i}_${neg}`;
+  d.innerHTML=`<div class="${neg?'neg':''}" style="position:absolute;inset:0">${html}${LOGO(c)}</div>`;S.appendChild(d);}});
+/* cortes medidos no original (quadros a 30fps) */
+const CUTS=[];for(let f=2;f<=50;f+=2)CUTS.push(f);for(let f=53;f<=77;f+=3)CUTS.push(f);
+[81,85,89,93,97,102,107,113,119,126,133,141,150,160,172,186,203,223].forEach(f=>CUTS.push(f));
+const N=241;
+let last=null;
+window.setT=p=>{const f=Math.round(p*N); let k=0; while(k<CUTS.length&&f>=CUTS[k])k++;
+ const sc=Math.floor(k/2)%SC.length, neg=k%2; const id=`s${sc}_${neg}`;
+ if(id!==last){if(last)document.getElementById(last).style.display='none'; document.getElementById(id).style.display='block'; last=id;}};
 window.setT(0);
 </script></body></html>
