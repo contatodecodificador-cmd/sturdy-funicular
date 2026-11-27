@@ -30,3 +30,12 @@ Valem para todo conteúdo novo (carrossel, post, reel).
 ## Série de portfólio (objetivo: vender o serviço)
 - Criar marcas fictícias por segmento (cafeteria, pizzaria, hamburgueria, padaria, barbearia...) e mostrar "como ficaria o Instagram dela feito por mim".
 - Cada marca tem nome, logo, paleta própria, fontes e slogan. O quadro de fora (capa e CTA) segue a paleta da Nogueira.
+
+## Minhas fotos (rosto de referência)
+- As fotos em `referencias/` servem **só de referência** de rosto e corpo. Nunca usar nenhuma delas diretamente e nunca as roupas delas. Elas ficam fora do GitHub.
+- Roupa básica: camiseta ou camisa de manga curta, estilo casual e limpo. Nada de terno ou roupa exuberante.
+- Expressão de acordo com o post (sorriso, surpresa, careta...).
+- Sempre com retoque natural: tirar as imperfeições sem perder o realismo.
+
+## Custos
+- A cada uso da GPU (RunPod), informar o tempo ligado, o gasto da etapa e o saldo atual. Desligar a GPU no fim de cada etapa.
