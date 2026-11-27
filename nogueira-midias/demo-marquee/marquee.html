@@ -1,0 +1,32 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,800&family=Outfit:wght@500;600&family=DM+Serif+Display&family=Yellowtail&display=swap">
+<style>
+/* Capa animada: texto gigante em faixa diagonal passando ATRÁS do objeto recortado (loop perfeito). */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#000}
+.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(3px) brightness(.8)}
+.band{position:absolute;left:-400px;top:330px;width:3000px;transform:rotate(-11deg);transform-origin:50% 50%;white-space:nowrap;
+  font-family:"Fraunces",serif;font-size:300px;line-height:1;color:#F4E9D8;text-shadow:0 10px 40px rgba(0,0,0,.35);will-change:transform}
+.band span{display:inline-block;padding-right:60px}
+.band .b{font-weight:800}.band .l{font-weight:300}
+.fg{position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 30px 30px rgba(0,0,0,.45))}
+.logo{position:absolute;top:70px;left:0;right:0;text-align:center;font-family:"DM Serif Display",serif;font-size:46px;color:#F4E9D8}
+.logo i{color:#E0A84B}
+.sub{position:absolute;top:126px;left:0;right:0;text-align:center;font:600 13px Outfit;letter-spacing:.42em;color:#F4E9D8;opacity:.85}
+.desc{position:absolute;bottom:60px;left:120px;right:120px;text-align:center;font:500 20px/1.5 Outfit;letter-spacing:.12em;color:#F4E9D8;opacity:.9;text-transform:uppercase}
+.grain{position:absolute;inset:0;opacity:.12;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>")}
+</style></head><body>
+<img class="bg" src="bg.jpg">
+<div class="logo">Nonna <i>Brasa</i></div><div class="sub">PIZZERIA A LENHA</div>
+<div class="band" id="band"></div>
+<img class="fg" src="fg.png">
+<div class="desc">Massa de fermentação natural · fior di latte · manjericão do dia</div>
+<div class="grain"></div>
+<script>
+const WORD=new URLSearchParams(location.search).get('w')||'pizza';
+const band=document.getElementById('band');
+band.innerHTML=Array.from({length:8},(_,i)=>`<span class="${i%2?'l':'b'}">${WORD}</span>`).join('');
+let unit=0;
+/* desloca exatamente 2 palavras (bold+light) por ciclo => loop perfeito */
+window.setT=(p)=>{ if(!unit){const s=band.children; unit=s[2].offsetLeft-s[0].offsetLeft;} band.style.transform=`rotate(-11deg) translateX(${-p*unit}px)`; };
+</script></body></html>
