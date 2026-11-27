@@ -14,7 +14,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .fb{position:absolute;inset:0}
 .neg{filter:invert(1) grayscale(1) contrast(1.15)}
 .logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:10;display:flex;flex-direction:column;align-items:center;gap:10px;line-height:1;pointer-events:none}
-.logo .w{font-family:Fraunces;font-weight:800;font-size:58px;letter-spacing:.06em}
+.logo .w{font-family:Fraunces;font-weight:800;font-size:44px;letter-spacing:.06em}
 .logo .s{font:600 13px Outfit;letter-spacing:.55em;padding-left:.55em;opacity:.9}
 .mono{font-family:"JetBrains Mono",monospace}
 </style></head><body><div id="stage"></div>
@@ -22,12 +22,13 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 const C={cafe:'#2B1A12',creme:'#F1E6D6',cara:'#C8873A',folha:'#3E5B3A'};
 /* símbolo: grão de café estilizado */
 const BEAN=(c,s=84)=>`<svg width="${s}" height="${s*1.18}" viewBox="0 0 100 118"><ellipse cx="50" cy="59" rx="42" ry="55" fill="${c}" transform="rotate(-18 50 59)"/><path d="M42 8 C70 40 30 78 58 110" fill="none" stroke="${c===C.creme?C.cafe:C.creme}" stroke-width="7" stroke-linecap="round" transform="rotate(-18 50 59)"/></svg>`;
-const LOGO=(c)=>`<div class="logo" style="color:${c}">${BEAN(c)}<div class="w">GRÃO RARO</div><div class="s">TORRA ARTESANAL</div></div>`;
-const img=(n,fb)=>`<div class="fb" style="background:${fb}"></div><img class="ph" src="raw/${n}.png" onerror="this.remove()">`;
+const LOGO=(c)=>`<div class="logo" style="color:${c}">${BEAN(c,60)}<div class="w">GRÃO RARO</div><div class="s">TORRA ARTESANAL</div></div>`;
+const POS={bone:[.5,.58],camiseta:[.5,.47],celular:[.52,.47],coldbrew:[.5,.57],copos:[.5,.52],grao3d:[.5,.47],letreiro:[.47,.47],moletom:[.5,.54],pacote:[.5,.60],sacola:[.5,.60],silhueta:[.36,.62],xicara:[.55,.56]};
+const img=(n,fb)=>{const [x,y]=POS[n]||[.5,.5];return `<div class="fb" style="background:${fb}"></div><img class="ph" src="raw/${n}.png" onerror="this.remove()" style="transform:scale(1.12) translate(${(.5-x)*100/1.12}%,${(.5-y)*100/1.12}%)">`};
 const grid=`<div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(241,230,214,.22)"></div><div style="position:absolute;top:50%;left:0;right:0;height:1px;background:rgba(241,230,214,.22)"></div>`;
 const SC=[
  [img('grao3d',`radial-gradient(circle,${C.cafe} 0 14%,${C.cara} 15%)`),C.creme],
- [img('camiseta',`radial-gradient(40% 30% at 50% 50%,${C.creme} 0 99%,#3a2a20 100%)`),C.cafe],
+ [img('camiseta',`radial-gradient(40% 30% at 50% 50%,${C.creme} 0 99%,#3a2a20 100%)`),C.creme],
  [`<div class="fb" style="background:${C.cara}"></div>
    <div style="position:absolute;left:0;right:0;bottom:0;height:620px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr">
     ${[['CAFÉ',C.cafe,C.creme],['CREME',C.creme,C.cafe],['FOLHA',C.folha,C.creme],['CARAMELO','#B0742E',C.creme]].map(([n,b,c])=>`<div class="mono" style="background:${b};color:${c};padding:28px 32px;font-size:22px;font-weight:600">● ${n}<br><span style="font-weight:500;opacity:.75;font-size:18px;line-height:1.9">HEX ${b}</span></div>`).join('')}
