@@ -1,0 +1,10 @@
+{
+ "forno": {"w":896,"h":1152,"seeds":[3,7,21],
+  "prompt":"a fresh neapolitan margherita pizza on a wooden pizza peel coming out of a glowing wood-fired brick oven, leopard-spotted puffy crust, melted mozzarella, fresh basil leaves, olive oil drizzle, visible flames in the background, steam, dark moody rustic pizzeria, professional food photography, 50mm lens, shallow depth of field"},
+ "voando": {"w":896,"h":1152,"seeds":[4,8,15],
+  "prompt":"levitation food photography, a single slice of margherita pizza floating in mid air with a long mozzarella cheese pull, surrounded by flying fresh ingredients: cherry tomatoes, basil leaves, mozzarella pieces, flour dust, olive oil drops, on a plain deep tomato red background, studio strobe lighting, high speed photography, sharp focus"},
+ "caixa": {"w":896,"h":1152,"seeds":[5,9,13],
+  "prompt":"top down flat lay food photo of an open plain kraft cardboard pizza box with a whole pepperoni pizza inside, the inside of the open lid is plain and empty, one slice slightly pulled with melted cheese, on a dark charcoal table, chili flakes and basil scattered around, natural soft light, professional food photography"},
+ "natal": {"w":896,"h":1152,"seeds":[6,10,14],
+  "prompt":"cozy christmas dinner table at night with a rustic wood-fired pizza in the center on a wooden board, rosemary sprigs, warm golden fairy lights bokeh in the background, red and green christmas decorations, pine branches, candles, glasses of red wine, warm moody professional food photography"}
+}

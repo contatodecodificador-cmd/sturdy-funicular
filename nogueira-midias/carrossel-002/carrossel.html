@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Nogueira Mídias · Carrossel 002 · Se fosse meu cliente: pizzaria</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=DM+Serif+Display:ital@0;1&family=Yellowtail&display=swap">
+<link rel="stylesheet" href="../brand/tokens.css">
+<style>
+/* 6 slides 1080x1350 lado a lado (6480x1350). Capa e CTA = quadro Nogueira; slides 2–5 = pôsteres da marca fictícia Nonna Brasa. */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:6480px;height:1350px;background:#000;overflow:hidden}
+#stage{position:relative;width:6480px;height:1350px;font-family:var(--f-ui);color:var(--creme)}
+.slide{position:absolute;top:0;width:1080px;height:1350px;overflow:hidden}
+.dark{background:radial-gradient(70% 38% at 50% 16%,#2a1d0e 0%,#16120d 40%,var(--noite) 75%)}
+.bar{position:absolute;top:34px;left:44px;right:44px;display:flex;justify-content:space-between;align-items:center;font-size:24px;opacity:.9;z-index:60}
+.bar .m b{font-weight:700}.bar .x,.bar .min{font-size:30px;font-weight:300}
+.cnt{position:absolute;top:96px;left:50%;transform:translateX(-50%);font-family:var(--f-mono);font-size:20px;border:1.5px solid currentColor;border-radius:999px;padding:3px 16px;opacity:.6;z-index:60}
+.it{font-family:var(--f-serif);font-style:italic;color:var(--laranja)}
+.disp{font-family:var(--f-display);text-transform:uppercase;line-height:.86}
+.grain{position:absolute;inset:0;pointer-events:none;z-index:55;opacity:.14;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>")}
+.vign{position:absolute;inset:0;pointer-events:none;z-index:54;background:radial-gradient(120% 90% at 50% 45%,transparent 55%,rgba(0,0,0,.5) 100%)}
+.fx{position:absolute;inset:0;pointer-events:none}
+
+/* ---------- sistema Nonna Brasa ---------- */
+.nb{--tomate:#B3261E;--creme2:#F4E9D8;--manj:#2F5D3A;--carvao:#1A1714;--ouro:#E0A84B;color:var(--creme2)}
+.nb .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.logo{display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1}
+.logo .w{font-family:"DM Serif Display",serif;font-size:58px;letter-spacing:.01em}
+.logo .w i{font-style:italic;color:var(--ouro)}
+.logo .s{font-family:var(--f-ui);font-size:13px;font-weight:600;letter-spacing:.42em;opacity:.85;padding-left:.42em}
+.logo .flame{width:26px;height:34px;margin-bottom:4px}
+.nb .h{font-family:"DM Serif Display",serif;line-height:.95;letter-spacing:-.005em}
+.nb .script{font-family:"Yellowtail",cursive;color:var(--ouro);line-height:1}
+.nb .foot{position:absolute;left:56px;right:56px;bottom:46px;display:flex;justify-content:space-between;align-items:flex-end;font-size:22px;z-index:6}
+.nb .foot .ig{font-family:var(--f-ui);font-weight:500;letter-spacing:.04em;opacity:.9}
+.nb .foot .sl{font-family:"Yellowtail",cursive;font-size:34px;color:var(--ouro);text-align:right;line-height:.95}
+.tagp{position:absolute;top:30px;left:50%;transform:translateX(-50%);font-family:var(--f-mono);font-size:17px;letter-spacing:.08em;background:rgba(10,8,6,.45);backdrop-filter:blur(6px);color:#fff;border-radius:999px;padding:5px 14px;z-index:20;white-space:nowrap}
+.shadeT{position:absolute;left:0;right:0;top:0;height:42%;background:linear-gradient(180deg,rgba(15,10,6,.75),transparent)}
+.shadeB{position:absolute;left:0;right:0;bottom:0;height:50%;background:linear-gradient(0deg,rgba(15,10,6,.88),transparent)}
+</style></head>
+<body><div id="stage"></div>
+<script>
+const W=1080,S=document.getElementById('stage'),Q=new URLSearchParams(location.search);
+const pick=(k,d)=>Q.get(k)||d;
+const IMG={forno:pick('forno','3'),voando:pick('voando','4'),caixa:pick('caixa','5'),natal:pick('natal','6')};
+const bar=n=>`<div class="bar"><span class="min">—</span><span class="m">@nogueira_midias | <b>Nogueira Mídias</b></span><span class="x">✕</span></div>`+(n?`<div class="cnt">${n}</div>`:'');
+const fx=`<div class="vign"></div><div class="grain"></div>`;
+const flame=`<svg class="flame" viewBox="0 0 26 34"><path d="M13 1c2 6 9 9 9 18a9 9 0 0 1-18 0c0-5 3-7 4-11 1 3 2 4 3 5 1-4 0-8 2-12z" fill="#E0A84B"/><path d="M13 16c1 3 4 4 4 8a4 4 0 0 1-8 0c0-2 2-4 4-8z" fill="#B3261E"/></svg>`;
+const logo=(size=1)=>`<div class="logo" style="transform:scale(${size});transform-origin:center">${flame}<div class="w">Nonna <i>Brasa</i></div><div class="s">PIZZERIA A LENHA</div></div>`;
+const foot=`<div class="foot"><span class="ig">@nonnabrasa</span><span class="sl">Feita no fogo,<br>servida com afeto</span></div>`;
+function slide(i,cls,html){const d=document.createElement('section');d.className='slide '+cls;d.style.left=(i*W)+'px';d.innerHTML=html;S.appendChild(d)}
+const tag=n=>`<div class="tagp">post ${n} de 4 · Nonna Brasa (marca fictícia)</div>`;
+
+/* 2 — PÔSTER 1: o produto herói */
+slide(1,'nb',`<img class="photo" src="raw/forno_${IMG.forno}.png"><div class="shadeT"></div><div class="shadeB"></div>${tag(1)}
+ <div style="position:absolute;top:90px;left:0;right:0;display:flex;justify-content:center">${logo()}</div>
+ <div style="position:absolute;left:56px;right:56px;bottom:180px">
+  <p class="h" style="font-size:132px">A margherita</p>
+  <p class="script" style="font-size:116px;margin-top:-6px;margin-left:120px">que faz fila.</p>
+  <p style="font-size:26px;margin-top:22px;opacity:.85;max-width:620px">Massa de fermentação natural, 90 segundos no forno a 450°C.</p>
+ </div>${foot}`);
+
+/* 3 — PÔSTER 2: ingredientes voando */
+slide(2,'nb',`<img class="photo" src="raw/voando_${IMG.voando}.png"><div class="shadeT" style="height:38%"></div><div class="shadeB" style="height:30%;opacity:.8"></div>${tag(2)}
+ <div style="position:absolute;top:84px;right:56px">${logo(.8)}</div>
+ <div style="position:absolute;left:56px;top:130px">
+  <p class="h" style="font-size:120px">Tudo fresco.</p>
+  <p class="script" style="font-size:96px;margin-left:40px">nada congelado.</p>
+ </div>
+ <div style="position:absolute;left:56px;bottom:150px;display:flex;flex-direction:column;gap:10px;font-size:26px;font-weight:500">
+  ${['Tomate italiano San Marzano','Fior di latte feito no dia','Manjericão colhido de manhã'].map(t=>`<span style="display:flex;align-items:center;gap:12px"><i style="width:10px;height:10px;border-radius:50%;background:var(--ouro)"></i>${t}</span>`).join('')}
+ </div>${foot}`);
+
+/* 4 — PÔSTER 3: promoção */
+slide(3,'nb',`<img class="photo" src="raw/caixa_${IMG.caixa}.png"><div class="shadeT" style="height:45%"></div><div class="shadeB" style="height:42%"></div>${tag(3)}
+ <div style="position:absolute;top:84px;left:56px">${logo(.8)}</div>
+ <div style="position:absolute;right:56px;top:300px;width:300px;height:300px;border-radius:50%;background:var(--tomate);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-10deg);box-shadow:0 20px 40px rgba(0,0,0,.45);border:4px dashed rgba(244,233,216,.6);outline:10px solid var(--tomate)">
+  <span style="font-family:var(--f-ui);font-weight:700;font-size:26px;letter-spacing:.1em">A 2ª SAI</span>
+  <span class="h" style="font-size:120px;color:var(--creme2)">50%</span>
+  <span style="font-family:var(--f-ui);font-weight:700;font-size:26px;letter-spacing:.1em">OFF</span>
+ </div>
+ <div style="position:absolute;left:56px;right:56px;bottom:170px">
+  <p class="script" style="font-size:90px">toda terça,</p>
+  <p class="h" style="font-size:150px;margin-top:-8px">pizza em dobro.</p>
+  <p style="font-size:24px;margin-top:14px;opacity:.8">Válido para pizzas grandes no delivery e no salão.</p>
+ </div>${foot}`);
+
+/* 5 — PÔSTER 4: data comemorativa */
+slide(4,'nb',`<img class="photo" src="raw/natal_${IMG.natal}.png"><div class="shadeT" style="height:48%;background:linear-gradient(180deg,rgba(20,8,6,.85),transparent)"></div><div class="shadeB" style="height:36%"></div>${tag(4)}
+ <div style="position:absolute;top:90px;left:0;right:0;text-align:center">
+  ${logo(.7)}
+  <p class="script" style="font-size:96px;margin-top:26px">Natal</p>
+  <p class="h" style="font-size:96px;margin-top:-4px">com cheiro de<br>forno a lenha</p>
+ </div>
+ <div style="position:absolute;left:0;right:0;bottom:160px;display:flex;justify-content:center">
+  <span style="font-family:var(--f-ui);font-weight:700;font-size:26px;letter-spacing:.12em;background:var(--creme2);color:var(--tomate);padding:14px 30px;border-radius:999px">ENCOMENDAS ATÉ 23/12</span>
+ </div>${foot}`);
+
+/* 1 — CAPA (Nogueira) — usa os pôsteres renderizados */
+const card=(n,st)=>`<div style="position:absolute;width:420px;height:525px;border-radius:14px;overflow:hidden;box-shadow:0 40px 60px rgba(0,0,0,.6),0 0 0 2px rgba(255,255,255,.08);${st}"><img src="out/slide-0${n}.png" style="width:100%;height:100%;object-fit:cover"></div>`;
+slide(0,'dark',`${bar()}<div class="cnt" style="color:var(--creme)">#002 / 365</div>
+ <p style="position:absolute;top:168px;left:0;right:0;text-align:center;font-size:40px">e se essa <span class="it" style="font-size:50px">pizzaria</span> fosse</p>
+ <div class="disp" style="position:absolute;top:228px;left:0;right:0;text-align:center;font-size:250px;color:var(--creme);z-index:2">Meu cliente</div>
+ <div style="position:absolute;inset:0;z-index:5">
+  ${card(3,'left:40px;top:560px;transform:rotate(-12deg)')}
+  ${card(5,'left:620px;top:560px;transform:rotate(11deg)')}
+  ${card(2,'left:330px;top:470px;transform:rotate(-1deg);width:440px;height:550px')}
+ </div>
+ <img src="assets/fatia.png" style="position:absolute;width:360px;right:-40px;top:380px;z-index:8;transform:rotate(18deg);filter:drop-shadow(0 30px 30px rgba(0,0,0,.6))">
+ <div style="position:absolute;bottom:52px;left:0;right:0;text-align:center;font-family:var(--f-mono);font-size:24px;letter-spacing:.42em;z-index:9;opacity:.9">ARRASTA PRO LADO →</div>${fx}`);
+
+/* 6 — CTA (Nogueira) */
+slide(5,'dark',`${bar('06 / 06')}
+ <div style="position:absolute;top:170px;left:0;right:0;text-align:center">
+  <p class="disp" style="font-size:118px;color:var(--creme)">Quer o Instagram</p>
+  <p class="it" style="font-size:104px;line-height:1">da sua marca assim?</p>
+ </div>
+ <div style="position:absolute;left:190px;top:470px;width:700px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px">
+  ${[2,3,4,5].map((n,i)=>`<div style="aspect-ratio:4/5;border-radius:10px;overflow:hidden;box-shadow:0 20px 30px rgba(0,0,0,.5);transform:rotate(${[-3,2,-2,3][i]}deg)"><img src="out/slide-0${n}.png" style="width:100%;height:100%;object-fit:cover"></div>`).join('')}
+ </div>
+ <div style="position:absolute;left:0;right:0;top:760px;text-align:center">
+  <div style="display:inline-flex;align-items:center;gap:12px;background:var(--creme);color:var(--noite);font-size:32px;font-weight:700;padding:16px 34px;border-radius:999px">➤ me chama no direct</div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:22px;margin-top:56px">
+   <svg width="62" height="80" viewBox="0 0 92 120"><path d="M8 6h76v108L46 88 8 114z" fill="none" stroke="#FFB43D" stroke-width="10" stroke-linejoin="round"/></svg>
+   <p class="disp" style="font-size:130px;background:linear-gradient(180deg,var(--ambar),var(--laranja));-webkit-background-clip:text;background-clip:text;color:transparent">Salva</p>
+  </div>
+  <p style="font-size:30px;color:rgba(243,237,227,.8);margin-top:6px">e manda pro dono da <b style="color:var(--creme)">pizzaria que você mais ama.</b></p>
+ </div>
+ <p style="position:absolute;left:0;right:0;bottom:50px;text-align:center;font-family:var(--f-mono);font-size:18px;letter-spacing:.06em;color:rgba(243,237,227,.45)">Nonna Brasa é uma marca fictícia, criada para portfólio.</p>${fx}`);
+</script></body></html>
