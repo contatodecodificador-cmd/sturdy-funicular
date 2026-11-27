@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Nogueira Mídias · Carrossel 003 · Se fosse meu cliente: hamburgueria</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Archivo:ital,wdth,wght@0,62..125,200..900;1,62..125,200..900&display=swap">
+<link rel="stylesheet" href="../brand/tokens.css">
+<style>
+/* 6 slides (6480x1350). Slide 1 = quadro do vídeo da capa (out/slide-01.png). 2–3 panorâmica contínua; 4 close em moldura; 5 selo; 6 CTA Nogueira. */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:6480px;height:1350px;background:#000;overflow:hidden}
+#stage{position:relative;width:6480px;height:1350px;font-family:var(--f-ui);color:var(--creme)}
+.slide{position:absolute;top:0;width:1080px;height:1350px;overflow:hidden}
+.dark{background:radial-gradient(70% 38% at 50% 16%,#2a1d0e 0%,#16120d 40%,var(--noite) 75%)}
+.bar{position:absolute;top:34px;left:44px;right:44px;display:flex;justify-content:space-between;align-items:center;font-size:24px;opacity:.9;z-index:60}
+.bar .m b{font-weight:700}.bar .x,.bar .min{font-size:30px;font-weight:300}
+.cnt{position:absolute;top:96px;left:50%;transform:translateX(-50%);font-family:var(--f-mono);font-size:20px;border:1.5px solid currentColor;border-radius:999px;padding:3px 16px;opacity:.6;z-index:60}
+.it{font-family:var(--f-serif);font-style:italic;color:var(--laranja)}
+.disp{font-family:var(--f-display);text-transform:uppercase;line-height:.86}
+.grain{position:absolute;inset:0;pointer-events:none;z-index:55;opacity:.12;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>")}
+.vign{position:absolute;inset:0;pointer-events:none;z-index:54;background:radial-gradient(120% 90% at 50% 45%,transparent 55%,rgba(0,0,0,.5) 100%)}
+/* sistema BRUTO */
+.br{--mostarda:#F2B705;--ketchup:#D7261E;--creme2:#F3E9D6;color:var(--creme2)}
+.blogo{display:flex;flex-direction:column;align-items:flex-start;line-height:1}
+.blogo .w{font-family:"Archivo";font-weight:900;font-stretch:125%;font-size:44px;letter-spacing:.02em}
+.blogo .s{font:600 11px Outfit;letter-spacing:.5em;margin-top:5px;color:var(--mostarda)}
+.bh{font-family:"Archivo";font-weight:900;font-stretch:112%;line-height:.9;letter-spacing:-.01em}
+.bl{font-family:"Archivo";font-weight:200;font-style:italic;color:var(--mostarda)}
+.bfoot{position:absolute;left:56px;right:56px;bottom:46px;display:flex;justify-content:space-between;align-items:flex-end;font-size:22px;z-index:6}
+.bfoot .sl{font-family:"Archivo";font-weight:300;font-style:italic;color:var(--mostarda);font-size:26px}
+.tagp{position:absolute;top:30px;left:50%;transform:translateX(-50%);font-family:var(--f-mono);font-size:17px;letter-spacing:.08em;background:rgba(10,8,6,.5);color:#fff;border-radius:999px;padding:5px 14px;z-index:20;white-space:nowrap}
+.chip{display:flex;justify-content:space-between;gap:30px;font:600 26px Outfit;padding:12px 0;border-bottom:1.5px solid rgba(243,233,214,.25)}
+.chip b{font-family:"Archivo";font-weight:900;color:var(--mostarda)}
+</style></head>
+<body><div id="stage"></div>
+<script>
+const W=1080,S=document.getElementById('stage');
+const bar=n=>`<div class="bar"><span class="min">—</span><span class="m">@nogueira_midias | <b>Nogueira Mídias</b></span><span class="x">✕</span></div>`+(n?`<div class="cnt">${n}</div>`:'');
+const fx=`<div class="vign"></div><div class="grain"></div>`;
+const blogo=`<div class="blogo"><div class="w">BRUTO</div><div class="s">SMASH BURGER</div></div>`;
+const bfoot=`<div class="bfoot"><span>@bruto.smash</span><span class="sl">sem frescura. só smash.</span></div>`;
+const tag=n=>`<div class="tagp">post ${n} · BRUTO (marca fictícia)</div>`;
+function slide(i,cls,html){const d=document.createElement('section');d.className='slide '+cls;d.style.left=(i*W)+'px';d.innerHTML=html;S.appendChild(d)}
+
+/* 1 — quadro da capa (o post usa o vídeo) */
+slide(0,'',`<img src="out/slide-01.png" style="width:100%;height:100%">`);
+
+/* 2 e 3 — panorâmica contínua (2160px de largura) */
+const pano=(off)=>`<img src="raw/panorama.png" style="position:absolute;top:0;left:${off}px;height:1350px;width:2700px;object-fit:cover"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,6,3,.92) 0%,rgba(10,6,3,.75) 22%,rgba(10,6,3,.15) 42%,transparent 55%,rgba(10,6,3,.5) 100%)"></div>`;
+slide(1,'br',`${pano(-270)}${tag('1 de 4')}
+ <div style="position:absolute;top:80px;left:56px">${blogo}</div>
+ <div style="position:absolute;top:180px;left:56px">
+  <p class="bh" style="font-size:118px">escolhe</p>
+  <p class="bl" style="font-size:118px;line-height:.9">o seu.</p>
+ </div>
+ <p style="position:absolute;right:30px;top:300px;font:600 24px var(--f-mono);letter-spacing:.2em;color:var(--creme2);opacity:.8">ARRASTA →</p>
+ <div style="position:absolute;left:56px;bottom:46px;font-size:22px">@bruto.smash</div>`);
+slide(2,'br',`${pano(-270-1080)}${tag('2 de 4')}
+ <div style="position:absolute;top:150px;right:56px;width:430px;background:rgba(12,8,5,.72);backdrop-filter:blur(8px);border:1.5px solid rgba(242,183,5,.5);border-radius:18px;padding:22px 28px">
+  <p style="font:700 18px var(--f-mono);letter-spacing:.22em;color:var(--mostarda);margin-bottom:6px">CARDÁPIO</p>
+  <div class="chip"><span>Cheddar Duplo</span><b>R$ 32</b></div>
+  <div class="chip"><span>Bacon Bruto</span><b>R$ 36</b></div>
+  <div class="chip" style="border:0"><span>Triplo Smash</span><b>R$ 42</b></div>
+ </div>
+ <div style="position:absolute;right:56px;bottom:46px;font-family:Archivo;font-weight:300;font-style:italic;color:#F2B705;font-size:26px">sem frescura. só smash.</div>`);
+
+/* 4 — close em moldura */
+slide(3,'br',`<img src="raw/detalhe.png" style="position:absolute;inset:-60px;width:1200px;height:1470px;object-fit:cover;filter:blur(26px) brightness(.55)">${tag('3 de 4')}
+ <div style="position:absolute;top:80px;left:56px">${blogo}</div>
+ <p class="bh" style="position:absolute;top:96px;right:56px;font-size:64px;text-align:right">crosta<br><span class="bl" style="font-weight:200">que estala.</span></p>
+ <div style="position:absolute;left:170px;top:270px;width:740px;height:880px;border-radius:22px;overflow:hidden;outline:6px solid #F2B705;outline-offset:10px;box-shadow:0 40px 80px rgba(0,0,0,.6)"><img src="raw/detalhe.png" style="width:100%;height:100%;object-fit:cover"></div>
+ <p class="bh" style="position:absolute;left:56px;bottom:120px;font-size:64px">queijo <span class="bl" style="font-weight:200">que escorre.</span></p>
+ ${bfoot}`);
+
+/* 5 — selo da marca */
+slide(4,'br',`<img src="raw/ambiente.png" style="position:absolute;inset:-40px;width:1160px;height:1430px;object-fit:cover;filter:blur(14px) brightness(.6)">${tag('4 de 4')}
+ <div style="position:absolute;left:50%;top:330px;transform:translateX(-50%);width:520px;height:520px">
+  <svg viewBox="0 0 520 520" width="520" height="520">
+   <defs><path id="c" d="M260,260 m-200,0 a200,200 0 1,1 400,0 a200,200 0 1,1 -400,0"/></defs>
+   <circle cx="260" cy="260" r="250" fill="rgba(12,8,5,.55)" stroke="#F2B705" stroke-width="4"/>
+   <circle cx="260" cy="260" r="180" fill="none" stroke="#F3E9D6" stroke-opacity=".4" stroke-width="2"/>
+   <text font-family="Outfit" font-weight="700" font-size="24" letter-spacing="8" fill="#F2B705"><textPath href="#c" startOffset="0">SMASH BURGER • SEM FRESCURA • SÓ SMASH • </textPath></text>
+   <text x="260" y="284" text-anchor="middle" font-family="Archivo" font-weight="900" font-stretch="110%" font-size="70" fill="#F3E9D6">BRUTO</text>
+  </svg>
+ </div>
+ <div style="position:absolute;left:0;right:0;top:920px;text-align:center">
+  <p class="bh" style="font-size:58px">terça a domingo</p>
+  <p class="bl" style="font-size:58px">das 18h às 23h</p>
+  <p style="font:600 22px var(--f-mono);letter-spacing:.18em;margin-top:26px;opacity:.85">SALÃO · DELIVERY · RETIRADA</p>
+ </div>
+ ${bfoot}`);
+
+/* 6 — CTA Nogueira */
+slide(5,'dark',`${bar('06 / 06')}
+ <div style="position:absolute;top:170px;left:0;right:0;text-align:center">
+  <p class="disp" style="font-size:118px;color:var(--creme)">Quer o Instagram</p>
+  <p class="it" style="font-size:104px;line-height:1">da sua marca assim?</p>
+ </div>
+ <div style="position:absolute;left:80px;top:440px;width:920px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px">
+  ${[1,2,4,5].map((n,i)=>`<div style="aspect-ratio:4/5;border-radius:10px;overflow:hidden;box-shadow:0 20px 30px rgba(0,0,0,.5);transform:rotate(${[-3,2,-2,3][i]}deg)"><img src="out/slide-0${n}.png" style="width:100%;height:100%;object-fit:cover"></div>`).join('')}
+ </div>
+ <div style="position:absolute;left:0;right:0;top:800px;text-align:center">
+  <div style="display:inline-flex;align-items:center;gap:12px;background:var(--creme);color:var(--noite);font-size:32px;font-weight:700;padding:16px 34px;border-radius:999px">➤ me chama no direct</div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:22px;margin-top:56px">
+   <svg width="62" height="80" viewBox="0 0 92 120"><path d="M8 6h76v108L46 88 8 114z" fill="none" stroke="#FFB43D" stroke-width="10" stroke-linejoin="round"/></svg>
+   <p class="disp" style="font-size:130px;background:linear-gradient(180deg,var(--ambar),var(--laranja));-webkit-background-clip:text;background-clip:text;color:transparent">Salva</p>
+  </div>
+  <p style="font-size:30px;color:rgba(243,237,227,.8);margin-top:6px">e manda pro dono da <b style="color:var(--creme)">hamburgueria que você mais ama.</b></p>
+ </div>
+ <p style="position:absolute;left:0;right:0;bottom:50px;text-align:center;font-family:var(--f-mono);font-size:18px;letter-spacing:.06em;color:rgba(243,237,227,.45)">BRUTO é uma marca fictícia, criada para portfólio.</p>${fx}`);
+</script></body></html>
