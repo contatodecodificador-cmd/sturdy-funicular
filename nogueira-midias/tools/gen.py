@@ -7,7 +7,7 @@ for name, p in P.items():
     for s in p['seeds']:
         out = os.path.join(d, 'raw', f'{name}_{s}.png')
         if os.path.exists(out): continue
-        body = json.dumps({'prompt': p['prompt'], 'w': p['w'], 'h': p['h'], 'seed': s, 'steps': 4}).encode()
+        body = json.dumps({'prompt': p['prompt'], 'w': p['w'], 'h': p['h'], 'seed': s, 'steps': p.get('steps', 30)}).encode()
         for tent in range(3):
             try:
                 t = time.time()
