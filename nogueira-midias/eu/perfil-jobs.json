@@ -1,0 +1,6 @@
+[
+ {"name":"perfil_sorriso","seeds":[1,2,3,4],"face":0.9,
+  "prompt":"professional close-up headshot photo of a 35 year old brazilian man, very short buzzed hair, full dark well-groomed beard, warm genuine smile showing teeth, looking at the camera, wearing a plain charcoal grey crew-neck t-shirt, soft studio key light, dark warm charcoal background with a subtle orange rim light, 85mm lens, shallow depth of field, natural skin texture, lightly retouched, editorial portrait photography"},
+ {"name":"perfil_confiante","seeds":[5,6],"face":0.9,
+  "prompt":"professional headshot photo of a 35 year old brazilian man, very short buzzed hair, full dark well-groomed beard, confident relaxed closed-mouth smile, looking at the camera, wearing a plain black short-sleeve button shirt, soft window light, blurred modern creative studio background with warm tones, 85mm lens, natural skin texture, lightly retouched, editorial portrait photography"}
+]
