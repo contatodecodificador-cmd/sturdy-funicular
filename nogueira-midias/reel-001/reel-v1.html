@@ -1,0 +1,67 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<title>Reel 001 · GRÃO RARO em todo lugar</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+/* Modelo @theplatterdotco aplicado à marca fictícia GRÃO RARO (café).
+   Logo (símbolo + nome) FIXO no centro, mundo da marca trocando em volta. 241 quadros a 30fps, 52 cortes nos quadros medidos do original.
+   Cada cena aparece em par: normal e negativo. Sem legenda. */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+:root{--cafe:#2B1A12;--creme:#F1E6D6;--cara:#C8873A;--folha:#3E5B3A}
+#stage{position:absolute;inset:0}
+.sc{position:absolute;inset:0;overflow:hidden;display:none}
+.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fb{position:absolute;inset:0}
+.neg{filter:invert(1) grayscale(1) contrast(1.15)}
+.logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:10;display:flex;flex-direction:column;align-items:center;gap:10px;line-height:1;pointer-events:none}
+.logo .w{font-family:Fraunces;font-weight:800;font-size:44px;letter-spacing:.06em}
+.logo .s{font:600 13px Outfit;letter-spacing:.55em;padding-left:.55em;opacity:.9}
+.mono{font-family:"JetBrains Mono",monospace}
+</style></head><body><div id="stage"></div>
+<script>
+const C={cafe:'#2B1A12',creme:'#F1E6D6',cara:'#C8873A',folha:'#3E5B3A'};
+/* símbolo: grão de café estilizado */
+const BEAN=(c,s=84)=>`<svg width="${s}" height="${s*1.18}" viewBox="0 0 100 118"><ellipse cx="50" cy="59" rx="42" ry="55" fill="${c}" transform="rotate(-18 50 59)"/><path d="M42 8 C70 40 30 78 58 110" fill="none" stroke="${c===C.creme?C.cafe:C.creme}" stroke-width="7" stroke-linecap="round" transform="rotate(-18 50 59)"/></svg>`;
+const LOGO=(c)=>`<div class="logo" style="color:${c}">${BEAN(c,60)}<div class="w">GRÃO RARO</div><div class="s">TORRA ARTESANAL</div></div>`;
+const POS={bone:[.5,.58],camiseta:[.5,.47],celular:[.52,.47],coldbrew:[.5,.57],copos:[.5,.52],grao3d:[.5,.47],letreiro:[.47,.47],moletom:[.5,.54],pacote:[.5,.60],sacola:[.5,.60],silhueta:[.36,.62],xicara:[.55,.56]};
+const img=(n,fb)=>{const [x,y]=POS[n]||[.5,.5];return `<div class="fb" style="background:${fb}"></div><img class="ph" src="raw/${n}.png" onerror="this.remove()" style="transform:scale(1.12) translate(${(.5-x)*100/1.12}%,${(.5-y)*100/1.12}%)">`};
+const grid=`<div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(241,230,214,.22)"></div><div style="position:absolute;top:50%;left:0;right:0;height:1px;background:rgba(241,230,214,.22)"></div>`;
+const SC=[
+ [img('grao3d',`radial-gradient(circle,${C.cafe} 0 14%,${C.cara} 15%)`),C.creme],
+ [img('camiseta',`radial-gradient(40% 30% at 50% 50%,${C.creme} 0 99%,#3a2a20 100%)`),C.creme],
+ [`<div class="fb" style="background:${C.cara}"></div>
+   <div style="position:absolute;left:0;right:0;bottom:0;height:620px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr">
+    ${[['CAFÉ',C.cafe,C.creme],['CREME',C.creme,C.cafe],['FOLHA',C.folha,C.creme],['CARAMELO','#B0742E',C.creme]].map(([n,b,c])=>`<div class="mono" style="background:${b};color:${c};padding:28px 32px;font-size:22px;font-weight:600">● ${n}<br><span style="font-weight:500;opacity:.75;font-size:18px;line-height:1.9">HEX ${b}</span></div>`).join('')}
+   </div><div class="mono" style="position:absolute;left:32px;top:40px;font-size:22px;font-weight:600;color:${C.cafe}">● PRIMÁRIA · ${C.cara}</div>`,C.cafe],
+ [img('celular',`radial-gradient(30% 28% at 50% 50%,${C.cara} 0 99%,#1c110b 100%)`),C.cafe],
+ [img('moletom',`linear-gradient(#3a2a20,#120b07)`),C.creme],
+ [`<div class="fb" style="background:linear-gradient(180deg,${C.cafe} 0%,${C.cara} 100%)"></div>${grid}`,C.creme],
+ [img('bone',`radial-gradient(35% 22% at 50% 50%,${C.creme} 0 99%,${C.cafe} 100%)`),C.cafe],
+ [img('pacote',`radial-gradient(30% 26% at 50% 50%,#4a3020 0 99%,${C.creme} 100%)`),C.creme],
+ [`<div class="fb" style="background:${C.folha}"></div><div style="position:absolute;inset:-60px;opacity:.14;display:grid;grid-template-columns:repeat(6,1fr);gap:40px;transform:rotate(-12deg)">${Array.from({length:60},()=>BEAN(C.creme,90)).join('')}</div>`,C.creme],
+ [img('copos',C.cara),C.cafe],
+ [img('silhueta',C.creme),C.creme],
+ [img('letreiro',`radial-gradient(circle at 50% 50%,${C.creme} 0 22%,#140c08 23%)`),C.cafe],
+ [`<div class="fb" style="background:linear-gradient(180deg,${C.cara},#9d6427)"></div><div style="position:absolute;left:720px;top:50%;transform:translateY(-50%);font:700 46px Outfit;color:${C.creme}">desde a<br>primeira torra</div>`,C.creme],
+ [`<div class="fb" style="background:${C.cafe}"></div>
+   <div style="position:absolute;left:-40px;right:-40px;top:880px;height:160px;display:flex;gap:22px;align-items:center">
+    <div style="width:150px;height:150px;border-radius:40px;border:2px solid #5a4030;display:flex;align-items:center;justify-content:center;color:${C.creme};font-size:56px">⌄</div>
+    <div style="flex:1;height:150px;border-radius:40px;border:2px solid #5a4030;background:#24150e"></div>
+   </div>
+   <div style="position:absolute;left:60px;top:1110px;display:flex;gap:46px;font-size:64px;color:${C.creme};opacity:.8">← → ↻</div>`,C.creme],
+ [img('xicara',`radial-gradient(32% 20% at 50% 50%,${C.creme} 0 99%,${C.cafe} 100%)`),C.cafe],
+ [img('coldbrew',`radial-gradient(25% 22% at 50% 50%,${C.creme} 0 99%,${C.folha} 100%)`),C.cafe],
+ [img('sacola',`radial-gradient(34% 26% at 50% 50%,#c49a6c 0 99%,${C.folha} 100%)`),C.cafe],
+];
+const S=document.getElementById('stage');
+SC.forEach(([html,c],i)=>{for(const neg of [0,1]){const d=document.createElement('div');d.className='sc';d.id=`s${i}_${neg}`;
+  d.innerHTML=`<div class="${neg?'neg':''}" style="position:absolute;inset:0">${html}${LOGO(c)}</div>`;S.appendChild(d);}});
+/* cortes medidos no original (quadros a 30fps) */
+const CUTS=[];for(let f=2;f<=50;f+=2)CUTS.push(f);for(let f=53;f<=77;f+=3)CUTS.push(f);
+[81,85,89,93,97,102,107,113,119,126,133,141,150,160,172,186,203,223].forEach(f=>CUTS.push(f));
+const N=241; let last=null;
+window.setT=p=>{const f=Math.round(p*N); let k=0; while(k<CUTS.length&&f>=CUTS[k])k++;
+ const sc=Math.floor(k/2)%SC.length, neg=k%2, id=`s${sc}_${neg}`;
+ if(id!==last){if(last)document.getElementById(last).style.display='none'; document.getElementById(id).style.display='block'; last=id;}};
+window.setT(0);
+</script></body></html>

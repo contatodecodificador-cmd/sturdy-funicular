@@ -17,6 +17,14 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
 .logo .w{font-family:Fraunces;font-weight:800;font-size:44px;letter-spacing:.06em}
 .logo .s{font:600 13px Outfit;letter-spacing:.55em;padding-left:.55em;opacity:.9}
 .mono{font-family:"JetBrains Mono",monospace}
+.z{position:absolute;inset:0;transform-origin:50% 50%;will-change:transform}
+.ink{mix-blend-mode:multiply;opacity:.94}
+.ink .w,.ink .s{filter:blur(.25px)}
+.paint{opacity:.95}
+.paint .w,.paint .s{filter:blur(.2px)}
+.fx{position:absolute;inset:0;pointer-events:none;z-index:40}
+.grain{opacity:.10;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>")}
+.vign{background:radial-gradient(120% 85% at 50% 50%,transparent 60%,rgba(0,0,0,.35) 100%)}
 </style></head><body><div id="stage"></div>
 <script>
 const C={cafe:'#2B1A12',creme:'#F1E6D6',cara:'#C8873A',folha:'#3E5B3A'};
@@ -54,14 +62,22 @@ const SC=[
  [img('sacola',`radial-gradient(34% 26% at 50% 50%,#c49a6c 0 99%,${C.folha} 100%)`),C.cafe],
 ];
 const S=document.getElementById('stage');
+const LOGOX=(c)=>LOGO(c).replace('class="logo"',`class="logo ${c===C.cafe?'ink':'paint'}"`);
 SC.forEach(([html,c],i)=>{for(const neg of [0,1]){const d=document.createElement('div');d.className='sc';d.id=`s${i}_${neg}`;
-  d.innerHTML=`<div class="${neg?'neg':''}" style="position:absolute;inset:0">${html}${LOGO(c)}</div>`;S.appendChild(d);}});
+  d.innerHTML=`<div class="${neg?'neg':''}" style="position:absolute;inset:0"><div class="z">${html}</div>${LOGOX(c)}<div class="fx vign"></div></div>`;S.appendChild(d);}});
+/* encerramento: assinatura no caramelo */
+{const d=document.createElement('div');d.className='sc';d.id='end';
+ d.innerHTML=`<div class="z"><div class="fb" style="background:radial-gradient(80% 60% at 50% 50%,#d4964a,${C.cara} 45%,#9d6427 100%)"></div></div>${LOGO(C.cafe)}<div class="fx vign"></div>`;S.appendChild(d);}
+document.body.insertAdjacentHTML('beforeend','<div class="fx grain"></div>');
 /* cortes medidos no original (quadros a 30fps) */
 const CUTS=[];for(let f=2;f<=50;f+=2)CUTS.push(f);for(let f=53;f<=77;f+=3)CUTS.push(f);
 [81,85,89,93,97,102,107,113,119,126,133,141,150,160,172,186,203,223].forEach(f=>CUTS.push(f));
 const N=241; let last=null;
 window.setT=p=>{const f=Math.round(p*N); let k=0; while(k<CUTS.length&&f>=CUTS[k])k++;
- const sc=Math.floor(k/2)%SC.length, neg=k%2, id=`s${sc}_${neg}`;
- if(id!==last){if(last)document.getElementById(last).style.display='none'; document.getElementById(id).style.display='block'; last=id;}};
+ const sc=Math.floor(k/2)%SC.length, neg=k%2, id=(k===CUTS.length)?'end':`s${sc}_${neg}`;
+ if(id!==last){if(last)document.getElementById(last).style.display='none'; document.getElementById(id).style.display='block'; last=id;}
+ const a=k?CUTS[k-1]:0, b=k<CUTS.length?CUTS[k]:N, q=(f-a)/Math.max(1,b-a);
+ const z=document.getElementById(id).querySelector('.z'); const amt=(b-a)>6?0.045:0.02;
+ z.style.transform=`scale(${1+amt*q})`;};
 window.setT(0);
 </script></body></html>
